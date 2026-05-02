@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "jusamazin",
+    "title": "Jus Amazin",
+    "category": "Brand System",
+    "tags": ["Brand Identity", "Packaging", "D2C"],
+    "description": "End-to-end visual identity for a D2C peanut butter brand — packaging design across 15+ SKUs, social media systems, retail POS, and a complete brand guidelines document that scaled with the company.",
+    "metrics": [
+      { "label": "Revenue Growth Impact", "value": "176%" },
+      { "label": "Brand Recall Increase", "value": "2.5x" },
+      { "label": "Design Efficiency Gain", "value": "40%" },
+      { "label": "SKUs Designed", "value": "15+" }
+    ],
+    "testimonial": {
+      "quote": "Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale.",
+      "author": "Jitin Kochhar",
+      "role": "Co-Founder, Jus Amazin"
+    }
+  },
+  {
+    "slug": "desi-energy-bar",
+    "title": "Desi Energy Bar",
+    "category": "Packaging",
+    "tags": ["Packaging Design", "Illustration"],
+    "description": "Packaging design for a healthy snack brand, focusing on bold typography and illustrative elements to stand out on shelves."
+  },
+  {
+    "slug": "paintings",
+    "title": "Paintings",
+    "category": "Personal Art",
+    "tags": ["Acrylic", "Canvas", "Fine Art"],
+    "description": "A collection of personal acrylic paintings exploring texture, light, and the essence of Bengaluru."
+  },
+  {
+    "slug": "illustrations",
+    "title": "Brand Assets",
+    "category": "Illustration",
+    "tags": ["Vector Art", "Character Design"],
+    "description": "Custom illustrations and brand assets for various clients, bridging the gap between art and commercial design."
+  },
+  {
+    "slug": "design-systems",
+    "title": "Design Systems",
+    "category": "Guidelines",
+    "tags": ["UI/UX", "Documentation"],
+    "description": "Scaling visual identities through robust design systems and documentation, ensuring consistency across all touchpoints."
+  }
+]

@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sivnco — H.P. Shivaraj</title>
+  <meta name="description" content="H P Shivaraj — Brand design, packaging, illustration. Bengaluru." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sivnco.in/" />
+  <meta property="og:title" content="Sivnco — H.P. Shivaraj" />
+  <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
+  <meta property="og:image" content="https://framerusercontent.com/images/9LvHlrCzJWdgyGii5Gmrp4qI.png" />
+
+  <!-- Fonts: Space Grotesk for massive modern typography, Cormorant for elegance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP & Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --bg-color: #050505;
+      --text-main: #f0f0f0;
+      --text-muted: #888888;
+      --accent: #ff4d00;
+      --glass-bg: rgba(20, 20, 20, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.08);
+
+      --f-sans: 'Space Grotesk', sans-serif;
+      --f-serif: 'Cormorant Garamond', serif;
+    }
+
+    /* LENIS SMOOTH SCROLL */
+    html.lenis {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--f-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--text-main);
+      color: var(--bg-color);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* AMBIENT AURORA ORB */
+    .ambient-orb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: -1;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 0, 0.12) 0%, rgba(5, 5, 5, 0) 40%);
+      transition: opacity 1s ease;
+    }
+
+    /* HERO VISUAL ELEMENTS */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 6rem;
+      overflow: hidden;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
+      animation: grid-pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes grid-pulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .hero-glow-1 {
+      top: 10%;
+      left: 15%;
+      background: var(--accent);
+      animation: glow-drift-1 12s ease-in-out infinite;
+    }
+
+    .hero-glow-2 {
+      bottom: 10%;
+      right: 10%;
+      background: #6366f1;
+      animation: glow-drift-2 15s ease-in-out infinite;
+    }
+
+    @keyframes glow-drift-1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(60px, -40px);
+      }
+    }
+
+    @keyframes glow-drift-2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-50px, 30px);
+      }
+    }
+
+    .hero-line {
+      position: absolute;
+      background: var(--accent);
+      opacity: 0;
+    }
+
+    .hero-line-h {
+      height: 1px;
+      width: 20vw;
+      top: 50%;
+    }
+
+    .hero-line-h.left {
+      left: 0;
+    }
+
+    .hero-line-h.right {
+      right: 0;
+    }
+
+    .hero-line-v {
+      width: 1px;
+      height: 15vh;
+      left: 50%;
+      bottom: 8vh;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 3vh;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0;
+    }
+
+    .hero-scroll-hint .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+      0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+      }
+
+      50% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+      }
+    }
+
+    .hero-float-tag {
+      position: absolute;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0;
+    }
+
+    .hero-float-tag.tag-tl {
+      top: 22%;
+      left: 8%;
+    }
+
+    .hero-float-tag.tag-tr {
+      top: 18%;
+      right: 8%;
+    }
+
+    .hero-float-tag.tag-bl {
+      bottom: 22%;
+      left: 10%;
+    }
+
+    .hero-float-tag.tag-br {
+      bottom: 18%;
+      right: 6%;
+    }
+
+    /* TYPOGRAPHY */
+    .h-massive {
+      font-family: var(--f-sans);
+      font-size: clamp(4rem, 15vw, 15rem);
+      font-weight: 700;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .h-large {
+      font-family: var(--f-sans);
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+
+    .t-serif {
+      font-family: var(--f-serif);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .t-mono-label {
+      font-family: var(--f-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    /* UTILS */
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 4vw;
+    }
+
+    .section {
+      position: relative;
+      padding: 15vh 0;
+      z-index: 1;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem 4vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      mix-blend-mode: difference;
+    }
+
+    .nav-logo {
+      font-family: var(--f-sans);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--text-main);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .nav-cta:hover {
+      background: var(--text-main);
+      color: var(--bg-color);
+      transform: scale(0.96);
+    }
+
+    /* GLASSMORPHISM CARDS */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      overflow: visible;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Only gallery project cards clip their images */
+    .glass-card.project-card {
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Role cards in horizontal scroll need minimum height */
+    .role-card {
+      min-height: 50vh;
+      overflow: hidden;
+    }
+
+    .role-card .t-mono-label {
+      position: relative;
+      z-index: 2;
+    }
+
+    .role-card h3 {
+      position: relative;
+      z-index: 2;
+    }
+
+    .role-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* REVEAL WRAPPERS */
+    .reveal-wrap {
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .reveal-text {
+      display: inline-block;
+      transform: translateY(110%);
+    }
+
+    /* CURTAIN REVEAL FOOTER */
+    .footer-wrap {
+      position: relative;
+      z-index: 0;
+      /* This sits behind the main content wrapper. When main content scrolls up, footer is revealed */
+    }
+
+    .main-wrap {
+      background-color: var(--bg-color);
+      position: relative;
+      z-index: 2;
+      margin-bottom: 100vh;
+      /* space for footer */
+    }
+
+    .footer-fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background: #000;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 0.55rem 4vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .top-bar-avail {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4ade80;
+    }
+
+    .top-bar-avail::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(1.4);
+      }
+    }
+
+    /* NAV LINKS */
+    .nav {
+      top: 2.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* HERO EXTRAS */
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: #4ade80;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse-dot 2s infinite;
+    }
+
+    .hero-roles {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 3rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero-roles span {
+      position: relative;
+    }
+
+    .hero-roles span:not(:last-child)::after {
+      content: '·';
+      position: absolute;
+      right: -1.2rem;
+      opacity: 0.3;
+    }
+
+    /* MARQUEE */
+    .marquee-section {
+      overflow: hidden;
+      padding: 2rem 0;
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 4rem;
+      width: max-content;
+      animation: marquee-scroll 28s linear infinite;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .marquee-track span.sep {
+      color: var(--accent);
+    }
+
+    @keyframes marquee-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* CASE STUDY */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media(max-width:768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .metric-card {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    .metric-num {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      font-family: var(--f-sans);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 3rem 2.5rem;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -0.45rem;
+      top: 0.2rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .tl-date {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .tl-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .tl-company {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .tl-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media(max-width:900px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testi-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .testi-quote {
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-family: serif;
+    }
+
+    .testi-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .testi-author {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .testi-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media(max-width:900px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .price-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .price-card.featured {
+      border-color: var(--accent);
+      background: rgba(255, 77, 0, 0.07);
+    }
+
+    .price-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .price-tier {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .price-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1.5rem 0 0.3rem;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .price-features li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .price-features li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .price-cta {
+      display: block;
+      text-align: center;
+      border: 1px solid var(--text-main);
+      padding: 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .price-cta:hover {
+      background: var(--text-main);
+      color: var(--bg-color);
+    }
+
+    .price-card.featured .price-cta {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* ROLE CHIPS */
+    .role-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .chip {
+      border: 1px solid var(--glass-border);
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--glass-bg);
+    }
+
+    /* STAGGER ANIMATION HELPERS */
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* METRIC COUNTER GLOW */
+    .metric-card {
+      transition: transform 0.4s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateX(6px);
+    }
+
+    .metric-card:hover .metric-num {
+      color: var(--accent);
+    }
+
+    .metric-num {
+      transition: color 0.4s ease;
+    }
+
+    /* TESTIMONIAL HOVER */
+    .testi-card {
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 77, 0, 0.3);
+    }
+
+    /* TIMELINE ITEM HOVER */
+    .tl-item {
+      transition: transform 0.4s ease;
+    }
+
+    .tl-item:hover {
+      transform: translateX(8px);
+    }
+
+    .tl-item:hover .tl-title {
+      color: var(--accent);
+    }
+
+    .tl-title {
+      transition: color 0.3s ease;
+    }
+
+    /* CHIP HOVER */
+    .chip {
+      transition: all 0.3s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE: art commission grid */
+    @media(max-width:768px) {
+      .art-comm-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient-orb" id="orb"></div>
+
+  <!-- TOP STATUS BAR -->
+  <div class="top-bar">
+    <span>SIVNCO · H P SHIVARAJ · DESIGNER &amp; ARTIST</span>
+    <span>BENGALURU · REMOTE · INTERNATIONAL</span>
+    <span class="top-bar-avail">OPEN TO PROJECTS</span>
+  </div>
+
+  <nav class="nav" style="top:2.4rem;">
+    <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+  </nav>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="main-wrap">
+    <!-- HERO SECTION -->
+    <section class="hero-section section" id="hero">
+      <!-- Animated grid background -->
+      <div class="hero-grid-bg"></div>
+      <!-- Floating glow orbs -->
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <!-- Accent lines that animate in -->
+      <div class="hero-line hero-line-h left" id="heroLineL"></div>
+      <div class="hero-line hero-line-h right" id="heroLineR"></div>
+      <div class="hero-line hero-line-v" id="heroLineV"></div>
+      <!-- Floating corner tags -->
+      <div class="hero-float-tag tag-tl" id="hTag1">EST. 2018</div>
+      <div class="hero-float-tag tag-tr" id="hTag2">BENGALURU, IN</div>
+      <div class="hero-float-tag tag-bl" id="hTag3">BRAND · PACKAGING</div>
+      <div class="hero-float-tag tag-br" id="hTag4">ART · EDUCATION</div>
+
+      <div class="container" style="position:relative; z-index:2;">
+        <div class="h-massive gs-reveal" id="heroName" style="margin-top: 0;">
+          <div class="reveal-wrap">
+            <div class="reveal-text">H.P.</div>
+          </div><br />
+          <div class="reveal-wrap">
+            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.3);">
+              SHIVARAJ</div>
+          </div>
+        </div>
+        <div class="t-serif gs-reveal" style="font-size: 1.6rem; margin-top: 2rem; color: var(--text-muted);">
+          <div class="reveal-wrap">
+            <div class="reveal-text">Creative Director · Artist · Bengaluru</div>
+          </div>
+        </div>
+        <div class="hero-roles" id="heroRoles">
+          <span>Brand Identity</span>
+          <span>Packaging Design</span>
+          <span>Illustration</span>
+          <span>Art Education</span>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll-hint" id="heroScroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE TICKER -->
+    <div class="marquee-section">
+      <div class="marquee-track">
+        <span>Marketing Design</span><span class="sep">✦</span>
+        <span>Art Education</span><span class="sep">✦</span>
+        <span>Design Systems</span><span class="sep">✦</span>
+        <span>Brand Identity</span><span class="sep">✦</span>
+        <span>Packaging</span><span class="sep">✦</span>
+        <span>Illustration</span><span class="sep">✦</span>
+        <span>Painting &amp; Art</span><span class="sep">✦</span>
+        <span>Open to Remote</span><span class="sep">✦</span>
+        <span>Marketing Design</span><span class="sep">✦</span>
+        <span>Art Education</span><span class="sep">✦</span>
+        <span>Design Systems</span><span class="sep">✦</span>
+        <span>Brand Identity</span><span class="sep">✦</span>
+        <span>Packaging</span><span class="sep">✦</span>
+        <span>Illustration</span><span class="sep">✦</span>
+        <span>Painting &amp; Art</span><span class="sep">✦</span>
+        <span>Open to Remote</span><span class="sep">✦</span>
+      </div>
+    </div>
+
+    <!-- SELECTED GALLERY -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="t-mono-label gs-fade">Selected Gallery</div>
+        <h2 class="h-large gs-reveal" style="margin-bottom: 1rem;">
+          <div class="reveal-wrap">
+            <div class="reveal-text">Work that</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text t-serif" style="color:var(--text-muted)">speaks</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text">first.</div>
+          </div>
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; margin-top: 4rem;">
+
+          <!-- Project 1 (Wide) -->
+          <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="glass-card project-card gs-fade"
+            style="grid-column: span 12; height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;">
+            <div class="p-img-wrap" id="gImg_featured"
+              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div class="t-mono-label" style="color: var(--text-main);">Brand System · 15+ SKUs</div>
+              <h3 class="h-large" style="font-size: 3rem; margin-top: -1rem;">Jus <span class="t-serif">Amazin</span>
+              </h3>
+            </div>
+            <div
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a href="https://sivnco.framer.website/desi-energy-bar" target="_blank"
+            class="glass-card project-card gs-fade"
+            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            <div class="p-img-wrap" id="gImg_energy"
+              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div class="t-mono-label" style="color: var(--text-main);">Packaging</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Desi Energy Bar</h3>
+            </div>
+            <div
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <a href="https://sivnco.framer.website/paintings" target="_blank" class="glass-card project-card gs-fade"
+            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            <div class="p-img-wrap" id="gImg_paintings"
+              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div class="t-mono-label" style="color: var(--text-main);">Personal Art</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Paintings</h3>
+            </div>
+            <div
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+            </div>
+          </a>
+
+          <!-- Project 4 -->
+          <a href="https://sivnco.framer.website/illustrations" target="_blank" class="glass-card project-card gs-fade"
+            style="grid-column: span 5; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            <div class="p-img-wrap" id="gImg_illustration"
+              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div class="t-mono-label" style="color: var(--text-main);">Illustration</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Brand Assets</h3>
+            </div>
+            <div
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+            </div>
+          </a>
+
+          <!-- Project 5 -->
+          <a href="https://sivnco.framer.website/design-systems" target="_blank" class="glass-card project-card gs-fade"
+            style="grid-column: span 7; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            <div class="p-img-wrap" id="gImg_systems"
+              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div class="t-mono-label" style="color: var(--text-main);">Guidelines</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Design Systems</h3>
+            </div>
+            <div
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+            </div>
+          </a>
+        </div>
+        <div style="text-align:right; margin-top:2rem;">
+          <a href="https://sivnco.framer.website" target="_blank" class="nav-cta" style="font-size:0.75rem;">View Full
+            Portfolio &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CASE STUDY -->
+    <section class="section"
+      style="background: rgba(255,77,0,0.03); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
+      <div class="container">
+        <div class="t-mono-label gs-fade">Featured Case Study</div>
+        <h2 class="h-large gs-reveal">
+          <div class="reveal-wrap">
+            <div class="reveal-text">Jus</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text">Brand System</div>
+          </div>
+        </h2>
+        <p class="gs-fade"
+          style="font-size:1.1rem; color:var(--text-muted); max-width:650px; margin-top:1.5rem; line-height:1.8;">
+          End-to-end visual identity for a D2C peanut butter brand — packaging design across 15+ SKUs, social media
+          systems, retail POS, and a complete brand guidelines document that scaled with the company.
+        </p>
+        <div class="metrics-grid gs-fade">
+          <div class="metric-card">
+            <div class="metric-num">176%</div>
+            <div class="metric-label">Revenue Growth Impact</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">2.5&times;</div>
+            <div class="metric-label">Brand Recall Increase</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">40%</div>
+            <div class="metric-label">Design Efficiency Gain</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-num">15+</div>
+            <div class="metric-label">SKUs Designed</div>
+          </div>
+        </div>
+        <div style="margin-top:3rem;">
+          <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="nav-cta">View Case Study &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div style="max-width: 860px;">
+          <div class="t-mono-label gs-fade">More Than A Designer</div>
+          <h2 class="h-large gs-reveal" style="margin-bottom: 2rem;">
+            <div class="reveal-wrap">
+              <div class="reveal-text">I build visual</div>
+            </div>
+            <div class="reveal-wrap">
+              <div class="reveal-text t-serif" style="color:var(--text-muted)">languages that</div>
+            </div>
+            <div class="reveal-wrap">
+              <div class="reveal-text">earn trust.</div>
+            </div>
+          </h2>
+          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px;">
+            I'm Shiv &mdash; H P Shivaraj. I lead brand and communication design at Jus Amazin, teach art at Openhouse
+            learning hubs, and co-run Svarnart Academy with my wife. Born and raised in Namma Bengaluru, that texture
+            shows up in everything I make.
+          </p>
+          <p class="gs-fade"
+            style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px; margin-top:1.5rem;">
+            Design is how I think. Art is how I feel. Both live in everything I put out — whether it's a packaging
+            system for a D2C brand or an acrylic painting on a Saturday afternoon.
+          </p>
+          <div class="role-chips gs-fade">
+            <span class="chip">&loz; Designer</span>
+            <span class="chip">&dagger; Art Teacher</span>
+            <span class="chip">&#9670; Founder</span>
+            <span class="chip">&sube; Studio Lead</span>
+            <span class="chip">&clubs; Illustrator</span>
+            <span class="chip">&hearts; Painter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HORIZONTAL SCROLL ROLES -->
+    <section class="section" id="horizontal-sec" style="overflow: hidden; padding: 0;">
+      <div class="h-sticky" style="height: 100vh; display: flex; align-items: center;">
+        <div class="h-container"
+          style="display: flex; gap: 5vw; padding-left: 10vw; width: max-content; padding-right: 10vw;">
+
+          <div style="width: 30vw; flex-shrink: 0;">
+            <h2 class="h-large">
+              <div class="t-serif" style="color:var(--text-muted)">Four roles.</div>One person.
+            </h2>
+            <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted);">Scroll to explore my different
+              practices.</p>
+          </div>
+
+          <div class="glass-card role-card"
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            <div class="t-mono-label">01 / Full-time</div>
+            <h3 class="h-large" style="font-size: 3rem;">Design & Comms Manager</h3>
+            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Leading every
+              visual and print media process for Jus Amazin — from packaging brief to shelf-ready file. 176% revenue
+              impact.</p>
+          </div>
+
+          <div class="glass-card role-card"
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            <div class="t-mono-label">02 / Teaching</div>
+            <h3 class="h-large" style="font-size: 3rem;">Art & Design Teacher</h3>
+            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Teaching at
+              Openhouse learning hubs. Guiding students through drawing, composition, and visual thinking. It keeps me
+              grounded.</p>
+          </div>
+
+          <div class="glass-card role-card"
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            <div class="t-mono-label">03 / Founder</div>
+            <h3 class="h-large" style="font-size: 3rem;">Svarnart Academy</h3>
+            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Co-founded with
+              my wife. A space where Carnatic music, painting, and design education live under one roof.</p>
+          </div>
+
+          <div class="glass-card role-card"
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            <div class="t-mono-label">04 / Studio</div>
+            <h3 class="h-large" style="font-size: 3rem;">Sivnco Studio</h3>
+            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Independent
+              design studio for brands that care deeply about the work. From D2C packaging to complete identity systems.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="t-mono-label gs-fade">Experience</div>
+        <h2 class="h-large gs-reveal">
+          <div class="reveal-wrap">
+            <div class="reveal-text">The journey</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text t-serif" style="color:var(--text-muted)">so far.</div>
+          </div>
+        </h2>
+        <div class="timeline gs-fade">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2022 — Present</div>
+            <div class="tl-title">Design &amp; Communications Manager</div>
+            <div class="tl-company">Jus Amazin · Bengaluru</div>
+            <div class="tl-desc">Leading end-to-end visual and print media for a D2C peanut butter brand. Packaging,
+              social, POS, brand systems — built from scratch. Delivered 176% revenue impact through design.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2021 — Present</div>
+            <div class="tl-title">Art &amp; Design Teacher</div>
+            <div class="tl-company">Openhouse · Bengaluru</div>
+            <div class="tl-desc">Teaching drawing, composition, and visual thinking to students across age groups. Keeps
+              me rooted in the fundamentals of making.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2020 — Present</div>
+            <div class="tl-title">Co-Founder</div>
+            <div class="tl-company">Svarnart Academy · Bengaluru</div>
+            <div class="tl-desc">Co-founded with my wife — a creative learning space for Carnatic music, painting, and
+              design. Where education meets art.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2018 — Present</div>
+            <div class="tl-title">Founder &amp; Creative Director</div>
+            <div class="tl-company">Sivnco Studio · Independent</div>
+            <div class="tl-desc">Independent design studio for brands that care about the work. Packaging, identity,
+              illustration, and design systems for D2C and lifestyle brands.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <div class="container">
+        <div class="t-mono-label gs-fade">Impact</div>
+        <h2 class="h-large gs-reveal">
+          <div class="reveal-wrap">
+            <div class="reveal-text">In their</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text t-serif" style="color:var(--text-muted)">words.</div>
+          </div>
+        </h2>
+        <div class="testimonials-grid gs-fade">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the
+              most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
+            <div class="testi-author">Jitin Kochhar</div>
+            <div class="testi-role">Co-Founder, Jus Amazin</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial
+              clarity. He understands the brief, then exceeds it — every single time.</div>
+            <div class="testi-author">Shilpa Rao</div>
+            <div class="testi-role">Brand Consultant</div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-body">Our students love Shiv's classes. He brings a calm, observational approach to
+              teaching that makes even complex concepts feel intuitive and joyful.</div>
+            <div class="testi-author">Openhouse Team</div>
+            <div class="testi-role">Learning Hub, Bengaluru</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section">
+      <div class="container">
+        <div class="t-mono-label gs-fade">Pick a Plan</div>
+        <h2 class="h-large gs-reveal">
+          <div class="reveal-wrap">
+            <div class="reveal-text">Let's build</div>
+          </div>
+          <div class="reveal-wrap">
+            <div class="reveal-text t-serif" style="color:var(--text-muted)">something real.</div>
+          </div>
+        </h2>
+        <div class="pricing-grid gs-fade">
+          <div class="price-card">
+            <div class="price-tier">Starter</div>
+            <div class="price-name">Single Brief</div>
+            <div class="price-amount">₹15K+</div>
+            <div class="price-note">Per project · 2–3 week turnaround</div>
+            <ul class="price-features">
+              <li>1 design deliverable</li>
+              <li>2 revision rounds</li>
+              <li>Source files included</li>
+              <li>Email support</li>
+            </ul>
+            <a href="#contact" class="price-cta">Start a Brief</a>
+          </div>
+          <div class="price-card featured">
+            <div class="price-tier">Most Popular</div>
+            <div class="price-name">Brand Build</div>
+            <div class="price-amount">₹45K+</div>
+            <div class="price-note">Full identity · 4–6 week engagement</div>
+            <ul class="price-features">
+              <li>Logo + full identity system</li>
+              <li>Packaging design (up to 4 SKUs)</li>
+              <li>Brand guidelines document</li>
+              <li>Social media kit</li>
+              <li>Unlimited revisions</li>
+            </ul>
+            <a href="#contact" class="price-cta">Build My Brand</a>
+          </div>
+          <div class="price-card">
+            <div class="price-tier">Ongoing</div>
+            <div class="price-name">Studio Partner</div>
+            <div class="price-amount">₹20K</div>
+            <div class="price-note">Per month · Retainer basis</div>
+            <ul class="price-features">
+              <li>Dedicated design hours</li>
+              <li>Monthly deliverables</li>
+              <li>Priority turnaround</li>
+              <li>Strategy calls included</li>
+            </ul>
+            <a href="#contact" class="price-cta">Become a Partner</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ART COMMISSION -->
+    <section class="section" style="border-top:1px solid var(--glass-border);">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+          <div>
+            <div class="t-mono-label gs-fade">Art Commission</div>
+            <h2 class="h-large gs-reveal">
+              <div class="reveal-wrap">
+                <div class="reveal-text">For the love</div>
+              </div>
+              <div class="reveal-wrap">
+                <div class="reveal-text t-serif" style="color:var(--text-muted)">of craft.</div>
+              </div>
+            </h2>
+          </div>
+          <div class="gs-fade">
+            <p style="font-size:1.15rem; line-height:1.9; color:var(--text-muted); margin-bottom:2rem;">
+              Original acrylic paintings, portrait commissions, and custom illustrations. Each piece is handcrafted with
+              intention — no prints, no shortcuts.
+            </p>
+            <p
+              style="font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:2rem;">
+              ● Limited slots available
+            </p>
+            <a href="#contact" class="nav-cta">Enquire for Art</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- End of main-wrap -->
+
+  <!-- CURTAIN REVEAL FOOTER -->
+  <div class="footer-fixed" id="contact">
+    <div class="container" style="width: 100%; text-align: center;">
+      <h2 class="h-massive">
+        <div class="t-serif" style="color:var(--text-muted)">Let's build</div>something that
+        <div class="t-serif" style="color:var(--accent)">earns its keep.</div>
+      </h2>
+
+      <div style="max-width: 600px; margin: 4rem auto 0; text-align: left;">
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;" data-netlify="true"
+          name="contact">
+          <input type="hidden" name="form-name" value="contact" />
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <input type="text" name="name" placeholder="Name" required
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
+            <input type="email" name="email" placeholder="Email" required
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
+          </div>
+          <select name="service"
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
+            <option value="" style="background: #000;">Select a service</option>
+            <option style="background: #000;">Brand Identity</option>
+            <option style="background: #000;">Packaging Design</option>
+            <option style="background: #000;">Studio Partner</option>
+            <option style="background: #000;">Art Commission</option>
+          </select>
+          <textarea name="message" placeholder="What are we building?" rows="4" required
+            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px; resize: vertical;"></textarea>
+
+          <button type="submit" class="nav-cta"
+            style="align-self: center; background: var(--text-main); color: var(--bg-color); cursor: pointer; border: none;">Send
+            Brief</button>
+          <div id="formStatus"
+            style="font-size: 0.8rem; color: var(--accent); text-align: center; display: none; margin-top: 1rem;">
+            Message received. I'll be in touch.</div>
+        </form>
+      </div>
+
+      <div style="margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+        <a href="https://www.instagram.com/sivnco/" target="_blank" class="nav-cta"
+          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">Instagram</a>
+        <a href="https://www.linkedin.com/in/hpshivaraj/" target="_blank" class="nav-cta"
+          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">LinkedIn</a>
+        <a href="https://wa.me/918431272507" target="_blank" class="nav-cta"
+          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">WhatsApp</a>
+      </div>
+      <div
+        style="margin-top:1.5rem; display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; font-size:0.8rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase;">
+        <a href="mailto:hp.shivaraj@sivnco.in" style="color:var(--text-muted);">hp.shivaraj@sivnco.in</a>
+        <span>Bengaluru, India</span>
+        <a href="https://sivnco.framer.website" target="_blank" style="color:var(--text-muted);">Portfolio</a>
+      </div>
+      <div
+        style="margin-top:1.5rem; font-size:0.75rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; opacity:0.5;">
+        Designed with intent. SIVNCO &copy; 2024–2025.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- INITIALIZE LENIS (Smooth Scrolling) ---
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Integrate Lenis with GSAP ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0, 0);
+
+    // --- AMBIENT ORB CURSOR TRACKING ---
+    const orb = document.getElementById('orb');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      orb.style.setProperty('--mouse-x', `${mx}px`);
+      orb.style.setProperty('--mouse-y', `${my}px`);
+    });
+
+    // =============================================
+    // HERO ENTRANCE TIMELINE (cinematic stagger)
+    // =============================================
+    const heroTL = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+    // Name text reveals with blur
+    heroTL.fromTo('#heroName .reveal-text',
+      { y: "110%", filter: "blur(12px)", opacity: 0 },
+      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.4, stagger: 0.15 },
+      0.5
+    );
+
+    // Tagline
+    heroTL.fromTo('.hero-section .t-serif .reveal-text',
+      { y: "110%", filter: "blur(8px)", opacity: 0 },
+      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.2 },
+      1.2
+    );
+
+    // Role tags stagger in
+    heroTL.fromTo('#heroRoles span',
+      { y: 15, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, stagger: 0.12 },
+      1.6
+    );
+
+    // Accent lines draw in
+    heroTL.fromTo('#heroLineL',
+      { width: 0, opacity: 0 },
+      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
+      1.8
+    );
+    heroTL.fromTo('#heroLineR',
+      { width: 0, opacity: 0 },
+      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
+      1.8
+    );
+    heroTL.fromTo('#heroLineV',
+      { height: 0, opacity: 0 },
+      { height: "15vh", opacity: 0.3, duration: 1, ease: "power2.inOut" },
+      2.0
+    );
+
+    // Corner floating tags
+    heroTL.fromTo(['#hTag1', '#hTag2', '#hTag3', '#hTag4'],
+      { opacity: 0, y: 10 },
+      { opacity: 0.4, y: 0, duration: 0.8, stagger: 0.1 },
+      2.2
+    );
+
+    // Scroll hint
+    heroTL.fromTo('#heroScroll',
+      { opacity: 0, y: -10 },
+      { opacity: 0.6, y: 0, duration: 0.8 },
+      2.8
+    );
+
+    // Hero scroll-out: parallax the content up and fade
+    gsap.to('.hero-section .container', {
+      y: -100,
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: '.hero-section',
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    // =============================================
+    // GSAP SCROLL ANIMATIONS
+    // =============================================
+
+    // 1. Text Reveals (Blur & Slide Up) — skip hero ones (already animated)
+    document.querySelectorAll('.gs-reveal').forEach(wrapper => {
+      if (wrapper.closest('.hero-section')) return; // skip hero
+      const texts = wrapper.querySelectorAll('.reveal-text');
+      if (!texts.length) return;
+      gsap.fromTo(texts,
+        { y: "110%", filter: "blur(10px)", opacity: 0 },
+        {
+          y: "0%",
+          filter: "blur(0px)",
+          opacity: 1,
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+
+    // 2. Simple Fades
+    document.querySelectorAll('.gs-fade').forEach(el => {
+      gsap.fromTo(el,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+
+    // 3. Horizontal Scroll
+    const hSec = document.getElementById('horizontal-sec');
+    const hCont = document.querySelector('.h-container');
+
+    if (hSec && hCont) {
+      gsap.to(hCont, {
+        x: () => -(hCont.scrollWidth - window.innerWidth) + "px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: hSec,
+          start: "top top",
+          end: () => "+=" + (hCont.scrollWidth - window.innerWidth),
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+
+      // (Role card opacity animation removed so all cards appear equally visible)
+    }
+
+    // 4. Timeline Items — staggered entrance
+    gsap.fromTo('.tl-item',
+      { x: -30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: '.timeline',
+          start: "top 80%"
+        }
+      }
+    );
+
+    // 5. Testimonial Cards — staggered pop
+    gsap.fromTo('.testi-card',
+      { y: 50, opacity: 0, scale: 0.95 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: '.testimonials-grid',
+          start: "top 80%"
+        }
+      }
+    );
+
+    // 6. Pricing Cards — staggered rise
+    gsap.fromTo('.price-card',
+      { y: 60, opacity: 0, rotateX: 8 },
+      {
+        y: 0,
+        opacity: 1,
+        rotateX: 0,
+        duration: 0.9,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: '.pricing-grid',
+          start: "top 80%"
+        }
+      }
+    );
+
+    // 7. Metric Counter Animation
+    function animateCounter(el) {
+      const text = el.textContent.trim();
+      const numMatch = text.match(/[\d.]+/);
+      if (!numMatch) return;
+      const target = parseFloat(numMatch[0]);
+      const suffix = text.replace(numMatch[0], '');
+      const isDecimal = text.includes('.');
+      const obj = { val: 0 };
+
+      gsap.to(obj, {
+        val: target,
+        duration: 2,
+        ease: "power2.out",
+        onUpdate: () => {
+          el.textContent = (isDecimal ? obj.val.toFixed(1) : Math.round(obj.val)) + suffix;
+        },
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          once: true
+        }
+      });
+    }
+    document.querySelectorAll('.metric-num').forEach(animateCounter);
+
+    // 8. Metric cards stagger
+    gsap.fromTo('.metric-card',
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: '.metrics-grid',
+          start: "top 85%"
+        }
+      }
+    );
+
+    // 9. Role chips stagger
+    gsap.fromTo('.chip',
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: '.role-chips',
+          start: "top 85%"
+        }
+      }
+    );
+
+    // 10. Section headings parallax
+    document.querySelectorAll('.section .h-large').forEach(h => {
+      if (h.closest('.hero-section') || h.closest('.h-container')) return;
+      gsap.to(h, {
+        y: -20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: h,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+    // --- FORM SUBMISSION ---
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
+      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        await fetch(`${SB_URL}/rest/v1/sivnco_enquiries`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SB_KEY,
+            'Authorization': `Bearer ${SB_KEY}`
+          },
+          body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            service: data.service,
+            message: data.message
+          })
+        });
+
+        statusDiv.style.display = 'block';
+        form.reset();
+        setTimeout(() => statusDiv.style.display = 'none', 5000);
+      } catch (err) {
+        statusDiv.innerText = "Error sending message. Please try email.";
+        statusDiv.style.color = "red";
+        statusDiv.style.display = 'block';
+      }
+    });
+
+    // --- SUPABASE GALLERY IMAGE LOADER ---
+    (async function loadSivncoImages() {
+      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
+      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+
+      const SLOT_MAP = {
+        'gallery_featured_ja': 'gImg_featured',
+        'gallery_energy_bar': 'gImg_energy',
+        'gallery_paintings': 'gImg_paintings',
+        'gallery_illustration': 'gImg_illustration',
+        'gallery_systems': 'gImg_systems',
+      };
+
+      try {
+        const r = await fetch(`${SB_URL}/rest/v1/sivnco_gallery?select=*`, {
+          headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
+        });
+        if (!r.ok) return;
+        const rows = await r.json();
+
+        rows.forEach(row => {
+          if (!row.url || !SLOT_MAP[row.id]) return;
+          const el = document.getElementById(SLOT_MAP[row.id]);
+          if (!el) return;
+
+          el.innerHTML = '';
+
+          const img = document.createElement('img');
+          img.src = row.url;
+          img.alt = row.alt || '';
+          img.style.cssText = 'width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);';
+
+          // Image zoom on hover via parent class
+          el.parentElement.addEventListener('mouseenter', () => img.style.transform = 'scale(1.05)');
+          el.parentElement.addEventListener('mouseleave', () => img.style.transform = 'scale(1)');
+
+          el.appendChild(img);
+        });
+      } catch (e) { }
+    })();
+  </script>
+</body>
+
+</html>

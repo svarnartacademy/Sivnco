@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sivnco — Image Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0c0b09;--paper:#f5f1ea;--paper2:#ece7dc;--cream:#faf7f2;
+  --saffron:#c85a1a;--saffron2:#e8722e;--forest:#1a4a2e;--gold:#c9992e;
+  --rust:#7a2208;--rule:rgba(12,11,9,.1);
+  --text-mid:#5a4e3c;--text-light:#9a8c78;
+  --green:#1a7a3a;--red:#b02020;
+  --fd:'Bebas Neue',sans-serif;--fm:'DM Mono',monospace;--fs:'Cormorant Garamond',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--fm);background:var(--paper);color:var(--ink);min-height:100vh;}
+
+/* HEADER */
+.header{background:var(--ink);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);}
+.header-logo{font-family:var(--fd);font-size:1.4rem;letter-spacing:.06em;color:rgba(250,247,242,.85);}
+.header-logo span{color:var(--saffron);}
+.header-title{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,242,.35);}
+.header-status{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px;}
+.status-dot{width:5px;height:5px;border-radius:50%;background:#666;}
+.status-dot.ok{background:#4caf50;animation:blink 2s ease-in-out infinite;}
+.status-dot.err{background:#e53935;}
+
+/* LAYOUT */
+.shell{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 52px);}
+.sidebar{background:var(--paper2);border-right:1px solid var(--rule);padding:2rem 1.5rem;}
+.main{padding:2rem;}
+
+/* SIDEBAR */
+.sidebar-section{margin-bottom:2rem;}
+.sidebar-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;}
+.sidebar-label::before{content:'';display:block;width:16px;height:1px;background:var(--text-light);}
+.tab-btn{display:block;width:100%;text-align:left;background:none;border:none;padding:.65rem .9rem;font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid);cursor:pointer;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tab-btn:hover{color:var(--saffron);background:rgba(200,90,26,.05);}
+.tab-btn.active{color:var(--saffron);border-left-color:var(--saffron);background:rgba(200,90,26,.07);}
+.supabase-cfg{display:flex;flex-direction:column;gap:.6rem;}
+.cfg-inp{background:var(--cream);border:1px solid var(--rule);padding:.55rem .75rem;font-family:var(--fm);font-size:.6rem;color:var(--ink);outline:none;width:100%;transition:border .2s;}
+.cfg-inp:focus{border-color:var(--saffron);}
+.cfg-btn{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:var(--saffron);color:var(--cream);border:none;padding:.6rem 1rem;cursor:pointer;width:100%;transition:background .2s;}
+.cfg-btn:hover{background:var(--rust);}
+.cfg-note{font-size:.55rem;letter-spacing:.07em;color:var(--text-light);line-height:1.6;}
+
+/* MAIN */
+.page-title{font-family:var(--fd);font-size:2.5rem;letter-spacing:.03em;color:var(--ink);margin-bottom:.3rem;}
+.page-sub{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:2rem;}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;padding:.9rem 1.5rem;font-family:var(--fm);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;border-left:3px solid;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:1000;}
+.toast.show{opacity:1;transform:none;}
+.toast.ok{background:var(--cream);color:var(--green);border-color:var(--green);}
+.toast.err{background:var(--cream);color:var(--red);border-color:var(--red);}
+
+/* SLOTS grid */
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5px;background:var(--paper2);}
+.slot{background:var(--paper);padding:1.5rem;display:flex;flex-direction:column;gap:.85rem;}
+.slot-head{display:flex;align-items:center;justify-content:space-between;}
+.slot-name{font-family:var(--fd);font-size:1.1rem;letter-spacing:.03em;color:var(--ink);}
+.slot-key{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);}
+.slot-preview{width:100%;height:140px;background:var(--paper2);border:1px dashed rgba(12,11,9,.15);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.slot-preview img{width:100%;height:100%;object-fit:cover;display:none;}
+.slot-preview img.loaded{display:block;}
+.slot-preview-empty{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.slot-preview-icon{font-size:1.5rem;opacity:.3;}
+.slot-preview.has-img .slot-preview-empty{display:none;}
+.slot-inp-group{display:flex;flex-direction:column;gap:.4rem;}
+.slot-lbl{font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);}
+.slot-inp{background:var(--cream);border:1px solid var(--rule);padding:.52rem .75rem;font-family:var(--fm);font-size:.6rem;color:var(--ink);outline:none;width:100%;transition:border .2s;}
+.slot-inp:focus{border-color:var(--saffron);}
+.slot-actions{display:flex;gap:.5rem;}
+.slot-save{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:var(--saffron);color:var(--cream);border:none;padding:.55rem 1rem;cursor:pointer;flex:1;transition:background .2s;}
+.slot-save:hover{background:var(--rust);}
+.slot-clear{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:none;color:var(--text-light);border:1px solid var(--rule);padding:.55rem .9rem;cursor:pointer;transition:all .2s;}
+.slot-clear:hover{border-color:var(--red);color:var(--red);}
+.slot-status{font-size:.54rem;letter-spacing:.08em;color:var(--text-light);display:flex;align-items:center;gap:5px;}
+.slot-status.saved{color:var(--green);}
+.slot-status.unsaved{color:var(--saffron);}
+
+/* UPLOAD TAB */
+.upload-zone{border:2px dashed rgba(12,11,9,.15);padding:3rem;text-align:center;transition:all .2s;cursor:pointer;position:relative;}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--saffron);background:rgba(200,90,26,.03);}
+.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.upload-zone-icon{font-size:2.5rem;opacity:.2;margin-bottom:.75rem;}
+.upload-zone-text{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);}
+.upload-zone-sub{font-size:.56rem;letter-spacing:.07em;color:var(--text-light);margin-top:.35rem;}
+.upload-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
+.upload-result{background:var(--paper2);padding:1rem;border:1px solid var(--rule);}
+.upload-result-img{width:100%;height:120px;object-fit:cover;margin-bottom:.75rem;}
+.upload-result-url{font-size:.55rem;letter-spacing:.05em;color:var(--text-mid);word-break:break-all;line-height:1.5;}
+.copy-btn{font-family:var(--fm);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--cream);border:none;padding:.4rem .8rem;cursor:pointer;margin-top:.6rem;width:100%;transition:background .2s;}
+.copy-btn:hover{background:var(--saffron);}
+
+/* ENQUIRIES tab */
+.enq-list{display:flex;flex-direction:column;gap:2px;background:var(--paper2);}
+.enq-item{background:var(--paper);padding:1.5rem 2rem;display:grid;grid-template-columns:180px 1fr auto;gap:1.5rem;align-items:start;transition:background .2s;}
+.enq-item:hover{background:var(--cream);}
+.enq-item.unread{border-left:3px solid var(--saffron);}
+.enq-date{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);}
+.enq-from{font-family:var(--fs);font-style:italic;font-size:1rem;color:var(--ink);margin-bottom:.25rem;}
+.enq-service{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);}
+.enq-msg{font-size:.85rem;line-height:1.65;color:var(--text-mid);font-style:italic;margin-top:.5rem;}
+.enq-email{font-size:.6rem;letter-spacing:.07em;color:var(--text-light);margin-top:.35rem;}
+.enq-mark{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid var(--rule);color:var(--text-light);padding:.35rem .7rem;cursor:pointer;transition:all .2s;}
+.enq-mark:hover{border-color:var(--green);color:var(--green);}
+.enq-empty{padding:4rem;text-align:center;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);}
+
+/* INFO BOX */
+.info-box{background:rgba(200,90,26,.06);border-left:2px solid var(--saffron);padding:1.25rem 1.5rem;margin-bottom:2rem;}
+.info-box p{font-size:.65rem;line-height:1.8;color:var(--text-mid);}
+.info-box strong{color:var(--ink);}
+.info-box a{color:var(--saffron);text-decoration:none;}
+
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-logo">Sivnco<span>.</span> Admin</div>
+    <div class="header-title" style="margin-top:2px;">Image Manager &amp; Dashboard</div>
+  </div>
+  <div class="header-status">
+    <div class="status-dot" id="statusDot"></div>
+    <span id="statusText" style="color:rgba(250,247,242,.4);">Not connected</span>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigate</div>
+      <button class="tab-btn active" onclick="showTab('gallery')">📷 Gallery Images</button>
+      <button class="tab-btn" onclick="showTab('upload')">⬆ Upload Images</button>
+      <button class="tab-btn" onclick="showTab('enquiries')">📬 Enquiries</button>
+      <button class="tab-btn" onclick="showTab('setup')">⚙ Setup guide</button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Supabase Config</div>
+      <div class="supabase-cfg">
+        <div>
+          <div class="slot-lbl" style="margin-bottom:4px;">Project URL</div>
+          <input class="cfg-inp" id="cfgUrl" type="text" placeholder="https://xxx.supabase.co" value="https://aojlzglzeezxljxqwaep.supabase.co"/>
+        </div>
+        <div>
+          <div class="slot-lbl" style="margin-bottom:4px;">Anon Key</div>
+          <input class="cfg-inp" id="cfgKey" type="password" placeholder="eyJ..."/>
+        </div>
+        <button class="cfg-btn" onclick="connectSupabase()">Connect →</button>
+        <p class="cfg-note">Your URL is pre-filled. Paste your anon key from Supabase → Settings → API. Keys are stored in localStorage, not shared anywhere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- ── GALLERY TAB ── -->
+    <div class="tab-panel active" id="tab-gallery">
+      <div class="page-title">Gallery Images</div>
+      <div class="page-sub">Manage all image slots across your Sivnco site</div>
+
+      <div class="info-box">
+        <p><strong>How it works:</strong> Each slot corresponds to a section in sivnco-v5.html. Paste an image URL (from any host — Unsplash, Google Drive share link, Cloudinary, or uploaded above) and hit Save. The live site fetches these URLs from Supabase on every load — no code editing needed.</p>
+      </div>
+
+      <div class="slots-grid" id="slotsGrid">
+        <!-- Slots rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ── UPLOAD TAB ── -->
+    <div class="tab-panel" id="tab-upload">
+      <div class="page-title">Upload Images</div>
+      <div class="page-sub">Upload to Supabase Storage — get a permanent URL to paste into any slot</div>
+
+      <div class="info-box">
+        <p><strong>Upload here first,</strong> then copy the URL and paste it into the Gallery Images slot. Files go to your Supabase Storage bucket named <strong>sivnco-images</strong>. You need to create this bucket in Supabase → Storage → New bucket → name it <strong>sivnco-images</strong> → set to Public.</p>
+      </div>
+
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="image/*" multiple onchange="handleFiles(this.files)"/>
+        <div class="upload-zone-icon">📁</div>
+        <div class="upload-zone-text">Drag images here or click to select</div>
+        <div class="upload-zone-sub">JPG, PNG, WebP · Max 5MB each · Multiple allowed</div>
+      </div>
+
+      <div class="upload-results" id="uploadResults"></div>
+    </div>
+
+    <!-- ── ENQUIRIES TAB ── -->
+    <div class="tab-panel" id="tab-enquiries">
+      <div class="page-title">Enquiries</div>
+      <div class="page-sub">Contact form submissions from your site</div>
+
+      <div class="info-box">
+        <p><strong>These come from your site's contact form.</strong> Submissions are stored in Supabase table <strong>sivnco_enquiries</strong>. You also get an email via Netlify (if deployed there). Mark as read once you've followed up.</p>
+      </div>
+
+      <div class="enq-list" id="enqList">
+        <div class="enq-empty">No enquiries yet — they'll appear here once your site is live.</div>
+      </div>
+    </div>
+
+    <!-- ── SETUP TAB ── -->
+    <div class="tab-panel" id="tab-setup">
+      <div class="page-title">Setup Guide</div>
+      <div class="page-sub">One-time setup — takes about 10 minutes</div>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;max-width:640px;">
+
+        <div class="info-box">
+          <p><strong>Step 1 — Create Supabase tables</strong><br/><br/>
+          Go to your Supabase project → SQL Editor → paste and run this:</p>
+          <pre style="margin-top:.75rem;background:var(--ink);color:rgba(250,247,242,.7);padding:1rem;font-size:.6rem;line-height:1.8;overflow-x:auto;">
+-- Gallery images table
+CREATE TABLE IF NOT EXISTS sivnco_gallery (
+  id TEXT PRIMARY KEY,
+  url TEXT,
+  alt TEXT,
+  caption TEXT,
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enquiries table
+CREATE TABLE IF NOT EXISTS sivnco_enquiries (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  service TEXT,
+  message TEXT,
+  read BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Allow public read for gallery
+ALTER TABLE sivnco_gallery ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public can read gallery" ON sivnco_gallery FOR SELECT USING (true);
+CREATE POLICY "Authenticated can write gallery" ON sivnco_gallery FOR ALL USING (true);
+
+-- Allow public insert for enquiries (so your contact form can write)
+ALTER TABLE sivnco_enquiries ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public can insert enquiries" ON sivnco_enquiries FOR INSERT WITH CHECK (true);
+CREATE POLICY "Authenticated can read enquiries" ON sivnco_enquiries FOR SELECT USING (true);
+CREATE POLICY "Authenticated can update enquiries" ON sivnco_enquiries FOR UPDATE USING (true);</pre>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Step 2 — Create Storage bucket</strong><br/><br/>
+          Supabase → Storage → New bucket → Name: <strong>sivnco-images</strong> → Toggle Public ON → Create. That's it.</p>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Step 3 — Connect this admin</strong><br/><br/>
+          In the sidebar: paste your Supabase Anon Key (Supabase → Settings → API → anon public key) and click Connect. Your URL is already filled in.</p>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Step 4 — Form emails via Netlify</strong><br/><br/>
+          The contact form in sivnco-v5.html already has <code style="background:var(--ink);color:var(--saffron);padding:1px 5px;">data-netlify="true"</code> added. When you drag the folder to Netlify Drop, Netlify detects this automatically and sends you an email for every submission to your Netlify account email. No extra setup. <a href="https://app.netlify.com/user/notifications" target="_blank">Check your Netlify notification settings →</a></p>
+        </div>
+
+        <div class="info-box">
+          <p><strong>Step 5 — Deploy</strong><br/><br/>
+          Put <strong>sivnco-v5.html</strong>, <strong>sivnco-admin.html</strong> in the same folder. Drag to <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a>. Done. Access your admin at <strong>yoursite.netlify.app/sivnco-admin.html</strong></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONFIG ──
+const SLOTS = [
+  {id:'gallery_featured_ja',   name:'Jus Amazin — Featured',     section:'Gallery (tall left)'},
+  {id:'gallery_energy_bar',    name:'Desi Energy Bar',            section:'Gallery'},
+  {id:'gallery_paintings',     name:'Paintings — Ongoing',        section:'Gallery'},
+  {id:'gallery_illustration',  name:'Brand Illustration',         section:'Gallery'},
+  {id:'gallery_systems',       name:'Design Systems',             section:'Gallery'},
+  {id:'pillar_jusamazin',      name:'Jus Amazin Pillar',          section:'Four Pillars'},
+  {id:'pillar_openhouse',      name:'Openhouse Pillar',           section:'Four Pillars'},
+  {id:'pillar_svarnart',       name:'Svarnart Pillar',            section:'Four Pillars'},
+  {id:'pillar_sivnco',         name:'Sivnco Studio Pillar',       section:'Four Pillars'},
+  {id:'hero_bg',               name:'Hero background',            section:'Hero'},
+  {id:'about_photo',           name:'Profile / About photo',      section:'About'},
+];
+
+let SB_URL = '', SB_KEY = '', connected = false;
+let imageData = {}; // slot id → {url, alt, caption}
+
+// ── INIT ──
+window.onload = () => {
+  const savedUrl = localStorage.getItem('sb_url') || document.getElementById('cfgUrl').value;
+  const savedKey = localStorage.getItem('sb_key') || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+  document.getElementById('cfgUrl').value = savedUrl;
+  document.getElementById('cfgKey').value = savedKey;
+  renderSlots();
+  if(savedUrl && savedKey){ SB_URL=savedUrl; SB_KEY=savedKey; fetchAll(); }
+
+  // drag over upload zone
+  const uz = document.getElementById('uploadZone');
+  uz.addEventListener('dragover',e=>{e.preventDefault();uz.classList.add('drag');});
+  uz.addEventListener('dragleave',()=>uz.classList.remove('drag'));
+  uz.addEventListener('drop',e=>{e.preventDefault();uz.classList.remove('drag');handleFiles(e.dataTransfer.files);});
+};
+
+// ── SUPABASE CONNECT ──
+async function connectSupabase(){
+  SB_URL = document.getElementById('cfgUrl').value.trim().replace(/\/$/,'');
+  SB_KEY = document.getElementById('cfgKey').value.trim();
+  if(!SB_URL||!SB_KEY){toast('Please fill in both URL and key','err');return;}
+  localStorage.setItem('sb_url', SB_URL);
+  localStorage.setItem('sb_key', SB_KEY);
+  await fetchAll();
+}
+
+async function fetchAll(){
+  setStatus('Connecting…','');
+  try{
+    const r = await sb('GET','sivnco_gallery?select=*');
+    if(!r.ok) throw new Error(await r.text());
+    const data = await r.json();
+    imageData = {};
+    data.forEach(row=>imageData[row.id]=row);
+    connected = true;
+    setStatus('Connected','ok');
+    renderSlots();
+    loadEnquiries();
+    toast('Connected to Supabase','ok');
+  }catch(e){
+    connected=false;
+    setStatus('Connection failed','err');
+    toast('Connection failed — check URL and key','err');
+  }
+}
+
+// ── SUPABASE REST ──
+function sb(method, path, body){
+  return fetch(`${SB_URL}/rest/v1/${path}`, {
+    method,
+    headers:{
+      'apikey': SB_KEY,
+      'Authorization': `Bearer ${SB_KEY}`,
+      'Content-Type': 'application/json',
+      'Prefer': method==='POST'?'return=representation':'',
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+}
+
+// ── RENDER SLOTS ──
+function renderSlots(){
+  const grid = document.getElementById('slotsGrid');
+  grid.innerHTML = SLOTS.map(slot => {
+    const d = imageData[slot.id] || {};
+    const hasImg = !!d.url;
+    return `
+    <div class="slot" id="slot_${slot.id}">
+      <div class="slot-head">
+        <div>
+          <div class="slot-name">${slot.name}</div>
+          <div class="slot-key">${slot.section} · ${slot.id}</div>
+        </div>
+        <div class="slot-status ${hasImg?'saved':'unsaved'}" id="status_${slot.id}">
+          ${hasImg ? '✓ Set' : '○ Empty'}
+        </div>
+      </div>
+      <div class="slot-preview ${hasImg?'has-img':''}" id="preview_${slot.id}">
+        <img src="${d.url||''}" alt="${d.alt||''}" ${hasImg?'class="loaded"':''} onerror="this.style.display='none'" onload="this.classList.add('loaded')"/>
+        <div class="slot-preview-empty">
+          <div class="slot-preview-icon">🖼</div>
+          <span>No image set</span>
+        </div>
+      </div>
+      <div class="slot-inp-group">
+        <div class="slot-lbl">Image URL</div>
+        <input class="slot-inp" id="url_${slot.id}" type="url" placeholder="https://…" value="${d.url||''}" oninput="previewLive('${slot.id}')"/>
+      </div>
+      <div class="slot-inp-group">
+        <div class="slot-lbl">Alt text</div>
+        <input class="slot-inp" id="alt_${slot.id}" type="text" placeholder="Describe the image" value="${d.alt||''}"/>
+      </div>
+      <div class="slot-inp-group">
+        <div class="slot-lbl">Caption (optional)</div>
+        <input class="slot-inp" id="cap_${slot.id}" type="text" placeholder="Short caption" value="${d.caption||''}"/>
+      </div>
+      <div class="slot-actions">
+        <button class="slot-save" onclick="saveSlot('${slot.id}')">Save →</button>
+        <button class="slot-clear" onclick="clearSlot('${slot.id}')">Clear</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function previewLive(id){
+  const url = document.getElementById('url_'+id).value;
+  const prev = document.getElementById('preview_'+id);
+  const img = prev.querySelector('img');
+  if(url){ img.src=url; prev.classList.add('has-img'); }
+  else { img.src=''; prev.classList.remove('has-img'); }
+}
+
+async function saveSlot(id){
+  if(!connected){toast('Not connected to Supabase','err');return;}
+  const url = document.getElementById('url_'+id).value.trim();
+  const alt = document.getElementById('alt_'+id).value.trim();
+  const cap = document.getElementById('cap_'+id).value.trim();
+  const payload = {id, url, alt, caption:cap, updated_at: new Date().toISOString()};
+  try{
+    const r = await fetch(`${SB_URL}/rest/v1/sivnco_gallery`,{
+      method:'POST',
+      headers:{
+        'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`,
+        'Content-Type':'application/json','Prefer':'resolution=merge-duplicates',
+      },
+      body:JSON.stringify(payload),
+    });
+    if(!r.ok) throw new Error(await r.text());
+    imageData[id] = payload;
+    const st = document.getElementById('status_'+id);
+    st.textContent = url ? '✓ Saved' : '○ Cleared';
+    st.className = 'slot-status '+(url?'saved':'unsaved');
+    toast(`${id} saved`,'ok');
+  }catch(e){
+    toast('Save failed: '+e.message,'err');
+  }
+}
+
+async function clearSlot(id){
+  document.getElementById('url_'+id).value='';
+  document.getElementById('alt_'+id).value='';
+  document.getElementById('cap_'+id).value='';
+  previewLive(id);
+  await saveSlot(id);
+}
+
+// ── UPLOAD ──
+async function handleFiles(files){
+  if(!connected){toast('Connect Supabase first','err');return;}
+  const results = document.getElementById('uploadResults');
+  for(const file of Array.from(files)){
+    if(file.size > 5*1024*1024){toast(`${file.name} is over 5MB — skip`,'err');continue;}
+    const ext = file.name.split('.').pop();
+    const fname = `${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
+    try{
+      const r = await fetch(`${SB_URL}/storage/v1/object/sivnco-images/${fname}`,{
+        method:'POST',
+        headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`,'Content-Type':file.type},
+        body:file,
+      });
+      if(!r.ok) throw new Error(await r.text());
+      const publicUrl = `${SB_URL}/storage/v1/object/public/sivnco-images/${fname}`;
+      const card = document.createElement('div');
+      card.className='upload-result';
+      card.innerHTML=`<img src="${publicUrl}" class="upload-result-img" alt="uploaded"/><div class="upload-result-url">${publicUrl}</div><button class="copy-btn" onclick="copyUrl('${publicUrl}',this)">Copy URL</button>`;
+      results.prepend(card);
+      toast(`${file.name} uploaded`,'ok');
+    }catch(e){toast('Upload failed: '+e.message,'err');}
+  }
+}
+
+function copyUrl(url, btn){
+  navigator.clipboard.writeText(url).then(()=>{
+    btn.textContent='Copied ✓';
+    setTimeout(()=>btn.textContent='Copy URL',2000);
+  });
+}
+
+// ── ENQUIRIES ──
+async function loadEnquiries(){
+  if(!connected) return;
+  try{
+    const r = await sb('GET','sivnco_enquiries?select=*&order=created_at.desc');
+    if(!r.ok) return;
+    const data = await r.json();
+    const list = document.getElementById('enqList');
+    if(!data.length){list.innerHTML='<div class="enq-empty">No enquiries yet.</div>';return;}
+    list.innerHTML = data.map(e=>`
+      <div class="enq-item ${e.read?'':'unread'}" id="enq_${e.id}">
+        <div>
+          <div class="enq-date">${new Date(e.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</div>
+          <div class="enq-date" style="margin-top:2px;">${new Date(e.created_at).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div>
+        </div>
+        <div>
+          <div class="enq-from">${e.name||'—'}</div>
+          <div class="enq-service">${e.service||'—'}</div>
+          <div class="enq-email">${e.email||''}</div>
+          <div class="enq-msg">${e.message||''}</div>
+        </div>
+        <button class="enq-mark" onclick="markRead('${e.id}',this)">${e.read?'✓ Read':'Mark read'}</button>
+      </div>`).join('');
+  }catch(e){}
+}
+
+async function markRead(id, btn){
+  try{
+    await fetch(`${SB_URL}/rest/v1/sivnco_enquiries?id=eq.${id}`,{
+      method:'PATCH',
+      headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`,'Content-Type':'application/json'},
+      body:JSON.stringify({read:true}),
+    });
+    btn.textContent='✓ Read';
+    document.getElementById('enq_'+id).classList.remove('unread');
+    toast('Marked as read','ok');
+  }catch(e){}
+}
+
+// ── TABS ──
+function showTab(name){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if(name==='enquiries') loadEnquiries();
+}
+
+// ── STATUS ──
+function setStatus(text, state){
+  document.getElementById('statusText').textContent=text;
+  const dot=document.getElementById('statusDot');
+  dot.className='status-dot'+(state?' '+state:'');
+}
+
+// ── TOAST ──
+function toast(msg, type){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+type;t.classList.add('show');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3500);
+}
+</script>
+</body>
+</html>
