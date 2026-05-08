@@ -1,1899 +1,1059 @@
 <!DOCTYPE html>
-<html lang="en" class="lenis lenis-smooth">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sivnco — H.P. Shivaraj</title>
-  <meta name="description" content="H P Shivaraj — Brand design, packaging, illustration. Bengaluru." />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sivnco.in/" />
-  <meta property="og:title" content="Sivnco — H.P. Shivaraj" />
-  <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
-  <meta property="og:image" content="https://framerusercontent.com/images/9LvHlrCzJWdgyGii5Gmrp4qI.png" />
-
-  <!-- Fonts: Space Grotesk for massive modern typography, Cormorant for elegance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
-    rel="stylesheet">
-
-  <!-- GSAP & Lenis -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
-
-  <style>
-    /* CSS VARIABLES */
-    :root {
-      --bg-color: #050505;
-      --text-main: #f0f0f0;
-      --text-muted: #888888;
-      --accent: #ff4d00;
-      --glass-bg: rgba(20, 20, 20, 0.4);
-      --glass-border: rgba(255, 255, 255, 0.08);
-
-      --f-sans: 'Space Grotesk', sans-serif;
-      --f-serif: 'Cormorant Garamond', serif;
-    }
-
-    /* LENIS SMOOTH SCROLL */
-    html.lenis {
-      height: auto;
-    }
-
-    .lenis.lenis-smooth {
-      scroll-behavior: auto !important;
-    }
-
-    .lenis.lenis-smooth [data-lenis-prevent] {
-      overscroll-behavior: contain;
-    }
-
-    .lenis.lenis-stopped {
-      overflow: hidden;
-    }
-
-    .lenis.lenis-scrolling iframe {
-      pointer-events: none;
-    }
-
-    /* RESET & BASE */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--f-sans);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection {
-      background: var(--text-main);
-      color: var(--bg-color);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* AMBIENT AURORA ORB */
-    .ambient-orb {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: -1;
-      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 0, 0.12) 0%, rgba(5, 5, 5, 0) 40%);
-      transition: opacity 1s ease;
-    }
-
-    /* HERO VISUAL ELEMENTS */
-    .hero-section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 6rem;
-      overflow: hidden;
-    }
-
-    .hero-grid-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
-      animation: grid-pulse 8s ease-in-out infinite;
-    }
-
-    @keyframes grid-pulse {
-
-      0%,
-      100% {
-        opacity: 0.4;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-    .hero-glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    .hero-glow-1 {
-      top: 10%;
-      left: 15%;
-      background: var(--accent);
-      animation: glow-drift-1 12s ease-in-out infinite;
-    }
-
-    .hero-glow-2 {
-      bottom: 10%;
-      right: 10%;
-      background: #6366f1;
-      animation: glow-drift-2 15s ease-in-out infinite;
-    }
-
-    @keyframes glow-drift-1 {
-
-      0%,
-      100% {
-        transform: translate(0, 0);
-      }
-
-      50% {
-        transform: translate(60px, -40px);
-      }
-    }
-
-    @keyframes glow-drift-2 {
-
-      0%,
-      100% {
-        transform: translate(0, 0);
-      }
-
-      50% {
-        transform: translate(-50px, 30px);
-      }
-    }
-
-    .hero-line {
-      position: absolute;
-      background: var(--accent);
-      opacity: 0;
-    }
-
-    .hero-line-h {
-      height: 1px;
-      width: 20vw;
-      top: 50%;
-    }
-
-    .hero-line-h.left {
-      left: 0;
-    }
-
-    .hero-line-h.right {
-      right: 0;
-    }
-
-    .hero-line-v {
-      width: 1px;
-      height: 15vh;
-      left: 50%;
-      bottom: 8vh;
-    }
-
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 3vh;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      opacity: 0;
-    }
-
-    .hero-scroll-hint .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scroll-pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scroll-pulse {
-      0% {
-        transform: scaleY(0);
-        transform-origin: top;
-        opacity: 0;
-      }
-
-      50% {
-        transform: scaleY(1);
-        transform-origin: top;
-        opacity: 1;
-      }
-
-      100% {
-        transform: scaleY(0);
-        transform-origin: bottom;
-        opacity: 0;
-      }
-    }
-
-    .hero-float-tag {
-      position: absolute;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      opacity: 0;
-    }
-
-    .hero-float-tag.tag-tl {
-      top: 22%;
-      left: 8%;
-    }
-
-    .hero-float-tag.tag-tr {
-      top: 18%;
-      right: 8%;
-    }
-
-    .hero-float-tag.tag-bl {
-      bottom: 22%;
-      left: 10%;
-    }
-
-    .hero-float-tag.tag-br {
-      bottom: 18%;
-      right: 6%;
-    }
-
-    /* TYPOGRAPHY */
-    .h-massive {
-      font-family: var(--f-sans);
-      font-size: clamp(4rem, 15vw, 15rem);
-      font-weight: 700;
-      line-height: 0.85;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-    }
-
-    .h-large {
-      font-family: var(--f-sans);
-      font-size: clamp(3rem, 8vw, 8rem);
-      font-weight: 600;
-      line-height: 0.9;
-      letter-spacing: -0.03em;
-    }
-
-    .t-serif {
-      font-family: var(--f-serif);
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .t-mono-label {
-      font-family: var(--f-sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-
-    /* UTILS */
-    .container {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 0 4vw;
-    }
-
-    .section {
-      position: relative;
-      padding: 15vh 0;
-      z-index: 1;
-    }
-
-    /* NAVIGATION */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem 4vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      mix-blend-mode: difference;
-    }
-
-    .nav-logo {
-      font-family: var(--f-sans);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-cta {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border: 1px solid var(--text-main);
-      padding: 0.8rem 1.5rem;
-      border-radius: 40px;
-      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .nav-cta:hover {
-      background: var(--text-main);
-      color: var(--bg-color);
-      transform: scale(0.96);
-    }
-
-    /* GLASSMORPHISM CARDS */
-    .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      overflow: visible;
-      position: relative;
-      transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    /* Only gallery project cards clip their images */
-    .glass-card.project-card {
-      overflow: hidden;
-    }
-
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
-      z-index: 1;
-      pointer-events: none;
-      border-radius: 12px;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Role cards in horizontal scroll need minimum height */
-    .role-card {
-      min-height: 50vh;
-      overflow: hidden;
-    }
-
-    .role-card .t-mono-label {
-      position: relative;
-      z-index: 2;
-    }
-
-    .role-card h3 {
-      position: relative;
-      z-index: 2;
-    }
-
-    .role-card p {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* REVEAL WRAPPERS */
-    .reveal-wrap {
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .reveal-text {
-      display: inline-block;
-      transform: translateY(110%);
-    }
-
-    /* CURTAIN REVEAL FOOTER */
-    .footer-wrap {
-      position: relative;
-      z-index: 0;
-      /* This sits behind the main content wrapper. When main content scrolls up, footer is revealed */
-    }
-
-    .main-wrap {
-      background-color: var(--bg-color);
-      position: relative;
-      z-index: 2;
-      margin-bottom: 100vh;
-      /* space for footer */
-    }
-
-    .footer-fixed {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background: #000;
-      z-index: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* TOP BAR */
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      background: rgba(5, 5, 5, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 0.55rem 4vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .top-bar-avail {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #4ade80;
-    }
-
-    .top-bar-avail::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-      animation: pulse-dot 2s infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(1.4);
-      }
-    }
-
-    /* NAV LINKS */
-    .nav {
-      top: 2.2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
-
-    /* HERO EXTRAS */
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid rgba(74, 222, 128, 0.4);
-      color: #4ade80;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-pill::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #4ade80;
-      animation: pulse-dot 2s infinite;
-    }
-
-    .hero-roles {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 3rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .hero-roles span {
-      position: relative;
-    }
-
-    .hero-roles span:not(:last-child)::after {
-      content: '·';
-      position: absolute;
-      right: -1.2rem;
-      opacity: 0.3;
-    }
-
-    /* MARQUEE */
-    .marquee-section {
-      overflow: hidden;
-      padding: 2rem 0;
-      border-top: 1px solid var(--glass-border);
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 4rem;
-      width: max-content;
-      animation: marquee-scroll 28s linear infinite;
-      white-space: nowrap;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .marquee-track span.sep {
-      color: var(--accent);
-    }
-
-    @keyframes marquee-scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* CASE STUDY */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    @media(max-width:768px) {
-      .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .metric-card {
-      border-left: 2px solid var(--accent);
-      padding-left: 1.5rem;
-    }
-
-    .metric-num {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      font-family: var(--f-sans);
-      line-height: 1;
-    }
-
-    .metric-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    /* EXPERIENCE TIMELINE */
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-      margin-top: 3rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .tl-item {
-      position: relative;
-      padding: 0 0 3rem 2.5rem;
-    }
-
-    .tl-dot {
-      position: absolute;
-      left: -0.45rem;
-      top: 0.2rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    .tl-date {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .tl-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .tl-company {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .tl-desc {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 600px;
-    }
-
-    /* TESTIMONIALS */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    @media(max-width:900px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .testi-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      padding: 2.5rem;
-    }
-
-    .testi-quote {
-      font-size: 3rem;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 1rem;
-      font-family: serif;
-    }
-
-    .testi-body {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    .testi-author {
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .testi-role {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.2rem;
-    }
-
-    /* PRICING */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    @media(max-width:900px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .price-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      padding: 3rem 2.5rem;
-      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .price-card.featured {
-      border-color: var(--accent);
-      background: rgba(255, 77, 0, 0.07);
-    }
-
-    .price-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .price-tier {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .price-name {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .price-amount {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 1.5rem 0 0.3rem;
-    }
-
-    .price-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    .price-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .price-features li {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .price-features li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    .price-cta {
-      display: block;
-      text-align: center;
-      border: 1px solid var(--text-main);
-      padding: 0.9rem;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .price-cta:hover {
-      background: var(--text-main);
-      color: var(--bg-color);
-    }
-
-    .price-card.featured .price-cta {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    /* ROLE CHIPS */
-    .role-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 2rem;
-    }
-
-    .chip {
-      border: 1px solid var(--glass-border);
-      padding: 0.5rem 1rem;
-      border-radius: 40px;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      background: var(--glass-bg);
-    }
-
-    /* STAGGER ANIMATION HELPERS */
-    .stagger-item {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    /* METRIC COUNTER GLOW */
-    .metric-card {
-      transition: transform 0.4s ease;
-    }
-
-    .metric-card:hover {
-      transform: translateX(6px);
-    }
-
-    .metric-card:hover .metric-num {
-      color: var(--accent);
-    }
-
-    .metric-num {
-      transition: color 0.4s ease;
-    }
-
-    /* TESTIMONIAL HOVER */
-    .testi-card {
-      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
-    }
-
-    .testi-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 77, 0, 0.3);
-    }
-
-    /* TIMELINE ITEM HOVER */
-    .tl-item {
-      transition: transform 0.4s ease;
-    }
-
-    .tl-item:hover {
-      transform: translateX(8px);
-    }
-
-    .tl-item:hover .tl-title {
-      color: var(--accent);
-    }
-
-    .tl-title {
-      transition: color 0.3s ease;
-    }
-
-    /* CHIP HOVER */
-    .chip {
-      transition: all 0.3s ease;
-    }
-
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--text-main);
-      transform: translateY(-2px);
-    }
-
-    /* RESPONSIVE: art commission grid */
-    @media(max-width:768px) {
-      .art-comm-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sivnco — H P Shivaraj · Designer · Artist · Bengaluru</title>
+<meta name="description" content="H P Shivaraj — Design & Communication Manager, Art Teacher, Studio Founder, Co-founder Svarnart. Brand design, packaging, illustration. Bengaluru."/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sivnco.in/"/>
+<meta property="og:title" content="Sivnco — H P Shivaraj · Designer · Artist · Bengaluru"/>
+<meta property="og:description" content="4 years of brand design that measurably grows businesses. Packaging, identity, illustration & art. 176% revenue impact. Open to remote projects."/>
+<meta property="og:image" content="https://framerusercontent.com/images/9LvHlrCzJWdgyGii5Gmrp4qI.png"/>
+<meta property="og:site_name" content="Sivnco"/>
+
+<link rel="canonical" href="https://sivnco.in/"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* CSS VARIABLES */
+:root {
+  /* Designer Mode (Default) */
+  --base: #fdfbf7;
+  --ink: #1a1a1a;
+  --accent: #d35400;
+  --accent2: #e8722e;
+  
+  --rule: rgba(26,26,26,0.1);
+  --rule-inv: rgba(253,251,247,0.1);
+  --text-dark: #1a1a1a;
+  --text-mid: #555555;
+  --text-light: #888888;
+  
+  --fd: 'Anton', sans-serif;
+  --fs: 'Cormorant Garamond', serif;
+  --fm: 'DM Mono', monospace;
+  
+  --paper2: #f4f0e6;
+  --paper3: #ebe5d9;
+  --cream: #ffffff;
+  --forest: #1a3a2e;
+  --gold: #c9992e;
+  --cobalt: #1a2e4a;
+}
+
+body.artist-mode {
+  /* Artist Mode */
+  --base: #f5ede0;
+  --ink: #1a3a2e;
+  --accent: #c9992e;
+  --accent2: #d4a84b;
+  
+  --rule: rgba(26,58,46,0.15);
+  --rule-inv: rgba(245,237,224,0.15);
+  --text-dark: #1a3a2e;
+  --text-mid: #4a5c54;
+  --text-light: #7a8b84;
+
+  --paper2: #efe5d4;
+  --paper3: #e6dac5;
+  --cream: #fdfbf7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+body { 
+  font-family: var(--fs); 
+  background: var(--base); 
+  color: var(--text-dark); 
+  overflow-x: hidden; 
+  cursor: none; 
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* TEXTURES */
+.grain-overlay {
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none; z-index: 9999; mix-blend-mode: multiply;
+  transition: opacity 0.6s;
+}
+body.artist-mode .grain-overlay { opacity: 0.06; }
+
+/* CURSOR */
+.c-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; transition: background 0.6s; }
+.c-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; width: 34px; height: 34px; border: 1px solid var(--accent); border-radius: 50%; transition: transform 0.15s linear, width 0.3s, height 0.3s, border-color 0.6s; opacity: 0.5; }
+.c-ring.h { width: 52px; height: 52px; opacity: 0.8; }
+
+/* MASTHEAD & TOGGLE */
+.mast { position: fixed; top: 0; left: 0; right: 0; z-index: 300; background: var(--ink); display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); transition: background 0.6s; }
+.mast-t { font-family: var(--fm); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--base); opacity: 0.6; }
+.vibe-toggle { display: flex; align-items: center; gap: 10px; cursor: none; }
+.vibe-btn { background: none; border: none; font-family: var(--fm); font-size: 0.56rem; letter-spacing: 0.12em; color: var(--base); opacity: 0.4; cursor: none; transition: opacity 0.3s; }
+.vibe-btn.active { opacity: 1; color: var(--accent2); }
+
+/* NAV */
+nav { position: fixed; top: 28px; left: 0; right: 0; z-index: 200; padding: 1.2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; transition: background 0.3s, border 0.3s, backdrop-filter 0.3s; }
+nav.on { background: rgba(253,251,247,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+body.artist-mode nav.on { background: rgba(245,237,224,0.9); }
+.nav-logo { font-family: var(--fd); font-size: 1.6rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; transition: color 0.6s; }
+.nav-logo span { color: var(--accent); transition: color 0.6s; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-a { font-family: var(--fm); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+.nav-a:hover { color: var(--accent); }
+.nav-cta { font-family: var(--fm); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--base); background: var(--accent); padding: 0.6rem 1.4rem; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.nav-cta:hover { background: var(--ink); transform: translateY(-2px); }
+
+/* HELPER CLASSES */
+.sec { padding: 8rem 2.5rem; position: relative; }
+.mono-label { font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; transition: color 0.6s; }
+.mono-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--accent); transition: background 0.6s; }
+.mono-label.inv { color: var(--accent2); }
+.mono-label.inv::before { background: var(--accent2); }
+.big-h { font-family: var(--fd); font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.9; letter-spacing: 0.02em; color: var(--ink); text-transform: uppercase; transition: color 0.6s; }
+.big-h em { font-family: var(--fs); font-style: italic; color: var(--accent); text-transform: none; }
+.big-h.light { color: var(--base); }
+.reveal-text { display: inline-block; white-space: pre-wrap; }
+
+/* REVEAL ANIMATIONS */
+.rv { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.2,1,0.3,1), transform 0.8s cubic-bezier(0.2,1,0.3,1); }
+.rv.in { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 60px; position: relative; }
+.hero-l { padding: 10rem 4rem 6rem; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.6s; }
+.hero-byline { font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.hero-name { font-family: var(--fd); font-size: clamp(6rem, 15vw, 16rem); line-height: 0.8; color: var(--ink); margin-top: 2rem; position: relative; z-index: 10; transition: color 0.6s; text-transform: uppercase; }
+.hero-name span { color: var(--accent); }
+.hero-role { font-family: var(--fs); font-style: italic; font-size: 2.2rem; color: var(--text-mid); line-height: 1.2; margin-top: auto; padding-top: 4rem; }
+.hero-sub { font-size: 1.05rem; line-height: 1.6; color: var(--text-light); font-weight: 400; max-width: 400px; margin-top: 1rem; }
+
+.hero-r { padding: 10rem 4rem 0; display: flex; flex-direction: column; }
+.hero-pill { font-family: var(--fm); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--ink); padding: 0.5rem 1.2rem; align-self: flex-start; display: flex; align-items: center; gap: 8px; transition: color 0.6s, border-color 0.6s; }
+.hero-pill::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.hero-roles { margin-top: 6rem; }
+.hero-role-row { display: flex; justify-content: space-between; padding: 1.2rem 0; border-bottom: 1px solid var(--rule); transition: padding-left 0.3s, border-color 0.6s; }
+.hero-role-row:hover { padding-left: 10px; }
+.hr-title { font-family: var(--fd); font-size: 1.4rem; color: var(--ink); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.6s; }
+.hero-role-row:hover .hr-title { color: var(--accent); }
+.hr-co { font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; }
+
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: auto; border-top: 1px solid var(--rule); background: var(--paper2); transition: background 0.6s, border-color 0.6s; }
+.h-stat { padding: 2rem; border-right: 1px solid var(--rule); transition: border-color 0.6s; }
+.h-stat:last-child { border-right: none; }
+.hs-n { font-family: var(--fd); font-size: 3.5rem; color: var(--ink); line-height: 1; transition: color 0.6s; }
+.hs-n span { color: var(--accent); }
+.hs-l { font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); margin-top: 0.5rem; }
+
+/* MARQUEE */
+.marquee { background: var(--ink); padding: 1rem 0; overflow: hidden; transition: background 0.6s; }
+.mq-inner { display: flex; white-space: nowrap; animation: mq 25s linear infinite; }
+.mq-w { font-family: var(--fd); font-size: 1.5rem; letter-spacing: 0.08em; color: var(--base); padding: 0 3rem; text-transform: uppercase; }
+.mq-sep { color: var(--accent); }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* PROJECTS GRID */
+.projects { background: var(--base); transition: background 0.6s; }
+.p-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 4rem; perspective: 1200px; }
+.p-card { display: block; text-decoration: none; background: var(--paper2); padding: 2rem; transform-style: preserve-3d; transition: transform 0.1s, background 0.6s; will-change: transform; border: 1px solid var(--rule); }
+.p-img-wrap { width: 100%; aspect-ratio: 4/3; background: var(--paper3); overflow: hidden; position: relative; transition: background 0.6s; transform: translateZ(30px); }
+.p-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: filter 0.4s, transform 0.6s; }
+.p-card:hover .p-img { filter: grayscale(0%); transform: scale(1.05); }
+.p-meta { margin-top: 1.5rem; transform: translateZ(40px); }
+.p-cat { font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.p-title { font-family: var(--fs); font-size: 1.6rem; color: var(--text-dark); margin-top: 0.4rem; font-style: italic; }
+.p-hover-btn { position: absolute; bottom: 2rem; right: 2rem; background: var(--ink); color: var(--base); font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.8rem 1.5rem; transform: translateY(20px); opacity: 0; transition: all 0.3s; pointer-events: none; }
+.p-card:hover .p-hover-btn { transform: translateY(0); opacity: 1; }
+.p-card.wide { grid-column: 1 / -1; }
+.p-card.wide .p-img-wrap { aspect-ratio: 21/9; }
+
+/* ABOUT / ARTIST SECTION */
+.about { background: var(--ink); color: var(--base); padding-top: 8rem; padding-bottom: 8rem; transition: background 0.6s; }
+.about .mono-label { color: var(--accent2); }
+.about .mono-label::before { background: var(--accent2); }
+.about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; margin-top: 3rem; }
+.about-img-wrap { width: 100%; aspect-ratio: 3/4; background: var(--paper3); position: relative; overflow: hidden; }
+.paint-reveal { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+.paint-reveal.in { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+.about-text { font-size: 1.2rem; line-height: 1.8; font-weight: 300; color: rgba(255,255,255,0.8); }
+.about-text strong { color: var(--accent2); font-weight: 400; }
+.identities { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; }
+.id-badge { font-family: var(--fm); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.2rem; border: 1px solid rgba(255,255,255,0.2); }
+
+/* MOBILE RES */
+@media(max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-l, .hero-r { padding: 6rem 2rem 3rem; border-right: none; }
+  .hero-name { font-size: 4rem; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .h-stat { border-right: none; border-bottom: 1px solid var(--rule); }
+  .p-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .sec { padding: 5rem 1.5rem; }
+  .mast { display: none; }
+  nav { top: 0; padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+}
+
+/* OTHER STYLES (Testimonials, Pricing, Footer) ... added in next chunk */
+
+/* UI/UX PRO MAX - Aurora & Hover States */
+.aurora-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(211,84,0,0.15) 0%, rgba(26,26,26,0) 50%);
+}
+body.artist-mode .aurora-bg {
+  opacity: 1;
+}
+.p-card {
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1), background 0.6s;
+}
+.p-card:hover {
+  transform: scale(0.98) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+.nav-cta {
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s, color 0.4s;
+}
+.nav-cta:hover {
+  transform: scale(0.96);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* STUDIO NAMMA TYPOGRAPHY BUFF */
+.big-h {
+  letter-spacing: 0.01em;
+  transform: translateY(0);
+}
+
+</style>
 </head>
-
 <body>
+<div class="aurora-bg" id="auroraBg"></div>
+<div class="grain-overlay"></div>
+<div class="c-dot" id="cDot"></div>
+<div class="c-ring" id="cRing"></div>
 
-  <div class="ambient-orb" id="orb"></div>
+<div class="mast">
+  <span class="mast-t">Sivnco · H P Shivaraj · Designer & Artist</span>
+  <span class="mast-t" style="margin-right: auto; margin-left: 2rem; opacity: 0.4;">Bengaluru · Remote · International</span>
+  <div class="vibe-toggle">
+    <button class="vibe-btn active" id="btnDesigner">[DESIGNER]</button>
+    <span class="mast-t">⟷</span>
+    <button class="vibe-btn" id="btnArtist">[ARTIST]</button>
+  </div>
+</div>
 
-  <!-- TOP STATUS BAR -->
-  <div class="top-bar">
-    <span>SIVNCO · H P SHIVARAJ · DESIGNER &amp; ARTIST</span>
-    <span>BENGALURU · REMOTE · INTERNATIONAL</span>
-    <span class="top-bar-avail">OPEN TO PROJECTS</span>
+<nav id="nav">
+  <a href="#" class="nav-logo">Sivnco<span>.</span></a>
+  <div class="nav-links">
+    <a href="#work" class="nav-a">Work</a>
+    <a href="#about" class="nav-a">About</a>
+    <a href="#gallery" class="nav-a">Gallery</a>
+    <a href="#pricing" class="nav-a">Work with me</a>
+    <a href="#contact" class="nav-cta">Start a project</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-byline">Visual Designer · Artist · Bengaluru</div>
+    <div class="hero-name rv in reveal-text" data-text="H.P.\nSHIVARAJ">H.P.<br/>SHIVARAJ</div>
+    <div class="hero-role rv in d1">Designer by day.<br/>Artist by soul.</div>
+    <p class="hero-sub rv in d2">4 years delivering commercial design that measurably grows brands. An art teacher, studio founder, and painter — all of it at once.</p>
+  </div>
+  <div class="hero-r">
+    <div class="hero-pill rv in d1">Open to new projects</div>
+    
+    <div class="hero-roles">
+      <div style="font-family:var(--fm);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem;">Four things I do</div>
+      <div class="hero-role-row rv in d1">
+        <span class="hr-title reveal-text" data-text="Design & Comm. Manager">Design & Comm. Manager</span>
+        <span class="hr-co">Jus Amazin</span>
+      </div>
+      <div class="hero-role-row rv in d2">
+        <span class="hr-title reveal-text" data-text="Professional Art Teacher">Professional Art Teacher</span>
+        <span class="hr-co">Openhouse</span>
+      </div>
+      <div class="hero-role-row rv in d3">
+        <span class="hr-title reveal-text" data-text="Co-founder, Academy">Co-founder, Academy</span>
+        <span class="hr-co">Svarnart</span>
+      </div>
+      <div class="hero-role-row rv in d4">
+        <span class="hr-title reveal-text" data-text="Studio Founder">Studio Founder</span>
+        <span class="hr-co">Sivnco</span>
+      </div>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="h-stat rv in d1"><div class="hs-n counter" data-target="176">0</div><div class="hs-l">Revenue impact</div></div>
+      <div class="h-stat rv in d2"><div class="hs-n"><span class="counter" data-target="15">0</span>+</div><div class="hs-l">SKUs designed</div></div>
+      <div class="h-stat rv in d3"><div class="hs-n"><span class="counter" data-target="4">0</span>+</div><div class="hs-l">Years of craft</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mq-inner">
+    <span class="mq-w">Brand Identity</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Packaging Design</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Marketing Design</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Art Education</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Design Systems</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Illustration</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Painting & Art</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Open to Remote</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    
+    <!-- Duplicate for infinite scroll -->
+    <span class="mq-w">Brand Identity</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Packaging Design</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Marketing Design</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Art Education</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Design Systems</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Illustration</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Painting & Art</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+    <span class="mq-w">Open to Remote</span><span class="mq-w"><span class="mq-sep">✦</span></span>
+  </div>
+</div>
+<!-- GALLERY -->
+<section id="gallery" class="projects sec">
+  <div class="rv">
+    <div class="mono-label">Selected gallery</div>
+    <div class="big-h reveal-text" data-text="Work that\nspeaks first.">Work that<br/>speaks first.</div>
+  </div>
+  
+  <div class="p-grid">
+    <!-- Card 1 -->
+    <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="p-card rv d1">
+      <div class="p-img-wrap" id="gImg_featured">
+        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2;">📦</div>
+      </div>
+      <div class="p-meta">
+        <div class="p-cat">Packaging · Brand System</div>
+        <div class="p-title reveal-text" data-text="Jus Amazin — full brand system, 15+ SKUs">Jus Amazin — full brand system, 15+ SKUs</div>
+        <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--text-light); margin-top: 5px;">2023–2025</div>
+      </div>
+      <div class="p-hover-btn">View Case Study ↗</div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="https://sivnco.framer.website/desi-energy-bar" target="_blank" class="p-card rv d2">
+      <div class="p-img-wrap" id="gImg_energy">
+        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2;">⚡</div>
+      </div>
+      <div class="p-meta">
+        <div class="p-cat">Packaging · Illustration</div>
+        <div class="p-title reveal-text" data-text="Desi Energy Bar">Desi Energy Bar</div>
+        <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--text-light); margin-top: 5px;">2024</div>
+      </div>
+      <div class="p-hover-btn">View Case Study ↗</div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="https://sivnco.framer.website/paintings" target="_blank" class="p-card rv d1">
+      <div class="p-img-wrap" id="gImg_paintings">
+        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2;">🎨</div>
+      </div>
+      <div class="p-meta">
+        <div class="p-cat">Painting · Personal</div>
+        <div class="p-title reveal-text" data-text="Paintings — ongoing series">Paintings — ongoing series</div>
+        <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--text-light); margin-top: 5px;">2021–Ongoing</div>
+      </div>
+      <div class="p-hover-btn">View Archive ↗</div>
+    </a>
+
+    <!-- Card 4 -->
+    <a href="https://sivnco.framer.website/illustrations" target="_blank" class="p-card rv d2">
+      <div class="p-img-wrap" id="gImg_illustration">
+        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2;">✏️</div>
+      </div>
+      <div class="p-meta">
+        <div class="p-cat">Illustration</div>
+        <div class="p-title reveal-text" data-text="Brand illustration work">Brand illustration work</div>
+        <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--text-light); margin-top: 5px;">2022–2025</div>
+      </div>
+      <div class="p-hover-btn">View Archive ↗</div>
+    </a>
+
+    <!-- Card 5 (Wide) -->
+    <a href="https://sivnco.framer.website/design-systems" target="_blank" class="p-card wide rv d1">
+      <div class="p-img-wrap" id="gImg_systems">
+        <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:0.2;">⊞</div>
+      </div>
+      <div class="p-meta">
+        <div class="p-cat">Design Systems</div>
+        <div class="p-title reveal-text" data-text="Visual systems & brand guidelines">Visual systems & brand guidelines</div>
+        <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--text-light); margin-top: 5px;">2023–2025</div>
+      </div>
+      <div class="p-hover-btn">View Case Study ↗</div>
+    </a>
   </div>
 
-  <nav class="nav" style="top:2.4rem;">
-    <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-    </div>
-    <a href="#contact" class="nav-cta">Start a Project</a>
-  </nav>
-
-  <!-- MAIN CONTENT WRAPPER -->
-  <div class="main-wrap">
-    <!-- HERO SECTION -->
-    <section class="hero-section section" id="hero">
-      <!-- Animated grid background -->
-      <div class="hero-grid-bg"></div>
-      <!-- Floating glow orbs -->
-      <div class="hero-glow hero-glow-1"></div>
-      <div class="hero-glow hero-glow-2"></div>
-      <!-- Accent lines that animate in -->
-      <div class="hero-line hero-line-h left" id="heroLineL"></div>
-      <div class="hero-line hero-line-h right" id="heroLineR"></div>
-      <div class="hero-line hero-line-v" id="heroLineV"></div>
-      <!-- Floating corner tags -->
-      <div class="hero-float-tag tag-tl" id="hTag1">EST. 2018</div>
-      <div class="hero-float-tag tag-tr" id="hTag2">BENGALURU, IN</div>
-      <div class="hero-float-tag tag-bl" id="hTag3">BRAND · PACKAGING</div>
-      <div class="hero-float-tag tag-br" id="hTag4">ART · EDUCATION</div>
-
-      <div class="container" style="position:relative; z-index:2;">
-        <div class="h-massive gs-reveal" id="heroName" style="margin-top: 0;">
-          <div class="reveal-wrap">
-            <div class="reveal-text">H.P.</div>
-          </div><br />
-          <div class="reveal-wrap">
-            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.3);">
-              SHIVARAJ</div>
-          </div>
-        </div>
-        <div class="t-serif gs-reveal" style="font-size: 1.6rem; margin-top: 2rem; color: var(--text-muted);">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Creative Director · Artist · Bengaluru</div>
-          </div>
-        </div>
-        <div class="hero-roles" id="heroRoles">
-          <span>Brand Identity</span>
-          <span>Packaging Design</span>
-          <span>Illustration</span>
-          <span>Art Education</span>
-        </div>
+  <!-- Featured Case Study Full Width -->
+  <div class="p-card wide rv d2" style="margin-top: 2rem; background: var(--forest); border: none;">
+    <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center;">
+      <div style="border-right: 1px solid rgba(255,255,255,0.1); padding-right: 2rem;">
+        <div style="font-family: var(--fm); font-size: 0.57rem; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem;">Featured case study</div>
+        <div style="font-family: var(--fd); font-size: 3rem; color: var(--cream); line-height: 1;">Jus <em>Amazin</em><br/>Brand System</div>
       </div>
-
-      <!-- Scroll hint -->
-      <div class="hero-scroll-hint" id="heroScroll">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- MARQUEE TICKER -->
-    <div class="marquee-section">
-      <div class="marquee-track">
-        <span>Marketing Design</span><span class="sep">✦</span>
-        <span>Art Education</span><span class="sep">✦</span>
-        <span>Design Systems</span><span class="sep">✦</span>
-        <span>Brand Identity</span><span class="sep">✦</span>
-        <span>Packaging</span><span class="sep">✦</span>
-        <span>Illustration</span><span class="sep">✦</span>
-        <span>Painting &amp; Art</span><span class="sep">✦</span>
-        <span>Open to Remote</span><span class="sep">✦</span>
-        <span>Marketing Design</span><span class="sep">✦</span>
-        <span>Art Education</span><span class="sep">✦</span>
-        <span>Design Systems</span><span class="sep">✦</span>
-        <span>Brand Identity</span><span class="sep">✦</span>
-        <span>Packaging</span><span class="sep">✦</span>
-        <span>Illustration</span><span class="sep">✦</span>
-        <span>Painting &amp; Art</span><span class="sep">✦</span>
-        <span>Open to Remote</span><span class="sep">✦</span>
+      <div>
+        <p style="font-size: 1rem; color: rgba(255,255,255,0.7); font-style: italic; line-height: 1.6;">Complete visual overhaul of a D2C clean nutrition brand. From scattered SKUs to a cohesive, shelf-dominant identity. 15+ products, one coherent system.</p>
+        <a href="https://sivnco.framer.website/jusamazin" target="_blank" style="display: inline-block; margin-top: 1.5rem; font-family: var(--fm); font-size: 0.65rem; color: var(--gold); text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 3px;">Read full case study ↗</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- SELECTED GALLERY -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Selected Gallery</div>
-        <h2 class="h-large gs-reveal" style="margin-bottom: 1rem;">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Work that</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">speaks</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text">first.</div>
-          </div>
-        </h2>
-
-        <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; margin-top: 4rem;">
-
-          <!-- Project 1 (Wide) -->
-          <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="glass-card project-card gs-fade"
-            style="grid-column: span 12; height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;">
-            <div class="p-img-wrap" id="gImg_featured"
-              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
-            <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Brand System · 15+ SKUs</div>
-              <h3 class="h-large" style="font-size: 3rem; margin-top: -1rem;">Jus <span class="t-serif">Amazin</span>
-              </h3>
-            </div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
-            </div>
-          </a>
-
-          <!-- Project 2 -->
-          <a href="https://sivnco.framer.website/desi-energy-bar" target="_blank"
-            class="glass-card project-card gs-fade"
-            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-            <div class="p-img-wrap" id="gImg_energy"
-              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
-            <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Packaging</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Desi Energy Bar</h3>
-            </div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
-            </div>
-          </a>
-
-          <!-- Project 3 -->
-          <a href="https://sivnco.framer.website/paintings" target="_blank" class="glass-card project-card gs-fade"
-            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-            <div class="p-img-wrap" id="gImg_paintings"
-              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
-            <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Personal Art</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Paintings</h3>
-            </div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
-            </div>
-          </a>
-
-          <!-- Project 4 -->
-          <a href="https://sivnco.framer.website/illustrations" target="_blank" class="glass-card project-card gs-fade"
-            style="grid-column: span 5; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-            <div class="p-img-wrap" id="gImg_illustration"
-              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
-            <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Illustration</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Brand Assets</h3>
-            </div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
-            </div>
-          </a>
-
-          <!-- Project 5 -->
-          <a href="https://sivnco.framer.website/design-systems" target="_blank" class="glass-card project-card gs-fade"
-            style="grid-column: span 7; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-            <div class="p-img-wrap" id="gImg_systems"
-              style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;"></div>
-            <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Guidelines</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Design Systems</h3>
-            </div>
-            <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
-            </div>
-          </a>
-        </div>
-        <div style="text-align:right; margin-top:2rem;">
-          <a href="https://sivnco.framer.website" target="_blank" class="nav-cta" style="font-size:0.75rem;">View Full
-            Portfolio &rarr;</a>
-        </div>
+<!-- FOUR PILLARS -->
+<section id="work" class="sec" style="background: var(--paper2); transition: background 0.6s;">
+  <div class="rv">
+    <div class="mono-label">What I do — all of it</div>
+    <div class="big-h reveal-text" data-text="Four roles.\nOne person.">Four roles.<br/>One person.</div>
+  </div>
+  
+  <div class="projects" style="margin-top: 4rem; background:transparent;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; background: var(--rule);">
+      
+      <!-- 01 -->
+      <div class="p-card" style="background: var(--base); border:none; border-radius:0;">
+        <div style="font-family: var(--fd); font-size: 4rem; color: var(--rule); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">01</div>
+        <div class="p-cat" style="color: var(--accent); margin-bottom: 1rem; display: inline-block; border: 1px solid var(--accent); padding: 0.3rem 0.8rem;">Full-time role</div>
+        <div class="p-title">Design & Comms Manager</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-top: 0.5rem;">Jus Amazin Foods & Beverages</div>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-mid); margin-top: 1.5rem; font-style: italic;">I lead every visual and print media process for a D2C clean nutrition brand — from packaging brief to shelf-ready file. 15+ SKU lines, brand system ownership, 3D rendering, social creatives, and production management. Promoted from Visual Communicator to Manager in 18 months.</p>
       </div>
-    </section>
 
-    <!-- FEATURED CASE STUDY -->
-    <section class="section"
-      style="background: rgba(255,77,0,0.03); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Featured Case Study</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Jus</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text">Brand System</div>
-          </div>
-        </h2>
-        <p class="gs-fade"
-          style="font-size:1.1rem; color:var(--text-muted); max-width:650px; margin-top:1.5rem; line-height:1.8;">
-          End-to-end visual identity for a D2C peanut butter brand — packaging design across 15+ SKUs, social media
-          systems, retail POS, and a complete brand guidelines document that scaled with the company.
-        </p>
-        <div class="metrics-grid gs-fade">
-          <div class="metric-card">
-            <div class="metric-num">176%</div>
-            <div class="metric-label">Revenue Growth Impact</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-num">2.5&times;</div>
-            <div class="metric-label">Brand Recall Increase</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-num">40%</div>
-            <div class="metric-label">Design Efficiency Gain</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-num">15+</div>
-            <div class="metric-label">SKUs Designed</div>
-          </div>
-        </div>
-        <div style="margin-top:3rem;">
-          <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="nav-cta">View Case Study &rarr;</a>
-        </div>
+      <!-- 02 -->
+      <div class="p-card" style="background: var(--base); border:none; border-radius:0;">
+        <div style="font-family: var(--fd); font-size: 4rem; color: var(--rule); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">02</div>
+        <div class="p-cat" style="color: var(--forest); margin-bottom: 1rem; display: inline-block; border: 1px solid var(--forest); padding: 0.3rem 0.8rem;">Teaching</div>
+        <div class="p-title">Professional Art Teacher</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--forest); text-transform: uppercase; margin-top: 0.5rem;">Openhouse Technologies</div>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-mid); margin-top: 1.5rem; font-style: italic;">Teaching Art & Design at Openhouse learning hubs. I guide students through drawing, painting, composition, and design thinking — tracking progress, building relationships with parents, and contributing to enrolment growth. Teaching keeps me grounded in craft.</p>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div style="max-width: 860px;">
-          <div class="t-mono-label gs-fade">More Than A Designer</div>
-          <h2 class="h-large gs-reveal" style="margin-bottom: 2rem;">
-            <div class="reveal-wrap">
-              <div class="reveal-text">I build visual</div>
-            </div>
-            <div class="reveal-wrap">
-              <div class="reveal-text t-serif" style="color:var(--text-muted)">languages that</div>
-            </div>
-            <div class="reveal-wrap">
-              <div class="reveal-text">earn trust.</div>
-            </div>
-          </h2>
-          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px;">
-            I'm Shiv &mdash; H P Shivaraj. I lead brand and communication design at Jus Amazin, teach art at Openhouse
-            learning hubs, and co-run Svarnart Academy with my wife. Born and raised in Namma Bengaluru, that texture
-            shows up in everything I make.
-          </p>
-          <p class="gs-fade"
-            style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px; margin-top:1.5rem;">
-            Design is how I think. Art is how I feel. Both live in everything I put out — whether it's a packaging
-            system for a D2C brand or an acrylic painting on a Saturday afternoon.
-          </p>
-          <div class="role-chips gs-fade">
-            <span class="chip">&loz; Designer</span>
-            <span class="chip">&dagger; Art Teacher</span>
-            <span class="chip">&#9670; Founder</span>
-            <span class="chip">&sube; Studio Lead</span>
-            <span class="chip">&clubs; Illustrator</span>
-            <span class="chip">&hearts; Painter</span>
-          </div>
-        </div>
+      <!-- 03 -->
+      <div class="p-card" style="background: var(--base); border:none; border-radius:0;">
+        <div style="font-family: var(--fd); font-size: 4rem; color: var(--rule); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">03</div>
+        <div class="p-cat" style="color: var(--gold); margin-bottom: 1rem; display: inline-block; border: 1px solid var(--gold); padding: 0.3rem 0.8rem;">Co-founded</div>
+        <div class="p-title">Svarnart Academy</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; margin-top: 0.5rem;">Co-founded with my wife</div>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-mid); margin-top: 1.5rem; font-style: italic;">A creative academy built from love — where Carnatic music, painting, and design education live under one roof. Co-founded with my wife, who is also my most important collaborator. Svarnart is a space where students refuse to be boxed into one discipline.</p>
       </div>
-    </section>
-    <!-- HORIZONTAL SCROLL ROLES -->
-    <section class="section" id="horizontal-sec" style="overflow: hidden; padding: 0;">
-      <div class="h-sticky" style="height: 100vh; display: flex; align-items: center;">
-        <div class="h-container"
-          style="display: flex; gap: 5vw; padding-left: 10vw; width: max-content; padding-right: 10vw;">
 
-          <div style="width: 30vw; flex-shrink: 0;">
-            <h2 class="h-large">
-              <div class="t-serif" style="color:var(--text-muted)">Four roles.</div>One person.
-            </h2>
-            <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted);">Scroll to explore my different
-              practices.</p>
-          </div>
-
-          <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
-            <div class="t-mono-label">01 / Full-time</div>
-            <h3 class="h-large" style="font-size: 3rem;">Design & Comms Manager</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Leading every
-              visual and print media process for Jus Amazin — from packaging brief to shelf-ready file. 176% revenue
-              impact.</p>
-          </div>
-
-          <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
-            <div class="t-mono-label">02 / Teaching</div>
-            <h3 class="h-large" style="font-size: 3rem;">Art & Design Teacher</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Teaching at
-              Openhouse learning hubs. Guiding students through drawing, composition, and visual thinking. It keeps me
-              grounded.</p>
-          </div>
-
-          <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
-            <div class="t-mono-label">03 / Founder</div>
-            <h3 class="h-large" style="font-size: 3rem;">Svarnart Academy</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Co-founded with
-              my wife. A space where Carnatic music, painting, and design education live under one roof.</p>
-          </div>
-
-          <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
-            <div class="t-mono-label">04 / Studio</div>
-            <h3 class="h-large" style="font-size: 3rem;">Sivnco Studio</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Independent
-              design studio for brands that care deeply about the work. From D2C packaging to complete identity systems.
-            </p>
-          </div>
-
-        </div>
+      <!-- 04 -->
+      <div class="p-card" style="background: var(--base); border:none; border-radius:0;">
+        <div style="font-family: var(--fd); font-size: 4rem; color: var(--rule); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem;">04</div>
+        <div class="p-cat" style="color: var(--cobalt); margin-bottom: 1rem; display: inline-block; border: 1px solid var(--cobalt); padding: 0.3rem 0.8rem;">Studio</div>
+        <div class="p-title">Sivnco Studio</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--cobalt); text-transform: uppercase; margin-top: 0.5rem;">Independent freelance studio</div>
+        <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-mid); margin-top: 1.5rem; font-style: italic;">My independent design studio for branding, packaging, marketing, illustration, and design systems. Built for brands that care deeply about the work. Sivnco takes on select projects — D2C, FMCG, product brands, and founders who want design that earns its keep.</p>
       </div>
-    </section>
 
-    <!-- EXPERIENCE TIMELINE -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Experience</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">The journey</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">so far.</div>
-          </div>
-        </h2>
-        <div class="timeline gs-fade">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2022 — Present</div>
-            <div class="tl-title">Design &amp; Communications Manager</div>
-            <div class="tl-company">Jus Amazin · Bengaluru</div>
-            <div class="tl-desc">Leading end-to-end visual and print media for a D2C peanut butter brand. Packaging,
-              social, POS, brand systems — built from scratch. Delivered 176% revenue impact through design.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2021 — Present</div>
-            <div class="tl-title">Art &amp; Design Teacher</div>
-            <div class="tl-company">Openhouse · Bengaluru</div>
-            <div class="tl-desc">Teaching drawing, composition, and visual thinking to students across age groups. Keeps
-              me rooted in the fundamentals of making.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2020 — Present</div>
-            <div class="tl-title">Co-Founder</div>
-            <div class="tl-company">Svarnart Academy · Bengaluru</div>
-            <div class="tl-desc">Co-founded with my wife — a creative learning space for Carnatic music, painting, and
-              design. Where education meets art.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2018 — Present</div>
-            <div class="tl-title">Founder &amp; Creative Director</div>
-            <div class="tl-company">Sivnco Studio · Independent</div>
-            <div class="tl-desc">Independent design studio for brands that care about the work. Packaging, identity,
-              illustration, and design systems for D2C and lifestyle brands.</div>
-          </div>
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about sec">
+  <div class="rv">
+    <div class="mono-label inv">About the person</div>
+    <div class="big-h light reveal-text" data-text="More than\na designer.">More than<br/>a <em>designer.</em></div>
+  </div>
+  
+  <div class="about-grid">
+    <div class="about-img-wrap paint-reveal rv d1" id="gImg_about">
+      <div style="width:100%; height:100%; background:var(--ink); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.1); font-family:var(--fd); font-size:10rem; line-height:0.8;">H.P.<br/>S.</div>
+    </div>
+    <div class="rv d2">
+      <p class="about-text">I'm <strong>Shiv</strong> — and I refuse to be one thing. During the day I lead brand and communication design at Jus Amazin, and teach art at Openhouse. I co-run Svarnart Academy with my wife. Through Sivnco I take on studio work for brands that care about craft.</p>
+      <p class="about-text" style="margin-top: 1.5rem;">But beyond the professional — I'm a <strong>painter</strong> who believes colour is a language. A <strong>writer</strong> who thinks clearly by writing first. A <strong>craftsman</strong> who believes the details are the work. I was born and raised in Namma Bengaluru, and that texture shows up in everything I make.</p>
+      
+      <div class="identities">
+        <span class="id-badge" style="color: var(--base); border-color: var(--base);">◈ Designer</span>
+        <span class="id-badge" style="color: #4caf50; border-color: #4caf50;">✦ Art Teacher</span>
+        <span class="id-badge" style="color: var(--gold); border-color: var(--gold);">♪ Svarnart Co-founder</span>
+        <span class="id-badge" style="color: var(--accent2); border-color: var(--accent2);">🎨 Painter</span>
+        <span class="id-badge" style="color: #64b5f6; border-color: #64b5f6;">✏️ Writer</span>
+        <span class="id-badge" style="color: var(--base); border-color: var(--base);">◆ Craftsman</span>
       </div>
-    </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Impact</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">In their</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">words.</div>
-          </div>
-        </h2>
-        <div class="testimonials-grid gs-fade">
-          <div class="testi-card">
-            <div class="testi-quote">"</div>
-            <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the
-              most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
-            <div class="testi-author">Jitin Kochhar</div>
-            <div class="testi-role">Co-Founder, Jus Amazin</div>
-          </div>
-          <div class="testi-card">
-            <div class="testi-quote">"</div>
-            <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial
-              clarity. He understands the brief, then exceeds it — every single time.</div>
-            <div class="testi-author">Shilpa Rao</div>
-            <div class="testi-role">Brand Consultant</div>
-          </div>
-          <div class="testi-card">
-            <div class="testi-quote">"</div>
-            <div class="testi-body">Our students love Shiv's classes. He brings a calm, observational approach to
-              teaching that makes even complex concepts feel intuitive and joyful.</div>
-            <div class="testi-author">Openhouse Team</div>
-            <div class="testi-role">Learning Hub, Bengaluru</div>
-          </div>
-        </div>
+      <div style="margin-top: 3rem; display:flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#pricing" class="nav-cta" style="background: var(--base); color: var(--ink);">Work with me</a>
+        <a href="https://www.linkedin.com/in/h-p-shivaraj-0b5023218/" target="_blank" class="nav-cta" style="background: transparent; border: 1px solid var(--base); color: var(--base);">LinkedIn →</a>
+        <a href="https://wa.me/918431272507" target="_blank" class="nav-cta" style="background: transparent; border: 1px solid #4caf50; color: #4caf50;">WhatsApp →</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<!-- TIMELINE -->
+<section class="sec" style="background: var(--paper3); transition: background 0.6s;">
+  <div class="rv">
+    <div class="mono-label">Experience</div>
+    <div class="big-h reveal-text" data-text="The journey\nso far.">The journey<br/>so far.</div>
+  </div>
 
-    <!-- PRICING -->
-    <section class="section">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Pick a Plan</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Let's build</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">something real.</div>
-          </div>
-        </h2>
-        <div class="pricing-grid gs-fade">
-          <div class="price-card">
-            <div class="price-tier">Starter</div>
-            <div class="price-name">Single Brief</div>
-            <div class="price-amount">₹15K+</div>
-            <div class="price-note">Per project · 2–3 week turnaround</div>
-            <ul class="price-features">
-              <li>1 design deliverable</li>
-              <li>2 revision rounds</li>
-              <li>Source files included</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#contact" class="price-cta">Start a Brief</a>
-          </div>
-          <div class="price-card featured">
-            <div class="price-tier">Most Popular</div>
-            <div class="price-name">Brand Build</div>
-            <div class="price-amount">₹45K+</div>
-            <div class="price-note">Full identity · 4–6 week engagement</div>
-            <ul class="price-features">
-              <li>Logo + full identity system</li>
-              <li>Packaging design (up to 4 SKUs)</li>
-              <li>Brand guidelines document</li>
-              <li>Social media kit</li>
-              <li>Unlimited revisions</li>
-            </ul>
-            <a href="#contact" class="price-cta">Build My Brand</a>
-          </div>
-          <div class="price-card">
-            <div class="price-tier">Ongoing</div>
-            <div class="price-name">Studio Partner</div>
-            <div class="price-amount">₹20K</div>
-            <div class="price-note">Per month · Retainer basis</div>
-            <ul class="price-features">
-              <li>Dedicated design hours</li>
-              <li>Monthly deliverables</li>
-              <li>Priority turnaround</li>
-              <li>Strategy calls included</li>
-            </ul>
-            <a href="#contact" class="price-cta">Become a Partner</a>
-          </div>
-        </div>
+  <div style="margin-top: 4rem; max-width: 800px;">
+    <!-- 2025 -->
+    <div class="rv d1" style="display:flex; gap: 2rem; margin-bottom: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.7rem; color: var(--text-light); text-align: right; width: 100px; flex-shrink: 0; padding-top: 0.5rem;">2025<br/><span style="color:var(--accent);">Current</span></div>
+      <div style="width: 2px; background: var(--rule); position: relative;">
+        <div style="width: 12px; height: 12px; border: 2px solid var(--accent); background: var(--paper3); border-radius: 50%; position: absolute; top: 0.3rem; left: -5px;"></div>
       </div>
-    </section>
+      <div>
+        <div style="font-family: var(--fd); font-size: 1.5rem; color: var(--ink);">Art & Design Teacher Partner</div>
+        <div style="font-family: var(--fm); font-size: 0.65rem; color: var(--accent); text-transform: uppercase; margin: 0.5rem 0;">Openhouse Technologies · Bengaluru</div>
+        <p style="font-size: 0.95rem; color: var(--text-mid); font-style: italic;">Teaching Art & Design at Openhouse learning hubs. Student progress tracking, parent relationships, and enrolment growth. Teaching as a practice that sharpens design thinking.</p>
+      </div>
+    </div>
+    
+    <!-- 2023 - 1 -->
+    <div class="rv d2" style="display:flex; gap: 2rem; margin-bottom: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.7rem; color: var(--text-light); text-align: right; width: 100px; flex-shrink: 0; padding-top: 0.5rem;">2023<br/><span style="color:var(--accent);">Current</span></div>
+      <div style="width: 2px; background: var(--rule); position: relative;">
+        <div style="width: 12px; height: 12px; border: 2px solid var(--accent); background: var(--paper3); border-radius: 50%; position: absolute; top: 0.3rem; left: -5px;"></div>
+      </div>
+      <div>
+        <div style="font-family: var(--fd); font-size: 1.5rem; color: var(--ink);">Manager — Communication Design</div>
+        <div style="font-family: var(--fm); font-size: 0.65rem; color: var(--accent); text-transform: uppercase; margin: 0.5rem 0;">Jus Amazin Foods & Beverages · Bengaluru</div>
+        <p style="font-size: 0.95rem; color: var(--text-mid); font-style: italic;">Led all visual and print communication — 15+ SKU packaging, brand identity, social media, 3D rendering, print production. 176% revenue growth FY24–25. Promoted from Visual Communicator to Manager in 18 months.</p>
+      </div>
+    </div>
 
-    <!-- ART COMMISSION -->
-    <section class="section" style="border-top:1px solid var(--glass-border);">
-      <div class="container">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+    <!-- 2023 - 2 -->
+    <div class="rv d3" style="display:flex; gap: 2rem; margin-bottom: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.7rem; color: var(--text-light); text-align: right; width: 100px; flex-shrink: 0; padding-top: 0.5rem;">2023<br/><span style="color:var(--accent);">Current</span></div>
+      <div style="width: 2px; background: var(--rule); position: relative;">
+        <div style="width: 12px; height: 12px; border: 2px solid var(--accent); background: var(--paper3); border-radius: 50%; position: absolute; top: 0.3rem; left: -5px;"></div>
+      </div>
+      <div>
+        <div style="font-family: var(--fd); font-size: 1.5rem; color: var(--ink);">Founder — Sivnco · Co-founder — Svarnart</div>
+        <div style="font-family: var(--fm); font-size: 0.65rem; color: var(--accent); text-transform: uppercase; margin: 0.5rem 0;">Independent · Bengaluru</div>
+        <p style="font-size: 0.95rem; color: var(--text-mid); font-style: italic;">Running Sivnco as a branding and design studio. Co-building Svarnart Academy with my wife — art, design, and Carnatic music education in one creative space.</p>
+      </div>
+    </div>
+    
+    <!-- 2022 -->
+    <div class="rv d1" style="display:flex; gap: 2rem; margin-bottom: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.7rem; color: var(--text-light); text-align: right; width: 100px; flex-shrink: 0; padding-top: 0.5rem;">2022<br/>2023</div>
+      <div style="width: 2px; background: var(--rule); position: relative;">
+        <div style="width: 12px; height: 12px; border: 2px solid var(--accent); background: var(--paper3); border-radius: 50%; position: absolute; top: 0.3rem; left: -5px;"></div>
+      </div>
+      <div>
+        <div style="font-family: var(--fd); font-size: 1.5rem; color: var(--ink);">Graphic Designer</div>
+        <div style="font-family: var(--fm); font-size: 0.65rem; color: var(--text-light); text-transform: uppercase; margin: 0.5rem 0;">Refresh Kid LLC · Remote · USA</div>
+        <p style="font-size: 0.95rem; color: var(--text-mid); font-style: italic;">Remote design for a US-based EdTech brand. Social media creatives, banners, marketing materials. First international client experience — async, on-time, professional.</p>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="rv d2" style="display:flex; gap: 2rem;">
+      <div style="font-family: var(--fm); font-size: 0.7rem; color: var(--text-light); text-align: right; width: 100px; flex-shrink: 0; padding-top: 0.5rem;">2021</div>
+      <div style="width: 2px; background: var(--rule); position: relative;">
+        <div style="width: 12px; height: 12px; border: 2px solid var(--accent); background: var(--paper3); border-radius: 50%; position: absolute; top: 0.3rem; left: -5px;"></div>
+      </div>
+      <div>
+        <div style="font-family: var(--fd); font-size: 1.5rem; color: var(--ink);">Multiple Internships</div>
+        <div style="font-family: var(--fm); font-size: 0.65rem; color: var(--text-light); text-transform: uppercase; margin: 0.5rem 0;">WhiteHat Jr · Muskurahat Foundation · Unschool</div>
+        <p style="font-size: 0.95rem; color: var(--text-mid); font-style: italic;">Early career across EdTech and NGO sectors — communication, marketing, sales, fundraising. Built foundations for remote work and client communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" style="background: var(--ink); color: var(--base); transition: background 0.6s;">
+  <div class="rv">
+    <div class="mono-label inv">Impact in their words</div>
+    <div class="big-h light reveal-text" data-text="Work that\nearns trust.">Work that<br/><em>earns</em> trust.</div>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+    <!-- Testimonial 1 -->
+    <div class="rv d1" style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; display: flex; flex-direction: column;">
+      <p style="font-size: 1.15rem; font-style: italic; line-height: 1.6; flex: 1; color: rgba(255,255,255,0.8);">"Shiv took a scattered product line and made the shelf speak. He didn't just design packaging — he redesigned how the brand communicated with the world. The results were impossible to argue with."</p>
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+        <div style="font-family: var(--fd); font-size: 1.1rem; color: var(--base);">Jitin Munjal</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">Co-founder & CEO · Jus Amazin Foods & Beverages</div>
+      </div>
+    </div>
+    
+    <!-- Testimonial 2 -->
+    <div class="rv d2" style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; display: flex; flex-direction: column;">
+      <p style="font-size: 1.15rem; font-style: italic; line-height: 1.6; flex: 1; color: rgba(255,255,255,0.8);">"What sets Shiv apart is that he understands the product as deeply as the design. From drawing board to print — he sees the whole chain. And he makes every constraint work in your favour."</p>
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+        <div style="font-family: var(--fd); font-size: 1.1rem; color: var(--base);">Shilpa</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">Co-founder & CEO · Jus Amazin Foods & Beverages</div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="rv d3" style="border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; display: flex; flex-direction: column;">
+      <p style="font-size: 1.15rem; font-style: italic; line-height: 1.6; flex: 1; color: rgba(255,255,255,0.8);">"Shiv brings genuine craft to teaching. Students don't just learn to draw — they start thinking like designers. He has a rare ability to make creative thinking feel natural and accessible."</p>
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+        <div style="font-family: var(--fd); font-size: 1.1rem; color: var(--base);">Openhouse Team</div>
+        <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase;">Art & Design · Openhouse Technologies · Bengaluru</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="margin-top: 4rem; background: transparent; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="h-stat rv in d1" style="border-right: 1px solid rgba(255,255,255,0.1);"><div class="hs-n counter" style="color:var(--accent2);" data-target="176">0</div><div class="hs-l" style="color:rgba(255,255,255,0.4);">Revenue growth FY24-25</div></div>
+    <div class="h-stat rv in d2" style="border-right: 1px solid rgba(255,255,255,0.1);"><div class="hs-n" style="color:var(--accent2);"><span class="counter" data-target="2.5">0</span>x</div><div class="hs-l" style="color:rgba(255,255,255,0.4);">Brand recall increase</div></div>
+    <div class="h-stat rv in d3" style="border-right: 1px solid rgba(255,255,255,0.1);"><div class="hs-n" style="color:var(--accent2);"><span class="counter" data-target="40">0</span>%</div><div class="hs-l" style="color:rgba(255,255,255,0.4);">Production efficiency gain</div></div>
+    <div class="h-stat rv in d4"><div class="hs-n" style="color:var(--accent2);"><span class="counter" data-target="12">0</span>K</div><div class="hs-l" style="color:rgba(255,255,255,0.4);">New customers in 2 months</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec" style="background: var(--paper2); transition: background 0.6s;">
+  <div class="rv">
+    <div class="mono-label">Work with me</div>
+    <div class="big-h reveal-text" data-text="Pick a plan.\nLet's build.">Pick a plan.<br/>Let's build.</div>
+  </div>
+  
+  <div class="rv d1" style="font-family:var(--fm);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);line-height:2.2;border-top:1px solid var(--rule);padding-top:1rem; margin-top: 4rem;">Responds within 24 hrs<br/>Remote-first<br/>INR & USD accepted</div>
+  <p class="rv d1" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-mid); font-style: italic; border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 1rem; max-width: 800px;">These are honest estimates based on real project scope. Every project is different — share your brief and I'll give you an exact quote. <strong>No retainer lock-ins. No hidden costs.</strong> You pay for the work, nothing else.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; margin-top: 4rem; background: var(--rule);">
+    <!-- Single Brief -->
+    <div class="rv d1" style="background: var(--base); padding: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--forest); border: 1px solid var(--forest); padding: 0.3rem 0.8rem; display: inline-block; text-transform: uppercase;">Quick brief</div>
+      <div style="font-family: var(--fd); font-size: 2.2rem; color: var(--ink); margin-top: 1.5rem;">Single Brief</div>
+      <div style="font-size: 1rem; color: var(--text-mid); font-style: italic;">One focused deliverable</div>
+      <div style="font-family: var(--fd); font-size: 3.5rem; color: var(--accent); margin-top: 1rem; line-height: 1;">₹15K<br/>– ₹50K</div>
+      <div style="font-family: var(--fm); font-size: 0.6rem; color: var(--text-light); text-transform: uppercase; margin-top: 0.5rem; margin-bottom: 1.5rem;">Per project · USD equiv. $200 – $650</div>
+      <div style="height:1px; background:var(--rule); margin-bottom:1.5rem;"></div>
+      <div style="font-family: var(--fm); font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.9rem;">What's included</div>
+      <ul style="list-style: none; color: var(--text-mid); font-size: 0.9rem; font-style: italic; display: flex; flex-direction: column; gap: 0.65rem;">
+        <li><span style="color:var(--accent);">—</span> One core deliverable — logo, single SKU label, one campaign set, or social kit</li>
+        <li><span style="color:var(--accent);">—</span> 2 concept directions with rationale</li>
+        <li><span style="color:var(--accent);">—</span> 2 rounds of revisions</li>
+        <li><span style="color:var(--accent);">—</span> Final files, print-ready or digital</li>
+        <li><span style="color:var(--accent);">—</span> 3D mockup if packaging</li>
+      </ul>
+      <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 2rem; background:transparent; border:1px solid var(--ink); color:var(--ink);">WhatsApp me →</a>
+    </div>
+
+    <!-- Brand Build -->
+    <div class="rv d2" style="background: var(--ink); padding: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--accent2); border: 1px solid var(--accent2); padding: 0.3rem 0.8rem; display: inline-block; text-transform: uppercase;">Most popular</div>
+      <div style="font-family: var(--fd); font-size: 2.2rem; color: var(--base); margin-top: 1.5rem;">Brand Build</div>
+      <div style="font-size: 1rem; color: rgba(255,255,255,0.6); font-style: italic;">Full brand or packaging system</div>
+      <div style="font-family: var(--fd); font-size: 3.5rem; color: var(--accent2); margin-top: 1rem; line-height: 1;">₹60K<br/>– ₹2L</div>
+      <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 0.5rem; margin-bottom: 1.5rem;">Per project · USD equiv. $800 – $2,500</div>
+      <div style="height:1px; background:rgba(255,255,255,0.1); margin-bottom:1.5rem;"></div>
+      <div style="font-family: var(--fm); font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.9rem;">What's included</div>
+      <ul style="list-style: none; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-style: italic; display: flex; flex-direction: column; gap: 0.65rem;">
+        <li><span style="color:var(--accent2);">—</span> Complete brand identity or full packaging line (5–15 SKUs)</li>
+        <li><span style="color:var(--accent2);">—</span> Logo, visual system, colour, typography</li>
+        <li><span style="color:var(--accent2);">—</span> Brand guidelines document</li>
+        <li><span style="color:var(--accent2);">—</span> 3D renders & production-ready files</li>
+        <li><span style="color:var(--accent2);">—</span> Marketing kit (social, print templates)</li>
+        <li><span style="color:var(--accent2);">—</span> 3 concept directions, structured revision rounds</li>
+      </ul>
+      <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 2rem; background: var(--accent2); color: var(--ink);">WhatsApp me →</a>
+    </div>
+
+    <!-- Studio Partner -->
+    <div class="rv d3" style="background: var(--base); padding: 3rem;">
+      <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--accent); border: 1px solid var(--accent); padding: 0.3rem 0.8rem; display: inline-block; text-transform: uppercase;">Ongoing</div>
+      <div style="font-family: var(--fd); font-size: 2.2rem; color: var(--ink); margin-top: 1.5rem;">Studio Partner</div>
+      <div style="font-size: 1rem; color: var(--text-mid); font-style: italic;">Monthly design partnership</div>
+      <div style="font-family: var(--fd); font-size: 3.5rem; color: var(--accent); margin-top: 1rem; line-height: 1;">₹30K<br/>– ₹60K</div>
+      <div style="font-family: var(--fm); font-size: 0.6rem; color: var(--text-light); text-transform: uppercase; margin-top: 0.5rem; margin-bottom: 1.5rem;">Per month · USD equiv. $400 – $800/mo</div>
+      <div style="height:1px; background:var(--rule); margin-bottom:1.5rem;"></div>
+      <div style="font-family: var(--fm); font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.9rem;">What's included</div>
+      <ul style="list-style: none; color: var(--text-mid); font-size: 0.9rem; font-style: italic; display: flex; flex-direction: column; gap: 0.65rem;">
+        <li><span style="color:var(--accent);">—</span> Ongoing brand & marketing design support</li>
+        <li><span style="color:var(--accent);">—</span> Monthly agreed scope — campaigns, social, packaging updates</li>
+        <li><span style="color:var(--accent);">—</span> Design system maintenance & expansion</li>
+        <li><span style="color:var(--accent);">—</span> Priority turnaround</li>
+        <li><span style="color:var(--accent);">—</span> Monthly review call</li>
+      </ul>
+      <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 2rem; background:transparent; border:1px solid var(--ink); color:var(--ink);">WhatsApp me →</a>
+    </div>
+  </div>
+
+  <!-- Art Commission Card -->
+  <div class="rv d1" style="background: var(--forest); padding: 3rem; margin-top: 2px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+    <div>
+      <div style="font-family: var(--fm); font-size: 0.55rem; color: var(--gold); border: 1px solid var(--gold); padding: 0.3rem 0.8rem; display: inline-block; text-transform: uppercase;">Art commission</div>
+      <div style="font-family: var(--fd); font-size: 2.5rem; color: var(--base); margin-top: 1.5rem;">Original Art & Illustration</div>
+      <div style="font-size: 1.05rem; color: rgba(255,255,255,0.6); font-style: italic; margin-top: 0.5rem;">Paintings, brand illustration, custom art</div>
+      <div style="font-family: var(--fd); font-size: 3rem; color: var(--gold); margin-top: 1.5rem; line-height: 1;">₹8K – ₹80K</div>
+      <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 0.5rem;">Based on size, complexity & medium · USD equiv. $100 – $1,000+</div>
+    </div>
+    <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 3rem;">
+      <ul style="list-style: none; color: rgba(255,255,255,0.7); font-size: 0.95rem; font-style: italic; display: flex; flex-direction: column; gap: 0.7rem;">
+        <li><span style="color:var(--gold); font-size:0.6rem;">✦</span> Original paintings — portrait, abstract, nature, custom concept</li>
+        <li><span style="color:var(--gold); font-size:0.6rem;">✦</span> Brand illustration for packaging or editorial</li>
+        <li><span style="color:var(--gold); font-size:0.6rem;">✦</span> Custom digital illustration for products</li>
+        <li><span style="color:var(--gold); font-size:0.6rem;">✦</span> Commissioned artwork for homes, offices, gifting</li>
+        <li><span style="color:var(--gold); font-size:0.6rem;">✦</span> Mural concepts and large format art</li>
+      </ul>
+      <p style="font-size: 1rem; color: rgba(255,255,255,0.7); font-style: italic; margin-top: 2rem;">Painting practice is what keeps the inner child alive. Every commission is personal. Share your vision and I'll tell you what's possible.</p>
+      <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 1.5rem; background: var(--gold); color: var(--ink);">WhatsApp me →</a>
+    </div>
+  </div>
+
+  <div class="rv d2" style="background: rgba(0,0,0,0.04); border-left: 2px solid var(--accent); padding: 1.5rem; margin-top: 2rem;">
+    <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-mid); font-style: italic;">All prices are indicative estimates. <strong>Every project gets a tailored quote</strong> based on your specific scope, timeline, and complexity. International clients are quoted in USD. To get a precise number, share your brief through the contact form below — I'll respond within 24 hours.</p>
+  </div>
+</section>
+
+<!-- SVARNART -->
+<section id="svarnart" class="sec" style="background: var(--forest); color: var(--base); overflow: hidden; position: relative; transition: background 0.6s;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; position: relative; z-index: 1;">
+    <div class="rl">
+      <div style="font-family: var(--fd); font-size: clamp(3.5rem, 8vw, 10rem); line-height: 0.84; letter-spacing: 0.025em; color: var(--base);">Svar<span style="color:var(--accent2);">n</span><span style="color:var(--gold);">art</span></div>
+      <div style="font-family: var(--fs); font-style: italic; font-size: 1.2rem; font-weight: 300; color: rgba(255,255,255,0.6); margin-top: 1rem;">Where music meets art. Built with love.</div>
+      
+      <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+          <div style="font-family: var(--fd); font-size: 2rem; width: 50px;">Svar</div>
           <div>
-            <div class="t-mono-label gs-fade">Art Commission</div>
-            <h2 class="h-large gs-reveal">
-              <div class="reveal-wrap">
-                <div class="reveal-text">For the love</div>
-              </div>
-              <div class="reveal-wrap">
-                <div class="reveal-text t-serif" style="color:var(--text-muted)">of craft.</div>
-              </div>
-            </h2>
+            <div style="font-size: 1rem; color: rgba(255,255,255,0.8);">Carnatic music</div>
+            <div style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem;">The sound · The note · The root</div>
           </div>
-          <div class="gs-fade">
-            <p style="font-size:1.15rem; line-height:1.9; color:var(--text-muted); margin-bottom:2rem;">
-              Original acrylic paintings, portrait commissions, and custom illustrations. Each piece is handcrafted with
-              intention — no prints, no shortcuts.
-            </p>
-            <p
-              style="font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:2rem;">
-              ● Limited slots available
-            </p>
-            <a href="#contact" class="nav-cta">Enquire for Art</a>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: baseline; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+          <div style="font-family: var(--fd); font-size: 2rem; width: 50px; color: var(--accent2);">n</div>
+          <div>
+            <div style="font-size: 1rem; color: rgba(255,255,255,0.8);">and — the connector</div>
+            <div style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem;">Bridging two worlds into one</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: baseline;">
+          <div style="font-family: var(--fd); font-size: 2rem; width: 50px; color: var(--gold);">art</div>
+          <div>
+            <div style="font-size: 1rem; color: rgba(255,255,255,0.8);">Painting, design, illustration</div>
+            <div style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.2rem;">Everything we teach · Everything we believe</div>
           </div>
         </div>
       </div>
-    </section>
-
-  </div> <!-- End of main-wrap -->
-
-  <!-- CURTAIN REVEAL FOOTER -->
-  <div class="footer-fixed" id="contact">
-    <div class="container" style="width: 100%; text-align: center;">
-      <h2 class="h-massive">
-        <div class="t-serif" style="color:var(--text-muted)">Let's build</div>something that
-        <div class="t-serif" style="color:var(--accent)">earns its keep.</div>
-      </h2>
-
-      <div style="max-width: 600px; margin: 4rem auto 0; text-align: left;">
-        <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;" data-netlify="true"
-          name="contact">
-          <input type="hidden" name="form-name" value="contact" />
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <input type="text" name="name" placeholder="Name" required
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
-            <input type="email" name="email" placeholder="Email" required
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
-          </div>
-          <select name="service"
-            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
-            <option value="" style="background: #000;">Select a service</option>
-            <option style="background: #000;">Brand Identity</option>
-            <option style="background: #000;">Packaging Design</option>
-            <option style="background: #000;">Studio Partner</option>
-            <option style="background: #000;">Art Commission</option>
-          </select>
-          <textarea name="message" placeholder="What are we building?" rows="4" required
-            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px; resize: vertical;"></textarea>
-
-          <button type="submit" class="nav-cta"
-            style="align-self: center; background: var(--text-main); color: var(--bg-color); cursor: pointer; border: none;">Send
-            Brief</button>
-          <div id="formStatus"
-            style="font-size: 0.8rem; color: var(--accent); text-align: center; display: none; margin-top: 1rem;">
-            Message received. I'll be in touch.</div>
-        </form>
+    </div>
+    
+    <div class="rr">
+      <div class="mono-label inv" style="color: rgba(255,255,255,0.5);">About Svarnart</div>
+      <p style="font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 300;">Svarnart is not just an academy — it is a vision co-built with my wife. A space where creativity is not one discipline but many. Where a student might learn to paint in the morning and understand rhythm in the afternoon.</p>
+      <p style="font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 300; margin-top: 1rem;">We believe the most interesting creative minds are the ones that refuse to be boxed in. Svarnart was built for them.</p>
+      
+      <div style="background: rgba(0,0,0,0.2); border-left: 2px solid var(--accent); padding: 1.5rem; margin-top: 2rem;">
+        <p style="font-style: italic; color: rgba(255,255,255,0.8);">"The name carries everything we believe in — Svar for music, n for the bond between us, art for everything we love to teach. My wife is my co-founder and my most important collaboration."</p>
+        <div style="font-family: var(--fm); font-size: 0.6rem; color: var(--accent); margin-top: 0.8rem;">— Shiv, co-founder of Svarnart</div>
       </div>
-
-      <div style="margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-        <a href="https://www.instagram.com/sivnco/" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">Instagram</a>
-        <a href="https://www.linkedin.com/in/hpshivaraj/" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">LinkedIn</a>
-        <a href="https://wa.me/918431272507" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">WhatsApp</a>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;">
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Carnatic music</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Painting</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Illustration</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Graphic design</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Colour theory</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Visual thinking</span>
+        <span style="font-family: var(--fm); font-size: 0.6rem; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);">Composition</span>
       </div>
-      <div
-        style="margin-top:1.5rem; display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; font-size:0.8rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase;">
-        <a href="mailto:hp.shivaraj@sivnco.in" style="color:var(--text-muted);">hp.shivaraj@sivnco.in</a>
-        <span>Bengaluru, India</span>
-        <a href="https://sivnco.framer.website" target="_blank" style="color:var(--text-muted);">Portfolio</a>
-      </div>
-      <div
-        style="margin-top:1.5rem; font-size:0.75rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; opacity:0.5;">
-        Designed with intent. SIVNCO &copy; 2024–2025.
-      </div>
+      
+      <a href="https://svarnart.com" target="_blank" class="nav-cta" style="display: inline-block; margin-top: 2rem; background: transparent; border: 1px solid var(--gold); color: var(--gold);">Visit svarnart.com ↗</a>
     </div>
   </div>
+</section>
 
-  <script>
-    // --- INITIALIZE LENIS (Smooth Scrolling) ---
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
+<!-- CONTACT -->
+<section id="contact" class="sec" style="background: var(--ink); color: var(--base); position: relative; overflow: hidden; transition: background 0.6s;">
+  <!-- Huge background text -->
+  <div style="position: absolute; bottom: -5%; left: -2%; font-family: var(--fd); font-size: 26vw; color: rgba(255,255,255,0.015); line-height: 1; pointer-events: none; z-index: 0;">HELLO</div>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; position: relative; z-index: 1;">
+    <div class="rl">
+      <div class="mono-label inv">Get in touch</div>
+      <div class="big-h light reveal-text" data-text="Let's\nbuild\ngreat.">Let's<br/>build<br/><em>great.</em></div>
+      <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.6); font-weight: 300; margin-top: 2rem; max-width: 400px; font-style: italic;">Whether you need a packaging system, a brand identity, a design system, an illustration, or an art commission — share your brief. I usually respond within 24 hours.</p>
+    </div>
+    
+    <div class="rr">
+      <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;" data-netlify="true" name="contact">
+        <input type="hidden" name="form-name" value="contact"/>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <input type="text" name="name" placeholder="Your Name" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; color: var(--base); font-family: var(--fs); font-size: 1.1rem; width: 100%; outline: none;" onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <input type="email" name="email" placeholder="Email Address" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; color: var(--base); font-family: var(--fs); font-size: 1.1rem; width: 100%; outline: none;" onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+        </div>
+        <select name="service" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; color: var(--base); font-family: var(--fs); font-size: 1.1rem; width: 100%; outline: none; appearance: none; border-radius: 0;" onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+          <option value="" style="background: var(--ink);">Select a service</option>
+          <option style="background: var(--ink);">Brand Identity — Single Brief (₹15K–₹50K)</option>
+          <option style="background: var(--ink);">Brand Build — Full system (₹60K–₹2L)</option>
+          <option style="background: var(--ink);">Studio Partner — Monthly retainer (₹30K–₹60K/mo)</option>
+          <option style="background: var(--ink);">Art Commission / Original painting</option>
+          <option style="background: var(--ink);">Packaging Design</option>
+          <option style="background: var(--ink);">Marketing Design</option>
+          <option style="background: var(--ink);">Design System</option>
+          <option style="background: var(--ink);">Svarnart — Art & Music Education</option>
+          <option style="background: var(--ink);">Full-time / Contract role</option>
+          <option style="background: var(--ink);">Something else — let me explain</option>
+        </select>
+        <textarea name="message" placeholder="What are you building? What does success look like? Any timeline or budget in mind?" rows="4" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; color: var(--base); font-family: var(--fs); font-size: 1.1rem; width: 100%; outline: none; resize: vertical;" onfocus="this.style.borderColor='var(--accent2)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+        <button type="submit" class="nav-cta" style="align-self: flex-start; border: none; font-size: 0.8rem; padding: 1rem 2rem; cursor: none;">Send brief →</button>
+        <div id="formStatus" style="font-family: var(--fm); font-size: 0.7rem; color: var(--accent2); display: none; text-transform: uppercase;">Got it — I'll reply within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--ink); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 1rem; transition: background 0.6s;">
+  <div style="font-family: var(--fd); font-size: 1.2rem; color: rgba(255,255,255,0.5);">Sivnco<span style="color:var(--accent2);">.</span></div>
+  <div style="font-family: var(--fm); font-size: 0.6rem; color: rgba(255,255,255,0.3); text-transform: uppercase;">© 2023–2026 H P Shivaraj · All rights reserved</div>
+</footer>
+
+<script>
+// --- VIBE TOGGLE ---
+const btnDesigner = document.getElementById('btnDesigner');
+const btnArtist = document.getElementById('btnArtist');
+
+btnDesigner.addEventListener('click', () => {
+  document.body.classList.remove('artist-mode');
+  btnDesigner.classList.add('active');
+  btnArtist.classList.remove('active');
+});
+
+btnArtist.addEventListener('click', () => {
+  document.body.classList.add('artist-mode');
+  btnArtist.classList.add('active');
+  btnDesigner.classList.remove('active');
+});
+
+// --- MAGNETIC CURSOR ---
+const cDot = document.getElementById('cDot');
+const cRing = document.getElementById('cRing');
+let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+let rx = mx, ry = my;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX;
+  my = e.clientY;
+  cDot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
+  const aurora = document.getElementById('auroraBg');
+  if (aurora) {
+    aurora.style.setProperty('--mouse-x', `${mx}px`);
+    aurora.style.setProperty('--mouse-y', `${my}px`);
+  }
+});
+
+function animateCursor() {
+  rx += (mx - rx) * 0.2;
+  ry += (my - ry) * 0.2;
+  cRing.style.transform = `translate(${rx - 17}px, ${ry - 17}px)`;
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Magnetic snap & expand
+document.querySelectorAll('a, button, .p-card, input, textarea, select').forEach(el => {
+  el.addEventListener('mouseenter', () => cRing.classList.add('h'));
+  el.addEventListener('mouseleave', () => cRing.classList.remove('h'));
+});
+
+// --- TEXT BLUR REVEAL ---
+class BlurReveal {
+  constructor(el) {
+    this.el = el;
+    const text = el.getAttribute('data-text') || el.innerText;
+    const lines = text.split('\n');
+    let html = '';
+    lines.forEach(line => {
+      html += '<span style="display:block; overflow:hidden; padding-bottom: 0.1em; line-height: 1.1;">';
+      const words = line.split(' ');
+      words.forEach(word => {
+        html += '<span class="reveal-word" style="display:inline-block; transform:translateY(110%); filter:blur(10px); opacity:0; transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.8s ease-out, opacity 0.8s ease-out; margin-right: 0.2em;">' + word + '</span>';
+      });
+      html += '</span>';
     });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Integrate Lenis with GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
+    this.el.innerHTML = html;
+  }
+  start() {
+    const words = this.el.querySelectorAll('.reveal-word');
+    words.forEach((word, index) => {
+      setTimeout(() => {
+        word.style.transform = 'translateY(0)';
+        word.style.filter = 'blur(0px)';
+        word.style.opacity = '1';
+      }, index * 45); // Stagger by 45ms
     });
-    gsap.ticker.lagSmoothing(0, 0);
+  }
+}
 
-    // --- AMBIENT ORB CURSOR TRACKING ---
-    const orb = document.getElementById('orb');
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-      orb.style.setProperty('--mouse-x', `${mx}px`);
-      orb.style.setProperty('--mouse-y', `${my}px`);
-    });
-
-    // =============================================
-    // HERO ENTRANCE TIMELINE (cinematic stagger)
-    // =============================================
-    const heroTL = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-    // Name text reveals with blur
-    heroTL.fromTo('#heroName .reveal-text',
-      { y: "110%", filter: "blur(12px)", opacity: 0 },
-      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.4, stagger: 0.15 },
-      0.5
-    );
-
-    // Tagline
-    heroTL.fromTo('.hero-section .t-serif .reveal-text',
-      { y: "110%", filter: "blur(8px)", opacity: 0 },
-      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.2 },
-      1.2
-    );
-
-    // Role tags stagger in
-    heroTL.fromTo('#heroRoles span',
-      { y: 15, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, stagger: 0.12 },
-      1.6
-    );
-
-    // Accent lines draw in
-    heroTL.fromTo('#heroLineL',
-      { width: 0, opacity: 0 },
-      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
-      1.8
-    );
-    heroTL.fromTo('#heroLineR',
-      { width: 0, opacity: 0 },
-      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
-      1.8
-    );
-    heroTL.fromTo('#heroLineV',
-      { height: 0, opacity: 0 },
-      { height: "15vh", opacity: 0.3, duration: 1, ease: "power2.inOut" },
-      2.0
-    );
-
-    // Corner floating tags
-    heroTL.fromTo(['#hTag1', '#hTag2', '#hTag3', '#hTag4'],
-      { opacity: 0, y: 10 },
-      { opacity: 0.4, y: 0, duration: 0.8, stagger: 0.1 },
-      2.2
-    );
-
-    // Scroll hint
-    heroTL.fromTo('#heroScroll',
-      { opacity: 0, y: -10 },
-      { opacity: 0.6, y: 0, duration: 0.8 },
-      2.8
-    );
-
-    // Hero scroll-out: parallax the content up and fade
-    gsap.to('.hero-section .container', {
-      y: -100,
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: "top top",
-        end: "bottom top",
-        scrub: true
+// --- INTERSECTION OBSERVER ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      
+      if (entry.target.classList.contains('reveal-text')) {
+        new BlurReveal(entry.target).start();
       }
-    });
-
-    // =============================================
-    // GSAP SCROLL ANIMATIONS
-    // =============================================
-
-    // 1. Text Reveals (Blur & Slide Up) — skip hero ones (already animated)
-    document.querySelectorAll('.gs-reveal').forEach(wrapper => {
-      if (wrapper.closest('.hero-section')) return; // skip hero
-      const texts = wrapper.querySelectorAll('.reveal-text');
-      if (!texts.length) return;
-      gsap.fromTo(texts,
-        { y: "110%", filter: "blur(10px)", opacity: 0 },
-        {
-          y: "0%",
-          filter: "blur(0px)",
-          opacity: 1,
-          duration: 1.2,
-          ease: "power4.out",
-          stagger: 0.08,
-          scrollTrigger: {
-            trigger: wrapper,
-            start: "top 85%",
+      if (entry.target.classList.contains('counter') && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = true;
+        const target = parseFloat(entry.target.getAttribute('data-target'));
+        let count = 0;
+        const speed = target / 60; 
+        const updateCount = () => {
+          count += speed;
+          if (count < target) {
+            entry.target.innerText = Number.isInteger(target) ? Math.ceil(count) : count.toFixed(1);
+            requestAnimationFrame(updateCount);
+          } else {
+            entry.target.innerText = target;
           }
-        }
-      );
-    });
-
-    // 2. Simple Fades
-    document.querySelectorAll('.gs-fade').forEach(el => {
-      gsap.fromTo(el,
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-          }
-        }
-      );
-    });
-
-    // 3. Horizontal Scroll
-    const hSec = document.getElementById('horizontal-sec');
-    const hCont = document.querySelector('.h-container');
-
-    if (hSec && hCont) {
-      gsap.to(hCont, {
-        x: () => -(hCont.scrollWidth - window.innerWidth) + "px",
-        ease: "none",
-        scrollTrigger: {
-          trigger: hSec,
-          start: "top top",
-          end: () => "+=" + (hCont.scrollWidth - window.innerWidth),
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true
-        }
-      });
-
-      // (Role card opacity animation removed so all cards appear equally visible)
+        };
+        updateCount();
+      }
     }
+  });
+}, { threshold: 0.1 });
 
-    // 4. Timeline Items — staggered entrance
-    gsap.fromTo('.tl-item',
-      { x: -30, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '.timeline',
-          start: "top 80%"
-        }
-      }
-    );
+document.querySelectorAll('.rv, .rl, .rr, .paint-reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal-text').forEach(el => observer.observe(el));
+document.querySelectorAll('.counter').forEach(el => observer.observe(el));
 
-    // 5. Testimonial Cards — staggered pop
-    gsap.fromTo('.testi-card',
-      { y: 50, opacity: 0, scale: 0.95 },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '.testimonials-grid',
-          start: "top 80%"
-        }
-      }
-    );
+// --- 3D CARD TILT ---
+const cards = document.querySelectorAll('.p-card');
+cards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10; 
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  });
+});
 
-    // 6. Pricing Cards — staggered rise
-    gsap.fromTo('.price-card',
-      { y: 60, opacity: 0, rotateX: 8 },
-      {
-        y: 0,
-        opacity: 1,
-        rotateX: 0,
-        duration: 0.9,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '.pricing-grid',
-          start: "top 80%"
-        }
-      }
-    );
+// --- NAV SCROLL STATE ---
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('on');
+  } else {
+    nav.classList.remove('on');
+  }
+});
 
-    // 7. Metric Counter Animation
-    function animateCounter(el) {
-      const text = el.textContent.trim();
-      const numMatch = text.match(/[\d.]+/);
-      if (!numMatch) return;
-      const target = parseFloat(numMatch[0]);
-      const suffix = text.replace(numMatch[0], '');
-      const isDecimal = text.includes('.');
-      const obj = { val: 0 };
+// --- FORM SUBMISSION ---
+const form = document.getElementById('contactForm');
+const statusDiv = document.getElementById('formStatus');
 
-      gsap.to(obj, {
-        val: target,
-        duration: 2,
-        ease: "power2.out",
-        onUpdate: () => {
-          el.textContent = (isDecimal ? obj.val.toFixed(1) : Math.round(obj.val)) + suffix;
-        },
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          once: true
-        }
-      });
-    }
-    document.querySelectorAll('.metric-num').forEach(animateCounter);
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  
+  const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
+  const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
 
-    // 8. Metric cards stagger
-    gsap.fromTo('.metric-card',
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '.metrics-grid',
-          start: "top 85%"
-        }
-      }
-    );
-
-    // 9. Role chips stagger
-    gsap.fromTo('.chip',
-      { scale: 0.8, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.08,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: '.role-chips',
-          start: "top 85%"
-        }
-      }
-    );
-
-    // 10. Section headings parallax
-    document.querySelectorAll('.section .h-large').forEach(h => {
-      if (h.closest('.hero-section') || h.closest('.h-container')) return;
-      gsap.to(h, {
-        y: -20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: h,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
     });
 
-    // --- FORM SUBMISSION ---
-    const form = document.getElementById('contactForm');
-    const statusDiv = document.getElementById('formStatus');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
-      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
-
-      try {
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
-
-        await fetch(`${SB_URL}/rest/v1/sivnco_enquiries`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SB_KEY,
-            'Authorization': `Bearer ${SB_KEY}`
-          },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email,
-            service: data.service,
-            message: data.message
-          })
-        });
-
-        statusDiv.style.display = 'block';
-        form.reset();
-        setTimeout(() => statusDiv.style.display = 'none', 5000);
-      } catch (err) {
-        statusDiv.innerText = "Error sending message. Please try email.";
-        statusDiv.style.color = "red";
-        statusDiv.style.display = 'block';
-      }
+    await fetch(`${SB_URL}/rest/v1/sivnco_enquiries`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SB_KEY,
+        'Authorization': `Bearer ${SB_KEY}`
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        service: data.service,
+        message: data.message
+      })
     });
 
-    // --- SUPABASE GALLERY IMAGE LOADER ---
-    (async function loadSivncoImages() {
-      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
-      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+    statusDiv.style.display = 'block';
+    form.reset();
+    setTimeout(() => statusDiv.style.display = 'none', 5000);
+  } catch (err) {
+    statusDiv.innerText = "Error sending message. Please try email.";
+    statusDiv.style.color = "red";
+    statusDiv.style.display = 'block';
+  }
+});
 
-      const SLOT_MAP = {
-        'gallery_featured_ja': 'gImg_featured',
-        'gallery_energy_bar': 'gImg_energy',
-        'gallery_paintings': 'gImg_paintings',
-        'gallery_illustration': 'gImg_illustration',
-        'gallery_systems': 'gImg_systems',
-      };
+// --- SUPABASE GALLERY IMAGE LOADER ---
+(async function loadSivncoImages() {
+  const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
+  const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+  
+  const SLOT_MAP = {
+    'gallery_featured_ja':   'gImg_featured',
+    'gallery_energy_bar':    'gImg_energy',
+    'gallery_paintings':     'gImg_paintings',
+    'gallery_illustration':  'gImg_illustration',
+    'gallery_systems':       'gImg_systems',
+    'about_photo':           'gImg_about',
+  };
 
-      try {
-        const r = await fetch(`${SB_URL}/rest/v1/sivnco_gallery?select=*`, {
-          headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
-        });
-        if (!r.ok) return;
-        const rows = await r.json();
-
-        rows.forEach(row => {
-          if (!row.url || !SLOT_MAP[row.id]) return;
-          const el = document.getElementById(SLOT_MAP[row.id]);
-          if (!el) return;
-
-          el.innerHTML = '';
-
-          const img = document.createElement('img');
-          img.src = row.url;
-          img.alt = row.alt || '';
-          img.style.cssText = 'width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);';
-
-          // Image zoom on hover via parent class
-          el.parentElement.addEventListener('mouseenter', () => img.style.transform = 'scale(1.05)');
-          el.parentElement.addEventListener('mouseleave', () => img.style.transform = 'scale(1)');
-
-          el.appendChild(img);
-        });
-      } catch (e) { }
-    })();
-  </script>
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/sivnco_gallery?select=*`, {
+      headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
+    });
+    if (!r.ok) return;
+    const rows = await r.json();
+    
+    rows.forEach(row => {
+      if (!row.url || !SLOT_MAP[row.id]) return;
+      const el = document.getElementById(SLOT_MAP[row.id]);
+      if (!el) return;
+      
+      el.innerHTML = '';
+      
+      if (row.id === 'about_photo') {
+        el.style.backgroundImage = `url(${row.url})`;
+        el.style.backgroundSize = 'cover';
+        el.style.backgroundPosition = 'center';
+      } else {
+        const img = document.createElement('img');
+        img.src = row.url;
+        img.alt = row.alt || '';
+        img.className = 'p-img';
+        img.style.cssText = 'width:100%; height:100%; object-fit:cover; transition: filter 0.4s, transform 0.6s;';
+        el.appendChild(img);
+      }
+    });
+  } catch(e) {}
+})();
+</script>
 </body>
-
 </html>
