@@ -1,335 +1,248 @@
+'use client'
 import Head from 'next/head'
 import Link from 'next/link'
+import { motion } from 'motion/react'
+
+const ease = [0.16, 1, 0.3, 1]
+const fadeUp = { initial:{opacity:0,y:40}, whileInView:{opacity:1,y:0}, viewport:{once:true,margin:'-60px'}, transition:{duration:0.9,ease} }
+const fadeIn = { initial:{opacity:0}, whileInView:{opacity:1}, viewport:{once:true}, transition:{duration:0.8,ease} }
+const stagger = (i) => ({ ...fadeUp, transition:{duration:0.9,ease,delay:i*0.1} })
+
+const METRICS = [
+  {n:'176%', l:'Revenue Growth FY24–25'},
+  {n:'40%', l:'Production Efficiency'},
+  {n:'15+', l:'SKUs Designed'},
+  {n:'3D', l:'Render-based Presence'},
+]
+const DELIVERABLES = [
+  'Packaging Design (15+ SKUs)','3D Product Renders','Brand Guidelines Document',
+  'Social Media Templates','Retail POS Materials','Energy Bar Range',
+  'Superfoods Packaging','Snack Pack Range','Design Process System',
+]
+const RESULTS = [
+  '176% revenue growth in FY 2024–25 — directly from improved brand visibility and packaging coherence at retail.',
+  'Production efficiency up 40% — even as 80% remains manual, the design pipeline is significantly leaner.',
+  'Visual presence elevated as product presentation shifted from photo-based to 3D render-based.',
+  'Streamlined process: drawing board → iterations → final design → proofing → print & production.',
+  'Product portfolio structured across all SKUs with a master brand document guiding future extensions.',
+]
+const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-founder & CEO'},{i:'SH',n:'Shilpa',r:'Co-founder & CEO'}]
+const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amarjit Singh',r:'Sales Head'},{i:'SG',n:'Siddharth G',r:'Production Executive'},{i:'BH',n:'Bhoomika',r:'Quality Analyst'}]
+
+const CSS = `
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Bebas Neue',sans-serif;--S:'Cormorant Garamond',serif;--M:'DM Mono',monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--S);overflow-x:hidden;cursor:none}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:9999}
+#dot{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,opacity .25s}
+#dot.lg{width:36px;height:36px;background:transparent;border:1.5px solid var(--accent);opacity:.7}
+a{color:inherit;text-decoration:none}
+.c{max-width:1200px;margin:0 auto;padding:0 5vw}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
+.back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem 1.5rem;border:1px solid var(--border);border-radius:40px;transition:.3s}
+.back:hover{border-color:var(--accent);color:var(--accent)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--border)}
+.eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
+.hero-title{font-family:var(--D);font-size:clamp(6rem,16vw,15rem);line-height:.88;text-transform:uppercase}
+.hero-title i{color:var(--accent);font-style:italic;font-family:var(--S);display:block}
+.hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.3rem);color:var(--muted);max-width:540px;line-height:1.85;margin-top:2rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
+.meta label{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.4rem}
+.meta span{font-family:var(--S);font-size:1rem;color:var(--ink)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.metric{background:var(--bg);padding:3.5rem 2rem;text-align:center;position:relative;overflow:hidden;transition:background .4s}
+.metric:hover{background:rgba(212,96,10,.06)}
+.metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
+.metric:hover::before{opacity:1}
+.m-n{font-family:var(--D);font-size:clamp(3.5rem,7vw,6.5rem);color:var(--accent);line-height:1}
+.m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.8rem}
+section{padding:9rem 0;border-bottom:1px solid var(--border)}
+.s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem}
+.s-title{font-family:var(--D);font-size:clamp(3.5rem,7vw,8rem);line-height:.88;text-transform:uppercase;margin-bottom:3rem}
+.s-title i{font-family:var(--S);color:var(--muted);font-style:italic}
+.body{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--muted);max-width:660px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.col{background:var(--bg);padding:2.5rem;transition:background .3s}
+.col:hover{background:rgba(212,96,10,.04)}
+.col-h{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.col-b{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--muted)}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 220px;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.slot{background:var(--glass);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1.5rem;transition:background .3s}
+.slot:hover{background:rgba(212,96,10,.06)}
+.slot.tall{grid-row:span 2}
+.slot.wide{grid-column:span 2}
+.slot-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.07;font-family:var(--D);font-size:.9rem;letter-spacing:.12em}
+.slot-cap{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);position:relative;z-index:2}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.ba-side{background:var(--bg);padding:3rem}
+.ba-side.a{background:rgba(212,96,10,.03)}
+.ba-tag{font-family:var(--M);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem 1rem;border:1px solid var(--border);display:inline-block;border-radius:20px;margin-bottom:1.5rem}
+.ba-side.a .ba-tag{border-color:var(--accent);color:var(--accent)}
+.ba-b{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--muted)}
+.dels{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.del{background:var(--bg);padding:1.8rem 2rem;display:flex;align-items:center;gap:1rem;transition:background .3s}
+.del:hover{background:rgba(212,96,10,.04)}
+.del-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.del-t{font-family:var(--M);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.forest{background:var(--forest);border-top:1px solid rgba(240,237,230,.06);border-bottom:1px solid rgba(240,237,230,.06)}
+.team-g{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,96,10,.7);margin-bottom:1.5rem;margin-top:3rem}
+.team-g:first-child{margin-top:3.5rem}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(240,237,230,.06);border:1px solid rgba(240,237,230,.06)}
+.tcard{background:var(--forest);padding:2rem;display:flex;align-items:center;gap:1.4rem;transition:background .3s}
+.tcard:hover{background:rgba(30,58,47,.6)}
+.av{width:48px;height:48px;border-radius:50%;background:rgba(240,237,230,.05);border:1px solid rgba(240,237,230,.1);display:flex;align-items:center;justify-content:center;font-family:var(--D);font-size:1rem;color:var(--accent);flex-shrink:0}
+.t-name{font-family:var(--D);font-size:1.2rem;letter-spacing:.02em;color:#F0EDE6}
+.t-role{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,230,.4);margin-top:.2rem}
+.rlist{list-style:none;margin-top:4rem;display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border)}
+.ritem{background:var(--bg);padding:2.5rem;display:flex;gap:2.5rem;align-items:flex-start;transition:background .3s}
+.ritem:hover{background:rgba(212,96,10,.04)}
+.r-n{font-family:var(--D);font-size:3rem;color:var(--accent);line-height:1;width:36px;flex-shrink:0}
+.r-t{font-family:var(--S);font-size:1.08rem;line-height:1.85;color:var(--muted)}
+.pfooter{padding:5rem 0 3.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+.pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
+.cta{font-family:var(--M);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:.9rem 2.2rem;border-radius:40px;transition:.3s}
+.cta:hover{background:var(--accent);color:#fff}
+@media(max-width:900px){.three,.ba,.tgrid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}.slot.tall{grid-row:span 1}.dels{grid-template-columns:1fr 1fr}.pfooter{flex-direction:column;gap:2rem;text-align:center}}
+`
 
 export default function JusAmazin() {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Jus Amazin — Case Study · Sivnco</title>
-        <meta name="description" content="End-to-end brand system for Jus Amazin — packaging across 15+ SKUs, 176% revenue growth." />
+        <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
       </Head>
-      <style>{`
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        :root{
-          --bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.5);
-          --accent:#D4600A;--glass:rgba(240,237,230,0.04);--border:rgba(240,237,230,0.1);
-          --forest:#1E3A2F;
-          --f-display:'Bebas Neue',sans-serif;
-          --f-serif:'Cormorant Garamond',serif;
-          --f-mono:'DM Mono',monospace;
-        }
-        html{scroll-behavior:smooth}
-        body{background:var(--bg);color:var(--ink);font-family:var(--f-serif);cursor:none;overflow-x:hidden}
-        body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");opacity:.035;pointer-events:none;z-index:9999}
-        #cursor{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
-        #cursor.big{width:32px;height:32px;background:transparent;border:1.5px solid var(--accent)}
-        a{color:inherit;text-decoration:none}
-        .container{max-width:1200px;margin:0 auto;padding:0 4rem}
-        /* NAV */
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;border-bottom:1px solid var(--border);background:rgba(10,9,6,0.85);backdrop-filter:blur(12px)}
-        .nav-logo{font-family:var(--f-display);font-size:1.4rem;letter-spacing:0.05em}
-        .nav-back{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--border);padding:0.6rem 1.4rem;border-radius:40px;transition:all .3s}
-        .nav-back:hover{border-color:var(--accent);color:var(--accent)}
-        /* HERO */
-        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:10rem 4rem 6rem;position:relative;border-bottom:1px solid var(--border)}
-        .hero-eyebrow{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
-        .hero-title{font-family:var(--f-display);font-size:clamp(5rem,14vw,14rem);line-height:0.88;text-transform:uppercase}
-        .hero-title em{font-family:var(--f-serif);color:var(--accent);font-style:italic;display:block}
-        .hero-sub{font-family:var(--f-serif);font-size:clamp(1.1rem,2vw,1.4rem);color:var(--muted);max-width:560px;line-height:1.8;margin-top:2.5rem}
-        .hero-meta{display:flex;gap:4rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
-        .meta-item label{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.5rem}
-        .meta-item span{font-family:var(--f-serif);font-size:1rem;color:var(--ink)}
-        /* METRICS */
-        .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-        .metric{background:var(--bg);padding:3rem 2.5rem;text-align:center}
-        .metric-n{font-family:var(--f-display);font-size:clamp(3rem,6vw,6rem);color:var(--accent);line-height:1}
-        .metric-l{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.75rem}
-        /* SECTIONS */
-        section{padding:8rem 0;border-bottom:1px solid var(--border)}
-        .label{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem}
-        .section-title{font-family:var(--f-display);font-size:clamp(3rem,6vw,7rem);line-height:0.9;text-transform:uppercase;margin-bottom:2rem}
-        .section-title em{font-family:var(--f-serif);color:var(--muted);font-style:italic}
-        .body-text{font-family:var(--f-serif);font-size:1.15rem;line-height:1.9;color:var(--muted);max-width:680px}
-        /* 3-COL GRID */
-        .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem}
-        .col-card{border:1px solid var(--border);padding:2.5rem;border-radius:4px}
-        .col-head{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-        .col-body{font-family:var(--f-serif);font-size:1.05rem;line-height:1.85;color:var(--muted)}
-        /* IMAGE MOSAIC */
-        .mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 220px;gap:1rem;margin-top:4rem}
-        .mosaic-slot{background:var(--glass);border:1px solid var(--border);border-radius:4px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1.5rem}
-        .mosaic-slot.tall{grid-row:span 2}
-        .mosaic-slot.wide{grid-column:span 2}
-        .mosaic-label{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);position:relative;z-index:2}
-        .mosaic-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.1;font-family:var(--f-display);font-size:1rem;letter-spacing:0.1em}
-        /* BEFORE AFTER */
-        .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:4rem;border:1px solid var(--border)}
-        .ba-side{background:var(--bg);padding:3rem}
-        .ba-side.after{background:rgba(212,96,10,0.04)}
-        .ba-tag{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;padding:0.4rem 1rem;border:1px solid var(--border);display:inline-block;border-radius:20px}
-        .ba-side.after .ba-tag{border-color:var(--accent);color:var(--accent)}
-        .ba-body{font-family:var(--f-serif);font-size:1.05rem;line-height:1.85;color:var(--muted)}
-        /* DELIVERABLES */
-        .deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
-        .del-item{border:1px solid var(--border);padding:1.5rem 2rem;border-radius:4px;display:flex;align-items:center;gap:1rem}
-        .del-icon{font-family:var(--f-display);font-size:1.5rem;color:var(--accent)}
-        .del-name{font-family:var(--f-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink)}
-        /* TEAM */
-        .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
-        .team-group-label{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;grid-column:span 2}
-        .team-card{border:1px solid var(--border);padding:2rem;border-radius:4px;display:flex;align-items:center;gap:1.5rem}
-        .team-avatar{width:52px;height:52px;border-radius:50%;background:var(--glass);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:1.2rem;color:var(--accent);flex-shrink:0}
-        .team-name{font-family:var(--f-display);font-size:1.3rem;letter-spacing:0.02em}
-        .team-role{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem}
-        /* RESULTS */
-        .results-list{list-style:none;margin-top:3rem;display:flex;flex-direction:column;gap:1.5rem}
-        .results-list li{display:flex;gap:2rem;align-items:flex-start;padding:2rem;border:1px solid var(--border);border-radius:4px}
-        .result-num{font-family:var(--f-display);font-size:2.5rem;color:var(--accent);line-height:1;flex-shrink:0;width:40px}
-        .result-text{font-family:var(--f-serif);font-size:1.05rem;line-height:1.8;color:var(--muted)}
-        /* FOREST SECTION */
-        .forest-section{background:var(--forest);border-top:1px solid rgba(240,237,230,0.08);border-bottom:1px solid rgba(240,237,230,0.08)}
-        /* FOOTER NAV */
-        .page-footer{padding:6rem 0 4rem;display:flex;align-items:center;justify-content:space-between}
-        .footer-brand{font-family:var(--f-display);font-size:1.5rem;letter-spacing:0.05em}
-        .footer-note{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
-        .cta-btn{font-family:var(--f-mono);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:0.9rem 2.2rem;border-radius:40px;transition:all .3s;display:inline-block}
-        .cta-btn:hover{background:var(--accent);color:#fff}
-        /* RESPONSIVE */
-        @media(max-width:900px){
-          .container{padding:0 1.5rem}
-          nav{padding:1.2rem 1.5rem}
-          .hero{padding:8rem 1.5rem 4rem}
-          .metrics{grid-template-columns:repeat(2,1fr)}
-          .three-col{grid-template-columns:1fr}
-          .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-          .mosaic-slot.tall{grid-row:span 1}
-          .ba-grid{grid-template-columns:1fr}
-          .deliverables{grid-template-columns:1fr 1fr}
-          .team-grid{grid-template-columns:1fr}
-          .hero-meta{flex-wrap:wrap;gap:2rem}
-          .page-footer{flex-direction:column;gap:2rem;text-align:center}
-        }
-      `}</style>
+      <style>{CSS}</style>
+      <div id="dot" />
 
-      <div id="cursor"></div>
-
-      {/* NAV */}
       <nav>
-        <Link href="/" className="nav-logo">SIVNCO<span style={{color:'var(--accent)'}}>.</span></Link>
-        <Link href="/" className="nav-back">← Back to Portfolio</Link>
+        <Link href="/" className="logo">SIVNCO<span style={{color:'var(--accent)'}}>.</span></Link>
+        <Link href="/" className="back">← Portfolio</Link>
       </nav>
 
       {/* HERO */}
       <div className="hero">
-        <div className="container">
-          <div className="hero-eyebrow">Case Study · Brand Identity · 2022 — Present</div>
-          <h1 className="hero-title">
-            Jus<br/>
-            <em>Amazin</em>
-          </h1>
-          <p className="hero-sub">
-            End-to-end visual identity for a D2C peanut butter brand — packaging design across 15+ SKUs, social media systems, retail POS, and a brand guidelines document that scaled with the company.
-          </p>
-          <div className="hero-meta">
-            <div className="meta-item"><label>Client</label><span>Jus Amazin Pvt. Ltd.</span></div>
-            <div className="meta-item"><label>Role</label><span>Design &amp; Communications Manager</span></div>
-            <div className="meta-item"><label>Year</label><span>2022 — Present</span></div>
-            <div className="meta-item"><label>Category</label><span>Brand · Packaging · Social</span></div>
-          </div>
+        <div className="c">
+          <motion.div className="eyebrow" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.8,ease}}>Case Study · Brand Identity · 2022 — Present</motion.div>
+          <motion.h1 className="hero-title" initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1.1,ease,delay:.1}}>
+            Jus<br/><i>Amazin</i>
+          </motion.h1>
+          <motion.p className="hero-sub" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.9,ease,delay:.35}}>
+            End-to-end brand system for a D2C peanut butter brand — packaging across 15+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
+          </motion.p>
+          <motion.div className="hero-meta" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.8,ease,delay:.6}}>
+            {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2022 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
+              <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
       {/* METRICS */}
       <div className="metrics">
-        <div className="metric"><div className="metric-n">176%</div><div className="metric-l">Revenue Growth</div></div>
-        <div className="metric"><div className="metric-n">40%</div><div className="metric-l">Production Efficiency</div></div>
-        <div className="metric"><div className="metric-n">15+</div><div className="metric-l">SKUs Designed</div></div>
-        <div className="metric"><div className="metric-n">3D</div><div className="metric-l">Render-based Presence</div></div>
+        {METRICS.map((m,i)=>(
+          <motion.div key={m.n} className="metric" {...stagger(i)}>
+            <div className="m-n">{m.n}</div>
+            <div className="m-l">{m.l}</div>
+          </motion.div>
+        ))}
       </div>
 
       {/* BRIEF */}
-      <section>
-        <div className="container">
-          <div className="label">01 — The Brief</div>
-          <h2 className="section-title">Strong product.<br/><em>No identity.</em></h2>
-          <div className="three-col">
-            <div className="col-card">
-              <div className="col-head">01 — Challenge</div>
-              <div className="col-body">A D2C peanut butter brand with great product quality but no coherent visual identity. Every SKU looked different. Retail shelf pickup was weak. The brand had no consistent story.</div>
-            </div>
-            <div className="col-card">
-              <div className="col-head">02 — Approach</div>
-              <div className="col-body">Built a complete visual system from scratch — packaging logic, colour codes per variant, photography to 3D render migration, social media templates, POS materials, and a brand guidelines document.</div>
-            </div>
-            <div className="col-card">
-              <div className="col-head">03 — Outcome</div>
-              <div className="col-body">176% revenue growth in FY 2024–25. Streamlined design process from drawing board to production. Cohesive product portfolio across all SKUs and retail touchpoints.</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section><div className="c">
+        <motion.div className="s-label" {...fadeUp}>01 — The Brief</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>Strong product.<br/><i>No identity.</i></motion.h2>
+        <motion.div className="three" {...fadeIn}>
+          {[['01 — Challenge','Strong product quality, zero coherent visual identity. Every SKU looked different. Retail shelf pickup was weak. No consistent brand story.'],['02 — Approach','Built a complete visual system from scratch — packaging logic, variant colour codes, photo→3D migration, social templates, POS, and a brand guidelines doc.'],['03 — Outcome','176% revenue growth in FY 2024–25. Streamlined pipeline from drawing board to production. Cohesive portfolio across all SKUs and retail touchpoints.']].map(([h,b])=>(
+            <div key={h} className="col"><div className="col-h">{h}</div><div className="col-b">{b}</div></div>
+          ))}
+        </motion.div>
+      </div></section>
 
-      {/* IMAGE MOSAIC */}
-      <section style={{paddingTop:0}}>
-        <div className="container">
-          <div className="label">02 — Visual System</div>
-          <h2 className="section-title">Packaging<br/><em>at scale.</em></h2>
-          <div className="mosaic">
-            <div className="mosaic-slot tall">
-              <div className="mosaic-ghost">HERO PRODUCT SHOT</div>
-              <span className="mosaic-label">Core Packaging Range</span>
-            </div>
-            <div className="mosaic-slot">
-              <div className="mosaic-ghost">3D RENDER</div>
-              <span className="mosaic-label">3D Pack Render</span>
-            </div>
-            <div className="mosaic-slot">
-              <div className="mosaic-ghost">SUPERFOODS</div>
-              <span className="mosaic-label">Superfoods Range</span>
-            </div>
-            <div className="mosaic-slot wide">
-              <div className="mosaic-ghost">BRAND GUIDELINES SPREAD</div>
-              <span className="mosaic-label">Brand Guidelines Document</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* MOSAIC */}
+      <section style={{paddingTop:0,borderBottom:'1px solid var(--border)'}}><div className="c">
+        <motion.div className="s-label" {...fadeUp}>02 — Visual System</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>Packaging<br/><i>at scale.</i></motion.h2>
+        <motion.div className="mosaic" {...fadeIn}>
+          <div className="slot tall"><div className="slot-ghost">HERO PRODUCT SHOT</div><span className="slot-cap">Core Packaging Range</span></div>
+          <div className="slot"><div className="slot-ghost">3D RENDER</div><span className="slot-cap">3D Pack Render</span></div>
+          <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods Range</span></div>
+          <div className="slot wide"><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></div>
+        </motion.div>
+      </div></section>
 
-      {/* BEFORE AFTER */}
-      <section>
-        <div className="container">
-          <div className="label">03 — Transformation</div>
-          <h2 className="section-title">Before<br/><em>and after.</em></h2>
-          <div className="ba-grid">
-            <div className="ba-side before">
-              <div className="ba-tag">Before — 2021</div>
-              <p className="ba-body">Generic label printing. No system. Each SKU was a different brand. Photo-based imagery that didn't translate well to small pack sizes. No shelf-ready files, no brand rationale document. Design was reactive, not strategic.</p>
-            </div>
-            <div className="ba-side after">
-              <div className="ba-tag">After — 2022 onwards</div>
-              <p className="ba-body">Unified visual language. 15+ SKUs with coherent colour logic, typography, and photography direction migrated to 3D renders. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* BEFORE / AFTER */}
+      <section><div className="c">
+        <motion.div className="s-label" {...fadeUp}>03 — Transformation</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>Before<br/><i>and after.</i></motion.h2>
+        <motion.div className="ba" {...fadeIn}>
+          <div className="ba-side"><div className="ba-tag">Before — 2021</div><p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand. Photo imagery that didn't translate to small pack sizes. No shelf-ready files, no rationale document.</p></div>
+          <div className="ba-side a"><div className="ba-tag">After — 2022 onwards</div><p className="ba-b">Unified visual language. 15+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
+        </motion.div>
+      </div></section>
 
       {/* DELIVERABLES */}
-      <section>
-        <div className="container">
-          <div className="label">04 — What Was Delivered</div>
-          <h2 className="section-title">Full<br/><em>system.</em></h2>
-          <div className="deliverables">
-            {[
-              ['◆','Packaging Design','15+ SKUs across all variants'],
-              ['◆','3D Product Renders','Replacing photo-based imagery'],
-              ['◆','Brand Guidelines','Complete document for team use'],
-              ['◆','Social Media System','Templates &amp; content direction'],
-              ['◆','Retail POS Materials','Shelf &amp; display materials'],
-              ['◆','Energy Bar Range','Desi Energy Bar packaging'],
-              ['◆','Superfoods Range','Packaging solution 2024'],
-              ['◆','Snack Pack Range','Packaging design 2024'],
-              ['◆','Design Process','Drawing board to production flow'],
-            ].map(([icon, name, sub]) => (
-              <div key={name} className="del-item">
-                <span className="del-icon">{icon}</span>
-                <div>
-                  <div className="del-name" dangerouslySetInnerHTML={{__html: name}} />
-                  <div style={{fontFamily:'var(--f-serif)',fontSize:'0.85rem',color:'var(--muted)',marginTop:'0.2rem'}}>{sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section><div className="c">
+        <motion.div className="s-label" {...fadeUp}>04 — Deliverables</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>Full<br/><i>system.</i></motion.h2>
+        <motion.div className="dels" {...fadeIn}>
+          {DELIVERABLES.map(d=>(
+            <div key={d} className="del"><div className="del-dot"/><div className="del-t">{d}</div></div>
+          ))}
+        </motion.div>
+      </div></section>
 
-      {/* TEAM — forest bg */}
-      <section className="forest-section">
-        <div className="container">
-          <div className="label" style={{color:'rgba(240,237,230,0.5)'}}>05 — The People</div>
-          <h2 className="section-title">Who we<br/><em>worked with.</em></h2>
-          <div className="team-grid">
-            <div className="team-group-label">Founders &amp; Leadership</div>
-            {[
-              ['JM','Jitin Munjal','Co-founder &amp; CEO'],
-              ['SH','Shilpa','Co-founder &amp; CEO'],
-            ].map(([init, name, role]) => (
-              <div key={init} className="team-card">
-                <div className="team-avatar">{init}</div>
-                <div>
-                  <div className="team-name">{name}</div>
-                  <div className="team-role" dangerouslySetInnerHTML={{__html: role}} />
-                </div>
-              </div>
-            ))}
-            <div className="team-group-label" style={{marginTop:'2rem'}}>Colleagues &amp; Collaborators</div>
-            {[
-              ['RK','Roshan Kulranjan','Vice President'],
-              ['AS','Amarjit Singh','Sales Head'],
-              ['SG','Siddharth G','Production Executive'],
-              ['BH','Bhoomika','Quality Analyst'],
-            ].map(([init, name, role]) => (
-              <div key={init} className="team-card">
-                <div className="team-avatar" style={{fontSize:'0.9rem'}}>{init}</div>
-                <div>
-                  <div className="team-name">{name}</div>
-                  <div className="team-role">{role}</div>
-                </div>
-              </div>
-            ))}
+      {/* TEAM */}
+      <section className="forest"><div className="c">
+        <motion.div className="s-label" style={{color:'rgba(212,96,10,.65)'}} {...fadeUp}>05 — The People</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>Who we<br/><i>worked with.</i></motion.h2>
+        <motion.div {...fadeIn}>
+          <div className="team-g">Founders &amp; Leadership</div>
+          <div className="tgrid">
+            {TEAM_A.map(t=><div key={t.i} className="tcard"><div className="av">{t.i}</div><div><div className="t-name">{t.n}</div><div className="t-role">{t.r}</div></div></div>)}
           </div>
-        </div>
-      </section>
+          <div className="team-g">Colleagues &amp; Collaborators</div>
+          <div className="tgrid">
+            {TEAM_B.map(t=><div key={t.i} className="tcard"><div className="av">{t.i}</div><div><div className="t-name">{t.n}</div><div className="t-role">{t.r}</div></div></div>)}
+          </div>
+        </motion.div>
+      </div></section>
 
       {/* RESULTS */}
-      <section>
-        <div className="container">
-          <div className="label">06 — The Results</div>
-          <h2 className="section-title">What the<br/><em>numbers say.</em></h2>
-          <ul className="results-list">
-            <li><span className="result-num">01</span><span className="result-text">176% revenue growth in the financial year 2024–25 — directly attributable to improved brand visibility and packaging coherence at retail.</span></li>
-            <li><span className="result-num">02</span><span className="result-text">Increased production efficiency by 40% — even as 80% of production remains manual due to operational constraints, the design pipeline is significantly leaner.</span></li>
-            <li><span className="result-num">03</span><span className="result-text">Brand visual presence increased overall as product presentation switched from photo-based to 3D render-based — sharper, more scalable, and more premium on shelf.</span></li>
-            <li><span className="result-num">04</span><span className="result-text">Streamlined design process from drawing board → design iterations → final design → proofing → print &amp; production. Every step now has a clear owner and output standard.</span></li>
-            <li><span className="result-num">05</span><span className="result-text">Product portfolio structured proficiently — all SKUs organised by variant, size, and market segment, with a master brand document guiding all future extensions.</span></li>
-          </ul>
-        </div>
-      </section>
+      <section><div className="c">
+        <motion.div className="s-label" {...fadeUp}>06 — Results</motion.div>
+        <motion.h2 className="s-title" {...stagger(1)}>What the<br/><i>numbers say.</i></motion.h2>
+        <motion.ul className="rlist" {...fadeIn}>
+          {RESULTS.map((r,i)=>(
+            <li key={i} className="ritem"><span className="r-n">0{i+1}</span><span className="r-t">{r}</span></li>
+          ))}
+        </motion.ul>
+      </div></section>
 
       {/* FOOTER */}
-      <div className="container">
-        <div className="page-footer">
-          <div>
-            <div className="footer-brand">SIVNCO<span style={{color:'var(--accent)'}}>.</span></div>
-            <div className="footer-note" style={{marginTop:'0.5rem'}}>Bengaluru · Remote · International</div>
-          </div>
-          <Link href="/#contact" className="cta-btn">Start a Project →</Link>
-        </div>
+      <div className="c">
+        <motion.div className="pfooter" {...fadeUp}>
+          <div><div className="pf-brand">SIVNCO<span style={{color:'var(--accent)'}}>.</span></div></div>
+          <Link href="/#contact" className="cta">Start a Project →</Link>
+        </motion.div>
       </div>
 
       <script dangerouslySetInnerHTML={{__html:`
-        // Cursor
-        var c=document.getElementById('cursor');
-        document.addEventListener('mousemove',function(e){c.style.left=e.clientX+'px';c.style.top=e.clientY+'px'});
+        var dot=document.getElementById('dot');
+        var tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty;
+        document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
+        (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;dot.style.left=cx+'px';dot.style.top=cy+'px';requestAnimationFrame(loop)})();
         document.querySelectorAll('a,button').forEach(function(el){
-          el.addEventListener('mouseenter',function(){c.classList.add('big')});
-          el.addEventListener('mouseleave',function(){c.classList.remove('big')});
+          el.addEventListener('mouseenter',function(){dot.classList.add('lg')});
+          el.addEventListener('mouseleave',function(){dot.classList.remove('lg')});
         });
-        // Animate metrics on scroll
-        var observer=new IntersectionObserver(function(entries){
-          entries.forEach(function(entry){
-            if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)'}
-          });
-        },{threshold:0.1});
-        document.querySelectorAll('.metric,.col-card,.del-item,.team-card,.results-list li').forEach(function(el){
-          el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';
-          observer.observe(el);
-        });
-      `}} />
+      `}}/>
     </>
   )
 }
