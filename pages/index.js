@@ -48,7 +48,6 @@ export async function getStaticProps() {
   const fullBody = bodyMatch ? bodyMatch[1] : ''
 
   // Separate the inline <script> block at the end from the HTML
-  // The last <script>...</script> block is the site logic
   const lastScriptMatch = fullBody.match(/([\s\S]*)<script>([\s\S]*)<\/script>\s*$/)
 
   let bodyHTML = fullBody
@@ -59,14 +58,44 @@ export async function getStaticProps() {
     inlineScript = lastScriptMatch[2]
   }
 
+  // Strip data-netlify attributes — Next.js plugin v5 cannot assemble prerendered
+  // content with these. Form submission is handled via fetch instead (see below).
+  bodyHTML = bodyHTML
+    .replace(/\s*data-netlify="true"/g, '')
+    .replace(/\s*data-netlify-honeypot="[^"]*"/g, '')
+    .replace(/<input[^>]*name="form-name"[^>]*>/g, '')
+
   // Extract the <style> block from <head> and inject it into body
   const styleMatch = raw.match(/<style>([\s\S]*?)<\/style>/i)
   const inlineCSS = styleMatch ? `<style>${styleMatch[1]}</style>` : ''
 
+  // Append fetch-based Netlify Forms submission (Next.js plugin v5 migration)
+  const formFetchScript = `
+// Netlify Forms via fetch (Next.js plugin v5 migration)
+(function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    data.append('form-name', 'contact');
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).then(function() {
+      var status = document.getElementById('formStatus');
+      if (status) { status.style.display = 'block'; }
+      form.reset();
+    }).catch(function(err) { console.error('Form error:', err); });
+  });
+})();
+`
+
   return {
     props: {
       bodyHTML: inlineCSS + bodyHTML,
-      inlineScript,
+      inlineScript: inlineScript + formFetchScript,
     },
   }
 }
