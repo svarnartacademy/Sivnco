@@ -487,6 +487,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow-y: auto;
+      padding: 2rem 0;
     }
 
     /* TOP BAR */
@@ -1977,62 +1979,79 @@
 
   <!-- CURTAIN REVEAL FOOTER -->
   <div class="footer-fixed" id="contact">
-    <div class="container" style="width: 100%; text-align: center;">
-      <h2 class="h-massive">
-        <div class="t-serif" style="color:var(--text-muted)">Let's build</div>something that
-        <div class="t-serif" style="color:var(--accent)">earns its keep.</div>
-      </h2>
+    <div class="container" style="width: 100%;">
 
-      <div style="max-width: 600px; margin: 4rem auto 0; text-align: left;">
-        <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;" data-netlify="true"
-          name="contact">
-          <input type="hidden" name="form-name" value="contact" />
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <input type="text" name="name" placeholder="Name" required
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
-            <input type="email" name="email" placeholder="Email" required
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
+      <!-- 2-col layout: headline left, form right -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+
+        <!-- LEFT: Headline + social links -->
+        <div>
+          <div class="t-mono-label" style="color: var(--accent); margin-bottom: 1rem;">Let's work together</div>
+          <h2 style="font-family: var(--f-display); font-size: clamp(3rem, 6vw, 7rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 1.5rem;">
+            Let's build<br>
+            something<br>
+            <span class="t-serif" style="color: var(--accent); font-size: 0.85em;">that earns<br>its keep.</span>
+          </h2>
+          <p style="font-family: var(--f-serif); font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; max-width: 380px; margin-bottom: 2rem;">
+            Based in Bengaluru. Available for remote projects worldwide.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <a href="https://www.instagram.com/sivnco/" target="_blank" class="nav-cta"
+              style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main); font-size:0.7rem;">Instagram</a>
+            <a href="https://www.linkedin.com/in/hpshivaraj/" target="_blank" class="nav-cta"
+              style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main); font-size:0.7rem;">LinkedIn</a>
+            <a href="https://wa.me/918431272507" target="_blank" class="nav-cta"
+              style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main); font-size:0.7rem;">WhatsApp</a>
           </div>
-          <select name="service"
-            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px;">
-            <option value="" style="background: #000;">Select a service</option>
-            <option style="background: #000;">Brand Identity</option>
-            <option style="background: #000;">Packaging Design</option>
-            <option style="background: #000;">Studio Partner</option>
-            <option style="background: #000;">Art Commission</option>
-          </select>
-          <textarea name="message" placeholder="What are we building?" rows="4" required
-            style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; color: var(--text-main); font-family: var(--f-sans); font-size: 1rem; outline: none; border-radius: 8px; resize: vertical;"></textarea>
+          <div style="font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 2;">
+            <a href="mailto:hp.shivaraj@sivnco.in" style="color:var(--text-muted); display:block;">hp.shivaraj@sivnco.in</a>
+            <span>Bengaluru, India</span>
+          </div>
+        </div>
 
-          <button type="submit" class="nav-cta"
-            style="align-self: center; background: var(--text-main); color: var(--bg-color); cursor: pointer; border: none;">Send
-            Brief</button>
-          <div id="formStatus"
-            style="font-size: 0.8rem; color: var(--accent); text-align: center; display: none; margin-top: 1rem;">
-            Message received. I'll be in touch.</div>
-        </form>
+        <!-- RIGHT: Contact form -->
+        <div>
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;" data-netlify="true" name="contact">
+            <input type="hidden" name="form-name" value="contact" />
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <input type="text" name="name" placeholder="Name" required
+                style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px;">
+              <input type="email" name="email" placeholder="Email" required
+                style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px;">
+            </div>
+            <select name="service"
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-mono); font-size: 0.8rem; outline: none; border-radius: 8px; letter-spacing: 0.05em;">
+              <option value="" style="background: #000;">Select a service</option>
+              <option style="background: #000;">Brand Identity</option>
+              <option style="background: #000;">Packaging Design</option>
+              <option style="background: #000;">Studio Partner</option>
+              <option style="background: #000;">Art Commission</option>
+            </select>
+            <textarea name="message" placeholder="What are we building?" rows="4" required
+              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px; resize: vertical;"></textarea>
+            <button type="submit" class="nav-cta"
+              style="align-self: flex-start; background: var(--accent); color: #fff; cursor: pointer; border-color: var(--accent); padding: 0.9rem 2.5rem;">Send Brief &rarr;</button>
+            <div id="formStatus"
+              style="font-family: var(--f-mono); font-size: 0.75rem; color: var(--accent); display: none; margin-top: 0.5rem;">
+              Message received. I'll be in touch.
+            </div>
+          </form>
+        </div>
+
       </div>
 
-      <div style="margin-top:2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-        <a href="https://www.instagram.com/sivnco/" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">Instagram</a>
-        <a href="https://www.linkedin.com/in/hpshivaraj/" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">LinkedIn</a>
-        <a href="https://wa.me/918431272507" target="_blank" class="nav-cta"
-          style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main);">WhatsApp</a>
+      <!-- Footer footnote -->
+      <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div style="font-family: var(--f-display); font-size: 1.2rem; letter-spacing: 0.05em;">SIVNCO<span style="color:var(--accent);">.</span></div>
+        <div style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6;">Designed with intent &copy; 2024&ndash;2025</div>
+        <a href="https://sivnco.framer.website" target="_blank" style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);">Full Portfolio &rarr;</a>
       </div>
-      <div
-        style="margin-top:1.5rem; display:flex; flex-wrap:wrap; justify-content:center; gap:3rem; font-size:0.8rem; color:var(--text-muted); letter-spacing:0.08em; text-transform:uppercase;">
-        <a href="mailto:hp.shivaraj@sivnco.in" style="color:var(--text-muted);">hp.shivaraj@sivnco.in</a>
-        <span>Bengaluru, India</span>
-        <a href="https://sivnco.framer.website" target="_blank" style="color:var(--text-muted);">Portfolio</a>
-      </div>
-      <div
-        style="margin-top:1.5rem; font-size:0.75rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; opacity:0.5;">
-        Designed with intent. SIVNCO &copy; 2024–2025.
-      </div>
+
     </div>
   </div>
+
+
+
 
   <script>
     // --- INITIALIZE LENIS (Smooth Scrolling) ---
