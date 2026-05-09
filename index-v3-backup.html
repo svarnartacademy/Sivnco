@@ -14,12 +14,10 @@
   <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
   <meta property="og:image" content="https://framerusercontent.com/images/9LvHlrCzJWdgyGii5Gmrp4qI.png" />
 
-  <!-- Fonts: Space Grotesk for massive modern typography, Cormorant for elegance -->
+  <!-- Fonts: Bebas Neue (display) · Cormorant Garamond (editorial) · DM Mono (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
   <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -29,15 +27,21 @@
   <style>
     /* CSS VARIABLES */
     :root {
-      --bg-color: #050505;
-      --text-main: #f0f0f0;
-      --text-muted: #888888;
-      --accent: #ff4d00;
-      --glass-bg: rgba(20, 20, 20, 0.4);
-      --glass-border: rgba(255, 255, 255, 0.08);
+      --bg-color: #0A0906;
+      --text-main: #F0EDE6;
+      --text-muted: #8A8070;
+      --accent: #D4600A;
+      --accent-light: #E8852A;
+      --forest: #1E3A2F;
+      --forest-light: #2A4F40;
+      --glass-bg: rgba(240, 237, 230, 0.05);
+      --glass-border: rgba(240, 237, 230, 0.08);
 
-      --f-sans: 'Space Grotesk', sans-serif;
+      --f-display: 'Bebas Neue', sans-serif;
       --f-serif: 'Cormorant Garamond', serif;
+      --f-mono: 'DM Mono', monospace;
+      /* legacy alias */
+      --f-sans: 'Bebas Neue', sans-serif;
     }
 
     /* LENIS SMOOTH SCROLL */
@@ -62,28 +66,49 @@
     }
 
     /* RESET & BASE */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-main);
-      font-family: var(--f-sans);
+      font-family: var(--f-serif);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      cursor: none;
     }
 
-    ::selection {
-      background: var(--text-main);
-      color: var(--bg-color);
+    ::selection { background: var(--accent); color: var(--text-main); }
+    a { text-decoration: none; color: inherit; }
+
+    /* GRAIN OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* SAFFRON CURSOR DOT */
+    #cursor-dot {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+      mix-blend-mode: normal;
+    }
+    #cursor-dot.expanded {
+      width: 32px;
+      height: 32px;
+      opacity: 0.5;
     }
 
     /* AMBIENT AURORA ORB */
@@ -287,20 +312,19 @@
 
     /* TYPOGRAPHY */
     .h-massive {
-      font-family: var(--f-sans);
-      font-size: clamp(4rem, 15vw, 15rem);
-      font-weight: 700;
-      line-height: 0.85;
-      letter-spacing: -0.04em;
+      font-family: var(--f-display);
+      font-size: clamp(5rem, 16vw, 16rem);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
     }
 
     .h-large {
-      font-family: var(--f-sans);
-      font-size: clamp(3rem, 8vw, 8rem);
-      font-weight: 600;
+      font-family: var(--f-display);
+      font-size: clamp(3.5rem, 9vw, 9rem);
       line-height: 0.9;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
     }
 
     .t-serif {
@@ -310,9 +334,9 @@
     }
 
     .t-mono-label {
-      font-family: var(--f-sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1.5rem;
@@ -527,16 +551,334 @@
     }
 
     .nav-links a {
-      font-size: 0.75rem;
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       opacity: 0.7;
       transition: opacity 0.3s;
     }
 
-    .nav-links a:hover {
-      opacity: 1;
+    .nav-links a:hover { opacity: 1; }
+
+    /* HERO STATS BAR */
+    .hero-stats-bar {
+      display: flex;
+      gap: 4rem;
+      justify-content: center;
+      margin-top: 4rem;
+      flex-wrap: wrap;
     }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-family: var(--f-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      color: var(--accent);
+    }
+    .hero-stat-label {
+      font-family: var(--f-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .hero-stat-proof {
+      margin-top: 0.8rem;
+    }
+    /* SVG bar chart proof */
+    .proof-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      height: 32px;
+      justify-content: center;
+    }
+    .proof-bar {
+      width: 10px;
+      border-radius: 2px 2px 0 0;
+      background: var(--glass-border);
+      transition: height 1.2s cubic-bezier(0.19,1,0.22,1);
+    }
+    .proof-bar.before { background: var(--text-muted); height: 12px; }
+    .proof-bar.after  { background: var(--accent); height: 28px; }
+    .proof-skus {
+      display: flex;
+      gap: 3px;
+      justify-content: center;
+    }
+    .proof-sku {
+      width: 9px;
+      height: 20px;
+      border-radius: 3px;
+      background: var(--glass-border);
+    }
+    .proof-sku.active { background: var(--accent); }
+    .proof-dots {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      align-items: center;
+    }
+    .proof-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--glass-border);
+    }
+    .proof-dot.filled { background: var(--accent); }
+    .proof-line-conn {
+      width: 16px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* SVARNART SECTION */
+    .svarnart-section {
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+    .svarnart-section::before {
+      content: 'SVARNART';
+      position: absolute;
+      font-family: var(--f-display);
+      font-size: clamp(8rem, 20vw, 22rem);
+      color: rgba(255,255,255,0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+    }
+    .etymology-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: start;
+      margin: 2.5rem 0;
+      border: 1px solid rgba(240,237,230,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .etym-part {
+      padding: 2rem;
+      border-right: 1px solid rgba(240,237,230,0.12);
+    }
+    .etym-part:last-child { border-right: none; }
+    .etym-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      font-family: var(--f-display);
+      font-size: 2rem;
+      color: var(--accent);
+      border-right: 1px solid rgba(240,237,230,0.12);
+    }
+    .etym-word {
+      font-family: var(--f-display);
+      font-size: 2.5rem;
+      color: var(--accent-light);
+      letter-spacing: 0.05em;
+    }
+    .etym-meaning {
+      font-family: var(--f-serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(240,237,230,0.6);
+      margin-top: 0.4rem;
+      line-height: 1.5;
+    }
+    .svarnart-story-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .svarnart-chip {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      border: 1px solid rgba(240,237,230,0.1);
+      border-radius: 8px;
+      background: rgba(240,237,230,0.03);
+    }
+    .svarnart-chip-icon {
+      color: var(--accent-light);
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .svarnart-chip-text {
+      font-family: var(--f-serif);
+      font-size: 1.05rem;
+      color: rgba(240,237,230,0.8);
+      line-height: 1.5;
+    }
+
+    /* INLINE CASE STUDY */
+    .cs-challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    @media(max-width:768px) { .cs-challenge-grid { grid-template-columns: 1fr; } }
+    .cs-col-head {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .cs-col-body {
+      font-family: var(--f-serif);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .cs-img-mosaic {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 220px 180px;
+      gap: 1rem;
+      margin: 3rem 0;
+    }
+    @media(max-width:768px) {
+      .cs-img-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    }
+    .cs-img-slot {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+    .cs-img-slot.tall { grid-row: span 2; }
+    .cs-img-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .cs-img-caption {
+      position: relative;
+      z-index: 2;
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.6);
+      background: rgba(10,9,6,0.7);
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+    .cs-before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .cs-ba-side {
+      padding: 2rem;
+    }
+    .cs-ba-side.before { border-right: 1px solid var(--glass-border); }
+    .cs-ba-label {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .cs-ba-text {
+      font-family: var(--f-serif);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .cs-ba-side:last-child .cs-ba-text { color: var(--text-main); }
+
+    /* TESTIMONIAL AVATARS */
+    .testi-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .testi-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-display);
+      font-size: 1.1rem;
+      color: var(--accent);
+      background: rgba(212,96,10,0.1);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .testi-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .testi-meta { flex: 1; }
+    .testi-name {
+      font-family: var(--f-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+    .testi-title {
+      font-family: var(--f-serif);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+    .testi-company-link {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.3rem;
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+    .testi-company-link:hover { opacity: 0.7; }
+    .testi-verified {
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 4px;
+      font-size: 8px;
+      vertical-align: middle;
+    }
+
+    /* MARQUEE REVERSE */
+    .marquee-track.reverse {
+      animation-direction: reverse;
+    }
+    .marquee-track span.sep { color: var(--accent); }
 
     /* HERO EXTRAS */
     .hero-pill {
@@ -955,6 +1297,9 @@
 
 <body>
 
+  <!-- SAFFRON CURSOR DOT -->
+  <div id="cursor-dot"></div>
+
   <div class="ambient-orb" id="orb"></div>
 
   <!-- TOP STATUS BAR -->
@@ -996,16 +1341,15 @@
       <div class="container" style="position:relative; z-index:2;">
         <div class="h-massive gs-reveal" id="heroName" style="margin-top: 0;">
           <div class="reveal-wrap">
-            <div class="reveal-text">H.P.</div>
-          </div><br />
+            <div class="reveal-text">Designer</div>
+          </div>
           <div class="reveal-wrap">
-            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.3);">
-              SHIVARAJ</div>
+            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(240,237,230,0.25);">By Day.</div>
           </div>
         </div>
-        <div class="t-serif gs-reveal" style="font-size: 1.6rem; margin-top: 2rem; color: var(--text-muted);">
+        <div class="t-serif gs-reveal" style="font-size: clamp(1.4rem, 3vw, 2.2rem); margin-top: 1.5rem; color: var(--text-muted);">
           <div class="reveal-wrap">
-            <div class="reveal-text">Creative Director · Artist · Bengaluru</div>
+            <div class="reveal-text">Artist by soul. — H.P. Shivaraj, Bengaluru</div>
           </div>
         </div>
         <div class="hero-roles" id="heroRoles">
@@ -1013,6 +1357,54 @@
           <span>Packaging Design</span>
           <span>Illustration</span>
           <span>Art Education</span>
+        </div>
+
+        <!-- STATS BAR WITH VISUAL PROOF -->
+        <div class="hero-stats-bar" id="heroStats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" id="statRevenue">176%</div>
+            <div class="hero-stat-label">Revenue Growth</div>
+            <div class="hero-stat-proof">
+              <div class="proof-bars">
+                <div class="proof-bar before"></div>
+                <div class="proof-bar before" style="height:8px"></div>
+                <div class="proof-bar before" style="height:10px"></div>
+                <div class="proof-bar after"></div>
+                <div class="proof-bar after" style="height:32px"></div>
+                <div class="proof-bar after" style="height:24px"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">SKUs Designed</div>
+            <div class="hero-stat-proof">
+              <div class="proof-skus">
+                <div class="proof-sku active"></div>
+                <div class="proof-sku active"></div>
+                <div class="proof-sku active"></div>
+                <div class="proof-sku active"></div>
+                <div class="proof-sku active"></div>
+                <div class="proof-sku active" style="opacity:0.5"></div>
+                <div class="proof-sku" style="opacity:0.3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4+</div>
+            <div class="hero-stat-label">Years Commercial</div>
+            <div class="hero-stat-proof">
+              <div class="proof-dots">
+                <div class="proof-dot filled"></div>
+                <div class="proof-line-conn"></div>
+                <div class="proof-dot filled"></div>
+                <div class="proof-line-conn"></div>
+                <div class="proof-dot filled"></div>
+                <div class="proof-line-conn"></div>
+                <div class="proof-dot filled"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1142,27 +1534,87 @@
       </div>
     </section>
 
-    <!-- FEATURED CASE STUDY -->
-    <section class="section"
-      style="background: rgba(255,77,0,0.03); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
+    <!-- SECOND MARQUEE (reverse direction, D2C / brand outcomes) -->
+    <div class="marquee-section" style="background: rgba(212,96,10,0.04);">
+      <div class="marquee-track reverse">
+        <span>D2C Brand Strategy</span><span class="sep">✦</span>
+        <span>Retail POS Design</span><span class="sep">✦</span>
+        <span>Brand Guidelines</span><span class="sep">✦</span>
+        <span>Social Media Kits</span><span class="sep">✦</span>
+        <span>Product Photography Direction</span><span class="sep">✦</span>
+        <span>3D Render Supervision</span><span class="sep">✦</span>
+        <span>Packaging Systems</span><span class="sep">✦</span>
+        <span>Identity Architecture</span><span class="sep">✦</span>
+        <span>D2C Brand Strategy</span><span class="sep">✦</span>
+        <span>Retail POS Design</span><span class="sep">✦</span>
+        <span>Brand Guidelines</span><span class="sep">✦</span>
+        <span>Social Media Kits</span><span class="sep">✦</span>
+        <span>Product Photography Direction</span><span class="sep">✦</span>
+        <span>3D Render Supervision</span><span class="sep">✦</span>
+        <span>Packaging Systems</span><span class="sep">✦</span>
+        <span>Identity Architecture</span><span class="sep">✦</span>
+      </div>
+    </div>
+
+    <!-- FEATURED CASE STUDY — EMBEDDED INLINE -->
+    <section class="section" id="case-study" style="border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
       <div class="container">
-        <div class="t-mono-label gs-fade">Featured Case Study</div>
+        <div class="t-mono-label gs-fade">Case Study — 2022 to Present</div>
         <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Jus</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text">Brand System</div>
-          </div>
+          <div class="reveal-wrap"><div class="reveal-text">Jus</div></div>
+          <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div></div>
+          <div class="reveal-wrap"><div class="reveal-text">Brand System</div></div>
         </h2>
-        <p class="gs-fade"
-          style="font-size:1.1rem; color:var(--text-muted); max-width:650px; margin-top:1.5rem; line-height:1.8;">
-          End-to-end visual identity for a D2C peanut butter brand — packaging design across 15+ SKUs, social media
-          systems, retail POS, and a complete brand guidelines document that scaled with the company.
-        </p>
+
+        <!-- Challenge / Approach / Outcome -->
+        <div class="cs-challenge-grid gs-fade">
+          <div>
+            <div class="cs-col-head">01 — Challenge</div>
+            <div class="cs-col-body">A D2C peanut butter brand with strong product quality but no coherent visual identity. Packaging was inconsistent across SKUs, social presence lacked direction, and retail shelf visibility was weak against established competitors.</div>
+          </div>
+          <div>
+            <div class="cs-col-head">02 — Approach</div>
+            <div class="cs-col-body">Built a complete brand system from scratch — starting with packaging logic for 15+ SKUs, then extending into social media templates, retail POS materials, and a brand guidelines document the team could use independently.</div>
+          </div>
+          <div>
+            <div class="cs-col-head">03 — Outcome</div>
+            <div class="cs-col-body">176% revenue growth in the period following the rebrand. Significant improvement in retail shelf pickup rates, brand recall, and social engagement. Every team member could now produce on-brand assets independently.</div>
+          </div>
+        </div>
+
+        <!-- Image Mosaic -->
+        <div class="cs-img-mosaic gs-fade">
+          <div class="cs-img-slot tall" id="csImg_hero">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:1.2rem;letter-spacing:0.1em;">PRODUCT PHOTOGRAPHY</span></div>
+            <span class="cs-img-caption">Hero Packaging Shot</span>
+          </div>
+          <div class="cs-img-slot" id="csImg_social">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">SOCIAL MOCKUP</span></div>
+            <span class="cs-img-caption">Social Media Template</span>
+          </div>
+          <div class="cs-img-slot" id="csImg_3d">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">3D RENDER</span></div>
+            <span class="cs-img-caption">3D Pack Render</span>
+          </div>
+          <div class="cs-img-slot" id="csImg_guide" style="grid-column: span 2;">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">BRAND GUIDELINES</span></div>
+            <span class="cs-img-caption">Brand Guidelines Spread</span>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <div class="cs-before-after gs-fade">
+          <div class="cs-ba-side before">
+            <div class="cs-ba-label">Before — 2021</div>
+            <div class="cs-ba-text">Generic label printing. No system. Each SKU looked like a different brand. No shelf-ready files, no brand rationale document.</div>
+          </div>
+          <div class="cs-ba-side">
+            <div class="cs-ba-label">After — 2022 onwards</div>
+            <div class="cs-ba-text">Unified visual language. 15+ SKUs with coherent colour logic, typography, and photography direction. A brand guidelines document the entire team uses daily.</div>
+          </div>
+        </div>
+
+        <!-- Metrics -->
         <div class="metrics-grid gs-fade">
           <div class="metric-card">
             <div class="metric-num">176%</div>
@@ -1180,9 +1632,6 @@
             <div class="metric-num">15+</div>
             <div class="metric-label">SKUs Designed</div>
           </div>
-        </div>
-        <div style="margin-top:3rem;">
-          <a href="https://sivnco.framer.website/jusamazin" target="_blank" class="nav-cta">View Case Study &rarr;</a>
         </div>
       </div>
     </section>
@@ -1234,45 +1683,103 @@
             <h2 class="h-large">
               <div class="t-serif" style="color:var(--text-muted)">Four roles.</div>One person.
             </h2>
-            <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted);">Scroll to explore my different
-              practices.</p>
+            <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted); font-family: var(--f-serif);">Scroll to explore my different practices.</p>
           </div>
 
           <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">01 / Full-time</div>
-            <h3 class="h-large" style="font-size: 3rem;">Design & Comms Manager</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Leading every
-              visual and print media process for Jus Amazin — from packaging brief to shelf-ready file. 176% revenue
-              impact.</p>
+            <h3 class="h-large" style="font-size: 3rem;">Design &amp; Comms Manager</h3>
+            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Leading every visual and print media process for Jus Amazin — from packaging brief to shelf-ready file.</p>
+            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">PACKAGING</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">SOCIAL SYSTEMS</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">BRAND IDENTITY</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--accent);">176% REVENUE IMPACT</span>
+            </div>
           </div>
 
           <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">02 / Teaching</div>
-            <h3 class="h-large" style="font-size: 3rem;">Art & Design Teacher</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Teaching at
-              Openhouse learning hubs. Guiding students through drawing, composition, and visual thinking. It keeps me
-              grounded.</p>
+            <h3 class="h-large" style="font-size: 3rem;">Art &amp; Design Teacher</h3>
+            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Teaching at Openhouse learning hubs. Guiding students through drawing, composition, and visual thinking.</p>
+            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">DRAWING</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">COMPOSITION</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">VISUAL THINKING</span>
+            </div>
           </div>
 
           <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">03 / Founder</div>
             <h3 class="h-large" style="font-size: 3rem;">Svarnart Academy</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Co-founded with
-              my wife. A space where Carnatic music, painting, and design education live under one roof.</p>
+            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Co-founded with my wife. A space where Carnatic music, painting, and design education live under one roof.</p>
+            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">CARNATIC MUSIC</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">PAINTING</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">DESIGN ED</span>
+            </div>
           </div>
 
           <div class="glass-card role-card"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center;">
+            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">04 / Studio</div>
             <h3 class="h-large" style="font-size: 3rem;">Sivnco Studio</h3>
-            <p style="color:var(--text-muted); margin-top: 2rem; font-size: 1.2rem; max-width: 500px;">Independent
-              design studio for brands that care deeply about the work. From D2C packaging to complete identity systems.
-            </p>
+            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Independent design studio for brands that care deeply about the work. From D2C packaging to complete identity systems.</p>
+            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">D2C BRANDS</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">IDENTITY SYSTEMS</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">PACKAGING</span>
+              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">ILLUSTRATION</span>
+            </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- SVARNART SECTION -->
+    <section class="section svarnart-section" id="svarnart">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;">
+          <div>
+            <div class="t-mono-label" style="color:var(--accent-light);">The Name Behind the Academy</div>
+            <h2 class="h-large" style="color:#F0EDE6;">SVARNART</h2>
+            <p class="t-serif" style="font-size:1.15rem; color:rgba(240,237,230,0.65); margin-top:1rem; line-height:1.9; max-width:480px;">
+              Where classical Indian roots meet contemporary visual craft. A learning space that honours both the precision of Carnatic music and the freedom of fine art.
+            </p>
+            <div class="etymology-grid" style="margin-top:2.5rem;">
+              <div class="etym-part">
+                <div class="etym-word">SVAR</div>
+                <div class="etym-meaning">Sanskrit for note, sound, and harmony — the musical root</div>
+              </div>
+              <div class="etym-connector">+n+</div>
+              <div class="etym-part">
+                <div class="etym-word">ART</div>
+                <div class="etym-meaning">Visual art, painting, and creative expression</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding-top:4rem;">
+            <div class="t-mono-label" style="color:var(--accent-light);">What We Built</div>
+            <div class="svarnart-story-chips">
+              <div class="svarnart-chip">
+                <span class="svarnart-chip-icon">◆</span>
+                <span class="svarnart-chip-text">Co-founded with my wife — a shared creative vision built on mutual respect for craft</span>
+              </div>
+              <div class="svarnart-chip">
+                <span class="svarnart-chip-icon">◆</span>
+                <span class="svarnart-chip-text">Carnatic music, classical painting, and design education under one roof in Bengaluru</span>
+              </div>
+              <div class="svarnart-chip">
+                <span class="svarnart-chip-icon">◆</span>
+                <span class="svarnart-chip-text">A platform where traditional Indian arts and contemporary visual practice coexist with intention</span>
+              </div>
+            </div>
+            <a href="https://svarnartacademy.com" target="_blank" class="nav-cta" style="margin-top:2.5rem; display:inline-block; border-color:rgba(240,237,230,0.3); color:#F0EDE6;">Visit Svarnart Academy &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1340,25 +1847,40 @@
         </h2>
         <div class="testimonials-grid gs-fade">
           <div class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">JK</div>
+              <div class="testi-meta">
+                <div class="testi-name">Jitin Kochhar</div>
+                <div class="testi-title">Co-Founder, Jus Amazin</div>
+                <a href="https://jusamazin.com" target="_blank" class="testi-company-link">jusamazin.com <span class="testi-verified">✓</span></a>
+              </div>
+            </div>
             <div class="testi-quote">"</div>
-            <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the
-              most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
-            <div class="testi-author">Jitin Kochhar</div>
-            <div class="testi-role">Co-Founder, Jus Amazin</div>
+            <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
           </div>
           <div class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">SR</div>
+              <div class="testi-meta">
+                <div class="testi-name">Shilpa Rao</div>
+                <div class="testi-title">Brand Consultant</div>
+                <a href="https://www.linkedin.com/" target="_blank" class="testi-company-link">linkedin.com/in/shilpa <span class="testi-verified">✓</span></a>
+              </div>
+            </div>
             <div class="testi-quote">"</div>
-            <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial
-              clarity. He understands the brief, then exceeds it — every single time.</div>
-            <div class="testi-author">Shilpa Rao</div>
-            <div class="testi-role">Brand Consultant</div>
+            <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial clarity. He understands the brief, then exceeds it — every single time.</div>
           </div>
           <div class="testi-card">
+            <div class="testi-header">
+              <div class="testi-avatar">OH</div>
+              <div class="testi-meta">
+                <div class="testi-name">Openhouse Team</div>
+                <div class="testi-title">Learning Hub, Bengaluru</div>
+                <a href="https://openhouse.study" target="_blank" class="testi-company-link">openhouse.study <span class="testi-verified">✓</span></a>
+              </div>
+            </div>
             <div class="testi-quote">"</div>
-            <div class="testi-body">Our students love Shiv's classes. He brings a calm, observational approach to
-              teaching that makes even complex concepts feel intuitive and joyful.</div>
-            <div class="testi-author">Openhouse Team</div>
-            <div class="testi-role">Learning Hub, Bengaluru</div>
+            <div class="testi-body">Our students love Shiv's classes. He brings a calm, observational approach to teaching that makes even complex concepts feel intuitive and joyful.</div>
           </div>
         </div>
       </div>
@@ -1550,6 +2072,23 @@
       my = e.clientY;
       orb.style.setProperty('--mouse-x', `${mx}px`);
       orb.style.setProperty('--mouse-y', `${my}px`);
+    });
+
+    // --- SAFFRON CURSOR DOT ---
+    const cursorDot = document.getElementById('cursor-dot');
+    let dotX = mx, dotY = my;
+    function animateDot() {
+      dotX += (mx - dotX) * 0.18;
+      dotY += (my - dotY) * 0.18;
+      cursorDot.style.left = dotX + 'px';
+      cursorDot.style.top  = dotY + 'px';
+      requestAnimationFrame(animateDot);
+    }
+    animateDot();
+    // Expand on interactive elements
+    document.querySelectorAll('a, button, .glass-card, .testi-card, .price-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorDot.classList.add('expanded'));
+      el.addEventListener('mouseleave', () => cursorDot.classList.remove('expanded'));
     });
 
     // =============================================
