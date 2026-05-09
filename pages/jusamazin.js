@@ -1,6 +1,7 @@
 
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 import { motion } from 'motion/react'
 
 const ease = [0.16, 1, 0.3, 1]
@@ -235,22 +236,26 @@ export default function JusAmazin() {
         </div>
       </div>
 
-      <script dangerouslySetInnerHTML={{__html:`
-        // Lerp cursor
-        var dot=document.getElementById('dot');
-        var tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty;
-        document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
-        (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;dot.style.left=cx+'px';dot.style.top=cy+'px';requestAnimationFrame(loop)})();
-        document.querySelectorAll('a,button').forEach(function(el){
-          el.addEventListener('mouseenter',function(){dot.classList.add('lg')});
-          el.addEventListener('mouseleave',function(){dot.classList.remove('lg')});
-        });
-        // Scroll reveals
-        var obs=new IntersectionObserver(function(entries){
-          entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')});
-        },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-        document.querySelectorAll('.rv,.rv2').forEach(function(el){obs.observe(el)});
-      `}}/>
+      <Script id="page-init" strategy="afterInteractive">{`
+        (function(){
+          // Lerp cursor
+          var dot=document.getElementById('dot');
+          if(dot){
+            var tx=window.innerWidth/2,ty=window.innerHeight/2,cx=tx,cy=ty;
+            document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
+            (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;dot.style.left=cx+'px';dot.style.top=cy+'px';requestAnimationFrame(loop)})();
+            document.querySelectorAll('a,button').forEach(function(el){
+              el.addEventListener('mouseenter',function(){dot.classList.add('lg')});
+              el.addEventListener('mouseleave',function(){dot.classList.remove('lg')});
+            });
+          }
+          // Scroll reveals via IntersectionObserver
+          var obs=new IntersectionObserver(function(entries){
+            entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+          },{threshold:0.06});
+          document.querySelectorAll('.rv,.rv2').forEach(function(el){obs.observe(el)});
+        })();
+      `}</Script>
     </>
   )
 }
