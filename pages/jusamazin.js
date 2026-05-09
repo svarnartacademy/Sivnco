@@ -2,6 +2,22 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import dynamic from 'next/dynamic'
+
+const LiquidMetalBg = dynamic(
+  () => import('@paper-design/shaders-react').then(m => {
+    const { LiquidMetal, liquidMetalPresets } = m
+    return function LiquidMetalBg() {
+      return (
+        <LiquidMetal
+          {...liquidMetalPresets[2]}
+          style={{ position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0 }}
+        />
+      )
+    }
+  }),
+  { ssr: false }
+)
 import { motion } from 'motion/react'
 
 const ease = [0.16, 1, 0.3, 1]
@@ -42,7 +58,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
 .back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem 1.5rem;border:1px solid var(--border);border-radius:40px;transition:.3s}
 .back:hover{border-color:var(--accent);color:var(--accent)}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--border)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
 .hero-title{font-family:var(--D);font-size:clamp(6rem,16vw,15rem);line-height:.88;text-transform:uppercase}
 .hero-title i{color:var(--accent);font-style:italic;font-family:var(--S);display:block}
@@ -130,8 +147,9 @@ export default function JusAmazin() {
       </nav>
 
       {/* HERO */}
-      <div className="hero">
-        <div className="c">
+      <div className="hero" style={{position:'relative', overflow:'hidden'}}>
+        <LiquidMetalBg />
+        <div className="c" style={{position:'relative', zIndex:2}}>
           <motion.div className="eyebrow" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.8,ease}}>Case Study · Brand Identity · 2022 — Present</motion.div>
           <motion.h1 className="hero-title" initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1.1,ease,delay:.1}}>
             Jus<br/><i>Amazin</i>
