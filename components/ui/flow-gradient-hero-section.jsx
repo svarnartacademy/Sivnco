@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 class TouchTexture {
@@ -62,19 +62,18 @@ class GradientBackground {
 
   constructor(sceneManager) {
     this.sceneManager = sceneManager;
-    // Sivnco brand palette: saffron/burnt-orange (#D4600A) + deep dark (#0A0906)
     this.uniforms = {
       uTime: { value: 0 },
       uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-      uColor1: { value: new THREE.Vector3(0.831, 0.376, 0.039) },  // #D4600A saffron
-      uColor2: { value: new THREE.Vector3(0.039, 0.035, 0.024) },  // #0A0906 deep dark
-      uColor3: { value: new THREE.Vector3(0.910, 0.522, 0.165) },  // #E8852A accent-light
-      uColor4: { value: new THREE.Vector3(0.039, 0.035, 0.024) },  // deep dark
-      uColor5: { value: new THREE.Vector3(0.831, 0.376, 0.039) },  // saffron repeat
-      uColor6: { value: new THREE.Vector3(0.118, 0.227, 0.184) },  // #1E3A2F forest
+      uColor1: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
+      uColor2: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
+      uColor3: { value: new THREE.Vector3(0.910, 0.522, 0.165) },
+      uColor4: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
+      uColor5: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
+      uColor6: { value: new THREE.Vector3(0.118, 0.227, 0.184) },
       uSpeed: { value: 0.8 }, uIntensity: { value: 1.4 },
       uTouchTexture: { value: null }, uGrainIntensity: { value: 0.06 },
-      uDarkNavy: { value: new THREE.Vector3(0.039, 0.035, 0.024) },  // match --bg-color
+      uDarkNavy: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
       uGradientSize: { value: 0.45 }, uGradientCount: { value: 12.0 },
       uColor1Weight: { value: 0.5 }, uColor2Weight: { value: 1.8 }
     };
@@ -165,7 +164,7 @@ class ThreeApp {
     this.camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 10000);
     this.camera.position.z = 50;
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x0a0906);  // match --bg-color
+    this.scene.background = new THREE.Color(0x0a0906);
     this.clock = new THREE.Clock();
     this.touchTexture = new TouchTexture();
     this.gradientBackground = new GradientBackground(this);
@@ -181,11 +180,18 @@ class ThreeApp {
     this.gradientBackground.init();
     const c = this.container;
     const onMove = (x, y) => { this.touchTexture.addTouch({ x: x / c.clientWidth, y: 1 - y / c.clientHeight }); };
-    c.addEventListener("mousemove", (e) => onMove(e.offsetX, e.offsetY));
-    c.addEventListener("touchmove", (e) => {
-      const rect = c.getBoundingClientRect();
-      onMove(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
-    });
+    // Listen on the hero section (parent) so pointer-events work through the canvas
+    const hero = c.parentElement;
+    if (hero) {
+      hero.addEventListener("mousemove", (e) => {
+        const rect = c.getBoundingClientRect();
+        onMove(e.clientX - rect.left, e.clientY - rect.top);
+      });
+      hero.addEventListener("touchmove", (e) => {
+        const rect = c.getBoundingClientRect();
+        onMove(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
+      });
+    }
     this._resizeHandler = () => {
       this.camera.aspect = c.clientWidth / c.clientHeight;
       this.camera.updateProjectionMatrix();
@@ -213,55 +219,49 @@ class ThreeApp {
 }
 
 /**
- * FlowGradientHero — WebGL liquid gradient background for the Sivnco hero section.
- * Renders behind all page content with a smooth blur-fade at the bottom edge.
+ * FlowGradientHero — Injects a WebGL liquid gradient canvas directly into
+ * the #hero section element so it renders inside the hero's stacking context
+ * (avoiding the opaque .main-wrap background that covers fixed elements).
  */
 export default function FlowGradientHero() {
-  const containerRef = useRef(null);
   const appRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    // Find the hero section rendered from index.html
+    const heroSection = document.getElementById('hero');
+    if (!heroSection) return;
+
+    // Create a wrapper div inside the hero for the WebGL canvas
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden;';
+    // Insert as the first child so it renders behind hero content
+    heroSection.insertBefore(wrapper, heroSection.firstChild);
+
+    // Create blur-fade overlay at the bottom of the hero
+    const blurFade = document.createElement('div');
+    blurFade.setAttribute('aria-hidden', 'true');
+    blurFade.style.cssText = [
+      'position:absolute;bottom:0;left:0;width:100%;height:40%;z-index:1;pointer-events:none;',
+      'background:linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.3) 30%, rgba(10,9,6,0.75) 60%, #0A0906 100%);',
+      '-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);',
+      '-webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 20%);',
+      'mask-image:linear-gradient(to bottom, transparent 0%, black 20%);'
+    ].join('');
+    heroSection.appendChild(blurFade);
+
+    // Initialize Three.js inside the wrapper
     if (appRef.current) appRef.current.cleanup();
-    appRef.current = new ThreeApp(container);
-    return () => { if (appRef.current) { appRef.current.cleanup(); appRef.current = null; } };
+    appRef.current = new ThreeApp(wrapper);
+
+    return () => {
+      if (appRef.current) { appRef.current.cleanup(); appRef.current = null; }
+      // Clean up injected DOM elements
+      if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
+      if (blurFade.parentNode) blurFade.parentNode.removeChild(blurFade);
+    };
   }, []);
 
-  return (
-    <>
-      {/* WebGL canvas container — sits behind hero content */}
-      <div
-        ref={containerRef}
-        aria-hidden="true"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -10,
-          pointerEvents: 'none',
-        }}
-      />
-      {/* Blur-fade transition at bottom of hero viewport */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '35vh',
-          zIndex: -9,
-          pointerEvents: 'none',
-          background: 'linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.4) 30%, rgba(10,9,6,0.85) 65%, #0A0906 100%)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          maskImage: 'linear-gradient(to bottom, transparent 0%, black 25%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 25%)',
-        }}
-      />
-    </>
-  );
+  // This component renders nothing to React — it injects into the existing hero DOM
+  return null;
 }
