@@ -2,7 +2,13 @@ import fs from 'fs'
 import path from 'path'
 import Head from 'next/head'
 import Script from 'next/script'
-import FlowGradientHero from '../components/ui/flow-gradient-hero-section'
+import dynamic from 'next/dynamic'
+
+// Three.js uses browser-only APIs — must skip SSR
+const FlowGradientHero = dynamic(
+  () => import('../components/ui/flow-gradient-hero-section'),
+  { ssr: false }
+)
 
 export default function Home({ bodyHTML, inlineScript }) {
   return (
