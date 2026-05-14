@@ -28,7 +28,11 @@ const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amar
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
-html{scroll-behavior:smooth}
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
 body{background:var(--bg);color:var(--ink);font-family:var(--S);overflow-x:hidden;cursor:none}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:9999}
 #dot{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,opacity .25s}
@@ -122,6 +126,8 @@ export default function JusAmazin() {
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
+
+      <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="beforeInteractive" />
 
       <div id="dot" />
 
@@ -241,6 +247,24 @@ export default function JusAmazin() {
 
       <Script id="page-init" strategy="afterInteractive">{`
         (function(){
+          // Initialize Lenis
+          if (typeof Lenis !== 'undefined') {
+            var lenis = new Lenis({
+              duration: 1.2,
+              easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+              direction: 'vertical',
+              gestureDirection: 'vertical',
+              smooth: true,
+              smoothTouch: true,
+              touchMultiplier: 2
+            });
+            function raf(time) {
+              lenis.raf(time);
+              requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+          }
+
           // Lerp cursor
           var dot=document.getElementById('dot');
           if(dot){
