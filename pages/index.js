@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Head from 'next/head'
 import Script from 'next/script'
-import ShadersBackground from '../components/ui/background-shades'
+import FlowGradientHero from '../components/ui/flow-gradient-hero-section'
 
 export default function Home({ bodyHTML, inlineScript }) {
   return (
@@ -28,7 +28,7 @@ export default function Home({ bodyHTML, inlineScript }) {
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="beforeInteractive" />
 
       {/* Animated hero background */}
-      <ShadersBackground />
+      <FlowGradientHero />
 
       {/* Full site body */}
       <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />

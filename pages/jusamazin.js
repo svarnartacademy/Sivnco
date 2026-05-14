@@ -2,25 +2,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import dynamic from 'next/dynamic'
-
-const LiquidMetalBg = dynamic(
-  () => import('@paper-design/shaders-react').then(m => {
-    const { LiquidMetal, liquidMetalPresets } = m
-    return function LiquidMetalBg() {
-      return (
-        <LiquidMetal
-          {...liquidMetalPresets[2]}
-          style={{ position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0 }}
-        />
-      )
-    }
-  }),
-  { ssr: false }
-)
-import { motion } from 'motion/react'
-
-const ease = [0.16, 1, 0.3, 1]
 
 
 const METRICS = [
@@ -125,6 +106,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .rv.vis{opacity:1;transform:translateY(0)}
 .rv2{opacity:0;transition:opacity .85s cubic-bezier(.16,1,.3,1) .15s}
 .rv2.vis{opacity:1}
+@keyframes heroBgPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+.hero .rv{opacity:1;transform:translateY(0)}
 `
 
 export default function JusAmazin() {
@@ -149,20 +132,21 @@ export default function JusAmazin() {
 
       {/* HERO */}
       <div className="hero" style={{position:'relative', overflow:'hidden'}}>
-        <LiquidMetalBg />
+        {/* Animated gradient background replacing LiquidMetalBg */}
+        <div style={{position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0, background:'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.25) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.15) 0%, transparent 50%), var(--bg)', animation:'heroBgPulse 8s ease-in-out infinite'}} />
         <div className="c" style={{position:'relative', zIndex:2}}>
-          <motion.div className="eyebrow" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.8,ease}}>Case Study · Brand Identity · 2022 — Present</motion.div>
-          <motion.h1 className="hero-title" initial={{opacity:0,y:60}} animate={{opacity:1,y:0}} transition={{duration:1.1,ease,delay:.1}}>
+          <div className="eyebrow rv">Case Study · Brand Identity · 2022 — Present</div>
+          <h1 className="hero-title rv" style={{transitionDelay:'.1s'}}>
             Jus<br/><i>Amazin</i>
-          </motion.h1>
-          <motion.p className="hero-sub" initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.9,ease,delay:.35}}>
+          </h1>
+          <p className="hero-sub rv" style={{transitionDelay:'.25s'}}>
             End-to-end brand system for a D2C peanut butter brand — packaging across 15+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
-          </motion.p>
-          <motion.div className="hero-meta" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.8,ease,delay:.6}}>
+          </p>
+          <div className="hero-meta rv" style={{transitionDelay:'.4s'}}>
             {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2022 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
