@@ -110,13 +110,47 @@ const MOBILE_CSS = `
       gap: 2rem !important;
     }
 
-    /* ── FOOTER CONTACT ── */
+    /* ── FOOTER / CONTACT SECTION ── */
+    /* Stack the 2-col headline+form grid to single column */
     .footer-grid {
       grid-template-columns: 1fr !important;
-      gap: 3rem !important;
+      gap: 2.5rem !important;
     }
-    .footer-fixed { height: auto !important; position: relative !important; padding: 3rem 0 !important; }
-    .main-wrap { margin-bottom: 0 !important; }
+    /* Unpin the fixed footer — becomes normal block flow on mobile */
+    .footer-fixed {
+      position: relative !important;
+      height: auto !important;
+      min-height: unset !important;
+      bottom: unset !important;
+      left: unset !important;
+      right: unset !important;
+      padding: 4rem 0 3rem !important;
+      overflow-y: visible !important;
+      display: block !important;
+    }
+    /* Remove the 100vh margin-bottom that reserved space for the fixed footer */
+    .main-wrap {
+      margin-bottom: 0 !important;
+    }
+    /* Make the contact form full width */
+    #contactForm {
+      width: 100% !important;
+    }
+    /* Stack the Name / Email side-by-side row to a single column */
+    #contactForm > div:first-child {
+      grid-template-columns: 1fr !important;
+    }
+    /* Footer headline sizing */
+    .footer-fixed h2 {
+      font-size: clamp(2.5rem, 10vw, 5rem) !important;
+      line-height: 1 !important;
+    }
+    /* Footer footnote row — wrap on mobile */
+    .footer-fixed > div > div:last-child {
+      flex-direction: column !important;
+      gap: 0.8rem !important;
+      text-align: center !important;
+    }
 
     /* Testimonials & pricing */
     .testimonials-grid { grid-template-columns: 1fr !important; }
