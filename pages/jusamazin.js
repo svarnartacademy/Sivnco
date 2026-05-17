@@ -218,7 +218,7 @@ export default function JusAmazin() {
           <div className="slot wide"><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></div>
           <div className="slot"><div className="slot-ghost">BARS</div><span className="slot-cap">Bars</span></div>
           <div className="slot"><div className="slot-ghost">JARS</div><span className="slot-cap">Jars</span></div>
-          <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods</span></div>
+          <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">DESI ENERGY BAR</div><span className="slot-cap">Desi Energy Bar</span></Link>
           <div className="slot"><div className="slot-ghost">SNACKS</div><span className="slot-cap">Snacks</span></div>
           <div className="slot"><div className="slot-ghost">MARKETING</div><span className="slot-cap">Marketing</span></div>
           <div className="slot"><div className="slot-ghost">MANAGEMENT</div><span className="slot-cap">Management</span></div>
