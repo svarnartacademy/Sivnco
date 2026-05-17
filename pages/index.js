@@ -13,6 +13,137 @@ const FlowGradientHero = dynamic(
   { ssr: false }
 )
 
+// Mobile-responsive overrides injected directly from Next.js (always fresh, not from index.html)
+const MOBILE_CSS = `
+  /* ======================================================= */
+  /* SIVNCO MOBILE RESPONSIVE — injected by pages/index.js   */
+  /* ======================================================= */
+
+  /* Tablets */
+  @media(max-width:1024px) {
+    .hero-section { padding-top: 4rem; }
+    .h-massive { font-size: clamp(3.5rem, 12vw, 10rem) !important; }
+    .hero-stats-bar { gap: 2rem; }
+  }
+
+  /* Mobile */
+  @media(max-width:768px) {
+    /* Top bar */
+    .top-bar {
+      font-size: 0.55rem !important;
+      padding: 0.4rem 3vw !important;
+      flex-wrap: wrap !important;
+      gap: 0.3rem !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+
+    /* Nav */
+    .nav { padding: 1.2rem 4vw !important; top: 2.2rem !important; }
+    .nav-links { gap: 1rem !important; }
+    .nav-links a { font-size: 0.6rem !important; }
+    .nav-cta { font-size: 0.65rem !important; padding: 0.6rem 1rem !important; }
+
+    /* Hero */
+    .hero-section { height: auto !important; min-height: 100vh !important; padding-top: 8rem !important; padding-bottom: 3rem !important; }
+    .h-massive { font-size: clamp(3rem, 14vw, 8rem) !important; }
+    .h-large { font-size: clamp(2.2rem, 8vw, 5rem) !important; }
+    .hero-roles { gap: 1rem !important; font-size: 0.6rem !important; margin-top: 2rem !important; }
+    .hero-stats-bar { gap: 1.5rem !important; margin-top: 2.5rem !important; flex-direction: column !important; align-items: center !important; }
+    .hero-stat-num { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
+    .hero-float-tag { display: none !important; }
+    .hero-line-h { display: none !important; }
+    .hero-pill { font-size: 0.6rem !important; padding: 0.3rem 0.8rem !important; margin-bottom: 1.5rem !important; }
+
+    /* Section spacing */
+    .section { padding: 8vh 0 !important; }
+    .container { padding: 0 5vw !important; }
+
+    /* Project gallery — single column */
+    .glass-card.project-card { grid-column: span 12 !important; height: 35vh !important; width: 100% !important; }
+
+    /* Metrics */
+    .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* ── FOUR ROLES HORIZONTAL SCROLL → VERTICAL STACK ── */
+    #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
+    .h-sticky { height: auto !important; display: block !important; }
+    .h-container {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      padding: 0 5vw !important;
+      gap: 2rem !important;
+    }
+    .h-container > div:first-child { width: 100% !important; }
+    .role-card {
+      width: 100% !important;
+      min-height: auto !important;
+      padding: 2.5rem 1.8rem !important;
+      flex-shrink: unset !important;
+    }
+    .role-card h3 { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
+
+    /* ── SVARNART SECTION ── */
+    .svarnart-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    .svarnart-grid > div:last-child { padding-top: 0 !important; }
+    .etymology-grid {
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+    }
+    .etym-part {
+      border-right: none !important;
+      border-bottom: 1px solid rgba(240,237,230,0.12) !important;
+      padding: 1.2rem 0 !important;
+    }
+    .etym-part:last-child { border-bottom: none !important; }
+    .etym-connector { border-right: none !important; padding: 0.6rem 0 !important; display: none !important; }
+    .etym-word { font-size: 1.8rem !important; }
+    .svarnart-section::before { font-size: clamp(4rem, 20vw, 12rem) !important; }
+
+    /* ── ART COMMISSION ── */
+    .art-comm-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+
+    /* ── FOOTER CONTACT ── */
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 3rem !important;
+    }
+    .footer-fixed { height: auto !important; position: relative !important; padding: 3rem 0 !important; }
+    .main-wrap { margin-bottom: 0 !important; }
+
+    /* Testimonials & pricing */
+    .testimonials-grid { grid-template-columns: 1fr !important; }
+    .pricing-grid { grid-template-columns: 1fr !important; }
+
+    /* Before/After */
+    .cs-before-after { grid-template-columns: 1fr !important; }
+
+    /* Cursor — no mouse on phones */
+    #cursor-dot { display: none !important; }
+    body { cursor: auto !important; }
+  }
+
+  /* Small phones */
+  @media(max-width:480px) {
+    .h-massive { font-size: clamp(2.5rem, 16vw, 6rem) !important; }
+    .h-large { font-size: clamp(1.8rem, 9vw, 4rem) !important; }
+    .hero-roles { flex-direction: column !important; gap: 0.6rem !important; align-items: center !important; }
+    .hero-roles span:not(:last-child)::after { display: none !important; }
+    .glass-card.project-card { height: 28vh !important; padding: 1.5rem !important; }
+    .testi-card { padding: 1.5rem !important; }
+    .price-card { padding: 2rem 1.5rem !important; }
+    .role-card { padding: 2rem 1.4rem !important; }
+    .footer-fixed .h2, .footer-fixed h2 { font-size: clamp(2.5rem, 10vw, 5rem) !important; }
+  }
+`
+
 export default function Home({ bodyHTML, inlineScript }) {
   const [portalNode, setPortalNode] = useState(null)
 
@@ -36,6 +167,8 @@ export default function Home({ bodyHTML, inlineScript }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        {/* Mobile CSS injected directly — guaranteed fresh on every deploy */}
+        <style dangerouslySetInnerHTML={{ __html: MOBILE_CSS }} />
       </Head>
 
       {/* CDN scripts — use afterInteractive (beforeInteractive only works in _document for Pages Router) */}
@@ -97,7 +230,8 @@ export async function getStaticProps() {
     .replace(/<input[^>]*name="form-name"[^>]*>/g, '')
 
   // Extract the <style> block from <head> and inject it into body
-  const styleMatch = raw.match(/<style>([\s\S]*?)<\/style>/i)
+  // Use greedy match to capture the FULL style block (not just the first </style> hit)
+  const styleMatch = raw.match(/<style>([\s\S]+)<\/style>/i)
   const inlineCSS = styleMatch ? `<style>${styleMatch[1]}</style>` : ''
 
   // Append fetch-based Netlify Forms submission (Next.js plugin v5 migration)
@@ -123,10 +257,18 @@ export async function getStaticProps() {
 })();
 `
 
+  // Disable GSAP horizontal scroll pin on mobile (injected after inline script)
+  const mobileScrollFix = `
+// Disable horizontal GSAP pin on mobile
+if (typeof ScrollTrigger !== 'undefined' && window.innerWidth <= 768) {
+  ScrollTrigger.getAll().forEach(function(t) { t.kill(); });
+}
+`
+
   return {
     props: {
       bodyHTML: inlineCSS + bodyHTML,
-      inlineScript: inlineScript + formFetchScript,
+      inlineScript: inlineScript + formFetchScript + mobileScrollFix,
     },
   }
 }
