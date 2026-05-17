@@ -1267,10 +1267,263 @@
       transform: translateY(-2px);
     }
 
-    /* RESPONSIVE: art commission grid */
+    /* ======================================= */
+    /* COMPREHENSIVE MOBILE RESPONSIVE STYLES  */
+    /* ======================================= */
+
+    /* Tablets & small laptops */
+    @media(max-width:1024px) {
+      .hero-section {
+        padding-top: 4rem;
+      }
+      .h-massive {
+        font-size: clamp(3.5rem, 12vw, 10rem);
+      }
+      .hero-stats-bar {
+        gap: 2rem;
+      }
+    }
+
+    /* Mobile devices */
     @media(max-width:768px) {
+      /* -- Top bar -- */
+      .top-bar {
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+        padding: 0.4rem 3vw;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* -- Navigation -- */
+      .nav {
+        padding: 1.2rem 4vw;
+        top: 2.2rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-links a {
+        font-size: 0.6rem;
+      }
+      .nav-cta {
+        font-size: 0.65rem;
+        padding: 0.6rem 1rem;
+      }
+
+      /* -- Hero section -- */
+      .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+      }
+      .h-massive {
+        font-size: clamp(3rem, 14vw, 8rem);
+      }
+      .h-large {
+        font-size: clamp(2.2rem, 8vw, 5rem);
+      }
+      .hero-roles {
+        gap: 1rem;
+        font-size: 0.6rem;
+        margin-top: 2rem;
+      }
+      .hero-roles span:not(:last-child)::after {
+        right: -0.7rem;
+      }
+      .hero-stats-bar {
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-stat-num {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+      }
+      .hero-float-tag {
+        display: none;
+      }
+      .hero-line-h {
+        display: none;
+      }
+      .hero-scroll-hint {
+        bottom: 1.5vh;
+      }
+      .hero-pill {
+        font-size: 0.6rem;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* -- Section spacing -- */
+      .section {
+        padding: 8vh 0;
+      }
+      .container {
+        padding: 0 5vw;
+      }
+
+      /* -- Project gallery grid -- */
+      .glass-card.project-card {
+        grid-column: span 12 !important;
+        height: 35vh !important;
+        width: 100% !important;
+      }
+
+      /* -- Case study challenge grid -- */
+      .cs-challenge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* -- Image mosaic -- */
+      .cs-img-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .cs-img-slot.tall {
+        grid-row: span 1;
+      }
+
+      /* -- Before/After -- */
+      .cs-before-after {
+        grid-template-columns: 1fr;
+      }
+      .cs-ba-side.before {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      /* -- Metrics grid -- */
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* -- Svarnart etymology grid -- */
+      .etymology-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .etym-part {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(240,237,230,0.12);
+      }
+      .etym-part:last-child {
+        border-bottom: none;
+      }
+      .etym-connector {
+        border-right: none !important;
+        padding: 1rem 1.5rem;
+      }
+
+      /* -- Art commission grid -- */
       .art-comm-grid {
         grid-template-columns: 1fr !important;
+      }
+
+      /* -- Horizontal scroll role cards -- */
+      .role-card {
+        min-height: 40vh;
+        width: 80vw !important;
+      }
+      .h-sticky {
+        height: auto !important;
+      }
+      .h-container {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+        gap: 3vw !important;
+      }
+
+      /* -- Testimonials grid -- */
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* -- Pricing grid -- */
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* -- Svarnart 2-col grid -- */
+      .svarnart-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+
+      /* -- Art commission 2-col grid -- */
+      .art-comm-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+
+      /* -- Footer contact grid -- */
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+      .footer-fixed {
+        height: auto;
+        position: relative;
+        padding: 3rem 0;
+      }
+      .main-wrap {
+        margin-bottom: 0;
+      }
+
+      /* -- Custom cursor hidden on mobile (no mouse) -- */
+      #cursor-dot {
+        display: none;
+      }
+      body {
+        cursor: auto;
+      }
+      body::before {
+        display: none;
+      }
+    }
+
+    /* Small phones */
+    @media(max-width:480px) {
+      .top-bar {
+        font-size: 0.48rem;
+      }
+      .nav-logo {
+        font-size: 1rem;
+      }
+      .nav-links {
+        gap: 0.8rem;
+      }
+      .nav-links a {
+        font-size: 0.55rem;
+      }
+      .h-massive {
+        font-size: clamp(2.5rem, 16vw, 6rem);
+      }
+      .h-large {
+        font-size: clamp(1.8rem, 9vw, 4rem);
+      }
+      .hero-roles {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+      }
+      .hero-roles span:not(:last-child)::after {
+        display: none;
+      }
+      .hero-stats-bar {
+        gap: 1.2rem;
+      }
+      .glass-card.project-card {
+        height: 28vh !important;
+        padding: 1.5rem !important;
+      }
+      .testi-card {
+        padding: 1.5rem;
+      }
+      .price-card {
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -1297,7 +1550,7 @@
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
     </div>
-    <a href="#contact" class="nav-cta">Start a Project</a>
+    <div id="start-project-container"></div>
   </nav>
 
   <!-- MAIN CONTENT WRAPPER -->
@@ -1724,7 +1977,7 @@
     <!-- SVARNART SECTION -->
     <section class="section svarnart-section" id="svarnart">
       <div class="container">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;">
+        <div class="svarnart-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;">
           <div>
             <div class="t-mono-label" style="color:var(--accent-light);">The Name Behind the Academy</div>
             <h2 class="h-large" style="color:#F0EDE6;">SVARNART</h2>
@@ -1927,7 +2180,7 @@
     <!-- ART COMMISSION -->
     <section class="section" style="border-top:1px solid var(--glass-border);">
       <div class="container">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+        <div class="art-comm-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
           <div>
             <div class="t-mono-label gs-fade">Art Commission</div>
             <h2 class="h-large gs-reveal">
@@ -1961,7 +2214,7 @@
     <div class="container" style="width: 100%;">
 
       <!-- 2-col layout: headline left, form right -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+      <div class="footer-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
 
         <!-- LEFT: Headline + social links -->
         <div>

@@ -1,7 +1,7 @@
-
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import StartProjectButton from '@/components/demo'
 
 
 const METRICS = [
@@ -69,7 +69,7 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .col:hover{background:rgba(212,96,10,.04)}
 .col-h{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--accent);margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .col-b{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--muted)}
-.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 220px;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
+.mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 220px 220px 220px;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:4rem}
 .slot{background:var(--glass);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1.5rem;transition:background .3s}
 .slot:hover{background:rgba(212,96,10,.06)}
 .slot.tall{grid-row:span 2}
@@ -127,7 +127,7 @@ export default function JusAmazin() {
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
-      <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="beforeInteractive" />
+      <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
 
       <div id="dot" />
 
@@ -186,6 +186,12 @@ export default function JusAmazin() {
           <div className="slot"><div className="slot-ghost">3D RENDER</div><span className="slot-cap">3D Pack Render</span></div>
           <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods Range</span></div>
           <div className="slot wide"><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></div>
+          <div className="slot"><div className="slot-ghost">BARS</div><span className="slot-cap">Bars</span></div>
+          <div className="slot"><div className="slot-ghost">JARS</div><span className="slot-cap">Jars</span></div>
+          <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods</span></div>
+          <div className="slot"><div className="slot-ghost">SNACKS</div><span className="slot-cap">Snacks</span></div>
+          <div className="slot"><div className="slot-ghost">MARKETING</div><span className="slot-cap">Marketing</span></div>
+          <div className="slot"><div className="slot-ghost">MANAGEMENT</div><span className="slot-cap">Management</span></div>
         </div>
       </div></section>
 
@@ -241,29 +247,29 @@ export default function JusAmazin() {
       <div className="c">
         <div className="pfooter rv">
           <div><div className="pf-brand">SIVNCO<span style={{color:'var(--accent)'}}>.</span></div></div>
-          <Link href="/#contact" className="cta">Start a Project →</Link>
+          <StartProjectButton />
         </div>
       </div>
 
-      <Script id="page-init" strategy="afterInteractive">{`
-        (function(){
+      <Script id="page-init" strategy="lazyOnload">{`
+        (function waitForLenis(){
+          if (typeof Lenis === 'undefined') { setTimeout(waitForLenis, 80); return; }
+
           // Initialize Lenis
-          if (typeof Lenis !== 'undefined') {
-            var lenis = new Lenis({
-              duration: 1.2,
-              easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-              direction: 'vertical',
-              gestureDirection: 'vertical',
-              smooth: true,
-              smoothTouch: true,
-              touchMultiplier: 2
-            });
-            function raf(time) {
-              lenis.raf(time);
-              requestAnimationFrame(raf);
-            }
+          var lenis = new Lenis({
+            duration: 1.2,
+            easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            smoothTouch: true,
+            touchMultiplier: 2
+          });
+          function raf(time) {
+            lenis.raf(time);
             requestAnimationFrame(raf);
           }
+          requestAnimationFrame(raf);
 
           // Lerp cursor
           var dot=document.getElementById('dot');

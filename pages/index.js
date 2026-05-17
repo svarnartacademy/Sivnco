@@ -3,6 +3,9 @@ import path from 'path'
 import Head from 'next/head'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
+import StartProjectButton from '@/components/demo'
 
 // Three.js uses browser-only APIs — must skip SSR
 const FlowGradientHero = dynamic(
@@ -11,6 +14,13 @@ const FlowGradientHero = dynamic(
 )
 
 export default function Home({ bodyHTML, inlineScript }) {
+  const [portalNode, setPortalNode] = useState(null)
+
+  useEffect(() => {
+    const node = document.getElementById('start-project-container')
+    if (node) setPortalNode(node)
+  }, [])
+
   return (
     <>
       <Head>
@@ -28,10 +38,10 @@ export default function Home({ bodyHTML, inlineScript }) {
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
 
-      {/* CDN scripts load before page content */}
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" strategy="beforeInteractive" />
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" strategy="beforeInteractive" />
-      <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="beforeInteractive" />
+      {/* CDN scripts — use afterInteractive (beforeInteractive only works in _document for Pages Router) */}
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" strategy="afterInteractive" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" strategy="afterInteractive" />
+      <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
 
       {/* Animated hero background */}
       <FlowGradientHero />
@@ -39,12 +49,23 @@ export default function Home({ bodyHTML, inlineScript }) {
       {/* Full site body */}
       <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
 
-      {/* Inline site script runs after page is interactive */}
+      {/* Inline site script — waits for GSAP & Lenis to be available */}
       <Script
         id="site-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: inlineScript }}
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{ __html: `
+          (function waitForLibs() {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || typeof Lenis === 'undefined') {
+              setTimeout(waitForLibs, 80);
+              return;
+            }
+            ${inlineScript}
+          })();
+        ` }}
       />
+
+      {/* Render new React button into the static HTML nav */}
+      {portalNode && createPortal(<StartProjectButton />, portalNode)}
     </>
   )
 }
