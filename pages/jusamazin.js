@@ -282,41 +282,61 @@ export default function JusAmazin() {
       </div>
 
       <Script id="page-init" strategy="lazyOnload">{`
-        (function waitForLenis(){
-          if (typeof Lenis === 'undefined') { setTimeout(waitForLenis, 80); return; }
+        (function(){
+          // 1. SCROLL REVEALS — runs immediately, NOT gated by Lenis
+          function initReveals() {
+            var obs = new IntersectionObserver(function(entries) {
+              entries.forEach(function(e) {
+                if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+              });
+            }, { threshold: 0.04, rootMargin: '0px 0px -40px 0px' });
 
-          // Initialize Lenis
-          var lenis = new Lenis({
-            duration: 1.2,
-            easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            smoothTouch: true,
-            touchMultiplier: 2
-          });
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
+            document.querySelectorAll('.rv, .rv2').forEach(function(el) { obs.observe(el); });
 
-          // Lerp cursor
-          var dot=document.getElementById('dot');
-          if(dot){
-            var tx=window.innerWidth/2,ty=window.innerHeight/2,cx=tx,cy=ty;
-            document.addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY});
-            (function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;dot.style.left=cx+'px';dot.style.top=cy+'px';requestAnimationFrame(loop)})();
-            document.querySelectorAll('a,button').forEach(function(el){
-              el.addEventListener('mouseenter',function(){dot.classList.add('lg')});
-              el.addEventListener('mouseleave',function(){dot.classList.remove('lg')});
-            });
+            // Hard fallback: force all visible after 1.5s if IO never fires
+            setTimeout(function() {
+              document.querySelectorAll('.rv, .rv2').forEach(function(el) { el.classList.add('vis'); });
+            }, 1500);
+
+            // Mobile: show everything instantly
+            if (window.innerWidth <= 900) {
+              document.querySelectorAll('.rv, .rv2').forEach(function(el) { el.classList.add('vis'); });
+            }
           }
-          // Scroll reveals via IntersectionObserver
-          var obs=new IntersectionObserver(function(entries){
-            entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
-          },{threshold:0.06});
-          document.querySelectorAll('.rv,.rv2').forEach(function(el){obs.observe(el)});
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initReveals);
+          } else {
+            initReveals();
+          }
+
+          // 2. LENIS — init separately so it never blocks content
+          (function waitForLenis() {
+            if (typeof Lenis === 'undefined') { setTimeout(waitForLenis, 80); return; }
+            try {
+              var lenis = new Lenis({ duration: 1.2, smooth: true, smoothTouch: false, touchMultiplier: 1.5 });
+              function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+              requestAnimationFrame(raf);
+            } catch(e) {}
+          })();
+
+          // 3. CURSOR — desktop only
+          if (window.innerWidth > 768) {
+            var dot = document.getElementById('dot');
+            if (dot) {
+              var tx = window.innerWidth/2, ty = window.innerHeight/2, cx = tx, cy = ty;
+              document.addEventListener('mousemove', function(e) { tx = e.clientX; ty = e.clientY; });
+              (function loop() {
+                cx += (tx-cx)*.15; cy += (ty-cy)*.15;
+                dot.style.left = cx+'px'; dot.style.top = cy+'px';
+                requestAnimationFrame(loop);
+              })();
+              document.querySelectorAll('a,button').forEach(function(el) {
+                el.addEventListener('mouseenter', function() { dot.classList.add('lg'); });
+                el.addEventListener('mouseleave', function() { dot.classList.remove('lg'); });
+              });
+            }
+          }
         })();
       `}</Script>
     </>
