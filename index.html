@@ -1422,18 +1422,34 @@
         grid-template-columns: 1fr !important;
       }
 
-      /* -- Horizontal scroll role cards -- */
-      .role-card {
-        min-height: 40vh;
-        width: 80vw !important;
+      /* -- Horizontal scroll → vertical stack on mobile -- */
+      #horizontal-sec {
+        overflow: visible !important;
+        padding: 6vh 0 !important;
       }
       .h-sticky {
         height: auto !important;
+        display: block !important;
+        align-items: unset !important;
       }
       .h-container {
-        padding-left: 5vw !important;
-        padding-right: 5vw !important;
-        gap: 3vw !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 5vw !important;
+        gap: 2rem !important;
+      }
+      .h-container > div:first-child {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+      .role-card {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 2.5rem 1.8rem !important;
+      }
+      .role-card .h-large {
+        font-size: clamp(1.6rem, 6vw, 2.5rem) !important;
       }
 
       /* -- Testimonials grid -- */
@@ -1449,7 +1465,16 @@
       /* -- Svarnart 2-col grid -- */
       .svarnart-grid {
         grid-template-columns: 1fr !important;
-        gap: 3rem !important;
+        gap: 2rem !important;
+      }
+      .svarnart-grid > div:last-child {
+        padding-top: 0 !important;
+      }
+      .svarnart-section::before {
+        font-size: clamp(4rem, 20vw, 12rem) !important;
+      }
+      .etym-word {
+        font-size: 1.8rem !important;
       }
 
       /* -- Art commission 2-col grid -- */
@@ -2455,11 +2480,11 @@
       );
     });
 
-    // 3. Horizontal Scroll
+    // 3. Horizontal Scroll — desktop only (disabled on mobile, shows as vertical stack)
     const hSec = document.getElementById('horizontal-sec');
     const hCont = document.querySelector('.h-container');
 
-    if (hSec && hCont) {
+    if (hSec && hCont && window.innerWidth > 768) {
       gsap.to(hCont, {
         x: () => -(hCont.scrollWidth - window.innerWidth) + "px",
         ease: "none",
