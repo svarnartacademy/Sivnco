@@ -257,12 +257,36 @@ export async function getStaticProps() {
 })();
 `
 
-  // Disable GSAP horizontal scroll pin on mobile (injected after inline script)
+  // On mobile: kill ONLY the horizontal scroll pin, then force all animated
+  // elements to their visible end-state so nothing stays blank.
   const mobileScrollFix = `
-// Disable horizontal GSAP pin on mobile
-if (typeof ScrollTrigger !== 'undefined' && window.innerWidth <= 768) {
-  ScrollTrigger.getAll().forEach(function(t) { t.kill(); });
-}
+(function() {
+  if (window.innerWidth > 768) return;
+
+  // Kill only the horizontal-scroll pin (identified by its trigger element)
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.getAll().forEach(function(st) {
+      var el = st.trigger;
+      if (el && (el.id === 'horizontal-sec' || el.classList.contains('h-container'))) {
+        st.kill();
+      }
+    });
+  }
+
+  // Immediately reveal all scroll-animated elements so they are never blank
+  document.querySelectorAll('.gs-fade').forEach(function(el) {
+    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
+  });
+  document.querySelectorAll('.gs-reveal').forEach(function(el) {
+    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
+  });
+  document.querySelectorAll('.reveal-text').forEach(function(el) {
+    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
+  });
+  document.querySelectorAll('.metric-card, .testi-card, .price-card, .tl-item, .chip').forEach(function(el) {
+    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
+  });
+})();
 `
 
   return {
