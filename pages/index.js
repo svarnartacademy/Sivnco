@@ -16,6 +16,73 @@ const FlowGradientHero = dynamic(
 // Mobile-responsive overrides injected directly from Next.js (always fresh, not from index.html)
 const MOBILE_CSS = `
   /* ======================================================= */
+  /* HOVER GLOW EFFECTS — radial gradient on interactive cards */
+  /* ======================================================= */
+
+  .glass-card,
+  .role-card,
+  .svarnart-chip,
+  .etym-part,
+  .cs-img-slot,
+  .cs-ba-side,
+  .etymology-grid {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .glass-card::after,
+  .role-card::after,
+  .svarnart-chip::after,
+  .etym-part::after,
+  .cs-img-slot::after,
+  .cs-ba-side::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: radial-gradient(circle at 50% 0%, rgba(212,96,10,0.12), transparent 70%) !important;
+    opacity: 0 !important;
+    transition: opacity 0.4s ease !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  .glass-card:hover::after,
+  .role-card:hover::after,
+  .svarnart-chip:hover::after,
+  .etym-part:hover::after,
+  .cs-img-slot:hover::after,
+  .cs-ba-side:hover::after {
+    opacity: 1 !important;
+  }
+
+  /* Nav CTA glow */
+  .nav-cta {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .nav-cta::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.15), transparent 70%) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    pointer-events: none !important;
+    border-radius: 40px !important;
+  }
+  .nav-cta:hover::after {
+    opacity: 1 !important;
+  }
+
+  /* Subtle border glow on hover for all cards */
+  .glass-card:hover,
+  .role-card:hover,
+  .svarnart-chip:hover,
+  .cs-img-slot:hover {
+    border-color: rgba(212,96,10,0.25) !important;
+  }
+
+  /* ======================================================= */
   /* SIVNCO MOBILE RESPONSIVE — injected by pages/index.js   */
   /* ======================================================= */
 

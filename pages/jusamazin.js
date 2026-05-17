@@ -105,6 +105,10 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
 .cta{font-family:var(--M);font-size:.65rem;letter-spacing:.18em;border:1px solid var(--ja-accent);color:var(--ja-accent);padding:.9rem 2.2rem;border-radius:40px;transition:.3s}
 .cta:hover{background:var(--ja-accent);color:#fff}
+.col,.slot,.del,.ba-side,.tcard,.ritem{position:relative;overflow:hidden}
+.col::after,.slot::after,.del::after,.ba-side::after,.tcard::after,.ritem::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,0.12),transparent 70%);opacity:0;transition:opacity .4s;pointer-events:none;z-index:1}
+.col:hover::after,.slot:hover::after,.del:hover::after,.ba-side:hover::after,.tcard:hover::after,.ritem:hover::after{opacity:1}
+.col:hover,.slot:hover,.del:hover,.ritem:hover{border-color:rgba(212,96,10,0.2)}
 @media(max-width:900px){
   .three,.ba,.tgrid{grid-template-columns:1fr}
   .metrics{grid-template-columns:repeat(2,1fr)}
