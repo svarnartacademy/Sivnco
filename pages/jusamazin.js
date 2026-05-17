@@ -217,7 +217,7 @@ export default function JusAmazin() {
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
           <div className="slot tall"><div className="slot-ghost">HERO PRODUCT SHOT</div><span className="slot-cap">Core Packaging Range</span></div>
-          <div className="slot"><div className="slot-ghost">3D RENDER</div><span className="slot-cap">3D Pack Render</span></div>
+          <Link href="/jusamazin/3d-pack-render" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">3D RENDER</div><span className="slot-cap">3D Pack Render</span></Link>
           <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods Range</span></div>
           <div className="slot wide"><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></div>
           <div className="slot"><div className="slot-ghost">BARS</div><span className="slot-cap">Bars</span></div>
