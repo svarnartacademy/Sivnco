@@ -216,16 +216,16 @@ export default function JusAmazin() {
         <div className="s-label rv">02 — Visual System</div>
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
-          <div className="slot tall"><div className="slot-ghost">HERO PRODUCT SHOT</div><span className="slot-cap">Core Packaging Range</span></div>
+          <Link href="/jusamazin/core-packaging" className="slot tall" style={{cursor:'pointer'}}><div className="slot-ghost">HERO PRODUCT SHOT</div><span className="slot-cap">Core Packaging Range</span></Link>
           <Link href="/jusamazin/3d-pack-render" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">3D RENDER</div><span className="slot-cap">3D Pack Render</span></Link>
-          <div className="slot"><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods Range</span></div>
-          <div className="slot wide"><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></div>
-          <div className="slot"><div className="slot-ghost">BARS</div><span className="slot-cap">Bars</span></div>
-          <div className="slot"><div className="slot-ghost">JARS</div><span className="slot-cap">Jars</span></div>
+          <Link href="/jusamazin/superfoods" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">SUPERFOODS</div><span className="slot-cap">Superfoods Range</span></Link>
+          <Link href="/jusamazin/brand-guidelines" className="slot wide" style={{cursor:'pointer'}}><div className="slot-ghost">BRAND GUIDELINES</div><span className="slot-cap">Brand Guidelines Document</span></Link>
+          <Link href="/jusamazin/bars" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">BARS</div><span className="slot-cap">Bars</span></Link>
+          <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">JARS</div><span className="slot-cap">Jars</span></Link>
           <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">DESI ENERGY BAR</div><span className="slot-cap">Desi Energy Bar</span></Link>
-          <div className="slot"><div className="slot-ghost">SNACKS</div><span className="slot-cap">Snacks</span></div>
-          <div className="slot"><div className="slot-ghost">MARKETING</div><span className="slot-cap">Marketing</span></div>
-          <div className="slot"><div className="slot-ghost">MANAGEMENT</div><span className="slot-cap">Management</span></div>
+          <Link href="/jusamazin/snacks" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">SNACKS</div><span className="slot-cap">Snacks</span></Link>
+          <Link href="/jusamazin/marketing" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">MARKETING</div><span className="slot-cap">Marketing</span></Link>
+          <Link href="/jusamazin/management" className="slot" style={{cursor:'pointer'}}><div className="slot-ghost">MANAGEMENT</div><span className="slot-cap">Management</span></Link>
         </div>
       </div></section>
 
