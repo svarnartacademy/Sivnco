@@ -106,7 +106,7 @@ const MOBILE_CSS = `
     }
 
     /* Nav */
-    .nav { padding: 1.2rem 4vw !important; top: 2.2rem !important; }
+    .nav { padding: 1.2rem 4vw !important; top: 0 !important; }
     .nav-links { gap: 1rem !important; }
     .nav-links a { font-size: 0.6rem !important; }
     .nav-cta { font-size: 0.65rem !important; padding: 0.6rem 1rem !important; }
