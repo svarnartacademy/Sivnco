@@ -100,7 +100,7 @@ function ChatWidget() {
       >
         {loaded && (
           <iframe
-            src="https://ais-pre-qlqfvjyvzfwxcd7o6z2t7n-501668487376.asia-southeast1.run.app"
+            src="https://sivnco-1098322690658.asia-southeast1.run.app"
             allow="microphone"
             title="Aura AI Assistant"
           />
