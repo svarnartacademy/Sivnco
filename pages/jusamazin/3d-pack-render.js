@@ -169,11 +169,7 @@ export default function PackRender3D() {
           <div key={p.id} className="pr-product prv" style={{transitionDelay:`${i*0.05}s`}}>
             <div className="pr-viewer">
               <div className="pr-viewer-badge">{`0${p.id}`}</div>
-              {/* 
-                To add your 3D model, place the .glb file in /public/models/ 
-                and uncomment the model-viewer tag below, replacing the src path.
-                
-                Example:
+              {p.id === 1 ? (
                 <model-viewer
                   src={`/models/product-${p.id}.glb`}
                   alt={p.name}
@@ -183,14 +179,15 @@ export default function PackRender3D() {
                   environment-image="neutral"
                   style={{width:'100%',height:'100%',minHeight:'400px',background:'transparent'}}
                 />
-              */}
-              <div className="pr-viewer-placeholder">
-                <div style={{fontSize:'3rem',marginBottom:'1rem',opacity:.15,fontFamily:'var(--D)'}}>◇</div>
-                {p.name.toUpperCase()}<br/>
-                <span style={{fontSize:'.45rem',opacity:.5,marginTop:'.5rem',display:'block'}}>
-                  Drop .glb file in /public/models/product-{p.id}.glb
-                </span>
-              </div>
+              ) : (
+                <div className="pr-viewer-placeholder">
+                  <div style={{fontSize:'3rem',marginBottom:'1rem',opacity:.15,fontFamily:'var(--D)'}}>◇</div>
+                  {p.name.toUpperCase()}<br/>
+                  <span style={{fontSize:'.45rem',opacity:.5,marginTop:'.5rem',display:'block'}}>
+                    Drop .glb file in /public/models/product-{p.id}.glb
+                  </span>
+                </div>
+              )}
               <div className="pr-viewer-hint">DRAG TO ROTATE · SCROLL TO ZOOM</div>
             </div>
             <div className="pr-info">
