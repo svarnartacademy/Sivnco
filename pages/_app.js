@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import { useState } from 'react';
 
-const CHATBOT_URL = 'https://ais-pre-qlqfvjyvzfwxcd7o6z2t7n-501668487376.asia-southeast1.run.app';
+const CHATBOT_URL = 'https://assistantforshivaraj-1054922494487.europe-west1.run.app';
 
 function ChatWidget() {
   const [open, setOpen] = useState(false);
