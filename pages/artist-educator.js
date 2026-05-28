@@ -10,26 +10,18 @@ const METRICS = [
   { n: '6+', l: 'Years Teaching' },
 ]
 
-const ARTWORKS = [
-  { id: 1, title: 'Rhythm of the Veena', medium: 'Oil & Acrylic on Canvas', year: '2024', size: 'large', img: '/images/paintings/painting_1.jpg' },
-  { id: 2, title: 'Bengaluru Mornings', medium: 'Watercolor on Paper', year: '2023', size: 'tall', img: '/images/paintings/painting_2.jpg' },
-  { id: 3, title: 'Form & Void', medium: 'Acrylic on Canvas', year: '2024', size: 'standard', img: '/images/paintings/painting_3.jpg' },
-  { id: 4, isText: true, text: '“Art is the synthesis of patient observation and intuitive expression.”', author: 'H.P. Shivaraj', size: 'standard' },
-  { id: 5, title: 'Namma Streets', medium: 'Ink & Wash on Paper', year: '2023', size: 'wide', img: '/images/paintings/painting_4.jpg' },
-  { id: 6, title: 'Silence of the Hills', medium: 'Oil on Canvas', year: '2024', size: 'standard', img: '/images/paintings/painting_5.jpg' },
-  { id: 7, title: 'Duality of Light', medium: 'Charcoal on Paper', year: '2022', size: 'standard', img: '/images/paintings/painting_6.jpg' },
-  { id: 8, title: 'Traditional Roots', medium: 'Gesso & Acrylic', year: '2023', size: 'tall', img: '/images/paintings/painting_7.jpg' },
-  { id: 9, title: 'Resonance', medium: 'Mixed Media on Wood', year: '2024', size: 'standard', img: '/images/paintings/painting_8.jpg' },
-  { id: 10, title: 'Abstract Flight', medium: 'Acrylic on Canvas', year: '2023', size: 'wide', img: '/images/paintings/painting_9.jpg' },
-  { id: 11, isText: true, text: '“Visual pedagogy is about training the eye to perceive relationships before training the hand to render lines.”', author: 'Pedagogical Note', size: 'standard' },
-  { id: 12, title: 'Inner Sanctuary', medium: 'Acrylic on Canvas', year: '2024', size: 'standard', img: '/images/paintings/painting_10.jpg' },
-  { id: 13, title: 'Metropolis Glow', medium: 'Acrylic on Canvas', year: '2024', size: 'wide', img: '/images/paintings/painting_11.jpg' },
-  { id: 14, title: 'Echoes of the Past', medium: 'Tempera on Panel', year: '2023', size: 'tall', img: '/images/paintings/painting_12.jpg' },
-  { id: 15, title: 'Vibrant Earth', medium: 'Acrylic on Canvas', year: '2024', size: 'standard', img: '/images/paintings/painting_13.jpg' },
-  { id: 16, title: 'Devotional Study', medium: 'Ink on Paper', year: '2022', size: 'standard', img: '/images/paintings/painting_14.jpg' },
-  { id: 17, title: 'Harmonic Convergence', medium: 'Acrylic on Canvas', year: '2024', size: 'wide', img: '/images/paintings/painting_15.jpg' },
-  { id: 18, isText: true, text: '“Every child is an artist. The problem is how to remain an artist once we grow up.”', author: 'Pablo Picasso', size: 'standard' }
-]
+const ARTWORKS = Array.from({ length: 23 }, (_, i) => {
+  const id = i + 1;
+  let size = 'standard';
+  if (id === 1 || id === 13) size = 'large';
+  else if ([2, 8, 14, 20].includes(id)) size = 'tall';
+  else if ([5, 10, 17, 22].includes(id)) size = 'wide';
+  return {
+    id,
+    img: `/images/paintings/painting_${id}.jpg`,
+    size
+  };
+});
 
 const TIMELINE = [
   { date: '2024 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
@@ -263,27 +255,11 @@ export default function ArtistEducator() {
           <h2 className="s-title rv">A gallery of<br /><i>original works.</i></h2>
           
           <div className="bento rv2">
-            {ARTWORKS.map((art) => {
-              if (art.isText) {
-                return (
-                  <div key={art.id} className={`b-card text-only ${art.size}`}>
-                    <span className="b-quote">{art.text}</span>
-                    <span className="b-author">— {art.author}</span>
-                  </div>
-                )
-              }
-              return (
-                <div key={art.id} className={`b-card ${art.size}`}>
-                  <img src={art.img} alt={art.title} />
-                  <div className="b-overlay" />
-                  <div className="b-content">
-                    <span className="b-label">Medium: {art.medium}</span>
-                    <h3 className="b-name">{art.title}</h3>
-                    <span className="b-meta">Year: {art.year} · Frame {art.id}</span>
-                  </div>
-                </div>
-              )
-            })}
+            {ARTWORKS.map((art) => (
+              <div key={art.id} className={`b-card ${art.size}`}>
+                <img src={art.img} alt={`Painting ${art.id}`} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
