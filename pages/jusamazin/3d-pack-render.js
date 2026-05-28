@@ -4,16 +4,14 @@ import Script from 'next/script'
 import { useState } from 'react'
 
 const PRODUCTS = [
-  {id:1,name:'Creamy Peanut Butter',cat:'Core Range',desc:'The hero SKU — clean label, high-protein. The 3D render captures the warm amber tone of the jar, the tactile matte cap, and the bold front-of-pack typography that anchors the entire brand system.'},
-  {id:2,name:'Crunchy Peanut Butter',cat:'Core Range',desc:'Same structural DNA as Creamy, differentiated by a textured visual language — the crunch. Designed to feel rugged yet premium, with subtle label pattern shifts that communicate variant instantly at shelf.'},
-  {id:3,name:'Dark Chocolate PB',cat:'Indulgence',desc:'A crossover between indulgence and nutrition. The render uses a deep cocoa gradient backdrop and metallic foil accent to position this as an evening treat — healthier than chocolate, tastier than plain PB.'},
-  {id:4,name:'Desi Energy Bar – Original',cat:'Bars',desc:'The flagship energy bar — Chikki meets modern performance nutrition. Electric blue packaging with hand-illustrated gully cricket art captures nostalgic Indian snacking culture in a contemporary wrapper.'},
-  {id:5,name:'Desi Energy Bar – Cocoa',cat:'Bars',desc:'Cocoa variant with a darker, richer visual treatment. The chocolate-brown base contrasts sharply with the electric blue branding, creating a distinct identity while staying unmistakably part of the Desi range.'},
-  {id:6,name:'Almond Butter',cat:'Premium',desc:'Premium positioning demanded a quieter design language. The almond butter jar uses gold-on-cream tones, restrained typography, and a translucent label window that lets the product color speak for itself.'},
-  {id:7,name:'Cashew Butter',cat:'Premium',desc:'Warm ivory tones paired with earthy sage green accents. The cashew render emphasizes the smooth, spreadable texture through material shading — the jar itself becomes the visual proof of quality.'},
-  {id:8,name:'Protein Superfoods Mix',cat:'Superfoods',desc:'A complex product with a complex ingredient list. The design challenge was clarity — making 12+ superfoods feel cohesive, not chaotic. Each ingredient gets a micro-icon, organized in a clean grid system.'},
-  {id:9,name:'Trail Mix Pack',cat:'Snacks',desc:'Designed for impulse — the trail mix pack is louder, more playful. Bold color blocking, oversized ingredient photography, and a tear-open visual cue that says "grab and go" within 0.5 seconds of shelf exposure.'},
-  {id:10,name:'Gift Box Set',cat:'Special Edition',desc:'The premium gift set wraps the entire brand universe into a single unboxing experience. Magnetic closure, embossed logo, individual slots for 4 jars — designed to feel like receiving something personal, not commercial.'},
+  {id:1,name:'200g Jars',cat:'Glass Jars',desc:'Compact glass jar format designed for premium spreads. Structural features include a wide mouth for easy access, custom neck thread heights for airtight metal lug caps, and optimized label wrapper dimensions.'},
+  {id:2,name:'325g Jars',cat:'Glass Jars',desc:'The retail volume benchmark. Perfect balance of shelf presence and hand ergonomics. Designed with a clear visual window to showcase product consistency and a smooth surface area for premium matte-finish paper labels.'},
+  {id:3,name:'500g Jars',cat:'Glass Jars',desc:'Large family-sized glass jar. Engineered for durability on retail shelves and during transit. The cylindrical structure provides a massive canvas for front-of-pack brand storytelling and clear nutrition panel grids.'},
+  {id:4,name:'1kg Tub',cat:'Tubs',desc:'Industrial and bulk consumer format. Heavy-duty molded HDPE construction with tamper-evident snap-on lids. Features wrap-around in-mold labeling (IML) to resist kitchen humidity and rough handling.'},
+  {id:5,name:'250g Pillow Pouch',cat:'Pouches',desc:'Flexible packaging format optimized for high-speed form-fill-seal (FFS) lines. Laminated multilayer film provides high moisture and oxygen barrier properties, finished with a smooth matte lacquer.'},
+  {id:6,name:'1kg Standy Pouch',cat:'Pouches',desc:'Premium stand-up pouch (doypack) with gusseted bottom. Features a reclosable zipper lock for consumer convenience and a tear-notch for easy initial opening. Maximizes shelf footprint and billboard space.'},
+  {id:7,name:'500g Standy Pouch',cat:'Pouches',desc:'Mid-size stand-up barrier pouch. Features durable side seals and bottom gusset design that stays upright even as product is consumed. Offers excellent gas barrier protection for roasted superfoods.'},
+  {id:8,name:'30g Pillow Pouch',cat:'Pouches',desc:'Single-serve impulse pouch format. Designed for trial sizes and travel convenience. Engineered with easy-tear serrated edges and high-tensile seals to prevent accidental bursting in transit.'},
 ]
 
 const CSS = `
