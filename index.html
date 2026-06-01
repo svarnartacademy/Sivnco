@@ -1854,9 +1854,9 @@
             <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">3D RENDER</span></div>
             <span class="cs-img-caption">3D Pack Render</span>
           </div>
-          <div class="cs-img-slot" id="csImg_guide" style="grid-column: span 2;">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">BRAND GUIDELINES</span></div>
-            <span class="cs-img-caption">Brand Guidelines Spread</span>
+          <div class="cs-img-slot" id="csImg_motion" style="grid-column: span 2;">
+            <video src="/images/motion_graphics.mp4" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);"></video>
+            <span class="cs-img-caption">Motion Graphics</span>
           </div>
         </div>
 
@@ -2692,15 +2692,15 @@
           }
         });
 
-        // Hover zoom for static Case Study image slots (direct hover targets)
-        const staticSlots = ['csImg_hero', 'csImg_social'];
+        // Hover zoom for static Case Study slots (direct hover targets)
+        const staticSlots = ['csImg_hero', 'csImg_social', 'csImg_motion'];
         staticSlots.forEach(id => {
           const el = document.getElementById(id);
           if (el) {
-            const img = el.querySelector('img');
-            if (img) {
-              el.addEventListener('mouseenter', () => img.style.transform = 'scale(1.05)');
-              el.addEventListener('mouseleave', () => img.style.transform = 'scale(1)');
+            const media = el.querySelector('img, video');
+            if (media) {
+              el.addEventListener('mouseenter', () => media.style.transform = 'scale(1.05)');
+              el.addEventListener('mouseleave', () => media.style.transform = 'scale(1)');
             }
           }
         });
