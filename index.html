@@ -1843,7 +1843,7 @@
         <!-- Image Mosaic -->
         <div class="cs-img-mosaic gs-fade">
           <div class="cs-img-slot tall" id="csImg_hero">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:1.2rem;letter-spacing:0.1em;">PRODUCT PHOTOGRAPHY</span></div>
+            <img src="/images/hero_packaging.jpg" alt="Hero Packaging Shot" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             <span class="cs-img-caption">Hero Packaging Shot</span>
           </div>
           <div class="cs-img-slot" id="csImg_social">
@@ -2678,7 +2678,7 @@
         'gallery_systems': 'gImg_systems',
       };
 
-      // Add hover zoom for local images (Artist-Educator and AI-Workflow)
+      // Add hover zoom for local images (Artist-Educator, AI-Workflow, and Case Study Hero)
       try {
         const localIDs = ['gImg_artist_educator', 'gImg_ai_workflow'];
         localIDs.forEach(id => {
@@ -2691,6 +2691,16 @@
             }
           }
         });
+
+        // Hover zoom for static Case Study Hero image slot (direct hover target)
+        const csHero = document.getElementById('csImg_hero');
+        if (csHero) {
+          const csImg = csHero.querySelector('img');
+          if (csImg) {
+            csHero.addEventListener('mouseenter', () => csImg.style.transform = 'scale(1.05)');
+            csHero.addEventListener('mouseleave', () => csImg.style.transform = 'scale(1)');
+          }
+        }
       } catch (e) { }
 
       try {
