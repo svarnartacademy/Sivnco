@@ -1851,7 +1851,7 @@
             <span class="cs-img-caption">Social Media Template</span>
           </div>
           <div class="cs-img-slot" id="csImg_3d">
-            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.15;"><span style="font-family:var(--f-display);font-size:0.9rem;">3D RENDER</span></div>
+            <model-viewer src="/models/200g_jar_pistachio.glb" alt="3D Pack Render" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" style="width:100%; height:100%; min-height:100%; background:transparent;"></model-viewer>
             <span class="cs-img-caption">3D Pack Render</span>
           </div>
           <div class="cs-img-slot" id="csImg_motion" style="grid-column: span 2;">
@@ -2693,11 +2693,11 @@
         });
 
         // Hover zoom for static Case Study slots (direct hover targets)
-        const staticSlots = ['csImg_hero', 'csImg_social', 'csImg_motion'];
+        const staticSlots = ['csImg_hero', 'csImg_social', 'csImg_motion', 'csImg_3d'];
         staticSlots.forEach(id => {
           const el = document.getElementById(id);
           if (el) {
-            const media = el.querySelector('img, video');
+            const media = el.querySelector('img, video, model-viewer');
             if (media) {
               el.addEventListener('mouseenter', () => media.style.transform = 'scale(1.05)');
               el.addEventListener('mouseleave', () => media.style.transform = 'scale(1)');
