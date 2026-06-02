@@ -264,7 +264,7 @@ export default function Home({ bodyHTML, inlineScript }) {
         <meta property="og:url" content="https://sivnco.in/" />
         <meta property="og:title" content="Sivnco — H.P. Shivaraj" />
         <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
-        <meta property="og:image" content="https://framerusercontent.com/images/9LvHlrCzJWdgyGii5Gmrp4qI.png" />
+        <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
