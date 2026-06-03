@@ -68,11 +68,11 @@ export default function Snacks(){return(<>
 <section className="sn-s"><div className="sn-c"><div className="sn-label snv">Metrics</div><div className="sn-title snv">Category<br/><em>Acceleration.</em></div><div className="sn-metrics snv"><div className="sn-metric"><div className="sn-metric-n">₹10</div><div className="sn-metric-l">Price point entry for Crushed Peanut Chikki</div></div><div className="sn-metric"><div className="sn-metric-n">3 SKUs</div><div className="sn-metric-l">Core systems stabilized across snack repository</div></div></div></div></section>
 <section className="sn-s" style={{padding:0}}><div className="sn-gallery">{[
   {id:'chikki_vector',alt:'Chikki Vector',src:'/images/jusamazin/snacks/chikki_vector.png'},
-  {id:'lamination_detail',alt:'Lamination Detail',src:'/images/jusamazin/snacks/lamination_detail.png'},
+  {id:'mom_bar_front',alt:'MOM Bar Front Design',src:'/images/jusamazin/snacks/mom_bar_front.png'},
   {id:'cracker_listing',alt:'Cracker Listing',src:'/images/jusamazin/snacks/cracker_listing.png'},
   {id:'pancake_mix',alt:'Pancake Mix',src:'/images/jusamazin/snacks/pancake_mix.png'},
-  {id:'shelf_placement',alt:'Shelf Placement',src:'/images/jusamazin/snacks/shelf_placement.png'},
-  {id:'packaging_film',alt:'Packaging Film',src:'/images/jusamazin/snacks/packaging_film.png'}
+  {id:'millet_mixture_front',alt:'Millet Mixture Magic Masala Front Design',src:'/images/jusamazin/snacks/millet_mixture_front.png'},
+  {id:'trail_mix_front',alt:'Trail Mix Fennel Freshness Front Design',src:'/images/jusamazin/snacks/trail_mix_front.png'}
 ].map(g=>(<div key={g.id} className="sn-gal-item snv" style={{position:'relative',overflow:'hidden'}}><img src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>))}</div></section>
 <section className="sn-s"><div className="sn-c"><div className="sn-label snv">Voices</div><div className="sn-title snv">Feedback<br/><em>Matrix.</em></div><div className="sn-fb-grid">{FEEDBACK.map((fb,i)=>(<div key={i} className="sn-fb-card snv"><div className="sn-fb-q">&ldquo;{fb.q}&rdquo;</div><div><div className="sn-fb-n">{fb.n}</div><div className="sn-fb-r">{fb.r}</div></div></div>))}</div></div></section>
 <div className="sn-c"><div className="sn-footer"><div className="sn-label">Category Directories {'>>>'}</div><div className="sn-footer-links">{NAV.map(n=>(<Link key={n.l} href={n.h} className="sn-footer-link">{n.l}</Link>))}</div><div className="sn-footer-meta"><span>© 2023–2026</span><span>My Journey @ Jus&apos;Amazin</span></div></div></div>

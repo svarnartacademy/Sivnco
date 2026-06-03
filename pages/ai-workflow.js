@@ -6,7 +6,7 @@ import StartProjectButton from '@/components/demo'
 const METRICS = [
   { n: '90%', l: 'Briefing Phase Speedup' },
   { n: '2.5x', l: 'Creative Efficiency' },
-  { n: '2021', l: 'AI Journey Began' },
+  { n: '2022', l: 'AI Journey Began' },
   { n: '4+', l: 'Custom Agents Built' },
 ]
 
@@ -30,7 +30,7 @@ const TIMELINE = [
     desc: 'Adapted AI tools for voice synthesis and vocal adjustments, video editing/effects, and rapid concept generation. By using generative AI to produce asset drafts and packaging mocks, we reduced the time needed to establish a working design brief from days to hours.'
   },
   {
-    date: 'College Days (2021)',
+    date: 'College Days (2022)',
     title: 'AI Workshops & Evangeline',
     org: 'Art & Tech Communities',
     desc: 'Organized and conducted AI implementation workshops for all students and communities, teaching early generative art concepts, prompt design, and AI automation tools during the early phases of LLMs and generative art.'
@@ -181,7 +181,7 @@ export default function AIWorkflow() {
               ['Focus', 'Process Engineering'],
               ['Role', 'Systems & AI Integration'],
               ['Impact', 'Reduced Brief Cycles'],
-              ['Timeline', '2021 — Present']
+              ['Timeline', '2022 — Present']
             ].map(([l, v]) => (
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
             ))}

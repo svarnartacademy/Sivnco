@@ -67,7 +67,7 @@ export default function Jars(){return(<>
   {id:'glass_front',alt:'Glass Jar Front',src:'/images/jusamazin/jars/glass_front.png'},
   {id:'glass_lifestyle',alt:'Glass Jar Lifestyle',src:'/images/jusamazin/jars/glass_lifestyle.png'},
   {id:'plastic_front',alt:'Plastic Jar Front',src:'/images/jusamazin/jars/plastic_front.png'},
-  {id:'plastic_infographic',alt:'Plastic Jar Infographic',src:'/images/jusamazin/jars/plastic_infographic.png'}
+  {id:'plastic_front_multi',alt:'Plastic Jar Front Multi',src:'/images/jusamazin/jars/plastic_front_multi.png'}
 ].map(g=>(<div key={g.id} className="jr-gal-item jrv" style={{position:'relative',overflow:'hidden'}}><img src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>))}</div></section>
 <section className="jr-s"><div className="jr-c"><div className="jr-label jrv">Voices</div><div className="jr-title jrv">Feedback<br/><em>Matrix.</em></div><div className="jr-fb-grid">{FEEDBACK.map((fb,i)=>(<div key={i} className="jr-fb-card jrv"><div className="jr-fb-q">&ldquo;{fb.q}&rdquo;</div><div><div className="jr-fb-n">{fb.n}</div><div className="jr-fb-r">{fb.r}</div></div></div>))}</div></div></section>
 <div className="jr-c"><div className="jr-footer"><div className="jr-label">System Vault {'>>>'}</div><div className="jr-footer-links">{NAV.map(n=>(<Link key={n.l} href={n.h} className="jr-footer-link">{n.l}</Link>))}</div><div className="jr-footer-meta"><span>© 2023–2026</span><span>My Journey @ Jus&apos;Amazin</span></div></div></div>
