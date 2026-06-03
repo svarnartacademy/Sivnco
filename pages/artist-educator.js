@@ -26,8 +26,8 @@ const ARTWORKS = Array.from({ length: 23 }, (_, i) => {
 const TIMELINE = [
   { date: '2024 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
   { date: '2023 — Present', title: 'Portfolio Development Mentor', org: 'Independent / Svarnart', desc: 'Guiding high-schoolers through composition, design thinking, and technical drawing to build portfolios for NID, NIFT, and Srishti.' },
-  { date: '2021 — Present', title: 'Art & Design Teacher', org: 'Openhouse · Bengaluru', desc: 'Teaching drawing, values, and color theory to students across age groups. Keeping curriculum active, hands-on, and focused on creative thinking.' },
-  { date: '2020 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with my wife. Developed a structured fine art pedagogy that bridges traditional roots (Carnatic music, classical forms) with modern visual design.' },
+  { date: '2025 — Present', title: 'Art & Design Teacher', org: 'Openhouse · Bengaluru', desc: 'Teaching drawing, values, and color theory to students across age groups. Keeping curriculum active, hands-on, and focused on creative thinking.' },
+  { date: '2025 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with my wife. Developed a structured fine art pedagogy that bridges traditional roots (Carnatic music, classical forms) with modern visual design.' },
   { date: '2018 — Present', title: 'Active Painting Practice', org: 'Sivnco Studio', desc: 'Exhibiting personal work, focusing on semi-abstract acrylic landscapes and mixed-media representations of Indian classical art and heritage.' }
 ]
 
