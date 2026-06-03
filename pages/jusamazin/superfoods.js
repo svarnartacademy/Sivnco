@@ -74,10 +74,10 @@ export default function Superfoods(){return(<>
 <div className="sf-soul"><div className="sf-c"><div className="sf-label sfv" style={{textAlign:'center'}}>The Technical Standard</div><blockquote className="sf-soul-q sfv">&ldquo;In consumer goods packaging, <strong>accuracy is an aesthetic priority</strong>. If a layout lacks structural precision, consumer trust breaks down <strong>instantly on the shelf</strong>. Every font weight, every casing decision, every regulatory line — it all compounds into either credibility or chaos.&rdquo;</blockquote></div></div>
 <section className="sf-s" style={{padding:0}}><div className="sf-gallery">{[
   {id:'pouch_front_500g',alt:'Pouch Front 500g',src:'/images/jusamazin/superfoods/pouch_front_500g.png'},
-  {id:'pouch_back',alt:'Pouch Back Panel',src:'/images/jusamazin/superfoods/pouch_back.png'},
+  {id:'pouch_front_oats',alt:'Pouch Front Oats',src:'/images/jusamazin/superfoods/pouch_front_oats.png'},
   {id:'seam_detail',alt:'Seam Detail',src:'/images/jusamazin/superfoods/seam_detail.png'},
   {id:'typography_macro',alt:'Typography Macro',src:'/images/jusamazin/superfoods/typography_macro.png'},
-  {id:'nutrition_label',alt:'Nutrition Label',src:'/images/jusamazin/superfoods/nutrition_label.png'},
+  {id:'pouch_front_flax',alt:'Pouch Front Flax',src:'/images/jusamazin/superfoods/pouch_front_flax.png'},
   {id:'shelf_lineup',alt:'Shelf Lineup',src:'/images/jusamazin/superfoods/shelf_lineup.png'}
 ].map(g=>(<div key={g.id} className="sf-gal-item sfv" style={{position:'relative',overflow:'hidden'}}><img src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>))}</div></section>
 <div className="sf-c"><div className="sf-footer"><div className="sf-label">System Directories {'>>>'}</div><div className="sf-footer-links">{NAV.map(n=>(<Link key={n.l} href={n.h} className="sf-footer-link">{n.l}</Link>))}</div><div className="sf-footer-meta"><span>© 2023–2026</span><span>My Journey @ Jus&apos;Amazin</span></div></div></div>
