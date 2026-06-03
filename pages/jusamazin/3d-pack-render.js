@@ -214,8 +214,8 @@ export default function PackRender3D() {
         <div className="pr-footer">
           <div className="pr-label">Projects {'>>>'}</div>
           <div className="pr-footer-links">
-            {['Bars','Jars','Superfoods','Snacks','Marketing','Management'].map(l=>(
-              <Link key={l} href="/jusamazin" className="pr-footer-link">{l}</Link>
+            {[{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}].map(n=>(
+              <Link key={n.l} href={n.h} className="pr-footer-link">{n.l}</Link>
             ))}
           </div>
           <div className="pr-footer-meta">

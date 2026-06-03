@@ -26,7 +26,7 @@ const FEEDBACK = [
   {n:"Gagan",r:"Customer",q:"Well its too overloaded but that's what is out of the box from the market.",c:"consumers"},
 ]
 const GALLERY = ['Studio Render A','Retail Shelf Setup','Close-up Texture','Lifestyle Shot','Pack Array','Print Detail']
-const NAV_LINKS = ['Bars','Jars','Superfoods','Snacks','Marketing','Management']
+const NAV_LINKS = [{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -307,8 +307,8 @@ export default function DesiEnergyBar() {
         <div className="deb-footer">
           <div className="deb-label">Projects {'>>>'}</div>
           <div className="deb-footer-links">
-            {NAV_LINKS.map(l=>(
-              <Link key={l} href="/jusamazin" className="deb-footer-link">{l}</Link>
+            {NAV_LINKS.map(n=>(
+              <Link key={n.l} href={n.h} className="deb-footer-link">{n.l}</Link>
             ))}
           </div>
           <div className="deb-footer-meta">
