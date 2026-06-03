@@ -167,7 +167,7 @@ export default function PackRender3D() {
           <div key={p.id} className="pr-product prv" style={{transitionDelay:`${i*0.05}s`}}>
             <div className="pr-viewer">
               <div className="pr-viewer-badge">{`0${p.id}`}</div>
-              {p.id === 1 ? (
+              {[1,2,3,4,5,6].includes(p.id) ? (
                 <model-viewer
                   src={`/models/product-${p.id}.glb`}
                   alt={p.name}
