@@ -132,7 +132,7 @@ const MOBILE_CSS = `
     /* Metrics */
     .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
-    /* ── FOUR ROLES HORIZONTAL SCROLL → VERTICAL STACK ── */
+    /* -- FOUR ROLES HORIZONTAL SCROLL -> VERTICAL STACK -- */
     #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
     .h-sticky { height: auto !important; display: block !important; }
     .h-container {
@@ -151,7 +151,7 @@ const MOBILE_CSS = `
     }
     .role-card h3 { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
 
-    /* ── SVARNART SECTION ── */
+    /* -- SVARNART SECTION -- */
     .svarnart-grid {
       grid-template-columns: 1fr !important;
       gap: 2rem !important;
@@ -171,13 +171,13 @@ const MOBILE_CSS = `
     .etym-word { font-size: 1.8rem !important; }
     .svarnart-section::before { font-size: clamp(4rem, 20vw, 12rem) !important; }
 
-    /* ── ART COMMISSION ── */
+    /* -- ART COMMISSION -- */
     .art-comm-grid {
       grid-template-columns: 1fr !important;
       gap: 2rem !important;
     }
 
-    /* ── FOOTER / CONTACT SECTION ── */
+    /* -- FOOTER / CONTACT SECTION -- */
     /* Stack the 2-col headline+form grid to single column */
     .footer-grid {
       grid-template-columns: 1fr !important;

@@ -9,7 +9,7 @@ function ChatWidget() {
   return (
     <>
       <style>{`
-        /* ── Toggle button ── */
+        /* -- Toggle button -- */
         .aura-toggle {
           position: fixed;
           bottom: 24px;
@@ -42,7 +42,7 @@ function ChatWidget() {
         }
         .aura-toggle.is-open svg { transform: rotate(180deg); }
 
-        /* ── Pulse dot ── */
+        /* -- Pulse dot -- */
         .aura-pulse {
           position: absolute;
           width: 8px;
@@ -58,7 +58,7 @@ function ChatWidget() {
           50%       { opacity: 0.4; transform: scale(1.5); }
         }
 
-        /* ── Tooltip ── */
+        /* -- Tooltip -- */
         .aura-tooltip {
           position: fixed;
           bottom: 90px;
@@ -84,7 +84,7 @@ function ChatWidget() {
           transform: translateY(0);
         }
 
-        /* ── Chat panel ── */
+        /* -- Chat panel -- */
         .aura-panel {
           position: fixed;
           bottom: 92px;
@@ -164,7 +164,7 @@ function ChatWidget() {
           background: transparent;
         }
 
-        /* ── Responsive ── */
+        /* -- Responsive -- */
         @media (max-width: 480px) {
           .aura-panel {
             right: 0;
