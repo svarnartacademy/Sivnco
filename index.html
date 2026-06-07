@@ -1759,19 +1759,32 @@
             </div>
           </a>
 
-          <!-- Project 4 -->
-          <a href="/brand-assets" class="glass-card project-card gs-fade"
+          <!-- Project 4 — Web Development -->
+          <a href="/web-development" class="glass-card project-card gs-fade"
             style="grid-column: span 5; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-            <div class="p-img-wrap" id="gImg_illustration"
+            <div class="p-img-wrap" id="gImg_web_dev"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <img src="/images/illustrations_cover.png" alt="Illustration Brand Assets" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+              <!-- Gradient visual in place of a cover image -->
+              <div style="width:100%; height:100%; background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 40%, #0f1922 70%, #0A0906 100%); position:relative; overflow:hidden;">
+                <!-- Subtle code-grid pattern -->
+                <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,96,10,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(212,96,10,0.06) 1px,transparent 1px);background-size:32px 32px;"></div>
+                <!-- Floating code snippets -->
+                <div style="position:absolute;top:18%;left:8%;font-family:var(--f-mono);font-size:0.55rem;color:rgba(212,96,10,0.55);letter-spacing:0.08em;line-height:1.7;">
+                  &lt;Next.js /&gt;<br/>&lt;Firebase /&gt;<br/>&lt;Razorpay /&gt;
+                </div>
+                <div style="position:absolute;bottom:28%;right:8%;font-family:var(--f-mono);font-size:0.5rem;color:rgba(240,237,230,0.25);letter-spacing:0.08em;line-height:1.7;">
+                  PWA ✦ SSG<br/>CSP ✦ SEO
+                </div>
+                <!-- Accent orb -->
+                <div style="position:absolute;top:-10%;right:-10%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(212,96,10,0.18),transparent 70%);filter:blur(30px);"></div>
+              </div>
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Illustration</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Brand Assets</h3>
+              <div class="t-mono-label" style="color: var(--text-main);">Full-Stack · Next.js &amp; Vite</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Web Development</h3>
             </div>
             <div
-              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); z-index: 1;">
             </div>
           </a>
 
@@ -1792,8 +1805,7 @@
           </a>
         </div>
         <div style="text-align:right; margin-top:2rem;">
-          <a href="https://sivnco.framer.website" target="_blank" class="nav-cta" style="font-size:0.75rem;">View Full
-            Portfolio &rarr;</a>
+          <a href="#case-study" class="nav-cta" style="font-size:0.75rem;">View Case Study &darr;</a>
         </div>
       </div>
     </section>
@@ -1823,7 +1835,7 @@
     <!-- FEATURED CASE STUDY — EMBEDDED INLINE -->
     <section class="section" id="case-study" style="border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
       <div class="container">
-        <div class="t-mono-label gs-fade">Case Study — 2022 to Present</div>
+        <div class="t-mono-label gs-fade">Case Study — Aug 2023 to Present</div>
         <h2 class="h-large gs-reveal">
           <div class="reveal-wrap"><div class="reveal-text">Jus</div></div>
           <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div></div>
@@ -1917,9 +1929,9 @@
             </div>
           </h2>
           <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px;">
-            I'm Shiv &mdash; H P Shivaraj. I lead brand and communication design at Jus Amazin, teach art at Openhouse
-            learning hubs, and co-run Svarnart Academy with my wife. Born and raised in Namma Bengaluru, that texture
-            shows up in everything I make.
+            I'm Shiv &mdash; H P Shivaraj. I lead brand and communication design at Jus Amazin, co-run Svarnart Academy
+            with my wife, and taught fine art at Openhouse learning hubs until April 2026. Born and raised in Namma Bengaluru,
+            that texture shows up in everything I make.
           </p>
           <p class="gs-fade"
             style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px; margin-top:1.5rem;">
@@ -1931,6 +1943,20 @@
             <span class="chip">&dagger; Art Teacher</span>
             <span class="chip">&#9670; Founder</span>
             <span class="chip">&sube; Studio Lead</span>
+          </div>
+          <div class="gs-fade" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <a href="/resume.pdf" download="HP_Shivaraj_Resume.pdf"
+              style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; border: 1px solid var(--glass-border); padding: 0.75rem 1.4rem; border-radius: 40px; color: var(--text-main); display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.35s cubic-bezier(0.19,1,0.22,1);"
+              onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';"
+              onmouseout="this.style.borderColor='var(--glass-border)';this.style.color='var(--text-main)';">
+              &#8595; Download CV
+            </a>
+            <a href="#contact"
+              style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: var(--text-muted); transition: color 0.3s;"
+              onmouseover="this.style.color='var(--text-main)';"
+              onmouseout="this.style.color='var(--text-muted)';">or get in touch &rarr;</a>
+          </div>
+          <div class="role-chips gs-fade" style="margin-top:0.8rem;">
             <span class="chip">&clubs; Illustrator</span>
             <span class="chip">&hearts; Painter</span>
           </div>
@@ -1967,7 +1993,7 @@
             style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">02 / Teaching</div>
             <h3 class="h-large" style="font-size: 3rem;">Art &amp; Design Teacher</h3>
-            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Teaching at Openhouse learning hubs. Guiding students through drawing, composition, and visual thinking.</p>
+            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">Taught fine art and composition at Openhouse learning hubs (2025 &ndash; Apr 2026). Guiding students through drawing, composition, and visual thinking.</p>
             <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
               <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">DRAWING</span>
               <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">COMPOSITION</span>
@@ -2063,7 +2089,7 @@
         <div class="timeline gs-fade">
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-date">2022 — Present</div>
+            <div class="tl-date">Aug 2023 — Present</div>
             <div class="tl-title">Design &amp; Communications Manager</div>
             <div class="tl-company">Jus Amazin · Bengaluru</div>
             <div class="tl-desc">Leading end-to-end visual and print media for a D2C peanut butter brand. Packaging,
@@ -2071,11 +2097,11 @@
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-date">2025 — Present</div>
+            <div class="tl-date">2025 — Apr 2026</div>
             <div class="tl-title">Art &amp; Design Teacher</div>
             <div class="tl-company">Openhouse · Bengaluru</div>
-            <div class="tl-desc">Teaching drawing, composition, and visual thinking to students across age groups. Keeps
-              me rooted in the fundamentals of making.</div>
+            <div class="tl-desc">Taught drawing, composition, and visual thinking to students across age groups. Rooted
+              the studio practice in the fundamentals of making.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
@@ -2306,7 +2332,7 @@
       <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div style="font-family: var(--f-display); font-size: 1.2rem; letter-spacing: 0.05em;">SIVNCO<span style="color:var(--accent);">.</span></div>
         <div style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6;">Designed with intent &copy; 2024&ndash;2025</div>
-        <a href="https://sivnco.framer.website" target="_blank" style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);">Full Portfolio &rarr;</a>
+        <a href="#work" style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);">View Work &uarr;</a>
       </div>
 
     </div>
@@ -2680,13 +2706,13 @@
 
       const SLOT_MAP = {
         'gallery_featured_ja': 'gImg_featured',
-        'gallery_illustration': 'gImg_illustration',
+        'gallery_web_dev': 'gImg_web_dev',
         'gallery_systems': 'gImg_systems',
       };
 
       // Add hover zoom for local images (Jus Amazin, Artist-Educator, AI-Workflow, Illustrations, In-House, and Case Study Hero)
       try {
-        const localIDs = ['gImg_featured', 'gImg_artist_educator', 'gImg_ai_workflow', 'gImg_illustration', 'gImg_in_house'];
+        const localIDs = ['gImg_featured', 'gImg_artist_educator', 'gImg_ai_workflow', 'gImg_web_dev', 'gImg_in_house'];
         localIDs.forEach(id => {
           const el = document.getElementById(id);
           if (el) {
