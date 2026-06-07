@@ -6,12 +6,13 @@ import StartProjectButton from '@/components/demo'
 const METRICS = [
   { n: '200+', l: 'Mentored Students' },
   { n: '12', l: 'Portfolio Selections' },
-  { n: '23', l: 'Original Paintings' },
+  { n: '19', l: 'Original Paintings' },
   { n: '6+', l: 'Years Teaching' },
 ]
 
-const ARTWORKS = Array.from({ length: 23 }, (_, i) => {
-  const id = i + 1;
+// IDs of unique paintings (duplicates 6, 16, 19, 21 removed)
+const UNIQUE_IDS = [1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,20,22,23];
+const ARTWORKS = UNIQUE_IDS.map((id) => {
   let size = 'standard';
   if (id === 1 || id === 13) size = 'large';
   else if ([2, 8, 14, 20].includes(id)) size = 'tall';
