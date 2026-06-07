@@ -10,7 +10,6 @@ const OG_MITHAI_ASSETS = [
   { id: 'far', name: 'Perspective Mockup', role: 'Package Geometry & Depth', img: '/images/og_mithai/ogmitai_camera_far.png', size: 'wide' },
   { id: 'front_alt', name: 'Alternate Front Layout', role: 'Typography Variations', img: '/images/og_mithai/ogmitai_camera_front_alt.png', size: 'standard' },
   { id: 'mithai_3', name: 'Textured Box Print Detail', role: 'Close-Up Texture & Finish', img: '/images/og_mithai/ogmitai_3.png', size: 'standard' },
-  { id: 'whatsapp', name: 'WIP Production Phase', role: 'Factory Validation Check', img: '/images/og_mithai/ogmitai_whatsapp.jpg', size: 'wide' },
 ]
 
 const VEDIC_TREATS_ASSETS = [
@@ -256,12 +255,6 @@ export default function InHouseDesigns() {
             {OG_MITHAI_ASSETS.map((asset) => (
               <div key={asset.id} className={`b-card ${asset.size}`}>
                 <img src={asset.img} alt={asset.name} />
-                <div className="b-overlay" />
-                <div className="b-content">
-                  <span className="b-label">{asset.role}</span>
-                  <h3 className="b-name">{asset.name}</h3>
-                  <span className="b-meta">Rendering Mockup</span>
-                </div>
               </div>
             ))}
           </div>
@@ -338,12 +331,6 @@ export default function InHouseDesigns() {
             {VEDIC_TREATS_ASSETS.map((asset) => (
               <div key={asset.id} className={`b-card ${asset.size}`}>
                 <img src={asset.img} alt={asset.name} />
-                <div className="b-overlay" />
-                <div className="b-content">
-                  <span className="b-label">{asset.role}</span>
-                  <h3 className="b-name">{asset.name}</h3>
-                  <span className="b-meta">Asset Rationale</span>
-                </div>
               </div>
             ))}
           </div>
