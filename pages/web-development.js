@@ -151,11 +151,12 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
 
 /* REVEALS */
-.rv{opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .rv.vis{opacity:1;transform:translateY(0)}
-.rv2{opacity:0;transition:opacity .85s cubic-bezier(.16,1,.3,1) .15s}
+.rv2{opacity:0;transition:opacity .8s cubic-bezier(.16,1,.3,1) .12s}
 .rv2.vis{opacity:1}
-.hero .rv,.hero .rv2{opacity:1;transform:translateY(0)}
+/* Hero content always visible */
+.hero .rv,.hero .rv2,.hero-always{opacity:1!important;transform:translateY(0)!important}
 
 @media(max-width:900px){
   .metrics{grid-template-columns:repeat(2,1fr)}
@@ -331,26 +332,37 @@ export default function WebDevelopment() {
         </div>
       </div>
 
-      <Script id="page-init" strategy="lazyOnload">{`
+      <Script id="page-init" strategy="afterInteractive">{`
         (function(){
-          // 1. SCROLL REVEALS
+          function revealAll() {
+            document.querySelectorAll('.rv, .rv2').forEach(function(el) {
+              el.classList.add('vis');
+            });
+          }
+
           function initReveals() {
+            // Immediately show anything already in viewport
             var obs = new IntersectionObserver(function(entries) {
               entries.forEach(function(e) {
                 if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
               });
-            }, { threshold: 0.04, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
             document.querySelectorAll('.rv, .rv2').forEach(function(el) { obs.observe(el); });
-            setTimeout(function() {
-              document.querySelectorAll('.rv, .rv2').forEach(function(el) { el.classList.add('vis'); });
-            }, 1200);
-            if (window.innerWidth <= 900) {
-              document.querySelectorAll('.rv, .rv2').forEach(function(el) { el.classList.add('vis'); });
-            }
+
+            // Hard fallback — reveal everything after 800ms no matter what
+            setTimeout(revealAll, 800);
+
+            // Mobile: reveal all immediately
+            if (window.innerWidth <= 900) { revealAll(); }
           }
+
+          // Fire as early as possible
           if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initReveals);
-          } else { initReveals(); }
+          } else {
+            initReveals();
+          }
+          window.addEventListener('load', initReveals);
 
           // 2. LENIS
           (function waitForLenis() {
