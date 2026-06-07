@@ -151,6 +151,44 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .rv2.vis{opacity:1}
 @keyframes heroBgPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 .hero .rv{opacity:1;transform:translateY(0)}
+
+/* HERO ENTRANCE */
+@keyframes fadeBlurIn{0%{opacity:0;filter:blur(12px);transform:translateY(20px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-15px) scale(1.05)}66%{transform:translate(-15px,10px) scale(0.95)}}
+@keyframes cursorBlink{0%,100%{border-right-color:var(--ja-accent)}50%{border-right-color:transparent}}
+@keyframes heroBgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* Hero entrance stagger */
+.hero .eyebrow{animation:fadeBlurIn .8s cubic-bezier(.16,1,.3,1) .2s both}
+.hero .hero-title{animation:fadeBlurIn .9s cubic-bezier(.16,1,.3,1) .35s both}
+.hero .hero-sub{animation:fadeBlurIn .8s cubic-bezier(.16,1,.3,1) .55s both}
+.hero .hero-meta{animation:fadeBlurIn .8s cubic-bezier(.16,1,.3,1) .7s both}
+
+/* Floating orb */
+.hero-orb{animation:orbFloat 8s ease-in-out infinite}
+
+/* Gradient bg */
+.hero-bg{background:linear-gradient(135deg,#0d1117,#1a1f2e,#0f1922,#0A0906)!important;background-size:300% 300%!important;animation:heroBgShift 12s ease-in-out infinite}
+
+/* Section label typewriter */
+.s-label{border-right:2px solid var(--ja-accent);padding-right:6px;animation:cursorBlink 1s step-end infinite;display:inline-block}
+
+/* Link underline */
+.pc-link{position:relative}
+.pc-link::before{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--ja-accent);transition:width .4s cubic-bezier(.16,1,.3,1)}
+.pc-link:hover::before{width:100%}
+
+/* Card tilt ready */
+.proj-card{transition:transform .4s cubic-bezier(.19,1,.22,1),box-shadow .4s;will-change:transform}
+
+/* Pillar stagger */
+.pillar:nth-child(1) .rv,.pillar:nth-child(1) .rv2{transition-delay:.05s}
+.pillar:nth-child(2) .rv,.pillar:nth-child(2) .rv2{transition-delay:.15s}
+.pillar:nth-child(3) .rv,.pillar:nth-child(3) .rv2{transition-delay:.25s}
+
+/* Footer slide */
+.pfooter{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.pfooter.vis{opacity:1;transform:translateY(0)}
 `
 
 export default function JusAmazin() {
@@ -340,7 +378,7 @@ export default function JusAmazin() {
         </div>
       </div>
 
-      <Script id="page-init" strategy="lazyOnload">{`
+      <Script id="page-init" strategy="afterInteractive">{`
         (function(){
           // 1. SCROLL REVEALS — runs immediately, NOT gated by Lenis
           function initReveals() {
@@ -367,6 +405,69 @@ export default function JusAmazin() {
             document.addEventListener('DOMContentLoaded', initReveals);
           } else {
             initReveals();
+          }
+
+          // METRIC COUNTERS
+          (function(){
+            var obs = new IntersectionObserver(function(entries){
+              entries.forEach(function(e){
+                if(!e.isIntersecting) return;
+                obs.unobserve(e.target);
+                var el = e.target;
+                var text = el.textContent.trim();
+                var m = text.match(/[\d.]+/);
+                if(!m) return;
+                var target = parseFloat(m[0]);
+                var suffix = text.replace(m[0],'');
+                var isD = text.indexOf('.')!==-1;
+                var start = Date.now(); var dur = 1800;
+                var obj = {v:0};
+                (function tick(){
+                  var p = Math.min(1,(Date.now()-start)/dur);
+                  p = 1-Math.pow(1-p,3);
+                  obj.v = target*p;
+                  el.textContent = (isD?obj.v.toFixed(1):Math.round(obj.v))+suffix;
+                  if(p<1) requestAnimationFrame(tick);
+                })();
+              });
+            },{threshold:0.3});
+            document.querySelectorAll('.m-n').forEach(function(el){obs.observe(el)});
+          })();
+
+          // CARD TILT (desktop only)
+          if(window.innerWidth>768){
+            document.querySelectorAll('.proj-card').forEach(function(card){
+              card.addEventListener('mousemove',function(e){
+                var r=card.getBoundingClientRect();
+                var px=(e.clientX-r.left)/r.width-0.5;
+                var py=(e.clientY-r.top)/r.height-0.5;
+                card.style.transform='perspective(800px) rotateY('+(px*5)+'deg) rotateX('+(-py*5)+'deg)';
+              });
+              card.addEventListener('mouseleave',function(){card.style.transform='';});
+            });
+          }
+
+          // PARALLAX on section titles
+          var sTitles = document.querySelectorAll('.s-title');
+          if(sTitles.length && window.innerWidth>768){
+            window.addEventListener('scroll',function(){
+              sTitles.forEach(function(el){
+                var r = el.getBoundingClientRect();
+                if(r.top<window.innerHeight && r.bottom>0){
+                  var p = (r.top/window.innerHeight - 0.5)*-15;
+                  el.style.transform = 'translateY('+p+'px)';
+                }
+              });
+            },{passive:true});
+          }
+
+          // FOOTER SLIDE
+          var pf = document.querySelector('.pfooter');
+          if(pf){
+            var pfObs = new IntersectionObserver(function(e){
+              if(e[0].isIntersecting){pf.classList.add('vis');pfObs.unobserve(pf);}
+            },{threshold:0.1});
+            pfObs.observe(pf);
           }
 
           // 2. LENIS — init separately so it never blocks content
