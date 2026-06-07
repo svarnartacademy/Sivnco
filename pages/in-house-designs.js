@@ -335,18 +335,7 @@ export default function InHouseDesigns() {
             ))}
           </div>
 
-          {/* PDF Download Banner */}
-          <div className="pdf-banner rv2">
-            <div className="pdf-info">
-              <h3 className="pdf-title">Complete Design Brief PDF</h3>
-              <p className="pdf-desc">
-                Review the comprehensive brand deck and design blueprint for Vedic Treats, including visual guidelines, printing materials logic, and target audience research.
-              </p>
-            </div>
-            <a href="/images/vedic_treats/brief.pdf" target="_blank" download className="pdf-btn">
-              Download PDF (3.9 MB)
-            </a>
-          </div>
+
 
           {/* Process Timeline */}
           <div className="timeline rv2" style={{ marginTop: '5rem' }}>
