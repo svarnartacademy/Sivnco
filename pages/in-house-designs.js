@@ -3,12 +3,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import StartProjectButton from '@/components/demo'
 
-const METRICS = [
-  { n: '2', l: 'In-House Projects' },
-  { n: '2', l: 'Interactive 3D GLBs' },
-  { n: '10+', l: 'High-Res Renders' },
-  { n: '100%', l: 'Visual Coherence' },
-]
+
 
 const OG_MITHAI_ASSETS = [
   { id: 'front', name: 'Premium Box Front Render', role: 'Main Package Showcase', img: '/images/og_mithai/ogmitai_camera_front.png', size: 'large' },
@@ -227,15 +222,7 @@ export default function InHouseDesigns() {
         </div>
       </div>
 
-      {/* METRICS */}
-      <div className="metrics">
-        {METRICS.map((m, i) => (
-          <div key={m.n} className="metric rv" style={{ transitionDelay: `${i * 0.08}s` }}>
-            <div className="m-n">{m.n}</div>
-            <div className="m-l">{m.l}</div>
-          </div>
-        ))}
-      </div>
+
 
       {/* INTRODUCTION */}
       <section>
