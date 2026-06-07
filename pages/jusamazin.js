@@ -77,7 +77,9 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .slot-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.07;font-family:var(--D);font-size:.9rem;letter-spacing:.12em;z-index:2}
 .slot-cap{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ja-muted);position:relative;z-index:2}
 .slot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;transition:opacity .4s,transform .8s cubic-bezier(.16,1,.3,1);z-index:0}
+.slot-img.zoom-fill{transform:scale(1.22)}
 .slot:hover .slot-img{opacity:.65;transform:scale(1.04)}
+.slot:hover .slot-img.zoom-fill{opacity:.65;transform:scale(1.28)}
 .slot-bg-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,9,6,0.92) 0%, rgba(10,9,6,0.3) 60%, rgba(10,9,6,0.1) 100%);z-index:1;pointer-events:none}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
 .ba-side{background:var(--ja-bg);padding:3rem}
@@ -226,7 +228,7 @@ export default function JusAmazin() {
             <span className="slot-cap">Core Packaging Range</span>
           </Link>
           <Link href="/jusamazin/3d-pack-render" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/desi_bar/studio_render_a.png" className="slot-img" alt="3D Pack Render" />
+            <img src="/images/jusamazin/desi_bar/studio_render_a.png" className="slot-img zoom-fill" alt="3D Pack Render" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">3D RENDER</div>
             <span className="slot-cap">3D Pack Render</span>
@@ -244,19 +246,19 @@ export default function JusAmazin() {
             <span className="slot-cap">Brand Guidelines Document</span>
           </Link>
           <Link href="/jusamazin/bars" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/bars/variant_lineup.png" className="slot-img" alt="Bars" />
+            <img src="/images/jusamazin/bars/variant_lineup.png" className="slot-img zoom-fill" alt="Bars" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">BARS</div>
             <span className="slot-cap">Bars</span>
           </Link>
           <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/jars/glass_lifestyle.png" className="slot-img" alt="Jars" />
+            <img src="/images/jusamazin/jars/glass_lifestyle.png" className="slot-img zoom-fill" alt="Jars" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">JARS</div>
             <span className="slot-cap">Jars</span>
           </Link>
           <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/desi_bar/pack_array.png" className="slot-img" alt="Desi Energy Bar" />
+            <img src="/images/jusamazin/desi_bar/pack_array.png" className="slot-img zoom-fill" alt="Desi Energy Bar" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">DESI ENERGY BAR</div>
             <span className="slot-cap">Desi Energy Bar</span>
