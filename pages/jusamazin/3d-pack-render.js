@@ -124,7 +124,7 @@ export default function PackRender3D() {
       </Head>
 
       {/* model-viewer web component — loads GLTF/GLB natively */}
-      <Script src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" strategy="afterInteractive" type="module"/>
+      {/* model-viewer loaded globally via pages/_document.js as proper type="module" */}
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 
       {/* NAV */}

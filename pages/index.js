@@ -276,7 +276,7 @@ export default function Home({ bodyHTML, inlineScript }) {
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" strategy="afterInteractive" />
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" strategy="afterInteractive" />
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
-      <Script src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" strategy="afterInteractive" type="module" />
+      {/* model-viewer loaded globally via pages/_document.js as proper type="module" */}
 
       {/* Animated hero background */}
       <FlowGradientHero />
