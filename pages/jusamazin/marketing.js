@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -11,6 +12,35 @@ const PILLARS = [
 const FEEDBACK = [
   {n:"Jitin Munjal",r:"Co-Founder / Creative Director",q:"The rapid deployment of video content for our Blinkit push kept our listings competitive during critical sales cycles."},
   {n:"Nirmal M.",r:"E-Commerce Optimization Lead",q:"Fixing the sRGB color profile errors on the Pancake Mix infographics saved our platform launch schedule from multi-day delays."},
+]
+const CAMPAIGN_VIDEOS = [
+  {
+    num: "01",
+    title: "30-Sec Q-Commerce Compare",
+    subtitle: "Q-Commerce Conversion",
+    src: "/videos/jusamazin/30-sec-almond-milk-compare.mp4",
+    objective: "Drive direct purchase intent and visual comprehension of product utility on quick-commerce detail pages.",
+    rationale: "Quick-commerce shoppers decide in seconds. Traditional almond milk involves overnight soaking, grinding, and straining. This split-screen comparison eliminates that friction by showing how easily Jus Amazin's 100% Almond Milk Paste dissolves in water, turning a multi-hour process into a 30-second ritual.",
+    channel: "Blinkit PDP, Zepto Product Carousel, Amazon A+ Content"
+  },
+  {
+    num: "02",
+    title: "30-Sec Kinetic Typography",
+    subtitle: "Social Media Hook",
+    src: "/videos/jusamazin/30sad-typewriter-final.mp4",
+    objective: "Maximize view-through rates and hook audiences in sound-off mobile environments.",
+    rationale: "Built for vertical social scrolling (Instagram Reels, Meta Ads) where sound is frequently disabled. By utilizing high-velocity kinetic typewriter animations, it hooks the user's attention in the first 3 seconds, delivering clean-label proof points ('100% Almonds', 'No Emulsifiers') in bold visual typographic form.",
+    channel: "Instagram Stories & Reels, Meta paid acquisition feeds"
+  },
+  {
+    num: "03",
+    title: "Full Campaign Launch Film",
+    subtitle: "Omnichannel Storytelling",
+    src: "/videos/jusamazin/full-sam-final.mp4",
+    objective: "Establish product authority and trust in the dairy-free milk alternative category.",
+    rationale: "A long-form brand film combining premium macro ingredient photography with everyday lifestyle integration. It positions '30-Second Almond Milk' not just as a convenience item, but as a clean, sustainable dietary upgrade, reinforcing trust for health-conscious families.",
+    channel: "YouTube Pre-Roll, Brand Website Landing Page, Amazon Storefront"
+  }
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -51,17 +81,101 @@ html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);f
 .mk-footer{padding:4rem 0 2.5rem;border-top:1px solid var(--mk-border)}.mk-footer-links{display:flex;flex-wrap:wrap;gap:2rem;margin:2rem 0 3rem}.mk-footer-link{font-family:var(--D);font-size:clamp(1.4rem,3vw,2.2rem);color:var(--mk-muted);transition:color .3s}.mk-footer-link:hover{color:var(--mk-accent)}
 .mk-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:rgba(240,237,230,0.25);padding-top:2rem;border-top:1px solid var(--mk-border)}
 .mkv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.mkv.vis{opacity:1;transform:translateY(0)}
-@media(max-width:900px){.mk-pillars{grid-template-columns:1fr}.mk-pill-left{position:relative;height:auto;padding:3rem 2rem}.mk-pill-card{padding:3rem 2rem;min-height:auto}.mk-tl-item{grid-template-columns:1fr;gap:.8rem}.mk-metrics{grid-template-columns:1fr}.mk-gallery{grid-template-columns:1fr 1fr}.mk-fb-grid{grid-template-columns:1fr}.mk-footer-meta{flex-direction:column;gap:.8rem}}
+
+/* Interactive Campaign Showcase */
+.mk-v-section{padding:8rem 0;border-bottom:1px solid var(--mk-border)}
+.mk-v-grid{display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:start}
+.mk-v-player-container{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--mk-border);background:var(--mk-glass);aspect-ratio:16/9;width:100%;transition:border-color .4s,box-shadow .4s}
+.mk-v-player-container:hover{border-color:rgba(46,204,113,0.3);box-shadow:0 0 30px rgba(46,204,113,0.08)}
+.mk-v-player{width:100%;height:100%;object-fit:cover;display:block}
+.mk-v-controls{display:flex;flex-direction:column;gap:1.5rem}
+.mk-v-tabs{display:flex;flex-direction:column;gap:.75rem}
+.mk-v-tab{background:var(--mk-glass);border:1px solid var(--mk-border);border-radius:12px;padding:1.2rem 1.5rem;text-align:left;cursor:pointer;transition:.3s ease;color:var(--mk-muted);display:flex;flex-direction:column;gap:.25rem}
+.mk-v-tab:hover{border-color:rgba(46,204,113,0.3);color:var(--mk-white);background:rgba(240,237,230,0.05)}
+.mk-v-tab.active{background:rgba(46,204,113,0.08);border-color:var(--mk-accent);color:var(--mk-white);box-shadow:0 0 20px rgba(46,204,113,0.05)}
+.mk-v-tab-num{font-family:var(--M);font-size:.6rem;letter-spacing:.15em;color:var(--mk-accent);text-transform:uppercase}
+.mk-v-tab.active .mk-v-tab-num{color:var(--mk-white)}
+.mk-v-tab-title{font-family:var(--D);font-size:1.1rem;letter-spacing:.02em}
+.mk-v-detail-card{background:var(--mk-glass);border:1px solid var(--mk-border);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1.2rem}
+.mk-v-detail-title{font-family:var(--D);font-size:1.3rem;color:var(--mk-white);border-bottom:1px solid var(--mk-border);padding-bottom:.8rem;margin-bottom:.2rem}
+.mk-v-detail-item{display:flex;flex-direction:column;gap:.4rem}
+.mk-v-detail-label{font-family:var(--M);font-size:.58rem;letter-spacing:.15em;color:var(--mk-accent)}
+.mk-v-detail-value{font-size:.95rem;line-height:1.7;color:var(--mk-muted)}
+
+@media(max-width:900px){
+  .mk-v-grid{grid-template-columns:1fr;gap:2rem}
+  .mk-v-section{padding:5rem 0}
+  .mk-pillars{grid-template-columns:1fr}.mk-pill-left{position:relative;height:auto;padding:3rem 2rem}.mk-pill-card{padding:3rem 2rem;min-height:auto}.mk-tl-item{grid-template-columns:1fr;gap:.8rem}.mk-metrics{grid-template-columns:1fr}.mk-gallery{grid-template-columns:1fr 1fr}.mk-fb-grid{grid-template-columns:1fr}.mk-footer-meta{flex-direction:column;gap:.8rem}
+}
 @media(max-width:540px){.mk-hero h1{font-size:clamp(3rem,14vw,7rem)}.mk-s{padding:5rem 0}.mk-soul{padding:6rem 0}.mk-gallery{grid-template-columns:1fr}}
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Management',h:'/jusamazin/management'}]
-export default function Marketing(){return(<>
+export default function Marketing(){
+  const [activeVideo, setActiveVideo] = useState(0)
+  return(<>
 <Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Marketing & Digital — Sivnco</title><meta name="description" content="Multimedia workspace — quick-commerce video engine, color triage, competitor benchmarking."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="mk-nav"><Link href="/" className="mk-logo">SIVNCO<span style={{color:'var(--mk-accent)'}}>.</span></Link><Link href="/jusamazin" className="mk-back">← Case Study</Link></nav>
 <div className="mk-hero"><div className="mk-hero-bg"/><div className="mk-hero-inner"><div className="mk-hero-tag">Omnichannel Deployment / Media Synthesis</div><h1><span>Marketing</span><br/>&amp; Digital<em>High-fidelity motion design for Blinkit & Amazon. Synthetic media, rapid experimentation, and color space triage.</em></h1></div></div>
 <section className="mk-s" style={{padding:0,borderBottom:'none'}}><div className="mk-pillars"><div className="mk-pill-left"><div className="mk-label mkv">Strategy</div><div className="mk-title mkv">Multimedia<br/><em>Workspace.</em></div><p className="mk-body mkv">The rapid experimentation engine powering digital asset deployment across every commerce channel.</p></div><div className="mk-pill-right">{PILLARS.map((p,i)=>(<div key={i} className="mk-pill-card mkv"><div className="mk-label">{`0${i+1}`}</div><h3>{p.h}</h3><p>{p.b}</p></div>))}</div></div></section>
 <section className="mk-s"><div className="mk-c"><div className="mk-label mkv">Workflow</div><div className="mk-title mkv">Campaign<br/><em>Timeline.</em></div><div className="mk-timeline mkv"><div className="mk-tl-item"><div className="mk-tl-chan">BLINKIT</div><div className="mk-tl-desc">Pancake Mix video content production via VEED engine</div><div className="mk-tl-status">DEPLOYED</div></div><div className="mk-tl-item"><div className="mk-tl-chan">AMAZON</div><div className="mk-tl-desc">E-commerce listing updates and catalog enrichment</div><div className="mk-tl-status">DEPLOYED</div></div><div className="mk-tl-item"><div className="mk-tl-chan">FLIPKART</div><div className="mk-tl-desc">sRGB color profile triage for PCMBB 250g infographics</div><div className="mk-tl-status">RESOLVED</div></div></div></div></section>
+
+<section className="mk-v-section"><div className="mk-c">
+  <div className="mk-label mkv">Creative Showcase</div>
+  <div className="mk-title mkv">Almond Milk<br/><i>Campaigns.</i></div>
+  
+  <div className="mk-v-grid mkv" style={{marginTop:'3rem'}}>
+    {/* LEFT SIDE: VIDEO PLAYER */}
+    <div className="mk-v-player-container">
+      <video 
+        key={activeVideo} /* Force re-render of video element on src change */
+        src={CAMPAIGN_VIDEOS[activeVideo].src} 
+        className="mk-v-player"
+        controls 
+        playsInline 
+        autoPlay={false}
+        preload="metadata"
+      />
+    </div>
+
+    {/* RIGHT SIDE: TABS & DATA CARD */}
+    <div className="mk-v-controls">
+      <div className="mk-v-tabs">
+        {CAMPAIGN_VIDEOS.map((v, idx) => (
+          <button 
+            key={idx}
+            onClick={() => setActiveVideo(idx)}
+            className={`mk-v-tab ${activeVideo === idx ? 'active' : ''}`}
+            style={{ border: 'none', textAlign: 'left', outline: 'none' }}
+          >
+            <span className="mk-v-tab-num">{v.num} / {v.subtitle}</span>
+            <span className="mk-v-tab-title">{v.title}</span>
+          </button>
+        ))}
+      </div>
+
+      <div className="mk-v-detail-card">
+        <h3 className="mk-v-detail-title">{CAMPAIGN_VIDEOS[activeVideo].title}</h3>
+        
+        <div className="mk-v-detail-item">
+          <span className="mk-v-detail-label">Campaign Objective</span>
+          <span className="mk-v-detail-value">{CAMPAIGN_VIDEOS[activeVideo].objective}</span>
+        </div>
+        
+        <div className="mk-v-detail-item">
+          <span className="mk-v-detail-label">Creative Rationale</span>
+          <span className="mk-v-detail-value">{CAMPAIGN_VIDEOS[activeVideo].rationale}</span>
+        </div>
+
+        <div className="mk-v-detail-item">
+          <span className="mk-v-detail-label">Primary Channels</span>
+          <span className="mk-v-detail-value">{CAMPAIGN_VIDEOS[activeVideo].channel}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <div className="mk-soul"><div className="mk-c"><div className="mk-label mkv" style={{textAlign:'center'}}>The Digital Imperative</div><blockquote className="mk-soul-q mkv">&ldquo;A packaging file is only half the battle. In quick-commerce, your <strong>digital asset triage</strong> must be just as precise as your print setups. If an infographic shifts color on a phone screen, the <strong>brand experience breaks instantly</strong>.&rdquo;</blockquote></div></div>
 <section className="mk-s"><div className="mk-c"><div className="mk-label mkv">Tracking</div><div className="mk-title mkv">Asset<br/><em>Metrics.</em></div><div className="mk-metrics mkv"><div className="mk-metric"><div className="mk-metric-n">3</div><div className="mk-metric-l">Competitors benchmarked: Slurrp Farm, Lo Foods, Yoga Bar</div></div><div className="mk-metric"><div className="mk-metric-n">25+</div><div className="mk-metric-l">E-commerce listings optimized across distribution networks</div></div></div></div></section>
 <section className="mk-s" style={{padding:0}}><div className="mk-gallery">{[

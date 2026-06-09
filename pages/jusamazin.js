@@ -189,6 +189,11 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 /* Footer slide */
 .pfooter{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
+
+/* Video styles */
+.video-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--ja-border);background:var(--ja-glass);aspect-ratio:16/9;width:100%;transition:border-color .4s,box-shadow .4s}
+.video-wrap:hover{border-color:rgba(212,96,10,0.3);box-shadow:0 0 30px rgba(212,96,10,0.08)}
+.video-element{width:100%;height:100%;object-fit:cover;display:block}
 `
 
 export default function JusAmazin() {
@@ -254,9 +259,29 @@ export default function JusAmazin() {
         </div>
       </div></section>
 
+      {/* BRAND FILM */}
+      <section><div className="c">
+        <div className="s-label rv">02 — Brand Film</div>
+        <h2 className="s-title rv">Brand Story<br/><i>in Motion.</i></h2>
+        <div className="rv2" style={{marginTop:'3rem'}}>
+          <div className="video-wrap">
+            <video 
+              src="/videos/jusamazin/jus-amazin-brand-video-1.mp4" 
+              className="video-element"
+              controls 
+              playsInline
+              preload="metadata"
+            />
+          </div>
+          <p className="body" style={{marginTop:'2rem'}}>
+            A cinematic expression of Jus Amazin's brand identity. This brand film captures the essence of clean-label nutrition, illustrating the craftsmanship, quality, and organic vibrancy behind the products. Translating print brand guidelines into fluid motion design, it serves as the master visual anchor for digital campaigns.
+          </p>
+        </div>
+      </div></section>
+
       {/* MOSAIC */}
       <section style={{paddingTop:0,borderBottom:'1px solid var(--ja-border)'}}><div className="c">
-        <div className="s-label rv">02 — Visual System</div>
+        <div className="s-label rv">03 — Visual System</div>
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
           <Link href="/jusamazin/core-packaging" className="slot tall" style={{cursor:'pointer'}}>
@@ -324,7 +349,7 @@ export default function JusAmazin() {
 
       {/* BEFORE / AFTER */}
       <section><div className="c">
-        <div className="s-label rv">03 — Transformation</div>
+        <div className="s-label rv">04 — Transformation</div>
         <h2 className="s-title rv">Before<br/><i>and after.</i></h2>
         <div className="ba rv2">
           <div className="ba-side"><div className="ba-tag">Before — 2021</div><p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand. Photo imagery that didn't translate to small pack sizes. No shelf-ready files, no rationale document.</p></div>
@@ -334,7 +359,7 @@ export default function JusAmazin() {
 
       {/* DELIVERABLES */}
       <section><div className="c">
-        <div className="s-label rv">04 — Deliverables</div>
+        <div className="s-label rv">05 — Deliverables</div>
         <h2 className="s-title rv">Full<br/><i>system.</i></h2>
         <div className="dels rv2">
           {DELIVERABLES.map(d=>(
@@ -345,7 +370,7 @@ export default function JusAmazin() {
 
       {/* TEAM */}
       <section className="forest"><div className="c">
-        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>05 — The People</div>
+        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>06 — The People</div>
         <h2 className="s-title rv">Who we<br/><i>worked with.</i></h2>
         <div className="rv2">
           <div className="team-g">Founders &amp; Leadership</div>
@@ -361,7 +386,7 @@ export default function JusAmazin() {
 
       {/* RESULTS */}
       <section><div className="c">
-        <div className="s-label rv">06 — Results</div>
+        <div className="s-label rv">07 — Results</div>
         <h2 className="s-title rv">What the<br/><i>numbers say.</i></h2>
         <ul className="rlist rv2">
           {RESULTS.map((r,i)=>(
