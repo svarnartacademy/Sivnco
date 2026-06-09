@@ -87,6 +87,10 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .ba-tag{font-family:var(--M);font-size:.55rem;letter-spacing:.2em;padding:.35rem 1rem;border:1px solid var(--ja-border);display:inline-block;border-radius:20px;margin-bottom:1.5rem}
 .ba-side.a .ba-tag{border-color:var(--ja-accent);color:var(--ja-accent)}
 .ba-b{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--ja-muted)}
+.ba-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.5rem}
+.ba-img-w{border-radius:8px;overflow:hidden;border:1px solid var(--ja-border);aspect-ratio:1/1}
+.ba-img-w img{width:100%;height:100%;object-fit:cover;filter:saturate(0.65) contrast(0.88);transition:filter .4s}
+.ba-img-w:hover img{filter:saturate(0.85) contrast(0.95)}
 .dels{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
 .del{background:var(--ja-bg);padding:1.8rem 2rem;display:flex;align-items:center;gap:1rem;transition:background .3s}
 .del:hover{background:rgba(212,96,10,.04)}
@@ -352,7 +356,22 @@ export default function JusAmazin() {
         <div className="s-label rv">04 — Transformation</div>
         <h2 className="s-title rv">Before<br/><i>and after.</i></h2>
         <div className="ba rv2">
-          <div className="ba-side"><div className="ba-tag">Before — Aug 2023 (at joining)</div><p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand. Photo imagery that didn't translate to small pack sizes. No shelf-ready files, no rationale document.</p></div>
+          <div className="ba-side">
+            <div className="ba-tag">Before — Aug 2023 (at joining)</div>
+            {/* Real before-packaging: the 3 images show the problem visually */}
+            <div className="ba-imgs">
+              <div className="ba-img-w">
+                <img src="/images/before/before_jar.png" alt="Old peanut butter jar — inconsistent label" />
+              </div>
+              <div className="ba-img-w">
+                <img src="/images/before/before_pouch_1.jpg" alt="Old quinoa pouch — generic craft bag" />
+              </div>
+              <div className="ba-img-w">
+                <img src="/images/before/before_pouch_2.png" alt="Old snacks pouch — no design system" />
+              </div>
+            </div>
+            <p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand — clashing colours, inconsistent typography, no shelf-ready files, no brand rationale document.</p>
+          </div>
           <div className="ba-side a"><div className="ba-tag">After — 2023 onwards</div><p className="ba-b">Unified visual language. 15+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
         </div>
       </div></section>
