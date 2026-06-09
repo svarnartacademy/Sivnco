@@ -223,7 +223,7 @@ export default function JusAmazin() {
         {/* Animated gradient background replacing LiquidMetalBg */}
         <div style={{position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0, background:'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.25) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.15) 0%, transparent 50%), var(--ja-bg)', animation:'heroBgPulse 8s ease-in-out infinite'}} />
         <div className="c" style={{position:'relative', zIndex:2}}>
-          <div className="eyebrow rv">Case Study · Brand Identity · 2022 — Present</div>
+          <div className="eyebrow rv">Case Study · Brand Identity · 2023 — Present</div>
           <h1 className="hero-title rv" style={{transitionDelay:'.1s'}}>
             Jus<br/><i>Amazin</i>
           </h1>
@@ -231,7 +231,7 @@ export default function JusAmazin() {
             End-to-end brand system for a D2C peanut butter brand — packaging across 15+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
           </p>
           <div className="hero-meta rv" style={{transitionDelay:'.4s'}}>
-            {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2022 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
+            {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2023 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
             ))}
           </div>
@@ -352,8 +352,8 @@ export default function JusAmazin() {
         <div className="s-label rv">04 — Transformation</div>
         <h2 className="s-title rv">Before<br/><i>and after.</i></h2>
         <div className="ba rv2">
-          <div className="ba-side"><div className="ba-tag">Before — 2021</div><p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand. Photo imagery that didn't translate to small pack sizes. No shelf-ready files, no rationale document.</p></div>
-          <div className="ba-side a"><div className="ba-tag">After — 2022 onwards</div><p className="ba-b">Unified visual language. 15+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
+          <div className="ba-side"><div className="ba-tag">Before — Aug 2023 (at joining)</div><p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand. Photo imagery that didn't translate to small pack sizes. No shelf-ready files, no rationale document.</p></div>
+          <div className="ba-side a"><div className="ba-tag">After — 2023 onwards</div><p className="ba-b">Unified visual language. 15+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
         </div>
       </div></section>
 

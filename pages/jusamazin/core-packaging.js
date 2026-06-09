@@ -9,7 +9,7 @@ const PILLARS = [
   {h:"Outcome",b:"A complete system turnaround that established unmistakable presence across fast-commerce networks and traditional hypermarkets alike."},
 ]
 const FEEDBACK = [
-  {n:"Jitin Kochhar",r:"Co-Founder, Jus'Amazin",q:"Shiv doesn't just design — he builds systems. The Jus'Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale.",c:"leadership"},
+  {n:"Jitin Munjal",r:"Co-Founder & CEO, Jus'Amazin",q:"Shiv doesn't just design — he builds systems. The Jus'Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale.",c:"leadership"},
   {n:"Shilpa Rao",r:"Brand Consultant",q:"What sets Shiv apart is his ability to blend art sensibility with commercial clarity. He understands the brief, then exceeds it — every single time.",c:"experts"},
 ]
 const CSS = `
