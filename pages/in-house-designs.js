@@ -31,7 +31,7 @@ const TIMELINE_VEDIC = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ih-bg:#0A0906;--ink:#F0EDE6;--ih-muted:rgba(240,237,230,0.45);--ih-accent:#D4600A;--ih-border:rgba(240,237,230,0.08);--ih-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ih-bg:#0A0906;--ink:#F0EDE6;--ih-muted:rgba(240,237,230,0.45);--ih-accent:#D4600A;--ih-border:rgba(240,237,230,0.08);--ih-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -221,8 +221,7 @@ export default function InHouseDesigns() {
         <meta name="description" content="Explore OG Mithai and Vedic Treats in-house projects. Traditional roots reimagined through bold modern branding, premium packaging layouts, and interactive 3D models." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
