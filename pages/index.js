@@ -258,13 +258,17 @@ export default function Home({ bodyHTML, inlineScript }) {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sivnco — H.P. Shivaraj</title>
-        <meta name="description" content="H P Shivaraj — Brand design, packaging, illustration. Bengaluru." />
+        <title>H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco</title>
+        <meta name="description" content="Brand systems, digital products &amp; design systems — H P Shivaraj. 176% revenue impact. Bengaluru. Creative technologist, brand strategist, art educator." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sivnco.in/" />
-        <meta property="og:title" content="Sivnco — H.P. Shivaraj" />
-        <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
+        <meta property="og:title" content="H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco" />
+        <meta property="og:description" content="H P Shivaraj — Brand systems, digital products, design systems &amp; AI workflows. Bengaluru. 176% revenue impact at Jus Amazin." />
         <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco" />
+        <meta name="twitter:description" content="H P Shivaraj — Brand systems, digital products, design systems &amp; AI workflows. Bengaluru. 176% revenue impact at Jus Amazin." />
+        <meta name="twitter:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
