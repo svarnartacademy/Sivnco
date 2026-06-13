@@ -34,7 +34,7 @@ const CSS = `
   --deb-bg:#0D0D0D;--deb-white:#FAFAFA;--deb-accent:#0066FF;--deb-ochre:#D4960A;
   --deb-muted:rgba(250,250,250,0.45);--deb-border:rgba(250,250,250,0.1);
   --deb-glass:rgba(250,250,250,0.04);--deb-charcoal:#161616;
-  --D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace;
+  --D:'Fake Serif','Playfair Display',Georgia,serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:hidden}
@@ -157,7 +157,7 @@ export default function DesiEnergyBar() {
         <meta name="description" content="Structured Chaos: A D2C energy bar design case study. 70% sales increase."/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
         <style dangerouslySetInnerHTML={{__html:CSS}}/>
       </Head>
 
