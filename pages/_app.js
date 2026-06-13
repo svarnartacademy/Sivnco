@@ -66,7 +66,7 @@ function ChatWidget() {
           background: rgba(10,9,6,0.92);
           border: 1px solid rgba(240,237,230,0.1);
           color: #F0EDE6;
-          font-family: 'Space Mono', monospace;
+          font-family: 'Instrument Sans', sans-serif;
           font-size: 0.55rem;
           letter-spacing: 0.12em;
           padding: 0.5rem 0.9rem;
@@ -129,7 +129,7 @@ function ChatWidget() {
           display: flex;
           align-items: center;
           gap: 0.55rem;
-          font-family: 'Space Mono', monospace;
+          font-family: 'Instrument Sans', sans-serif;
           font-size: 0.6rem;
           letter-spacing: 0.14em;
           color: #F0EDE6;

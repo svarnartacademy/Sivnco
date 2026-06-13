@@ -64,7 +64,7 @@ const PROCESS = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Comforter',cursive;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
+:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Sedgwick Ave Display',cursive;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
@@ -196,7 +196,7 @@ export default function DesignSystems() {
         <meta name="description" content="How H P Shivaraj builds brand systems that scale: token layers, component architecture, and governance across Jus Amazin, Svarnart Academy, and Sivnco Studio." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Sedgwick+Ave+Display&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
