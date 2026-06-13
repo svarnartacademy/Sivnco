@@ -14,10 +14,10 @@
   <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
   <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
 
-  <!-- Fonts: Sedgwick Ave Display (display) · Urbanist (body) · Instrument Sans (accent) -->
+  <!-- Fonts: Aspect Range (display) · Urbanist (body) · Instrument Sans (accent) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Sedgwick+Ave+Display&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -25,6 +25,16 @@
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
 
   <style>
+@font-face {
+  font-family: 'Aspect Range';
+  src: url('/fonts/Aspect-Range-Demo.ttf') format('truetype'),
+       url('/fonts/Aspect-Range-Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
     /* CSS VARIABLES */
     :root {
       --bg-color: #0A0906;
@@ -37,11 +47,11 @@
       --glass-bg: rgba(240, 237, 230, 0.05);
       --glass-border: rgba(240, 237, 230, 0.08);
 
-      --f-display: 'Sedgwick Ave Display', cursive;
+      --f-display: 'Aspect Range', Georgia, serif;
       --f-serif: 'Urbanist', sans-serif;
       --f-mono: 'Instrument Sans', sans-serif;
       /* legacy alias */
-      --f-sans: 'Sedgwick Ave Display', cursive;
+      --f-sans: 'Aspect Range', Georgia, serif;
     }
 
     /* LENIS SMOOTH SCROLL */

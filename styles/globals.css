@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Aspect Range';
+  src: url('/fonts/Aspect-Range-Demo.ttf') format('truetype'),
+       url('/fonts/Aspect-Range-Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
