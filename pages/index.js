@@ -271,7 +271,7 @@ export default function Home({ bodyHTML, inlineScript }) {
         <meta name="twitter:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         {/* Mobile CSS injected directly — guaranteed fresh on every deploy */}
         <style dangerouslySetInnerHTML={{ __html: MOBILE_CSS }} />
       </Head>

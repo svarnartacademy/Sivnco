@@ -34,7 +34,7 @@ const TIMELINE = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ae-bg:#0A0906;--ink:#F0EDE6;--ae-muted:rgba(240,237,230,0.45);--ae-accent:#D4600A;--ae-border:rgba(240,237,230,0.08);--ae-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Aspect Range',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ae-bg:#0A0906;--ink:#F0EDE6;--ae-muted:rgba(240,237,230,0.45);--ae-accent:#D4600A;--ae-border:rgba(240,237,230,0.08);--ae-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -224,7 +224,7 @@ export default function ArtistEducator() {
         <meta name="description" content="Synthesizing fine art practice and visual pedagogy. Artworks, journey, and student progress by H.P. Shivaraj." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
