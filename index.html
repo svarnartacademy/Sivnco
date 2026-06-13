@@ -14,10 +14,10 @@
   <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
   <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
 
-  <!-- Fonts: Playfair Display (display) · Poppins (accent) · Space Mono (labels) -->
+  <!-- Fonts: Comforter (display) · Poppins (accent) · Space Mono (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -37,11 +37,11 @@
       --glass-bg: rgba(240, 237, 230, 0.05);
       --glass-border: rgba(240, 237, 230, 0.08);
 
-      --f-display: 'Fake Serif', 'Playfair Display', Georgia, serif;
+      --f-display: 'Comforter', cursive;
       --f-serif: 'Poppins', sans-serif;
       --f-mono: 'Space Mono', monospace;
       /* legacy alias */
-      --f-sans: 'Fake Serif', 'Playfair Display', Georgia, serif;
+      --f-sans: 'Comforter', cursive;
     }
 
     /* LENIS SMOOTH SCROLL */
@@ -366,35 +366,35 @@
     }
     .section.glow-active::before { opacity: 1; }
 
-    /* Work / Gallery section — warm saffron bottom-right */
+     /* Work / Gallery section — Terracotta pastel glow */
     #work::before {
       background: radial-gradient(ellipse 70% 55% at 80% 90%,
-        rgba(212,96,10,0.16) 0%, transparent 70%);
+        rgba(218,160,109,0.18) 0%, transparent 70%);
     }
-    /* Case study — deep amber top-left */
+    /* Case study — Sage pastel glow */
     #case-study::before {
       background: radial-gradient(ellipse 60% 50% at 15% 20%,
-        rgba(180,75,5,0.18) 0%, transparent 65%);
+        rgba(195,220,200,0.18) 0%, transparent 65%);
     }
-    /* About / timeline section — saffron left-centre */
+    /* About / timeline section — Eucalyptus pastel glow */
     #about::before {
       background: radial-gradient(ellipse 50% 70% at 8% 55%,
-        rgba(212,96,10,0.14) 0%, transparent 65%);
+        rgba(147,176,172,0.18) 0%, transparent 65%);
     }
-    /* Testimonials — neutral warm centre-bottom */
+    /* Testimonials — Warm Cream pastel glow */
     .section.testi-section::before {
       background: radial-gradient(ellipse 80% 50% at 50% 100%,
-        rgba(212,96,10,0.12) 0%, transparent 70%);
+        rgba(233,215,195,0.18) 0%, transparent 70%);
     }
-    /* Pricing — featured accent centre */
+    /* Pricing — Terracotta featured accent glow */
     .section.pricing-section::before {
       background: radial-gradient(ellipse 60% 60% at 50% 60%,
-        rgba(212,96,10,0.14) 0%, transparent 65%);
+        rgba(218,160,109,0.16) 0%, transparent 65%);
     }
-    /* Art commission — warm saffron right */
+    /* Art commission — Eucalyptus warm glow */
     .section.art-section::before {
       background: radial-gradient(ellipse 55% 65% at 85% 50%,
-        rgba(212,96,10,0.14) 0%, transparent 65%);
+        rgba(147,176,172,0.16) 0%, transparent 65%);
     }
 
     /* ── SECTION GRADIENT DIVIDERS ────────────────────────────────────────── */
@@ -1872,6 +1872,72 @@
       border-color: #0A0906 !important;
     }
 
+    /* Pastel Testimonial Cards - Test Phase */
+    .testi-card-1 {
+      background: #daa06d !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-1 .testi-name,
+    .testi-card-1 .testi-title,
+    .testi-card-1 .testi-company-link,
+    .testi-card-1 .testi-body,
+    .testi-card-1 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-1 .testi-avatar {
+      background: #0A0906 !important;
+      color: #daa06d !important;
+    }
+    .testi-card-1 .testi-company-link {
+      border-color: rgba(10, 9, 6, 0.25) !important;
+    }
+    .testi-card-1:hover {
+      box-shadow: 0 20px 50px rgba(218, 160, 109, 0.25) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .testi-card-2 {
+      background: #c3dcc8 !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-2 .testi-name,
+    .testi-card-2 .testi-title,
+    .testi-card-2 .testi-body,
+    .testi-card-2 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-2 .testi-avatar {
+      background: #0A0906 !important;
+      color: #c3dcc8 !important;
+    }
+    .testi-card-2:hover {
+      box-shadow: 0 20px 50px rgba(195, 220, 200, 0.25) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .testi-card-3 {
+      background: #93b0ac !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-3 .testi-name,
+    .testi-card-3 .testi-title,
+    .testi-card-3 .testi-company-link,
+    .testi-card-3 .testi-body,
+    .testi-card-3 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-3 .testi-avatar {
+      background: #0A0906 !important;
+      color: #93b0ac !important;
+    }
+    .testi-card-3 .testi-company-link {
+      border-color: rgba(10, 9, 6, 0.25) !important;
+    }
+    .testi-card-3:hover {
+      box-shadow: 0 20px 50px rgba(147, 176, 172, 0.25) !important;
+      border-color: #0A0906 !important;
+    }
+
     /* Smooth reveal for the contact form inputs */
     input, textarea, select {
       transition: border-color 0.3s, box-shadow 0.3s !important;
@@ -2489,7 +2555,7 @@
           </div>
         </h2>
         <div class="testimonials-grid gs-fade">
-          <div class="testi-card">
+          <div class="testi-card testi-card-1">
             <div class="testi-header">
               <div class="testi-avatar">JM</div>
               <div class="testi-meta">
@@ -2501,7 +2567,7 @@
             <div class="testi-quote">"</div>
             <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card-2">
             <div class="testi-header">
               <div class="testi-avatar">SR</div>
               <div class="testi-meta">
@@ -2512,7 +2578,7 @@
             <div class="testi-quote">"</div>
             <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial clarity. He understands the brief, then exceeds it — every single time.</div>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card-3">
             <div class="testi-header">
               <div class="testi-avatar">OH</div>
               <div class="testi-meta">

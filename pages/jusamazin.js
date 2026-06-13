@@ -27,7 +27,7 @@ const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amar
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Fake Serif','Playfair Display',Georgia,serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
+:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Comforter',cursive;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -209,7 +209,7 @@ export default function JusAmazin() {
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

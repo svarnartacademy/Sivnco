@@ -20,7 +20,7 @@ const CSS = `
   --pr-bg:#0A0906;--pr-white:#F0EDE6;--pr-accent:#7B61FF;--pr-accent2:#D4600A;
   --pr-muted:rgba(240,237,230,0.45);--pr-border:rgba(240,237,230,0.08);
   --pr-glass:rgba(240,237,230,0.03);
-  --D:'Fake Serif','Playfair Display',Georgia,serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace;
+  --D:'Comforter',cursive;--S:'Poppins',sans-serif;--M:'Space Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{background:var(--pr-bg);color:var(--pr-white);font-family:var(--S);overflow-x:hidden}
@@ -119,7 +119,7 @@ export default function PackRender3D() {
         <meta name="description" content="Interactive 3D product renders for Jus Amazin. 10 SKUs visualized in real-time WebGL."/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
         <style dangerouslySetInnerHTML={{__html:CSS}}/>
       </Head>
 
