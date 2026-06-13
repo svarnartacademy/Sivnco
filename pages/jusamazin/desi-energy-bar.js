@@ -42,7 +42,7 @@ a{color:inherit;text-decoration:none}
 
 /* NAV */
 .deb-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(13,13,13,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--deb-border)}
-.deb-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
+.deb-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
 .deb-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--deb-border);border-radius:40px;transition:.3s}
 .deb-back:hover{border-color:var(--deb-accent);color:var(--deb-accent)}
 
@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 @keyframes heroShift{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
 .deb-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:end}
 .deb-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--deb-accent);writing-mode:vertical-rl;text-orientation:mixed;padding-bottom:1rem;border-left:2px solid var(--deb-accent);padding-left:.8rem}
-.deb-hero-text h1{font-family:var(--D);font-size:clamp(5rem,14vw,14rem);line-height:1.05;letter-spacing:-.02em}
+.deb-hero-text h1{font-family:var(--D);font-weight:900;font-size:clamp(5rem,14vw,14rem);line-height:1.05;letter-spacing:-.02em}
 .deb-hero-text h1 span{color:var(--deb-accent)}
 .deb-hero-text h1 em{font-style:normal;color:var(--deb-ochre);font-family:var(--S);font-weight:300;display:block;font-size:.45em;margin-top:.5rem}
 
@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .deb-section{padding:8rem 0;border-bottom:1px solid var(--deb-border)}
 .deb-c{max-width:1200px;margin:0 auto;padding:0 5vw}
 .deb-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--deb-accent);margin-bottom:1.5rem}
-.deb-title{font-family:var(--D);font-size:clamp(3rem,6vw,7rem);line-height:1.05;margin-bottom:2.5rem}
+.deb-title{font-family:var(--D);font-weight:900;font-size:clamp(3rem,6vw,7rem);line-height:1.05;margin-bottom:2.5rem}
 .deb-title em{font-style:normal;color:var(--deb-muted);font-family:var(--S);font-weight:300}
 .deb-body{font-size:1.1rem;line-height:1.9;color:var(--deb-muted);max-width:640px}
 
@@ -69,9 +69,9 @@ a{color:inherit;text-decoration:none}
 .deb-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--deb-bg)}
 .deb-pill-right{display:flex;flex-direction:column}
 .deb-pill-card{background:var(--deb-bg);padding:4rem;border-bottom:1px solid var(--deb-border);min-height:50vh;display:flex;flex-direction:column;justify-content:center}
-.deb-pill-card h3{font-family:var(--D);font-size:clamp(2rem,4vw,4.5rem);margin-bottom:1.5rem;color:var(--deb-white)}
+.deb-pill-card h3{font-family:var(--D);font-weight:900;font-size:clamp(2rem,4vw,4.5rem);margin-bottom:1.5rem;color:var(--deb-white)}
 .deb-pill-card p{font-size:1.05rem;line-height:1.9;color:var(--deb-muted);max-width:520px}
-.deb-pill-num{font-family:var(--D);font-size:clamp(8rem,15vw,16rem);color:rgba(0,102,255,0.08);line-height:1;position:absolute;right:2rem;bottom:2rem}
+.deb-pill-num{font-family:var(--D);font-weight:900;font-size:clamp(8rem,15vw,16rem);color:rgba(0,102,255,0.08);line-height:1;position:absolute;right:2rem;bottom:2rem}
 
 /* CAROUSEL */
 .deb-runway{background:var(--deb-charcoal);border:1px solid var(--deb-border);padding:3rem 0;position:relative;overflow:hidden;background-image:linear-gradient(rgba(0,102,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,255,0.04) 1px,transparent 1px);background-size:40px 40px}
@@ -92,12 +92,12 @@ a{color:inherit;text-decoration:none}
 .deb-kpi p{font-size:.95rem;line-height:1.8;color:var(--deb-muted)}
 .deb-metric-card{background:var(--deb-bg);border:2px solid var(--deb-accent);padding:2.5rem;text-align:center;position:relative;overflow:hidden}
 .deb-metric-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,102,255,0.1),transparent 70%)}
-.deb-metric-num{font-family:var(--D);font-size:clamp(4rem,8vw,7rem);color:var(--deb-accent);line-height:1;position:relative}
+.deb-metric-num{font-family:var(--D);font-weight:900;font-size:clamp(4rem,8vw,7rem);color:var(--deb-accent);line-height:1;position:relative}
 .deb-metric-label{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--deb-muted);margin-top:1rem;position:relative;line-height:1.7}
 
 /* GALLERY */
 .deb-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--deb-border)}
-.deb-gal-item{background:var(--deb-glass);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--D);font-size:.7rem;letter-spacing:.12em;color:rgba(250,250,250,0.08);transition:background .3s}
+.deb-gal-item{background:var(--deb-glass);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--D);font-weight:900;font-size:.7rem;letter-spacing:.12em;color:rgba(250,250,250,0.08);transition:background .3s}
 .deb-gal-item:nth-child(2){aspect-ratio:3/4}
 .deb-gal-item:nth-child(5){aspect-ratio:3/4}
 .deb-gal-item:hover{background:rgba(0,102,255,0.06)}
@@ -111,13 +111,13 @@ a{color:inherit;text-decoration:none}
 .deb-fb-card.hidden{display:none}
 .deb-fb-card:hover{background:rgba(0,102,255,0.03)}
 .deb-fb-quote{font-family:var(--S);font-size:1rem;line-height:1.85;color:var(--deb-muted);font-style:italic;flex:1}
-.deb-fb-name{font-family:var(--D);font-size:1.1rem;color:var(--deb-white)}
+.deb-fb-name{font-family:var(--D);font-weight:900;font-size:1.1rem;color:var(--deb-white)}
 .deb-fb-role{font-family:var(--M);font-size:.5rem;letter-spacing:.18em;color:var(--deb-accent);margin-top:.15rem}
 
 /* FOOTER */
 .deb-footer{padding:4rem 0 2.5rem;border-top:1px solid var(--deb-border)}
 .deb-footer-links{display:flex;flex-wrap:wrap;gap:2rem;margin:2rem 0 3rem}
-.deb-footer-link{font-family:var(--D);font-size:clamp(1.5rem,3vw,2.5rem);color:var(--deb-muted);transition:color .3s;letter-spacing:.03em}
+.deb-footer-link{font-family:var(--D);font-weight:900;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--deb-muted);transition:color .3s;letter-spacing:.03em}
 .deb-footer-link:hover{color:var(--deb-accent)}
 .deb-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:rgba(250,250,250,0.3);padding-top:2rem;border-top:1px solid var(--deb-border)}
 
