@@ -15,7 +15,7 @@ const SURVEY = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--mg-bg:#0A0906;--mg-white:#F0EDE6;--mg-accent:#334155;--mg-gold:#C0A060;--mg-muted:rgba(240,237,230,0.45);--mg-border:rgba(240,237,230,0.08);--mg-glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--mg-bg:#0A0906;--mg-white:#F0EDE6;--mg-accent:#334155;--mg-gold:#C0A060;--mg-muted:rgba(240,237,230,0.45);--mg-border:rgba(240,237,230,0.08);--mg-glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--mg-bg);color:var(--mg-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .mg-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--mg-border)}
 .mg-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}.mg-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--mg-border);border-radius:40px;transition:.3s}.mg-back:hover{border-color:var(--mg-gold);color:var(--mg-gold)}
@@ -23,11 +23,11 @@ html{scroll-behavior:smooth}body{background:var(--mg-bg);color:var(--mg-white);f
 .mg-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(51,65,85,0.2),transparent 55%),radial-gradient(ellipse at 75% 25%,rgba(192,160,96,0.08),transparent 55%),var(--mg-bg)}
 .mg-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
 .mg-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--mg-gold);margin-bottom:2rem}
-.mg-hero h1{font-family:var(--D);font-size:clamp(4rem,12vw,12rem);line-height:.85}.mg-hero h1 span{color:var(--mg-gold)}
+.mg-hero h1{font-family:var(--D);font-size:clamp(4rem,12vw,12rem);line-height:1.05;}.mg-hero h1 span{color:var(--mg-gold)}
 .mg-hero h1 em{font-style:normal;color:var(--mg-muted);font-family:var(--S);font-weight:300;display:block;font-size:.35em;margin-top:1rem;line-height:1.6;max-width:600px}
 .mg-c{max-width:1200px;margin:0 auto;padding:0 5vw}.mg-s{padding:8rem 0;border-bottom:1px solid var(--mg-border)}
 .mg-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--mg-gold);margin-bottom:1.5rem}
-.mg-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;margin-bottom:2.5rem}.mg-title em{font-style:normal;color:var(--mg-muted);font-family:var(--S);font-weight:300}
+.mg-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:1.05;margin-bottom:2.5rem}.mg-title em{font-style:normal;color:var(--mg-muted);font-family:var(--S);font-weight:300}
 .mg-body{font-size:1.1rem;line-height:1.9;color:var(--mg-muted);max-width:640px}
 .mg-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--mg-border);min-height:80vh}
 .mg-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--mg-bg)}
@@ -53,7 +53,8 @@ html{scroll-behavior:smooth}body{background:var(--mg-bg);color:var(--mg-white);f
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'}]
 export default function Management(){return(<>
-<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Management & Design Ops — Sivnco</title><meta name="description" content="Executive intel — design operations leadership and consumer insight infrastructure."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
+<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Management & Design Ops — Sivnco</title><meta name="description" content="Executive intel — design operations leadership and consumer insight infrastructure."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="mg-nav"><Link href="/" className="mg-logo">SIVNCO<span style={{color:'var(--mg-gold)'}}>.</span></Link><Link href="/jusamazin" className="mg-back">← Case Study</Link></nav>
 <div className="mg-hero"><div className="mg-hero-bg"/><div className="mg-hero-inner"><div className="mg-hero-tag">Creative Governance / Design Operations</div><h1>Management<br/>&amp; Design<br/><span>Ops</span><em>From standalone creative production to cross-functional strategic leadership. Directing comprehensive visual and print workflows.</em></h1></div></div>

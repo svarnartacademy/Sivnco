@@ -34,7 +34,7 @@ const CSS = `
   --deb-bg:#0D0D0D;--deb-white:#FAFAFA;--deb-accent:#0066FF;--deb-ochre:#D4960A;
   --deb-muted:rgba(250,250,250,0.45);--deb-border:rgba(250,250,250,0.1);
   --deb-glass:rgba(250,250,250,0.04);--deb-charcoal:#161616;
-  --D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif;
+  --D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:hidden}
@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 @keyframes heroShift{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
 .deb-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:end}
 .deb-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--deb-accent);writing-mode:vertical-rl;text-orientation:mixed;padding-bottom:1rem;border-left:2px solid var(--deb-accent);padding-left:.8rem}
-.deb-hero-text h1{font-family:var(--D);font-size:clamp(5rem,14vw,14rem);line-height:.85;letter-spacing:-.02em}
+.deb-hero-text h1{font-family:var(--D);font-size:clamp(5rem,14vw,14rem);line-height:1.05;letter-spacing:-.02em}
 .deb-hero-text h1 span{color:var(--deb-accent)}
 .deb-hero-text h1 em{font-style:normal;color:var(--deb-ochre);font-family:var(--S);font-weight:300;display:block;font-size:.45em;margin-top:.5rem}
 
@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .deb-section{padding:8rem 0;border-bottom:1px solid var(--deb-border)}
 .deb-c{max-width:1200px;margin:0 auto;padding:0 5vw}
 .deb-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--deb-accent);margin-bottom:1.5rem}
-.deb-title{font-family:var(--D);font-size:clamp(3rem,6vw,7rem);line-height:.9;margin-bottom:2.5rem}
+.deb-title{font-family:var(--D);font-size:clamp(3rem,6vw,7rem);line-height:1.05;margin-bottom:2.5rem}
 .deb-title em{font-style:normal;color:var(--deb-muted);font-family:var(--S);font-weight:300}
 .deb-body{font-size:1.1rem;line-height:1.9;color:var(--deb-muted);max-width:640px}
 
@@ -157,7 +157,8 @@ export default function DesiEnergyBar() {
         <meta name="description" content="Structured Chaos: A D2C energy bar design case study. 70% sales increase."/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{__html:CSS}}/>
       </Head>
 

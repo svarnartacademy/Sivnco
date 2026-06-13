@@ -25,7 +25,7 @@ const NUTRITION = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--sf-bg:#0A0906;--sf-white:#F0EDE6;--sf-accent:#7F8C8D;--sf-red:#E74C3C;--sf-muted:rgba(240,237,230,0.45);--sf-border:rgba(240,237,230,0.08);--sf-glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--sf-bg:#0A0906;--sf-white:#F0EDE6;--sf-accent:#7F8C8D;--sf-red:#E74C3C;--sf-muted:rgba(240,237,230,0.45);--sf-border:rgba(240,237,230,0.08);--sf-glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--sf-bg);color:var(--sf-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .sf-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--sf-border)}
 .sf-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}.sf-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--sf-border);border-radius:40px;transition:.3s}.sf-back:hover{border-color:var(--sf-accent);color:var(--sf-white)}
@@ -33,11 +33,11 @@ html{scroll-behavior:smooth}body{background:var(--sf-bg);color:var(--sf-white);f
 .sf-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(127,140,141,0.15),transparent 55%),radial-gradient(ellipse at 75% 25%,rgba(231,76,60,0.08),transparent 55%),var(--sf-bg)}
 .sf-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
 .sf-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--sf-accent);margin-bottom:2rem}
-.sf-hero h1{font-family:var(--D);font-size:clamp(4.5rem,13vw,13rem);line-height:.85}.sf-hero h1 span{color:var(--sf-accent)}
+.sf-hero h1{font-family:var(--D);font-size:clamp(4.5rem,13vw,13rem);line-height:1.05;}.sf-hero h1 span{color:var(--sf-accent)}
 .sf-hero h1 em{font-style:normal;color:var(--sf-muted);font-family:var(--S);font-weight:300;display:block;font-size:.35em;margin-top:1rem;line-height:1.6;max-width:600px}
 .sf-c{max-width:1200px;margin:0 auto;padding:0 5vw}.sf-s{padding:8rem 0;border-bottom:1px solid var(--sf-border)}
 .sf-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--sf-accent);margin-bottom:1.5rem}
-.sf-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;margin-bottom:2.5rem}.sf-title em{font-style:normal;color:var(--sf-muted);font-family:var(--S);font-weight:300}
+.sf-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:1.05;margin-bottom:2.5rem}.sf-title em{font-style:normal;color:var(--sf-muted);font-family:var(--S);font-weight:300}
 .sf-body{font-size:1.1rem;line-height:1.9;color:var(--sf-muted);max-width:640px}
 .sf-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sf-border);min-height:80vh}
 .sf-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--sf-bg)}
@@ -64,7 +64,8 @@ html{scroll-behavior:smooth}body{background:var(--sf-bg);color:var(--sf-white);f
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 export default function Superfoods(){return(<>
-<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Superfoods Range — Sivnco</title><meta name="description" content="Technical packaging specification for Jus Amazin Superfoods flexible pouch range."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
+<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Superfoods Range — Sivnco</title><meta name="description" content="Technical packaging specification for Jus Amazin Superfoods flexible pouch range."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="sf-nav"><Link href="/" className="sf-logo">SIVNCO<span style={{color:'var(--sf-accent)'}}>.</span></Link><Link href="/jusamazin" className="sf-back">← Case Study</Link></nav>
 <div className="sf-hero"><div className="sf-hero-bg"/><div className="sf-hero-inner"><div className="sf-hero-tag">Packaging Spec / Flexible Pouches</div><h1>Super<span>foods</span><br/>Range<em>Re-engineering the 500g and 1kg flexible pouch product lines. Merging dense nutritional data with premium visual cleanliness.</em></h1></div></div>

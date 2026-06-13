@@ -14,10 +14,11 @@
   <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
   <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
 
-  <!-- Fonts: Noto Serif Display (display) · Urbanist (body) · Instrument Sans (accent) -->
+  <!-- Fonts: Boska (display) · Urbanist (body) · Instrument Sans (accent) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet">
 
   <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -40,11 +41,11 @@
       --glass-bg: rgba(240, 237, 230, 0.05);
       --glass-border: rgba(240, 237, 230, 0.08);
 
-      --f-display: 'Noto Serif Display', Georgia, serif;
+      --f-display: 'Boska', Georgia, serif;
       --f-serif: 'Urbanist', sans-serif;
       --f-mono: 'Instrument Sans', sans-serif;
       /* legacy alias */
-      --f-sans: 'Noto Serif Display', Georgia, serif;
+      --f-sans: 'Boska', Georgia, serif;
     }
 
     /* LENIS SMOOTH SCROLL */
@@ -315,7 +316,7 @@
     .h-massive {
       font-family: var(--f-display);
       font-size: clamp(4rem, 13vw, 12rem);
-      line-height: 0.88;
+      line-height:1.05;
       letter-spacing: 0.01em;
       overflow-wrap: break-word;
       word-break: break-word;
@@ -324,7 +325,7 @@
     .h-large {
       font-family: var(--f-display);
       font-size: clamp(3.5rem, 9vw, 9rem);
-      line-height: 0.9;
+      line-height:1.05;
       letter-spacing: 0.01em;
     }
 
@@ -520,6 +521,8 @@
     .reveal-text {
       display: inline-block;
       transform: translateY(110%);
+      padding-right: 0.05em;
+      padding-bottom: 0.05em;
     }
 
     /* CURTAIN REVEAL FOOTER */
@@ -2696,7 +2699,7 @@
         <!-- LEFT: Headline + social links -->
         <div>
           <div class="t-mono-label" style="color: var(--accent); margin-bottom: 1rem;">Let's work together</div>
-          <h2 style="font-family: var(--f-display); font-size: clamp(3rem, 6vw, 7rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 1.5rem;">
+          <h2 style="font-family: var(--f-display); font-size: clamp(3rem, 6vw, 7rem); line-height:1.05; text-transform: uppercase; margin-bottom: 1.5rem;">
             Let's build<br>
             something<br>
             <span class="t-serif" style="color: var(--accent); font-size: 0.85em;">that earns<br>its keep.</span>

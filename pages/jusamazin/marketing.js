@@ -44,7 +44,7 @@ const CAMPAIGN_VIDEOS = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--mk-bg:#0A0906;--mk-white:#F0EDE6;--mk-accent:#2ECC71;--mk-amber:#F39C12;--mk-muted:rgba(240,237,230,0.45);--mk-border:rgba(240,237,230,0.08);--mk-glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--mk-bg:#0A0906;--mk-white:#F0EDE6;--mk-accent:#2ECC71;--mk-amber:#F39C12;--mk-muted:rgba(240,237,230,0.45);--mk-border:rgba(240,237,230,0.08);--mk-glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .mk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--mk-border)}
 .mk-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}.mk-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--mk-border);border-radius:40px;transition:.3s}.mk-back:hover{border-color:var(--mk-accent);color:var(--mk-accent)}
@@ -53,11 +53,11 @@ html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);f
 @keyframes mkPulse{0%,100%{opacity:.85}50%{opacity:1}}
 .mk-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
 .mk-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--mk-accent);margin-bottom:2rem}
-.mk-hero h1{font-family:var(--D);font-size:clamp(4.5rem,13vw,13rem);line-height:.85}.mk-hero h1 span{color:var(--mk-accent)}
+.mk-hero h1{font-family:var(--D);font-size:clamp(4.5rem,13vw,13rem);line-height:1.05;}.mk-hero h1 span{color:var(--mk-accent)}
 .mk-hero h1 em{font-style:normal;color:var(--mk-muted);font-family:var(--S);font-weight:300;display:block;font-size:.32em;margin-top:1rem;line-height:1.6;max-width:580px}
 .mk-c{max-width:1200px;margin:0 auto;padding:0 5vw}.mk-s{padding:8rem 0;border-bottom:1px solid var(--mk-border)}
 .mk-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--mk-accent);margin-bottom:1.5rem}
-.mk-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;margin-bottom:2.5rem}.mk-title em{font-style:normal;color:var(--mk-muted);font-family:var(--S);font-weight:300}
+.mk-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:1.05;margin-bottom:2.5rem}.mk-title em{font-style:normal;color:var(--mk-muted);font-family:var(--S);font-weight:300}
 .mk-body{font-size:1.1rem;line-height:1.9;color:var(--mk-muted);max-width:640px}
 .mk-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--mk-border);min-height:80vh}
 .mk-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--mk-bg)}
@@ -113,7 +113,8 @@ const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',
 export default function Marketing(){
   const [activeVideo, setActiveVideo] = useState(0)
   return(<>
-<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Marketing & Digital — Sivnco</title><meta name="description" content="Multimedia workspace — quick-commerce video engine, color triage, competitor benchmarking."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
+<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Marketing & Digital — Sivnco</title><meta name="description" content="Multimedia workspace — quick-commerce video engine, color triage, competitor benchmarking."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="mk-nav"><Link href="/" className="mk-logo">SIVNCO<span style={{color:'var(--mk-accent)'}}>.</span></Link><Link href="/jusamazin" className="mk-back">← Case Study</Link></nav>
 <div className="mk-hero"><div className="mk-hero-bg"/><div className="mk-hero-inner"><div className="mk-hero-tag">Omnichannel Deployment / Media Synthesis</div><h1><span>Marketing</span><br/>&amp; Digital<em>High-fidelity motion design for Blinkit & Amazon. Synthetic media, rapid experimentation, and color space triage.</em></h1></div></div>

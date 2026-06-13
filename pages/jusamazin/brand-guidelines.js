@@ -16,7 +16,7 @@ const TOKENS = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg-bg:#0A0906;--bg-white:#F0EDE6;--bg-accent:#0066FF;--bg-ochre:#D4960A;--bg-muted:rgba(240,237,230,0.45);--bg-border:rgba(240,237,230,0.08);--bg-glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--bg-bg:#0A0906;--bg-white:#F0EDE6;--bg-accent:#0066FF;--bg-ochre:#D4960A;--bg-muted:rgba(240,237,230,0.45);--bg-border:rgba(240,237,230,0.08);--bg-glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--bg-bg);color:var(--bg-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .bg-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--bg-border)}
 .bg-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}.bg-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--bg-border);border-radius:40px;transition:.3s}.bg-back:hover{border-color:var(--bg-accent);color:var(--bg-accent)}
@@ -24,11 +24,11 @@ html{scroll-behavior:smooth}body{background:var(--bg-bg);color:var(--bg-white);f
 .bg-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 80%,rgba(0,102,255,0.15),transparent 55%),radial-gradient(ellipse at 80% 30%,rgba(212,150,10,0.1),transparent 55%),var(--bg-bg)}
 .bg-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
 .bg-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--bg-accent);margin-bottom:2rem}
-.bg-hero h1{font-family:var(--D);font-size:clamp(4rem,12vw,12rem);line-height:.85}.bg-hero h1 span{color:var(--bg-accent)}
+.bg-hero h1{font-family:var(--D);font-size:clamp(4rem,12vw,12rem);line-height:1.05;}.bg-hero h1 span{color:var(--bg-accent)}
 .bg-hero h1 em{font-style:normal;color:var(--bg-muted);font-family:var(--S);font-weight:300;display:block;font-size:.35em;margin-top:1rem;line-height:1.6;max-width:600px}
 .bg-c{max-width:1200px;margin:0 auto;padding:0 5vw}.bg-s{padding:8rem 0;border-bottom:1px solid var(--bg-border)}
 .bg-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--bg-accent);margin-bottom:1.5rem}
-.bg-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;margin-bottom:2.5rem}.bg-title em{font-style:normal;color:var(--bg-muted);font-family:var(--S);font-weight:300}
+.bg-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:1.05;margin-bottom:2.5rem}.bg-title em{font-style:normal;color:var(--bg-muted);font-family:var(--S);font-weight:300}
 .bg-body{font-size:1.1rem;line-height:1.9;color:var(--bg-muted);max-width:640px}
 .bg-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bg-border);min-height:80vh}
 .bg-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--bg-bg)}
@@ -58,7 +58,8 @@ html{scroll-behavior:smooth}body{background:var(--bg-bg);color:var(--bg-white);f
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 export default function BrandGuidelines(){return(<>
-<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Brand Guidelines — Sivnco</title><meta name="description" content="The System Rulebook — comprehensive brand guidelines for Jus Amazin."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
+<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Brand Guidelines — Sivnco</title><meta name="description" content="The System Rulebook — comprehensive brand guidelines for Jus Amazin."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="bg-nav"><Link href="/" className="bg-logo">SIVNCO<span style={{color:'var(--bg-accent)'}}>.</span></Link><Link href="/jusamazin" className="bg-back">← Case Study</Link></nav>
 <div className="bg-hero"><div className="bg-hero-bg"/><div className="bg-hero-inner"><div className="bg-hero-tag">System Governance / Corporate Architecture</div><h1>Brand<br/><span>Guide</span>lines<em>The System Rulebook — a living brand bible engineered to decentralize creative execution across the entire organization.</em></h1></div></div>

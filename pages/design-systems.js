@@ -64,7 +64,7 @@ const PROCESS = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
@@ -86,7 +86,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(212,96,10,0.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(212,96,10,0.08) 0%,transparent 50%),var(--bg);z-index:0;animation:heroBgPulse 10s ease-in-out infinite}
 @keyframes heroBgPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--accent);margin-bottom:2rem;position:relative;z-index:2}
-.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:.88;position:relative;z-index:2}
+.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:1.05;position:relative;z-index:2}
 .hero-title i{color:var(--accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.25rem);color:var(--muted);max-width:580px;line-height:1.9;margin-top:2rem;position:relative;z-index:2}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);position:relative;z-index:2}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--accent);margin-bottom:1.5rem;display:inline-block;border-right:2px solid var(--accent);padding-right:6px;animation:cursorBlink 1s step-end infinite}
 @keyframes cursorBlink{0%,100%{border-right-color:var(--accent)}50%{border-right-color:transparent}}
-.s-title{font-family:var(--D);font-size:clamp(3rem,6vw,7.5rem);line-height:.9;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-size:clamp(3rem,6vw,7.5rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--muted);font-style:normal;font-weight:300}
 .body-text{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--muted);max-width:660px}
 
@@ -196,7 +196,8 @@ export default function DesignSystems() {
         <meta name="description" content="How H P Shivaraj builds brand systems that scale: token layers, component architecture, and governance across Jus Amazin, Svarnart Academy, and Sivnco Studio." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

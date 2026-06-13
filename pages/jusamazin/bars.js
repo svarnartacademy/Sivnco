@@ -14,7 +14,7 @@ const FEEDBACK = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--br-bg:#0A0906;--br-white:#F0EDE6;--br-accent:#FF3366;--br-muted:rgba(240,237,230,0.45);--br-border:rgba(240,237,230,0.08);--br-glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--br-bg:#0A0906;--br-white:#F0EDE6;--br-accent:#FF3366;--br-muted:rgba(240,237,230,0.45);--br-border:rgba(240,237,230,0.08);--br-glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 .br-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--br-border)}
 .br-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}.br-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--br-border);border-radius:40px;transition:.3s}.br-back:hover{border-color:var(--br-accent);color:var(--br-accent)}
@@ -23,11 +23,11 @@ html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);f
 @keyframes brPulse{0%,100%{opacity:.85}50%{opacity:1}}
 .br-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
 .br-hero-tag{font-family:var(--M);font-size:.6rem;letter-spacing:.25em;color:var(--br-accent);margin-bottom:2rem}
-.br-hero h1{font-family:var(--D);font-size:clamp(5rem,14vw,14rem);line-height:.85}.br-hero h1 span{color:var(--br-accent)}
+.br-hero h1{font-family:var(--D);font-size:clamp(5rem,14vw,14rem);line-height:1.05;}.br-hero h1 span{color:var(--br-accent)}
 .br-hero h1 em{font-style:normal;color:var(--br-muted);font-family:var(--S);font-weight:300;display:block;font-size:.32em;margin-top:1rem;line-height:1.6;max-width:580px}
 .br-c{max-width:1200px;margin:0 auto;padding:0 5vw}.br-s{padding:8rem 0;border-bottom:1px solid var(--br-border)}
 .br-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--br-accent);margin-bottom:1.5rem}
-.br-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:.9;margin-bottom:2.5rem}.br-title em{font-style:normal;color:var(--br-muted);font-family:var(--S);font-weight:300}
+.br-title{font-family:var(--D);font-size:clamp(2.8rem,6vw,6.5rem);line-height:1.05;margin-bottom:2.5rem}.br-title em{font-style:normal;color:var(--br-muted);font-family:var(--S);font-weight:300}
 .br-body{font-size:1.1rem;line-height:1.9;color:var(--br-muted);max-width:640px}
 .br-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--br-border);min-height:80vh}
 .br-pill-left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem;background:var(--br-bg)}
@@ -53,7 +53,8 @@ html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);f
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 export default function Bars(){return(<>
-<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Bars Portfolio — Sivnco</title><meta name="description" content="High-velocity retail dashboard — snack bar category scaling and MOM Bar campaign."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
+<Head><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Bars Portfolio — Sivnco</title><meta name="description" content="High-velocity retail dashboard — snack bar category scaling and MOM Bar campaign."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 <nav className="br-nav"><Link href="/" className="br-logo">SIVNCO<span style={{color:'var(--br-accent)'}}>.</span></Link><Link href="/jusamazin" className="br-back">← Case Study</Link></nav>
 <div className="br-hero"><div className="br-hero-bg"/><div className="br-hero-inner"><div className="br-hero-tag">Category Scaling / Volume Expansion</div><h1>Snack<br/><span>Bars</span><em>Disrupting the saturated snacking category with maximum visual velocity. From 250 units to 8,000 monthly — design as a revenue engine.</em></h1></div></div>

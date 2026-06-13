@@ -27,7 +27,7 @@ const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amar
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -46,7 +46,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--ja-border);position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--ja-accent);margin-bottom:2rem}
-.hero-title{font-family:var(--D);font-size:clamp(6rem,16vw,15rem);line-height:.88}
+.hero-title{font-family:var(--D);font-size:clamp(6rem,16vw,15rem);line-height:1.05;}
 .hero-title i{color:var(--ja-accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ja-muted);max-width:540px;line-height:1.85;margin-top:2rem}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ja-border)}
@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ja-muted);margin-top:.8rem}
 section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--ja-accent);margin-bottom:1.5rem}
-.s-title{font-family:var(--D);font-size:clamp(3.5rem,7vw,8rem);line-height:.88;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-size:clamp(3.5rem,7vw,8rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--ja-muted);font-style:normal;font-weight:300}
 .body{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--ja-muted);max-width:660px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
@@ -209,7 +209,8 @@ export default function JusAmazin() {
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

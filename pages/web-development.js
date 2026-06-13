@@ -64,7 +64,7 @@ const PILLARS = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-l:#E8852A;--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Noto Serif Display',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-l:#E8852A;--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Boska',Georgia,serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
@@ -89,7 +89,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-orb{position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(100px);opacity:.18;top:-5%;right:-5%;background:var(--accent);animation:orbFloat 8s ease-in-out infinite}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.95) 35%,rgba(10,9,6,.6) 65%,rgba(10,9,6,.2) 100%);pointer-events:none;z-index:1}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--accent);margin-bottom:2rem}
-.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:.88}
+.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:1.05;}
 .hero-title i{color:var(--accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.3rem);color:var(--muted);max-width:580px;line-height:1.85;margin-top:2rem}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
@@ -108,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* SECTION */
 section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--accent);margin-bottom:1.5rem;border-right:2px solid var(--accent);padding-right:4px;animation:cursorBlink 1s step-end infinite;display:inline-block}
-.s-title{font-family:var(--D);font-size:clamp(3rem,7vw,8rem);line-height:.88;margin-bottom:3rem;will-change:transform}
+.s-title{font-family:var(--D);font-size:clamp(3rem,7vw,8rem);line-height:1.05;margin-bottom:3rem;will-change:transform}
 .s-title i{font-family:var(--S);color:var(--muted);font-style:normal;font-weight:300}
 .body-txt{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--muted);max-width:660px}
 
@@ -213,10 +213,8 @@ export default function WebDevelopment() {
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=boska@200,300,400,500,600,700,900,200i,300i,400i,500i,600i,700i,900i&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
