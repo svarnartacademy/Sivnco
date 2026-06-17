@@ -1974,22 +1974,175 @@
 
     /* POV STATEMENT */
     .hero-pov {
-      margin-top: 3rem;
       border-left: 2px solid var(--accent);
       padding-left: 1.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
       opacity: 0;
     }
     .hero-pov p {
       font-family: var(--f-serif);
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.9;
       color: var(--text-muted);
       font-style: italic;
     }
     .hero-pov strong { color: var(--text-main); font-style: normal; font-weight: 500; }
+
+    /* HERO SPLIT LAYOUT */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 6rem;
+      align-items: center;
+      min-height: 82vh;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 2rem;
+    }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-left: 1px solid var(--glass-border);
+      padding-left: 4rem;
+    }
+    .hero-eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero-name-block {
+      margin-bottom: 0.5rem;
+    }
+    .hero-name-main {
+      font-family: var(--f-display);
+      font-size: clamp(4.5rem, 9vw, 10rem);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      display: block;
+    }
+    .hero-name-sub {
+      font-family: var(--f-serif);
+      font-size: clamp(4rem, 8vw, 9rem);
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(240,237,230,0.22);
+      display: block;
+      padding-left: 0.15em;
+    }
+    .hero-tagline {
+      margin-top: 2rem;
+      font-family: var(--f-serif);
+      font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 480px;
+    }
+    .hero-tagline em {
+      color: var(--text-main);
+      font-style: normal;
+    }
+    .hero-right-label {
+      font-family: var(--f-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+    .hero-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--f-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(240,237,230,0.05);
+    }
+    .hero-meta-item:last-child { border-bottom: none; }
+    .hero-meta-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .hero-meta-val {
+      color: var(--text-main);
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hero-scroll-cta {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.3s;
+    }
+    .hero-scroll-cta:hover { color: var(--text-main); }
+    .hero-scroll-cta svg {
+      animation: bounceDown 2s ease-in-out infinite;
+    }
+    @keyframes bounceDown {
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(4px)}
+    }
+    @media (max-width: 900px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: unset;
+        padding: 4rem 0 2rem;
+      }
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--glass-border);
+        padding-left: 0;
+        padding-top: 2rem;
+      }
+      .hero-name-main { font-size: clamp(3.5rem, 14vw, 6rem); }
+      .hero-name-sub { font-size: clamp(3rem, 12vw, 5.5rem); }
+    }
 
     /* ART DIRECTION CAPTIONS */
     .ad-caption {
@@ -2243,93 +2396,121 @@
       <!-- Floating glow orbs -->
       <div class="hero-glow hero-glow-1"></div>
       <div class="hero-glow hero-glow-2"></div>
-      <!-- Accent lines that animate in -->
-      <div class="hero-line hero-line-h left" id="heroLineL"></div>
-      <div class="hero-line hero-line-h right" id="heroLineR"></div>
-      <div class="hero-line hero-line-v" id="heroLineV"></div>
-      <!-- Floating corner tags -->
-      <div class="hero-float-tag tag-tl" id="hTag1">ART DIRECTION</div>
-      <div class="hero-float-tag tag-tr" id="hTag2">BENGALURU, IN</div>
-      <div class="hero-float-tag tag-bl" id="hTag3">Campaign Thinking · Brand Systems</div>
-      <div class="hero-float-tag tag-br" id="hTag4">FINE ART · BFA GOLD MEDAL</div>
 
-      <div class="container" style="position:relative; z-index:2;">
-        <div class="h-massive gs-reveal" id="heroName" style="margin-top: 0;">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Art</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(240,237,230,0.25);">Director.</div>
-          </div>
-        </div>
-        <div class="t-serif gs-reveal" style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin-top: 1.5rem; color: var(--text-muted);">
-          <div class="reveal-wrap">
-            <div class="reveal-text">From fine art to brand systems to advertising — H.P. Shivaraj, Bengaluru</div>
-          </div>
-        </div>
-        <div class="hero-roles" id="heroRoles">
-          <span>Art Direction</span>
-          <span>Brand Strategy</span>
-          <span>Campaign Thinking</span>
-          <span>Fine Art</span>
-        </div>
-        <div class="hero-pov" id="heroPov">
-          <p><strong>I believe the most powerful commercial visuals borrow from fine art</strong> — they make the viewer feel something before they read a word. My work starts from a painting instinct and ends at a shelf, a screen, or a campaign. The translation is where the thinking happens.</p>
-        </div>
+      <div class="container">
+        <div class="hero-split">
 
-        <!-- STATS BAR WITH VISUAL PROOF -->
-        <div class="hero-stats-bar" id="heroStats">
-          <div class="hero-stat">
-            <div class="hero-stat-num" id="statRevenue">176%</div>
-            <div class="hero-stat-label">Revenue Growth</div>
-            <div class="hero-stat-proof">
-              <div class="proof-bars">
-                <div class="proof-bar before"></div>
-                <div class="proof-bar before" style="height:8px"></div>
-                <div class="proof-bar before" style="height:10px"></div>
-                <div class="proof-bar after"></div>
-                <div class="proof-bar after" style="height:32px"></div>
-                <div class="proof-bar after" style="height:24px"></div>
+          <!-- LEFT: Name + Tagline -->
+          <div class="hero-left">
+            <div class="hero-eyebrow gs-fade" id="hTag1">Art Director &nbsp;&middot;&nbsp; Brand Strategist &nbsp;&middot;&nbsp; Bengaluru, IN</div>
+
+            <div class="hero-name-block gs-reveal" id="heroName">
+              <div class="reveal-wrap">
+                <span class="hero-name-main reveal-text">Art</span>
+              </div>
+              <div class="reveal-wrap">
+                <span class="hero-name-sub reveal-text">Director.</span>
+              </div>
+            </div>
+
+            <div class="hero-tagline gs-fade">
+              From <em>fine art</em> to brand systems to advertising &mdash;
+              H.P.&nbsp;Shivaraj
+            </div>
+
+            <!-- Stats bar -->
+            <div class="hero-stats-bar" id="heroStats" style="margin-top: 2.5rem; margin-left: 0; padding-left: 0;">
+              <div class="hero-stat">
+                <div class="hero-stat-num" id="statRevenue">176%</div>
+                <div class="hero-stat-label">Revenue Growth</div>
+                <div class="hero-stat-proof">
+                  <div class="proof-bars">
+                    <div class="proof-bar before"></div>
+                    <div class="proof-bar before" style="height:8px"></div>
+                    <div class="proof-bar before" style="height:10px"></div>
+                    <div class="proof-bar after"></div>
+                    <div class="proof-bar after" style="height:32px"></div>
+                    <div class="proof-bar after" style="height:24px"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-num">15+</div>
+                <div class="hero-stat-label">SKUs Designed</div>
+                <div class="hero-stat-proof">
+                  <div class="proof-skus">
+                    <div class="proof-sku active"></div>
+                    <div class="proof-sku active"></div>
+                    <div class="proof-sku active"></div>
+                    <div class="proof-sku active"></div>
+                    <div class="proof-sku active"></div>
+                    <div class="proof-sku active" style="opacity:0.5"></div>
+                    <div class="proof-sku" style="opacity:0.3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-stat">
+                <div class="hero-stat-num">4+</div>
+                <div class="hero-stat-label">Years Commercial</div>
+                <div class="hero-stat-proof">
+                  <div class="proof-dots">
+                    <div class="proof-dot filled"></div>
+                    <div class="proof-line-conn"></div>
+                    <div class="proof-dot filled"></div>
+                    <div class="proof-line-conn"></div>
+                    <div class="proof-dot filled"></div>
+                    <div class="proof-line-conn"></div>
+                    <div class="proof-dot filled"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">15+</div>
-            <div class="hero-stat-label">SKUs Designed</div>
-            <div class="hero-stat-proof">
-              <div class="proof-skus">
-                <div class="proof-sku active"></div>
-                <div class="proof-sku active"></div>
-                <div class="proof-sku active"></div>
-                <div class="proof-sku active"></div>
-                <div class="proof-sku active"></div>
-                <div class="proof-sku active" style="opacity:0.5"></div>
-                <div class="proof-sku" style="opacity:0.3"></div>
+
+          <!-- RIGHT: POV + Meta + CTA -->
+          <div class="hero-right">
+
+            <div class="hero-pov" id="heroPov">
+              <p><strong>I believe the most powerful commercial visuals borrow from fine art</strong> &mdash; they make the viewer feel something before they read a word. My work starts from a painting instinct and ends at a shelf, a screen, or a campaign. The translation is where the thinking happens.</p>
+            </div>
+
+            <div class="gs-fade">
+              <div class="hero-right-label" style="margin-bottom: 1rem;">Disciplines</div>
+              <div class="hero-roles" id="heroRoles" style="justify-content: flex-start;">
+                <span>Art Direction</span>
+                <span>Brand Strategy</span>
+                <span>Campaign Thinking</span>
+                <span>Fine Art</span>
               </div>
             </div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">4+</div>
-            <div class="hero-stat-label">Years Commercial</div>
-            <div class="hero-stat-proof">
-              <div class="proof-dots">
-                <div class="proof-dot filled"></div>
-                <div class="proof-line-conn"></div>
-                <div class="proof-dot filled"></div>
-                <div class="proof-line-conn"></div>
-                <div class="proof-dot filled"></div>
-                <div class="proof-line-conn"></div>
-                <div class="proof-dot filled"></div>
+
+            <div class="hero-meta-row gs-fade">
+              <div class="hero-meta-item">
+                <div class="hero-meta-dot"></div>
+                <span>BFA Applied Arts &nbsp;&middot;&nbsp; <span class="hero-meta-val" style="color:var(--accent);">Gold Medal</span></span>
+              </div>
+              <div class="hero-meta-item">
+                <div class="hero-meta-dot"></div>
+                <span>Jus Amazin &nbsp;&middot;&nbsp; <span class="hero-meta-val">4+ yrs sole AD</span></span>
+              </div>
+              <div class="hero-meta-item">
+                <div class="hero-meta-dot"></div>
+                <span>Open to &nbsp;&middot;&nbsp; <span class="hero-meta-val">In-house &middot; Agency</span></span>
               </div>
             </div>
+
+            <div class="hero-cta-row gs-fade">
+              <a href="/campaigns" class="nav-cta" style="font-size: 0.68rem;">View Campaigns &rarr;</a>
+              <a href="#work" class="hero-scroll-cta">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 1v10M1 7l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Scroll to work
+              </a>
+            </div>
+
           </div>
         </div>
-      </div>
-
-      <!-- Scroll hint -->
-      <div class="hero-scroll-hint" id="heroScroll">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
       </div>
     </section>
 
@@ -3181,56 +3362,46 @@
     // =============================================
     const heroTL = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-    // Name text reveals with blur
+    // Eyebrow line fades in first
+    heroTL.fromTo('#hTag1',
+      { opacity: 0, y: -8 },
+      { opacity: 1, y: 0, duration: 0.8 },
+      0.3
+    );
+
+    // Name text reveals with blur — left column
     heroTL.fromTo('#heroName .reveal-text',
-      { y: "110%", filter: "blur(12px)", opacity: 0 },
-      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.4, stagger: 0.15 },
+      { y: "110%", filter: "blur(10px)", opacity: 0 },
+      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.4, stagger: 0.18 },
       0.5
     );
 
-    // Tagline
-    heroTL.fromTo('.hero-section .t-serif .reveal-text',
-      { y: "110%", filter: "blur(8px)", opacity: 0 },
-      { y: "0%", filter: "blur(0px)", opacity: 1, duration: 1.2 },
+    // Tagline fades in below name
+    heroTL.fromTo('.hero-tagline',
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 1 },
       1.2
+    );
+
+    // Stats bar slides up
+    heroTL.fromTo('#heroStats',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8 },
+      1.5
+    );
+
+    // POV statement — right column, fades in
+    heroTL.fromTo('#heroPov',
+      { opacity: 0, x: 16 },
+      { opacity: 1, x: 0, duration: 1, ease: "power3.out" },
+      1.0
     );
 
     // Role tags stagger in
     heroTL.fromTo('#heroRoles span',
-      { y: 15, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, stagger: 0.12 },
-      1.6
-    );
-
-    // POV statement fades in last
-    heroTL.fromTo('#heroPov',
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-      2.2
-    );
-
-    // Accent lines draw in
-    heroTL.fromTo('#heroLineL',
-      { width: 0, opacity: 0 },
-      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
-      1.8
-    );
-    heroTL.fromTo('#heroLineR',
-      { width: 0, opacity: 0 },
-      { width: "20vw", opacity: 0.4, duration: 1.2, ease: "power2.inOut" },
-      1.8
-    );
-    heroTL.fromTo('#heroLineV',
-      { height: 0, opacity: 0 },
-      { height: "15vh", opacity: 0.3, duration: 1, ease: "power2.inOut" },
-      2.0
-    );
-
-    // Corner floating tags
-    heroTL.fromTo(['#hTag1', '#hTag2', '#hTag3', '#hTag4'],
-      { opacity: 0, y: 10 },
-      { opacity: 0.4, y: 0, duration: 0.8, stagger: 0.1 },
-      2.2
+      { y: 12, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 },
+      1.4
     );
 
     // Scroll hint
