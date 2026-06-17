@@ -258,16 +258,16 @@ export default function Home({ bodyHTML, inlineScript }) {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco</title>
-        <meta name="description" content="Brand systems, digital products &amp; design systems — H P Shivaraj. 176% revenue impact. Bengaluru. Creative technologist, brand strategist, art educator." />
+        <title>H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco</title>
+        <meta name="description" content="H P Shivaraj — Art Director &amp; Brand Strategist. Campaign thinking, brand systems, fine art practice. 176% revenue impact. Bengaluru." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sivnco.in/" />
-        <meta property="og:title" content="H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco" />
-        <meta property="og:description" content="H P Shivaraj — Brand systems, digital products, design systems &amp; AI workflows. Bengaluru. 176% revenue impact at Jus Amazin." />
+        <meta property="og:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
+        <meta property="og:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking, brand systems, 176% revenue impact. Bengaluru." />
         <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="H P Shivaraj — Creative Technologist &amp; Brand Systems Lead | Sivnco" />
-        <meta name="twitter:description" content="H P Shivaraj — Brand systems, digital products, design systems &amp; AI workflows. Bengaluru. 176% revenue impact at Jus Amazin." />
+        <meta name="twitter:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
+        <meta name="twitter:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking &amp; brand systems. Bengaluru." />
         <meta name="twitter:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

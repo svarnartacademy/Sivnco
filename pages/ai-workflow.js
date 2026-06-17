@@ -186,7 +186,7 @@ export default function AIWorkflow() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>AI &amp; Workflow — H.P. Shivaraj · Sivnco</title>
+        <title>AI &amp; Concept Acceleration — H P Shivaraj · Art Director | Sivnco</title>
         <meta name="description" content="Implementing AI tools for design, vocal adaptations, video editing, and custom agents at Jus Amazin, Svarnart, and Sivnco." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

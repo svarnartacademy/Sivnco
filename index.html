@@ -4,15 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sivnco — H.P. Shivaraj</title>
-  <meta name="description" content="H P Shivaraj — Brand design, packaging, illustration. Bengaluru." />
+  <title>H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco</title>
+  <meta name="description" content="H P Shivaraj — Art Director &amp; Brand Strategist. Campaign thinking, brand systems, fine art practice. 176% revenue impact. Bengaluru." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sivnco.in/" />
-  <meta property="og:title" content="Sivnco — H.P. Shivaraj" />
-  <meta property="og:description" content="Cinematic brand design and packaging. Bengaluru." />
+  <meta property="og:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
+  <meta property="og:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking, brand systems, 176% revenue impact. Bengaluru." />
   <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
+  <meta name="twitter:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking &amp; brand systems. Bengaluru." />
 
   <!-- Fonts: Doto (display) · Poppins (accent) · Space Mono (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1703,6 +1706,258 @@
       outline: none;
     }
 
+    /* PROJECT TYPE LABELS */
+    .project-type-label {
+      font-family: var(--f-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.18em;
+      color: rgba(212,96,10,0.8);
+      border: 1px solid rgba(212,96,10,0.25);
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 0.4rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* POV STATEMENT */
+    .hero-pov {
+      margin-top: 3rem;
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+    }
+    .hero-pov p {
+      font-family: var(--f-serif);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .hero-pov strong { color: var(--text-main); font-style: normal; font-weight: 500; }
+
+    /* ART DIRECTION CAPTIONS */
+    .ad-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+      padding: 2rem 1.5rem 1rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 4;
+    }
+    .cs-img-slot:hover .ad-caption { opacity: 1; }
+    .ad-caption-tech {
+      font-family: var(--f-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .ad-caption-why {
+      font-family: var(--f-serif);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: rgba(240,237,230,0.8);
+    }
+
+    /* VISUAL CONCEPT SECTIONS */
+    .vc-section {
+      margin-top: 5rem;
+      padding-top: 5rem;
+      border-top: 1px solid var(--glass-border);
+    }
+    .vc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+    .vc-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      padding: 2.5rem;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .vc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(212,96,10,0.06), transparent 70%);
+      pointer-events: none;
+    }
+    .vc-card-label {
+      font-family: var(--f-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .vc-card-title {
+      font-family: var(--f-display);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .vc-card-body {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+    .vc-rejected-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .vc-rejected-card {
+      background: rgba(240,237,230,0.02);
+      border: 1px solid var(--glass-border);
+      padding: 2rem;
+      border-radius: 8px;
+      position: relative;
+    }
+    .vc-rejected-card::after {
+      content: 'REJECTED';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--f-mono);
+      font-size: 0.42rem;
+      letter-spacing: 0.2em;
+      color: rgba(240,237,230,0.2);
+    }
+    .vc-rejected-num {
+      font-family: var(--f-display);
+      font-size: 2.5rem;
+      color: rgba(240,237,230,0.08);
+      margin-bottom: 0.8rem;
+    }
+    .vc-rejected-direction {
+      font-family: var(--f-serif);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+    .vc-rejected-why {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+    .vc-campaign-ext {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .vc-ext-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      padding: 2rem;
+      border-radius: 8px;
+      border-top: 3px solid var(--accent);
+    }
+    .vc-ext-channel {
+      font-family: var(--f-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .vc-ext-idea {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .vc-ext-idea strong { color: var(--text-main); font-weight: 500; }
+
+    /* ABOUT REFERENCES */
+    .about-references { margin-top: 3rem; }
+    .about-ref-label {
+      font-family: var(--f-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .about-ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .about-ref-item {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(240,237,230,0.05);
+      padding-bottom: 1rem;
+    }
+    .about-ref-name {
+      font-family: var(--f-serif);
+      font-weight: 500;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    /* AGENCY CTA */
+    .agency-cta-block {
+      margin-top: 2.5rem;
+      padding: 2.5rem;
+      background: rgba(212,96,10,0.04);
+      border: 1px solid rgba(212,96,10,0.15);
+      border-radius: 8px;
+    }
+    .agency-cta-label {
+      font-family: var(--f-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .agency-cta-title {
+      font-family: var(--f-display);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .agency-cta-sub {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 2;
+    }
+    .agency-cta-email {
+      font-family: var(--f-mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .agency-cta-email:hover { opacity: 0.7; }
+
+    /* REDUCED MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1718,9 +1973,11 @@
   <nav class="nav">
     <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
     <div class="nav-links">
+      <a href="/campaigns">Campaigns</a>
       <a href="#work">Work</a>
+      <a href="/artist-educator">Art</a>
       <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </div>
     <div id="start-project-container"></div>
   </nav>
@@ -1739,30 +1996,33 @@
       <div class="hero-line hero-line-h right" id="heroLineR"></div>
       <div class="hero-line hero-line-v" id="heroLineV"></div>
       <!-- Floating corner tags -->
-      <div class="hero-float-tag tag-tl" id="hTag1">EST. 2025</div>
+      <div class="hero-float-tag tag-tl" id="hTag1">ART DIRECTION</div>
       <div class="hero-float-tag tag-tr" id="hTag2">BENGALURU, IN</div>
-      <div class="hero-float-tag tag-bl" id="hTag3">Brand Systems · Digital Products</div>
-      <div class="hero-float-tag tag-br" id="hTag4">ART · EDUCATION</div>
+      <div class="hero-float-tag tag-bl" id="hTag3">Campaign Thinking · Brand Systems</div>
+      <div class="hero-float-tag tag-br" id="hTag4">FINE ART · BFA GOLD MEDAL</div>
 
       <div class="container" style="position:relative; z-index:2;">
         <div class="h-massive gs-reveal" id="heroName" style="margin-top: 0;">
           <div class="reveal-wrap">
-            <div class="reveal-text">Designer</div>
+            <div class="reveal-text">Art</div>
           </div>
           <div class="reveal-wrap">
-            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(240,237,230,0.25);">By Day.</div>
+            <div class="reveal-text" style="color: transparent; -webkit-text-stroke: 1px rgba(240,237,230,0.25);">Director.</div>
           </div>
         </div>
-        <div class="t-serif gs-reveal" style="font-size: clamp(1.4rem, 3vw, 2.2rem); margin-top: 1.5rem; color: var(--text-muted);">
+        <div class="t-serif gs-reveal" style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); margin-top: 1.5rem; color: var(--text-muted);">
           <div class="reveal-wrap">
-            <div class="reveal-text">Artist by soul. — H.P. Shivaraj, Bengaluru</div>
+            <div class="reveal-text">From fine art to brand systems to advertising — H.P. Shivaraj, Bengaluru</div>
           </div>
         </div>
         <div class="hero-roles" id="heroRoles">
-          <span>Brand Identity</span>
-          <span>Packaging Design</span>
-          <span>Illustration</span>
-          <span>Art Education</span>
+          <span>Art Direction</span>
+          <span>Brand Strategy</span>
+          <span>Campaign Thinking</span>
+          <span>Fine Art</span>
+        </div>
+        <div class="hero-pov" id="heroPov">
+          <p><strong>I believe the most powerful commercial visuals borrow from fine art</strong> — they make the viewer feel something before they read a word. My work starts from a painting instinct and ends at a shelf, a screen, or a campaign. The translation is where the thinking happens.</p>
         </div>
 
         <!-- STATS BAR WITH VISUAL PROOF -->
@@ -1862,16 +2122,16 @@
         <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; margin-top: 4rem;">
 
           <!-- Project 1 (Wide) -->
-          <a href="/jusamazin" class="glass-card project-card gs-fade"
+          <a href="/campaigns" class="glass-card project-card gs-fade"
             style="grid-column: span 12; height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;">
             <div class="p-img-wrap" id="gImg_featured"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <img src="/images/jusamazin_title_card.png" alt="Jus Amazin Brand System" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+              <img src="/images/jusamazin_title_card.png" alt="Campaign work — Almond Milk motion, Desi Energy Bar retail, Superfoods typography — all built on consumer insight" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Brand System · 15+ SKUs</div>
-              <h3 class="h-large" style="font-size: 3rem; margin-top: -1rem;">Jus <span class="t-serif">Amazin</span>
-              </h3>
+              <div class="t-mono-label" style="color: var(--text-main);">Campaign · Art Direction · 3 Executions</div>
+              <h3 class="h-large" style="font-size: 3rem; margin-top: -1rem;">Campaigns <span class="t-serif" style="color:var(--accent)">→</span></h3>
+              <span class="project-type-label">Campaign · Motion · Retail · Typography</span>
             </div>
             <div
               style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
@@ -1879,16 +2139,17 @@
           </a>
 
           <!-- Project 2 -->
-          <a href="/artist-educator"
+          <a href="/jusamazin"
             class="glass-card project-card gs-fade"
             style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_artist_educator"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <img src="/images/paintings/painting_1.jpg" alt="Artist &amp; Art Educator" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+              <img src="/images/jusamazin_title_card.png" alt="Jus Amazin brand system — complete visual language directing 15+ SKUs from brief to shelf" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Fine Art &amp; Pedagogy</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Artist &amp; Art Educator</h3>
+              <div class="t-mono-label" style="color: var(--text-main);">Art Direction · 176% Revenue Impact</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Jus Amazin Brand System</h3>
+              <span class="project-type-label">Brand Identity · Packaging · Art Direction</span>
             </div>
             <div
               style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
@@ -1896,44 +2157,33 @@
           </a>
 
           <!-- Project 3 -->
-          <a href="/ai-workflow" class="glass-card project-card gs-fade"
+          <a href="/artist-educator" class="glass-card project-card gs-fade"
             style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_ai_workflow"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <img src="/images/ai_workflow_cover.png?v=2" alt="AI &amp; Workflow" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+              <img src="/images/paintings/painting_1.jpg" alt="Fine art practice — oil and acrylic paintings informing compositional instinct in commercial work" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Systems &amp; Efficiency</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">AI &amp; Workflow</h3>
+              <div class="t-mono-label" style="color: var(--text-main);">Fine Art · BFA Gold Medal · Teaching</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Artist &amp; Educator</h3>
+              <span class="project-type-label">Fine Art · Education · Visual Thinking</span>
             </div>
             <div
               style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
             </div>
           </a>
 
-          <!-- Project 4 — Web Development -->
-          <a href="/web-development" class="glass-card project-card gs-fade"
+          <!-- Project 4 — AI Concept Acceleration -->
+          <a href="/ai-workflow" class="glass-card project-card gs-fade"
             style="grid-column: span 5; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_web_dev"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <!-- Gradient visual in place of a cover image -->
-              <div style="width:100%; height:100%; background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 40%, #0f1922 70%, #0A0906 100%); position:relative; overflow:hidden;">
-                <!-- Subtle code-grid pattern -->
-                <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,96,10,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(212,96,10,0.06) 1px,transparent 1px);background-size:32px 32px;"></div>
-                <!-- Floating code snippets -->
-                <div style="position:absolute;top:18%;left:8%;font-family:var(--f-mono);font-size:0.55rem;color:rgba(212,96,10,0.55);letter-spacing:0.08em;line-height:1.7;">
-                  &lt;Next.js /&gt;<br/>&lt;Firebase /&gt;<br/>&lt;Razorpay /&gt;
-                </div>
-                <div style="position:absolute;bottom:28%;right:8%;font-family:var(--f-mono);font-size:0.5rem;color:rgba(240,237,230,0.25);letter-spacing:0.08em;line-height:1.7;">
-                  PWA ✦ SSG<br/>CSP ✦ SEO
-                </div>
-                <!-- Accent orb -->
-                <div style="position:absolute;top:-10%;right:-10%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(212,96,10,0.18),transparent 70%);filter:blur(30px);"></div>
-              </div>
+              <img src="/images/ai_workflow_cover.png?v=2" alt="AI-augmented concept development — prototyping 10 visual directions in the time it takes a traditional process to develop 2" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Full-Stack · Next.js &amp; Vite</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Web Development</h3>
+              <div class="t-mono-label" style="color: var(--text-main);">Concept Acceleration · AI Direction</div>
+              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">AI &amp; Workflow</h3>
+              <span class="project-type-label">Concept Acceleration · AI Direction</span>
             </div>
             <div
               style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); z-index: 1;">
@@ -1945,11 +2195,12 @@
             style="grid-column: span 7; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_in_house"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
-              <img src="/images/og_mithai/ogmitai_camera_front.png" alt="In-House Designs" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+              <img src="/images/og_mithai/ogmitai_camera_front.png" alt="OG Mithai — 3D art direction for packaging, every camera angle chosen to create aspirational shelf presence" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
-              <div class="t-mono-label" style="color: var(--text-main);">Packaging &amp; 3D</div>
+              <div class="t-mono-label" style="color: var(--text-main);">Packaging · 3D Art Direction · Spec</div>
               <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">In-House Designs</h3>
+              <span class="project-type-label">Packaging · 3D Art Direction · Spec Work</span>
             </div>
             <div
               style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;">
@@ -2012,21 +2263,37 @@
 
         <!-- Image Mosaic -->
         <div class="cs-img-mosaic gs-fade">
-          <div class="cs-img-slot tall" id="csImg_hero">
-            <img src="/images/hero_packaging.jpg" alt="Hero Packaging Shot" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+          <div class="cs-img-slot tall" id="csImg_hero" style="position:relative;">
+            <img src="/images/hero_packaging.jpg" alt="Hero packaging shot — earth tone substrate signals artisanal production without using the word artisanal" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             <span class="cs-img-caption">Hero Packaging Shot</span>
+            <div class="ad-caption">
+              <div class="ad-caption-tech">Earth tone matte substrate · Shot at 15° below horizon</div>
+              <div class="ad-caption-why">Breaking the conventional overhead FMCG angle creates authority. Earth tones signal craft production without using the word "artisanal."</div>
+            </div>
           </div>
-          <div class="cs-img-slot" id="csImg_social">
-            <img src="/images/social_mockup.jpg" alt="Social Media Template" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
+          <div class="cs-img-slot" id="csImg_social" style="position:relative;">
+            <img src="/images/social_mockup.jpg" alt="Social media template — visual system designed to work as a campaign, not just a template" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             <span class="cs-img-caption">Social Media Template</span>
+            <div class="ad-caption">
+              <div class="ad-caption-tech">Packaging visual language extended to social</div>
+              <div class="ad-caption-why">The same earth tone palette and typography system travels from pack to feed. Brand recognition builds through repetition of visual logic, not logos.</div>
+            </div>
           </div>
-          <div class="cs-img-slot" id="csImg_3d">
-            <model-viewer src="/models/200g_jar_pistachio.glb" alt="3D Pack Render" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" style="width:100%; height:100%; min-height:100%; background:transparent;"></model-viewer>
+          <div class="cs-img-slot" id="csImg_3d" style="position:relative;">
+            <model-viewer src="/models/200g_jar_pistachio.glb" alt="3D pack render — warm shadow cast left creates subconscious association with late afternoon golden hour" auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" style="width:100%; height:100%; min-height:100%; background:transparent;"></model-viewer>
             <span class="cs-img-caption">3D Pack Render</span>
+            <div class="ad-caption">
+              <div class="ad-caption-tech">Warm shadow cast left · Neutral environment, controlled lighting</div>
+              <div class="ad-caption-why">Subconscious association with late afternoon golden hour — used across premium food photography for trust-signaling warmth.</div>
+            </div>
           </div>
-          <div class="cs-img-slot" id="csImg_motion" style="grid-column: span 2;">
+          <div class="cs-img-slot" id="csImg_motion" style="grid-column: span 2; position:relative;">
             <video src="/images/motion_graphics.mp4" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);"></video>
             <span class="cs-img-caption">Motion Graphics</span>
+            <div class="ad-caption">
+              <div class="ad-caption-tech">Motion at 1:1 ratio · Sound-off optimised</div>
+              <div class="ad-caption-why">Brand video designed for quick-commerce product pages — the visual system proves itself in motion, not just on shelf.</div>
+            </div>
           </div>
         </div>
 
@@ -2073,40 +2340,107 @@
             <div class="metric-label">SKUs Designed</div>
           </div>
         </div>
+
+        <!-- THE VISUAL CONCEPT -->
+        <div class="vc-section gs-fade">
+          <div class="t-mono-label">The Visual Concept</div>
+          <h3 style="font-family:var(--f-display);font-size:clamp(2rem,4vw,4rem);margin-bottom:1.5rem;">The Idea Underneath the Execution</h3>
+          <p style="font-size:1.1rem;line-height:1.9;color:var(--text-muted);max-width:720px;">
+            Urban consumers distrust health food that <em>tries too hard to look healthy</em> — the clinical whites, the leaf icons, the wellness rhetoric. The visual concept was the opposite: make nutrition look like it belongs in a kitchen, not a pharmacy. Earth tones from painter's palettes. Typography that breathes. Photography that references how real food looks in real light. The idea was <strong>nutritional confidence without nutritional anxiety</strong>.
+          </p>
+          <div class="vc-grid">
+            <div class="vc-card">
+              <div class="vc-card-label">The Aesthetic Argument</div>
+              <div class="vc-card-title">Earth Over Clinical</div>
+              <div class="vc-card-body">Every color decision drew from painter's earth tones — raw sienna, burnt ochre, natural umber — because these are colors that have carried human trust for centuries. When a consumer sees them, the nervous system says "natural" before the brain reads a word.</div>
+            </div>
+            <div class="vc-card">
+              <div class="vc-card-label">The Type Argument</div>
+              <div class="vc-card-title">Precision as Confidence</div>
+              <div class="vc-card-body">The typography system uses stillness and weight to communicate what most health brands try to say with words. A well-spaced, confident typeface doesn't need to say "clean label" — it already looks like one. Typography is the brand's posture.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHAT WE REJECTED -->
+        <div class="vc-section gs-fade">
+          <div class="t-mono-label">What We Rejected</div>
+          <h3 style="font-family:var(--f-display);font-size:clamp(2rem,4vw,4rem);margin-bottom:1.5rem;">Three Directions That Didn't Work</h3>
+          <div class="vc-rejected-grid">
+            <div class="vc-rejected-card">
+              <div class="vc-rejected-num">01</div>
+              <div class="vc-rejected-direction">The Bold Tech Direction</div>
+              <div class="vc-rejected-why">High-contrast black packaging with neon accent typography. Performed well in gym-adjacent categories but created wrong associations for a brand positioning around clean, natural nutrition. Too aggressive for the primary audience — urban family buyers.</div>
+            </div>
+            <div class="vc-rejected-card">
+              <div class="vc-rejected-num">02</div>
+              <div class="vc-rejected-direction">The Minimal White System</div>
+              <div class="vc-rejected-why">Clinical white backgrounds with typographic-only design. Looked credible but disappeared on shelf against established competitors using the same language. Differentiation requires visual contrast, not visual agreement.</div>
+            </div>
+            <div class="vc-rejected-card">
+              <div class="vc-rejected-num">03</div>
+              <div class="vc-rejected-direction">The Illustrated Nature Direction</div>
+              <div class="vc-rejected-why">Hand-drawn botanical illustrations. Beautiful but already owned by premium Ayurvedic brands. The concept was derivative — borrowing someone else's visual language signals a brand without its own point of view.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FROM PACKAGING TO CAMPAIGN -->
+        <div class="vc-section gs-fade">
+          <div class="t-mono-label">From Packaging to Campaign</div>
+          <h3 style="font-family:var(--f-display);font-size:clamp(2rem,4vw,4rem);margin-bottom:1rem;">How the Visual System Travels</h3>
+          <p style="font-size:1rem;line-height:1.85;color:var(--text-muted);max-width:640px;margin-bottom:3rem;">A packaging system that only works on pack is a design system. A packaging system that works in advertising is a campaign. The Jus Amazin visual language was built to travel — here is how the same logic extends across three advertising touchpoints.</p>
+          <div class="vc-campaign-ext">
+            <div class="vc-ext-card">
+              <div class="vc-ext-channel">01 — Social / Instagram</div>
+              <div class="vc-ext-idea"><strong>Earth tone palette + kinetic typography</strong> — The same warm substrate colors become social backgrounds. Clean-label claims delivered as bold type statements. The pack becomes the hero visual in every frame.</div>
+            </div>
+            <div class="vc-ext-card">
+              <div class="vc-ext-channel">02 — Q-Commerce / Blinkit</div>
+              <div class="vc-ext-idea"><strong>Split-screen product demonstration</strong> — The packaging system's visual confidence carries into video. The 30-second almond milk comparison film uses the same earth tones and typography rhythm — brand recognition before brand name.</div>
+            </div>
+            <div class="vc-ext-card">
+              <div class="vc-ext-channel">03 — OOH / Outdoor</div>
+              <div class="vc-ext-idea"><strong>Single visual, single truth</strong> — The packaging color logic reduced to one bold frame at billboard scale. Earth tone product on warm background. Zero copy except the brand name. The visual concept is strong enough to work without words.</div>
+            </div>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="/campaigns" class="nav-cta" style="font-size:0.7rem;">View Full Campaign Work &rarr;</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="container">
-        <div style="max-width: 860px;">
-          <div class="t-mono-label gs-fade">More Than A Designer</div>
+        <div style="max-width: 1000px;">
+          <div class="t-mono-label gs-fade">Art Director · Brand Strategist · Fine Artist</div>
           <h2 class="h-large gs-reveal" style="margin-bottom: 2rem;">
             <div class="reveal-wrap">
-              <div class="reveal-text">I build visual</div>
+              <div class="reveal-text">I direct the</div>
             </div>
             <div class="reveal-wrap">
-              <div class="reveal-text t-serif" style="color:var(--text-muted)">languages that</div>
+              <div class="reveal-text t-serif" style="color:var(--text-muted)">way things</div>
             </div>
             <div class="reveal-wrap">
-              <div class="reveal-text">earn trust.</div>
+              <div class="reveal-text">look and feel.</div>
             </div>
           </h2>
           <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px;">
-            I'm Shiv &mdash; H P Shivaraj. I lead brand and communication design at Jus Amazin, co-run Svarnart Academy
-            with my wife, and taught fine art at Openhouse learning hubs until April 2026. Born and raised in Namma Bengaluru,
-            that texture shows up in everything I make.
+            I&apos;m Shiv &mdash; H P Shivaraj. I come from fine art. I have a BFA in Applied Arts and I understand how images make people feel, not just how they look. I&apos;ve spent 4+ years as the sole creative director for Jus Amazin — a D2C brand that grew 176% — meaning every visual decision I made, I owned completely, and the results were measurable. I paint. I teach people how to see. And I have a deep understanding of how advertising works at the communication level, not just the execution level.
           </p>
           <p class="gs-fade"
             style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 680px; margin-top:1.5rem;">
-            Design is how I think. Art is how I feel. Both live in everything I put out — whether it's a packaging
-            system for a D2C brand or an acrylic painting on a Saturday afternoon.
+            Design is how I think. Art is how I feel. I co-founded Svarnart Academy with my wife — a space where Carnatic music, painting, and design education coexist. Born and raised in Namma Bengaluru, that texture shows up in everything I make.
           </p>
           <div class="role-chips gs-fade">
-            <span class="chip">&loz; Designer</span>
+            <span class="chip">&#9670; Art Director</span>
+            <span class="chip">&loz; Brand Strategist</span>
+            <span class="chip">&hearts; Fine Artist</span>
             <span class="chip">&dagger; Art Teacher</span>
-            <span class="chip">&#9670; Founder</span>
-            <span class="chip">&sube; Studio Lead</span>
+            <span class="chip">&sube; Founder</span>
           </div>
           <div class="gs-fade" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
             <a href="/resume.pdf" download="HP_Shivaraj_Resume.pdf"
@@ -2118,12 +2452,20 @@
             <a href="#contact"
               style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: var(--text-muted); transition: color 0.3s;"
               onmouseover="this.style.color='var(--text-main)';"
-              onmouseout="this.style.color='var(--text-muted)';">or get in touch &rarr;</a>
+              onmouseout="this.style.color='var(--text-muted)';">Available for Art Direction &rarr;</a>
           </div>
-          <div class="role-chips gs-fade" style="margin-top:0.8rem;">
-            <span class="chip">&clubs; Illustrator</span>
-            <span class="chip">&hearts; Painter</span>
+
+          <!-- WHAT I REFERENCE -->
+          <div class="about-references gs-fade">
+            <div class="about-ref-label">What I Reference</div>
+            <div class="about-ref-list">
+              <div class="about-ref-item"><span class="about-ref-name">Raja Ravi Varma</span><span>for colour weight, narrative density, and the proof that Indian visual language can be simultaneously classical and commercially powerful.</span></div>
+              <div class="about-ref-item"><span class="about-ref-name">Saul Bass</span><span>for structure that carries emotion — the reminder that simplicity is a decision, not an absence.</span></div>
+              <div class="about-ref-item"><span class="about-ref-name">Herb Lubalin</span><span>for type that becomes image — the understanding that typography is never neutral.</span></div>
+              <div class="about-ref-item"><span class="about-ref-name">Indian vernacular commercial art</span><span>for shelf-confidence, colour boldness, and the understanding that visual trust is built differently when the audience knows the culture from the inside.</span></div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -2432,19 +2774,19 @@
   <div class="footer-fixed" id="contact">
     <div class="container" style="width: 100%;">
 
-      <!-- 2-col layout: headline left, form right -->
+      <!-- 2-col layout: headline left, contact info right -->
       <div class="footer-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
 
-        <!-- LEFT: Headline + social links -->
+        <!-- LEFT: Headline -->
         <div>
-          <div class="t-mono-label" style="color: var(--accent); margin-bottom: 1rem;">Let's work together</div>
+          <div class="t-mono-label" style="color: var(--accent); margin-bottom: 1rem;">Available for Art Direction</div>
           <h2 style="font-family: var(--f-display); font-size: clamp(3rem, 6vw, 7rem); line-height: 0.9; text-transform: uppercase; margin-bottom: 1.5rem;">
             Let's build<br>
             something<br>
             <span class="t-serif" style="color: var(--accent); font-size: 0.85em;">that earns<br>its keep.</span>
           </h2>
           <p style="font-family: var(--f-serif); font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; max-width: 380px; margin-bottom: 2rem;">
-            Based in Bengaluru. Available for remote projects worldwide.
+            Bengaluru. Open to remote and international projects.
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
             <a href="https://www.instagram.com/sivnco.in/" target="_blank" class="nav-cta"
@@ -2454,39 +2796,24 @@
             <a href="https://wa.me/918431272507" target="_blank" class="nav-cta"
               style="background:var(--glass-bg); border:1px solid var(--glass-border); color:var(--text-main); font-size:0.7rem;">WhatsApp</a>
           </div>
-          <div style="font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 2;">
-            <a href="mailto:hp.shivaraj@sivnco.in" style="color:var(--text-muted); display:block;">hp.shivaraj@sivnco.in</a>
-            <span>Bengaluru, India</span>
-          </div>
         </div>
 
-        <!-- RIGHT: Contact form -->
+        <!-- RIGHT: Direct contact info -->
         <div>
-          <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;" data-netlify="true" name="contact">
-            <input type="hidden" name="form-name" value="contact" />
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
-              <input type="text" name="name" placeholder="Name" required
-                style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px;">
-              <input type="email" name="email" placeholder="Email" required
-                style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px;">
+          <div class="agency-cta-block">
+            <div class="agency-cta-label">Available for Art Direction</div>
+            <div class="agency-cta-title">H P Shivaraj</div>
+            <div class="agency-cta-sub">
+              In-house &nbsp;&middot;&nbsp; Agency &nbsp;&middot;&nbsp; Project Engagements<br>
+              Bengaluru &nbsp;&middot;&nbsp; Open to Remote &amp; International
             </div>
-            <select name="service"
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-mono); font-size: 0.8rem; outline: none; border-radius: 8px; letter-spacing: 0.05em;">
-              <option value="" style="background: #000;">Select a service</option>
-              <option style="background: #000;">Brand Identity</option>
-              <option style="background: #000;">Packaging Design</option>
-              <option style="background: #000;">Studio Partner</option>
-              <option style="background: #000;">Art Commission</option>
-            </select>
-            <textarea name="message" placeholder="What are we building?" rows="4" required
-              style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.9rem 1rem; color: var(--text-main); font-family: var(--f-serif); font-size: 1rem; outline: none; border-radius: 8px; resize: vertical;"></textarea>
-            <button type="submit" class="nav-cta"
-              style="align-self: flex-start; background: var(--accent); color: #fff; cursor: pointer; border-color: var(--accent); padding: 0.9rem 2.5rem;">Send Brief &rarr;</button>
-            <div id="formStatus"
-              style="font-family: var(--f-mono); font-size: 0.75rem; color: var(--accent); display: none; margin-top: 0.5rem;">
-              Message received. I'll be in touch.
-            </div>
-          </form>
+            <a href="mailto:hp.shivaraj@sivnco.in" class="agency-cta-email">hp.shivaraj@sivnco.in</a>
+            <a href="tel:+918431272507" style="font-family:var(--f-mono);font-size:0.75rem;letter-spacing:0.1em;color:var(--text-muted);display:block;">+91 84312 72507</a>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="/campaigns" class="nav-cta" style="font-size:0.7rem;margin-right:1rem;">View Campaigns &rarr;</a>
+            <a href="/resume.pdf" download="HP_Shivaraj_ArtDirector_2026.pdf" class="nav-cta" style="font-size:0.7rem;background:var(--glass-bg);">&#8595; Download Portfolio PDF</a>
+          </div>
         </div>
 
       </div>
@@ -2494,7 +2821,7 @@
       <!-- Footer footnote -->
       <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div style="font-family: var(--f-display); font-size: 1.2rem; letter-spacing: 0.05em;">SIVNCO<span style="color:var(--accent);">.</span></div>
-        <div style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6;">Designed with intent &copy; 2024&ndash;2026</div>
+        <div style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6;">Art Director &middot; Brand Strategist &middot; Fine Artist &copy; 2024&ndash;2026</div>
         <a href="#work" style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted);">View Work &uarr;</a>
       </div>
 
@@ -2585,6 +2912,13 @@
       { y: 15, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.6, stagger: 0.12 },
       1.6
+    );
+
+    // POV statement fades in last
+    heroTL.fromTo('#heroPov',
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+      2.2
     );
 
     // Accent lines draw in

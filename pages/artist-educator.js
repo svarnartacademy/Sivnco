@@ -220,7 +220,7 @@ export default function ArtistEducator() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Artist &amp; Art Educator — H.P. Shivaraj · Sivnco</title>
+        <title>Fine Art &amp; Education — H P Shivaraj · Art Director | Sivnco</title>
         <meta name="description" content="Synthesizing fine art practice and visual pedagogy. Artworks, journey, and student progress by H.P. Shivaraj." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

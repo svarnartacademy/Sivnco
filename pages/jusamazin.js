@@ -205,7 +205,7 @@ export default function JusAmazin() {
     <>
       <Head>
         <meta charSet="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Jus Amazin — Case Study · Sivnco</title>
+        <title>Jus Amazin — Art Direction &amp; Brand System · H P Shivaraj · Art Director</title>
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
