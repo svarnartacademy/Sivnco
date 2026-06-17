@@ -477,7 +477,7 @@ export default function Campaigns() {
           <div className="cp-footer-tag cpv">Available for Art Direction</div>
           <div className="cp-footer-headline cpv">Let&apos;s build<br /><span style={{ color: 'var(--cp-accent)' }}>something<br />real.</span></div>
           <div className="cp-footer-cta cpv">
-            <a href="mailto:hp.shivaraj@sivnco.in" className="cp-cta-btn primary">hp.shivaraj@sivnco.in</a>
+            <a href="mailto:sivnco.in@gmail.com" className="cp-cta-btn primary">sivnco.in@gmail.com</a>
             <Link href="/jusamazin" className="cp-cta-btn">View Full Case Study</Link>
             <Link href="/" className="cp-cta-btn">Back to Portfolio</Link>
           </div>
