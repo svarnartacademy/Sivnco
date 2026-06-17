@@ -241,13 +241,7 @@ export default function FlowGradientHero() {
     // Create blur-fade overlay at the bottom of the hero
     const blurFade = document.createElement('div');
     blurFade.setAttribute('aria-hidden', 'true');
-    blurFade.style.cssText = [
-      'position:absolute;bottom:0;left:0;width:100%;height:40%;z-index:1;pointer-events:none;',
-      'background:linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.3) 30%, rgba(10,9,6,0.75) 60%, #0A0906 100%);',
-      '-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);',
-      '-webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 20%);',
-      'mask-image:linear-gradient(to bottom, transparent 0%, black 20%);'
-    ].join('');
+    blurFade.className = 'hero-blur-fade';
     heroSection.appendChild(blurFade);
 
     // Initialize Three.js inside the wrapper
