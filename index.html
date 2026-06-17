@@ -17,10 +17,10 @@
   <meta name="twitter:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
   <meta name="twitter:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking &amp; brand systems. Bengaluru." />
 
-  <!-- Fonts: Doto (display) · Poppins (accent) · Space Mono (labels) -->
+  <!-- Fonts: Doto (display) · Urbanist (body) · Instrument Sans (accent) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <!-- GSAP & Lenis -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -28,6 +28,9 @@
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
 
   <style>
+
+
+
     /* CSS VARIABLES */
     :root {
       --bg-color: #0A0906;
@@ -41,8 +44,8 @@
       --glass-border: rgba(240, 237, 230, 0.08);
 
       --f-display: 'Doto', sans-serif;
-      --f-serif: 'Poppins', sans-serif;
-      --f-mono: 'Space Mono', monospace;
+      --f-serif: 'Urbanist', sans-serif;
+      --f-mono: 'Instrument Sans', sans-serif;
       /* legacy alias */
       --f-sans: 'Doto', sans-serif;
     }
@@ -313,18 +316,18 @@
 
     /* TYPOGRAPHY */
     .h-massive {
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: clamp(4rem, 13vw, 12rem);
-      line-height: 0.88;
+      line-height: 1.15;
       letter-spacing: 0.01em;
       overflow-wrap: break-word;
       word-break: break-word;
     }
 
     .h-large {
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: clamp(3.5rem, 9vw, 9rem);
-      line-height: 0.9;
+      line-height:1.05;
       letter-spacing: 0.01em;
     }
 
@@ -352,8 +355,66 @@
 
     .section {
       position: relative;
-      padding: 15vh 0;
+      padding: 20vh 0;
       z-index: 1;
+    }
+
+    /* ── SECTION AMBIENT GLOW LIGHTS ─────────────────────────────────────── */
+    /* Each section casts its own warm radial glow into the background         */
+    .section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .section.glow-active::before { opacity: 1; }
+
+     /* Work / Gallery section — Terracotta pastel glow */
+    #work::before {
+      background: radial-gradient(ellipse 70% 55% at 80% 90%,
+        rgba(218,160,109,0.18) 0%, transparent 70%);
+    }
+    /* Case study — Sage pastel glow */
+    #case-study::before {
+      background: radial-gradient(ellipse 60% 50% at 15% 20%,
+        rgba(195,220,200,0.18) 0%, transparent 65%);
+    }
+    /* About / timeline section — Eucalyptus pastel glow */
+    #about::before {
+      background: radial-gradient(ellipse 50% 70% at 8% 55%,
+        rgba(147,176,172,0.18) 0%, transparent 65%);
+    }
+    /* Testimonials — Warm Cream pastel glow */
+    .section.testi-section::before {
+      background: radial-gradient(ellipse 80% 50% at 50% 100%,
+        rgba(233,215,195,0.18) 0%, transparent 70%);
+    }
+    /* Pricing — Terracotta featured accent glow */
+    .section.pricing-section::before {
+      background: radial-gradient(ellipse 60% 60% at 50% 60%,
+        rgba(218,160,109,0.16) 0%, transparent 65%);
+    }
+    /* Art commission — Eucalyptus warm glow */
+    .section.art-section::before {
+      background: radial-gradient(ellipse 55% 65% at 85% 50%,
+        rgba(147,176,172,0.16) 0%, transparent 65%);
+    }
+
+    /* ── SECTION GRADIENT DIVIDERS ────────────────────────────────────────── */
+    /* Replace hard borders with organic fade-in/out horizontal rules          */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right,
+        transparent 0%,
+        rgba(240,237,230,0.1) 25%,
+        rgba(240,237,230,0.1) 75%,
+        transparent 100%);
+      margin: 0;
+      border: none;
     }
 
     /* NAVIGATION */
@@ -371,7 +432,7 @@
     }
 
     .nav-logo {
-      font-family: var(--f-sans);
+      font-family: var(--f-sans); font-weight: 900;
       font-weight: 700;
       font-size: 1.2rem;
       letter-spacing: -0.02em;
@@ -462,6 +523,10 @@
     .reveal-text {
       display: inline-block;
       transform: translateY(110%);
+      padding-top: 0.15em;
+      padding-right: 0.05em;
+      padding-bottom: 0.05em;
+      margin-top: -0.15em;
     }
 
     /* CURTAIN REVEAL FOOTER */
@@ -576,7 +641,7 @@
       text-align: center;
     }
     .hero-stat-num {
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: clamp(2.5rem, 6vw, 5rem);
       line-height: 1;
       color: var(--accent);
@@ -641,22 +706,41 @@
 
     /* SVARNART SECTION */
     .svarnart-section {
-      background: var(--forest);
+      background: linear-gradient(135deg, #142B22 0%, #1E3A2F 50%, #1A3328 100%);
       position: relative;
       overflow: hidden;
     }
-    .svarnart-section::before {
+    /* Subtle inner ambient warmth */
+    .svarnart-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%,
+        rgba(212,96,10,0.08) 0%, transparent 70%);
+    }
+    .svarnart-section .section-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .svarnart-section .watermark {
       content: 'SVARNART';
       position: absolute;
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: clamp(8rem, 20vw, 22rem);
-      color: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.05);
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
       white-space: nowrap;
       pointer-events: none;
       letter-spacing: 0.05em;
+      animation: svarnartDrift 90s linear infinite;
+      z-index: 0;
+    }
+    @keyframes svarnartDrift {
+      0%   { transform: translate(-50%,-50%) rotate(0deg); }
+      100% { transform: translate(-50%,-50%) rotate(360deg); }
     }
     .etymology-grid {
       display: grid;
@@ -669,22 +753,24 @@
       overflow: hidden;
     }
     .etym-part {
-      padding: 2rem;
+      padding: 3rem; /* increased from 2rem */
       border-right: 1px solid rgba(240,237,230,0.12);
+      transition: background 0.4s;
     }
+    .etym-part:hover { background: rgba(212,96,10,0.04); }
     .etym-part:last-child { border-right: none; }
     .etym-connector {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem;
-      font-family: var(--f-display);
+      padding: 3rem 1.5rem; /* increased from 2rem */
+      font-family: var(--f-display); font-weight: 900;
       font-size: 2rem;
       color: var(--accent);
       border-right: 1px solid rgba(240,237,230,0.12);
     }
     .etym-word {
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: 2.5rem;
       color: var(--accent-light);
       letter-spacing: 0.05em;
@@ -826,7 +912,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--f-display);
+      font-family: var(--f-display); font-weight: 900;
       font-size: 1.1rem;
       color: var(--accent);
       background: rgba(212,96,10,0.1);
@@ -927,9 +1013,20 @@
     /* MARQUEE */
     .marquee-section {
       overflow: hidden;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       border-top: 1px solid var(--glass-border);
       border-bottom: 1px solid var(--glass-border);
+      /* Gradient fade edges — text appears from and disappears into the sides */
+      -webkit-mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%);
+      mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%);
     }
 
     .marquee-track {
@@ -961,13 +1058,14 @@
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
+      gap: 3rem; /* more air between metric cards */
+      margin-top: 4rem;
     }
 
     @media(max-width:768px) {
       .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
       }
     }
 
@@ -979,7 +1077,7 @@
     .metric-num {
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
-      font-family: var(--f-sans);
+      font-family: var(--f-sans); font-weight: 900;
       line-height: 1;
     }
 
@@ -1009,7 +1107,7 @@
 
     .tl-item {
       position: relative;
-      padding: 0 0 3rem 2.5rem;
+      padding: 0 0 4.5rem 2.5rem; /* increased breathing space between entries */
     }
 
     .tl-dot {
@@ -1602,6 +1700,29 @@
       transition: transform 0.4s cubic-bezier(0.19,1,0.22,1), box-shadow 0.4s, border-color 0.4s;
       will-change: transform;
     }
+    /* Eased image zoom on card hover — smooth 0.8s instead of instant */
+    .glass-card.project-card img {
+      transition: transform 0.8s cubic-bezier(0.19,1,0.22,1) !important;
+    }
+    .glass-card.project-card:hover img { transform: scale(1.04) !important; }
+
+    /* Inner glow that pulses on card hover */
+    .glass-card.project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      border-radius: 12px;
+      background: radial-gradient(
+        circle at var(--card-mx, 50%) var(--card-my, 50%),
+        rgba(212,96,10,0.1) 0%,
+        transparent 60%
+      );
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .glass-card.project-card:hover::after { opacity: 1; }
 
     /* Hero stats bar — count-up number shimmer */
     .hero-stat-num {
@@ -1621,7 +1742,7 @@
       transition: text-shadow 0.4s, color 0.4s;
     }
     .etym-word:hover {
-      text-shadow: 0 0 20px rgba(212,96,10,0.35);
+      text-shadow: 0 0 28px rgba(212,96,10,0.45);
     }
 
     /* Marquee speed-up on hover */
@@ -1647,7 +1768,7 @@
       width: 100%;
     }
 
-    /* Subtle breathing on the hero glow orbs */
+    /* Hero glow orbs — noticeably warmer breathing */
     .hero-glow-1 {
       animation: glow-drift-1 12s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;
     }
@@ -1655,8 +1776,8 @@
       animation: glow-drift-2 15s ease-in-out infinite, glowBreathe 5s ease-in-out infinite 1s;
     }
     @keyframes glowBreathe {
-      0%,100%{opacity:0.12;filter:blur(120px)}
-      50%{opacity:0.22;filter:blur(100px)}
+      0%,100%{opacity:0.16;filter:blur(110px)}
+      50%{opacity:0.28;filter:blur(90px)}
     }
 
     /* Case study image slots — reveal border sweep */
@@ -1674,7 +1795,7 @@
       z-index: 3;
     }
     .cs-img-slot:hover::before {
-      border-color: rgba(212,96,10,0.35);
+      border-color: rgba(212,96,10,0.4);
     }
 
     /* Svarnart chips — stagger-ready entrance */
@@ -1683,8 +1804,8 @@
     }
     .svarnart-chip:hover {
       transform: translateX(8px);
-      border-color: rgba(212,96,10,0.3);
-      box-shadow: -4px 0 20px rgba(212,96,10,0.1);
+      border-color: rgba(212,96,10,0.35);
+      box-shadow: -6px 0 24px rgba(212,96,10,0.14);
     }
 
     /* Role card border glow animation on hover */
@@ -1692,8 +1813,139 @@
       transition: border-color 0.5s, box-shadow 0.5s;
     }
     .role-card:hover {
-      border-color: rgba(212,96,10,0.25) !important;
-      box-shadow: inset 0 0 40px rgba(212,96,10,0.04), 0 20px 60px rgba(0,0,0,0.4);
+      border-color: rgba(212,96,10,0.3) !important;
+      box-shadow: inset 0 0 50px rgba(212,96,10,0.06), 0 24px 70px rgba(0,0,0,0.45);
+    }
+
+    /* Pastel Color Blocks - Test Phase */
+    .role-card-1 {
+      background: #daa06d !important;
+      border-color: #0A0906 !important;
+    }
+    .role-card-1 h3, .role-card-1 p, .role-card-1 .t-mono-label {
+      color: #0A0906 !important;
+    }
+    .role-card-1 span {
+      color: rgba(10, 9, 6, 0.75) !important;
+      border-color: rgba(10, 9, 6, 0.22) !important;
+    }
+    .role-card-1:hover {
+      box-shadow: 0 24px 70px rgba(218, 160, 109, 0.25), 0 10px 30px rgba(0,0,0,0.3) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .role-card-2 {
+      background: #c3dcc8 !important;
+      border-color: #0A0906 !important;
+    }
+    .role-card-2 h3, .role-card-2 p, .role-card-2 .t-mono-label {
+      color: #0A0906 !important;
+    }
+    .role-card-2 span {
+      color: rgba(10, 9, 6, 0.75) !important;
+      border-color: rgba(10, 9, 6, 0.22) !important;
+    }
+    .role-card-2:hover {
+      box-shadow: 0 24px 70px rgba(195, 220, 200, 0.25), 0 10px 30px rgba(0,0,0,0.3) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .role-card-3 {
+      background: #93b0ac !important;
+      border-color: #0A0906 !important;
+    }
+    .role-card-3 h3, .role-card-3 p, .role-card-3 .t-mono-label {
+      color: #0A0906 !important;
+    }
+    .role-card-3 span {
+      color: rgba(10, 9, 6, 0.75) !important;
+      border-color: rgba(10, 9, 6, 0.22) !important;
+    }
+    .role-card-3:hover {
+      box-shadow: 0 24px 70px rgba(147, 176, 172, 0.25), 0 10px 30px rgba(0,0,0,0.3) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .role-card-4 {
+      background: #e9d7c3 !important;
+      border-color: #0A0906 !important;
+    }
+    .role-card-4 h3, .role-card-4 p, .role-card-4 .t-mono-label {
+      color: #0A0906 !important;
+    }
+    .role-card-4 span {
+      color: rgba(10, 9, 6, 0.75) !important;
+      border-color: rgba(10, 9, 6, 0.22) !important;
+    }
+    .role-card-4:hover {
+      box-shadow: 0 24px 70px rgba(233, 215, 195, 0.25), 0 10px 30px rgba(0,0,0,0.3) !important;
+      border-color: #0A0906 !important;
+    }
+
+    /* Pastel Testimonial Cards - Test Phase */
+    .testi-card-1 {
+      background: #daa06d !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-1 .testi-name,
+    .testi-card-1 .testi-title,
+    .testi-card-1 .testi-company-link,
+    .testi-card-1 .testi-body,
+    .testi-card-1 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-1 .testi-avatar {
+      background: #0A0906 !important;
+      color: #daa06d !important;
+    }
+    .testi-card-1 .testi-company-link {
+      border-color: rgba(10, 9, 6, 0.25) !important;
+    }
+    .testi-card-1:hover {
+      box-shadow: 0 20px 50px rgba(218, 160, 109, 0.25) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .testi-card-2 {
+      background: #c3dcc8 !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-2 .testi-name,
+    .testi-card-2 .testi-title,
+    .testi-card-2 .testi-body,
+    .testi-card-2 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-2 .testi-avatar {
+      background: #0A0906 !important;
+      color: #c3dcc8 !important;
+    }
+    .testi-card-2:hover {
+      box-shadow: 0 20px 50px rgba(195, 220, 200, 0.25) !important;
+      border-color: #0A0906 !important;
+    }
+
+    .testi-card-3 {
+      background: #93b0ac !important;
+      border-color: #0A0906 !important;
+    }
+    .testi-card-3 .testi-name,
+    .testi-card-3 .testi-title,
+    .testi-card-3 .testi-company-link,
+    .testi-card-3 .testi-body,
+    .testi-card-3 .testi-quote {
+      color: #0A0906 !important;
+    }
+    .testi-card-3 .testi-avatar {
+      background: #0A0906 !important;
+      color: #93b0ac !important;
+    }
+    .testi-card-3 .testi-company-link {
+      border-color: rgba(10, 9, 6, 0.25) !important;
+    }
+    .testi-card-3:hover {
+      box-shadow: 0 20px 50px rgba(147, 176, 172, 0.25) !important;
+      border-color: #0A0906 !important;
     }
 
     /* Smooth reveal for the contact form inputs */
@@ -1702,7 +1954,7 @@
     }
     input:focus, textarea:focus, select:focus {
       border-color: var(--accent) !important;
-      box-shadow: 0 0 0 3px rgba(212,96,10,0.12) !important;
+      box-shadow: 0 0 0 3px rgba(212,96,10,0.14) !important;
       outline: none;
     }
 
@@ -2115,7 +2367,7 @@
             <div class="reveal-text t-serif" style="color:var(--text-muted)">speaks</div>
           </div>
           <div class="reveal-wrap">
-            <div class="reveal-text">first.</div>
+            <div class="reveal-text"><i>first.</i></div>
           </div>
         </h2>
 
@@ -2236,13 +2488,14 @@
     </div>
 
     <!-- FEATURED CASE STUDY — EMBEDDED INLINE -->
-    <section class="section" id="case-study" style="border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border);">
+    <hr class="section-divider">
+    <section class="section" id="case-study">
       <div class="container">
         <div class="t-mono-label gs-fade">Case Study — Aug 2023 to Present</div>
         <h2 class="h-large gs-reveal">
           <div class="reveal-wrap"><div class="reveal-text">Jus</div></div>
           <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div></div>
-          <div class="reveal-wrap"><div class="reveal-text">Brand System</div></div>
+          <div class="reveal-wrap"><div class="reveal-text">Brand <i>System</i></div></div>
         </h2>
 
         <!-- Challenge / Approach / Outcome -->
@@ -2412,6 +2665,7 @@
       </div>
     </section>
 
+    <hr class="section-divider">
     <!-- ABOUT -->
     <section class="section" id="about">
       <div class="container">
@@ -2482,7 +2736,7 @@
             <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted); font-family: var(--f-serif);">Scroll to explore my different practices.</p>
           </div>
 
-          <div class="glass-card role-card"
+          <div class="glass-card role-card role-card-1"
             style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">01 / Full-time</div>
             <h3 class="h-large" style="font-size: 3rem;">Design &amp; Comms Manager</h3>
@@ -2495,7 +2749,7 @@
             </div>
           </div>
 
-          <div class="glass-card role-card"
+          <div class="glass-card role-card role-card-2"
             style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">02 / Teaching</div>
             <h3 class="h-large" style="font-size: 3rem;">Art &amp; Design Teacher</h3>
@@ -2507,7 +2761,7 @@
             </div>
           </div>
 
-          <div class="glass-card role-card"
+          <div class="glass-card role-card role-card-3"
             style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">03 / Founder</div>
             <h3 class="h-large" style="font-size: 3rem;">Svarnart Academy</h3>
@@ -2519,7 +2773,7 @@
             </div>
           </div>
 
-          <div class="glass-card role-card"
+          <div class="glass-card role-card role-card-4"
             style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
             <div class="t-mono-label">04 / Studio</div>
             <h3 class="h-large" style="font-size: 3rem;">Sivnco Studio</h3>
@@ -2538,11 +2792,13 @@
 
     <!-- SVARNART SECTION -->
     <section class="section svarnart-section" id="svarnart">
-      <div class="container">
+      <!-- Slowly rotating watermark -->
+      <div class="watermark" aria-hidden="true">SVARNART</div>
+      <div class="container section-inner">
         <div class="svarnart-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:start;">
           <div>
             <div class="t-mono-label" style="color:var(--accent-light);">The Name Behind the Academy</div>
-            <h2 class="h-large" style="color:#F0EDE6;">SVARNART</h2>
+            <h2 class="h-large" style="color:#F0EDE6;"><i>SVARNART</i></h2>
             <p class="t-serif" style="font-size:1.15rem; color:rgba(240,237,230,0.65); margin-top:1rem; line-height:1.9; max-width:480px;">
               Where classical Indian roots meet contemporary visual craft. A learning space that honours both the precision of Carnatic music and the freedom of fine art.
             </p>
@@ -2580,13 +2836,14 @@
       </div>
     </section>
 
+    <hr class="section-divider">
     <!-- EXPERIENCE TIMELINE -->
     <section class="section" id="gallery">
       <div class="container">
         <div class="t-mono-label gs-fade">Experience</div>
         <h2 class="h-large gs-reveal">
           <div class="reveal-wrap">
-            <div class="reveal-text">The journey</div>
+            <div class="reveal-text">The <i>journey</i></div>
           </div>
           <div class="reveal-wrap">
             <div class="reveal-text t-serif" style="color:var(--text-muted)">so far.</div>
@@ -2635,14 +2892,14 @@
         <div class="t-mono-label gs-fade">Impact</div>
         <h2 class="h-large gs-reveal">
           <div class="reveal-wrap">
-            <div class="reveal-text">In their</div>
+            <div class="reveal-text">In <i>their</i></div>
           </div>
           <div class="reveal-wrap">
             <div class="reveal-text t-serif" style="color:var(--text-muted)">words.</div>
           </div>
         </h2>
         <div class="testimonials-grid gs-fade">
-          <div class="testi-card">
+          <div class="testi-card testi-card-1">
             <div class="testi-header">
               <div class="testi-avatar">JM</div>
               <div class="testi-meta">
@@ -2654,7 +2911,7 @@
             <div class="testi-quote">"</div>
             <div class="testi-body">Shiv doesn't just design — he builds systems. The Jus Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale. Every SKU told the same story.</div>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card-2">
             <div class="testi-header">
               <div class="testi-avatar">SR</div>
               <div class="testi-meta">
@@ -2665,7 +2922,7 @@
             <div class="testi-quote">"</div>
             <div class="testi-body">What sets Shiv apart is his ability to blend art sensibility with commercial clarity. He understands the brief, then exceeds it — every single time.</div>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card-3">
             <div class="testi-header">
               <div class="testi-avatar">OH</div>
               <div class="testi-meta">
@@ -2746,7 +3003,7 @@
             <div class="t-mono-label gs-fade">Art Commission</div>
             <h2 class="h-large gs-reveal">
               <div class="reveal-wrap">
-                <div class="reveal-text">For the love</div>
+                <div class="reveal-text">For the <i>love</i></div>
               </div>
               <div class="reveal-wrap">
                 <div class="reveal-text t-serif" style="color:var(--text-muted)">of craft.</div>
@@ -2859,6 +3116,37 @@
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0, 0);
+
+    // =============================================
+    // SECTION AMBIENT GLOW — IntersectionObserver
+    // Activates warm radial glow as each section enters viewport
+    // =============================================
+    (function initSectionGlows() {
+      const glowSections = document.querySelectorAll('.section[id], .section.testi-section, .section.pricing-section, .section.art-section');
+      const glowObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('glow-active');
+          } else {
+            e.target.classList.remove('glow-active');
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      glowSections.forEach(s => glowObs.observe(s));
+    })();
+
+    // =============================================
+    // PER-CARD CURSOR GLOW — tracks mouse within each project card
+    // =============================================
+    document.querySelectorAll('.glass-card.project-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
+        const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
+        card.style.setProperty('--card-mx', x);
+        card.style.setProperty('--card-my', y);
+      });
+    });
 
     // --- AMBIENT ORB CURSOR TRACKING ---
     const orb = document.getElementById('orb');
@@ -2991,18 +3279,37 @@
       );
     });
 
-    // 2. Simple Fades
-    document.querySelectorAll('.gs-fade').forEach(el => {
+    // 2. Smart Fades — gallery cards get SNAPPY stagger, text elements get SUBTLE
+    // Gallery project cards — snappy energetic stagger (they're scannable at a glance)
+    const projCards = document.querySelectorAll('.glass-card.project-card');
+    if (projCards.length) {
+      gsap.fromTo(projCards,
+        { y: 45, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.55,    // snappy
+          stagger: 0.09,     // tight, energetic feel
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: projCards[0].closest('.container') || projCards[0].parentElement,
+            start: "top 80%",
+          }
+        }
+      );
+    }
+    // All other gs-fade elements — subtle, editorial
+    document.querySelectorAll('.gs-fade:not(.glass-card):not(.project-card)').forEach(el => {
       gsap.fromTo(el,
         { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.9,    // subtle, considered
           ease: "power3.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 86%",
           }
         }
       );
@@ -3029,14 +3336,14 @@
       // (Role card opacity animation removed so all cards appear equally visible)
     }
 
-    // 4. Timeline Items — staggered entrance
+    // 4. Timeline Items — SUBTLE stagger (these need reading time)
     gsap.fromTo('.tl-item',
       { x: -30, opacity: 0 },
       {
         x: 0,
         opacity: 1,
-        duration: 0.8,
-        stagger: 0.15,
+        duration: 1.0,     // subtle — timeline demands attention
+        stagger: 0.2,      // generous stagger between entries
         ease: "power3.out",
         scrollTrigger: {
           trigger: '.timeline',
@@ -3045,15 +3352,15 @@
       }
     );
 
-    // 5. Testimonial Cards — staggered pop
+    // 5. Testimonial Cards — SNAPPY stagger (cards are scannable)
     gsap.fromTo('.testi-card',
-      { y: 50, opacity: 0, scale: 0.95 },
+      { y: 45, opacity: 0, scale: 0.96 },
       {
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 0.8,
-        stagger: 0.2,
+        duration: 0.55,    // snappy
+        stagger: 0.1,      // tight energy
         ease: "power3.out",
         scrollTrigger: {
           trigger: '.testimonials-grid',
@@ -3062,15 +3369,15 @@
       }
     );
 
-    // 6. Pricing Cards — staggered rise
+    // 6. Pricing Cards — SUBTLE rise (pricing needs consideration)
     gsap.fromTo('.price-card',
-      { y: 60, opacity: 0, rotateX: 8 },
+      { y: 55, opacity: 0, rotateX: 6 },
       {
         y: 0,
         opacity: 1,
         rotateX: 0,
-        duration: 0.9,
-        stagger: 0.2,
+        duration: 1.0,    // subtle — let them read the value
+        stagger: 0.18,
         ease: "power3.out",
         scrollTrigger: {
           trigger: '.pricing-grid',
@@ -3105,14 +3412,14 @@
     }
     document.querySelectorAll('.metric-num').forEach(animateCounter);
 
-    // 8. Metric cards stagger
+    // 8. Metric cards — SNAPPY stagger (numbers are fast to scan)
     gsap.fromTo('.metric-card',
-      { y: 30, opacity: 0 },
+      { y: 25, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 0.7,
-        stagger: 0.15,
+        duration: 0.5,    // snappy
+        stagger: 0.09,
         ease: "power3.out",
         scrollTrigger: {
           trigger: '.metrics-grid',
@@ -3121,18 +3428,18 @@
       }
     );
 
-    // 9. Role chips stagger
+    // 9. Role chips — SNAPPY pop (interactive scannable tags)
     gsap.fromTo('.chip',
-      { scale: 0.8, opacity: 0 },
+      { scale: 0.82, opacity: 0 },
       {
         scale: 1,
         opacity: 1,
-        duration: 0.5,
-        stagger: 0.08,
+        duration: 0.4,    // snappy
+        stagger: 0.06,    // rapid-fire
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: '.role-chips',
-          start: "top 85%"
+          start: "top 86%"
         }
       }
     );

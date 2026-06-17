@@ -28,7 +28,7 @@ const TIMELINE = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ba-bg:#0A0906;--ink:#F0EDE6;--ba-muted:rgba(240,237,230,0.45);--ba-accent:#D4600A;--ba-border:rgba(240,237,230,0.08);--ba-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
+:root{--ba-bg:#0A0906;--ink:#F0EDE6;--ba-muted:rgba(240,237,230,0.45);--ba-accent:#D4600A;--ba-border:rgba(240,237,230,0.08);--ba-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -41,13 +41,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 a{color:inherit;text-decoration:none}
 .c{max-width:1200px;margin:0 auto;padding:0 5vw}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--ba-border)}
-.logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
+.logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
 .back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--ba-border);border-radius:40px;transition:.3s}
 .back:hover{border-color:var(--ba-accent);color:var(--ba-accent)}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--ba-border);position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--ba-accent);margin-bottom:2rem}
-.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:.88}
+.hero-title{font-family:var(--D);font-weight:900;font-size:clamp(4.5rem,12vw,11rem);line-height:1.05;}
 .hero-title i{color:var(--ba-accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ba-muted);max-width:540px;line-height:1.85;margin-top:2rem}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ba-border)}
@@ -58,11 +58,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .metric:hover{background:rgba(212,96,10,.06)}
 .metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
 .metric:hover::before{opacity:1}
-.m-n{font-family:var(--D);font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ba-accent);line-height:1}
+.m-n{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ba-accent);line-height:1}
 .m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ba-muted);margin-top:.8rem}
 section{padding:9rem 0;border-bottom:1px solid var(--ba-border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--ba-accent);margin-bottom:1.5rem}
-.s-title{font-family:var(--D);font-size:clamp(3.5rem,7vw,8rem);line-height:.88;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,8rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--ba-muted);font-style:normal;font-weight:300}
 .body{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--ba-muted);max-width:660px}
 
@@ -75,7 +75,7 @@ section{padding:9rem 0;border-bottom:1px solid var(--ba-border)}
 .b-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,0.92) 15%,rgba(10,9,6,0.3) 50%,transparent 100%);z-index:1}
 .b-content{position:relative;z-index:2}
 .b-label{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ba-accent);margin-bottom:.4rem;display:block}
-.b-name{font-family:var(--D);font-size:1.6rem;line-height:1.1;letter-spacing:.02em;color:#F0EDE6}
+.b-name{font-family:var(--D);font-weight:900;font-size:1.6rem;line-height:1.1;letter-spacing:.02em;color:#F0EDE6}
 .b-meta{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ba-muted);margin-top:.4rem;display:block}
 
 /* Bento Grid Card Sizes */
@@ -90,13 +90,13 @@ section{padding:9rem 0;border-bottom:1px solid var(--ba-border)}
 .tl-item{position:relative;padding-bottom:1.5rem}
 .tl-dot{position:absolute;left:-2.85rem;top:0.35rem;width:10px;height:10px;border-radius:50%;background:var(--ba-accent);border:3px solid var(--ba-bg);box-shadow:0 0 0 1px var(--ba-border)}
 .tl-date{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;color:var(--ba-accent);margin-bottom:.4rem}
-.tl-title{font-family:var(--D);font-size:1.6rem;color:#F0EDE6;line-height:1.2}
+.tl-title{font-family:var(--D);font-weight:900;font-size:1.6rem;color:#F0EDE6;line-height:1.2}
 .tl-org{font-family:var(--M);font-size:.58rem;letter-spacing:.15em;color:var(--ba-muted);margin-top:.2rem}
 .tl-desc{font-family:var(--S);font-size:1.05rem;line-height:1.8;color:var(--ba-muted);margin-top:1rem;max-width:680px}
 
 /* Footer */
 .pfooter{padding:5rem 0 3.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--ba-border);margin-top:4rem}
-.pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
+.pf-brand{font-family:var(--D);font-weight:900;font-size:1.4rem;letter-spacing:.06em}
 
 /* Custom glow tags in cards */
 .b-card::after, .tl-item::after {
@@ -198,7 +198,7 @@ export default function BrandAssets() {
         <meta name="description" content="Vector art kits, modular character design systems, and storytelling graphics for modern D2C packaging and campaigns." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

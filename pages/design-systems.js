@@ -64,7 +64,7 @@ const PROCESS = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
+:root{--bg:#0A0906;--ink:#F0EDE6;--muted:rgba(240,237,230,0.45);--accent:#D4600A;--accent-light:rgba(212,96,10,0.7);--border:rgba(240,237,230,0.08);--glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
@@ -77,7 +77,7 @@ a{color:inherit;text-decoration:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
+.logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
 .back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--border);border-radius:40px;transition:.3s}
 .back:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -86,7 +86,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(212,96,10,0.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(212,96,10,0.08) 0%,transparent 50%),var(--bg);z-index:0;animation:heroBgPulse 10s ease-in-out infinite}
 @keyframes heroBgPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--accent);margin-bottom:2rem;position:relative;z-index:2}
-.hero-title{font-family:var(--D);font-size:clamp(4.5rem,12vw,11rem);line-height:.88;position:relative;z-index:2}
+.hero-title{font-family:var(--D);font-weight:900;font-size:clamp(4.5rem,12vw,11rem);line-height:1.05;position:relative;z-index:2}
 .hero-title i{color:var(--accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.25rem);color:var(--muted);max-width:580px;line-height:1.9;margin-top:2rem;position:relative;z-index:2}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);position:relative;z-index:2}
@@ -99,22 +99,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .metric:hover{background:rgba(212,96,10,.06)}
 .metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
 .metric:hover::before{opacity:1}
-.m-n{font-family:var(--D);font-size:clamp(3rem,6vw,6rem);color:var(--accent);line-height:1}
+.m-n{font-family:var(--D);font-weight:900;font-size:clamp(3rem,6vw,6rem);color:var(--accent);line-height:1}
 .m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--muted);margin-top:.8rem}
 
 /* SECTIONS */
 section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--accent);margin-bottom:1.5rem;display:inline-block;border-right:2px solid var(--accent);padding-right:6px;animation:cursorBlink 1s step-end infinite}
 @keyframes cursorBlink{0%,100%{border-right-color:var(--accent)}50%{border-right-color:transparent}}
-.s-title{font-family:var(--D);font-size:clamp(3rem,6vw,7.5rem);line-height:.9;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-weight:900;font-size:clamp(3rem,6vw,7.5rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--muted);font-style:normal;font-weight:300}
 .body-text{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--muted);max-width:660px}
 
 /* SYSTEM CARD */
 .sys-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:4rem}
-.sys-intro-num{font-family:var(--D);font-size:clamp(5rem,10vw,10rem);color:rgba(212,96,10,0.12);line-height:1;margin-bottom:.5rem}
+.sys-intro-num{font-family:var(--D);font-weight:900;font-size:clamp(5rem,10vw,10rem);color:rgba(212,96,10,0.12);line-height:1;margin-bottom:.5rem}
 .sys-intro-label{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;color:var(--accent);margin-bottom:.8rem}
-.sys-intro-title{font-family:var(--D);font-size:clamp(2.5rem,4vw,4.5rem);line-height:1;color:var(--ink);margin-bottom:.6rem}
+.sys-intro-title{font-family:var(--D);font-weight:900;font-size:clamp(2.5rem,4vw,4.5rem);line-height:1;color:var(--ink);margin-bottom:.6rem}
 .sys-intro-sub{font-family:var(--M);font-size:.62rem;letter-spacing:.15em;color:var(--muted);margin-bottom:1.5rem}
 .sys-intro-body{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--muted)}
 .sys-layers{display:flex;flex-direction:column;gap:2rem}
@@ -140,12 +140,12 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 .proc-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.08),transparent 70%);opacity:0;transition:.4s}
 .proc-card:hover::before{opacity:1}
 .proc-step{font-family:var(--M);font-size:.55rem;letter-spacing:.2em;color:var(--accent);margin-bottom:.8rem}
-.proc-title{font-family:var(--D);font-size:1.8rem;color:var(--ink);margin-bottom:1rem;line-height:1.1}
+.proc-title{font-family:var(--D);font-weight:900;font-size:1.8rem;color:var(--ink);margin-bottom:1rem;line-height:1.1}
 .proc-desc{font-family:var(--S);font-size:.95rem;line-height:1.8;color:var(--muted)}
 
 /* FOOTER */
 .pfooter{padding:5rem 0 3.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);margin-top:4rem}
-.pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
+.pf-brand{font-family:var(--D);font-weight:900;font-size:1.4rem;letter-spacing:.06em}
 
 /* ANIMATIONS */
 .rv{opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
@@ -196,7 +196,7 @@ export default function DesignSystems() {
         <meta name="description" content="How H P Shivaraj builds brand systems that scale: token layers, component architecture, and governance across Jus Amazin, Svarnart Academy, and Sivnco Studio." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
@@ -290,6 +290,38 @@ export default function DesignSystems() {
           </div>
         </section>
       ))}
+      {/* EXPERIMENTAL PALETTE ZONE */}
+      <section>
+        <div className="c">
+          <div className="s-label rv">03.5 — Experimental Color Tokens</div>
+          <h2 className="s-title rv">Muted pastel<br /><i>tokens test.</i></h2>
+          <p className="body-text rv2" style={{ marginBottom: '3rem' }}>
+            Testing a series of low-saturation, high-readability warm pastel tones designed to pair with high-contrast typography in horizontal cards and content blocks.
+          </p>
+          <div className="process-grid rv2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+            <div className="proc-card" style={{ background: '#daa06d', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
+              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 01</div>
+              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Terracotta</h3>
+              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#daa06d</p>
+            </div>
+            <div className="proc-card" style={{ background: '#c3dcc8', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
+              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 02</div>
+              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Sage</h3>
+              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#c3dcc8</p>
+            </div>
+            <div className="proc-card" style={{ background: '#93b0ac', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
+              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 03</div>
+              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Eucalyptus</h3>
+              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#93b0ac</p>
+            </div>
+            <div className="proc-card" style={{ background: '#e9d7c3', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
+              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 04</div>
+              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Warm Cream</h3>
+              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#e9d7c3</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* PROCESS */}
       <section>

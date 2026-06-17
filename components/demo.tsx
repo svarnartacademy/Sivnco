@@ -25,7 +25,7 @@ export default function StartProjectButton() {
           border-radius: 40px;
           background: #D4600A;
           color: #0A0906;
-          font-family: 'Space Mono', monospace;
+          font-family: 'Instrument Sans', sans-serif;
           font-size: 0.6rem;
           letter-spacing: 0.12em;
           font-weight: 700;

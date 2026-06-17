@@ -27,7 +27,7 @@ const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amar
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace}
+:root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
@@ -40,13 +40,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 a{color:inherit;text-decoration:none}
 .c{max-width:1200px;margin:0 auto;padding:0 5vw}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--ja-border)}
-.logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
+.logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
 .back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--ja-border);border-radius:40px;transition:.3s}
 .back:hover{border-color:var(--ja-accent);color:var(--ja-accent)}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--ja-border);position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--ja-accent);margin-bottom:2rem}
-.hero-title{font-family:var(--D);font-size:clamp(6rem,16vw,15rem);line-height:.88}
+.hero-title{font-family:var(--D);font-weight:900;font-size:clamp(6rem,16vw,15rem);line-height:1.05;}
 .hero-title i{color:var(--ja-accent);font-style:normal;font-weight:300;font-family:var(--S);display:block}
 .hero-sub{font-family:var(--S);font-size:clamp(1rem,1.6vw,1.3rem);color:var(--ja-muted);max-width:540px;line-height:1.85;margin-top:2rem}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ja-border)}
@@ -57,11 +57,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .metric:hover{background:rgba(212,96,10,.06)}
 .metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
 .metric:hover::before{opacity:1}
-.m-n{font-family:var(--D);font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ja-accent);line-height:1}
+.m-n{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ja-accent);line-height:1}
 .m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ja-muted);margin-top:.8rem}
 section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--ja-accent);margin-bottom:1.5rem}
-.s-title{font-family:var(--D);font-size:clamp(3.5rem,7vw,8rem);line-height:.88;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,8rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--ja-muted);font-style:normal;font-weight:300}
 .body{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--ja-muted);max-width:660px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
@@ -74,7 +74,7 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .slot:hover{background:rgba(212,96,10,.06)}
 .slot.tall{grid-row:span 2}
 .slot.wide{grid-column:span 2}
-.slot-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.07;font-family:var(--D);font-size:.9rem;letter-spacing:.12em;z-index:2}
+.slot-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.07;font-family:var(--D);font-weight:900;font-size:.9rem;letter-spacing:.12em;z-index:2}
 .slot-cap{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ja-muted);position:relative;z-index:2}
 .slot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;transition:opacity .4s,transform .8s cubic-bezier(.16,1,.3,1);z-index:0}
 .slot-img.zoom-fill{transform:scale(1.22)}
@@ -102,16 +102,16 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(240,237,230,.06);border:1px solid rgba(240,237,230,.06)}
 .tcard{background:var(--forest);padding:2rem;display:flex;align-items:center;gap:1.4rem;transition:background .3s}
 .tcard:hover{background:rgba(30,58,47,.6)}
-.av{width:48px;height:48px;border-radius:50%;background:rgba(240,237,230,.05);border:1px solid rgba(240,237,230,.1);display:flex;align-items:center;justify-content:center;font-family:var(--D);font-size:1rem;color:var(--ja-accent);flex-shrink:0}
-.t-name{font-family:var(--D);font-size:1.2rem;letter-spacing:.02em;color:#F0EDE6}
+.av{width:48px;height:48px;border-radius:50%;background:rgba(240,237,230,.05);border:1px solid rgba(240,237,230,.1);display:flex;align-items:center;justify-content:center;font-family:var(--D);font-weight:900;font-size:1rem;color:var(--ja-accent);flex-shrink:0}
+.t-name{font-family:var(--D);font-weight:900;font-size:1.2rem;letter-spacing:.02em;color:#F0EDE6}
 .t-role{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:rgba(240,237,230,.4);margin-top:.2rem}
 .rlist{list-style:none;margin-top:4rem;display:flex;flex-direction:column;gap:1px;background:var(--ja-border);border:1px solid var(--ja-border)}
 .ritem{background:var(--ja-bg);padding:2.5rem;display:flex;gap:2.5rem;align-items:flex-start;transition:background .3s}
 .ritem:hover{background:rgba(212,96,10,.04)}
-.r-n{font-family:var(--D);font-size:3rem;color:var(--ja-accent);line-height:1;width:36px;flex-shrink:0}
+.r-n{font-family:var(--D);font-weight:900;font-size:3rem;color:var(--ja-accent);line-height:1;width:36px;flex-shrink:0}
 .r-t{font-family:var(--S);font-size:1.08rem;line-height:1.85;color:var(--ja-muted)}
 .pfooter{padding:5rem 0 3.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--ja-border)}
-.pf-brand{font-family:var(--D);font-size:1.4rem;letter-spacing:.06em}
+.pf-brand{font-family:var(--D);font-weight:900;font-size:1.4rem;letter-spacing:.06em}
 .cta{font-family:var(--M);font-size:.65rem;letter-spacing:.18em;border:1px solid var(--ja-accent);color:var(--ja-accent);padding:.9rem 2.2rem;border-radius:40px;transition:.3s}
 .cta:hover{background:var(--ja-accent);color:#fff}
 .col,.slot,.del,.ba-side,.tcard,.ritem{position:relative;overflow:hidden}
@@ -209,7 +209,7 @@ export default function JusAmazin() {
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
