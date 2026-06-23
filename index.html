@@ -81,6 +81,8 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       cursor: none;
+      padding-top: var(--banner-height, 0px);
+      transition: padding-top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     ::selection { background: var(--accent); color: var(--text-main); }
@@ -441,7 +443,7 @@
     /* NAVIGATION */
     .nav {
       position: fixed;
-      top: 0;
+      top: var(--banner-height, 0px);
       left: 0;
       right: 0;
       padding: 2rem 4vw;
@@ -450,6 +452,7 @@
       align-items: center;
       z-index: 100;
       mix-blend-mode: difference;
+      transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .nav-logo {
@@ -631,7 +634,7 @@
 
     /* NAV LINKS */
     .nav {
-      top: 2.2rem;
+      top: var(--banner-height, 0px);
     }
 
     .nav-links {
@@ -1463,7 +1466,7 @@
       /* -- Navigation -- */
       .nav {
         padding: 1.2rem 4vw;
-        top: 2.2rem;
+        top: var(--banner-height, 0px);
       }
       .nav-links {
         gap: 1rem;
@@ -2412,15 +2415,23 @@
 
   <!-- AVAILABILITY BANNER -->
   <div id="availability-banner" style="
-    background: rgba(212,96,10,0.08);
-    border-bottom: 1px solid rgba(212,96,10,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(212, 96, 10, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 96, 10, 0.2);
     padding: 0.6rem 5vw;
     text-align: center;
     font-family: var(--f-mono);
     font-size: 0.58rem;
     letter-spacing: 0.2em;
-    color: rgba(240,237,230,0.7);
+    color: rgba(240, 237, 230, 0.85);
     text-transform: uppercase;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
   ">
     <span style="color: var(--accent); margin-right: 0.6rem;">●</span>
     Available for full-time Art Direction roles, agency placement, and select freelance projects
@@ -3167,92 +3178,7 @@
       </div>
     </section>
 
-    <!-- PRICING — hidden from main portfolio; available at /studio for freelance enquiries -->
-    <section class="section" id="studio-pricing" style="display:none;" aria-hidden="true">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Pick a Plan</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">Let's build</div>
-          </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">something real.</div>
-          </div>
-        </h2>
-        <div class="pricing-grid gs-fade">
-          <div class="price-card">
-            <div class="price-tier">Starter</div>
-            <div class="price-name">Single Brief</div>
-            <div class="price-amount">₹15K+</div>
-            <div class="price-note">Per project · 2–3 week turnaround</div>
-            <ul class="price-features">
-              <li>1 design deliverable</li>
-              <li>2 revision rounds</li>
-              <li>Source files included</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#contact" class="price-cta">Start a Brief</a>
-          </div>
-          <div class="price-card featured">
-            <div class="price-tier">Most Popular</div>
-            <div class="price-name">Brand Build</div>
-            <div class="price-amount">₹45K+</div>
-            <div class="price-note">Full identity · 4–6 week engagement</div>
-            <ul class="price-features">
-              <li>Logo + full identity system</li>
-              <li>Packaging design (up to 4 SKUs)</li>
-              <li>Brand guidelines document</li>
-              <li>Social media kit</li>
-              <li>Unlimited revisions</li>
-            </ul>
-            <a href="#contact" class="price-cta">Build My Brand</a>
-          </div>
-          <div class="price-card">
-            <div class="price-tier">Ongoing</div>
-            <div class="price-name">Studio Partner</div>
-            <div class="price-amount">₹20K</div>
-            <div class="price-note">Per month · Retainer basis</div>
-            <ul class="price-features">
-              <li>Dedicated design hours</li>
-              <li>Monthly deliverables</li>
-              <li>Priority turnaround</li>
-              <li>Strategy calls included</li>
-            </ul>
-            <a href="#contact" class="price-cta">Become a Partner</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ART COMMISSION -->
-    <section class="section" style="border-top:1px solid var(--glass-border);">
-      <div class="container">
-        <div class="art-comm-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
-          <div>
-            <div class="t-mono-label gs-fade">Art Commission</div>
-            <h2 class="h-large gs-reveal">
-              <div class="reveal-wrap">
-                <div class="reveal-text">For the <i>love</i></div>
-              </div>
-              <div class="reveal-wrap">
-                <div class="reveal-text t-serif" style="color:var(--text-muted)">of craft.</div>
-              </div>
-            </h2>
-          </div>
-          <div class="gs-fade">
-            <p style="font-size:1.15rem; line-height:1.9; color:var(--text-muted); margin-bottom:2rem;">
-              Original acrylic paintings, portrait commissions, and custom illustrations. Each piece is handcrafted with
-              intention — no prints, no shortcuts.
-            </p>
-            <p
-              style="font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:2rem;">
-              ● Limited slots available
-            </p>
-            <a href="#contact" class="nav-cta">Enquire for Art</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </div> <!-- End of main-wrap -->
 
@@ -3954,6 +3880,31 @@
           el.appendChild(img);
         });
       } catch (e) { }
+    })();
+
+    // --- AVAILABILITY BANNER AUTO-DISAPPEAR SCRIPT ---
+    (function() {
+      const banner = document.getElementById('availability-banner');
+      if (!banner) return;
+
+      function updateBannerHeight() {
+        const height = banner.offsetHeight;
+        document.documentElement.style.setProperty('--banner-height', `${height}px`);
+      }
+
+      updateBannerHeight();
+      window.addEventListener('resize', updateBannerHeight);
+      window.addEventListener('load', updateBannerHeight);
+
+      setTimeout(() => {
+        banner.style.transform = 'translateY(-100%)';
+        banner.style.opacity = '0';
+        document.documentElement.style.setProperty('--banner-height', '0px');
+        
+        banner.addEventListener('transitionend', () => {
+          banner.style.display = 'none';
+        }, { once: true });
+      }, 5000);
     })();
   </script>
 </body>
