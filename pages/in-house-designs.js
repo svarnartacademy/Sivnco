@@ -209,6 +209,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ih-border)}
 /* Footer slide */
 .pfooter{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
+.ih-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(240,237,230,0.15);color:var(--ink);padding:.6rem 1.2rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s ease;background:var(--ih-glass);margin-top:2.5rem;position:relative;z-index:10}
+.ih-pill:hover{border-color:var(--ih-accent);color:var(--ih-accent);transform:translateY(-2px)}
 `
 
 export default function InHouseDesigns() {
@@ -255,6 +257,11 @@ export default function InHouseDesigns() {
             ].map(([l, v]) => (
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
             ))}
+          </div>
+          <div className="rv" style={{ transitionDelay: '.55s' }}>
+            <Link href="/artist-educator/commissions" className="ih-pill">
+              For Art &amp; Design (Subject to availability based on schedule) &rarr;
+            </Link>
           </div>
         </div>
       </div>
