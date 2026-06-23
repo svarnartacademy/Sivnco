@@ -24,14 +24,14 @@ const TIMELINE = [
     desc: 'Streamlined AI systems directly throughout websites and web applications. Automated code generation, testing pipelines, and layout setups, bringing AI out of the design board and into production systems.'
   },
   {
-    date: '2022 — 2024',
+    date: '2023 — Present',
     title: 'Office Adaptations & Assets Optimization',
     org: 'Jus Amazin (Full-time)',
     desc: 'Adapted AI tools for voice synthesis and vocal adjustments, video editing/effects, and rapid concept generation. By using generative AI to produce asset drafts and packaging mocks, we reduced the time needed to establish a working design brief from days to hours.'
   },
   {
     date: 'College Days (2022)',
-    title: 'AI Workshops & Evangeline',
+    title: 'AI Workshops & Evangelism',
     org: 'Art & Tech Communities',
     desc: 'Organized and conducted AI implementation workshops for all students and communities, teaching early generative art concepts, prompt design, and AI automation tools during the early phases of LLMs and generative art.'
   }

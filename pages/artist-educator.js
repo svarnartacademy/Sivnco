@@ -7,7 +7,7 @@ const METRICS = [
   { n: '200+', l: 'Mentored Students' },
   { n: '12', l: 'Portfolio Selections' },
   { n: '19', l: 'Original Paintings' },
-  { n: '6+', l: 'Years Teaching' },
+  { n: '3', l: 'Years Teaching' },
 ]
 
 // IDs of unique paintings (duplicates 6, 16, 19, 21 removed)

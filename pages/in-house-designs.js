@@ -319,7 +319,7 @@ export default function InHouseDesigns() {
           
           <div className="body rv" style={{ marginBottom: '3rem' }}>
             <p style={{ color: 'var(--ih-muted)' }}>
-              Vedic Treats presents a clean, minimal design aesthetic built for an premium Ayurvedic wellness brand. Prioritizing pure ingredients like cow ghee, organic jaggery, and dry fruits, the packaging is structured around earthy color palettes, delicate botanical elements, and luxury serif typography. To validate the packaging files before print production, we developed high-fidelity 3D GLB packaging models.
+              Vedic Treats presents a clean, minimal design aesthetic built for a premium Ayurvedic wellness brand. Prioritizing pure ingredients like cow ghee, organic jaggery, and dry fruits, the packaging is structured around earthy color palettes, delicate botanical elements, and luxury serif typography. To validate the packaging files before print production, we developed high-fidelity 3D GLB packaging models.
             </p>
           </div>
 

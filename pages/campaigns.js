@@ -11,6 +11,7 @@ const CAMPAIGNS = [
     title: 'Almond Milk',
     subtitle: '30-Second Revolution',
     accent: '#D4600A',
+    tldr: { brief: 'Sell convenience without saying convenience.', idea: 'Show liberation from an 8-hour ritual in 30 seconds.' },
     brand: 'Jus Amazin — 100% Almond Milk Paste',
     brief: 'Break into the dairy-free milk alternative category on quick-commerce platforms where decisions happen in under 3 seconds.',
     insight: 'Urban health-conscious consumers don\'t distrust almond milk — they distrust the 8-hour ritual of making it. The overnight soak, the blending, the straining. The process was the barrier, not the product.',
@@ -54,6 +55,7 @@ const CAMPAIGNS = [
     title: 'Desi Energy Bar',
     subtitle: 'Structured Chaos',
     accent: '#0066FF',
+    tldr: { brief: 'Make health food feel Indian, not imported.', idea: 'Structured Chaos — nostalgia with rigour underneath.' },
     brand: 'Jus Amazin — Desi Energy Bar Range',
     brief: 'Launch a new energy bar into a saturated health snacking category dominated by clinical, Western-aesthetic brands. Stand out on shelf and create emotional connection with Indian consumers.',
     insight: 'Indian consumers don\'t identify with the sterile, gym-focused energy bar aesthetic. They grew up on Chikki — the after-play snack, the evening ritual, the grandmother\'s hand. Health doesn\'t have to look foreign to be trusted.',
@@ -97,6 +99,7 @@ const CAMPAIGNS = [
     title: 'Superfoods',
     subtitle: 'Precision as Design',
     accent: '#2ECC71',
+    tldr: { brief: 'Turn compliance copy into a trust signal.', idea: 'Typography as the brand\'s argument for transparency.' },
     brand: 'Jus Amazin — Superfood Pouch Range (500g / 1kg)',
     brief: 'Redesign the back-of-pack information system for the superfood pouch line — achieve premium visual cleanliness while increasing information density and passing regulatory compliance.',
     insight: 'In the clean-label category, the back of pack is not a regulatory obligation — it\'s the second sales pitch. Consumers who flip the pack have already made a provisional decision to trust. What they see next either confirms that trust or collapses it.',
@@ -189,7 +192,14 @@ a{color:inherit;text-decoration:none}
 .cp-cam-num{font-family:var(--D);font-size:clamp(8rem,16vw,18rem);line-height:.85;opacity:.06;position:absolute;top:8rem;right:3vw;pointer-events:none;letter-spacing:-.04em}
 .cp-cam-label{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:1.5rem}
 .cp-cam-title{font-family:var(--D);font-size:clamp(4rem,9vw,10rem);line-height:.85;margin-bottom:.8rem}
-.cp-cam-sub{font-family:var(--S);font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:300;opacity:.4;margin-bottom:3rem}
+.cp-cam-sub{font-family:var(--S);font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:300;opacity:.4;margin-bottom:2rem}
+
+/* TL;DR Card */
+.cp-tldr{display:flex;gap:1.5rem;align-items:stretch;margin-bottom:2.5rem;border-left:2px solid;padding:1.2rem 1.6rem;background:rgba(240,237,230,0.025);border-radius:0 6px 6px 0}
+.cp-tldr-label{font-family:var(--M);font-size:.5rem;letter-spacing:.22em;opacity:.45;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;align-self:center;flex-shrink:0}
+.cp-tldr-body{display:flex;flex-direction:column;gap:.5rem}
+.cp-tldr-line{font-family:var(--S);font-size:.95rem;line-height:1.5;color:rgba(240,237,230,0.75)}
+.cp-tldr-line strong{font-weight:600;color:#F0EDE6}
 
 /* Story columns */
 .cp-story-col{display:flex;flex-direction:column;gap:2.5rem}
@@ -351,6 +361,15 @@ export default function Campaigns() {
                 <div className="cp-cam-label cpv" style={{ color: cam.accent }}>{cam.label}</div>
                 <div className="cp-cam-title cpv">{cam.title}</div>
                 <div className="cp-cam-sub cpv">{cam.subtitle}</div>
+
+                {/* TL;DR */}
+                <div className="cp-tldr cpv" style={{ borderColor: cam.accent }}>
+                  <div className="cp-tldr-label" style={{ color: cam.accent }}>TL;DR</div>
+                  <div className="cp-tldr-body">
+                    <div className="cp-tldr-line"><strong>Brief:</strong> {cam.tldr.brief}</div>
+                    <div className="cp-tldr-line"><strong>Idea:</strong> {cam.tldr.idea}</div>
+                  </div>
+                </div>
 
                 {/* Story: Brand + Brief */}
                 <div className="cp-story-col">

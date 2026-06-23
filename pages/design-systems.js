@@ -290,38 +290,7 @@ export default function DesignSystems() {
           </div>
         </section>
       ))}
-      {/* EXPERIMENTAL PALETTE ZONE */}
-      <section>
-        <div className="c">
-          <div className="s-label rv">03.5 — Experimental Color Tokens</div>
-          <h2 className="s-title rv">Muted pastel<br /><i>tokens test.</i></h2>
-          <p className="body-text rv2" style={{ marginBottom: '3rem' }}>
-            Testing a series of low-saturation, high-readability warm pastel tones designed to pair with high-contrast typography in horizontal cards and content blocks.
-          </p>
-          <div className="process-grid rv2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
-            <div className="proc-card" style={{ background: '#daa06d', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
-              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 01</div>
-              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Terracotta</h3>
-              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#daa06d</p>
-            </div>
-            <div className="proc-card" style={{ background: '#c3dcc8', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
-              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 02</div>
-              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Sage</h3>
-              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#c3dcc8</p>
-            </div>
-            <div className="proc-card" style={{ background: '#93b0ac', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
-              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 03</div>
-              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Eucalyptus</h3>
-              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#93b0ac</p>
-            </div>
-            <div className="proc-card" style={{ background: '#e9d7c3', border: '1px solid #0A0906', padding: '2rem', borderRadius: '12px' }}>
-              <div className="proc-step" style={{ color: '#0A0906', fontWeight: 'bold' }}>TOKEN 04</div>
-              <h3 className="proc-title" style={{ color: '#0A0906', fontSize: '1.35rem' }}>Warm Cream</h3>
-              <p className="proc-desc" style={{ color: 'rgba(10,9,6,0.85)', fontSize: '0.85rem', fontFamily: 'var(--M)' }}>#e9d7c3</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* PROCESS */}
       <section>
