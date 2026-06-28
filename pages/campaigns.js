@@ -3,19 +3,66 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
 
+// ─── DATA ───────────────────────────────────────────────────────────────────
+
 const CAMPAIGNS = [
   {
     id: 'almond-milk',
     num: '01',
     label: 'Campaign · Motion · Q-Commerce',
-    title: 'Almond Milk',
+    title: '30 SAM',
+    fullTitle: 'Second Almond Milk',
     subtitle: '30-Second Revolution',
-    accent: '#D4600A',
-    tldr: { brief: 'Sell convenience without saying convenience.', idea: 'Show liberation from an 8-hour ritual in 30 seconds.' },
-    brand: 'Jus Amazin — 100% Almond Milk Paste',
-    brief: 'Break into the dairy-free milk alternative category on quick-commerce platforms where decisions happen in under 3 seconds.',
-    insight: 'Urban health-conscious consumers don\'t distrust almond milk — they distrust the 8-hour ritual of making it. The overnight soak, the blending, the straining. The process was the barrier, not the product.',
-    concept: 'Make the inconvenience disappear on screen. Not through claim — through demonstration. One split screen, two worlds: the exhausting traditional method vs. 30 seconds with Jus Amazin paste dissolved in water. The campaign idea is not "convenience." The campaign idea is liberation from a ritual that was never necessary.',
+    accent: '#0046FF',
+    accentAlt: '#5A189A',
+    techTag: 'CASE_STUDY_04 // CATEGORY: FMCG_MARKETING_SYSTEMS',
+    tldr: {
+      brief: 'Break consumer illusion about what\'s inside their carton.',
+      idea: 'Weaponize transparency — make the 30-second paste replace an 8-hour ritual on screen.'
+    },
+    brand: 'Jus\'Amazin — 100% Almond Milk Paste (Sachet Format)',
+    brief: 'Break into the dairy-free milk alternative category on quick-commerce platforms where decisions happen in under 3 seconds. Expose the 1–4% almond content hidden inside mass-market carton brands and position Jus\'Amazin\'s pure paste sachet as the radical, transparent alternative.',
+    insight: 'Most consumers buy almond milk in standard cartons due to lactose intolerance, vegan preferences, or healthy experimentation. Because they cannot see through the opaque packaging, they remain completely unaware that mass-market alternatives are watered down to a mere 1–4% actual almond content, heavily padded with industrial emulsifiers, thickeners, and chemical stabilizers. The collective illusion was the real product problem — not the packaging.',
+    concept: 'Weaponize transparency. Instead of making a prettier package, we turned ingredient honesty into our primary visual weapon. Two campaigns, two attack vectors: a brutal 30-second comparison film that visualizes the chemical-heavy composition of competitor brands against our clean, 100% pure almond paste — and a silent typewriter typography film that lets the facts speak in deliberate, click-clack silence. Neither needed a voiceover. The visual did the persuasion.',
+    pillars: [
+      {
+        num: '01',
+        header: 'The Collective Illusion',
+        tag: 'THE_TRANSPARENCY_TRAP',
+        body: 'Most consumers buy almond milk in standard cartons or tetra packs due to lactose intolerance, vegan preferences, or healthy experimentation. However, because they cannot see through the opaque commercial packaging, they remain completely unaware that mass-market alternatives are essentially junk — watered down to a mere 1% to 4% actual almond content and heavily padded with industrial emulsifiers, thickeners, and chemical stabilizers. Our primary strategic objective was to break this retail illusion wide open.'
+      },
+      {
+        num: '02',
+        header: 'Creative Disruption',
+        tag: 'DISAPPEARING_ACTS',
+        body: 'The overarching creative goal was simple: make physical inconvenience disappear. Instead of traditional, boring claims, the creative strategy positions Jus\'Amazin\'s paste-based almond milk as the effortless solution to preparation fatigue. By illustrating how seamlessly a pure, nutrient-dense house-made sachet replaces the long, hectic, and exhausting process of soaking, peeling, blending, and straining homemade milk, we completely re-engineered the product\'s value perception.'
+      },
+      {
+        num: '03',
+        header: 'High-Velocity Conversion',
+        tag: 'THE_7_DAY_BLAST',
+        body: 'To sell this ideology, we deployed a high-impact, direct-to-consumer video campaign built around a brutal 30-second comparison film. By visualizing the chemical-heavy composition hidden inside regular carton brands and contrasting it against our clean, 100% pure almond paste, the asset drove immediate, massive digital conversions during an initial 3-day targeted blast across Facebook, Instagram, and digital marketplaces.'
+      },
+      {
+        num: '04',
+        header: 'The Silent Attack',
+        tag: 'NOSTALGIC_DISRUPTIONS',
+        body: 'Recognizing that loud, hyper-frenetic D2C marketing can alienate premium consumers seeking minimalism, we engineered a secondary tactical asset utilizing a "silent attack" strategy. This film leaned into clean, vintage typewriter kinetic typography on screen — hooking the user by contrasting deep visual silence with the tactile audio disruption of typewriter click-clacks, laying bare the flaws of competitor brands through text alone. Built for the audience that values quiet sophistication.'
+      },
+      {
+        num: '05',
+        header: 'The Royal Pivot',
+        tag: 'CHROMATIC_RETAINING',
+        body: 'Moving beyond short-term campaigns, we executed a comprehensive visual rehaul for the sachet package based on deep consumer behavior insights. After multiple rounds of rigorous trial-and-error testing across layout iterations, we abandoned safe category colors for a crisp, vibrant Royal Purple canvas background. This deliberate choice instantly captured eyesight, standardized our branding, and unlocked a powerful consumer retention loop where trial users converted into long-term brand loyalists.'
+      },
+      {
+        num: '06',
+        header: 'Commercial Retrospective',
+        tag: 'STRATEGIC_SCALE',
+        body: 'The combined campaign execution achieved unprecedented velocity, proving that radical transparency beats traditional retail marketing. Corporate leadership verified that the visual rehaul and cross-channel video assets successfully introduced a flood of new customers to the category, boosting overall brand equity and redefining the brand\'s digital direct-to-consumer footprint.'
+      }
+    ],
+    soulQuote: 'The commercial market hides its shortcuts inside thick, opaque cardboard cartons. To win the consumer\'s trust, we didn\'t just build a prettier package; we weaponized transparency. By stripping away retail clutter and wrapping our product in a striking Royal Purple statement, we made user inconvenience disappear. Design at this scale isn\'t about matching the category — it\'s about creating an uncompromised visual truth that forces the market to answer for its ingredients.',
     executions: [
       {
         num: '01',
@@ -23,7 +70,13 @@ const CAMPAIGNS = [
         title: '30-Sec Comparison Film',
         src: '/videos/jusamazin/30-sec-almond-milk-compare.mp4',
         isVideo: true,
-        adNote: 'Split-screen tension at 1:1 aspect ratio — the left side shows the traditional overnight process compressing 8 hours into 10 seconds, the right shows the paste dissolving in real time. No voiceover needed. The visual does the persuasion.',
+        campaignType: 'Visual Breakdown Tactic',
+        duration: '7 Days — High-intensity cross-platform run',
+        topFunnel: '15K–20K Impressions',
+        midFunnel: '6,000+ Active Conversions',
+        bottomFunnel: '11,000+ Orders (30–45 Day Window)',
+        reaction: 'Immediate visual shock & brand switching',
+        adNote: 'Split-screen tension at 1:1 aspect ratio — the left side compresses 8 hours of traditional overnight process into 10 seconds, the right shows the paste dissolving in real time. No voiceover needed. The visual does the persuasion.',
         channels: 'Blinkit PDP · Zepto Product Carousel · Amazon A+ Content'
       },
       {
@@ -32,7 +85,13 @@ const CAMPAIGNS = [
         title: '30-Sec Kinetic Typography',
         src: '/videos/jusamazin/30sad-typewriter-final.mp4',
         isVideo: true,
-        adNote: 'Built for sound-off vertical scrolling. Kinetic typewriter animation delivers proof points — "100% Almonds", "No Emulsifiers" — in the first 3 seconds. Type is the visual idea here, not decoration.',
+        campaignType: 'Silent Attack Tactic',
+        duration: '7 Days — Targeted minimal niche positioning',
+        topFunnel: '15K–20K+ Audience Reach',
+        midFunnel: '3,000–4,000+ Targeted Reach Outs',
+        bottomFunnel: '2,000–3,000+ Settled Product Orders',
+        reaction: 'Sophisticated curiosity & steady onboarding',
+        adNote: 'Built for sound-off vertical scrolling. Kinetic typewriter animation — vintage click-clack audio disruption delivering proof points: "100% Almonds", "No Emulsifiers" — in the first 3 seconds. Type is the visual idea here, not decoration.',
         channels: 'Instagram Stories · Reels · Meta Paid Acquisition'
       },
       {
@@ -41,25 +100,73 @@ const CAMPAIGNS = [
         title: 'Full Campaign Launch Film',
         src: '/videos/jusamazin/full-sam-final.mp4',
         isVideo: true,
-        adNote: 'Long-form brand film combining macro ingredient photography with lifestyle integration. Positions "30-Second Almond Milk" as a clean, sustainable dietary upgrade — not a convenience hack. Trust-building for health-conscious families.',
+        campaignType: 'Long-Form Brand Film',
+        duration: 'Ongoing — Brand & storefront placement',
+        topFunnel: 'Full-funnel brand building',
+        midFunnel: 'Trust layer for retention',
+        bottomFunnel: 'Category entry for new audiences',
+        reaction: 'Trust-building for health-conscious families',
+        adNote: 'Long-form brand film combining macro ingredient photography with lifestyle integration. Positions "30-Second Almond Milk" as a clean, sustainable dietary upgrade — not a convenience hack.',
         channels: 'YouTube Pre-Roll · Brand Website · Amazon Storefront'
       }
     ],
-    reflection: 'If I were to redo this, I\'d develop an OOH version — a single visual of the paste jar next to a clock showing "8 Hours vs. 30 Seconds." The idea is strong enough to work on a billboard at 60kmph. The campaign proved the concept; the next step is extending it beyond digital.',
-    results: ['3 formats across Q-commerce, social, and brand channels', 'Deployed on Blinkit, Zepto, Amazon, Instagram', 'Kinetic type version optimized for sound-off environments']
+    metrics: [
+      { value: '20K', label: 'Max impressions captured during the initial 3-day high-velocity platform burst.', tag: 'TOP FUNNEL' },
+      { value: '6,000+', label: 'Verified user conversions driven by the transparency visualization asset.', tag: 'MID FUNNEL' },
+      { value: '11,000+', label: 'Cumulative sachet orders scaled over a 45-day attribution cycle.', tag: 'BOTTOM FUNNEL' },
+      { value: 'LOYALTY↑', label: 'Long-term retention index established via post-visual rehaul brand standard.', tag: 'RETENTION LOOP' }
+    ],
+    testimonials: [
+      { name: 'Jitin Munjal', role: 'CEO & Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'This comparison format completely simplified our category education. It has elevated our overall content standards, significantly boosted our brand image, and funneled entirely new customer segments straight into our 32nd almond milk category.' },
+      { name: 'Shilpa Moglishetty', role: 'CEO & Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'The transparency visualization worked beautifully. It gave our consumers a clear, unmistakable reason to look for our house-made sachet over common cartons, and the conversion numbers speak directly to how well that narrative connected.' }
+    ],
+    reflection: 'If I were to extend this, I\'d develop an OOH version — a single visual of the paste jar next to a clock showing "8 Hours vs. 30 Seconds." The idea is strong enough to work on a billboard at 60kmph. The comparison campaign proved the concept; the next step is scaling the transparency argument beyond digital into physical retail presence.'
   },
   {
     id: 'desi-energy-bar',
     num: '02',
     label: 'Campaign · Packaging · Retail',
     title: 'Desi Energy Bar',
-    subtitle: 'Structured Chaos',
+    fullTitle: 'Structured Chaos',
+    subtitle: 'Nostalgia with Rigour Underneath',
     accent: '#0066FF',
-    tldr: { brief: 'Make health food feel Indian, not imported.', idea: 'Structured Chaos — nostalgia with rigour underneath.' },
-    brand: 'Jus Amazin — Desi Energy Bar Range',
-    brief: 'Launch a new energy bar into a saturated health snacking category dominated by clinical, Western-aesthetic brands. Stand out on shelf and create emotional connection with Indian consumers.',
-    insight: 'Indian consumers don\'t identify with the sterile, gym-focused energy bar aesthetic. They grew up on Chikki — the after-play snack, the evening ritual, the grandmother\'s hand. Health doesn\'t have to look foreign to be trusted.',
-    concept: 'Structured Chaos. A visual language that deliberately breaks the grid — maximalist, vibrant, nostalgic — but underpinned by rigorous color theory and compositional logic. The "chaos" signals cultural authenticity. The "structure" signals quality. Neither works without the other. This isn\'t a rejection of design principles. It\'s the strategic application of Contrast Theory to manufacture an emotional shortcut to memory.',
+    accentAlt: '#FFB703',
+    techTag: 'CASE_STUDY_02 // CATEGORY: RETAIL_PACKAGING_SYSTEMS',
+    tldr: {
+      brief: 'Make health food feel Indian, not imported.',
+      idea: 'Structured Chaos — nostalgia as an asset, colour as a long-range weapon.'
+    },
+    brand: 'Jus\'Amazin — Desi Energy Bar Range',
+    brief: 'Launch a new energy bar into a saturated health snacking category dominated by clinical, Western-aesthetic brands. Stand out on shelf, create an emotional connection with Indian consumers across generations — from children to elderly — and reposition a traditional chikki as a culturally grounded daily ritual rather than a generic health product.',
+    insight: 'Indian consumers don\'t identify with the sterile, gym-focused energy bar aesthetic. They grew up on Chikki — the after-play snack, the evening ritual, the grandmother\'s hand. Health doesn\'t have to look foreign to be trusted. A dual-generation product opportunity existed: a vivid visual hook that intrigued children instantly, layered over a deep emotional resonance that made parents and older generations feel safely at home.',
+    concept: 'Structured Chaos. A visual language that deliberately breaks the grid — maximalist, vibrant, nostalgic — but underpinned by rigorous color theory and compositional logic. The "chaos" signals cultural authenticity. The "structure" signals quality. Neither works without the other. For kids: vibrant, energetic caricatures and fluid custom character animations. For the 30s–40s demographic: hyper-local street memories — raw games of Lagori, chaotic Gully Cricket matchups, and the unmistakable silhouette of a vintage Atlas Bicycle (specifically the classic models). The Lightning Blue/Turquoise background was the final master key — engineered for long-range shelf presence to pull consumers from across the store into our short-range nostalgia story.',
+    pillars: [
+      {
+        num: '01',
+        header: 'The Plain Commodity Problem',
+        tag: 'THE_IDENTITY_GAP',
+        body: 'In its early stages, the product was trapped in a generic category template — visualized as a plain health bar lacking a distinct soul or reason to exist. It had no narrative muscle to define what it was or why it existed. The challenge was to transform an uncharacteristic functional food into an emotional, culturally grounded daily ritual for Indian families.'
+      },
+      {
+        num: '02',
+        header: 'Behavioral Mapping',
+        tag: 'THE_25_STORE_FIELD_STUDY',
+        body: 'To map how humans actually interact with retail shelves, I conducted intensive primary research across 20–25 local retail stores, tracking the contrasting purchase patterns and behaviors of children, teenagers, and elderly consumers. The gathered data revealed a dual-generation opportunity: we needed a vivid visual hook that intrigued children instantly, layered over a deep emotional resonance that made parents and older generations feel safely at home.'
+      },
+      {
+        num: '03',
+        header: 'Nostalgia as an Asset',
+        tag: 'VISUAL_FUSION_PLAYBOOK',
+        body: 'The creative execution engineered an active bridge across generations. For kids, we deployed vibrant, energetic caricatures and fluid custom character animations. To spark deep nostalgia in the mid-30s, 40s, and older demographics, we anchored these illustrations in hyper-local street memories: raw games of Lagori, chaotic Gully Cricket matchups, and the unmistakable silhouette of a vintage Atlas Bicycle — specifically the classic models, not the new ones.'
+      },
+      {
+        num: '04',
+        header: 'The Long-Range Attack',
+        tag: 'CHROMATIC_BREAKTHROUGH',
+        body: 'While our hyper-local illustrations mastered short-range attention — successfully retaining the customer\'s eye and lengthening their attention span once they stood directly in front of the bar — early testing phases flagged a visibility deficit from a longer distance. To command powerful long-range shelf presence, we completely abandoned standard, safe wellness pastels. Through intense trial and error, we landed on an aggressive, high-voltage Lightning Blue/Turquoise background canvas. This definitive shade popped out instantly in dense retail ecosystems, pulling the consumer from across the store straight into our short-range story loop.'
+      }
+    ],
+    soulQuote: 'The core of this project was to capture a specific sensory memory: the post-play "evening snack" where Chikki was our primary source of energy. While the design evolved to combine traditional Indian chikki with a healthy fusion of millets, oats, nuts, and seeds to meet rigorous brand requirements, the "soul" of the product remained unchanged. To me, a successful product isn\'t just about pixel perfection; it\'s about the Idea and the Intent. I chose to lean into the "imperfections" and the meaningful chaos of real life, creating a visual language that feels human, nostalgic, and authentic.',
     executions: [
       {
         num: '01',
@@ -89,21 +196,70 @@ const CAMPAIGNS = [
         channels: 'Physical retail · Amazon listing photography'
       }
     ],
-    reflection: 'The design solved shelf presence brilliantly. What I\'d extend: a 15-second social video where the cartoon character "comes alive" — reinforcing the nostalgia claim in motion. The packaging created the idea; the next campaign is animating it.',
-    results: ['70% increase in snacking range sales post-launch', '34% revenue contribution to total brand in FY24-25', '250 units to 8,000 units/month within one year', '58% retail brand recognition increase in Q3-Q4']
+    metrics: [
+      { value: '70%', label: 'Increase in snacking range sales following the visual overhaul and nostalgic rebrand.', tag: 'SALES GROWTH' },
+      { value: '34%', label: 'Overall contribution of this product to the brand\'s total revenue in FY 2024–25.', tag: 'REVENUE SHARE' },
+      { value: '8,000', label: 'Units per month. Scaled from 250 units in the first month to current high-velocity production.', tag: 'MONTHLY VOLUME' },
+      { value: '58%', label: 'Increase in retail brand recognition achieved in Q3 & Q4 of FY 2024–25.', tag: 'BRAND RECOGNITION' }
+    ],
+    testimonials: [
+      { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },
+      { name: 'Shilpa Moglishetty', role: 'CEO & Co-Founder', category: 'leadership', quote: 'Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.' },
+      { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'I wasn\'t sure about the color blue with nostalgia, but surprisingly it works as blue grasps attention and the nostalgia keeps the attention span long enough for them to make the purchase.' },
+      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'Its so fun and out of blue, i dont find it as a typical but it works on great as it sells in the market.' },
+      { name: 'Juhi Singh', role: 'Colleague & Visual Designer', category: 'team', quote: 'He has a good understanding of emotions so that grasp of gully cricket was expected, but the fusion of electric blue is what works as a punch.' },
+      { name: 'Arun', role: 'Customer / Parent', category: 'consumer', quote: 'Its hard to see kids not choosing healthy stuff due to their plain packaging and when kids are attracted to healthy stuff like this, it\'s good.' },
+      { name: 'Dwani Trivedi', role: 'Customer', category: 'consumer', quote: 'Its a weird story, i wanted to eat something as i was feeling dizzy due to low sugar on a mall, this captured my eyes even in the brink of collapse, but then the cartoons made me smile, its a fun packaging that really grabs attention.' },
+      { name: 'Samuel', role: 'Customer', category: 'consumer', quote: 'Crazy colors and abstract visual appearance, so its an easy eye grabber for sure.' },
+      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'Well its too overloaded but that\'s what is out of the box from the market.' }
+    ],
+    reflection: 'The design solved shelf presence brilliantly. What I\'d extend: a 15-second social video where the cartoon character "comes alive" — reinforcing the nostalgia claim in motion. The packaging created the idea; the next campaign is animating it. The chromatic breakthrough — the Lightning Blue — is strong enough to become the brand\'s permanent visual signature across the entire snacking category.'
   },
   {
     id: 'superfoods',
     num: '03',
-    label: 'Campaign · Typography · Compliance',
-    title: 'Superfoods',
-    subtitle: 'Precision as Design',
+    label: 'Packaging · Typography · Compliance',
+    title: 'Superfoods Range',
+    fullTitle: 'Precision as Design',
+    subtitle: 'De-Clinicalizing Wellness',
     accent: '#2ECC71',
-    tldr: { brief: 'Turn compliance copy into a trust signal.', idea: 'Typography as the brand\'s argument for transparency.' },
-    brand: 'Jus Amazin — Superfood Pouch Range (500g / 1kg)',
-    brief: 'Redesign the back-of-pack information system for the superfood pouch line — achieve premium visual cleanliness while increasing information density and passing regulatory compliance.',
-    insight: 'In the clean-label category, the back of pack is not a regulatory obligation — it\'s the second sales pitch. Consumers who flip the pack have already made a provisional decision to trust. What they see next either confirms that trust or collapses it.',
-    concept: 'Typography as brand argument. Every typographic decision — casing, spacing, punctuation, hierarchy — is an implicit claim about the brand\'s relationship with transparency. "Flax seed" in lowercase says: we are precise, not performative. Removing stray punctuation from "Ingredients:" says: we have nothing to hide. The visual system is the message.',
+    accentAlt: '#6B8F47',
+    techTag: 'CASE_STUDY_03 // CATEGORY: PACKAGING_SYSTEMS',
+    tldr: {
+      brief: 'Turn compliance copy into a trust signal.',
+      idea: 'Typography as the brand\'s argument for transparency — and a universal pouch system as a financial masterstroke.'
+    },
+    brand: 'Jus\'Amazin — Superfood Pouch Range (500g / 1kg Flexible Pouch)',
+    brief: 'Redesign the back-of-pack information system and front-of-pack visual identity for the superfood pouch line — achieve premium visual cleanliness while increasing information density, passing regulatory compliance, and creating a modular system scalable across an entire product category lineup.',
+    insight: 'The existing superfoods range suffered from a severe identity crisis — looking more like cold, clinical prescription medicine than a premium consumer product for individuals seeking a naturally healthy life. In the clean-label category, the back of pack is not a regulatory obligation — it\'s the second sales pitch. Consumers who flip the pack have already made a provisional decision to trust. What they see next either confirms that trust or collapses it.',
+    concept: 'Typography as brand argument. Every typographic decision — casing, spacing, punctuation, hierarchy — is an implicit claim about the brand\'s relationship with transparency. "Flax seed" in lowercase says: we are precise, not performative. Removing stray punctuation says: we have nothing to hide. And midway through design finalization, a corporate bottleneck forced a creative breakthrough — a single, universal master pouch format dynamically iterable across multiple diverse products via custom label overlays. The financial constraint became a modular branding masterclass.',
+    pillars: [
+      {
+        num: '01',
+        header: 'De-Clinicalizing Wellness',
+        tag: 'THE_MEDICINAL_TRAP',
+        body: 'Previously, the existing superfoods range suffered from a severe identity crisis — looking more like cold, clinical prescription medicine than a premium consumer product for individuals seeking a naturally healthy life. The first priority of the visual overhaul was to completely destroy this pharmaceutical aesthetic and give the product a vibrant, consumer-first personality.'
+      },
+      {
+        num: '02',
+        header: 'Urban Escapism',
+        tag: 'THE_PUBLIC_PARK_PARADIGM',
+        body: 'To build an immediate visual connection with urban consumers who long for nature, we engineered drafts using natural scenic backgrounds. Our design inspiration was anchored in the ultimate urban green sanctuary: the public park and botanical garden. This framework transitioned the packaging into a localized symbol of fresh, nature-backed wellness.'
+      },
+      {
+        num: '03',
+        header: 'Creative Finance',
+        tag: 'THE_UNIVERSAL_HACK',
+        body: 'Midway through the design finalization, we hit a massive corporate bottleneck: tight budget constraints. Instead of compromising our artistic vision, we re-engineered our entire layout strategy. We designed a single, universal master pouch format that could be dynamically iterated across multiple diverse products via custom label overlays, saving significant company finances and scaling beautifully across the entire category lineup.'
+      },
+      {
+        num: '04',
+        header: 'Floor-Aware Design',
+        tag: 'OPERATIONAL_ACCELERATION',
+        body: 'True empathy in D2C design extends beyond the consumer to the internal factory floor team. Manual sticker application was originally a major bottleneck, limiting output to just 100 pouches per hour. By observing factory pain points, we introduced strict, high-visibility visual alignment guidelines directly onto the packaging and stickers. This simple design adjustment completely optimized human workflow mechanics — quadrupling production output.'
+      }
+    ],
+    soulQuote: 'An elegant design system means nothing if it breaks down on the factory floor or drains the company\'s fundraising capital. When budget limits and operational friction hit the Superfoods range, it didn\'t ruin the design — it forced it to become smarter. Shifting to a universal pouch system wasn\'t just a financial compromise; it was a masterclass in modular branding. Designing strict, visual sticker guidelines wasn\'t glamorous, but watching real humans on the production line quadruple their daily output proved that commercial design is as much about human empathy and workflow optimization as it is about front-of-pack aesthetics.',
     executions: [
       {
         num: '01',
@@ -111,38 +267,50 @@ const CAMPAIGNS = [
         title: 'Typography System Overhaul',
         src: '/images/jusamazin/superfoods/typography_macro.png',
         isVideo: false,
-        adNote: 'Strict lowercase nomenclature for all ingredient variables. Unified "Superfood" as single word — eliminating the confusion of "Super Food" spacing. The change is invisible to the casual reader and decisive for the engaged one.',
+        adNote: 'Strict lowercase nomenclature for all ingredient variables — "Flax seed", "dietary fiber", "omega-3". Unified "Superfood" as a single word, eliminating the confusion of "Super Food" spacing. Solid black body font for critical nutritional values (Protein 25.9g, Dietary Fiber 24.1g). The change is invisible to the casual reader and decisive for the engaged one.',
         channels: 'Flexible pouch 500g · 1kg format'
       },
       {
         num: '02',
         channel: 'Shelf System',
-        title: 'Lineup Architecture',
+        title: 'Universal Pouch Architecture',
         src: '/images/jusamazin/superfoods/shelf_lineup.png',
         isVideo: false,
-        adNote: 'Color-coded SKU differentiation with a consistent structural grid across the lineup. Each variant is immediately distinct, yet unmistakably the same brand. The shelf reads as a system, not a collection.',
+        adNote: 'A single master pouch format dynamically iterable across the full product lineup via custom label overlays. Color-coded SKU differentiation with a consistent structural grid. The shelf reads as a system, not a collection. A financial constraint engineered into a modular branding advantage.',
         channels: 'Modern trade shelf · Online product listing photography'
       },
       {
         num: '03',
-        channel: 'Label Detail',
-        title: 'Nutrition Panel & Compliance',
+        channel: 'Factory Floor System',
+        title: 'Alignment Guideline Integration',
         src: '/images/jusamazin/superfoods/nutrition_label.png',
         isVideo: false,
-        adNote: 'Integrated 12-month shelf life certification update while maintaining visual hierarchy. Regulatory compliance became a design opportunity — the extended certification was presented as a quality signal, not a legal footnote.',
-        channels: 'Print production · FSSAI compliance · Retailer submission'
+        adNote: 'High-visibility alignment guidelines built directly onto the packaging and stickers for human workflow optimization. Removed the manual bottleneck that limited output to 100 pouches/hour. Extended shelf-life certification from 9 months to 12 months through restructured compliance layouts under strict timelines.',
+        channels: 'Print production · FSSAI compliance · Factory floor deployment'
       }
     ],
-    reflection: 'This project taught me that the most powerful design decisions are often invisible — the ones that make something feel right without the viewer knowing why. I\'d take this further by applying the same precision to front-of-pack, making the typographic confidence visible on shelf.',
-    results: ['Strict lowercase nomenclature system implemented across 500g and 1kg SKUs', 'Shelf life certification extended from 9 to 12 months', 'sRGB color profile compliance resolved across all platform listings', 'Visual rhythm achieved across full pouch lineup']
+    metrics: [
+      { value: '5×', label: 'Increase in factory floor packaging and labeling throughput efficiency.', tag: 'FLOOR VELOCITY' },
+      { value: '200K', label: 'Maximum units scaled in full-fledged commercial printed production runs.', tag: 'PRINT SCALE' },
+      { value: '400–500', label: 'Pouches per hour achieved post alignment guideline integration. Up from 100/hr.', tag: 'UNITS / HOUR' },
+      { value: '+3 Mo', label: 'Shelf life extension achieved through restructured compliance layouts — from 9 to 12 months.', tag: 'SHELF LIFE' }
+    ],
+    testimonials: [
+      { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'The back-of-pack overhaul cleaned up our technical parameters perfectly. Moving to solid black body text and standardizing our layout casing immediately elevated our regulatory presentation.' },
+      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'Before the alignment guidelines were built onto the labels, our team was losing endless hours trying to center stickers manually on the pouches. The new system instantly boosted our hourly output from 100 to over 400 units.' },
+      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'I used to walk right past these packs because they looked like old health supplements from a chemist\'s shop. The new scenic layouts look incredibly premium and make it clear that this is real, clean food for a healthy lifestyle.' }
+    ],
+    reflection: 'This project taught me that the most powerful design decisions are often invisible — the ones that make something feel right without the viewer knowing why. The universal pouch system wasn\'t just a financial workaround; it was a strategic advantage that competitors couldn\'t easily replicate. I\'d take this further by applying the same typographic precision to front-of-pack, making the typographic confidence visible and deliberate on the retail shelf itself.'
   }
 ]
+
+// ─── CSS ─────────────────────────────────────────────────────────────────────
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --cp-bg:#0A0906;--cp-white:#F0EDE6;--cp-accent:#D4600A;
-  --cp-muted:rgba(240,237,230,0.45);--cp-border:rgba(240,237,230,0.08);
+  --cp-muted:rgba(240,237,230,0.5);--cp-border:rgba(240,237,230,0.08);
   --cp-glass:rgba(240,237,230,0.03);
   --D:'Doto',sans-serif;--S:'Poppins',sans-serif;--M:'Space Mono',monospace;
 }
@@ -151,7 +319,7 @@ body{background:var(--cp-bg);color:var(--cp-white);font-family:var(--S);overflow
 a{color:inherit;text-decoration:none}
 
 /* NAV */
-.cp-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--cp-border)}
+.cp-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--cp-border)}
 .cp-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
 .cp-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--cp-border);border-radius:40px;transition:.3s}
 .cp-back:hover{border-color:var(--cp-accent);color:var(--cp-accent)}
@@ -161,15 +329,15 @@ a{color:inherit;text-decoration:none}
 
 /* HERO */
 .cp-hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--cp-border);padding-top:6rem}
-.cp-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(212,96,10,0.12),transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(212,96,10,0.06),transparent 55%),var(--cp-bg)}
-.cp-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,black 20%,transparent 100%)}
+.cp-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(212,96,10,0.1),transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(212,96,10,0.05),transparent 55%),var(--cp-bg)}
+.cp-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,black 20%,transparent 100%)}
 .cp-hero-inner{position:relative;z-index:2;padding:0 5vw;width:100%;max-width:1400px;margin:0 auto}
 .cp-hero-tag{font-family:var(--M);font-size:.62rem;letter-spacing:.28em;color:var(--cp-accent);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
 .cp-hero-tag::before{content:'';width:32px;height:1px;background:var(--cp-accent)}
 .cp-hero h1{font-family:var(--D);font-size:clamp(4rem,12vw,12rem);line-height:.85;margin-bottom:2rem}
-.cp-hero h1 em{font-style:normal;color:var(--cp-muted);font-family:var(--S);font-weight:300;display:block;font-size:.3em;margin-top:1.5rem;line-height:1.8;max-width:620px;letter-spacing:0}
+.cp-hero h1 em{font-style:normal;color:var(--cp-muted);font-family:var(--S);font-weight:300;display:block;font-size:.3em;margin-top:1.5rem;line-height:1.9;max-width:640px;letter-spacing:0}
 .cp-hero-pov{margin-top:4rem;border-left:2px solid var(--cp-accent);padding-left:2rem;max-width:680px}
-.cp-hero-pov p{font-family:var(--S);font-size:1.2rem;line-height:1.9;color:var(--cp-muted);font-style:italic}
+.cp-hero-pov p{font-family:var(--S);font-size:1.15rem;line-height:1.9;color:var(--cp-muted);font-style:italic}
 .cp-hero-pov strong{color:var(--cp-white);font-style:normal}
 .cp-hero-scroll{display:flex;gap:3rem;margin-top:4rem;flex-wrap:wrap}
 .cp-hero-count{text-align:center}
@@ -177,28 +345,34 @@ a{color:inherit;text-decoration:none}
 .cp-hero-count-label{font-family:var(--M);font-size:.55rem;letter-spacing:.2em;color:var(--cp-muted);margin-top:.4rem}
 
 /* CAMPAIGN ANCHOR NAV */
-.cp-campaign-nav{position:sticky;top:64px;z-index:50;background:rgba(10,9,6,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--cp-border);padding:1rem 5vw}
+.cp-campaign-nav{position:sticky;top:64px;z-index:50;background:rgba(10,9,6,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--cp-border);padding:1rem 5vw}
 .cp-campaign-nav-inner{display:flex;gap:3rem;max-width:1400px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
 .cp-campaign-nav-inner::-webkit-scrollbar{display:none}
 .cp-cam-link{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;opacity:.5;transition:.3s;white-space:nowrap;padding:.3rem 0;border-bottom:1px solid transparent}
 .cp-cam-link:hover,.cp-cam-link.active{opacity:1;border-bottom-color:var(--cp-accent)}
 
 /* CAMPAIGN SECTION */
-.cp-campaign{padding:12rem 0;border-bottom:1px solid var(--cp-border);position:relative}
+.cp-campaign{padding:12rem 0 8rem;border-bottom:1px solid var(--cp-border);position:relative}
 .cp-c{max-width:1400px;margin:0 auto;padding:0 5vw}
+
+/* SECTION DIVIDER */
+.cp-section-divide{height:1px;background:var(--cp-border);margin:6rem 0;position:relative}
+.cp-section-divide::before{content:'';width:40px;height:1px;background:var(--cp-accent);position:absolute;left:0;top:0}
 
 /* Campaign header */
 .cp-cam-header{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-bottom:6rem}
-.cp-cam-num{font-family:var(--D);font-size:clamp(8rem,16vw,18rem);line-height:.85;opacity:.06;position:absolute;top:8rem;right:3vw;pointer-events:none;letter-spacing:-.04em}
+.cp-cam-num{font-family:var(--D);font-size:clamp(8rem,16vw,18rem);line-height:.85;opacity:.05;position:absolute;top:8rem;right:3vw;pointer-events:none;letter-spacing:-.04em}
 .cp-cam-label{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:1.5rem}
-.cp-cam-title{font-family:var(--D);font-size:clamp(4rem,9vw,10rem);line-height:.85;margin-bottom:.8rem}
-.cp-cam-sub{font-family:var(--S);font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:300;opacity:.4;margin-bottom:2rem}
+.cp-cam-title{font-family:var(--D);font-size:clamp(4rem,9vw,10rem);line-height:.85;margin-bottom:.4rem}
+.cp-cam-full-title{font-family:var(--S);font-size:clamp(1rem,2vw,1.3rem);font-weight:300;opacity:.35;letter-spacing:.05em;margin-bottom:1.2rem}
+.cp-cam-sub{font-family:var(--S);font-size:clamp(1rem,2vw,1.5rem);font-weight:300;opacity:.35;margin-bottom:2rem}
+.cp-cam-tech-tag{font-family:var(--M);font-size:.5rem;letter-spacing:.15em;opacity:.25;margin-bottom:2.5rem;padding:.4rem .8rem;border:1px solid var(--cp-border);display:inline-block;border-radius:2px}
 
 /* TL;DR Card */
 .cp-tldr{display:flex;gap:1.5rem;align-items:stretch;margin-bottom:2.5rem;border-left:2px solid;padding:1.2rem 1.6rem;background:rgba(240,237,230,0.025);border-radius:0 6px 6px 0}
 .cp-tldr-label{font-family:var(--M);font-size:.5rem;letter-spacing:.22em;opacity:.45;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;align-self:center;flex-shrink:0}
 .cp-tldr-body{display:flex;flex-direction:column;gap:.5rem}
-.cp-tldr-line{font-family:var(--S);font-size:.95rem;line-height:1.5;color:rgba(240,237,230,0.75)}
+.cp-tldr-line{font-family:var(--S);font-size:.95rem;line-height:1.55;color:rgba(240,237,230,0.75)}
 .cp-tldr-line strong{font-weight:600;color:#F0EDE6}
 
 /* Story columns */
@@ -206,8 +380,36 @@ a{color:inherit;text-decoration:none}
 .cp-story-block{position:relative}
 .cp-story-block-label{font-family:var(--M);font-size:.55rem;letter-spacing:.22em;margin-bottom:.8rem;display:flex;align-items:center;gap:.8rem}
 .cp-story-block-label::before{content:'';width:20px;height:1px;flex-shrink:0}
-.cp-story-block-body{font-size:1.05rem;line-height:1.9;color:var(--cp-muted);max-width:540px}
-.cp-story-block-body strong{font-weight:500}
+.cp-story-block-body{font-size:1.05rem;line-height:1.95;color:var(--cp-muted);max-width:540px}
+.cp-story-block-body strong{font-weight:500;color:var(--cp-white)}
+
+/* STRATEGY PILLARS */
+.cp-pillars-section{margin:6rem 0}
+.cp-pillars-header{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:3rem}
+.cp-pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--cp-border)}
+.cp-pillar-card{padding:2.5rem;border-bottom:1px solid var(--cp-border);border-right:1px solid var(--cp-border);position:relative;transition:background .3s}
+.cp-pillar-card:nth-child(even){border-right:none}
+.cp-pillar-card:hover{background:rgba(240,237,230,0.025)}
+.cp-pillar-num{font-family:var(--D);font-size:3rem;line-height:1;opacity:.06;position:absolute;top:1.5rem;right:1.5rem}
+.cp-pillar-tag{font-family:var(--M);font-size:.45rem;letter-spacing:.18em;opacity:.35;margin-bottom:.8rem}
+.cp-pillar-header{font-family:var(--S);font-size:1.1rem;font-weight:600;margin-bottom:1rem;line-height:1.3}
+.cp-pillar-body{font-size:.88rem;line-height:1.9;color:var(--cp-muted)}
+
+/* SOUL BLOCK */
+.cp-soul{background:#050505;padding:8rem 5vw;margin:0 -5vw;position:relative;overflow:hidden}
+.cp-soul::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(var(--soul-color,212,96,10),0.06),transparent 60%)}
+.cp-soul-inner{max-width:900px;margin:0 auto;text-align:center}
+.cp-soul-label{font-family:var(--M);font-size:.52rem;letter-spacing:.3em;opacity:.35;margin-bottom:3rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.cp-soul-label::before,.cp-soul-label::after{content:'';width:48px;height:1px;background:currentColor;opacity:.3}
+.cp-soul-quote{font-family:var(--S);font-size:clamp(1.1rem,2.2vw,1.55rem);line-height:2;font-weight:300;font-style:italic;color:rgba(240,237,230,0.75)}
+.cp-soul-quote::before{content:'"';font-family:var(--D);font-size:4rem;line-height:0;vertical-align:-.6em;opacity:.2;margin-right:.3rem}
+
+/* IMAGE PLACEHOLDER */
+.cp-img-placeholder{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.02);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:border-color .4s}
+.cp-img-placeholder:hover{border-color:rgba(var(--accent-rgb,212,96,10),0.3)}
+.cp-img-placeholder-icon{width:56px;height:56px;opacity:.15;display:flex;align-items:center;justify-content:center}
+.cp-img-placeholder-icon svg{width:100%;height:100%}
+.cp-img-placeholder-label{font-family:var(--M);font-size:.5rem;letter-spacing:.2em;opacity:.2;text-align:center;max-width:200px;line-height:1.8}
 
 /* Executions */
 .cp-execs-label{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:3rem}
@@ -217,23 +419,74 @@ a{color:inherit;text-decoration:none}
 .cp-exec-media:hover{border-color:rgba(212,96,10,0.3)}
 .cp-exec-media video,.cp-exec-media img{width:100%;height:100%;object-fit:cover;display:block}
 .cp-exec-info{display:flex;flex-direction:column;gap:1.5rem;padding-top:1rem}
-.cp-exec-num{font-family:var(--D);font-size:clamp(3rem,6vw,6rem);line-height:1;opacity:.08}
+.cp-exec-num{font-family:var(--D);font-size:clamp(3rem,6vw,6rem);line-height:1;opacity:.07}
 .cp-exec-channel{font-family:var(--M);font-size:.55rem;letter-spacing:.22em;margin-bottom:.3rem}
 .cp-exec-title{font-family:var(--D);font-size:clamp(1.5rem,3vw,2.5rem);line-height:1;margin-bottom:.5rem}
 .cp-exec-adnote-label{font-family:var(--M);font-size:.5rem;letter-spacing:.18em;opacity:.5;margin-bottom:.4rem}
-.cp-exec-adnote{font-size:.95rem;line-height:1.8;color:var(--cp-muted);font-style:italic}
+.cp-exec-adnote{font-size:.92rem;line-height:1.85;color:var(--cp-muted);font-style:italic}
 .cp-exec-channels-label{font-family:var(--M);font-size:.5rem;letter-spacing:.18em;opacity:.5;margin-top:.5rem;margin-bottom:.3rem}
 .cp-exec-channels{font-family:var(--M);font-size:.6rem;letter-spacing:.1em;color:var(--cp-accent)}
 
+/* CAMPAIGN COMPARISON TABLE (Almond Milk) */
+.cp-compare-section{margin:6rem 0}
+.cp-compare-table{width:100%;border-collapse:collapse;font-family:var(--M);font-size:.65rem}
+.cp-compare-table th{font-size:.5rem;letter-spacing:.2em;opacity:.5;padding:1rem 1.5rem;text-align:left;border-bottom:2px solid var(--cp-border);white-space:nowrap}
+.cp-compare-table th:first-child{opacity:.3;font-size:.45rem}
+.cp-compare-table td{padding:1rem 1.5rem;border-bottom:1px solid var(--cp-border);color:var(--cp-muted);font-size:.65rem;line-height:1.7;vertical-align:top}
+.cp-compare-table tr:last-child td{border-bottom:none}
+.cp-compare-table td:first-child{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;opacity:.55;white-space:nowrap}
+.cp-compare-table tbody tr:hover{background:rgba(240,237,230,0.02)}
+.cp-compare-table .metric-hi{color:var(--cp-white);font-weight:700}
+
+/* METRICS DASHBOARD */
+.cp-metrics-section{margin:6rem 0}
+.cp-metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--cp-border)}
+.cp-metric-card{padding:2.5rem 2rem;border-right:1px solid var(--cp-border);position:relative;transition:background .3s}
+.cp-metric-card:last-child{border-right:none}
+.cp-metric-card:hover{background:rgba(240,237,230,0.02)}
+.cp-metric-tag{font-family:var(--M);font-size:.45rem;letter-spacing:.2em;opacity:.3;margin-bottom:1.2rem}
+.cp-metric-value{font-family:var(--D);font-size:clamp(2rem,4vw,3.5rem);line-height:1;margin-bottom:.8rem}
+.cp-metric-label{font-size:.82rem;line-height:1.75;color:var(--cp-muted)}
+
+/* TESTIMONIALS */
+.cp-testimonials-section{margin:6rem 0}
+.cp-testi-filters{display:flex;gap:.8rem;margin-bottom:3rem;flex-wrap:wrap}
+.cp-testi-filter{font-family:var(--M);font-size:.52rem;letter-spacing:.18em;padding:.5rem 1.2rem;border:1px solid var(--cp-border);border-radius:40px;cursor:pointer;transition:.3s;background:transparent;color:var(--cp-white);opacity:.5}
+.cp-testi-filter:hover{opacity:.8;border-color:rgba(240,237,230,0.2)}
+.cp-testi-filter.active{opacity:1;border-color:var(--cp-accent);color:var(--cp-accent)}
+.cp-testi-grid{columns:3;gap:1.5rem}
+.cp-testi-card{break-inside:avoid;background:rgba(240,237,230,0.03);border:1px solid var(--cp-border);padding:1.8rem;margin-bottom:1.5rem;border-radius:4px;transition:opacity .4s,border-color .3s;position:relative}
+.cp-testi-card:hover{border-color:rgba(240,237,230,0.15)}
+.cp-testi-card.hidden{opacity:0;pointer-events:none;height:0;overflow:hidden;padding:0;margin:0;border:none}
+.cp-testi-quote{font-size:.92rem;line-height:1.85;color:var(--cp-muted);font-style:italic;margin-bottom:1.5rem}
+.cp-testi-quote::before{content:'"';opacity:.25;font-family:var(--D);font-size:1.5rem;display:block;margin-bottom:.5rem;line-height:1}
+.cp-testi-name{font-family:var(--S);font-size:.82rem;font-weight:600;color:var(--cp-white);margin-bottom:.2rem}
+.cp-testi-role{font-family:var(--M);font-size:.48rem;letter-spacing:.15em;opacity:.4}
+.cp-testi-cat-badge{position:absolute;top:1.2rem;right:1.2rem;font-family:var(--M);font-size:.38rem;letter-spacing:.15em;opacity:.3;padding:.2rem .5rem;border:1px solid var(--cp-border);border-radius:2px}
+
 /* Results */
 .cp-results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--cp-border);margin-bottom:4rem}
-.cp-result-item{background:var(--cp-bg);padding:2rem;font-size:.95rem;line-height:1.7;color:var(--cp-muted)}
+.cp-result-item{background:var(--cp-bg);padding:2rem;font-size:.92rem;line-height:1.8;color:var(--cp-muted)}
 .cp-result-item::before{content:'→';font-family:var(--M);font-size:.7rem;color:var(--cp-accent);display:block;margin-bottom:.5rem}
 
 /* Reflection */
-.cp-reflection{background:rgba(240,237,230,0.03);border:1px solid var(--cp-border);padding:3rem;border-left:3px solid var(--cp-accent);margin-top:4rem}
+.cp-reflection{background:rgba(240,237,230,0.025);border:1px solid var(--cp-border);padding:3rem;border-left:3px solid var(--cp-accent);margin-top:4rem}
 .cp-reflection-label{font-family:var(--M);font-size:.55rem;letter-spacing:.22em;margin-bottom:1rem;opacity:.6}
-.cp-reflection-body{font-size:1rem;line-height:1.9;color:var(--cp-muted);font-style:italic;max-width:680px}
+.cp-reflection-body{font-size:1rem;line-height:1.95;color:var(--cp-muted);font-style:italic;max-width:720px}
+
+/* CONCEPT RUNWAY */
+.cp-runway-section{margin:6rem 0;border:1px solid var(--cp-border);padding:3rem;position:relative;overflow:hidden}
+.cp-runway-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.cp-runway-header{font-family:var(--D);font-size:clamp(1.5rem,3vw,2.5rem);line-height:1;margin-bottom:.5rem;position:relative}
+.cp-runway-sub{font-family:var(--M);font-size:.52rem;letter-spacing:.2em;opacity:.35;margin-bottom:3rem;position:relative}
+.cp-runway-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative}
+.cp-runway-slot{border:1px solid var(--cp-border);padding:2rem;background:rgba(10,9,6,0.7)}
+.cp-runway-slot-id{font-family:var(--M);font-size:.42rem;letter-spacing:.15em;opacity:.25;margin-bottom:1.2rem}
+.cp-runway-slot-img{width:100%;aspect-ratio:4/3;background:rgba(240,237,230,0.03);border:1px solid var(--cp-border);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border-radius:4px;flex-direction:column;gap:.8rem}
+.cp-runway-slot-img-icon{opacity:.12}
+.cp-runway-slot-img-label{font-family:var(--M);font-size:.42rem;letter-spacing:.15em;opacity:.2;text-align:center;max-width:160px;line-height:1.8}
+.cp-runway-slot-title{font-family:var(--S);font-size:.9rem;font-weight:600;margin-bottom:.6rem}
+.cp-runway-slot-body{font-size:.8rem;line-height:1.8;color:var(--cp-muted)}
 
 /* FOOTER CTA */
 .cp-footer{padding:10rem 0 4rem;text-align:center;border-top:1px solid var(--cp-border)}
@@ -254,6 +507,16 @@ a{color:inherit;text-decoration:none}
 }
 
 /* MOBILE */
+@media(max-width:1100px){
+  .cp-metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .cp-metric-card:nth-child(2){border-right:none}
+  .cp-metric-card:nth-child(3){border-top:1px solid var(--cp-border)}
+  .cp-metric-card:nth-child(4){border-right:none;border-top:1px solid var(--cp-border)}
+  .cp-pillars-grid{grid-template-columns:1fr}
+  .cp-pillar-card{border-right:none}
+  .cp-runway-slots{grid-template-columns:1fr}
+  .cp-testi-grid{columns:2}
+}
 @media(max-width:900px){
   .cp-cam-header{grid-template-columns:1fr;gap:3rem}
   .cp-exec-item{grid-template-columns:1fr;gap:2rem}
@@ -261,13 +524,252 @@ a{color:inherit;text-decoration:none}
   .cp-cam-num{display:none}
   .cp-nav-links{display:none}
   .cp-hero h1{font-size:clamp(3.5rem,14vw,8rem)}
+  .cp-compare-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .cp-testi-grid{columns:1}
 }
 @media(max-width:540px){
-  .cp-campaign{padding:7rem 0}
+  .cp-campaign{padding:7rem 0 5rem}
   .cp-cam-title{font-size:clamp(3rem,12vw,7rem)}
   .cp-hero-pov p{font-size:1rem}
+  .cp-metrics-grid{grid-template-columns:1fr}
+  .cp-metric-card{border-right:none;border-bottom:1px solid var(--cp-border)}
 }
 `
+
+// ─── COMPONENTS ──────────────────────────────────────────────────────────────
+
+function ImagePlaceholder({ label, icon = 'image', accentColor }) {
+  const icons = {
+    image: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="8" width="40" height="32" rx="3"/>
+        <circle cx="15" cy="19" r="4"/>
+        <path d="M4 36l11-11 8 8 6-6 15 9"/>
+      </svg>
+    ),
+    video: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="8" width="40" height="32" rx="3"/>
+        <polygon points="20,18 20,30 32,24" fill="currentColor" opacity=".4"/>
+      </svg>
+    ),
+    chart: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M6 42V26l10-8 10 4 16-14"/>
+        <circle cx="6" cy="26" r="2" fill="currentColor" opacity=".4"/>
+        <circle cx="16" cy="18" r="2" fill="currentColor" opacity=".4"/>
+        <circle cx="26" cy="22" r="2" fill="currentColor" opacity=".4"/>
+        <circle cx="42" cy="8" r="2" fill="currentColor" opacity=".4"/>
+      </svg>
+    ),
+    shelf: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="32" width="40" height="4" rx="1"/>
+        <rect x="8" y="18" width="7" height="14" rx="1"/>
+        <rect x="17" y="14" width="7" height="18" rx="1"/>
+        <rect x="26" y="20" width="7" height="12" rx="1"/>
+        <rect x="35" y="16" width="7" height="16" rx="1"/>
+      </svg>
+    ),
+    sketch: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M10 38 L14 28 L38 10 L40 14 L16 36 Z"/>
+        <line x1="14" y1="28" x2="20" y2="34"/>
+        <line x1="10" y1="38" x2="8" y2="40"/>
+      </svg>
+    ),
+    package: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z"/>
+        <line x1="24" y1="4" x2="24" y2="44"/>
+        <path d="M4 14L24 24L44 14"/>
+      </svg>
+    )
+  }
+  return (
+    <div className="cp-img-placeholder" style={{ '--accent-rgb': accentColor }}>
+      <div className="cp-img-placeholder-icon">{icons[icon] || icons.image}</div>
+      <div className="cp-img-placeholder-label">{label}</div>
+    </div>
+  )
+}
+
+function RunwaySlot({ id, title, body, iconType }) {
+  const icons = {
+    baseline: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="6" y="6" width="36" height="36" rx="2"/>
+        <line x1="6" y1="24" x2="42" y2="24"/>
+        <rect x="12" y="12" width="10" height="8" rx="1" opacity=".4" fill="currentColor"/>
+        <rect x="28" y="14" width="10" height="6" rx="1" opacity=".25" fill="currentColor"/>
+      </svg>
+    ),
+    blueprint: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="6" y="6" width="36" height="36" rx="2"/>
+        <line x1="24" y1="6" x2="24" y2="42"/><line x1="6" y1="24" x2="42" y2="24"/>
+        <circle cx="24" cy="24" r="8" strokeDasharray="2 3"/>
+      </svg>
+    ),
+    typography: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <line x1="8" y1="14" x2="40" y2="14"/><line x1="8" y1="22" x2="32" y2="22"/>
+        <line x1="8" y1="30" x2="36" y2="30"/><line x1="8" y1="38" x2="28" y2="38"/>
+        <text x="6" y="12" fontFamily="monospace" fontSize="8" fill="currentColor" opacity=".4">Aa</text>
+      </svg>
+    ),
+    retail: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="4" y="32" width="40" height="4" rx="1"/>
+        <rect x="8" y="18" width="6" height="14" rx="1"/>
+        <rect x="16" y="14" width="6" height="18" rx="1"/>
+        <rect x="24" y="20" width="6" height="12" rx="1"/>
+        <rect x="32" y="16" width="6" height="16" rx="1"/>
+      </svg>
+    ),
+    color: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="24" cy="24" r="16"/>
+        <path d="M24 8 A16 16 0 0 1 40 24" strokeWidth="3"/>
+        <line x1="12" y1="24" x2="36" y2="24" opacity=".4"/>
+      </svg>
+    ),
+    field: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="10" y="6" width="28" height="36" rx="2"/>
+        <line x1="16" y1="16" x2="32" y2="16"/><line x1="16" y1="22" x2="32" y2="22"/>
+        <line x1="16" y1="28" x2="24" y2="28"/>
+        <circle cx="36" cy="36" r="6"/><line x1="33" y1="36" x2="39" y2="36"/><line x1="36" y1="33" x2="36" y2="39"/>
+      </svg>
+    )
+  }
+  return (
+    <div className="cp-runway-slot">
+      <div className="cp-runway-slot-id">{id}</div>
+      <div className="cp-runway-slot-img">
+        <div className="cp-runway-slot-img-icon">{icons[iconType] || icons.baseline}</div>
+        <div className="cp-runway-slot-img-label">Image placeholder<br />— add visual asset</div>
+      </div>
+      <div className="cp-runway-slot-title">{title}</div>
+      <div className="cp-runway-slot-body">{body}</div>
+    </div>
+  )
+}
+
+function TestimonialsBlock({ testimonials, accent }) {
+  const [filter, setFilter] = useState('all')
+  const filters = [
+    { key: 'all', label: 'Show All' },
+    { key: 'leadership', label: 'Leadership' },
+    { key: 'team', label: 'Internal Team' },
+    { key: 'consumer', label: 'Consumers' }
+  ]
+  const catLabels = { leadership: 'Leadership', team: 'Internal Team', consumer: 'Consumer' }
+  return (
+    <div className="cp-testimonials-section cpv">
+      <div className="cp-execs-label" style={{ color: accent }}>Feedback Matrix — Segmented Personas</div>
+      <div className="cp-testi-filters">
+        {filters.map(f => (
+          <button
+            key={f.key}
+            className={`cp-testi-filter${filter === f.key ? ' active' : ''}`}
+            style={filter === f.key ? { borderColor: accent, color: accent } : {}}
+            onClick={() => setFilter(f.key)}
+          >{f.label}</button>
+        ))}
+      </div>
+      <div className="cp-testi-grid">
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className={`cp-testi-card${filter !== 'all' && filter !== t.category ? ' hidden' : ''}`}
+            style={{ borderColor: filter !== 'all' && filter === t.category ? `${accent}33` : undefined }}
+          >
+            <div className="cp-testi-cat-badge">{catLabels[t.category]}</div>
+            <div className="cp-testi-quote">{t.quote}</div>
+            <div className="cp-testi-name">{t.name}</div>
+            <div className="cp-testi-role">{t.role}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function MetricsDashboard({ metrics, accent }) {
+  return (
+    <div className="cp-metrics-section cpv">
+      <div className="cp-execs-label" style={{ color: accent }}>Performance Dashboard</div>
+      <div className="cp-metrics-grid" style={{ borderColor: 'var(--cp-border)' }}>
+        {metrics.map((m, i) => (
+          <div key={i} className="cp-metric-card">
+            <div className="cp-metric-tag">{m.tag}</div>
+            <div className="cp-metric-value" style={{ color: accent }}>{m.value}</div>
+            <div className="cp-metric-label">{m.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function CampaignCompareTable({ executions, accent }) {
+  const rows = [
+    { label: 'Campaign Asset Type', vals: executions.map(e => e.campaignType) },
+    { label: 'Active Run Duration', vals: executions.map(e => e.duration) },
+    { label: 'Top-Funnel Reach', vals: executions.map(e => e.topFunnel) },
+    { label: 'Mid-Funnel Conversions', vals: executions.map(e => e.midFunnel) },
+    { label: 'Bottom-Funnel Orders', vals: executions.map(e => e.bottomFunnel) },
+    { label: 'Primary Consumer Reaction', vals: executions.map(e => e.reaction) }
+  ]
+  return (
+    <div className="cp-compare-section cpv">
+      <div className="cp-execs-label" style={{ color: accent }}>Campaign Funnel Comparison Matrix</div>
+      <div style={{ overflowX: 'auto' }}>
+        <table className="cp-compare-table">
+          <thead>
+            <tr>
+              <th>Funnel Vector</th>
+              {executions.map(e => <th key={e.num}>{e.title}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i}>
+                <td>{r.label}</td>
+                {r.vals.map((v, j) => (
+                  <td key={j} className={i >= 2 && i <= 4 ? 'metric-hi' : ''}>{v}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+// ─── RUNWAY CONFIGS ───────────────────────────────────────────────────────────
+
+const RUNWAYS = {
+  'almond-milk': [
+    { id: 'FILE_ID: 30SAM_ERR_01', title: 'Packaging Trial & Error', body: 'Rough packaging mockups, color matching errors, and typography misalignment from the early trial-and-error phases before settling on the definitive Royal Purple canvas.', iconType: 'baseline' },
+    { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction Diagrams', body: 'Behavioral diagrams mapping out consumer interaction patterns — detailing how users store, carry, tear, and mix the paste-based sachet into daily routines.', iconType: 'field' },
+    { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: 'Final Royal Purple Sachet', body: 'High-fidelity 3D studio render of the final Royal Purple sachet, highlighting the extreme legibility of minimalist typography floating on the deep purple canvas.', iconType: 'color' }
+  ],
+  'desi-energy-bar': [
+    { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'The Retail Notebook', body: 'High-resolution scans of original field notes tracking behavioral observations, purchase triggers, and shelf placement dynamics across 20–25 retail environments.', iconType: 'field' },
+    { id: 'FILE_ID: DEB_CHARACTER_SKT', title: 'Character Ideation', body: 'Raw hand-drawn sketches, vector ink frameworks, and character animation wireframes of local street games — highlighting the structural lines of the vintage Atlas bicycle and the stacked wooden blocks of Lagori.', iconType: 'blueprint' },
+    { id: 'FILE_ID: DEB_COLOR_GRID', title: 'Chromatic Testing Grid', body: 'A side-by-side display of rejected background variations and safe color templates alongside the winning Lightning Blue/Turquoise composition, proving how the definitive background maximized retail visibility.', iconType: 'color' }
+  ],
+  'superfoods': [
+    { id: 'FILE_ID: SF_CLINICAL_BASELINE', title: 'The Clinical Baseline', body: 'High-resolution comparisons of the original medical-style labels versus early scenic sketch variants — showing the stark contrast between the pharmaceutical aesthetic and the consumer-first redesign.', iconType: 'baseline' },
+    { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'The Sticker Blueprint', body: 'Technical vector line drawings demonstrating the universal pouch design and the visual placement markers engineered for the factory floor team, enabling 4× throughput improvement.', iconType: 'blueprint' },
+    { id: 'FILE_ID: SF_TYPOGRAPHY_SYSTEM', title: 'The Typography Overhaul', body: 'Close-up crops mapping critical back-of-pack corrections — the transition to lowercase formatting ("Flax seed", "dietary fiber", "omega-3") and the application of solid black body font for flawless legal legibility.', iconType: 'typography' }
+  ]
+}
+
+// ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
 export default function Campaigns() {
   return (
@@ -278,7 +780,7 @@ export default function Campaigns() {
         <title>Campaigns — Advertising Concepts · H P Shivaraj · Art Director</title>
         <meta name="description" content="Art direction for advertising campaigns — Almond Milk motion campaign, Desi Energy Bar retail launch, Superfoods typography system. H P Shivaraj, Art Director, Bengaluru." />
         <meta property="og:title" content="Campaigns — H P Shivaraj · Art Director" />
-        <meta property="og:description" content="Advertising campaigns: Almond Milk, Desi Energy Bar, Superfoods. Insight to execution across digital, retail, and social." />
+        <meta property="og:description" content="Advertising campaigns: 30 SAM Almond Milk, Desi Energy Bar, Superfoods. Insight to execution across digital, retail, and social." />
         <meta property="og:url" content="https://sivnco.in/campaigns" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -310,8 +812,8 @@ export default function Campaigns() {
             Campaigns
             <em>
               Every brief is a question. Every campaign is a point of view.
-              Three advertising campaigns — across motion, retail, and typography — built
-              on consumer insight, not aesthetic preference.
+              Three advertising campaigns — across motion, retail, and packaging —
+              built on consumer insight, not aesthetic preference.
             </em>
           </h1>
           <div className="cp-hero-pov cpv">
@@ -327,12 +829,16 @@ export default function Campaigns() {
               <div className="cp-hero-count-label">Campaigns</div>
             </div>
             <div className="cp-hero-count">
-              <div className="cp-hero-count-num">176%</div>
-              <div className="cp-hero-count-label">Revenue Growth</div>
+              <div className="cp-hero-count-num">11K+</div>
+              <div className="cp-hero-count-label">Orders Generated</div>
             </div>
             <div className="cp-hero-count">
               <div className="cp-hero-count-num">8K</div>
               <div className="cp-hero-count-label">Units/Month</div>
+            </div>
+            <div className="cp-hero-count">
+              <div className="cp-hero-count-num">5×</div>
+              <div className="cp-hero-count-label">Floor Throughput</div>
             </div>
           </div>
         </div>
@@ -350,17 +856,18 @@ export default function Campaigns() {
       </div>
 
       {/* CAMPAIGNS */}
-      {CAMPAIGNS.map((cam, ci) => (
+      {CAMPAIGNS.map((cam) => (
         <section key={cam.id} id={cam.id} className="cp-campaign">
           <div className="cp-cam-num cpv">{cam.num}</div>
           <div className="cp-c">
 
-            {/* Campaign Header */}
+            {/* ── Campaign Header ── */}
             <div className="cp-cam-header">
               <div>
                 <div className="cp-cam-label cpv" style={{ color: cam.accent }}>{cam.label}</div>
                 <div className="cp-cam-title cpv">{cam.title}</div>
-                <div className="cp-cam-sub cpv">{cam.subtitle}</div>
+                <div className="cp-cam-full-title cpv">{cam.fullTitle}</div>
+                <div className="cp-cam-tech-tag cpv">{cam.techTag}</div>
 
                 {/* TL;DR */}
                 <div className="cp-tldr cpv" style={{ borderColor: cam.accent }}>
@@ -374,15 +881,11 @@ export default function Campaigns() {
                 {/* Story: Brand + Brief */}
                 <div className="cp-story-col">
                   <div className="cp-story-block cpv">
-                    <div className="cp-story-block-label" style={{ color: cam.accent }}>
-                      The Brand
-                    </div>
+                    <div className="cp-story-block-label" style={{ color: cam.accent }}>The Brand</div>
                     <div className="cp-story-block-body">{cam.brand}</div>
                   </div>
                   <div className="cp-story-block cpv">
-                    <div className="cp-story-block-label" style={{ color: cam.accent }}>
-                      The Brief
-                    </div>
+                    <div className="cp-story-block-label" style={{ color: cam.accent }}>The Brief</div>
                     <div className="cp-story-block-body">{cam.brief}</div>
                   </div>
                 </div>
@@ -391,37 +894,64 @@ export default function Campaigns() {
               {/* Story: Insight + Concept */}
               <div className="cp-story-col" style={{ paddingTop: '4rem' }}>
                 <div className="cp-story-block cpv">
-                  <div className="cp-story-block-label" style={{ color: cam.accent }}>
-                    The Consumer Insight
-                  </div>
-                  <div className="cp-story-block-body" style={{ fontSize: '1.1rem' }}>
-                    {cam.insight}
-                  </div>
+                  <div className="cp-story-block-label" style={{ color: cam.accent }}>The Consumer Insight</div>
+                  <div className="cp-story-block-body" style={{ fontSize: '1.05rem' }}>{cam.insight}</div>
                 </div>
                 <div className="cp-story-block cpv">
-                  <div className="cp-story-block-label" style={{ color: cam.accent }}>
-                    The Concept
-                  </div>
-                  <div className="cp-story-block-body" style={{ fontSize: '1.05rem' }}>
-                    {cam.concept}
-                  </div>
+                  <div className="cp-story-block-label" style={{ color: cam.accent }}>The Concept</div>
+                  <div className="cp-story-block-body" style={{ fontSize: '1rem' }}>{cam.concept}</div>
                 </div>
               </div>
             </div>
 
-            {/* Executions */}
-            <div className="cpv">
+            {/* ── Strategy Pillars ── */}
+            <div className="cp-pillars-section cpv">
+              <div className="cp-pillars-header" style={{ color: cam.accent }}>
+                Strategy — {cam.pillars.length} Pillars
+              </div>
+              <div className="cp-pillars-grid">
+                {cam.pillars.map(p => (
+                  <div key={p.num} className="cp-pillar-card">
+                    <div className="cp-pillar-num">{p.num}</div>
+                    <div className="cp-pillar-tag" style={{ color: cam.accent }}>[{p.tag}]</div>
+                    <div className="cp-pillar-header">{p.header}</div>
+                    <div className="cp-pillar-body">{p.body}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Concept Runway ── */}
+            <div className="cp-runway-section cpv">
+              <div className="cp-runway-header">Where everything started…</div>
+              <div className="cp-runway-sub">— The Iteration Lab · Concept Runway</div>
+              <div className="cp-runway-slots">
+                {(RUNWAYS[cam.id] || []).map(slot => (
+                  <RunwaySlot key={slot.id} {...slot} />
+                ))}
+              </div>
+            </div>
+
+            {/* ── Soul Block ── */}
+            <div className="cp-soul cpv" style={{ '--soul-color': cam.accent.replace('#', '').match(/../g).map(h => parseInt(h,16)).join(',') }}>
+              <div className="cp-soul-inner">
+                <div className="cp-soul-label" style={{ color: cam.accent }}>My View On This</div>
+                <div className="cp-soul-quote">{cam.soulQuote}</div>
+              </div>
+            </div>
+
+            {/* ── Executions ── */}
+            <div className="cpv" style={{ marginTop: '6rem' }}>
               <div className="cp-execs-label" style={{ color: cam.accent }}>Execution — Across Touchpoints</div>
               {cam.executions.map((ex, ei) => (
                 <div key={ex.num} className="cp-exec-item cpv">
-                  {/* Media first on odd, info first on even */}
                   {ei % 2 === 0 ? (
                     <>
                       <div className="cp-exec-media">
                         {ex.isVideo ? (
                           <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                         ) : (
-                          <img src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
                         )}
                       </div>
                       <div className="cp-exec-info">
@@ -436,7 +966,7 @@ export default function Campaigns() {
                         </div>
                         <div>
                           <div className="cp-exec-channels-label">Channels</div>
-                          <div className="cp-exec-channels">{ex.channels}</div>
+                          <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
                         </div>
                       </div>
                     </>
@@ -454,14 +984,14 @@ export default function Campaigns() {
                         </div>
                         <div>
                           <div className="cp-exec-channels-label">Channels</div>
-                          <div className="cp-exec-channels">{ex.channels}</div>
+                          <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
                         </div>
                       </div>
                       <div className="cp-exec-media">
                         {ex.isVideo ? (
                           <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                         ) : (
-                          <img src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
                         )}
                       </div>
                     </>
@@ -470,17 +1000,18 @@ export default function Campaigns() {
               ))}
             </div>
 
-            {/* Results */}
-            <div className="cpv">
-              <div className="cp-execs-label" style={{ color: cam.accent, marginTop: '4rem' }}>Results</div>
-              <div className="cp-results-grid">
-                {cam.results.map((r, ri) => (
-                  <div key={ri} className="cp-result-item">{r}</div>
-                ))}
-              </div>
-            </div>
+            {/* ── Campaign Compare Table (Almond Milk only) ── */}
+            {cam.id === 'almond-milk' && (
+              <CampaignCompareTable executions={cam.executions} accent={cam.accent} />
+            )}
 
-            {/* Reflection */}
+            {/* ── Metrics Dashboard ── */}
+            <MetricsDashboard metrics={cam.metrics} accent={cam.accent} />
+
+            {/* ── Testimonials ── */}
+            <TestimonialsBlock testimonials={cam.testimonials} accent={cam.accent} />
+
+            {/* ── Reflection ── */}
             <div className="cp-reflection cpv" style={{ borderLeftColor: cam.accent }}>
               <div className="cp-reflection-label" style={{ color: cam.accent }}>What I&apos;d Do Differently</div>
               <div className="cp-reflection-body">{cam.reflection}</div>
@@ -502,7 +1033,7 @@ export default function Campaigns() {
           </div>
           <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--cp-border)', fontFamily: 'var(--M)', fontSize: '.55rem', letterSpacing: '.15em', color: 'rgba(240,237,230,0.3)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <span>SIVNCO<span style={{ color: 'var(--cp-accent)' }}>.</span></span>
-            <span>In-house · Agency · Project Engagements · Bengaluru · Remote</span>
+            <span>© 2023–2026 · My Journey @ Jus&apos;Amazin</span>
           </div>
         </div>
       </div>
