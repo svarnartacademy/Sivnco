@@ -346,7 +346,7 @@ export default function ArtistEducator() {
             <div className="prog-card">
               <div className="prog-img-slot">
                 <span className="prog-tag">Early Phase — Month 1</span>
-                <img loading="lazy" src="/images/student_art_before.png" alt="Early student drawing" />
+                <img loading="lazy" src="/images/student_art_before.jpg" alt="Early student drawing" />
               </div>
               <div className="prog-body">
                 <h3 className="prog-h">Symbolic Flat Rendering</h3>
@@ -360,7 +360,7 @@ export default function ArtistEducator() {
             <div className="prog-card">
               <div className="prog-img-slot">
                 <span className="prog-tag after">Advanced Phase — Month 8</span>
-                <img loading="lazy" src="/images/student_art_after.png" alt="Advanced student painting" />
+                <img loading="lazy" src="/images/student_art_after.jpg" alt="Advanced student painting" />
               </div>
               <div className="prog-body">
                 <h3 className="prog-h">Spatial Composition &amp; Light</h3>
