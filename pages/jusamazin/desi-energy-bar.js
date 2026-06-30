@@ -152,6 +152,7 @@ export default function DesiEnergyBar() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/jusamazin/desi-energy-bar" />
         <meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Desi Energy Bar — Case Study · Sivnco</title>
         <meta name="description" content="Structured Chaos: A D2C energy bar design case study. 70% sales increase."/>
@@ -210,15 +211,15 @@ export default function DesiEnergyBar() {
         <div className="deb-runway drv">
           <div className="deb-runway-scroll">
             {[
-              {t:'INITIAL SKETCH A',src:'/images/jusamazin/desi_bar/runway_sketch_a.png'},
-              {t:'HAND-DRAWN CONCEPT',src:'/images/jusamazin/desi_bar/runway_handdrawn.png'},
-              {t:'VECTOR OUTLINE',src:'/images/jusamazin/desi_bar/runway_vector.png'},
-              {t:'COLOR EXPLORATION',src:'/images/jusamazin/desi_bar/runway_color.png'},
-              {t:'TYPOGRAPHY STUDY',src:'/images/jusamazin/desi_bar/runway_typo.png'},
-              {t:'LAYOUT ITERATION',src:'/images/jusamazin/desi_bar/runway_layout.png'},
-              {t:'FINAL COMP',src:'/images/jusamazin/desi_bar/runway_final.png'}
+              {t:'INITIAL SKETCH A',src:'/images/jusamazin/desi_bar/runway_sketch_a.jpg'},
+              {t:'HAND-DRAWN CONCEPT',src:'/images/jusamazin/desi_bar/runway_handdrawn.jpg'},
+              {t:'VECTOR OUTLINE',src:'/images/jusamazin/desi_bar/runway_vector.jpg'},
+              {t:'COLOR EXPLORATION',src:'/images/jusamazin/desi_bar/runway_color.jpg'},
+              {t:'TYPOGRAPHY STUDY',src:'/images/jusamazin/desi_bar/runway_typo.jpg'},
+              {t:'LAYOUT ITERATION',src:'/images/jusamazin/desi_bar/runway_layout.jpg'},
+              {t:'FINAL COMP',src:'/images/jusamazin/desi_bar/runway_final.jpg'}
             ].map(g=>(
-              <div key={g.t} className="deb-runway-card" style={{position:'relative',overflow:'hidden'}}><img src={g.src} alt={g.t} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>
+              <div key={g.t} className="deb-runway-card" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.t} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>
             ))}
           </div>
         </div>
@@ -264,14 +265,14 @@ export default function DesiEnergyBar() {
       <section className="deb-section" style={{padding:0}}>
         <div className="deb-gallery">
           {[
-            {id:'studio_render_a',alt:'Studio Render A',src:'/images/jusamazin/desi_bar/studio_render_a.png'},
-            {id:'retail_shelf',alt:'Retail Shelf Setup',src:'/images/jusamazin/desi_bar/retail_shelf.png'},
-            {id:'close_up_texture',alt:'Close-up Texture',src:'/images/jusamazin/desi_bar/close_up_texture.png'},
-            {id:'lifestyle_shot',alt:'Lifestyle Shot',src:'/images/jusamazin/desi_bar/lifestyle_shot.png'},
-            {id:'pack_array',alt:'Pack Array',src:'/images/jusamazin/desi_bar/pack_array.png'},
-            {id:'print_detail',alt:'Print Detail',src:'/images/jusamazin/desi_bar/print_detail.png'}
+            {id:'studio_render_a',alt:'Studio Render A',src:'/images/jusamazin/desi_bar/studio_render_a.jpg'},
+            {id:'retail_shelf',alt:'Retail Shelf Setup',src:'/images/jusamazin/desi_bar/retail_shelf.jpg'},
+            {id:'close_up_texture',alt:'Close-up Texture',src:'/images/jusamazin/desi_bar/close_up_texture.jpg'},
+            {id:'lifestyle_shot',alt:'Lifestyle Shot',src:'/images/jusamazin/desi_bar/lifestyle_shot.jpg'},
+            {id:'pack_array',alt:'Pack Array',src:'/images/jusamazin/desi_bar/pack_array.jpg'},
+            {id:'print_detail',alt:'Print Detail',src:'/images/jusamazin/desi_bar/print_detail.jpg'}
           ].map(g=>(
-            <div key={g.id} className="deb-gal-item drv" style={{position:'relative',overflow:'hidden'}}><img src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>
+            <div key={g.id} className="deb-gal-item drv" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>
           ))}
         </div>
       </section>

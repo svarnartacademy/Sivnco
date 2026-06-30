@@ -220,6 +220,7 @@ export default function ArtistEducator() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/artist-educator" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Fine Art &amp; Education — H P Shivaraj · Art Director | Sivnco</title>
@@ -303,7 +304,7 @@ export default function ArtistEducator() {
           <div className="bento rv2">
             {ARTWORKS.map((art) => (
               <div key={art.id} className={`b-card ${art.size}`}>
-                <img src={art.img} alt={`Painting ${art.id}`} />
+                <img loading="lazy" src={art.img} alt={`Painting ${art.id}`} />
               </div>
             ))}
           </div>
@@ -345,7 +346,7 @@ export default function ArtistEducator() {
             <div className="prog-card">
               <div className="prog-img-slot">
                 <span className="prog-tag">Early Phase — Month 1</span>
-                <img src="/images/student_art_before.png" alt="Early student drawing" />
+                <img loading="lazy" src="/images/student_art_before.png" alt="Early student drawing" />
               </div>
               <div className="prog-body">
                 <h3 className="prog-h">Symbolic Flat Rendering</h3>
@@ -359,7 +360,7 @@ export default function ArtistEducator() {
             <div className="prog-card">
               <div className="prog-img-slot">
                 <span className="prog-tag after">Advanced Phase — Month 8</span>
-                <img src="/images/student_art_after.png" alt="Advanced student painting" />
+                <img loading="lazy" src="/images/student_art_after.png" alt="Advanced student painting" />
               </div>
               <div className="prog-body">
                 <h3 className="prog-h">Spatial Composition &amp; Light</h3>

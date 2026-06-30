@@ -172,7 +172,7 @@ const CAMPAIGNS = [
         num: '01',
         channel: 'Retail Packaging',
         title: 'Primary Pack Design',
-        src: '/images/jusamazin/desi_bar/studio_render_a.png',
+        src: '/images/jusamazin/desi_bar/studio_render_a.jpg',
         isVideo: false,
         adNote: 'Electric blue base chosen deliberately against the amber/earth-tone health category. The nostalgic cartoon illustration anchors the "Desi" claim without using the word. Shelf presence over brand consistency — the rule was broken intentionally.',
         channels: 'Retail shelf · Modern trade · Quick commerce'
@@ -181,7 +181,7 @@ const CAMPAIGNS = [
         num: '02',
         channel: 'Ideation Process',
         title: 'Design Runway — Sketch to Final',
-        src: '/images/jusamazin/desi_bar/runway_final.png',
+        src: '/images/jusamazin/desi_bar/runway_final.jpg',
         isVideo: false,
         adNote: 'Seven stages from initial sketch to print-ready file. The concept direction changed twice — early versions were too clean, too "health brand." The breakthrough came when we leaned into the imperfection of hand-drawn illustration as a feature, not a limitation.',
         channels: 'Internal brand review · Production handoff'
@@ -190,7 +190,7 @@ const CAMPAIGNS = [
         num: '03',
         channel: 'Retail Environment',
         title: 'Shelf Placement & Pack Array',
-        src: '/images/jusamazin/desi_bar/pack_array.png',
+        src: '/images/jusamazin/desi_bar/pack_array.jpg',
         isVideo: false,
         adNote: 'The array test proved the hypothesis: at retail exposure distance, the electric blue cuts through the competitive set in under 2 seconds. Adjacent products — muted amber, white, green — recede. The chaos creates a visual anchor.',
         channels: 'Physical retail · Amazon listing photography'
@@ -265,7 +265,7 @@ const CAMPAIGNS = [
         num: '01',
         channel: 'Back of Pack',
         title: 'Typography System Overhaul',
-        src: '/images/jusamazin/superfoods/typography_macro.png',
+        src: '/images/jusamazin/superfoods/typography_macro.jpg',
         isVideo: false,
         adNote: 'Strict lowercase nomenclature for all ingredient variables — "Flax seed", "dietary fiber", "omega-3". Unified "Superfood" as a single word, eliminating the confusion of "Super Food" spacing. Solid black body font for critical nutritional values (Protein 25.9g, Dietary Fiber 24.1g). The change is invisible to the casual reader and decisive for the engaged one.',
         channels: 'Flexible pouch 500g · 1kg format'
@@ -274,7 +274,7 @@ const CAMPAIGNS = [
         num: '02',
         channel: 'Shelf System',
         title: 'Universal Pouch Architecture',
-        src: '/images/jusamazin/superfoods/shelf_lineup.png',
+        src: '/images/jusamazin/superfoods/shelf_lineup.jpg',
         isVideo: false,
         adNote: 'A single master pouch format dynamically iterable across the full product lineup via custom label overlays. Color-coded SKU differentiation with a consistent structural grid. The shelf reads as a system, not a collection. A financial constraint engineered into a modular branding advantage.',
         channels: 'Modern trade shelf · Online product listing photography'
@@ -283,7 +283,7 @@ const CAMPAIGNS = [
         num: '03',
         channel: 'Factory Floor System',
         title: 'Alignment Guideline Integration',
-        src: '/images/jusamazin/superfoods/nutrition_label.png',
+        src: '/images/jusamazin/superfoods/nutrition_label.jpg',
         isVideo: false,
         adNote: 'High-visibility alignment guidelines built directly onto the packaging and stickers for human workflow optimization. Removed the manual bottleneck that limited output to 100 pouches/hour.',
         channels: 'Print production · FSSAI compliance · Factory floor deployment'
@@ -774,6 +774,7 @@ export default function Campaigns() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/campaigns" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Campaigns — Advertising Concepts · H P Shivaraj · Art Director</title>

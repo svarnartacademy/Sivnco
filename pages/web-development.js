@@ -204,6 +204,7 @@ export default function WebDevelopment() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/web-development" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Web Development — H.P. Shivaraj · Sivnco</title>

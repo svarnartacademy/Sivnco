@@ -192,6 +192,7 @@ export default function BrandAssets() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/brand-assets" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Brand Assets &amp; Illustration — H.P. Shivaraj · Sivnco</title>
@@ -270,7 +271,7 @@ export default function BrandAssets() {
           <div className="bento rv2">
             {CHARACTERS.map((char) => (
               <div key={char.id} className={`b-card ${char.size}`}>
-                <img src={char.img} alt={char.name} />
+                <img loading="lazy" src={char.img} alt={char.name} />
                 <div className="b-overlay" />
                 <div className="b-content">
                   <span className="b-label">{char.role}</span>

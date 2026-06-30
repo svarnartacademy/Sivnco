@@ -114,6 +114,8 @@ export default function PackRender3D() {
   return (
     <>
       <Head>
+        <script type="module" src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" />
+        <link rel="canonical" href="https://sivnco.in/jusamazin/3d-pack-render" />
         <meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>3D Pack Render — Case Study · Sivnco</title>
         <meta name="description" content="Interactive 3D product renders for Jus Amazin. 10 SKUs visualized in real-time WebGL."/>

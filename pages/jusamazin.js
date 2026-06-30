@@ -204,6 +204,7 @@ export default function JusAmazin() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/jusamazin" />
         <meta charSet="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Jus Amazin — Art Direction &amp; Brand System · H P Shivaraj · Art Director</title>
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
@@ -289,61 +290,61 @@ export default function JusAmazin() {
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
           <Link href="/jusamazin/core-packaging" className="slot tall" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/core/portfolio.png" className="slot-img" alt="Core Packaging Range" />
+            <img loading="lazy" src="/images/jusamazin/core/portfolio.jpg" className="slot-img" alt="Core Packaging Range" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">HERO PRODUCT SHOT</div>
             <span className="slot-cap">Core Packaging Range</span>
           </Link>
           <Link href="/jusamazin/3d-pack-render" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/desi_bar/studio_render_a.png" className="slot-img zoom-fill" alt="3D Pack Render" />
+            <img loading="lazy" src="/images/jusamazin/desi_bar/studio_render_a.jpg" className="slot-img zoom-fill" alt="3D Pack Render" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">3D RENDER</div>
             <span className="slot-cap">3D Pack Render</span>
           </Link>
           <Link href="/jusamazin/superfoods" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/superfoods/shelf_lineup.png" className="slot-img" alt="Superfoods Range" />
+            <img loading="lazy" src="/images/jusamazin/superfoods/shelf_lineup.jpg" className="slot-img" alt="Superfoods Range" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">SUPERFOODS</div>
             <span className="slot-cap">Superfoods Range</span>
           </Link>
           <Link href="/jusamazin/brand-guidelines" className="slot wide" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/guidelines/brand_book_cover.png" className="slot-img" alt="Brand Guidelines Document" />
+            <img loading="lazy" src="/images/jusamazin/guidelines/brand_book_cover.jpg" className="slot-img" alt="Brand Guidelines Document" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">BRAND GUIDELINES</div>
             <span className="slot-cap">Brand Guidelines Document</span>
           </Link>
           <Link href="/jusamazin/bars" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/bars/variant_lineup.png" className="slot-img zoom-fill" alt="Bars" />
+            <img loading="lazy" src="/images/jusamazin/bars/variant_lineup.jpg" className="slot-img zoom-fill" alt="Bars" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">BARS</div>
             <span className="slot-cap">Bars</span>
           </Link>
           <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/jars/glass_lifestyle.png" className="slot-img zoom-fill" alt="Jars" />
+            <img loading="lazy" src="/images/jusamazin/jars/glass_lifestyle.jpg" className="slot-img zoom-fill" alt="Jars" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">JARS</div>
             <span className="slot-cap">Jars</span>
           </Link>
           <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/desi_bar/pack_array.png" className="slot-img zoom-fill" alt="Desi Energy Bar" />
+            <img loading="lazy" src="/images/jusamazin/desi_bar/pack_array.jpg" className="slot-img zoom-fill" alt="Desi Energy Bar" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">DESI ENERGY BAR</div>
             <span className="slot-cap">Desi Energy Bar</span>
           </Link>
           <Link href="/jusamazin/snacks" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/snacks/pancake_mix.png" className="slot-img" alt="Snacks" />
+            <img loading="lazy" src="/images/jusamazin/snacks/pancake_mix.jpg" className="slot-img" alt="Snacks" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">SNACKS</div>
             <span className="slot-cap">Snacks</span>
           </Link>
           <Link href="/jusamazin/marketing" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/marketing/blinkit_banner.png" className="slot-img" alt="Marketing" />
+            <img loading="lazy" src="/images/jusamazin/marketing/blinkit_banner.jpg" className="slot-img" alt="Marketing" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">MARKETING</div>
             <span className="slot-cap">Marketing</span>
           </Link>
           <Link href="/jusamazin/management" className="slot" style={{cursor:'pointer'}}>
-            <img src="/images/jusamazin/management/almond_milk.png" className="slot-img" alt="Management" />
+            <img loading="lazy" src="/images/jusamazin/management/almond_milk.jpg" className="slot-img" alt="Management" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">MANAGEMENT</div>
             <span className="slot-cap">Management</span>
@@ -361,13 +362,13 @@ export default function JusAmazin() {
             {/* Real before-packaging: the 3 images show the problem visually */}
             <div className="ba-imgs">
               <div className="ba-img-w">
-                <img src="/images/before/before_jar.png" alt="Old peanut butter jar — inconsistent label" />
+                <img loading="lazy" src="/images/before/before_jar.jpg" alt="Old peanut butter jar — inconsistent label" />
               </div>
               <div className="ba-img-w">
-                <img src="/images/before/before_pouch_1.jpg" alt="Old quinoa pouch — generic craft bag" />
+                <img loading="lazy" src="/images/before/before_pouch_1.jpg" alt="Old quinoa pouch — generic craft bag" />
               </div>
               <div className="ba-img-w">
-                <img src="/images/before/before_pouch_2.png" alt="Old snacks pouch — no design system" />
+                <img loading="lazy" src="/images/before/before_pouch_2.jpg" alt="Old snacks pouch — no design system" />
               </div>
             </div>
             <p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand — clashing colours, inconsistent typography, no shelf-ready files, no brand rationale document.</p>

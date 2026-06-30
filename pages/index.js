@@ -256,6 +256,7 @@ export default function Home({ bodyHTML, inlineScript }) {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco</title>
@@ -274,6 +275,8 @@ export default function Home({ bodyHTML, inlineScript }) {
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         {/* Mobile CSS injected directly — guaranteed fresh on every deploy */}
         <style dangerouslySetInnerHTML={{ __html: MOBILE_CSS }} />
+        {/* model-viewer loaded conditionally for 3D model renders */}
+        <script type="module" src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" />
       </Head>
 
       {/* CDN scripts — use afterInteractive (beforeInteractive only works in _document for Pages Router) */}

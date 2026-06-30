@@ -56,6 +56,7 @@ export default function Commissions() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/artist-educator/commissions" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>For Art &amp; Design — H P Shivaraj</title>

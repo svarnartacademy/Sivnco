@@ -184,6 +184,7 @@ export default function AIWorkflow() {
   return (
     <>
       <Head>
+        <link rel="canonical" href="https://sivnco.in/ai-workflow" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>AI &amp; Concept Acceleration — H P Shivaraj · Art Director | Sivnco</title>

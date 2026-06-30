@@ -217,6 +217,8 @@ export default function InHouseDesigns() {
   return (
     <>
       <Head>
+        <script type="module" src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" />
+        <link rel="canonical" href="https://sivnco.in/in-house-designs" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>In-House Designs — H.P. Shivaraj · Sivnco</title>
@@ -299,7 +301,7 @@ export default function InHouseDesigns() {
           <div className="bento rv2">
             {OG_MITHAI_ASSETS.map((asset) => (
               <div key={asset.id} className={`b-card ${asset.size}`}>
-                <img src={asset.img} alt={asset.name} />
+                <img loading="lazy" src={asset.img} alt={asset.name} />
               </div>
             ))}
           </div>
@@ -375,7 +377,7 @@ export default function InHouseDesigns() {
           <div className="bento rv2">
             {VEDIC_TREATS_ASSETS.map((asset) => (
               <div key={asset.id} className={`b-card ${asset.size}`}>
-                <img src={asset.img} alt={asset.name} />
+                <img loading="lazy" src={asset.img} alt={asset.name} />
               </div>
             ))}
           </div>
