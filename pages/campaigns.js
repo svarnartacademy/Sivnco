@@ -206,12 +206,12 @@ const CAMPAIGNS = [
       { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },
       { name: 'Shilpa Moglishetty', role: 'CEO & Co-Founder', category: 'leadership', quote: 'Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.' },
       { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'I wasn\'t sure about the color blue with nostalgia, but surprisingly it works as blue grasps attention and the nostalgia keeps the attention span long enough for them to make the purchase.' },
-      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'Its so fun and out of blue, i dont find it as a typical but it works on great as it sells in the market.' },
+      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'It\'s so fun and out of the blue. I don\'t find it typical, but it works great as it sells in the market.' },
       { name: 'Juhi Singh', role: 'Colleague & Visual Designer', category: 'team', quote: 'He has a good understanding of emotions so that grasp of gully cricket was expected, but the fusion of electric blue is what works as a punch.' },
-      { name: 'Arun', role: 'Customer / Parent', category: 'consumer', quote: 'Its hard to see kids not choosing healthy stuff due to their plain packaging and when kids are attracted to healthy stuff like this, it\'s good.' },
-      { name: 'Dwani Trivedi', role: 'Customer', category: 'consumer', quote: 'Its a weird story, i wanted to eat something as i was feeling dizzy due to low sugar on a mall, this captured my eyes even in the brink of collapse, but then the cartoons made me smile, its a fun packaging that really grabs attention.' },
-      { name: 'Samuel', role: 'Customer', category: 'consumer', quote: 'Crazy colors and abstract visual appearance, so its an easy eye grabber for sure.' },
-      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'Well its too overloaded but that\'s what is out of the box from the market.' }
+      { name: 'Arun', role: 'Customer / Parent', category: 'consumer', quote: 'It\'s hard to see kids not choosing healthy stuff due to their plain packaging, and when kids are attracted to healthy stuff like this, it\'s good.' },
+      { name: 'Dwani Trivedi', role: 'Customer', category: 'consumer', quote: 'It\'s a weird story — I wanted to eat something as I was feeling dizzy due to low sugar at a mall. This captured my eyes even on the brink of collapse, but then the cartoons made me smile. It\'s a fun packaging that really grabs attention.' },
+      { name: 'Samuel', role: 'Customer', category: 'consumer', quote: 'Crazy colors and abstract visual appearance, so it\'s an easy eye-grabber for sure.' },
+      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'Well, it\'s too overloaded, but that\'s what is out of the box from the market.' }
     ],
     reflection: 'The design solved shelf presence brilliantly. What I\'d extend: a 15-second social video where the cartoon character "comes alive" — reinforcing the nostalgia claim in motion. The packaging created the idea; the next campaign is animating it. The chromatic breakthrough — the Lightning Blue — is strong enough to become the brand\'s permanent visual signature across the entire snacking category.'
   },
@@ -285,15 +285,14 @@ const CAMPAIGNS = [
         title: 'Alignment Guideline Integration',
         src: '/images/jusamazin/superfoods/nutrition_label.png',
         isVideo: false,
-        adNote: 'High-visibility alignment guidelines built directly onto the packaging and stickers for human workflow optimization. Removed the manual bottleneck that limited output to 100 pouches/hour. Extended shelf-life certification from 9 months to 12 months through restructured compliance layouts under strict timelines.',
+        adNote: 'High-visibility alignment guidelines built directly onto the packaging and stickers for human workflow optimization. Removed the manual bottleneck that limited output to 100 pouches/hour.',
         channels: 'Print production · FSSAI compliance · Factory floor deployment'
       }
     ],
     metrics: [
       { value: '5×', label: 'Increase in factory floor packaging and labeling throughput efficiency.', tag: 'FLOOR VELOCITY' },
       { value: '200K', label: 'Maximum units scaled in full-fledged commercial printed production runs.', tag: 'PRINT SCALE' },
-      { value: '400–500', label: 'Pouches per hour achieved post alignment guideline integration. Up from 100/hr.', tag: 'UNITS / HOUR' },
-      { value: '+3 Mo', label: 'Shelf life extension achieved through restructured compliance layouts — from 9 to 12 months.', tag: 'SHELF LIFE' }
+      { value: '400–500', label: 'Pouches per hour achieved post alignment guideline integration. Up from 100/hr.', tag: 'UNITS / HOUR' }
     ],
     testimonials: [
       { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'The back-of-pack overhaul cleaned up our technical parameters perfectly. Moving to solid black body text and standardizing our layout casing immediately elevated our regulatory presentation.' },

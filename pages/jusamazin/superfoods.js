@@ -6,13 +6,13 @@ const PILLARS = [
   {h:"SFBP Inception",b:"The Superfood Back of Pack (SFBP) project targeted the complete re-engineering of the 500g and 1kg flexible pouch product lines. The mandate was to merge intense informational density with premium visual cleanliness."},
   {h:"Typography Rule",b:"Pivoting away from unstructured mixed casing. Implementing a strict design logic using lowercase nomenclature for ingredient variables and clean ampersand symbols to guarantee visual rhythm."},
   {h:"Regulatory Logic",b:"Meticulous parsing of typographic space — removing stray punctuation marks from headers like 'Ingredients' and 'Allergen Info' to eliminate visual clutter and ensure absolute compliance."},
-  {h:"Compliance Scaling",b:"Optimizing layout parameters to successfully integrate updated commercial directives, extending certified shelf life from 9 months to a full 12 months."},
+  {h:"Compliance Scaling",b:"Optimizing layout parameters to successfully integrate updated commercial directives and meet rigorous regulatory certification standards."},
 ]
 const SPEC_ROWS = [
   {param:'Body Font Color',prev:'Mixed / Gray',target:'Solid Black for clear shelf legibility'},
   {param:'Text Spacing',prev:'"Super Food"',target:'Unified "Superfood" — single word'},
   {param:'Key Typographic Casing',prev:'Heavily Capitalized',target:'Lowercase: "Flax seed", "dietary fiber", "omega-3"'},
-  {param:'Shelf Life Certification',prev:'9 Months',target:'Upgraded to 12 Months'},
+
 ]
 const NUTRITION = [
   {label:'Energy',value:'567.4 Kcal',note:'8.5% RDA per 30g serving'},
