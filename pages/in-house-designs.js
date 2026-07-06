@@ -248,7 +248,7 @@ export default function InHouseDesigns() {
             In-House<br /><i>Designs</i>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
-            A dedicated playground for testing design ideas, tactile packaging materials, and detailed 3D models. Synthesizing regional roots with high-end digital presentation.
+            Where I test ideas that don't have a client brief yet. Packaging concepts, typographic experiments, 3D renders — things that exist because I was curious, not because someone asked for them.
           </p>
           <div className="hero-meta rv" style={{ transitionDelay: '.4s' }}>
             {[
@@ -268,8 +268,6 @@ export default function InHouseDesigns() {
         </div>
       </div>
 
-
-
       {/* INTRODUCTION */}
       <section>
         <div className="c">
@@ -277,10 +275,10 @@ export default function InHouseDesigns() {
           <h2 className="s-title rv">Testing lines,<br /><i>shapes &amp; textures.</i></h2>
           <div className="body rv2" style={{ color: 'var(--ih-muted)', fontSize: '1.15rem', lineHeight: '1.9' }}>
             <p style={{ marginBottom: '1.5rem' }}>
-              Design at Sivnco is not just about client deliverables; it is about building deep, exploratory design frameworks. In our in-house lab, we construct mockups and test how traditional branding symbols translate to physical packaging and modern digital interfaces.
+              Some of the most useful design thinking I've done has been on projects nobody commissioned. Without a client to satisfy or a brief to follow, you make different decisions — riskier ones, more honest ones.
             </p>
             <p>
-              This subpage showcases two contrasting design projects: **OG Mithai**, a study on bold street sweets culture with heritage packaging; and **Vedic Treats**, an exploration of clean, understated Ayurvedic luxury with 3D product simulation.
+              Two projects here: OG Mithai, a packaging concept for a bold Indian sweets brand leaning into street-culture heritage; and Vedic Treats, an Ayurvedic wellness brand exploring clean luxury with 3D product simulation.
             </p>
           </div>
         </div>
@@ -294,7 +292,7 @@ export default function InHouseDesigns() {
           
           <div className="body rv" style={{ marginBottom: '3rem' }}>
             <p style={{ color: 'var(--ih-muted)' }}>
-              OG Mithai is a conceptual brand reimagining classic Indian sweets for a contemporary audience. The design balances authentic street-level nostalgia with a premium gifting visual language. Bold typography colliding with clean grids, golden foil highlights, and vivid colors makes this packaging design stand out immediately.
+              OG Mithai is a concept for reimagining Indian sweets as a premium gifting product that still feels rooted in street culture. The tension was to make it feel high-end without losing the boldness of a mithai shop — rich typography, gold foil, vivid color — the kind of packaging that can sit at a wedding table but also remind you of a busy market lane.
             </p>
           </div>
 
@@ -382,8 +380,6 @@ export default function InHouseDesigns() {
             ))}
           </div>
 
-
-
           {/* Process Timeline */}
           <div className="timeline rv2" style={{ marginTop: '5rem' }}>
             {TIMELINE_VEDIC.map((item, index) => (
@@ -444,7 +440,7 @@ export default function InHouseDesigns() {
                 obs.unobserve(e.target);
                 var el = e.target;
                 var text = el.textContent.trim();
-                var m = text.match(/[\d.]+/);
+                var m = text.match(/[\\d.]+/);
                 if(!m) return;
                 var target = parseFloat(m[0]);
                 var suffix = text.replace(m[0],'');

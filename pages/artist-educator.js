@@ -249,7 +249,7 @@ export default function ArtistEducator() {
             Artist &amp;<br /><i>Art Educator</i>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
-            A dual practice bridging classical Indian roots and contemporary visual craft. Guiding the next generation of creative minds while cultivating a personal fine art practice in Bengaluru.
+            I paint. I teach. Both inform each other. My fine art practice keeps the observation sharp — and that sharpness is what I try to pass on to students at Svarnart and Openhouse.
           </p>
           <div className="hero-meta rv" style={{ transitionDelay: '.4s' }}>
             {[
@@ -337,7 +337,7 @@ export default function ArtistEducator() {
           <h2 className="s-title rv">Showcasing student<br /><i>progression.</i></h2>
           <div className="body rv" style={{ marginBottom: '3rem' }}>
             <p style={{ color: 'var(--ae-muted)' }}>
-              True art education shifts a child from drawing abstract "symbols" of things (concept-based representation) to capturing actual light, form, and relationships (observation-based representation). Below is a typical progress arc of a young student over an 8-month period.
+              Most kids come in drawing what they think things look like — a house is a box with a triangle on top, a face is two dots and a curved line. The real shift happens when they start drawing what they actually see. Below is a typical 8-month arc from one of our students.
             </p>
           </div>
 

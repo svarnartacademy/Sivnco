@@ -15,40 +15,40 @@ const TIMELINE = [
     date: '2026 — Present',
     title: 'Custom AI Assistant Integration',
     org: 'Jus Amazin · Svarnart · Sivnco',
-    desc: 'Built custom conversational agents (like the "Ask Shiv\'s AI" widget in this portfolio) to automate customer support, answer design queries, and streamline internal knowledge bases, enhancing operational speed and user engagement.'
+    desc: 'Built custom AI agents (like the "Ask Shiv\'s AI" widget on this portfolio) that can handle customer queries, answer design questions, and pull from a knowledge base — things that used to eat up time I should have spent creating.'
   },
   {
     date: '2025',
     title: 'Codebase & Web Integration',
     org: 'Web Systems Development',
-    desc: 'Streamlined AI systems directly throughout websites and web applications. Automated code generation, testing pipelines, and layout setups, bringing AI out of the design board and into production systems.'
+    desc: 'Took the AI tools off the mood board and put them into actual production pipelines. Automated parts of the code generation, testing, and layout process — which sounds less exciting than it is, but it\'s what separates a working system from a prototype.'
   },
   {
     date: '2023 — Present',
     title: 'Office Adaptations & Assets Optimization',
     org: 'Jus Amazin (Full-time)',
-    desc: 'Adapted AI tools for voice synthesis and vocal adjustments, video editing/effects, and rapid concept generation. By using generative AI to produce asset drafts and packaging mocks, we reduced the time needed to establish a working design brief from days to hours.'
+    desc: 'Used AI for voice work, video editing, and early concept generation. The biggest win was using generative tools to build rough visual references and packaging mocks before opening Illustrator — it cut briefing time from days to a few hours, and it meant the team was aligning on a direction, not still debating one.'
   },
   {
     date: 'College Days (2022)',
     title: 'AI Workshops & Evangelism',
     org: 'Art & Tech Communities',
-    desc: 'Organized and conducted AI implementation workshops for all students and communities, teaching early generative art concepts, prompt design, and AI automation tools during the early phases of LLMs and generative art.'
+    desc: 'Back in college when generative AI was just becoming something people could actually use, I was already running workshops — showing other students what these tools could do for art and design work. It was early, a bit experimental, but that\'s how I got comfortable with the space.'
   }
 ]
 
 const AI_PILLARS = [
   {
     title: '01 — Voice & Video Editing',
-    desc: 'Adapting audio synthesis engines for clean voice changes and using smart timeline tools to isolate vocals and automate pacing. Cuts post-production time for product launches and campaigns by half.'
+    desc: 'Using AI audio tools to clean up voice work and get the pacing right, rather than spending hours in post. For product launches and campaigns, this alone cuts the post-production timeline significantly.'
   },
   {
     title: '02 — Generative Asset Briefs',
-    desc: 'Ideating design references and mood boards via AI image synthesis. This allows the team to visually align on layout directions and colors before picking up Illustrator, reducing revision loops by 90%.'
+    desc: 'Using AI image tools to generate rough visual references and mood boards before the actual design work starts. It\'s not about the output being final — it\'s about the team seeing a direction before the argument starts. Cuts revision loops considerably.'
   },
   {
     title: '03 — Custom Automation Agents',
-    desc: 'Engineering specialized bots (like Svarnart AI and Sivnco AI) to serve as dedicated helpers. These bots process project details and generate custom briefs and copy, making our design execution highly efficient.'
+    desc: 'Built specific bots for Svarnart and Sivnco that handle common queries, pull from our knowledge base, and generate initial briefs. The goal is always to protect design time — less admin, more creating.'
   }
 ]
 
@@ -188,7 +188,7 @@ export default function AIWorkflow() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>AI &amp; Concept Acceleration — H P Shivaraj · Art Director | Sivnco</title>
-        <meta name="description" content="Implementing AI tools for design, vocal adaptations, video editing, and custom agents at Jus Amazin, Svarnart, and Sivnco." />
+        <meta name="description" content="How I use AI tools for design, voice work, video editing, and custom agents at Jus Amazin, Svarnart, and Sivnco." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -208,12 +208,12 @@ export default function AIWorkflow() {
       <div className="hero">
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, background: 'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.2) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.1) 0%, transparent 50%), var(--ai-bg)', animation: 'heroBgPulse 8s ease-in-out infinite' }} />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow rv">Operational Systems · Innovation &amp; Speed</div>
+          <div className="eyebrow rv">Operational Systems · How I Actually Work</div>
           <h1 className="hero-title rv" style={{ transitionDelay: '.1s' }}>
             AI &amp;<br /><i>Workflow</i>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
-            Integrating neural engines, synthesis pipelines, and custom conversational agents into the design studio to maximize creation speed and operational efficiency.
+            AI doesn't replace the thinking — it collapses the setup. I use it to protect design time, shorten brief cycles, and keep the team moving toward a decision instead of still having one.
           </p>
           <div className="hero-meta rv" style={{ transitionDelay: '.4s' }}>
             {[
@@ -245,10 +245,10 @@ export default function AIWorkflow() {
           <h2 className="s-title rv">Automation as a<br /><i>creative partner.</i></h2>
           <div className="body rv2" style={{ color: 'var(--ai-muted)', fontSize: '1.15rem', lineHeight: '1.9' }}>
             <p style={{ marginBottom: '1.5rem' }}>
-              In a fast-paced retail and educational environment, speed-to-market is everything. However, design cycles are often bottlenecked by the initial briefing phase—aligning on the layout concept, generating references, and defining colors.
+              In retail and education, you either move fast or lose ground. The problem is that design cycles often stall before real work even begins — everyone's still arguing about layout direction, or waiting on references that haven't been made yet.
             </p>
             <p>
-              By treating AI as an execution partner, I streamline the entire production pipeline. We use custom prompt models to construct visual references, test color logic on shapes, synthesize high-quality vocal guides, and write automated scripts to compile layouts. This reduces time-to-brief, allowing the core design work to begin with clarity and speed.
+              AI changed that for me. Not as a replacement for the thinking — that part still has to be human — but as a way to collapse the briefing phase. I can put rough visual references in front of a team in an hour instead of a week, test color logic before committing to it, and keep the actual design work where it belongs: solving the communication problem, not setting it up.
             </p>
           </div>
 
@@ -327,7 +327,7 @@ export default function AIWorkflow() {
                 obs.unobserve(e.target);
                 var el = e.target;
                 var text = el.textContent.trim();
-                var m = text.match(/[\d.]+/);
+                var m = text.match(/[\\d.]+/);
                 if(!m) return;
                 var target = parseFloat(m[0]);
                 var suffix = text.replace(m[0],'');
