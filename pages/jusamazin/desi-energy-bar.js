@@ -25,7 +25,6 @@ const FEEDBACK = [
   {n:"Samuel",r:"Customer",q:"Crazy colors and abstract visual appearance, so its an easy eye grabber for sure.",c:"consumers"},
   {n:"Gagan",r:"Customer",q:"Well its too overloaded but that's what is out of the box from the market.",c:"consumers"},
 ]
-const GALLERY = ['Studio Render A','Retail Shelf Setup','Close-up Texture','Lifestyle Shot','Pack Array','Print Detail']
 const NAV_LINKS = [{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 
 const CSS = `
@@ -268,9 +267,9 @@ export default function DesiEnergyBar() {
             {id:'studio_render_a',alt:'Studio Render A',src:'/images/jusamazin/desi_bar/studio_render_a.jpg'},
             {id:'retail_shelf',alt:'Retail Shelf Setup',src:'/images/jusamazin/desi_bar/retail_shelf.jpg'},
             {id:'close_up_texture',alt:'Close-up Texture',src:'/images/jusamazin/desi_bar/close_up_texture.jpg'},
-            {id:'lifestyle_shot',alt:'Lifestyle Shot',src:'/images/jusamazin/desi_bar/lifestyle_shot.jpg'},
+            {id:'lifestyle_shot',alt:'Real-World Lifestyle Stall',src:'/images/jusamazin/desi_bar/lifestyle_market.jpg'},
             {id:'pack_array',alt:'Pack Array',src:'/images/jusamazin/desi_bar/pack_array.jpg'},
-            {id:'print_detail',alt:'Print Detail',src:'/images/jusamazin/desi_bar/print_detail.jpg'}
+            {id:'print_detail',alt:'Real-World Pantone Print Proofing',src:'/images/jusamazin/desi_bar/pantone_proofing.jpg'}
           ].map(g=>(
             <div key={g.id} className="deb-gal-item drv" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>
           ))}

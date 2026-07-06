@@ -110,6 +110,7 @@ html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);f
 @media(max-width:540px){.mk-hero h1{font-size:clamp(3rem,14vw,7rem)}.mk-s{padding:5rem 0}.mk-soul{padding:6rem 0}.mk-gallery{grid-template-columns:1fr}}
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Management',h:'/jusamazin/management'}]
+
 export default function Marketing(){
   const [activeVideo, setActiveVideo] = useState(0)
   return(<>
@@ -180,12 +181,12 @@ export default function Marketing(){
 <div className="mk-soul"><div className="mk-c"><div className="mk-label mkv" style={{textAlign:'center'}}>The Digital Imperative</div><blockquote className="mk-soul-q mkv">&ldquo;A packaging file is only half the battle. In quick-commerce, your <strong>digital asset triage</strong> must be just as precise as your print setups. If an infographic shifts color on a phone screen, the <strong>brand experience breaks instantly</strong>.&rdquo;</blockquote></div></div>
 <section className="mk-s"><div className="mk-c"><div className="mk-label mkv">Tracking</div><div className="mk-title mkv">Asset<br/><em>Metrics.</em></div><div className="mk-metrics mkv"><div className="mk-metric"><div className="mk-metric-n">3</div><div className="mk-metric-l">Competitors benchmarked: Slurrp Farm, Lo Foods, Yoga Bar</div></div><div className="mk-metric"><div className="mk-metric-n">25+</div><div className="mk-metric-l">E-commerce listings optimized across distribution networks</div></div></div></div></section>
 <section className="mk-s" style={{padding:0}}><div className="mk-gallery">{[
-  {id:'video_timeline',alt:'Video Timeline',src:'/images/jusamazin/marketing/video_timeline.jpg'},
-  {id:'color_triage_map',alt:'Color Triage Map',src:'/images/jusamazin/marketing/color_triage_map.jpg'},
-  {id:'amazon_listing',alt:'Amazon Listing',src:'/images/jusamazin/marketing/amazon_listing.jpg'},
-  {id:'blinkit_banner',alt:'Blinkit Banner',src:'/images/jusamazin/marketing/blinkit_banner.jpg'},
-  {id:'competitor_matrix',alt:'Competitor Matrix',src:'/images/jusamazin/marketing/competitor_matrix.jpg'},
-  {id:'final_asset',alt:'Final Asset',src:'/images/jusamazin/marketing/final_asset.jpg'}
+  {id:'photoshoot_session',alt:'Behind the Scenes Photoshoot Session',src:'/images/jusamazin/marketing/photoshoot_session.jpg'},
+  {id:'event_booth',alt:'Jus Amazin Pop-Up Event Booth',src:'/images/jusamazin/marketing/event_booth.jpg'},
+  {id:'jar_display',alt:'Product Jar Display on Retail Shelves',src:'/images/jusamazin/marketing/jar_display.jpg'},
+  {id:'delivery_truck_front',alt:'Jus Amazin Branded Delivery Vehicle',src:'/images/jusamazin/marketing/delivery_truck_front.jpg'},
+  {id:'delivery_truck_back',alt:'Jus Amazin Branded Delivery Vehicle (Rear Decals)',src:'/images/jusamazin/marketing/delivery_truck_back.jpg'},
+  {id:'amazon_listing',alt:'Amazon Optimized Almond Butter Listing',src:'/images/jusamazin/jars/amazon_almond_butter.jpg'}
 ].map(g=>(<div key={g.id} className="mk-gal-item mkv" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>))}</div></section>
 <section className="mk-s"><div className="mk-c"><div className="mk-label mkv">Voices</div><div className="mk-title mkv">Feedback<br/><em>Matrix.</em></div><div className="mk-fb-grid">{FEEDBACK.map((fb,i)=>(<div key={i} className="mk-fb-card mkv"><div className="mk-fb-q">&ldquo;{fb.q}&rdquo;</div><div><div className="mk-fb-n">{fb.n}</div><div className="mk-fb-r">{fb.r}</div></div></div>))}</div></div></section>
 <div className="mk-c"><div className="mk-footer"><div className="mk-label">System Telemetry {'>>>'}</div><div className="mk-footer-links">{NAV.map(n=>(<Link key={n.l} href={n.h} className="mk-footer-link">{n.l}</Link>))}</div><div className="mk-footer-meta"><span>© 2023–2026</span><span>My Journey @ Jus&apos;Amazin</span></div></div></div>

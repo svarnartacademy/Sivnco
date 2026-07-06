@@ -52,6 +52,7 @@ html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);f
 @media(max-width:540px){.br-hero h1{font-size:clamp(3.5rem,16vw,8rem)}.br-s{padding:5rem 0}.br-soul{padding:6rem 0}.br-gallery{grid-template-columns:1fr}}
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
+
 export default function Bars(){return(<>
 <Head>
         <link rel="canonical" href="https://sivnco.in/jusamazin/bars" /><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Bars Portfolio — Sivnco</title><meta name="description" content="High-velocity retail dashboard — snack bar category scaling and MOM Bar campaign."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
@@ -65,7 +66,7 @@ export default function Bars(){return(<>
   {id:'studio_macro',alt:'Studio Macro',src:'/images/jusamazin/bars/studio_macro.jpg'},
   {id:'amazon_campaign',alt:'Amazon Campaign',src:'/images/jusamazin/bars/amazon_campaign.jpg'},
   {id:'store_placement',alt:'Store Placement',src:'/images/jusamazin/bars/store_placement.jpg'},
-  {id:'mom_bar_hero',alt:'MOM Bar Hero',src:'/images/jusamazin/bars/mom_bar_hero.jpg'},
+  {id:'mom_bar_pouch_hand',alt:'Physical MOM Bar Pouch Prototype',src:'/images/jusamazin/bars/mom_bar_pouch_hand.jpg'},
   {id:'variant_lineup',alt:'Variant Lineup',src:'/images/jusamazin/bars/variant_lineup.jpg'},
   {id:'shelf_display',alt:'Shelf Display',src:'/images/jusamazin/bars/shelf_display.jpg'}
 ].map(g=>(<div key={g.id} className="br-gal-item brv" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>))}</div></section>

@@ -57,6 +57,7 @@ html{scroll-behavior:smooth}body{background:var(--sn-bg);color:var(--sn-white);f
 @media(max-width:540px){.sn-hero h1{font-size:clamp(3.5rem,16vw,8rem)}.sn-s{padding:5rem 0}.sn-soul{padding:6rem 0}.sn-gallery{grid-template-columns:1fr}}
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
+
 export default function Snacks(){return(<>
 <Head>
         <link rel="canonical" href="https://sivnco.in/jusamazin/snacks" /><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Snacks Category — Sivnco</title><meta name="description" content="Mass-market disruption — ₹10 Chikki experiment and snack portfolio scaling."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
@@ -68,9 +69,9 @@ export default function Snacks(){return(<>
 <div className="sn-soul"><div className="sn-c"><div className="sn-label snv" style={{textAlign:'center'}}>The Democratization of Design</div><blockquote className="sn-soul-q snv">&ldquo;Premium design shouldn&apos;t be locked behind high prices. Bringing clean visual architecture and <strong>superior lamination to a ₹10 product</strong> shifts consumer expectations and <strong>disrupts mass-market retail conventions</strong>.&rdquo;</blockquote></div></div>
 <section className="sn-s"><div className="sn-c"><div className="sn-label snv">Metrics</div><div className="sn-title snv">Category<br/><em>Acceleration.</em></div><div className="sn-metrics snv"><div className="sn-metric"><div className="sn-metric-n">₹10</div><div className="sn-metric-l">Price point entry for Crushed Peanut Chikki</div></div><div className="sn-metric"><div className="sn-metric-n">3 SKUs</div><div className="sn-metric-l">Core systems stabilized across snack repository</div></div></div></div></section>
 <section className="sn-s" style={{padding:0}}><div className="sn-gallery">{[
-  {id:'chikki_vector',alt:'Chikki Vector',src:'/images/jusamazin/snacks/chikki_vector.jpg'},
-  {id:'mom_bar_front',alt:'MOM Bar Front Design',src:'/images/jusamazin/snacks/mom_bar_front.jpg'},
-  {id:'cracker_listing',alt:'Cracker Listing',src:'/images/jusamazin/snacks/cracker_listing.jpg'},
+  {id:'chikki_sketches',alt:'Hand-Drawn Packaging Design Sketches',src:'/images/jusamazin/snacks/chikki_sketches.jpg'},
+  {id:'chikki_print_proof',alt:'Printed Packaging Proof Sheet',src:'/images/jusamazin/snacks/chikki_print_proof.jpg'},
+  {id:'chikki_shelf',alt:'Physical Snacks on Retail Shelf',src:'/images/jusamazin/snacks/chikki_shelf.jpg'},
   {id:'pancake_mix',alt:'Pancake Mix',src:'/images/jusamazin/snacks/pancake_mix.jpg'},
   {id:'millet_mixture_front',alt:'Millet Mixture Magic Masala Front Design',src:'/images/jusamazin/snacks/millet_mixture_front.jpg'},
   {id:'trail_mix_front',alt:'Trail Mix Fennel Freshness Front Design',src:'/images/jusamazin/snacks/trail_mix_front.jpg'}
