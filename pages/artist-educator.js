@@ -249,13 +249,13 @@ export default function ArtistEducator() {
             Artist &amp;<br /><i>Art Educator</i>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
-            I paint. I teach. Both inform each other. My fine art practice keeps the observation sharp — and that sharpness is what I try to pass on to students at Svarnart and Openhouse.
+            I paint. I teach. Both inform each other. My fine art practice keeps the observation sharp — and that sharpness is what I pass on to my art students at Svarnart Academy, carrying forward my teaching foundation from Openhouse.
           </p>
           <div className="hero-meta rv" style={{ transitionDelay: '.4s' }}>
             {[
               ['Focus', 'Fine Art & Pedagogy'],
               ['Role', 'Artist / Art Teacher'],
-              ['Academy', 'Svarnart / Openhouse'],
+              ['Academy', 'Svarnart Academy'],
               ['Location', 'Bengaluru, IN']
             ].map(([l, v]) => (
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
@@ -289,7 +289,7 @@ export default function ArtistEducator() {
               My work as an artist is a dialogue with heritage, texture, and light. Living and working in Bengaluru, I translate the city's organic chaos and classical roots into textured paintings, expressive sketches, and digital illustrations.
             </p>
             <p>
-              In teaching, I believe art is not a gift for the few but a discipline of looking. At Svarnart Academy and Openhouse, I guide children to look past symbolic formulas (like drawing a generic outline of an eye or tree) and learn to observe weight, value, perspective, and relationship. We train the mind to think visually, empowering children to render their world with confidence and original intention.
+              In teaching, I believe art is not a gift for the few but a discipline of looking. At Svarnart Academy, building on my teaching achievements at Openhouse, I guide children to look past symbolic formulas (like drawing a generic outline of an eye or tree) and learn to observe weight, value, perspective, and relationship. We train the mind to think visually, empowering children to render their world with confidence and original intention.
             </p>
           </div>
         </div>
