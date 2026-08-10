@@ -20,6 +20,7 @@ const CAMPAIGNS = [
       brief: 'Break consumer illusion about what\'s inside their carton.',
       idea: 'Weaponize transparency — make the 30-second paste replace an 8-hour ritual on screen.'
     },
+    myRole: ['Creative Direction', 'Motion Concept', 'Script & Storyboard', 'Video Editing', 'Typography System', 'Packaging Redesign'],
     brand: 'Jus\'Amazin — 100% Almond Milk Paste (Sachet Format)',
     brief: 'Break into the dairy-free milk alternative category on quick-commerce platforms where decisions happen in under 3 seconds. Expose the 1–4% almond content hidden inside mass-market carton brands and position Jus\'Amazin\'s pure paste sachet as the radical, transparent alternative.',
     insight: 'Most people buying almond milk from a carton don\'t know what\'s actually inside. They trust it because the packaging says "almond." The reality is that most mass-market cartons contain 1–4% actual almond — the rest is emulsifiers, thickeners, and stabilizers. That gap between what people believe and what they\'re actually buying is where the whole campaign lived.',
@@ -136,6 +137,7 @@ const CAMPAIGNS = [
       brief: 'Make health food feel Indian, not imported.',
       idea: 'Structured Chaos — nostalgia as an asset, colour as a long-range weapon.'
     },
+    myRole: ['Creative Direction', 'Field Research (25 stores)', 'Character Design', 'Retail Packaging', 'Color Strategy', 'Campaign Platform'],
     brand: 'Jus\'Amazin — Desi Energy Bar Range',
     brief: 'Launch a new energy bar into a saturated health snacking category dominated by clinical, Western-aesthetic brands. Stand out on shelf, create an emotional connection with Indian consumers across generations — from children to elderly — and reposition a traditional chikki as a culturally grounded daily ritual rather than a generic health product.',
     insight: 'Go to any health snack aisle and everything looks like it belongs in a gym. Clean sans-serif, white space, green accents — it all says the same thing. That aesthetic is borrowed from Western markets, and a lot of Indian consumers don\'t see themselves in it. This product had the actual cultural story to tell — it\'s a chikki, which is exactly what every Indian kid grew up eating after school. The insight was: don\'t pretend to be something imported. Own where you actually come from.',
@@ -229,6 +231,7 @@ const CAMPAIGNS = [
       brief: 'Turn compliance copy into a trust signal.',
       idea: 'Typography as the brand\'s argument for transparency — and a universal pouch system as a financial masterstroke.'
     },
+    myRole: ['Creative Direction', 'Packaging System Design', 'Typography Overhaul', 'Factory Floor UX', 'Production Print Specs', 'Brand Guidelines Authoring'],
     brand: 'Jus\'Amazin — Superfood Pouch Range (500g / 1kg Flexible Pouch)',
     brief: 'Redesign the back-of-pack information system and front-of-pack visual identity for the superfood pouch line — achieve premium visual cleanliness while increasing information density, passing regulatory compliance, and creating a modular system scalable across an entire product category lineup.',
     insight: 'The existing superfoods range suffered from a severe identity crisis — looking more like cold, clinical prescription medicine than a premium consumer product for individuals seeking a naturally healthy life. In the clean-label category, the back of pack is not a regulatory obligation — it\'s the second sales pitch. Consumers who flip the pack have already made a provisional decision to trust. What they see next either confirms that trust or collapses it.',
@@ -877,6 +880,16 @@ export default function Campaigns() {
                     <div className="cp-tldr-line"><strong>Idea:</strong> {cam.tldr.idea}</div>
                   </div>
                 </div>
+
+                {/* My Role chips */}
+                {cam.myRole && (
+                  <div className="cpv" style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+                    <span style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.2em', opacity: 0.4, flexShrink: 0, paddingRight: '0.4rem' }}>MY ROLE</span>
+                    {cam.myRole.map((r, i) => (
+                      <span key={i} style={{ fontFamily: 'var(--M)', fontSize: '0.55rem', letterSpacing: '0.12em', border: `1px solid ${cam.accent}44`, padding: '0.25rem 0.7rem', borderRadius: '20px', color: cam.accent, opacity: 0.8 }}>{r}</span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Story: Brand + Brief */}
                 <div className="cp-story-col">
