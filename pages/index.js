@@ -246,13 +246,6 @@ const MOBILE_CSS = `
 `
 
 export default function Home({ bodyHTML, inlineScript }) {
-  const [portalNode, setPortalNode] = useState(null)
-
-  useEffect(() => {
-    const node = document.getElementById('start-project-container')
-    if (node) setPortalNode(node)
-  }, [])
-
   return (
     <>
       <Head>
@@ -305,9 +298,6 @@ export default function Home({ bodyHTML, inlineScript }) {
           })();
         ` }}
       />
-
-      {/* Render new React button into the static HTML nav */}
-      {portalNode && createPortal(<StartProjectButton />, portalNode)}
     </>
   )
 }
