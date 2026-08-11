@@ -109,6 +109,8 @@ html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);f
 }
 @media(max-width:540px){.mk-hero h1{font-size:clamp(3rem,14vw,7rem)}.mk-s{padding:5rem 0}.mk-soul{padding:6rem 0}.mk-gallery{grid-template-columns:1fr}}
 `
+import Navbar from '../../components/Navbar'
+
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Management',h:'/jusamazin/management'}]
 
 export default function Marketing(){
@@ -117,7 +119,7 @@ export default function Marketing(){
 <Head>
         <link rel="canonical" href="https://sivnco.in/jusamazin/marketing" /><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Marketing & Digital — Sivnco</title><meta name="description" content="Multimedia workspace — quick-commerce video engine, color triage, competitor benchmarking."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" /><style dangerouslySetInnerHTML={{__html:CSS}}/></Head>
 <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
-<nav className="mk-nav"><Link href="/" className="mk-logo">SIVNCO<span style={{color:'var(--mk-accent)'}}>.</span></Link><Link href="/jusamazin" className="mk-back">← Case Study</Link></nav>
+<Navbar backLink="/jusamazin" backLabel="← Case Study" />
 <div className="mk-hero"><div className="mk-hero-bg"/><div className="mk-hero-inner"><div className="mk-hero-tag">Omnichannel Deployment / Media Synthesis</div><h1><span>Marketing</span><br/>&amp; Digital<em>High-fidelity motion design for Blinkit & Amazon. Synthetic media, rapid experimentation, and color space triage.</em></h1></div></div>
 <section className="mk-s" style={{padding:0,borderBottom:'none'}}><div className="mk-pillars"><div className="mk-pill-left"><div className="mk-label mkv">Strategy</div><div className="mk-title mkv">Multimedia<br/><em>Workspace.</em></div><p className="mk-body mkv">The rapid experimentation engine powering digital asset deployment across every commerce channel.</p></div><div className="mk-pill-right">{PILLARS.map((p,i)=>(<div key={i} className="mk-pill-card mkv"><div className="mk-label">{`0${i+1}`}</div><h3>{p.h}</h3><p>{p.b}</p></div>))}</div></div></section>
 <section className="mk-s"><div className="mk-c"><div className="mk-label mkv">Workflow</div><div className="mk-title mkv">Campaign<br/><em>Timeline.</em></div><div className="mk-timeline mkv"><div className="mk-tl-item"><div className="mk-tl-chan">BLINKIT</div><div className="mk-tl-desc">Pancake Mix video content production via VEED engine</div><div className="mk-tl-status">DEPLOYED</div></div><div className="mk-tl-item"><div className="mk-tl-chan">AMAZON</div><div className="mk-tl-desc">E-commerce listing updates and catalog enrichment</div><div className="mk-tl-status">DEPLOYED</div></div><div className="mk-tl-item"><div className="mk-tl-chan">FLIPKART</div><div className="mk-tl-desc">sRGB color profile triage for PCMBB 250g infographics</div><div className="mk-tl-status">RESOLVED</div></div></div></div></section>

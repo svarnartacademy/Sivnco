@@ -186,6 +186,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 }
 `
 
+import Navbar from '../components/Navbar';
+
 export default function DesignSystems() {
   return (
     <>
@@ -206,10 +208,7 @@ export default function DesignSystems() {
       <div id="dot" />
 
       {/* NAV */}
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">

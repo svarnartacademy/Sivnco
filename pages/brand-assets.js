@@ -188,6 +188,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ba-border)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
 `
 
+import Navbar from '../components/Navbar';
+
 export default function BrandAssets() {
   return (
     <>
@@ -207,10 +209,7 @@ export default function BrandAssets() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--ba-accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">

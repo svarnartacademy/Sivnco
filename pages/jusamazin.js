@@ -239,6 +239,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 @media(max-width:540px){.wip-grid{grid-template-columns:1fr}}
 `
 
+import Navbar from '../components/Navbar';
+
 export default function JusAmazin() {
   const [wipFilter, setWipFilter] = useState('all')
   const [activeModalItem, setActiveModalItem] = useState(null)
@@ -264,10 +266,7 @@ export default function JusAmazin() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{color:'var(--ja-accent)'}}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero" style={{position:'relative', overflow:'hidden'}}>

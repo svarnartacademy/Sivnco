@@ -200,6 +200,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
 }
 `
 
+import Navbar from '../components/Navbar'
+
 export default function WebDevelopment() {
   return (
     <>
@@ -222,10 +224,7 @@ export default function WebDevelopment() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">

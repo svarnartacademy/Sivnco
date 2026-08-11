@@ -213,6 +213,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ih-border)}
 .ih-pill:hover{border-color:var(--ih-accent);color:var(--ih-accent);transform:translateY(-2px)}
 `
 
+import Navbar from '../components/Navbar';
+
 export default function InHouseDesigns() {
   return (
     <>
@@ -234,10 +236,7 @@ export default function InHouseDesigns() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--ih-accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">

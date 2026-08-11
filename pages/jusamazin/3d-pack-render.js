@@ -109,6 +109,8 @@ a{color:inherit;text-decoration:none}
 }
 `
 
+import Navbar from '../../components/Navbar'
+
 export default function PackRender3D() {
   const [loaded, setLoaded] = useState({})
   return (
@@ -130,10 +132,7 @@ export default function PackRender3D() {
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 
       {/* NAV */}
-      <nav className="pr-nav">
-        <Link href="/" className="pr-logo">SIVNCO<span style={{color:'var(--pr-accent)'}}>.</span></Link>
-        <Link href="/jusamazin" className="pr-back">← Case Study</Link>
-      </nav>
+      <Navbar backLink="/jusamazin" backLabel="← Case Study" />
 
       {/* HERO */}
       <div className="pr-hero">

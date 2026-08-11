@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
+import Navbar from '../components/Navbar'
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -795,15 +796,7 @@ export default function Campaigns() {
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
 
       {/* NAV */}
-      <nav className="cp-nav">
-        <Link href="/" className="cp-logo">SIVNCO<span style={{ color: 'var(--cp-accent)' }}>.</span></Link>
-        <div className="cp-nav-links">
-          {CAMPAIGNS.map(c => (
-            <a key={c.id} href={`#${c.id}`} className="cp-cam-link">{c.num} {c.title}</a>
-          ))}
-        </div>
-        <Link href="/" className="cp-back">← All Work</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="cp-hero">

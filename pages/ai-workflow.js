@@ -180,6 +180,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ai-border)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
 `
 
+import Navbar from '../components/Navbar';
+
 export default function AIWorkflow() {
   return (
     <>
@@ -199,10 +201,7 @@ export default function AIWorkflow() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--ai-accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">

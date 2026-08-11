@@ -146,6 +146,8 @@ a{color:inherit;text-decoration:none}
 }
 `
 
+import Navbar from '../../components/Navbar';
+
 export default function DesiEnergyBar() {
   const [filter, setFilter] = useState('all')
   return (
@@ -164,10 +166,7 @@ export default function DesiEnergyBar() {
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive"/>
 
       {/* NAV */}
-      <nav className="deb-nav">
-        <Link href="/" className="deb-logo">SIVNCO<span style={{color:'var(--deb-accent)'}}>.</span></Link>
-        <Link href="/jusamazin" className="deb-back">← Case Study</Link>
-      </nav>
+      <Navbar backLink="/jusamazin" backLabel="← Case Study" />
 
       {/* S1: HERO */}
       <div className="deb-hero">

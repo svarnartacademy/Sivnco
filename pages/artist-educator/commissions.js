@@ -52,6 +52,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 }
 `
 
+import Navbar from '../../components/Navbar';
+
 export default function Commissions() {
   return (
     <>
@@ -72,10 +74,7 @@ export default function Commissions() {
       <div id="dot" />
 
       {/* NAVIGATION */}
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--ae-accent)' }}>.</span></Link>
-        <Link href="/artist-educator" className="back">← Art &amp; Educator</Link>
-      </nav>
+      <Navbar backLink="/artist-educator" backLabel="← Art & Educator" />
 
       {/* HERO */}
       <div className="hero">

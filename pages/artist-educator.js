@@ -216,6 +216,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .ae-pill:hover{border-color:var(--ae-accent);color:var(--ae-accent);transform:translateY(-2px)}
 `
 
+import Navbar from '../components/Navbar';
+
 export default function ArtistEducator() {
   return (
     <>
@@ -235,10 +237,7 @@ export default function ArtistEducator() {
 
       <div id="dot" />
 
-      <nav>
-        <Link href="/" className="logo">SIVNCO<span style={{ color: 'var(--ae-accent)' }}>.</span></Link>
-        <Link href="/" className="back">← Portfolio</Link>
-      </nav>
+      <Navbar />
 
       {/* HERO */}
       <div className="hero">
