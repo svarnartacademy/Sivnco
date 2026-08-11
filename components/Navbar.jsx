@@ -61,7 +61,7 @@ export default function Navbar({ backLink, backLabel }) {
   return (
     <nav
       ref={navRef}
-      className={`site-nav ${chatOpen ? 'chat-open' : ''} ${menuOpen ? 'menu-open' : ''}`}
+      className={`nav site-nav ${chatOpen ? 'chat-open' : ''} ${menuOpen ? 'menu-open' : ''}`}
       id="mainNav"
     >
       <div className="site-nav-row">
