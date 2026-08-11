@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import { useState } from 'react'
 import StartProjectButton from '@/components/demo'
-
 
 const METRICS = [
   {n:'176%', l:'Revenue Growth FY24–25'},
@@ -25,6 +25,21 @@ const RESULTS = [
 const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-founder & CEO'},{i:'SH',n:'Shilpa',r:'Co-founder & CEO'}]
 const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amarjit Singh',r:'Sales Head'},{i:'SG',n:'Siddharth G',r:'Production Executive'},{i:'BH',n:'Bhoomika',r:'Quality Analyst'}]
 
+const WIP_ITEMS = [
+  { id: 'wip-1', title: 'Flexographic Press Proof', cat: 'proof', src: '/images/jusamazin/process/proof_print_06.jpg', desc: 'Real-time color registration check during high-speed flexo label printing for Jus Amazin spreads.', tag: 'Press Proofing' },
+  { id: 'wip-2', title: 'Color Swatch Alignment', cat: 'proof', src: '/images/jusamazin/process/proof_print_04.jpg', desc: 'Matching brand pantone colors with physical printed substrates to guarantee visual fidelity.', tag: 'Color Test' },
+  { id: 'wip-3', title: 'Foil & Embossing Check', cat: 'proof', src: '/images/jusamazin/process/proof_print_05.jpg', desc: 'Evaluating tactile foil finish and typography legibility under retail light conditions.', tag: 'Material Proof' },
+  { id: 'wip-4', title: 'Press Sheet Quality Audit', cat: 'proof', src: '/images/jusamazin/process/proof_print_01.jpg', desc: 'Uncut press sheets undergoing final quality assurance before full-scale production.', tag: 'Quality Control' },
+  { id: 'wip-5', title: 'Drawing Board Layout', cat: 'draft', src: '/images/jusamazin/process/draft_packaging_06.jpg', desc: 'Early grid architecture and typographic layout exploration on the drawing board.', tag: 'Concept Layout' },
+  { id: 'wip-6', title: 'Packaging Box Draft', cat: 'draft', src: '/images/jusamazin/process/draft_packaging_04.jpg', desc: 'Structural die-cut prototyping for outer retail cartons and display boxes.', tag: 'Structural Prototyping' },
+  { id: 'wip-7', title: 'Energy Bar Wrapper Draft', cat: 'draft', src: '/images/jusamazin/process/draft_packaging_03.jpg', desc: 'Testing contrasting color blocks and illustration placement on flow-wrap packaging.', tag: 'Wrapper Design' },
+  { id: 'wip-8', title: 'Jar Label Alignment', cat: 'draft', src: '/images/jusamazin/process/draft_packaging_05.jpg', desc: 'Evaluating front-of-pack copy hierarchy and organic trust icons on glass jars.', tag: 'Label Design' },
+  { id: 'wip-9', title: 'Retail Shelf Pickup Test', cat: 'retail', src: '/images/jusamazin/process/retail_trial_01.jpg', desc: 'Field-testing packaging visibility and shelf standout across supermarket display racks.', tag: 'Retail Audit' },
+  { id: 'wip-10', title: 'POS Stand Trial', cat: 'retail', src: '/images/jusamazin/process/retail_trial_02.jpg', desc: 'Modular point-of-sale branding unit designed for high-density retail checkout zones.', tag: 'POS Testing' },
+  { id: 'wip-11', title: 'Display Box Arrangement', cat: 'retail', src: '/images/jusamazin/process/retail_trial_03.jpg', desc: 'Countertop display box testing to maximize product density and visual impulse buy.', tag: 'Display Box' },
+  { id: 'wip-12', title: 'Shelf Contrast Analysis', cat: 'retail', src: '/images/jusamazin/process/retail_trial_04.jpg', desc: 'Verifying how Jus Amazin packages cut through competitor noise under store spotlights.', tag: 'Visibility Test' },
+]
+
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--ja-bg:#0A0906;--ink:#F0EDE6;--ja-muted:rgba(240,237,230,0.45);--ja-accent:#D4600A;--ja-border:rgba(240,237,230,0.08);--ja-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
@@ -43,7 +58,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
 .back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--ja-border);border-radius:40px;transition:.3s}
 .back:hover{border-color:var(--ja-accent);color:var(--ja-accent)}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--ja-border);position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:7.5rem 5vw 4rem;border-bottom:1px solid var(--ja-border);position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--ja-accent);margin-bottom:2rem}
 .hero-title{font-family:var(--D);font-weight:900;font-size:clamp(6rem,16vw,15rem);line-height:1.05;}
@@ -198,9 +213,40 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .video-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--ja-border);background:var(--ja-glass);aspect-ratio:16/9;width:100%;transition:border-color .4s,box-shadow .4s}
 .video-wrap:hover{border-color:rgba(212,96,10,0.3);box-shadow:0 0 30px rgba(212,96,10,0.08)}
 .video-element{width:100%;height:100%;object-fit:cover;display:block}
+
+/* WIP Section & Modal */
+.wip-filter-bar{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.wip-filter-btn{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;padding:.55rem 1.4rem;border:1px solid var(--ja-border);border-radius:40px;background:transparent;color:var(--ja-muted);cursor:pointer;transition:all .3s}
+.wip-filter-btn:hover,.wip-filter-btn.active{border-color:var(--ja-accent);color:var(--ja-accent);background:rgba(212,96,10,.08)}
+.wip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border)}
+.wip-card{background:var(--ja-bg);padding:1.2rem;cursor:pointer;position:relative;overflow:hidden;transition:background .4s}
+.wip-card:hover{background:rgba(212,96,10,.04)}
+.wip-img-wrap{aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1rem;position:relative}
+.wip-img-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(0.85);transition:transform .6s cubic-bezier(.16,1,.3,1),filter .4s}
+.wip-card:hover .wip-img-wrap img{transform:scale(1.06);filter:saturate(1.1)}
+.wip-tag{font-family:var(--M);font-size:.52rem;letter-spacing:.18em;color:var(--ja-accent);text-transform:uppercase;margin-bottom:.4rem}
+.wip-card-title{font-family:var(--D);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.4rem}
+.wip-card-desc{font-family:var(--S);font-size:.88rem;color:var(--ja-muted);line-height:1.6}
+.wip-modal-overlay{position:fixed;inset:0;z-index:100000;background:rgba(10,9,6,.92);backdrop-filter:blur(15px);display:flex;align-items:center;justify-content:center;padding:2rem}
+.wip-modal-content{background:#12100C;border:1px solid var(--ja-border);border-radius:12px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.8)}
+.wip-modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:1px solid var(--ja-border);color:var(--ink);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--M);cursor:pointer;transition:.3s}
+.wip-modal-close:hover{border-color:var(--ja-accent);color:var(--ja-accent)}
+.wip-modal-img-wrap{width:100%;max-height:500px;border-radius:8px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1.8rem}
+.wip-modal-img-wrap img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.wip-modal-title{font-family:var(--D);font-weight:900;font-size:1.8rem;color:var(--ink);margin-bottom:.6rem}
+.wip-modal-body{font-family:var(--S);font-size:1.05rem;color:var(--ja-muted);line-height:1.8}
+@media(max-width:900px){.wip-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.wip-grid{grid-template-columns:1fr}}
 `
 
 export default function JusAmazin() {
+  const [wipFilter, setWipFilter] = useState('all')
+  const [activeModalItem, setActiveModalItem] = useState(null)
+
+  const filteredWip = wipFilter === 'all' 
+    ? WIP_ITEMS 
+    : WIP_ITEMS.filter(item => item.cat === wipFilter)
+
   return (
     <>
       <Head>
@@ -359,7 +405,6 @@ export default function JusAmazin() {
         <div className="ba rv2">
           <div className="ba-side">
             <div className="ba-tag">Before — Aug 2023 (at joining)</div>
-            {/* Real before-packaging: the 3 images show the problem visually */}
             <div className="ba-imgs">
               <div className="ba-img-w">
                 <img loading="lazy" src="/images/before/before_jar.jpg" alt="Old peanut butter jar — inconsistent label" />
@@ -377,9 +422,50 @@ export default function JusAmazin() {
         </div>
       </div></section>
 
+      {/* DESIGN PROCESS & WIP SHOWCASE */}
+      <section><div className="c">
+        <div className="s-label rv">05 — Behind The Scenes</div>
+        <h2 className="s-title rv">Design Process<br/><i>&amp; In-Progress Work.</i></h2>
+        <p className="body rv" style={{marginBottom:'3rem'}}>
+          An intimate look into the drawing board iterations, press proofing, substrate trials, and retail shelf pickups that brought the Jus Amazin brand system to life.
+        </p>
+
+        {/* Filter buttons */}
+        <div className="wip-filter-bar rv2">
+          {[
+            { id: 'all', label: 'All Artifacts' },
+            { id: 'proof', label: 'Print & Press Proofs' },
+            { id: 'draft', label: 'Packaging Drafts' },
+            { id: 'retail', label: 'Retail & POS Trials' },
+          ].map(f => (
+            <button
+              key={f.id}
+              className={`wip-filter-btn ${wipFilter === f.id ? 'active' : ''}`}
+              onClick={() => setWipFilter(f.id)}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        {/* WIP Grid */}
+        <div className="wip-grid rv2">
+          {filteredWip.map(item => (
+            <div key={item.id} className="wip-card" onClick={() => setActiveModalItem(item)}>
+              <div className="wip-img-wrap">
+                <img loading="lazy" src={item.src} alt={item.title} />
+              </div>
+              <div className="wip-tag">{item.tag}</div>
+              <div className="wip-card-title">{item.title}</div>
+              <div className="wip-card-desc">{item.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div></section>
+
       {/* DELIVERABLES */}
       <section><div className="c">
-        <div className="s-label rv">05 — Deliverables</div>
+        <div className="s-label rv">06 — Deliverables</div>
         <h2 className="s-title rv">Full<br/><i>system.</i></h2>
         <div className="dels rv2">
           {DELIVERABLES.map(d=>(
@@ -390,7 +476,7 @@ export default function JusAmazin() {
 
       {/* TEAM */}
       <section className="forest"><div className="c">
-        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>06 — The People</div>
+        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>07 — The People</div>
         <h2 className="s-title rv">Who we<br/><i>worked with.</i></h2>
         <div className="rv2">
           <div className="team-g">Founders &amp; Leadership</div>
@@ -406,7 +492,7 @@ export default function JusAmazin() {
 
       {/* RESULTS */}
       <section><div className="c">
-        <div className="s-label rv">07 — Results</div>
+        <div className="s-label rv">08 — Results</div>
         <h2 className="s-title rv">What the<br/><i>numbers say.</i></h2>
         <ul className="rlist rv2">
           {RESULTS.map((r,i)=>(
@@ -414,6 +500,21 @@ export default function JusAmazin() {
           ))}
         </ul>
       </div></section>
+
+      {/* LIGHTBOX MODAL */}
+      {activeModalItem && (
+        <div className="wip-modal-overlay" onClick={() => setActiveModalItem(null)}>
+          <div className="wip-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="wip-modal-close" onClick={() => setActiveModalItem(null)}>✕</button>
+            <div className="wip-modal-img-wrap">
+              <img src={activeModalItem.src} alt={activeModalItem.title} />
+            </div>
+            <div className="wip-tag">{activeModalItem.tag}</div>
+            <div className="wip-modal-title">{activeModalItem.title}</div>
+            <p className="wip-modal-body">{activeModalItem.desc}</p>
+          </div>
+        </div>
+      )}
 
       {/* FOOTER */}
       <div className="c">

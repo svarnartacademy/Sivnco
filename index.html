@@ -138,10 +138,10 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       text-align: center;
-      padding-top: 9rem;
+      padding: var(--hero-top-pad, 3.5rem) 0 0;
       overflow: hidden;
     }
 
@@ -447,7 +447,7 @@
       top: var(--banner-height, 0px);
       left: 0;
       right: 0;
-      padding: 2rem 4vw;
+      padding: 1.1rem 4vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1438,10 +1438,9 @@
     /* COMPREHENSIVE MOBILE RESPONSIVE STYLES  */
     /* ======================================= */
 
-    /* Tablets & small laptops */
     @media(max-width:1024px) {
       .hero-section {
-        padding-top: 8rem;
+        padding: var(--hero-top-pad, 3.5rem) 0 0;
       }
       .h-massive {
         font-size: clamp(3rem, 11vw, 8rem);
@@ -1484,8 +1483,7 @@
       .hero-section {
         height: auto;
         min-height: 100vh;
-        padding-top: 10rem;
-        padding-bottom: 3rem;
+        padding: var(--hero-top-pad, 3.5rem) 0 3rem;
       }
       .h-massive {
         font-size: clamp(2.8rem, 12vw, 7rem);
@@ -2019,8 +2017,8 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 6rem;
-      align-items: center;
-      min-height: 82vh;
+      align-items: flex-start;
+      min-height: auto;
       padding: 0;
       position: relative;
       z-index: 2;
@@ -2028,15 +2026,15 @@
     .hero-left {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding-top: 2rem;
+      justify-content: flex-start;
+      padding-top: 0;
     }
     .hero-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 2.5rem;
-      padding-top: 2rem;
+      padding-top: 0;
       padding-bottom: 2rem;
       border-left: 1px solid var(--glass-border);
       padding-left: 4rem;
@@ -3908,12 +3906,23 @@
         banner.style.transform = 'translateY(-100%)';
         banner.style.opacity = '0';
         document.documentElement.style.setProperty('--banner-height', '0px');
+        updateHeroTopPad();
         
         banner.addEventListener('transitionend', () => {
           banner.style.display = 'none';
         }, { once: true });
       }, 5000);
     })();
+
+    // --- HERO TOP PADDING — nav height only (body padding-top already offsets banner) ---
+    function updateHeroTopPad() {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      const navH = nav.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--hero-top-pad', (navH + 8) + 'px');
+    }
+    updateHeroTopPad();
+    window.addEventListener('resize', updateHeroTopPad);
   </script>
 </body>
 

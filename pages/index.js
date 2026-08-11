@@ -86,9 +86,21 @@ const MOBILE_CSS = `
   /* SIVNCO MOBILE RESPONSIVE — injected by pages/index.js   */
   /* ======================================================= */
 
-  /* Tablets */
+  .nav { padding: 1.1rem 4vw !important; }
+  .hero-section {
+    align-items: flex-start !important;
+  }
+  .hero-split {
+    min-height: auto !important;
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+  }
+  .hero-left, .hero-right {
+    padding-top: 0 !important;
+  }
+
   @media(max-width:1024px) {
-    .hero-section { padding-top: 8rem !important; }
+    .hero-section { align-items: flex-start !important; }
     .h-massive { font-size: clamp(3.5rem, 12vw, 10rem) !important; }
     .hero-stats-bar { gap: 2rem; }
   }
@@ -106,13 +118,13 @@ const MOBILE_CSS = `
     }
 
     /* Nav */
-    .nav { padding: 1.2rem 4vw !important; top: var(--banner-height, 0px) !important; transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important; }
+    .nav { padding: 1rem 4vw !important; top: var(--banner-height, 0px) !important; transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important; }
     .nav-links { gap: 1rem !important; }
     .nav-links a { font-size: 0.6rem !important; }
     .nav-cta { font-size: 0.65rem !important; padding: 0.6rem 1rem !important; }
 
     /* Hero */
-    .hero-section { height: auto !important; min-height: 100vh !important; padding-top: 10rem !important; padding-bottom: 3rem !important; }
+    .hero-section { height: auto !important; min-height: 100vh !important; padding-bottom: 3rem !important; }
     .h-massive { font-size: clamp(3rem, 14vw, 8rem) !important; }
     .h-large { font-size: clamp(2.2rem, 8vw, 5rem) !important; }
     .hero-roles { gap: 1rem !important; font-size: 0.6rem !important; margin-top: 2rem !important; }
