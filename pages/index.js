@@ -311,6 +311,58 @@ export default function Home({ bodyHTML, inlineScript }) {
           })();
         ` }}
       />
+
+      {/* Maya nav toggle — runs immediately, no GSAP dependency */}
+      <Script
+        id="maya-nav"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: `
+(function() {
+  function initMaya() {
+    var nav       = document.getElementById('mainNav');
+    var toggleBtn = document.getElementById('mayaToggleBtn');
+    var closeBtn  = document.getElementById('mayaCloseBtn');
+    var iframe    = document.getElementById('mayaFrame');
+    if (!nav || !toggleBtn) return;
+
+    function openMaya() {
+      nav.classList.add('chat-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      if (iframe && iframe.dataset.src && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+      setTimeout(function() {
+        document.addEventListener('pointerdown', outsideClose);
+      }, 10);
+    }
+
+    function closeMaya() {
+      nav.classList.remove('chat-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('pointerdown', outsideClose);
+    }
+
+    function outsideClose(e) {
+      if (!nav.contains(e.target)) closeMaya();
+    }
+
+    toggleBtn.addEventListener('click', function() {
+      nav.classList.contains('chat-open') ? closeMaya() : openMaya();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMaya);
+    window.toggleMayaChat = function() {
+      nav.classList.contains('chat-open') ? closeMaya() : openMaya();
+    };
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMaya);
+  } else {
+    initMaya();
+  }
+})();
+        ` }}
+      />
     </>
   )
 }
@@ -401,57 +453,12 @@ export async function getStaticProps() {
 })();
 `
 
-  // Maya nav chat toggle
-  const mayaNavScript = `
-(function() {
-  var nav     = document.getElementById('mainNav');
-  var toggleBtn = document.getElementById('mayaToggleBtn');
-  var closeBtn  = document.getElementById('mayaCloseBtn');
-  var iframe    = document.getElementById('mayaFrame');
-  if (!nav || !toggleBtn) return;
 
-  function openMaya() {
-    nav.classList.add('chat-open');
-    toggleBtn.setAttribute('aria-expanded', 'true');
-    // Lazy-load iframe src on first open
-    if (iframe && iframe.dataset.src && !iframe.src) {
-      iframe.src = iframe.dataset.src;
-    }
-    // Close on outside click/touch (after a tick to avoid self-triggering)
-    setTimeout(function() {
-      document.addEventListener('pointerdown', outsideClose);
-    }, 10);
-  }
-
-  function closeMaya() {
-    nav.classList.remove('chat-open');
-    toggleBtn.setAttribute('aria-expanded', 'false');
-    document.removeEventListener('pointerdown', outsideClose);
-  }
-
-  function outsideClose(e) {
-    if (!nav.contains(e.target)) {
-      closeMaya();
-    }
-  }
-
-  toggleBtn.addEventListener('click', function() {
-    nav.classList.contains('chat-open') ? closeMaya() : openMaya();
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeMaya);
-
-  // Also expose globally for other pages/components
-  window.toggleMayaChat = function() {
-    nav.classList.contains('chat-open') ? closeMaya() : openMaya();
-  };
-})();
-`;
 
   return {
     props: {
       bodyHTML: inlineCSS + bodyHTML,
-      inlineScript: inlineScript + formFetchScript + mobileScrollFix + mayaNavScript,
+      inlineScript: inlineScript + formFetchScript + mobileScrollFix,
     },
   }
 }
