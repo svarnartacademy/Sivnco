@@ -452,22 +452,30 @@
       border: none;
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION — floating pill */
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 1.1rem 4vw;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 4rem);
+      max-width: 900px;
+      padding: 0.75rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 100;
-      background: rgba(5, 5, 5, 0.55);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(240,237,230,0.06);
-      transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
+      background: rgba(8, 8, 8, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(240,237,230,0.1);
+      border-radius: 999px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .nav:hover {
+      background: rgba(10, 10, 10, 0.85);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.07);
     }
 
     .nav-logo {
