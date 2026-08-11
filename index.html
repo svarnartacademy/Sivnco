@@ -452,30 +452,109 @@
       border: none;
     }
 
-    /* NAVIGATION — floating pill */
+    /* NAVIGATION — morphing pill */
     .nav {
       position: fixed;
       top: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
-      width: calc(100% - 4rem);
-      max-width: 900px;
-      padding: 0.75rem 1.5rem;
+      width: calc(100% - 3rem);
+      max-width: 860px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-      background: rgba(8, 8, 8, 0.72);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      flex-direction: column;
+      z-index: 9000;
+      background: rgba(8, 8, 8, 0.78);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(240,237,230,0.1);
       border-radius: 999px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-      transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      transition:
+        border-radius 0.45s cubic-bezier(0.19,1,0.22,1),
+        max-width 0.45s cubic-bezier(0.19,1,0.22,1),
+        box-shadow 0.4s ease;
     }
-    .nav:hover {
-      background: rgba(10, 10, 10, 0.85);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.07);
+    .nav.chat-open {
+      border-radius: 20px;
+      max-width: 500px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* Top row — logo + links + Maya btn */
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.72rem 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* Expandable chat area — grid trick for smooth height */
+    .nav-chat-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.45s cubic-bezier(0.19,1,0.22,1);
+    }
+    .nav.chat-open .nav-chat-panel {
+      grid-template-rows: 1fr;
+    }
+    .nav-chat-panel-inner {
+      min-height: 0;
+      overflow: hidden;
+    }
+    .nav-chat-panel-body {
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(240,237,230,0.07);
+    }
+    /* Chat header inside expanded nav */
+    .nav-chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1.2rem;
+      background: rgba(212,96,10,0.07);
+      border-bottom: 1px solid rgba(240,237,230,0.06);
+      flex-shrink: 0;
+    }
+    .nav-chat-header-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--f-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(240,237,230,0.7);
+    }
+    .nav-chat-header-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #D4600A;
+      animation: navChatPulse 2s ease-in-out infinite;
+    }
+    .nav-chat-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(240,237,230,0.4);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+    .nav-chat-close:hover { color: rgba(240,237,230,0.9); }
+    .nav-chat-close svg { width: 14px; height: 14px; fill: currentColor; }
+    /* iframe inside nav */
+    .nav-maya-iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: transparent;
+      display: block;
     }
 
     .nav-logo {
@@ -500,28 +579,28 @@
       transform: scale(0.96);
     }
 
-    /* Chat button in nav pill */
+    /* Maya pill button inside nav */
     .nav-chat-btn {
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.42rem;
       font-family: var(--f-mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.15em;
+      font-size: 0.55rem;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--text-main);
-      background: rgba(212,96,10,0.12);
-      border: 1px solid rgba(212,96,10,0.3);
-      padding: 0.5rem 1rem;
+      background: rgba(212,96,10,0.13);
+      border: 1px solid rgba(212,96,10,0.35);
+      padding: 0.42rem 0.9rem;
       border-radius: 999px;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.19,1,0.22,1);
-      position: relative;
+      white-space: nowrap;
     }
     .nav-chat-btn:hover {
-      background: rgba(212,96,10,0.22);
-      border-color: rgba(212,96,10,0.6);
-      transform: scale(0.97);
+      background: rgba(212,96,10,0.24);
+      border-color: rgba(212,96,10,0.65);
+      transform: scale(0.96);
     }
     .nav-chat-btn .chat-pulse {
       width: 6px;
@@ -533,7 +612,7 @@
     }
     @keyframes navChatPulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(1.6); }
+      50%       { opacity: 0.45; transform: scale(1.65); }
     }
 
     /* GLASSMORPHISM CARDS */
@@ -2458,18 +2537,39 @@
 
 
 
-  <nav class="nav">
-    <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="/artist-educator">Art</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <nav class="nav" id="mainNav">
+    <!-- Top row: logo + links + Maya btn -->
+    <div class="nav-row">
+      <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="/artist-educator">Art</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-chat-btn" id="mayaToggleBtn" aria-label="Open Maya AI" aria-expanded="false">
+        <span class="chat-pulse"></span>
+        it's Maya
+      </button>
     </div>
-    <button class="nav-chat-btn" onclick="if(window.toggleAuraChat) window.toggleAuraChat()" aria-label="Open AI Assistant">
-      <span class="chat-pulse"></span>
-      Chat
-    </button>
+
+    <!-- Expandable chat panel — morphs inside the nav pill -->
+    <div class="nav-chat-panel" id="navChatPanel" aria-hidden="true">
+      <div class="nav-chat-panel-inner">
+        <div class="nav-chat-panel-body">
+          <div class="nav-chat-header">
+            <div class="nav-chat-header-label">
+              <div class="nav-chat-header-dot"></div>
+              Maya &nbsp;&middot;&nbsp; Shiv's AI
+            </div>
+            <button class="nav-chat-close" id="mayaCloseBtn" aria-label="Close Maya">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+          </div>
+          <iframe id="mayaFrame" class="nav-maya-iframe" title="Maya AI" allow="microphone" data-src="https://sivnco-1098322690658.asia-southeast1.run.app/"></iframe>
+        </div>
+      </div>
+    </div>
   </nav>
 
 
