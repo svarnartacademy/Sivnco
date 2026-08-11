@@ -119,7 +119,7 @@ const MOBILE_CSS = `
     }
 
     /* Nav pill on mobile — tighter width */
-    .nav { width: calc(100% - 2rem) !important; top: 0.65rem !important; padding: 0.6rem 1rem !important; }
+    .nav { width: calc(100% - 2rem) !important; top: 1rem !important; padding: 0.6rem 1rem !important; }
     .nav-links { gap: 1rem !important; }
     .nav-links a { font-size: 0.6rem !important; }
     .nav-cta { font-size: 0.65rem !important; padding: 0.6rem 1rem !important; }
@@ -353,6 +353,18 @@ export default function Home({ bodyHTML, inlineScript }) {
     window.toggleMayaChat = function() {
       nav.classList.contains('chat-open') ? closeMaya() : openMaya();
     };
+    // Contact anchor link smooth scroll to footer CTA section
+    document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetY = document.body.scrollHeight;
+        if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+          window.lenis.scrollTo(targetY, { duration: 1.2 });
+        } else {
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }
+      });
+    });
   }
 
   if (document.readyState === 'loading') {
