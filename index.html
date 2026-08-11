@@ -455,7 +455,7 @@
     /* NAVIGATION — floating pill */
     .nav {
       position: fixed;
-      top: 1rem;
+      top: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 4rem);
@@ -498,6 +498,42 @@
       background: var(--text-main);
       color: var(--bg-color);
       transform: scale(0.96);
+    }
+
+    /* Chat button in nav pill */
+    .nav-chat-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--f-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      background: rgba(212,96,10,0.12);
+      border: 1px solid rgba(212,96,10,0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.19,1,0.22,1);
+      position: relative;
+    }
+    .nav-chat-btn:hover {
+      background: rgba(212,96,10,0.22);
+      border-color: rgba(212,96,10,0.6);
+      transform: scale(0.97);
+    }
+    .nav-chat-btn .chat-pulse {
+      width: 6px;
+      height: 6px;
+      background: #D4600A;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: navChatPulse 2s ease-in-out infinite;
+    }
+    @keyframes navChatPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.6); }
     }
 
     /* GLASSMORPHISM CARDS */
@@ -2430,6 +2466,10 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
+    <button class="nav-chat-btn" onclick="if(window.toggleAuraChat) window.toggleAuraChat()" aria-label="Open AI Assistant">
+      <span class="chat-pulse"></span>
+      Chat
+    </button>
   </nav>
 
 
