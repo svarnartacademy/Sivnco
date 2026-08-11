@@ -91,7 +91,8 @@
 }
 
 /* ==========================================================================
-   EXACT UNIFIED SIVNCO FLOATING MORPHING NAV PILL
+   EXACT UNIFIED SIVNCO FLOATING MORPHING FROSTED GLASS NAV PILL
+   (Universally applied to Homepage & All Subpages)
    ========================================================================== */
 .site-nav,
 .nav {
@@ -352,11 +353,24 @@
   border-radius: 0 0 28px 28px !important;
 }
 
+/* Dynamic Responsive Scaling Across All Devices */
+@media (max-width: 900px) {
+  .site-nav,
+  .nav {
+    top: 1.25rem !important;
+    width: calc(100% - 2.5rem) !important;
+  }
+}
+
 @media (max-width: 768px) {
   .site-nav,
   .nav {
     top: 1rem !important;
     width: calc(100% - 2rem) !important;
+  }
+  .site-nav-row,
+  .nav-row {
+    padding: 0.65rem 1.1rem !important;
   }
   .site-nav-links,
   .nav-links {
@@ -365,5 +379,17 @@
   .site-nav-burger-btn,
   .nav-burger-btn {
     display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav,
+  .nav {
+    top: 0.75rem !important;
+    width: calc(100% - 1.5rem) !important;
+  }
+  .site-nav-row,
+  .nav-row {
+    padding: 0.55rem 0.9rem !important;
   }
 }

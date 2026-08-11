@@ -86,8 +86,6 @@ const MOBILE_CSS = `
   /* SIVNCO MOBILE RESPONSIVE — injected by pages/index.js   */
   /* ======================================================= */
 
-  /* Nav pill — keep shape at all sizes, just tighten padding */
-  .nav { padding: 0.65rem 1.2rem !important; }
   .hero-section {
     align-items: flex-start !important;
   }
@@ -117,12 +115,6 @@ const MOBILE_CSS = `
       justify-content: center !important;
       text-align: center !important;
     }
-
-    /* Nav pill on mobile — tighter width */
-    .nav { width: calc(100% - 2rem) !important; top: 1rem !important; padding: 0.6rem 1rem !important; }
-    .nav-links { gap: 1rem !important; }
-    .nav-links a { font-size: 0.6rem !important; }
-    .nav-cta { font-size: 0.65rem !important; padding: 0.6rem 1rem !important; }
 
     /* Hero */
     .hero-section { height: auto !important; min-height: 100vh !important; padding-bottom: 3rem !important; }
