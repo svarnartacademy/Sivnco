@@ -141,13 +141,19 @@
       align-items: flex-start;
       justify-content: center;
       text-align: center;
-      padding: var(--hero-top-pad, 3.5rem) 0 5rem;
+      padding: var(--hero-top-pad, 3.5rem) 0 4rem;
       overflow: visible;
     }
 
     .reveal-wrap {
       overflow: hidden;
       display: block;
+    }
+
+    /* Clip only the WebGL canvas background, not the text */
+    .hero-section > [aria-hidden="true"]:first-child {
+      overflow: hidden;
+      border-radius: 0;
     }
 
     .hero-section .container {
@@ -457,8 +463,11 @@
       justify-content: space-between;
       align-items: center;
       z-index: 100;
-      mix-blend-mode: difference;
-      transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(5, 5, 5, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(240,237,230,0.06);
+      transition: top 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
     }
 
     .nav-logo {
@@ -2021,7 +2030,7 @@
     .hero-split {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 6rem;
+      gap: 4rem;
       align-items: flex-start;
       min-height: auto;
       padding: 0;
