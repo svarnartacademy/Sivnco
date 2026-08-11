@@ -27,8 +27,7 @@ const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--sf-bg:#0A0906;--sf-white:#F0EDE6;--sf-accent:#7F8C8D;--sf-red:#E74C3C;--sf-muted:rgba(240,237,230,0.45);--sf-border:rgba(240,237,230,0.08);--sf-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--sf-bg);color:var(--sf-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
-.sf-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--sf-border)}
-.sf-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}.sf-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--sf-border);border-radius:40px;transition:.3s}.sf-back:hover{border-color:var(--sf-accent);color:var(--sf-white)}
+
 .sf-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--sf-border)}
 .sf-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(127,140,141,0.15),transparent 55%),radial-gradient(ellipse at 75% 25%,rgba(231,76,60,0.08),transparent 55%),var(--sf-bg)}
 .sf-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}

@@ -26,10 +26,7 @@ html{scroll-behavior:smooth}
 body{background:var(--pr-bg);color:var(--pr-white);font-family:var(--S);overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
-.pr-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--pr-border)}
-.pr-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
-.pr-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--pr-border);border-radius:40px;transition:.3s}
-.pr-back:hover{border-color:var(--pr-accent);color:var(--pr-accent)}
+
 
 .pr-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--pr-border)}
 .pr-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(123,97,255,0.18),transparent 55%),radial-gradient(ellipse at 75% 20%,rgba(212,96,10,0.1),transparent 55%),var(--pr-bg);animation:prShift 12s ease-in-out infinite}

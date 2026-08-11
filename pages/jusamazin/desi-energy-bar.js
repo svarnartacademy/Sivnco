@@ -39,11 +39,7 @@ html{scroll-behavior:smooth}
 body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
-/* NAV */
-.deb-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(13,13,13,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--deb-border)}
-.deb-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
-.deb-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--deb-border);border-radius:40px;transition:.3s}
-.deb-back:hover{border-color:var(--deb-accent);color:var(--deb-accent)}
+
 
 /* HERO */
 .deb-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--deb-border)}

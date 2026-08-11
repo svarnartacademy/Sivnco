@@ -46,8 +46,7 @@ const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--mk-bg:#0A0906;--mk-white:#F0EDE6;--mk-accent:#2ECC71;--mk-amber:#F39C12;--mk-muted:rgba(240,237,230,0.45);--mk-border:rgba(240,237,230,0.08);--mk-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
-.mk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--mk-border)}
-.mk-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}.mk-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--mk-border);border-radius:40px;transition:.3s}.mk-back:hover{border-color:var(--mk-accent);color:var(--mk-accent)}
+
 .mk-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--mk-border)}
 .mk-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(46,204,113,0.15),transparent 55%),radial-gradient(ellipse at 75% 25%,rgba(243,156,18,0.08),transparent 55%),var(--mk-bg);animation:mkPulse 10s ease-in-out infinite}
 @keyframes mkPulse{0%,100%{opacity:.85}50%{opacity:1}}

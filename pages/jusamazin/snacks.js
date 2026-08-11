@@ -17,8 +17,7 @@ const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--sn-bg:#0A0906;--sn-white:#F0EDE6;--sn-accent:#D4960A;--sn-blue:#0066FF;--sn-muted:rgba(240,237,230,0.45);--sn-border:rgba(240,237,230,0.08);--sn-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--sn-bg);color:var(--sn-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
-.sn-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--sn-border)}
-.sn-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}.sn-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--sn-border);border-radius:40px;transition:.3s}.sn-back:hover{border-color:var(--sn-accent);color:var(--sn-accent)}
+
 .sn-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--sn-border)}
 .sn-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 75%,rgba(212,150,10,0.18),transparent 55%),radial-gradient(ellipse at 80% 25%,rgba(0,102,255,0.08),transparent 55%),var(--sn-bg);animation:snPulse 10s ease-in-out infinite}
 @keyframes snPulse{0%,100%{opacity:.85}50%{opacity:1}}

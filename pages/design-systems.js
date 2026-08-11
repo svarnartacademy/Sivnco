@@ -75,11 +75,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 a{color:inherit;text-decoration:none}
 .c{max-width:1200px;margin:0 auto;padding:0 5vw}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
-.back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--border);border-radius:40px;transition:.3s}
-.back:hover{border-color:var(--accent);color:var(--accent)}
+
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:12rem 5vw 5rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
@@ -169,7 +165,7 @@ section{padding:9rem 0;border-bottom:1px solid var(--border)}
   .process-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  nav{padding:1.2rem 4vw}
+
   .hero{padding-top:10rem;padding-bottom:4rem}
   .hero-title{font-size:clamp(3rem,10vw,6.5rem)}
   .hero-meta{gap:1.5rem;margin-top:3rem}

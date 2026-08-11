@@ -54,10 +54,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 #dot.lg{width:36px;height:36px;background:transparent;border:1.5px solid var(--ja-accent);opacity:.7}
 a{color:inherit;text-decoration:none}
 .c{max-width:1200px;margin:0 auto;padding:0 5vw}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(10,9,6,0.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--ja-border)}
-.logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}
-.back{font-family:var(--M);font-size:.62rem;letter-spacing:.2em;padding:.6rem 1.5rem;border:1px solid var(--ja-border);border-radius:40px;transition:.3s}
-.back:hover{border-color:var(--ja-accent);color:var(--ja-accent)}
+
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:7.5rem 5vw 4rem;border-bottom:1px solid var(--ja-border);position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,6,.92) 35%,rgba(10,9,6,.55) 65%,rgba(10,9,6,.25) 100%);pointer-events:none;z-index:0}
 .eyebrow{font-family:var(--M);font-size:.62rem;letter-spacing:.25em;color:var(--ja-accent);margin-bottom:2rem}

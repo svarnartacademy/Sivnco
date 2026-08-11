@@ -321,14 +321,7 @@ html{scroll-behavior:smooth}
 body{background:var(--cp-bg);color:var(--cp-white);font-family:var(--S);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 
-/* NAV */
-.cp-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--cp-border)}
-.cp-logo{font-family:var(--D);font-size:1.3rem;letter-spacing:.08em}
-.cp-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--cp-border);border-radius:40px;transition:.3s}
-.cp-back:hover{border-color:var(--cp-accent);color:var(--cp-accent)}
-.cp-nav-links{display:flex;gap:2.5rem;align-items:center}
-.cp-nav-links a{font-family:var(--M);font-size:.65rem;letter-spacing:.15em;opacity:.6;transition:opacity .3s}
-.cp-nav-links a:hover{opacity:1}
+
 
 /* HERO */
 .cp-hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--cp-border);padding-top:6rem}

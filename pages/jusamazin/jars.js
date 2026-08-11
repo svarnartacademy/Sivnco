@@ -16,8 +16,7 @@ const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--jr-bg:#0A0906;--jr-white:#F0EDE6;--jr-accent:#C0A060;--jr-silver:#A0AEB8;--jr-muted:rgba(240,237,230,0.45);--jr-border:rgba(240,237,230,0.08);--jr-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--jr-bg);color:var(--jr-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
-.jr-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,9,6,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--jr-border)}
-.jr-logo{font-family:var(--D);font-weight:900;font-size:1.3rem;letter-spacing:.08em}.jr-back{font-family:var(--M);font-size:.6rem;letter-spacing:.2em;padding:.55rem 1.4rem;border:1px solid var(--jr-border);border-radius:40px;transition:.3s}.jr-back:hover{border-color:var(--jr-accent);color:var(--jr-accent)}
+
 .jr-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--jr-border)}
 .jr-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(192,160,96,0.15),transparent 55%),radial-gradient(ellipse at 75% 25%,rgba(160,174,184,0.08),transparent 55%),var(--jr-bg)}
 .jr-hero-inner{position:relative;z-index:2;padding:0 5vw 5rem;width:100%}
