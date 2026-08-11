@@ -318,16 +318,25 @@ export default function Home({ bodyHTML, inlineScript }) {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: `
 (function() {
-  function initMaya() {
+  function initNav() {
     var nav       = document.getElementById('mainNav');
-    var toggleBtn = document.getElementById('mayaToggleBtn');
-    var closeBtn  = document.getElementById('mayaCloseBtn');
+    var mayaBtn   = document.getElementById('mayaToggleBtn');
+    var burgerBtn = document.getElementById('menuToggleBtn');
     var iframe    = document.getElementById('mayaFrame');
-    if (!nav || !toggleBtn) return;
+    if (!nav) return;
+
+    function closeAll() {
+      nav.classList.remove('chat-open', 'menu-open');
+      if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'false');
+      if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('pointerdown', outsideClose);
+    }
 
     function openMaya() {
+      nav.classList.remove('menu-open');
+      if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
       nav.classList.add('chat-open');
-      toggleBtn.setAttribute('aria-expanded', 'true');
+      if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'true');
       if (iframe && iframe.dataset.src && !iframe.src) {
         iframe.src = iframe.dataset.src;
       }
@@ -336,27 +345,42 @@ export default function Home({ bodyHTML, inlineScript }) {
       }, 10);
     }
 
-    function closeMaya() {
+    function openMenu() {
       nav.classList.remove('chat-open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      document.removeEventListener('pointerdown', outsideClose);
+      if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'false');
+      nav.classList.add('menu-open');
+      if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'true');
+      setTimeout(function() {
+        document.addEventListener('pointerdown', outsideClose);
+      }, 10);
     }
 
     function outsideClose(e) {
-      if (!nav.contains(e.target)) closeMaya();
+      if (!nav.contains(e.target)) closeAll();
     }
 
-    toggleBtn.addEventListener('click', function() {
-      nav.classList.contains('chat-open') ? closeMaya() : openMaya();
+    if (mayaBtn) {
+      mayaBtn.addEventListener('click', function() {
+        nav.classList.contains('chat-open') ? closeAll() : openMaya();
+      });
+    }
+
+    if (burgerBtn) {
+      burgerBtn.addEventListener('click', function() {
+        nav.classList.contains('menu-open') ? closeAll() : openMenu();
+      });
+    }
+
+    // Auto close mobile menu when link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', closeAll);
     });
-    if (closeBtn) closeBtn.addEventListener('click', closeMaya);
-    window.toggleMayaChat = function() {
-      nav.classList.contains('chat-open') ? closeMaya() : openMaya();
-    };
+
     // Contact anchor link smooth scroll to footer CTA section
     document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
+        closeAll();
         var targetY = document.body.scrollHeight;
         if (window.lenis && typeof window.lenis.scrollTo === 'function') {
           window.lenis.scrollTo(targetY, { duration: 1.2 });
@@ -365,12 +389,16 @@ export default function Home({ bodyHTML, inlineScript }) {
         }
       });
     });
+
+    window.toggleMayaChat = function() {
+      nav.classList.contains('chat-open') ? closeAll() : openMaya();
+    };
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMaya);
+    document.addEventListener('DOMContentLoaded', initNav);
   } else {
-    initMaya();
+    initNav();
   }
 })();
         ` }}
