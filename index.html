@@ -82,8 +82,8 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       cursor: none;
-      padding-top: var(--banner-height, 0px);
-      transition: padding-top 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      padding-top: 0;
+      transition: none;
     }
 
     ::selection { background: var(--accent); color: var(--text-main); }
@@ -455,7 +455,7 @@
     /* NAVIGATION */
     .nav {
       position: fixed;
-      top: var(--banner-height, 0px);
+      top: 0;
       left: 0;
       right: 0;
       padding: 1.1rem 4vw;
@@ -2424,31 +2424,7 @@
     </div>
   </nav>
 
-  <!-- AVAILABILITY BANNER -->
-  <div id="availability-banner" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(212, 96, 10, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(212, 96, 10, 0.2);
-    padding: 0.6rem 5vw;
-    text-align: center;
-    font-family: var(--f-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    color: rgba(240, 237, 230, 0.85);
-    text-transform: uppercase;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
-  ">
-    <span style="color: var(--accent); margin-right: 0.6rem;">●</span>
-    Available for full-time Art Direction roles, agency placement, and select freelance projects
-    <span style="color: var(--accent); margin-left: 0.6rem;">·</span>
-    <a href="#contact" style="color: var(--accent); margin-left: 0.6rem; text-decoration: underline; text-underline-offset: 3px;">Get in touch</a>
-  </div>
+
 
   <!-- MAIN CONTENT WRAPPER -->
   <div class="main-wrap">
