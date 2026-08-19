@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { useEffect } from 'react';
 import Router from 'next/router';
+import SeedingBanner from '../components/SeedingBanner';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -55,5 +56,10 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <SeedingBanner />
+      <Component {...pageProps} />
+    </>
+  );
 }
