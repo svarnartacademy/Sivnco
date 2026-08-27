@@ -71,7 +71,7 @@ export default function BrandGuidelines(){return(<>
 <section className="bg-s"><div className="bg-c"><div className="bg-label bgv">Impact</div><div className="bg-title bgv">Design Ops<br/><em>Acceleration.</em></div><div className="bg-metrics bgv"><div className="bg-metric"><div className="bg-metric-n">40%</div><div className="bg-metric-l">Design Operations Efficiency Gain</div></div><div className="bg-metric"><div className="bg-metric-n">0</div><div className="bg-metric-l">Brand alignment errors post-integration</div></div></div></div></section>
 <section className="bg-s" style={{padding:0}}><div className="bg-gallery">{[
   {id:'brand_book_cover',alt:'Brand Book Cover',src:'/images/jusamazin/guidelines/brand_book_cover.jpg'},
-  {id:'typography_hierarchy',alt:'Typography Hierarchy',src:'/images/jusamazin/guidelines/typography_hierarchy.jpg'},
+  {id:'typography_hierarchy',alt:'Typography & Claim Ideation Sketches',src:'/images/jusamazin/process/draft_packaging_05.jpg'},
   {id:'template_rules',alt:'Template Rules',src:'/images/jusamazin/guidelines/template_rules.jpg'},
   {id:'color_system',alt:'Color System',src:'/images/jusamazin/guidelines/color_system.jpg'},
   {id:'logo_safety_zones',alt:'Logo Safety Zones',src:'/images/jusamazin/guidelines/logo_safety_zones.jpg'},

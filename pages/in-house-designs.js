@@ -51,10 +51,11 @@ const TIMELINE_SVARNART = [
 ]
 
 const OG_MITHAI_ASSETS = [
-  { id: 'front', name: 'Premium Box Front Render', role: 'Main Package Showcase', img: '/images/og_mithai/ogmitai_camera_front.png', size: 'large' },
-  { id: 'far', name: 'Perspective Mockup', role: 'Package Geometry & Depth', img: '/images/og_mithai/ogmitai_camera_far.png', size: 'wide' },
-  { id: 'front_alt', name: 'Alternate Front Layout', role: 'Typography Variations', img: '/images/og_mithai/ogmitai_camera_front_alt.png', size: 'standard' },
-  { id: 'mithai_3', name: 'Textured Box Print Detail', role: 'Close-Up Texture & Finish', img: '/images/og_mithai/ogmitai_3.png', size: 'standard' },
+  { id: 'front', name: 'Premium Box Front Render', role: 'Main Package Showcase', img: '/images/og_mithai/ogmitai_camera_front.jpg', size: 'large' },
+  { id: 'far', name: 'Perspective Mockup', role: 'Package Geometry & Depth', img: '/images/og_mithai/ogmitai_camera_far.jpg', size: 'wide' },
+  { id: 'front_alt', name: 'Alternate Front Layout', role: 'Typography Variations', img: '/images/og_mithai/ogmitai_camera_front_alt.jpg', size: 'standard' },
+  { id: 'mithai_3', name: 'Textured Box Print Detail', role: 'Close-Up Texture & Finish', img: '/images/og_mithai/ogmitai_3.jpg', size: 'standard' },
+  { id: 'whatsapp_mock', name: 'WhatsApp Quick Commerce Asset', role: 'D2C Direct Ordering Workflow', img: '/images/og_mithai/ogmitai_whatsapp.jpg', size: 'standard' },
 ]
 
 const VEDIC_TREATS_ASSETS = [
@@ -62,6 +63,7 @@ const VEDIC_TREATS_ASSETS = [
   { id: 'asset_1', name: 'Primary Package Asset', role: 'Earthy Illustration Elements', img: '/images/vedic_treats/asset_1.png', size: 'standard' },
   { id: 'asset_2', name: 'Pattern Asset', role: 'Geometric Print Rationale', img: '/images/vedic_treats/asset_2.png', size: 'standard' },
   { id: 'asset_3', name: 'Back Label Rationale', role: 'Ingredient Transparency Layout', img: '/images/vedic_treats/asset_3.png', size: 'standard' },
+  { id: 'dielines', name: 'Adobe Illustrator Vector Dielines', role: 'Production Packaging Specifications & Layer Architecture', img: '/images/jusamazin/process/draft_packaging_01.jpg', size: 'wide' },
 ]
 
 const TIMELINE_OG = [

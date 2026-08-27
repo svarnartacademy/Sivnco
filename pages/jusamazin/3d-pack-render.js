@@ -166,25 +166,29 @@ export default function PackRender3D() {
             <div className="pr-viewer">
               <div className="pr-viewer-badge">{`0${p.id}`}</div>
               {[1,2,3,4,5,6].includes(p.id) ? (
-                <model-viewer
-                  src={`/models/product-${p.id}.glb`}
-                  alt={p.name}
-                  auto-rotate
-                  camera-controls
-                  shadow-intensity="1"
-                  environment-image="neutral"
-                  style={{width:'100%',height:'100%',minHeight:'400px',background:'transparent'}}
-                />
+                <>
+                  <model-viewer
+                    src={`/models/product-${p.id}.glb`}
+                    alt={p.name}
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    environment-image="neutral"
+                    style={{width:'100%',height:'100%',minHeight:'400px',background:'transparent'}}
+                  />
+                  <div className="pr-viewer-hint">DRAG TO ROTATE · SCROLL TO ZOOM</div>
+                </>
               ) : (
-                <div className="pr-viewer-placeholder">
-                  <div style={{fontSize:'3rem',marginBottom:'1rem',opacity:.15,fontFamily:'var(--D)'}}>◇</div>
-                  {p.name.toUpperCase()}<br/>
-                  <span style={{fontSize:'.45rem',opacity:.5,marginTop:'.5rem',display:'block'}}>
-                    Drop .glb file in /public/models/product-{p.id}.glb
-                  </span>
+                <div style={{position:'relative',width:'100%',height:'100%',minHeight:'400px',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',background:'radial-gradient(circle at 50% 50%, rgba(123,97,255,0.14), rgba(10,9,6,0.95))'}}>
+                  <img
+                    loading="lazy"
+                    src={p.id === 7 ? '/images/jusamazin/superfoods/pouch_front_flax.jpg' : '/images/jusamazin/desi_bar/studio_render_a.jpg'}
+                    alt={p.name}
+                    style={{maxWidth:'85%',maxHeight:'340px',objectFit:'contain',filter:'drop-shadow(0 20px 35px rgba(0,0,0,0.85))',transition:'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'}}
+                  />
+                  <div className="pr-viewer-hint" style={{bottom:'1.2rem'}}>STUDIO PACK VISUAL · PRODUCTION SPEC COMPLIANT</div>
                 </div>
               )}
-              <div className="pr-viewer-hint">DRAG TO ROTATE · SCROLL TO ZOOM</div>
             </div>
             <div className="pr-info">
               <div className="pr-info-num">{String(p.id).padStart(2,'0')}</div>

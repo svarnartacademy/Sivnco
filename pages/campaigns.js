@@ -590,7 +590,7 @@ function ImagePlaceholder({ label, icon = 'image', accentColor }) {
   )
 }
 
-function RunwaySlot({ id, title, body, iconType }) {
+function RunwaySlot({ id, title, body, iconType, img }) {
   const icons = {
     baseline: (
       <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -642,9 +642,15 @@ function RunwaySlot({ id, title, body, iconType }) {
   return (
     <div className="cp-runway-slot">
       <div className="cp-runway-slot-id">{id}</div>
-      <div className="cp-runway-slot-img">
-        <div className="cp-runway-slot-img-icon">{icons[iconType] || icons.baseline}</div>
-        <div className="cp-runway-slot-img-label">still cooking</div>
+      <div className="cp-runway-slot-img" style={img ? { padding: 0, overflow: 'hidden', position: 'relative' } : {}}>
+        {img ? (
+          <img loading="lazy" src={img} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }} />
+        ) : (
+          <>
+            <div className="cp-runway-slot-img-icon">{icons[iconType] || icons.baseline}</div>
+            <div className="cp-runway-slot-img-label">still cooking</div>
+          </>
+        )}
       </div>
       <div className="cp-runway-slot-title">{title}</div>
       <div className="cp-runway-slot-body">{body}</div>
@@ -749,19 +755,19 @@ function CampaignCompareTable({ executions, accent }) {
 
 const RUNWAYS = {
   'almond-milk': [
-    { id: 'FILE_ID: 30SAM_ERR_01', title: 'Packaging Trial & Error', body: 'Rough packaging mockups, color matching errors, and typography misalignment from the early trial-and-error phases before settling on the definitive Royal Purple canvas.', iconType: 'baseline' },
-    { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction Diagrams', body: 'Behavioral diagrams mapping out consumer interaction patterns — detailing how users store, carry, tear, and mix the paste-based sachet into daily routines.', iconType: 'field' },
-    { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: 'Final Royal Purple Sachet', body: 'High-fidelity 3D studio render of the final Royal Purple sachet, highlighting the extreme legibility of minimalist typography floating on the deep purple canvas.', iconType: 'color' }
+    { id: 'FILE_ID: 30SAM_ERR_01', title: 'Packaging Trial & Error', body: 'Rough packaging mockups, color matching errors, and typography misalignment from the early trial-and-error phases before settling on the definitive Royal Purple canvas.', iconType: 'baseline', img: '/images/jusamazin/process/draft_packaging_01.jpg' },
+    { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction Diagrams', body: 'Behavioral diagrams mapping out consumer interaction patterns — detailing how users store, carry, tear, and mix the paste-based sachet into daily routines.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_03.jpg' },
+    { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: 'Final Royal Purple Sachet', body: 'High-fidelity 3D studio render of the final Royal Purple sachet, highlighting the extreme legibility of minimalist typography floating on the deep purple canvas.', iconType: 'color', img: '/images/jusamazin/process/draft_packaging_04.jpg' }
   ],
   'desi-energy-bar': [
-    { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'The Retail Notebook', body: 'High-resolution scans of original field notes tracking behavioral observations, purchase triggers, and shelf placement dynamics across 20–25 retail environments.', iconType: 'field' },
-    { id: 'FILE_ID: DEB_CHARACTER_SKT', title: 'Character Ideation', body: 'Raw hand-drawn sketches, vector ink frameworks, and character animation wireframes of local street games — highlighting the structural lines of the vintage Atlas bicycle and the stacked wooden blocks of Lagori.', iconType: 'blueprint' },
-    { id: 'FILE_ID: DEB_COLOR_GRID', title: 'Chromatic Testing Grid', body: 'A side-by-side display of rejected background variations and safe color templates alongside the winning Lightning Blue/Turquoise composition, proving how the definitive background maximized retail visibility.', iconType: 'color' }
+    { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'The Retail Notebook', body: 'High-resolution scans of original field notes tracking behavioral observations, purchase triggers, and shelf placement dynamics across 20–25 retail environments.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_02.jpg' },
+    { id: 'FILE_ID: DEB_CHARACTER_SKT', title: 'Character Ideation', body: 'Raw hand-drawn sketches, vector ink frameworks, and character animation wireframes of local street games — highlighting the structural lines of the vintage Atlas bicycle and the stacked wooden blocks of Lagori.', iconType: 'blueprint', img: '/images/jusamazin/process/draft_packaging_05.jpg' },
+    { id: 'FILE_ID: DEB_COLOR_GRID', title: 'Chromatic Testing Grid', body: 'A side-by-side display of rejected background variations and safe color templates alongside the winning Lightning Blue/Turquoise composition, proving how the definitive background maximized retail visibility.', iconType: 'color', img: '/images/jusamazin/desi_bar/pantone_proofing.jpg' }
   ],
   'superfoods': [
-    { id: 'FILE_ID: SF_CLINICAL_BASELINE', title: 'The Clinical Baseline', body: 'High-resolution comparisons of the original medical-style labels versus early scenic sketch variants — showing the stark contrast between the pharmaceutical aesthetic and the consumer-first redesign.', iconType: 'baseline' },
-    { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'The Sticker Blueprint', body: 'Technical vector line drawings demonstrating the universal pouch design and the visual placement markers engineered for the factory floor team, enabling 4× throughput improvement.', iconType: 'blueprint' },
-    { id: 'FILE_ID: SF_TYPOGRAPHY_SYSTEM', title: 'The Typography Overhaul', body: 'Close-up crops mapping critical back-of-pack corrections — the transition to lowercase formatting ("Flax seed", "dietary fiber", "omega-3") and the application of solid black body font for flawless legal legibility.', iconType: 'typography' }
+    { id: 'FILE_ID: SF_CLINICAL_BASELINE', title: 'The Clinical Baseline', body: 'High-resolution comparisons of the original medical-style labels versus early scenic sketch variants — showing the stark contrast between the pharmaceutical aesthetic and the consumer-first redesign.', iconType: 'baseline', img: '/images/before/before_pouch_1.jpg' },
+    { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'The Sticker Blueprint', body: 'Technical vector line drawings demonstrating the universal pouch design and the visual placement markers engineered for the factory floor team, enabling 4× throughput improvement.', iconType: 'blueprint', img: '/images/jusamazin/process/draft_packaging_06.jpg' },
+    { id: 'FILE_ID: SF_TYPOGRAPHY_SYSTEM', title: 'The Typography Overhaul', body: 'Close-up crops mapping critical back-of-pack corrections — the transition to lowercase formatting ("Flax seed", "dietary fiber", "omega-3") and the application of solid black body font for flawless legal legibility.', iconType: 'typography', img: '/images/jusamazin/superfoods/typography_macro.jpg' }
   ]
 }
 
@@ -949,6 +955,8 @@ export default function Campaigns() {
                       <div className="cp-exec-media">
                         {ex.isVideo ? (
                           <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                        ) : ex.src ? (
+                          <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                         ) : (
                           <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
                         )}
@@ -989,6 +997,8 @@ export default function Campaigns() {
                       <div className="cp-exec-media">
                         {ex.isVideo ? (
                           <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                        ) : ex.src ? (
+                          <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                         ) : (
                           <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
                         )}
