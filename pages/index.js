@@ -257,16 +257,16 @@ export default function Home({ bodyHTML, inlineScript }) {
         <link rel="canonical" href="https://sivnco.in/" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco</title>
-        <meta name="description" content="H P Shivaraj — Art Director &amp; Brand Strategist. Campaign thinking, brand systems, fine art practice. 176% revenue impact. Bengaluru." />
+        <title>H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco</title>
+        <meta name="description" content="H P Shivaraj — Brand &amp; Packaging Design Lead. Packaging systems, brand identity, FMCG shelf presence, fine art practice. 176% revenue growth. Bengaluru." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sivnco.in/" />
-        <meta property="og:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
-        <meta property="og:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking, brand systems, 176% revenue impact. Bengaluru." />
+        <meta property="og:title" content="H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco" />
+        <meta property="og:description" content="Brand &amp; Packaging Design Lead, Fine Artist. Packaging systems, FMCG shelf presence, 176% revenue growth. Bengaluru." />
         <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="H P Shivaraj — Art Director &amp; Brand Strategist | Sivnco" />
-        <meta name="twitter:description" content="Art Director, Brand Strategist, Fine Artist. Campaign thinking &amp; brand systems. Bengaluru." />
+        <meta name="twitter:title" content="H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco" />
+        <meta name="twitter:description" content="Brand &amp; Packaging Design Lead, Fine Artist. Packaging systems &amp; FMCG shelf presence. Bengaluru." />
         <meta name="twitter:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
