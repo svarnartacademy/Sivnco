@@ -5,6 +5,51 @@ import StartProjectButton from '@/components/demo'
 
 
 
+const SVARNART_MODULES = [
+  {
+    num: '01',
+    title: 'Procedural Web Audio Engine',
+    desc: 'Engineered an algorithmic sound synthesizer using the native browser Web Audio API (<4KB footprint). Generates arpeggios, coin dings, frequency buzzers, and victory fanfares on the fly with zero external audio downloads or network latency.',
+    tag: 'Web Audio API'
+  },
+  {
+    num: '02',
+    title: 'Gamified Art Theory Suite',
+    desc: 'Interactive learning modules including Color Alchemist (subtractive/additive pigment mixing), Warm/Cool Rush (timed temperature reflex sorting), and Light Zones (chiaroscuro & value scales on 3D geometric forms).',
+    tag: 'Canvas & Gamification'
+  },
+  {
+    num: '03',
+    title: 'WebRTC Virtual Classroom',
+    desc: 'Low-latency live video rooms integrated via Jitsi Meet WebRTC bridge. Features single-document Firestore broadcast beacons, instant student join chimes, and live sketchbook critique without app downloads.',
+    tag: 'WebRTC & Real-Time'
+  },
+  {
+    num: '04',
+    title: 'Multi-Tenant Portals & Reporting',
+    desc: 'Student & parent dashboards tracking attendance, syllabus milestones, and digital artwork portfolios. Dynamically generates verifiable public report cards with QR codes and one-click WhatsApp sharing.',
+    tag: 'LMS & Public Dossiers'
+  },
+  {
+    num: '05',
+    title: 'Dynamic Indian Payment Engine',
+    desc: 'Dual-channel payment model: standard Razorpay checkout alongside dynamically constructed 1-click UPI Intent deep links (upi://pay) pre-filling student roll numbers, verified with HMAC-SHA256 edge functions.',
+    tag: 'Razorpay & UPI Intent'
+  },
+  {
+    num: '06',
+    title: 'Two-Tier Child Safety & Moderation',
+    desc: 'Layer 1 instant client-side lexical sanitization paired with Layer 2 serverless OpenAI omni-moderation to safeguard children from inappropriate text or artwork uploads, backed by zero-trust Firestore rules.',
+    tag: 'OpenAI Safety AI'
+  },
+]
+
+const TIMELINE_SVARNART = [
+  { date: 'Venture Genesis', title: 'Single-Ecosystem Architecture', org: 'Svarnart Studio Lab', desc: 'Eliminating tool fragmentation across Zoom, WhatsApp, and spreadsheets by engineering a unified real-time education operating system with React 19, Firebase, and PWA capabilities.' },
+  { date: 'Audio & Virtual Labs', title: 'Web Audio API & WebRTC Bridge', org: 'Interactive Pedagogy', desc: 'Developing zero-asset procedural audio synthesis (<4KB) for gamified color theory simulators, paired with instant live video classrooms with real-time student sync.' },
+  { date: 'Operations & Scaling', title: 'Automated Indian Financial Engine', org: 'Cloud ERP & Payments', desc: 'Building serverless dynamic 1-click UPI intent deep links, Razorpay verification, automated WhatsApp fee billing, and public verifiable student report cards.' }
+]
+
 const OG_MITHAI_ASSETS = [
   { id: 'front', name: 'Premium Box Front Render', role: 'Main Package Showcase', img: '/images/og_mithai/ogmitai_camera_front.png', size: 'large' },
   { id: 'far', name: 'Perspective Mockup', role: 'Package Geometry & Depth', img: '/images/og_mithai/ogmitai_camera_far.png', size: 'wide' },
@@ -208,6 +253,30 @@ section{padding:9rem 0;border-bottom:1px solid var(--ih-border)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
 .ih-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(240,237,230,0.15);color:var(--ink);padding:.6rem 1.2rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s ease;background:var(--ih-glass);margin-top:2.5rem;position:relative;z-index:10}
 .ih-pill:hover{border-color:var(--ih-accent);color:var(--ih-accent);transform:translateY(-2px)}
+
+/* SVARNART EDTECH PLATFORM SHOWCASE */
+.sv-banner{background:rgba(212,96,10,0.05);border:1px solid rgba(212,96,10,0.22);border-radius:16px;padding:3rem;margin-top:3rem;position:relative;overflow:hidden}
+.sv-banner::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(212,96,10,0.18),transparent 70%);pointer-events:none}
+.sv-top-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.5rem;position:relative;z-index:2}
+.sv-live-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--M);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:#00E5FF;background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.3);padding:0.55rem 1.2rem;border-radius:999px;text-decoration:none;transition:all 0.3s ease}
+.sv-live-badge:hover{background:rgba(0,229,255,0.18);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,255,0.25);color:#fff}
+.sv-live-dot{width:6px;height:6px;border-radius:50%;background:#00E5FF;box-shadow:0 0 8px #00E5FF;animation:heroBgPulse 2s infinite ease-in-out}
+.sv-tag-list{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.5rem 0 2rem;position:relative;z-index:2}
+.sv-tag{font-family:var(--M);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.35rem 0.8rem;border-radius:999px;background:rgba(240,237,230,0.05);border:1px solid rgba(240,237,230,0.12);color:var(--ink)}
+.sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.sv-card{background:var(--ih-glass);border:1px solid var(--ih-border);border-radius:12px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform 0.4s ease,border-color 0.4s ease,box-shadow 0.4s ease}
+.sv-card:hover{transform:translateY(-5px);border-color:rgba(212,96,10,0.3);box-shadow:0 20px 45px rgba(0,0,0,0.4)}
+.sv-card-num{font-family:var(--M);font-size:0.58rem;letter-spacing:0.2em;color:var(--ih-accent);margin-bottom:0.8rem;display:block}
+.sv-card-title{font-family:var(--D);font-weight:900;font-size:1.4rem;color:#F0EDE6;line-height:1.2;margin-bottom:0.8rem}
+.sv-card-body{font-family:var(--S);font-size:0.98rem;line-height:1.75;color:var(--ih-muted);flex-grow:1}
+.sv-card-tag{display:inline-block;font-family:var(--M);font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ih-accent);margin-top:1.2rem}
+.sv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ih-border);border:1px solid var(--ih-border);border-radius:12px;overflow:hidden;margin:3rem 0}
+.sv-stat-cell{background:var(--ih-bg);padding:2rem 1.5rem;text-align:center;transition:background 0.3s}
+.sv-stat-cell:hover{background:rgba(212,96,10,0.06)}
+.sv-stat-val{font-family:var(--D);font-weight:900;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--ih-accent);line-height:1}
+.sv-stat-lbl{font-family:var(--M);font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ih-muted);margin-top:0.6rem}
+@media(max-width:900px){.sv-grid{grid-template-columns:1fr}.sv-stats{grid-template-columns:repeat(2,1fr)}.sv-banner{padding:2rem}}
+@media(max-width:480px){.sv-stats{grid-template-columns:1fr}}
 `
 
 import Navbar from '../components/Navbar';
@@ -220,8 +289,8 @@ export default function InHouseDesigns() {
         <link rel="canonical" href="https://sivnco.in/in-house-designs" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>In-House Designs — H.P. Shivaraj · Sivnco</title>
-        <meta name="description" content="Explore OG Mithai and Vedic Treats in-house projects. Traditional roots reimagined through bold modern branding, premium packaging layouts, and interactive 3D models." />
+        <title>In-House Projects — H.P. Shivaraj · Sivnco</title>
+        <meta name="description" content="Explore Svar'n'Art Academy (Full-Stack EdTech & Cloud ERP), OG Mithai, and Vedic Treats in-house projects. Full-stack engineering, brand packaging, and 3D interactive renders." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -239,18 +308,18 @@ export default function InHouseDesigns() {
       <div className="hero">
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, background: 'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.2) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.1) 0%, transparent 50%), var(--ih-bg)', animation: 'heroBgPulse 8s ease-in-out infinite' }} />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow rv">In-House Lab · Brand Packaging &amp; Renders</div>
+          <div className="eyebrow rv">In-House Lab · Ventures, Systems &amp; 3D Renders</div>
           <h1 className="hero-title rv" style={{ transitionDelay: '.1s' }}>
-            In-House<br /><i>Designs</i>
+            In-House<br /><i>Projects</i>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
-            Where I test ideas that don't have a client brief yet. Packaging concepts, typographic experiments, 3D renders — things that exist because I was curious, not because someone asked for them.
+            Where I test ideas and build proprietary systems. From the full-stack Svar&apos;n&apos;Art Academy operating system to packaging concepts, typographic experiments, and interactive 3D simulations.
           </p>
           <div className="hero-meta rv" style={{ transitionDelay: '.4s' }}>
             {[
-              ['Scope', 'Branding · Packaging'],
-              ['Renders', 'Tactile & 3D Interactive'],
-              ['Concepts', 'OG Mithai & Vedic Treats'],
+              ['Scope', 'Ventures · Systems · Packaging'],
+              ['Tech & 3D', 'React 19, Firebase & GLB Renders'],
+              ['Projects', 'Svarnart, OG Mithai & Vedic Treats'],
               ['Location', 'Bengaluru, IN']
             ].map(([l, v]) => (
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
@@ -268,22 +337,109 @@ export default function InHouseDesigns() {
       <section>
         <div className="c">
           <div className="s-label rv">01 — The Studio Lab</div>
-          <h2 className="s-title rv">Testing lines,<br /><i>shapes &amp; textures.</i></h2>
+          <h2 className="s-title rv">Testing systems,<br /><i>shapes &amp; textures.</i></h2>
           <div className="body rv2" style={{ color: 'var(--ih-muted)', fontSize: '1.15rem', lineHeight: '1.9' }}>
             <p style={{ marginBottom: '1.5rem' }}>
-              Some of the most useful design thinking I've done has been on projects nobody commissioned. Without a client to satisfy or a brief to follow, you make different decisions — riskier ones, more honest ones.
+              Some of the most useful design and systems thinking I&apos;ve done has been on internal projects we created ourselves. Without legacy client constraints or arbitrary briefs, we engineer real, high-leverage solutions — from full-stack software architecture to multi-SKU retail packaging.
             </p>
             <p>
-              Two projects here: OG Mithai, a packaging concept for a bold Indian sweets brand leaning into street-culture heritage; and Vedic Treats, an Ayurvedic wellness brand exploring clean luxury with 3D product simulation.
+              Three in-house projects featured here: Svar&apos;n&apos;Art Academy, an end-to-end EdTech LMS and cloud ERP built from scratch; OG Mithai, a packaging concept exploring Indian sweets heritage and bold street typography; and Vedic Treats, an Ayurvedic wellness brand with interactive 3D product simulation.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CASE STUDY 1: OG MITHAI */}
+      {/* CASE STUDY 1: SVARNART ACADEMY */}
       <section style={{ borderBottom: '1px solid var(--ih-border)' }}>
         <div className="c">
-          <div className="s-label rv">02 — Case Study I</div>
+          <div className="s-label rv">02 — Case Study I (In-House Venture)</div>
+          <h2 className="s-title rv">Svar&apos;n&apos;Art Academy:<br /><i>Full-Stack EdTech &amp; Cloud ERP.</i></h2>
+          
+          <div className="body rv" style={{ marginBottom: '2.5rem' }}>
+            <p style={{ color: 'var(--ih-muted)', marginBottom: '1rem' }}>
+              A modern, production-grade education operating system and learning management platform designed for visual arts, music, and cultural pedagogy. Built from scratch to digitize and scale our physical academy, eliminating fragmented tools (Zoom, WhatsApp groups, spreadsheets, paper ledgers) into a cohesive, real-time platform.
+            </p>
+          </div>
+
+          {/* Banner card with live demo and quick badges */}
+          <div className="sv-banner rv2">
+            <div className="sv-top-row">
+              <div>
+                <span className="sv-card-num">REAL-TIME ACADEMY OPERATING SYSTEM</span>
+                <h3 style={{ fontFamily: 'var(--D)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#F0EDE6', lineHeight: 1.15, marginTop: '0.4rem' }}>
+                  svarnartacademy.vercel.app
+                </h3>
+              </div>
+              <a href="https://svarnartacademy.vercel.app/" target="_blank" rel="noopener noreferrer" className="sv-live-badge">
+                <span className="sv-live-dot" />
+                Launch Live App &rarr;
+              </a>
+            </div>
+
+            <p style={{ fontFamily: 'var(--S)', fontSize: '1.05rem', color: 'var(--ih-muted)', lineHeight: '1.8', maxWidth: '780px' }}>
+              Consolidates interactive digital curricula, algorithmic audio-synthesized theory games, Jitsi WebRTC video classrooms, automated student progress dossiers, dynamic 1-click UPI payments, and zero-trust Firestore security.
+            </p>
+
+            <div className="sv-tag-list">
+              {['React 19', 'Vite', 'Firebase Auth', 'Firestore v12', 'WebRTC (Jitsi)', 'Razorpay API', 'Dynamic UPI Intent', 'Web Audio API', 'PWA Offline', 'OpenAI Omni-Moderation'].map(tag => (
+                <span key={tag} className="sv-tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* Metrics highlight grid */}
+            <div className="sv-stats">
+              <div className="sv-stat-cell">
+                <div className="sv-stat-val">React 19</div>
+                <div className="sv-stat-lbl">Concurrent UI Core</div>
+              </div>
+              <div className="sv-stat-cell">
+                <div className="sv-stat-val">&lt;4 KB</div>
+                <div className="sv-stat-lbl">Zero-Asset Audio Synthesis</div>
+              </div>
+              <div className="sv-stat-cell">
+                <div className="sv-stat-val">WebRTC</div>
+                <div className="sv-stat-lbl">Zero-Cost Video Bridge</div>
+              </div>
+              <div className="sv-stat-cell">
+                <div className="sv-stat-val">1-Click</div>
+                <div className="sv-stat-lbl">Dynamic UPI Fee Intent</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 6 Feature Modules Bento Grid */}
+          <h3 className="s-label rv" style={{ marginTop: '5rem', marginBottom: '-2rem' }}>Core Modules &amp; Functional Innovations</h3>
+          <div className="sv-grid rv2">
+            {SVARNART_MODULES.map((m) => (
+              <div key={m.num} className="sv-card">
+                <span className="sv-card-num">MODULE {m.num}</span>
+                <h4 className="sv-card-title">{m.title}</h4>
+                <p className="sv-card-body">{m.desc}</p>
+                <span className="sv-card-tag">{m.tag}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Svarnart Process Timeline */}
+          <div className="timeline rv2" style={{ marginTop: '5rem' }}>
+            {TIMELINE_SVARNART.map((item, index) => (
+              <div key={index} className="tl-item">
+                <div className="tl-dot" />
+                <div className="tl-date">{item.date}</div>
+                <h3 className="tl-title">{item.title}</h3>
+                <div className="tl-org">{item.org}</div>
+                <p className="tl-desc">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* CASE STUDY 2: OG MITHAI */}
+      <section style={{ borderBottom: '1px solid var(--ih-border)' }}>
+        <div className="c">
+          <div className="s-label rv">03 — Case Study II</div>
           <h2 className="s-title rv">OG Mithai:<br /><i>Bold sweets culture.</i></h2>
           
           <div className="body rv" style={{ marginBottom: '3rem' }}>
@@ -314,10 +470,10 @@ export default function InHouseDesigns() {
         </div>
       </section>
 
-      {/* CASE STUDY 2: VEDIC TREATS */}
+      {/* CASE STUDY 3: VEDIC TREATS */}
       <section>
         <div className="c">
-          <div className="s-label rv">03 — Case Study II</div>
+          <div className="s-label rv">04 — Case Study III</div>
           <h2 className="s-title rv">Vedic Treats:<br /><i>Ayurvedic wellness.</i></h2>
           
           <div className="body rv" style={{ marginBottom: '3rem' }}>
