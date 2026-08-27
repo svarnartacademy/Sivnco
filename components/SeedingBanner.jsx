@@ -1,16 +1,16 @@
-/**
- * SeedingBanner — Glassmorphism popup that appears when any <img> on the page
+ï»¿/**
+ * SeedingBanner Ã¹ Glassmorphism popup that appears when any <img> on the page
  * fails to load (i.e. images not yet seeded).
  *
  * Auto-detects broken images on mount. Dismissible with X or clicking outside.
  *
- * Usage — just drop it once into any page:
+ * Usage Ã¹ just drop it once into any page:
  *   import SeedingBanner from '@/components/SeedingBanner'
  *   ...
  *   <SeedingBanner />
  *
  * Optional prop:
- *   forceShow={true}  — always show it regardless of broken images
+ *   forceShow={true}  Ã¹ always show it regardless of broken images
  */
 
 import { useState, useEffect, useCallback } from 'react';
@@ -254,7 +254,7 @@ export default function SeedingBanner({ forceShow = false }) {
     <>
       <style dangerouslySetInnerHTML={{ __html: BANNER_CSS }} />
       <div className="sivb-overlay" role="dialog" aria-modal="true" aria-label="Site restructuring notice">
-        {/* Backdrop — click to dismiss */}
+        {/* Backdrop Ã¹ click to dismiss */}
         <div className="sivb-backdrop" onClick={dismiss} />
 
         <div className="sivb-card">
@@ -289,7 +289,7 @@ export default function SeedingBanner({ forceShow = false }) {
           {/* Body */}
           <div className="sivb-body">
             The site is being <strong>actively rebuilt and seeded</strong> with new work.
-            Some images haven&apos;t been uploaded yet — we&apos;re getting everything in place.
+            Some images haven&apos;t been uploaded yet Ã¹ we&apos;re getting everything in place.
             <br /><br />
             Please forgive us for the inconvenience. <strong>Good things take time.</strong>
           </div>
@@ -298,8 +298,8 @@ export default function SeedingBanner({ forceShow = false }) {
 
           <div className="sivb-footer">
             <div className="sivb-meta">
-              SIVNCO · Studio in progress<br />
-              Images seeding — check back soon
+              SIVNCO â•– Studio in progress<br />
+              Images seeding Ã¹ check back soon
             </div>
             <button className="sivb-dismiss-btn" onClick={dismiss}>
               Got it
