@@ -119,8 +119,8 @@ const CAMPAIGNS = [
       { value: 'LOYALTY↑', label: 'Long-term retention index established via post-visual rehaul brand standard.', tag: 'RETENTION LOOP' }
     ],
     testimonials: [
-      { name: 'Jitin Munjal', role: 'CEO & Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'This comparison format completely simplified our category education. It has elevated our overall content standards, significantly boosted our brand image, and funneled entirely new customer segments straight into our 32nd almond milk category.' },
-      { name: 'Shilpa Moglishetty', role: 'CEO & Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'The transparency visualization worked beautifully. It gave our consumers a clear, unmistakable reason to look for our house-made sachet over common cartons, and the conversion numbers speak directly to how well that narrative connected.' }
+      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'This comparison format completely simplified our category education. It has elevated our overall content standards, significantly boosted our brand image, and funneled entirely new customer segments straight into our 32nd almond milk category.' },
+      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'The transparency visualization worked beautifully. It gave our consumers a clear, unmistakable reason to look for our house-made sachet over common cartons, and the conversion numbers speak directly to how well that narrative connected.' }
     ],
     reflection: 'If I were to extend this, I\'d develop an OOH version — a single visual of the paste jar next to a clock showing "8 Hours vs. 30 Seconds." The idea is strong enough to work on a billboard at 60kmph. The comparison campaign proved the concept; the next step is scaling the transparency argument beyond digital into physical retail presence.'
   },
@@ -206,8 +206,8 @@ const CAMPAIGNS = [
       { value: '58%', label: 'Increase in retail brand recognition achieved in Q3 & Q4 of FY 2024–25.', tag: 'BRAND RECOGNITION' }
     ],
     testimonials: [
-      { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },
-      { name: 'Shilpa Moglishetty', role: 'CEO & Co-Founder', category: 'leadership', quote: 'Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.' },
+      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },
+      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.' },
       { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'I wasn\'t sure about the color blue with nostalgia, but surprisingly it works as blue grasps attention and the nostalgia keeps the attention span long enough for them to make the purchase.' },
       { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'It\'s so fun and out of the blue. I don\'t find it typical, but it works great as it sells in the market.' },
       { name: 'Juhi Singh', role: 'Colleague & Visual Designer', category: 'team', quote: 'He has a good understanding of emotions so that grasp of gully cricket was expected, but the fusion of electric blue is what works as a punch.' },
@@ -299,7 +299,7 @@ const CAMPAIGNS = [
       { value: '400–500', label: 'Pouches per hour achieved post alignment guideline integration. Up from 100/hr.', tag: 'UNITS / HOUR' }
     ],
     testimonials: [
-      { name: 'Jitin Munjal', role: 'CEO & Co-Founder', category: 'leadership', quote: 'The back-of-pack overhaul cleaned up our technical parameters perfectly. Moving to solid black body text and standardizing our layout casing immediately elevated our regulatory presentation.' },
+      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'The back-of-pack overhaul cleaned up our technical parameters perfectly. Moving to solid black body text and standardizing our layout casing immediately elevated our regulatory presentation.' },
       { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'Before the alignment guidelines were built onto the labels, our team was losing endless hours trying to center stickers manually on the pouches. The new system instantly boosted our hourly output from 100 to over 400 units.' },
       { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'I used to walk right past these packs because they looked like old health supplements from a chemist\'s shop. The new scenic layouts look incredibly premium and make it clear that this is real, clean food for a healthy lifestyle.' }
     ],
@@ -644,7 +644,7 @@ function RunwaySlot({ id, title, body, iconType }) {
       <div className="cp-runway-slot-id">{id}</div>
       <div className="cp-runway-slot-img">
         <div className="cp-runway-slot-img-icon">{icons[iconType] || icons.baseline}</div>
-        <div className="cp-runway-slot-img-label">Image placeholder<br />— add visual asset</div>
+        <div className="cp-runway-slot-img-label">still cooking</div>
       </div>
       <div className="cp-runway-slot-title">{title}</div>
       <div className="cp-runway-slot-body">{body}</div>

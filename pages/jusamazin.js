@@ -22,7 +22,7 @@ const RESULTS = [
   'Streamlined process: drawing board → iterations → final design → proofing → print & production.',
   'Product portfolio structured across all SKUs with a master brand document guiding future extensions.',
 ]
-const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-founder & CEO'},{i:'SH',n:'Shilpa',r:'Co-founder & CEO'}]
+const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-Founder & CEO'},{i:'SH',n:'Shilpa Moglishetty',r:'Co-Founder'}]
 const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amarjit Singh',r:'Sales Head'},{i:'SG',n:'Siddharth G',r:'Production Executive'},{i:'BH',n:'Bhoomika',r:'Quality Analyst'}]
 
 const WIP_ITEMS = [

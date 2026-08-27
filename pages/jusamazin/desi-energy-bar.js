@@ -15,8 +15,8 @@ const KPIS = [
   "Brand Halo Effect — The success of the Desi Energy Bar increased overall brand equity, driving significant demand and discovery for other product lines within the company portfolio.",
 ]
 const FEEDBACK = [
-  {n:"Jitin Munjal",r:"CEO & Co-Founder",q:"I've loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product",c:"leadership"},
-  {n:"Shilpa Moglishetty",r:"CEO & Co-Founder",q:"Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.",c:"leadership"},
+  {n:"Jitin Munjal",r:"Co-Founder & CEO, Jus'Amazin",q:"I've loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product",c:"leadership"},
+  {n:"Shilpa Moglishetty",r:"Co-Founder, Jus'Amazin",q:"Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.",c:"leadership"},
   {n:"Roshan Kulranjan",r:"Business Operations Head",q:"I wasn't sure about the color blue with nostalgia, but surprisingly it works as blue grasps attention and the nostalgia keeps the attention span long enough for them to make the purchase",c:"team"},
   {n:"Manoj",r:"Production Head",q:"Its so fun and out of blue, I don't find it as a typical but it works great as it sells in the market",c:"team"},
   {n:"Juhi Singh",r:"Colleague",q:"He has a good understanding of emotions so that grasp of gully cricket was expected, but the fusion of electric blue is what works as a punch",c:"team"},

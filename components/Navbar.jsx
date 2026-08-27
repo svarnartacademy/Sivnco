@@ -284,7 +284,7 @@ export default function Navbar({ backLink, backLabel }) {
           <div className="snav-actions">
             <button className="snav-maya-btn" onClick={toggleChat} aria-label="Open Maya AI" aria-expanded={chatOpen}>
               <span className="snav-pulse" />
-              it&apos;s Maya
+              chat here
             </button>
             <button className="snav-burger" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}>
               {menuOpen ? (
