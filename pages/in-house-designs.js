@@ -367,12 +367,12 @@ export default function InHouseDesigns() {
               <div>
                 <span className="sv-card-num">REAL-TIME ACADEMY OPERATING SYSTEM</span>
                 <h3 style={{ fontFamily: 'var(--D)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#F0EDE6', lineHeight: 1.15, marginTop: '0.4rem' }}>
-                  svarnartacademy.vercel.app
+                  svarnart.com
                 </h3>
               </div>
-              <a href="https://svarnartacademy.vercel.app/" target="_blank" rel="noopener noreferrer" className="sv-live-badge">
+              <a href="https://www.svarnart.com" target="_blank" rel="noopener noreferrer" className="sv-live-badge">
                 <span className="sv-live-dot" />
-                Launch Live App &rarr;
+                Launch Live Platform &rarr;
               </a>
             </div>
 
