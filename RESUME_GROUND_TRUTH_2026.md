@@ -1,88 +1,80 @@
-# H P SHIVARAJ (SHIV)
-**Brand & Packaging Design Lead | BFA Gold Medalist**  
-Bengaluru, Karnataka, India · +91 84312 72507 · sivnco.in@gmail.com  
-**Portfolio:** [sivnco.in](https://sivnco.in) · **LinkedIn:** [linkedin.com/in/shivaraj-designer](https://www.linkedin.com/in/shivaraj-designer/)
+ï»¿# H P SHIVARAJ (SHIV)
+**Art Director â€” Brand, Packaging & Visual Communications | BFA Gold Medalist**  
+Bengaluru, Karnataka, India Â· +91 84312 72507 Â· sivnco.in@gmail.com  
+**Portfolio:** [sivnco.in](https://sivnco.in) Â· **LinkedIn:** [linkedin.com/in/shivaraj-designer](https://www.linkedin.com/in/shivaraj-designer/)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Brand & Packaging Design Lead with a classical Fine Arts foundation (BFA Gold Medalist from CAVA, University of Mysore) and 4+ years of commercial design ownership across FMCG and D2C brands. Sole designer behind the complete brand and packaging overhaul of 15+ SKUs at Jus'Amazin, directly contributing to 176% revenue growth (Aug 2023–2025). Proven track record taking products from zero-to-one concepts through dielines, typography systems, flexographic/offset factory print proofing, and retail shelf launch.
+Bengaluru-based Art Director and packaging designer with a classical Fine Arts foundation (BFA Gold Medalist & University Topper from CAVA, University of Mysore) and 4+ years of commercial design ownership across FMCG and D2C brands. Directs the complete visual function from concept to production: packaging architecture, brand identity, print production, prepress, retail POS, digital campaigns, and 3D visualisation. Sole designer behind the complete brand and packaging overhaul of 15+ SKUs at Jusâ€™Amazin, contributing alongside sales, product, and ops to 176% FY24â€“25 revenue growth with zero external agency dependency.
 
 ---
 
-## CORE COMPETENCIES
+## CORE DISCIPLINES & COMPETENCIES
 
-- **Brand & Packaging Systems:** End-to-End FMCG Packaging Design, D2C Multi-SKU Architecture, Packaging Hierarchy, Shelf Impact & Consumer Psychology, Brand Identity Guidelines, Token Systems.
-- **Print & Production Rigor:** Flexographic & Offset Prepress, Pantone Matching (PMS), Substrate & Material Selection, Dieline Engineering, FSSAI / Packaging Regulatory Layout Compliance.
-- **Digital, 3D & Campaign:** 3D Product Modeling & Rendering (Blender), Quick-Commerce Visual Assets (Blinkit, Zepto, Amazon A+), Art Direction & Photography Supervision, Web Development (Next.js, Tailwind).
-- **Tools:** Adobe Illustrator, Photoshop, InDesign, Blender 3D, Figma, Midjourney / Generative AI Design Pipelines.
+- **Brand & Packaging Systems:** End-to-End FMCG Packaging Design, Multi-SKU Packaging Architecture (Glass Jars, Flow-Wrap Bars, Stand-Up Pouches, Sachets, Outer Cartons), Shelf Impact & Consumer Psychology, Brand Identity Systems, Design Tokens, Style Governance.
+- **Print Production & Prepress Rigor:** On-Site Press Proofing, Flexographic & Offset Prepress, Pantone Matching (PMS 3105Câ€“3145C), Substrate & Material Selection, Vector Dieline Engineering, FSSAI Legal & Packaging Regulatory Compliance.
+- **Digital, 3D & Campaign Art Direction:** 3D Product Modeling & Rendering (Blender), Quick-Commerce Visual Assets (Blinkit, Zepto, Amazon A+), Art Direction & Photography Supervision, Video Storyboarding & Motion Concepts.
+- **Working Principles:** Systems over one-off assets, Shelf presence with a purpose, Production as an inseparable part of design, Fine art observation informing commercial clarity.
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
-### **Jus'Amazin** · Bengaluru, India
+### **Jusâ€™Amazin Foods & Beverages** â€” Bengaluru, India
 *D2C Organic Nutrition & FMCG Brand*
 
-#### **Design & Communications Manager (Brand & Packaging Lead)**  
-*Dec 2024 – Present*  
-*(Promoted to lead complete brand design, print production pipelines, and multi-channel creative direction)*
+#### **Design & Communications Manager (Art Director) â€” Brand & Packaging**  
+*Dec 2024 â€” Present*  
+- Lead the companyâ€™s end-to-end visual function across physical, print, retail, and digital touchpoints.
+- Direct packaging architecture, brand systems, campaigns, retail POS, social templates, product photography, and 3D visualisation.
+- Own the complete workflow from creative brief and concept through artwork, proofing, production, and final retail delivery.
+- Supervise color registration, substrates, dielines, prepress, and press-proofing decisions across production runs of up to 200,000+ units.
+- Authored master brand guidelines that reduced cross-department visual asset turnaround by 40% (internal estimate) and eliminated third-party agency dependencies.
 
 #### **Visual Communicator / Packaging Designer**  
-*Aug 2023 – Nov 2024*
-
-- **15+ SKU Packaging Ownership:** Solely conceptualized and designed the complete packaging architecture across multiple product categories: Nut & Seed Spreads (Glass Jars), Desi Energy Bars & MOM Bars (Flow Wraps & Display Boxes), Superfoods Powders (Stand-Up Pouches), and 30-Sec Almond Milk Paste (Sachets & Outer Cartons).
-- **176% Revenue Growth Impact:** Overhauled legacy packaging with bold chromatic color-blocking and structured typographic grids, creating distinct shelf presence and driving 176% revenue growth from Aug 2023 to 2025 (Jus'Amazin internal audited data).
-- **Press Proofing & Scale:** Supervised on-site press proofing and color registration across high-speed flexo and offset commercial print runs of 200,000+ units.
-- **Operational Efficiency (+40%):** Authored the master brand guidelines and packaging design system, reducing cross-department visual asset turnaround time by 40% and eliminating third-party agency dependencies.
-- **Quick-Commerce & Retail Asset Pipeline:** Modeled and rendered photorealistic 3D packs in Blender; directed high-converting visual comparison assets for Blinkit, Zepto, and Amazon A+ PDP carousels.
-
----
-
-### **Openhouse** · Bengaluru, India
-#### **Art & Design Teacher**  
-*Apr 2025 – Apr 2026*
-
-- Taught observational drawing, spatial geometry, color values, and visual thinking fundamentals to students across age cohorts.
-- Structured hands-on creative thinking pedagogy, translating traditional fine art principles into modern design problem-solving frameworks.
+*Aug 2023 â€” Nov 2024*  
+- Built the foundations of the 15+ SKU packaging and communication system across jars, bars, pouches, and sachets.
+- Overhauled legacy packaging with bold chromatic color-blocking and structured typographic grids, contributing to 176% FY24â€“25 revenue growth during tenure (internal company data).
+- Spearheaded the Desi Energy Bar "Structured Chaos" visual overhaul, resulting in a 70% increase in snacking-range sales.
+- Developed quick-commerce visual systems for Blinkit, Zepto, and Amazon A+ carousels alongside Blender 3D product renders.
+- Promoted to Design & Communications Manager within 18 months based on creative ownership and commercial impact.
 
 ---
 
-### **Svarnart Academy** · Bengaluru, India
+### **Sivnco Studio** â€” Independent
+#### **Founder & Creative Director**  
+*2025 â€” Present*  
+- Independent design practice for D2C, FMCG, and lifestyle brands, focused on identity systems, packaging architecture, art direction, and 3D visualisation.
+
+---
+
+### **Svarnart Academy** â€” Bengaluru, India
 #### **Co-Founder & Curriculum Lead**  
-*2025 – Present*
-
-- Co-founded an independent creative education studio combining Indian classical arts and contemporary visual design.
-- Curated annual academy showcases exhibiting 120+ original student artworks to parents and patrons.
-- Architected, designed, and deployed the academy’s full-stack offline-ready web platform ([svarnart.com](https://www.svarnart.com)).
+*2025 â€” Present*  
+- Co-founded a creative learning space combining Carnatic music, fine art, and design education.
+- Engineered the academyâ€™s visual identity, pedagogical curriculum, and unified digital platform alongside my wife.
 
 ---
 
-### **Sivnco Studio** · Bengaluru, India (Independent Practice)
-#### **Founder & Lead Designer**  
-*2023 – Present*
-
-- Designing identity systems, retail packaging, and 3D visual assets for consumer brands, alongside personal exhibition fine art practice.
-
----
-
-## EDUCATION & DISTINCTIONS
-
-### **Bachelor of Fine Arts (BFA) — Applied Arts**
-**Chamarajendra Academy of Visual Arts (CAVA), Mysuru · University of Mysore**  
-*2019 – 2023*
-- **Gold Medalist — University Topper:** Awarded the University Gold Medal for securing Rank 1 across the cohort in Applied Arts.
-- Rigorous 4-year curriculum covering visual communication, typography, color psychology, anatomy, and printmaking.
-
-### **Foundation of Fine Arts (+2)**
-*2017 – 2019*
+### **Openhouse** â€” Bengaluru, India
+#### **Art & Design Teacher**  
+*Apr 2025 â€” Apr 2026*  
+- Taught observational drawing, color theory, composition, and visual thinking fundamentals to students across age groups.
+- Translated fine art principles into structured modern design problem-solving frameworks.
 
 ---
 
-## LEADERSHIP ENDORSEMENTS
+### **Refresh Kid LLC** â€” Remote
+#### **Graphic Designer**  
+*2022 â€” 2023*  
+- Delivered social media creatives, digital marketing assets, and brand collateral for a US-based EdTech company through asynchronous collaboration.
 
-> *"Shiv doesn't just design — he builds systems. The Jus'Amazin packaging is one of the most coherent brand rollouts I've seen for a D2C brand at our scale."*  
-> **— Jitin Munjal, Co-Founder & CEO, Jus'Amazin**
+---
 
-> *"The transparency visualization worked beautifully. It gave our consumers a clear, unmistakable reason to look for our house-made sachet over common cartons, and the conversion numbers speak directly to how well that narrative connected."*  
-> **— Shilpa Moglishetty, Co-Founder, Jus'Amazin**
+## EDUCATION & HONORS
+
+- **Bachelor of Fine Arts (BFA) in Applied Arts**  
+  *CAVA (Chamarajendra Academy of Visual Arts), University of Mysore*  
+  **Honors:** Gold Medalist & University Topper  
+  **Core Focus:** Visual Communication, Typography, Color Theory, Packaging Geometry, Drawing & Printmaking.
