@@ -1355,9 +1355,23 @@
       margin-top: 3rem;
     }
 
-    @media(max-width:900px) {
+    @media(max-width:1024px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .testi-card:last-child {
+        grid-column: span 2;
+      }
+    }
+    @media(max-width:768px) {
       .testimonials-grid {
         grid-template-columns: 1fr;
+      }
+      .testi-card:last-child {
+        grid-column: span 1;
+      }
+      .testi-card {
+        padding: 2rem 1.5rem;
       }
     }
 
@@ -1616,6 +1630,57 @@
       .hero-stats-bar {
         gap: 2rem;
       }
+      .hero-split {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+      .hero-right {
+        border-left: none !important;
+        border-top: 1px solid var(--glass-border);
+        padding-left: 0 !important;
+        padding-top: 2.5rem !important;
+      }
+      .glass-card.project-card {
+        grid-column: span 12 !important;
+        min-height: 320px !important;
+        height: auto !important;
+        padding: 2.4rem 2rem !important;
+      }
+      #horizontal-sec {
+        overflow: visible !important;
+        padding: 6vh 0 !important;
+      }
+      .h-sticky {
+        height: auto !important;
+        display: block !important;
+        align-items: unset !important;
+      }
+      .h-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 5vw !important;
+        gap: 2rem !important;
+      }
+      .h-container > div:first-child {
+        width: 100% !important;
+        margin-bottom: 1rem;
+      }
+      .role-card {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 3rem 2.2rem !important;
+      }
+      .role-card .h-large {
+        font-size: clamp(1.8rem, 5vw, 2.8rem) !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+      #principles .glass-card {
+        padding: 2rem 1.6rem;
+      }
     }
 
     /* Mobile devices */
@@ -1701,8 +1766,10 @@
       /* -- Project gallery grid -- */
       .glass-card.project-card {
         grid-column: span 12 !important;
-        height: 35vh !important;
+        min-height: 280px !important;
+        height: auto !important;
         width: 100% !important;
+        padding: 2rem 1.6rem !important;
       }
 
       /* -- Case study challenge grid -- */
@@ -1714,9 +1781,17 @@
       .cs-img-mosaic {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        gap: 0.8rem;
+      }
+      .cs-img-slot {
+        min-height: 220px !important;
       }
       .cs-img-slot.tall {
         grid-row: span 1;
+      }
+      .cs-img-slot#csImg_motion {
+        grid-column: span 2 !important;
+        min-height: 220px !important;
       }
 
       /* -- Before/After -- */
@@ -1873,11 +1948,24 @@
         gap: 1.2rem;
       }
       .glass-card.project-card {
-        height: 28vh !important;
-        padding: 1.5rem !important;
+        min-height: 250px !important;
+        height: auto !important;
+        padding: 1.6rem 1.2rem !important;
+      }
+      .cs-img-mosaic {
+        grid-template-columns: 1fr !important;
+      }
+      .cs-img-slot#csImg_motion {
+        grid-column: span 1 !important;
+      }
+      .cs-img-slot {
+        min-height: 220px !important;
       }
       .testi-card {
-        padding: 1.5rem;
+        padding: 1.6rem 1.2rem;
+      }
+      #principles .glass-card {
+        padding: 1.5rem 1.2rem !important;
       }
       .price-card {
         padding: 2rem 1.5rem;
@@ -2476,6 +2564,50 @@
     }
     .vc-ext-idea strong { color: var(--text-main); font-weight: 500; }
 
+    @media (max-width: 1024px) {
+      .vc-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .vc-rejected-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      .vc-rejected-card:last-child {
+        grid-column: span 2;
+      }
+      .vc-campaign-ext {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      .vc-ext-card:last-child {
+        grid-column: span 2;
+      }
+    }
+    @media (max-width: 640px) {
+      .vc-rejected-grid {
+        grid-template-columns: 1fr;
+      }
+      .vc-rejected-card:last-child {
+        grid-column: span 1;
+      }
+      .vc-campaign-ext {
+        grid-template-columns: 1fr;
+      }
+      .vc-ext-card:last-child {
+        grid-column: span 1;
+      }
+      .vc-card {
+        padding: 1.8rem 1.4rem;
+      }
+      .vc-rejected-card {
+        padding: 1.6rem 1.2rem;
+      }
+      .vc-ext-card {
+        padding: 1.6rem 1.2rem;
+      }
+    }
+
     /* ABOUT REFERENCES */
     .about-references { margin-top: 3rem; }
     .about-ref-label {
@@ -2796,14 +2928,14 @@
 
           <!-- Project 1 (Wide) -->
           <a href="/campaigns" class="glass-card project-card gs-fade"
-            style="grid-column: span 12; height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;">
+            style="grid-column: span 12; min-height: 480px; height: 56vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;">
             <div class="p-img-wrap" id="gImg_featured"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
               <img loading="lazy" src="/images/jusamazin/bars/amazon_campaign.jpg" alt="Campaigns — Multi-SKU retail packaging systems, art direction, and launch rollouts" style="width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
               <div class="t-mono-label" style="color: var(--text-main);">Campaign · Art Direction · 3 Executions</div>
-              <h3 class="h-large" style="font-size: 3rem; margin-top: -1rem;">Campaigns <span class="t-serif" style="color:var(--accent)">→</span></h3>
+              <h3 class="h-large" style="font-size: clamp(1.8rem, 3.8vw, 3rem); line-height: 1.1; margin-top: -0.4rem;">Campaigns <span class="t-serif" style="color:var(--accent)">→</span></h3>
               <span class="project-type-label">Campaign · Motion · Retail · Typography</span>
             </div>
             <div
@@ -2814,14 +2946,14 @@
           <!-- Project 2 -->
           <a href="/jusamazin"
             class="glass-card project-card gs-fade"
-            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            style="grid-column: span 6; min-height: 380px; height: 42vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_systems"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
               <img loading="lazy" src="/images/hero_packaging.jpg" alt="Jus Amazin brand system — complete visual language directing 15+ SKUs from brief to shelf" style="width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
               <div class="t-mono-label" style="color: var(--text-main);">Art Direction · 176% Revenue Impact</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Jus Amazin Brand System</h3>
+              <h3 class="h-large" style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); line-height: 1.15; margin-top: -0.4rem;">Jus Amazin Brand System</h3>
               <span class="project-type-label">Brand Identity · Packaging · Art Direction</span>
             </div>
             <div
@@ -2831,14 +2963,14 @@
 
           <!-- Project 3 -->
           <a href="/artist-educator" class="glass-card project-card gs-fade"
-            style="grid-column: span 6; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            style="grid-column: span 6; min-height: 380px; height: 42vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_artist_educator"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
               <img loading="lazy" src="/images/paintings/painting_6.jpg" alt="Fine art practice — oil and acrylic portraiture on easel informing compositional instinct in commercial work" style="width:100%; height:100%; object-fit:cover; object-position:center 30%; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
               <div class="t-mono-label" style="color: var(--text-main);">Fine Art · BFA Gold Medal · Teaching</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">Artist &amp; Educator</h3>
+              <h3 class="h-large" style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); line-height: 1.15; margin-top: -0.4rem;">Artist &amp; Educator</h3>
               <span class="project-type-label">Fine Art · Education · Visual Thinking</span>
             </div>
             <div
@@ -2848,14 +2980,14 @@
 
           <!-- Project 4 — AI Concept Acceleration -->
           <a href="/ai-workflow" class="glass-card project-card gs-fade"
-            style="grid-column: span 5; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            style="grid-column: span 5; min-height: 380px; height: 42vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_web_dev"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
               <img loading="lazy" src="/images/ai_workflow_cover.jpg?v=2" alt="AI-augmented concept development — prototyping 10 visual directions in the time it takes a traditional process to develop 2" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
               <div class="t-mono-label" style="color: var(--text-main);">Concept Acceleration · AI Direction</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">AI &amp; Workflow</h3>
+              <h3 class="h-large" style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); line-height: 1.15; margin-top: -0.4rem;">AI &amp; Workflow</h3>
               <span class="project-type-label">Concept Acceleration · AI Direction</span>
             </div>
             <div
@@ -2865,14 +2997,14 @@
 
           <!-- Project 5 -->
           <a href="/in-house-designs" class="glass-card project-card gs-fade"
-            style="grid-column: span 7; height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+            style="grid-column: span 7; min-height: 380px; height: 42vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
             <div class="p-img-wrap" id="gImg_in_house"
               style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0; overflow:hidden;">
               <img loading="lazy" src="/images/og_mithai/ogmitai_camera_far.jpg" alt="In-House Projects — Svar'n'Art Academy EdTech ERP, OG Mithai packaging, and Vedic Treats 3D renders" style="width:100%; height:100%; object-fit:cover; object-position:center; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);" />
             </div>
             <div style="position: relative; z-index: 2;">
               <div class="t-mono-label" style="color: var(--text-main);">EdTech ERP &middot; Packaging &middot; 3D Spec</div>
-              <h3 class="h-large" style="font-size: 2rem; margin-top: -1rem;">In-House Projects</h3>
+              <h3 class="h-large" style="font-size: clamp(1.4rem, 2.5vw, 2.2rem); line-height: 1.15; margin-top: -0.4rem;">In-House Projects</h3>
               <span class="project-type-label">Svarnart Academy &middot; OG Mithai &middot; Vedic Treats</span>
             </div>
             <div
@@ -3714,7 +3846,7 @@
     const hSec = document.getElementById('horizontal-sec');
     const hCont = document.querySelector('.h-container');
 
-    if (hSec && hCont && window.innerWidth > 768) {
+    if (hSec && hCont && window.innerWidth > 1024) {
       gsap.to(hCont, {
         x: () => -(hCont.scrollWidth - window.innerWidth) + "px",
         ease: "none",

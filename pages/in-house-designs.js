@@ -200,7 +200,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ih-border)}
 @media(max-width:480px){
   .hero-title{font-size:clamp(2.5rem,12vw,4.5rem)}
   .metrics{grid-template-columns:1fr}
-  .bento{grid-template-columns:1fr;grid-auto-rows:220px}
+  .bento{grid-template-columns:1fr;grid-auto-rows:minmax(220px, auto);gap:1.2rem}
+  .b-card{min-height:220px}
   .b-card.large, .b-card.wide{grid-column:span 1;grid-row:span 1}
   .b-card.tall{grid-row:span 1}
   .b-card.large .b-name{font-size:1.4rem}
@@ -277,8 +278,8 @@ section{padding:9rem 0;border-bottom:1px solid var(--ih-border)}
 .sv-stat-cell:hover{background:rgba(212,96,10,0.06)}
 .sv-stat-val{font-family:var(--D);font-weight:900;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--ih-accent);line-height:1}
 .sv-stat-lbl{font-family:var(--M);font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ih-muted);margin-top:0.6rem}
-@media(max-width:900px){.sv-grid{grid-template-columns:1fr}.sv-stats{grid-template-columns:repeat(2,1fr)}.sv-banner{padding:2rem}}
-@media(max-width:480px){.sv-stats{grid-template-columns:1fr}}
+@media(max-width:1024px){.sv-grid{grid-template-columns:repeat(2,1fr)}.sv-stats{grid-template-columns:repeat(2,1fr)}.sv-banner{padding:2.2rem}}
+@media(max-width:640px){.sv-grid{grid-template-columns:1fr}.sv-stats{grid-template-columns:1fr}.sv-banner{padding:1.6rem}.sv-card{padding:1.6rem 1.2rem}}
 `
 
 import Navbar from '../components/Navbar';

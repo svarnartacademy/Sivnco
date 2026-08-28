@@ -102,6 +102,24 @@ const MOBILE_CSS = `
     .hero-section { align-items: flex-start !important; }
     .h-massive { font-size: clamp(3.5rem, 12vw, 10rem) !important; }
     .hero-stats-bar { gap: 2rem; }
+    .hero-split { grid-template-columns: 1fr !important; gap: 3rem !important; }
+    .hero-right { border-left: none !important; border-top: 1px solid var(--glass-border) !important; padding-left: 0 !important; padding-top: 2.5rem !important; }
+    .glass-card.project-card { grid-column: span 12 !important; min-height: 320px !important; height: auto !important; padding: 2.4rem 2rem !important; }
+    #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
+    .h-sticky { height: auto !important; display: block !important; }
+    .h-container { display: flex !important; flex-direction: column !important; width: 100% !important; padding: 0 5vw !important; gap: 2rem !important; }
+    .h-container > div:first-child { width: 100% !important; }
+    .role-card { width: 100% !important; min-height: auto !important; padding: 3rem 2.2rem !important; flex-shrink: unset !important; }
+    .role-card h3 { font-size: clamp(1.8rem, 5vw, 2.8rem) !important; }
+    .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .testi-card:last-child { grid-column: span 2 !important; }
+    .vc-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    .vc-rejected-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.2rem !important; }
+    .vc-rejected-card:last-child { grid-column: span 2 !important; }
+    .vc-campaign-ext { grid-template-columns: repeat(2, 1fr) !important; gap: 1.2rem !important; }
+    .vc-ext-card:last-child { grid-column: span 2 !important; }
+    #principles .glass-card { padding: 2rem 1.6rem !important; }
   }
 
   /* Mobile */
@@ -132,10 +150,23 @@ const MOBILE_CSS = `
     .container { padding: 0 5vw !important; }
 
     /* Project gallery — single column */
-    .glass-card.project-card { grid-column: span 12 !important; height: 35vh !important; width: 100% !important; }
+    .glass-card.project-card { grid-column: span 12 !important; min-height: 280px !important; height: auto !important; width: 100% !important; padding: 2rem 1.6rem !important; }
 
     /* Metrics */
     .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Mosaic Slots */
+    .cs-img-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; gap: 0.8rem !important; }
+    .cs-img-slot { min-height: 220px !important; }
+    .cs-img-slot.tall { grid-row: span 1 !important; }
+    .cs-img-slot#csImg_motion { grid-column: span 2 !important; min-height: 220px !important; }
+
+    /* Visual Concepts on Mobile */
+    .vc-card { padding: 1.8rem 1.4rem !important; }
+    .vc-rejected-card { padding: 1.6rem 1.2rem !important; }
+    .vc-ext-card { padding: 1.6rem 1.2rem !important; }
+    .testi-card { padding: 2rem 1.5rem !important; }
+    #principles .glass-card { padding: 1.6rem 1.3rem !important; }
 
     /* -- FOUR ROLES HORIZONTAL SCROLL -> VERTICAL STACK -- */
     #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
@@ -151,7 +182,7 @@ const MOBILE_CSS = `
     .role-card {
       width: 100% !important;
       min-height: auto !important;
-      padding: 2.5rem 1.8rem !important;
+      padding: 2.2rem 1.6rem !important;
       flex-shrink: unset !important;
     }
     .role-card h3 { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
@@ -457,7 +488,7 @@ export async function getStaticProps() {
   // elements to their visible end-state so nothing stays blank.
   const mobileScrollFix = `
 (function() {
-  if (window.innerWidth > 768) return;
+  if (window.innerWidth > 1024) return;
 
   // Kill only the horizontal-scroll pin (identified by its trigger element)
   if (typeof ScrollTrigger !== 'undefined') {
