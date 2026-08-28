@@ -766,7 +766,7 @@ const RUNWAYS = {
   ],
   'superfoods': [
     { id: 'FILE_ID: SF_CLINICAL_BASELINE', title: 'The Clinical Baseline', body: 'High-resolution comparisons of the original medical-style labels versus early scenic sketch variants — showing the stark contrast between the pharmaceutical aesthetic and the consumer-first redesign.', iconType: 'baseline', img: '/images/before/before_pouch_1.jpg' },
-    { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'The Sticker Blueprint', body: 'Technical vector line drawings demonstrating the universal pouch design and the visual placement markers engineered for the factory floor team, enabling 4× throughput improvement.', iconType: 'blueprint', img: '/images/jusamazin/process/draft_packaging_06.jpg' },
+    { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'Universal Master Pouch System', body: 'Stand-up pouch architecture demonstrating the universal illustrated scenic base with variant-specific sticker overlays, engineered for multi-SKU scalability and 4× factory throughput.', iconType: 'blueprint', img: '/images/jusamazin/superfoods/pouch_front_500g.jpg' },
     { id: 'FILE_ID: SF_TYPOGRAPHY_SYSTEM', title: 'The Typography Overhaul', body: 'Close-up crops mapping critical back-of-pack corrections — the transition to lowercase formatting ("Flax seed", "dietary fiber", "omega-3") and the application of solid black body font for flawless legal legibility.', iconType: 'typography', img: '/images/jusamazin/superfoods/typography_macro.jpg' }
   ]
 }
