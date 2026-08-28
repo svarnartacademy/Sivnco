@@ -63,7 +63,7 @@ const VEDIC_TREATS_ASSETS = [
   { id: 'asset_1', name: 'Primary Package Asset', role: 'Earthy Illustration Elements', img: '/images/vedic_treats/asset_1.png', size: 'standard' },
   { id: 'asset_2', name: 'Pattern Asset', role: 'Geometric Print Rationale', img: '/images/vedic_treats/asset_2.png', size: 'standard' },
   { id: 'asset_3', name: 'Back Label Rationale', role: 'Ingredient Transparency Layout', img: '/images/vedic_treats/asset_3.png', size: 'standard' },
-  { id: 'dielines', name: 'Adobe Illustrator Vector Dielines', role: 'Production Packaging Specifications & Layer Architecture', img: '/images/jusamazin/process/draft_packaging_01.jpg', size: 'wide' },
+  { id: 'dielines', name: 'Adobe Illustrator Vector Dielines', role: 'Production Packaging Specifications & Layer Architecture', img: '/images/vedic_treats/vedic_treats_dieline.jpg', size: 'wide' },
 ]
 
 const TIMELINE_OG = [

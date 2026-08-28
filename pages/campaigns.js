@@ -755,9 +755,9 @@ function CampaignCompareTable({ executions, accent }) {
 
 const RUNWAYS = {
   'almond-milk': [
-    { id: 'FILE_ID: 30SAM_ERR_01', title: 'Packaging Trial & Error', body: 'Rough packaging mockups, color matching errors, and typography misalignment from the early trial-and-error phases before settling on the definitive Royal Purple canvas.', iconType: 'baseline', img: '/images/jusamazin/process/draft_packaging_01.jpg' },
-    { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction Diagrams', body: 'Behavioral diagrams mapping out consumer interaction patterns — detailing how users store, carry, tear, and mix the paste-based sachet into daily routines.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_03.jpg' },
-    { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: 'Final Royal Purple Sachet', body: 'High-fidelity 3D studio render of the final Royal Purple sachet, highlighting the extreme legibility of minimalist typography floating on the deep purple canvas.', iconType: 'color', img: '/images/jusamazin/process/draft_packaging_04.jpg' }
+    { id: 'FILE_ID: 30SAM_TRIAL_01', title: 'Retail Shelf & Display Trial', body: 'Field testing the 30-Second Almond Drink countertop display box and single-serve sachet placement across retail pop-up stalls alongside the core nutrition lineup.', iconType: 'field', img: '/images/jusamazin/process/retail_trial_02.jpg' },
+    { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction & Feedback', body: 'Live consumer tasting sessions at pop-up kiosks — gathering real-time feedback on dissolvability, taste profile, and single-serve sachet usability.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_03.jpg' },
+    { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: '30-Sec Almond Drink 3D Render', body: 'High-fidelity 3D studio render and liquid simulation of the final 30-Second Almond Drink bottle, highlighting clean nutrition claims and ingredient transparency.', iconType: 'color', img: '/images/jusamazin/management/almond_milk.jpg' }
   ],
   'desi-energy-bar': [
     { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'The Retail Notebook', body: 'High-resolution scans of original field notes tracking behavioral observations, purchase triggers, and shelf placement dynamics across 20–25 retail environments.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_02.jpg' },
