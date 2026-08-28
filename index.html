@@ -823,13 +823,15 @@
     /* HERO STATS BAR */
     .hero-stats-bar {
       display: flex;
-      gap: 4rem;
-      justify-content: center;
-      margin-top: 4rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-top: 3rem;
+      width: 100%;
     }
     .hero-stat {
-      text-align: center;
+      text-align: left;
+      width: 100%;
     }
     .hero-stat-num {
       font-family: var(--f-display); font-weight: 900;
@@ -1668,7 +1670,7 @@
         gap: 1.5rem;
         margin-top: 2.5rem;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
       }
       .hero-stat-num {
         font-size: clamp(2rem, 8vw, 3.5rem);
@@ -2639,41 +2641,41 @@
               I’m H P Shivaraj — an Art Director &amp; packaging designer specialising in FMCG and D2C brands. I lead the complete visual function from concept to production: brand identity, packaging systems, print, retail, digital campaigns, 3D visualisation and visual communication.
             </div>
 
-            <!-- Stats bar -->
-            <div class="hero-stats-bar" id="heroStats" style="margin-top: 2.5rem; margin-left: 0; padding-left: 0;">
-              <div class="hero-stat">
+            <!-- Stats bar: 4 points placed one below the other -->
+            <div class="hero-stats-bar" id="heroStats" style="margin-top: 3rem; margin-left: 0; padding-left: 0; display: flex; flex-direction: column; gap: 2.2rem; align-items: flex-start;">
+              <div class="hero-stat" style="text-align: left;">
                 <div class="hero-stat-num" id="statSkus">15+</div>
-                <div class="hero-stat-label">SKUs Designed End-to-End</div>
-                <div style="font-family:var(--f-mono);font-size:0.48rem;letter-spacing:0.12em;color:var(--text-muted);opacity:0.6;margin-top:0.35rem;">Spreads &middot; Bars &middot; Pouches &middot; Cartons</div>
-                <div class="hero-stat-proof">
-                  <span style="font-size:0.46rem;color:var(--accent);">Zero-to-One Systems</span>
+                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem;">SKUs Designed End-to-End</div>
+                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.65;margin-top:0.3rem;">Spreads &middot; Bars &middot; Pouches &middot; Cartons</div>
+                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+                  <span style="font-size:0.48rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.06em;">✦ Zero-to-One Systems</span>
                 </div>
               </div>
 
-              <div class="hero-stat">
+              <div class="hero-stat" style="text-align: left;">
                 <div class="hero-stat-num">4+ yrs</div>
-                <div class="hero-stat-label">Commercial Design</div>
-                <div style="font-family:var(--f-mono);font-size:0.48rem;letter-spacing:0.12em;color:var(--text-muted);opacity:0.6;margin-top:0.35rem;">FMCG &amp; D2C &middot; Print &amp; Digital</div>
-                <div class="hero-stat-proof">
-                  <span style="font-size:0.46rem;color:var(--accent);">Concept to Production</span>
+                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem;">Commercial Design</div>
+                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.65;margin-top:0.3rem;">FMCG &amp; D2C &middot; Print &amp; Digital</div>
+                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+                  <span style="font-size:0.48rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.06em;">✦ Concept to Production</span>
                 </div>
               </div>
 
-              <div class="hero-stat">
+              <div class="hero-stat" style="text-align: left;">
                 <div class="hero-stat-num">3+ yrs</div>
-                <div class="hero-stat-label">In-House Brand Ownership</div>
-                <div style="font-family:var(--f-mono);font-size:0.48rem;letter-spacing:0.12em;color:var(--text-muted);opacity:0.6;margin-top:0.35rem;">Jus’Amazin In-House Leadership</div>
-                <div class="hero-stat-proof">
-                  <span style="font-size:0.46rem;color:var(--accent);">Zero Agency Dependency</span>
+                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem;">In-House Brand Ownership</div>
+                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.65;margin-top:0.3rem;">Jus’Amazin In-House Leadership</div>
+                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+                  <span style="font-size:0.48rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.06em;">✦ Zero Agency Dependency</span>
                 </div>
               </div>
 
-              <div class="hero-stat">
+              <div class="hero-stat" style="text-align: left;">
                 <div class="hero-stat-num" id="statRevenue">176%</div>
-                <div class="hero-stat-label">FY24–25 Revenue Growth</div>
-                <div style="font-family:var(--f-mono);font-size:0.48rem;letter-spacing:0.12em;color:var(--text-muted);opacity:0.6;margin-top:0.35rem;">Jus’Amazin Tenure &middot; Internal Data</div>
-                <div class="hero-stat-proof">
-                  <span style="font-size:0.46rem;color:var(--accent);">Cross-Functional Impact</span>
+                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem;">FY24–25 Revenue Growth</div>
+                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.65;margin-top:0.3rem;">Jus’Amazin Tenure &middot; Internal Data</div>
+                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+                  <span style="font-size:0.48rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.06em;">✦ Cross-Functional Impact</span>
                 </div>
               </div>
             </div>

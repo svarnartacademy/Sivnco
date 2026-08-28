@@ -121,7 +121,7 @@ const MOBILE_CSS = `
     .h-massive { font-size: clamp(3rem, 14vw, 8rem) !important; }
     .h-large { font-size: clamp(2.2rem, 8vw, 5rem) !important; }
     .hero-roles { gap: 1rem !important; font-size: 0.6rem !important; margin-top: 2rem !important; }
-    .hero-stats-bar { gap: 1.5rem !important; margin-top: 2.5rem !important; flex-direction: column !important; align-items: center !important; }
+    .hero-stats-bar { gap: 1.5rem !important; margin-top: 2.5rem !important; flex-direction: column !important; align-items: flex-start !important; }
     .hero-stat-num { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
     .hero-float-tag { display: none !important; }
     .hero-line-h { display: none !important; }
