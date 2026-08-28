@@ -193,10 +193,10 @@ const CAMPAIGNS = [
         num: '03',
         channel: 'Retail Environment',
         title: 'Shelf Placement & Pack Array',
-        src: '/images/jusamazin/desi_bar/pack_array.jpg',
+        src: '/images/jusamazin/process/draft_packaging_02.jpg',
         isVideo: false,
         adNote: 'The array test proved the hypothesis: at retail exposure distance, the electric blue cuts through the competitive set in under 2 seconds. Adjacent products — muted amber, white, green — recede. The chaos creates a visual anchor.',
-        channels: 'Physical retail · Amazon listing photography'
+        channels: 'Physical retail · Modern trade · Checkout POS counter'
       }
     ],
     metrics: [
@@ -760,7 +760,7 @@ const RUNWAYS = {
     { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: '30-Sec Almond Drink 3D Render', body: 'High-fidelity 3D studio render and liquid simulation of the final 30-Second Almond Drink bottle, highlighting clean nutrition claims and ingredient transparency.', iconType: 'color', img: '/images/jusamazin/management/almond_milk.jpg' }
   ],
   'desi-energy-bar': [
-    { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'The Retail Notebook', body: 'High-resolution scans of original field notes tracking behavioral observations, purchase triggers, and shelf placement dynamics across 20–25 retail environments.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_02.jpg' },
+    { id: 'FILE_ID: DEB_FIELD_NOTES', title: 'Retail Pop-Up Rack & Display Array', body: 'Field testing multi-tier retail display racks and consumer pickup velocity across bustling market pop-ups, proving high touchpoint accessibility.', iconType: 'field', img: '/images/jusamazin/process/proof_print_03.jpg' },
     { id: 'FILE_ID: DEB_CHARACTER_SKT', title: 'Character Ideation', body: 'Raw hand-drawn sketches, vector ink frameworks, and character animation wireframes of local street games — highlighting the structural lines of the vintage Atlas bicycle and the stacked wooden blocks of Lagori.', iconType: 'blueprint', img: '/images/jusamazin/process/draft_packaging_05.jpg' },
     { id: 'FILE_ID: DEB_COLOR_GRID', title: 'Chromatic Testing Grid', body: 'A side-by-side display of rejected background variations and safe color templates alongside the winning Lightning Blue/Turquoise composition, proving how the definitive background maximized retail visibility.', iconType: 'color', img: '/images/jusamazin/desi_bar/pantone_proofing.jpg' }
   ],

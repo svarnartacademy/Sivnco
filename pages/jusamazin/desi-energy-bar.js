@@ -260,10 +260,10 @@ export default function DesiEnergyBar() {
         <div className="deb-gallery">
           {[
             {id:'studio_render_a',alt:'Studio Render A',src:'/images/jusamazin/desi_bar/studio_render_a.jpg'},
-            {id:'retail_shelf',alt:'Retail Shelf Setup',src:'/images/jusamazin/desi_bar/retail_shelf.jpg'},
+            {id:'retail_shelf',alt:'Supermarket Retail Shelf Placement',src:'/images/jusamazin/process/draft_packaging_02.jpg'},
             {id:'close_up_texture',alt:'Close-up Texture',src:'/images/jusamazin/desi_bar/close_up_texture.jpg'},
             {id:'lifestyle_shot',alt:'Real-World Lifestyle Stall',src:'/images/jusamazin/desi_bar/lifestyle_market.jpg'},
-            {id:'pack_array',alt:'Pack Array',src:'/images/jusamazin/desi_bar/pack_array.jpg'},
+            {id:'pack_array',alt:'Retail Display Rack & Pack Array',src:'/images/jusamazin/process/proof_print_03.jpg'},
             {id:'print_detail',alt:'Real-World Pantone Print Proofing',src:'/images/jusamazin/desi_bar/pantone_proofing.jpg'}
           ].map(g=>(
             <div key={g.id} className="deb-gal-item drv" style={{position:'relative',overflow:'hidden'}}><img loading="lazy" src={g.src} alt={g.alt} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/></div>

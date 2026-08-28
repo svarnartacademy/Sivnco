@@ -368,7 +368,7 @@ export default function JusAmazin() {
             <span className="slot-cap">Jars</span>
           </Link>
           <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/desi_bar/pack_array.jpg" className="slot-img zoom-fill" alt="Desi Energy Bar" />
+            <img loading="lazy" src="/images/jusamazin/desi_bar/runway_sketch_a.jpg" className="slot-img zoom-fill" alt="Desi Energy Bar" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">DESI ENERGY BAR</div>
             <span className="slot-cap">Desi Energy Bar</span>
