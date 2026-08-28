@@ -436,6 +436,49 @@ export default function InHouseDesigns() {
             ))}
           </div>
 
+          {/* Visual Transformation & Pedagogy Impact */}
+          <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '1px solid var(--ih-border)' }}>
+            <span className="s-label rv">PEDAGOGICAL VALIDATION &amp; STUDENT PROGRESSION</span>
+            <h3 style={{ fontFamily: 'var(--D)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: '#F0EDE6', lineHeight: 1.15, marginTop: '0.8rem', marginBottom: '1.5rem' }}>
+              Translating code into <i>creative mastery.</i>
+            </h3>
+            <p style={{ fontFamily: 'var(--S)', fontSize: '1.05rem', color: 'var(--ih-muted)', lineHeight: '1.8', maxWidth: '780px', marginBottom: '3rem' }}>
+              The real test of our EdTech ecosystem isn&apos;t just uptime or sub-second UPI settlements — it&apos;s student outcomes. Our browser-based color theory simulators and WebRTC critique rooms transformed how children understand spatial composition, value scales, and light.
+            </p>
+
+            <div className="three-d-grid rv2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+              <div style={{ background: 'var(--ih-glass)', border: '1px solid var(--ih-border)', borderRadius: '12px', overflow: 'hidden' }}>
+                <div style={{ height: '320px', position: 'relative', overflow: 'hidden', background: '#100F0B' }}>
+                  <span style={{ position: 'absolute', top: '1.2rem', left: '1.2rem', zIndex: 2, fontFamily: 'var(--M)', fontSize: '.55rem', letterSpacing: '.2em', padding: '.35rem .9rem', background: 'rgba(10,9,6,0.85)', backdropFilter: 'blur(10px)', border: '1px solid var(--ih-border)', borderRadius: '20px' }}>
+                    ENTRY BASELINE — MONTH 1
+                  </span>
+                  <img loading="lazy" src="/images/student_art_before.jpg" alt="Entry student baseline drawing" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '1.8rem' }}>
+                  <h4 style={{ fontFamily: 'var(--D)', fontSize: '1.3rem', color: '#F0EDE6', marginBottom: '.6rem' }}>Flat Symbolic Drawing</h4>
+                  <p style={{ fontFamily: 'var(--S)', fontSize: '.95rem', color: 'var(--ih-muted)', lineHeight: '1.7' }}>
+                    Age 7 baseline. Concept-driven drawing relying on primary flat shapes without observational depth or light values.
+                  </p>
+                </div>
+              </div>
+
+              <div style={{ background: 'var(--ih-glass)', border: '1px solid var(--ih-border)', borderRadius: '12px', overflow: 'hidden' }}>
+                <div style={{ height: '320px', position: 'relative', overflow: 'hidden', background: '#100F0B' }}>
+                  <span style={{ position: 'absolute', top: '1.2rem', left: '1.2rem', zIndex: 2, fontFamily: 'var(--M)', fontSize: '.55rem', letterSpacing: '.2em', padding: '.35rem .9rem', background: 'rgba(10,9,6,0.85)', backdropFilter: 'blur(10px)', border: '1px solid rgba(212,96,10,0.4)', borderRadius: '20px', color: 'var(--ih-accent)' }}>
+                    POST-CURRICULUM — MONTH 8
+                  </span>
+                  <img loading="lazy" src="/images/student_art_after.jpg" alt="Post-curriculum student painting" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '1.8rem' }}>
+                  <h4 style={{ fontFamily: 'var(--D)', fontSize: '1.3rem', color: '#F0EDE6', marginBottom: '.6rem' }}>Spatial Depth &amp; Color Theory</h4>
+                  <p style={{ fontFamily: 'var(--S)', fontSize: '.95rem', color: 'var(--ih-muted)', lineHeight: '1.7' }}>
+                    Age 8 canvas. Mastered structural perspective, color temperature mixing, and environmental illumination through digital simulations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 

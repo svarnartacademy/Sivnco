@@ -1038,6 +1038,7 @@ export default function Campaigns() {
           <div className="cp-footer-cta cpv">
             <a href="mailto:sivnco.in@gmail.com" className="cp-cta-btn primary">sivnco.in@gmail.com</a>
             <Link href="/jusamazin" className="cp-cta-btn">View Full Case Study</Link>
+            <Link href="/in-house-designs" className="cp-cta-btn">In-House Designs (Svarnart)</Link>
             <Link href="/" className="cp-cta-btn">Back to Portfolio</Link>
           </div>
           <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--cp-border)', fontFamily: 'var(--M)', fontSize: '.55rem', letterSpacing: '.15em', color: 'rgba(240,237,230,0.3)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
