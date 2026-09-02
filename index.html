@@ -4412,10 +4412,12 @@
     // DYNAMIC TEXT ENTRANCE ANIMATIONS
     // =============================================
     (function initTextEntranceDynamics() {
-      // Animate narrative paragraphs, captions, list items, chips dynamically on scroll
       const textTargets = document.querySelectorAll('.section p, .about-ref-item, .cs-deck-card, .ad-caption, .role-chips .chip');
       textTargets.forEach((el) => {
-        if (el.closest('.hero-section')) return; // skip hero to preserve initial entrance
+        if (el.closest('.hero-section')) return;
+        // Only animate elements that start below the fold — don't hide things already visible
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) return;
         gsap.fromTo(el,
           { opacity: 0, y: 24, filter: 'blur(6px)' },
           {
@@ -4424,10 +4426,11 @@
             filter: 'blur(0px)',
             duration: 0.75,
             ease: 'power2.out',
+            immediateRender: false,
             scrollTrigger: {
               trigger: el,
-              start: 'top 90%',
-              toggleActions: 'play none none reverse'
+              start: 'top 92%',
+              toggleActions: 'play none none none'
             }
           }
         );
