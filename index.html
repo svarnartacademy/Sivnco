@@ -2921,22 +2921,32 @@
       }
     }
 
-    /* Widescreen Uncropped Motion Reel */
+    /* Edge-to-Edge Full-Bleed Motion Reel (Zero Borders, Screen-Width Stretch) */
     .cinema-theater-frame {
       position: relative;
-      width: 100%;
-      border-radius: 20px;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      padding: 0;
+      border: none !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
       overflow: hidden;
-      border: 1px solid rgba(240, 237, 230, 0.1);
-      background: #000;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
-      margin: 3.5rem 0 2.5rem;
     }
     .cinema-theater-video {
       width: 100%;
       height: auto;
       display: block;
-      object-fit: contain;
+      border: none !important;
+      outline: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      cursor: pointer;
     }
 
     /* Cascading Overlapping Strategy Cards (Challenge / Approach / Outcome) */
@@ -3434,9 +3444,9 @@
           </div>
         </div>
 
-        <!-- Widescreen Uncropped Motion Graphics (Full-Width, End-to-End, No Overlays, No Buttons) -->
+        <!-- Edge-to-Edge Widescreen Motion Graphics (Device Width, Zero Borders, Autoplaying) -->
         <div class="cinema-theater-frame gs-fade" id="csMotionTheater">
-          <video src="/images/motion_graphics.mp4" autoplay loop muted playsinline class="cinema-theater-video"></video>
+          <video id="theaterVideo" src="/images/motion_graphics.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto" class="cinema-theater-video"></video>
         </div>
 
         <!-- Image Mosaic with 3D Pack Render and Hero Packaging -->
@@ -5253,6 +5263,56 @@
       container.addEventListener('pointercancel', function(e) {
         isPointerDown = false;
         try { container.releasePointerCapture(e.pointerId); } catch(err) {}
+      });
+    })();
+
+    // --- GUARANTEED CONTINUOUS VIDEO PLAYBACK ---
+    (function initCinemaPlayback() {
+      var video = document.getElementById('theaterVideo');
+      if (!video) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      function playVideo() {
+        var p = video.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(function() {
+            function onInteraction() {
+              video.play();
+              window.removeEventListener('click', onInteraction);
+              window.removeEventListener('touchstart', onInteraction);
+              window.removeEventListener('scroll', onInteraction);
+            }
+            window.addEventListener('click', onInteraction, { once: true });
+            window.addEventListener('touchstart', onInteraction, { once: true });
+            window.addEventListener('scroll', onInteraction, { once: true });
+          });
+        }
+      }
+
+      playVideo();
+
+      if ('IntersectionObserver' in window) {
+        var videoObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              playVideo();
+            }
+          });
+        }, { threshold: 0.05 });
+        videoObs.observe(video);
+      }
+
+      video.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
       });
     })();
   </script>
