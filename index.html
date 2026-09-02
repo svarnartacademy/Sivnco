@@ -2767,25 +2767,6 @@
       transform: scale(1.05);
     }
 
-    /* Overlapping Glass Placard */
-    .card-overlap-placard {
-      position: relative;
-      z-index: 3;
-      margin: 2rem;
-      padding: 2rem 2.4rem;
-      background: rgba(10, 9, 6, 0.82);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1px solid rgba(240, 237, 230, 0.12);
-      border-radius: 20px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
-      max-width: 680px;
-      transition: all 0.4s ease;
-    }
-    .editorial-project-card:hover .card-overlap-placard {
-      border-color: rgba(212, 96, 10, 0.4);
-      background: rgba(14, 12, 8, 0.9);
-    }
 
     /* Cascading Offset Utilities */
     .cascade-offset-right {
@@ -2806,11 +2787,6 @@
         grid-column: span 1 !important;
         height: 50vh !important;
         min-height: 400px !important;
-      }
-      .card-overlap-placard {
-        margin: 1.2rem;
-        padding: 1.5rem;
-        max-width: 100%;
       }
     }
 
@@ -3199,12 +3175,12 @@
         <div class="work-editorial-grid">
 
           <!-- Project 1 (Widescreen Flagship Billboard: Campaigns) -->
-          <a href="/campaigns" class="editorial-project-card gs-fade" style="grid-column: span 12; height: 68vh; min-height: 560px;">
+          <a href="/campaigns" class="editorial-project-card gs-fade" style="grid-column: span 12; height: 68vh; min-height: 540px; padding: 2.8rem 3rem;">
             <img loading="lazy" class="card-bg-img" src="/images/jusamazin/bars/amazon_campaign.jpg" alt="Campaigns — Multi-SKU retail packaging systems, art direction, and launch rollouts" />
-            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.45) 45%, rgba(8,8,8,0.1) 100%); z-index: 1;"></div>
+            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.5) 45%, rgba(8,8,8,0.1) 100%); z-index: 1;"></div>
             
-            <div class="card-overlap-placard">
-              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem;">
+            <div style="position: relative; z-index: 2;">
+              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
                 <span style="font-family: var(--f-mono); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 700;">✦ FLAGSHIP SYSTEM</span>
                 <span style="color: rgba(240,237,230,0.3);">|</span>
                 <span style="font-family: var(--f-mono); font-size: 0.58rem; letter-spacing: 0.12em; color: var(--text-muted);">Campaign · Art Direction · 3 Executions</span>
@@ -3222,11 +3198,11 @@
           </a>
 
           <!-- Project 2 (Wide Packaging System) -->
-          <a href="/jusamazin" class="editorial-project-card gs-fade" style="grid-column: span 7; height: 58vh; min-height: 480px;">
+          <a href="/jusamazin" class="editorial-project-card gs-fade" style="grid-column: span 7; height: 58vh; min-height: 460px; padding: 2.2rem 2.5rem;">
             <img loading="lazy" class="card-bg-img" src="/images/hero_packaging.jpg" alt="Jus Amazin brand system — complete visual language directing 15+ SKUs from brief to shelf" />
             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.15) 100%); z-index: 1;"></div>
             
-            <div class="card-overlap-placard">
+            <div style="position: relative; z-index: 2;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
                 <span style="font-family: var(--f-mono); font-size: 0.56rem; letter-spacing: 0.16em; color: var(--accent); font-weight: 700;">✦ 176% REVENUE IMPACT</span>
                 <span style="color: rgba(240,237,230,0.3);">|</span>
@@ -3244,11 +3220,11 @@
           </a>
 
           <!-- Project 3 (Cascading Fine Art Anchor) -->
-          <a href="/artist-educator" class="editorial-project-card cascade-offset-right gs-fade" style="grid-column: span 5; height: 64vh; min-height: 540px;">
+          <a href="/artist-educator" class="editorial-project-card cascade-offset-right gs-fade" style="grid-column: span 5; height: 64vh; min-height: 500px; padding: 2.2rem 2.5rem;">
             <img loading="lazy" class="card-bg-img" src="/images/paintings/painting_6.jpg" style="object-position: center 25%;" alt="Fine art practice — oil and acrylic portraiture on easel informing compositional instinct in commercial work" />
             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.15) 100%); z-index: 1;"></div>
             
-            <div class="card-overlap-placard">
+            <div style="position: relative; z-index: 2;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
                 <span style="font-family: var(--f-mono); font-size: 0.56rem; letter-spacing: 0.16em; color: var(--accent); font-weight: 700;">✦ BFA GOLD MEDALIST</span>
                 <span style="color: rgba(240,237,230,0.3);">|</span>
@@ -3266,11 +3242,11 @@
           </a>
 
           <!-- Project 4 (AI Concept Acceleration) -->
-          <a href="/ai-workflow" class="editorial-project-card gs-fade" style="grid-column: span 5; height: 54vh; min-height: 460px;">
+          <a href="/ai-workflow" class="editorial-project-card gs-fade" style="grid-column: span 5; height: 54vh; min-height: 440px; padding: 2.2rem 2.5rem;">
             <img loading="lazy" class="card-bg-img" src="/images/ai_workflow_cover.jpg?v=2" alt="AI-augmented concept development — prototyping 10 visual directions in the time it takes a traditional process to develop 2" />
             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.15) 100%); z-index: 1;"></div>
             
-            <div class="card-overlap-placard">
+            <div style="position: relative; z-index: 2;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
                 <span style="font-family: var(--f-mono); font-size: 0.56rem; letter-spacing: 0.16em; color: var(--accent); font-weight: 700;">✦ 10× EXPLORATION</span>
                 <span style="color: rgba(240,237,230,0.3);">|</span>
@@ -3288,11 +3264,11 @@
           </a>
 
           <!-- Project 5 (Cascading In-House Systems) -->
-          <a href="/in-house-designs" class="editorial-project-card cascade-offset-left gs-fade" style="grid-column: span 7; height: 60vh; min-height: 520px;">
+          <a href="/in-house-designs" class="editorial-project-card cascade-offset-left gs-fade" style="grid-column: span 7; height: 58vh; min-height: 460px; padding: 2.2rem 2.5rem;">
             <img loading="lazy" class="card-bg-img" src="/images/og_mithai/ogmitai_camera_far.jpg" alt="In-House Projects — Svar'n'Art Academy EdTech ERP, OG Mithai packaging, and Vedic Treats 3D renders" />
             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.15) 100%); z-index: 1;"></div>
             
-            <div class="card-overlap-placard">
+            <div style="position: relative; z-index: 2;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
                 <span style="font-family: var(--f-mono); font-size: 0.56rem; letter-spacing: 0.16em; color: var(--accent); font-weight: 700;">✦ VENTURE ECOSYSTEM</span>
                 <span style="color: rgba(240,237,230,0.3);">|</span>
