@@ -1283,68 +1283,172 @@
       margin-top: 0.5rem;
     }
 
-    /* EXPERIENCE TIMELINE */
-    .timeline {
+    /* JOURNEY SCROLL REVEAL & HIDE (INCREASING GROWTH) */
+    .journey-pinned-section {
+      width: 100%;
       position: relative;
-      padding-left: 2rem;
-      margin-top: 3rem;
+      background: #080807;
+      border-top: 1px solid rgba(240, 237, 230, 0.08);
+      border-bottom: 1px solid rgba(240, 237, 230, 0.08);
     }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .tl-item {
+    .journey-viewport-stage {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 4rem 0;
       position: relative;
-      padding: 0 0 4.5rem 2.5rem; /* increased breathing space between entries */
+      overflow: hidden;
     }
-
-    .tl-dot {
-      position: absolute;
-      left: -0.45rem;
-      top: 0.2rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-      animation: tlDotPulse 2.5s ease-in-out infinite;
+    .journey-progress-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
     }
-    @keyframes tlDotPulse {
-      0%,100%{box-shadow:0 0 6px var(--accent);transform:scale(1)}
-      50%{box-shadow:0 0 18px var(--accent),0 0 30px rgba(212,96,10,0.3);transform:scale(1.25)}
+    .journey-prog-pill {
+      font-family: var(--f-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      border: 1px solid rgba(240, 237, 230, 0.12);
+      background: rgba(240, 237, 230, 0.02);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+      cursor: pointer;
+      user-select: none;
     }
-
-    .tl-date {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
+    .journey-prog-pill.active {
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      border-color: var(--accent);
+      background: rgba(212, 96, 10, 0.15);
+      font-weight: 700;
+      box-shadow: 0 0 15px rgba(212, 96, 10, 0.2);
     }
 
-    .tl-title {
-      font-size: 1.4rem;
+    .journey-deck-stage {
+      position: relative;
+      width: 100%;
+      min-height: 480px;
+      height: 58vh;
+      max-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .journey-card-step {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(14, 13, 10, 0.92);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(240, 237, 230, 0.12);
+      border-radius: 24px;
+      padding: 3.2rem 3.8rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .journey-step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(240, 237, 230, 0.08);
+      padding-bottom: 0.9rem;
+    }
+    .journey-step-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .journey-step-num {
+      font-family: var(--f-mono);
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .journey-step-tag {
+      font-family: var(--f-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      background: rgba(212, 96, 10, 0.08);
+      border: 1px solid rgba(212, 96, 10, 0.25);
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
       font-weight: 600;
-      margin-bottom: 0.3rem;
+    }
+    .journey-step-date {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .journey-step-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.12;
+      margin: 0 0 0.4rem;
+      color: #FFF;
+    }
+    .journey-step-company {
+      font-family: var(--f-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
+    }
+    .journey-step-desc {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: rgba(240, 237, 230, 0.88);
+      margin: 0 0 1.5rem;
+      max-width: 960px;
+    }
+    .journey-step-chips {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .journey-step-chips span {
+      font-family: var(--f-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      background: rgba(240, 237, 230, 0.03);
+      border: 1px solid rgba(240, 237, 230, 0.1);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
     }
 
-    .tl-company {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .tl-desc {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 600px;
+    @media (max-width: 900px) {
+      .journey-card-step {
+        padding: 2rem 1.6rem;
+      }
+      .journey-deck-stage {
+        height: auto;
+        min-height: 480px;
+      }
+      .journey-step-title {
+        font-size: 1.5rem;
+      }
+      .journey-step-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .journey-progress-bar {
+        display: none;
+      }
     }
 
     /* TESTIMONIALS */
@@ -3854,61 +3958,177 @@
     </section>
 
     <hr class="section-divider">
-    <!-- EXPERIENCE TIMELINE -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="t-mono-label gs-fade">Experience</div>
-        <h2 class="h-large gs-reveal">
-          <div class="reveal-wrap">
-            <div class="reveal-text">The <i>journey</i></div>
+    <!-- EXPERIENCE TIMELINE — SCROLL-DRIVEN REVEAL & HIDE JOURNEY (INCREASING GROWTH) -->
+    <section class="section journey-pinned-section" id="gallery">
+      <div class="journey-viewport-stage">
+        <div class="container-wide" style="width: 100%;">
+          
+          <!-- Header & Progress Track -->
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+            <div>
+              <div class="t-mono-label gs-fade">Career Trajectory // Progressive Growth</div>
+              <h2 class="h-large gs-reveal" style="margin: 0; font-size: clamp(2rem, 3.8vw, 3.4rem);">
+                <div class="reveal-wrap"><div class="reveal-text">The <i>journey</i></div></div>
+                <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">so far.</div></div>
+              </h2>
+            </div>
+
+            <!-- Milestone Progress Pills (Increasing Order) -->
+            <div class="journey-progress-bar" id="journeyProgBar">
+              <span class="journey-prog-pill active" data-step="0">01 Foundation</span>
+              <span class="journey-prog-pill" data-step="1">02 Digital</span>
+              <span class="journey-prog-pill" data-step="2">03 Teaching</span>
+              <span class="journey-prog-pill" data-step="3">04 Svarnart</span>
+              <span class="journey-prog-pill" data-step="4">05 Packaging</span>
+              <span class="journey-prog-pill" data-step="5">06 Art Director</span>
+            </div>
           </div>
-          <div class="reveal-wrap">
-            <div class="reveal-text t-serif" style="color:var(--text-muted)">so far.</div>
+
+          <!-- Stack Stage Frame -->
+          <div class="journey-deck-stage" id="journeyDeckStage">
+
+            <!-- Step 1: CAVA Mysuru (Foundation & Gold Medalist) -->
+            <div class="journey-card-step" data-index="0">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">01 / 06</span>
+                  <span class="journey-step-tag">✦ ACADEMIC MASTERY &amp; GOLD MEDAL</span>
+                </div>
+                <div class="journey-step-date">2018 — 2022</div>
+              </div>
+              <h3 class="journey-step-title">BFA Applied Arts (CAVA Mysuru) &middot; Gold Medalist</h3>
+              <div class="journey-step-company">Chamarajendra Academy of Visual Arts (CAVA) &middot; University of Mysore</div>
+              <p class="journey-step-desc">
+                Graduated as the <strong>University of Mysore Gold Medalist &amp; Topper</strong> in Applied Arts. Built rigorous foundations in classical drawing, anatomical draftsmanship, colour theory, typography anatomy, composition, and Indian visual culture. This fine-art grounding serves as the instinctive compass behind every commercial brand and packaging decision today.
+              </p>
+              <div class="journey-step-chips">
+                <span>Gold Medalist &amp; Topper</span>
+                <span>Anatomy &amp; Composition</span>
+                <span>Colour Theory</span>
+                <span>Typography</span>
+                <span>Printmaking</span>
+              </div>
+            </div>
+
+            <!-- Step 2: Remote Graphic Design (Refresh Kid LLC) -->
+            <div class="journey-card-step" data-index="1">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">02 / 06</span>
+                  <span class="journey-step-tag">✦ COMMERCIAL PRODUCTION</span>
+                </div>
+                <div class="journey-step-date">2022 — 2023</div>
+              </div>
+              <h3 class="journey-step-title">Graphic Designer (Remote Collaboration)</h3>
+              <div class="journey-step-company">Refresh Kid LLC &middot; US / Remote</div>
+              <p class="journey-step-desc">
+                Delivered social media creative systems, performance marketing assets, and brand design collateral for a US-based EdTech platform through remote, asynchronous collaboration. Mastered fast iterative turnarounds, design system scaling, and cross-timezone stakeholder delivery.
+              </p>
+              <div class="journey-step-chips">
+                <span>Digital Collateral</span>
+                <span>Campaign Creatives</span>
+                <span>Remote Workflow</span>
+                <span>Visual Communication</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Pedagogy & Visual Education (Openhouse) -->
+            <div class="journey-card-step" data-index="2">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">03 / 06</span>
+                  <span class="journey-step-tag">✦ VISUAL THINKING &amp; PEDAGOGY</span>
+                </div>
+                <div class="journey-step-date">2022 — 2023</div>
+              </div>
+              <h3 class="journey-step-title">Art &amp; Design Educator</h3>
+              <div class="journey-step-company">Openhouse Learning Hub &middot; Bengaluru</div>
+              <p class="journey-step-desc">
+                Taught observational drawing, colour theory, composition, and visual thinking to students across diverse age cohorts. Designed structured curriculum modules that demystify visual grammar, training observers to see structure, balance, and intentional negative space before putting pen to paper.
+              </p>
+              <div class="journey-step-chips">
+                <span>Curriculum Design</span>
+                <span>Observational Drawing</span>
+                <span>Visual Grammar</span>
+                <span>Pedagogy</span>
+              </div>
+            </div>
+
+            <!-- Step 4: Venture Co-Creation (Svarnart Academy) -->
+            <div class="journey-card-step" data-index="3">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">04 / 06</span>
+                  <span class="journey-step-tag">✦ VENTURE CO-CREATION &amp; EDTECH</span>
+                </div>
+                <div class="journey-step-date">2024 — Present</div>
+              </div>
+              <h3 class="journey-step-title">Co-Founder &amp; Curriculum Lead</h3>
+              <div class="journey-step-company">Svarnart Academy &middot; Bengaluru</div>
+              <p class="journey-step-desc">
+                Co-founded an interdisciplinary cultural academy integrating fine art, Carnatic music, and creative thinking alongside my wife. Architected the complete visual brand identity, environmental studio aesthetics, course curriculum, and custom digital learning management system (LMS) serving growing cohorts of creative practitioners.
+              </p>
+              <div class="journey-step-chips">
+                <span>Venture Building</span>
+                <span>Brand Architecture</span>
+                <span>Fine Art Curriculum</span>
+                <span>EdTech Platform</span>
+              </div>
+            </div>
+
+            <!-- Step 5: Packaging & FMCG Systemization (Jus Amazin Initial Tenure) -->
+            <div class="journey-card-step" data-index="4">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">05 / 06</span>
+                  <span class="journey-step-tag">✦ FMCG PACKAGING &amp; IDENTITY</span>
+                </div>
+                <div class="journey-step-date">Aug 2023 — Nov 2024</div>
+              </div>
+              <h3 class="journey-step-title">Visual Communicator / Packaging Designer</h3>
+              <div class="journey-step-company">Jus’Amazin Foods &amp; Beverages &middot; Bengaluru</div>
+              <p class="journey-step-desc">
+                Built the core visual language and packaging logic from the ground up across 15+ SKUs. Replaced disjointed legacy labels with a cohesive earth-tone architecture, dielines, retail POS collateral, and 3D pack renders. Drove measurable shelf pickup that contributed to <strong>176% revenue growth</strong>, earning promotion to department head within 18 months.
+              </p>
+              <div class="journey-step-chips">
+                <span>15+ SKUs Built</span>
+                <span>Packaging Logic</span>
+                <span>176% Revenue Impact</span>
+                <span>Dielines &amp; Prepress</span>
+              </div>
+            </div>
+
+            <!-- Step 6: Executive Art Direction & Sivnco Studio (Current Peak Leadership) -->
+            <div class="journey-card-step" data-index="5">
+              <div class="journey-step-header">
+                <div class="journey-step-meta">
+                  <span class="journey-step-num">06 / 06</span>
+                  <span class="journey-step-tag" style="color: #34D399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.08);">✦ EXECUTIVE LEADERSHIP &amp; STUDIO</span>
+                </div>
+                <div class="journey-step-date" style="color: #34D399;">Dec 2024 — Present</div>
+              </div>
+              <h3 class="journey-step-title">Design &amp; Communications Manager (Art Director)</h3>
+              <div class="journey-step-company">Jus’Amazin Foods &amp; Beverages &middot; Bengaluru &nbsp;|&nbsp; Sivnco Studio Founder</div>
+              <p class="journey-step-desc">
+                Lead the company's complete end-to-end visual function across physical, print, retail, and digital channels. Direct packaging architecture, multi-channel campaigns, retail trade POS, product photography, and 3D visual specifications. Manage colour matching, substrates, prepress, and press-proofing across industrial production runs exceeding 200,000+ units. Concurrently founded <strong>Sivnco Studio</strong>, partnering with forward-thinking FMCG and D2C brands.
+              </p>
+              <div class="journey-step-chips">
+                <span style="color: var(--accent); border-color: rgba(212,96,10,0.4);">Head of Design</span>
+                <span>Industrial Press Runs (200k+)</span>
+                <span>Sivnco Studio Founder</span>
+                <span>Art Direction</span>
+                <span>Retail Architecture</span>
+              </div>
+            </div>
+
           </div>
-        </h2>
-        <div class="timeline gs-fade">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">Dec 2024 — Present</div>
-            <div class="tl-title">Design &amp; Communications Manager (Art Director)</div>
-            <div class="tl-company">Jus’Amazin Foods &amp; Beverages · Bengaluru</div>
-            <div class="tl-desc">Lead the company’s end-to-end visual function across physical, print and digital touchpoints. Direct packaging architecture, brand systems, campaigns, retail POS, social templates, product photography and 3D visualisation. Manage colour, substrate, dieline, prepress and press-proofing decisions across production runs up to 200,000+ units.</div>
+
+          <!-- Bottom hint -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; font-family: var(--f-mono); font-size: 0.6rem; color: var(--text-muted);">
+            <span>Scroll down to navigate progressive growth trajectory &darr;</span>
+            <span id="journeyStepIndicator">MILESTONE 01 OF 06</span>
           </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">Aug 2023 — Nov 2024</div>
-            <div class="tl-title">Visual Communicator / Packaging Designer</div>
-            <div class="tl-company">Jus’Amazin Foods &amp; Beverages · Bengaluru</div>
-            <div class="tl-desc">Built the foundations of the 15+ SKU packaging and communication system. Developed social, email, quick-commerce and product-render assets. Promoted within 18 months based on creative ownership and measurable commercial impact.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2025 — Present</div>
-            <div class="tl-title">Founder &amp; Creative Director</div>
-            <div class="tl-company">Sivnco Studio · Independent</div>
-            <div class="tl-desc">Independent design practice for D2C, FMCG and lifestyle brands, focused on identity systems, packaging, art direction and 3D visualisation.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2025 — Present</div>
-            <div class="tl-title">Co-Founder &amp; Curriculum Lead</div>
-            <div class="tl-company">Svarnart Academy · Bengaluru</div>
-            <div class="tl-desc">Co-founded a creative learning space combining Carnatic music, fine art and design education. Built the academy identity, curriculum structure and digital platform with my wife.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">Apr 2025 — Apr 2026</div>
-            <div class="tl-title">Art &amp; Design Teacher</div>
-            <div class="tl-company">Openhouse · Bengaluru</div>
-            <div class="tl-desc">Taught observational drawing, colour theory, composition and visual thinking to students across age groups in Bengaluru.</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-date">2022 — 2023</div>
-            <div class="tl-title">Graphic Designer (Remote)</div>
-            <div class="tl-company">Refresh Kid LLC</div>
-            <div class="tl-desc">Delivered social media creatives and marketing assets for a US-based EdTech company through remote, asynchronous collaboration.</div>
-          </div>
+
         </div>
       </div>
     </section>
@@ -4287,21 +4507,106 @@
       // (Role card opacity animation removed so all cards appear equally visible)
     }
 
-    // 4. Timeline Items — SUBTLE stagger (these need reading time)
-    gsap.fromTo('.tl-item',
-      { x: -30, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.0,     // subtle — timeline demands attention
-        stagger: 0.2,      // generous stagger between entries
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: '.timeline',
-          start: "top 80%"
+    // 4. Scroll-Driven Reveal & Hide Journey (Progressive Growth)
+    (function initJourneyScroll() {
+      const section = document.querySelector('#gallery');
+      const cards = document.querySelectorAll('.journey-card-step');
+      const pills = document.querySelectorAll('.journey-prog-pill');
+      const indicator = document.getElementById('journeyStepIndicator');
+      if (!section || !cards.length) return;
+
+      const totalSteps = cards.length;
+
+      // Initial positions: Step 0 is active, others hidden below
+      cards.forEach((card, idx) => {
+        if (idx === 0) {
+          gsap.set(card, { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', zIndex: 10 });
+        } else {
+          gsap.set(card, { opacity: 0, y: 60, scale: 0.96, filter: 'blur(6px)', zIndex: 1 });
+        }
+      });
+
+      function updateActivePill(activeIndex) {
+        pills.forEach((p, idx) => {
+          if (idx === activeIndex) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+        if (indicator) {
+          indicator.textContent = `MILESTONE 0${activeIndex + 1} OF 0${totalSteps}`;
         }
       }
-    );
+
+      // Create master pinned timeline
+      const journeyTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#gallery',
+          pin: true,
+          start: 'top top',
+          end: () => '+=' + (window.innerHeight * (totalSteps - 0.5)),
+          scrub: 0.8,
+          anticipatePin: 1,
+          onUpdate: (self) => {
+            const stepFraction = 1 / totalSteps;
+            const currentIdx = Math.min(
+              totalSteps - 1,
+              Math.floor(self.progress / stepFraction)
+            );
+            updateActivePill(currentIdx);
+          }
+        }
+      });
+
+      // Chain the hide & reveal for each consecutive pair
+      for (let i = 0; i < totalSteps - 1; i++) {
+        const curr = cards[i];
+        const next = cards[i + 1];
+
+        // Hold current step momentarily for reading
+        journeyTL.to({}, { duration: 0.5 });
+
+        // Hide current step (fades up and out)
+        journeyTL.to(curr, {
+          opacity: 0,
+          y: -50,
+          scale: 0.95,
+          filter: 'blur(8px)',
+          duration: 0.8,
+          ease: 'power2.inOut'
+        });
+
+        // Reveal next step (fades in and rises into place)
+        journeyTL.to(next, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          zIndex: 10 + i,
+          duration: 0.8,
+          ease: 'power2.inOut'
+        }, '<+=0.1');
+      }
+
+      // Final hold on the peak step (Art Director & Sivnco Founder)
+      journeyTL.to({}, { duration: 0.5 });
+
+      // Click pill to scroll directly to that milestone
+      pills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          const targetStep = parseInt(pill.dataset.step, 10);
+          const st = journeyTL.scrollTrigger;
+          if (!st) return;
+          const targetScroll = st.start + ((st.end - st.start) * (targetStep / (totalSteps - 1)));
+          if (window.lenis) {
+            window.lenis.scrollTo(targetScroll);
+          } else {
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
 
     // 5. Testimonial Cards — SNAPPY stagger (cards are scannable)
     gsap.fromTo('.testi-card',
