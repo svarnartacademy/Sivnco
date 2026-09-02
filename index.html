@@ -2690,12 +2690,32 @@
     }
 
 
+    /* 4-Column Side-by-Side Hero Stats Row */
+    .hero-stats-row {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 1024px) {
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .hero-stats-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Cascading Hero Stat Cards */
     .hero-stat-card {
       background: rgba(240, 237, 230, 0.03);
       border: 1px solid rgba(240, 237, 230, 0.08);
       border-radius: 16px;
-      padding: 1.2rem 1.6rem;
+      padding: 1.3rem 1.6rem;
       width: 100%;
       box-sizing: border-box;
       transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -2705,7 +2725,7 @@
     .hero-stat-card:hover {
       background: rgba(212, 96, 10, 0.08);
       border-color: rgba(212, 96, 10, 0.3);
-      transform: translateX(6px);
+      transform: translateY(-4px);
     }
 
     /* Widescreen Editorial Work Grid */
@@ -3018,48 +3038,6 @@
             <div class="hero-tagline gs-fade" style="font-size: 1.08rem; line-height: 1.85; max-width: 640px; color: var(--text-muted); margin-top: 1.4rem;">
               I’m H P Shivaraj — an Art Director &amp; packaging designer specialising in FMCG and D2C brands. I lead the complete visual function from concept to production: brand identity, packaging systems, print, retail, digital campaigns, 3D visualisation and visual communication.
             </div>
-
-            <!-- Stats bar: 4 cascading cards with hover lift and glowing accents -->
-            <div class="hero-stats-bar" id="heroStats" style="margin-top: 2.8rem; margin-left: 0; padding-left: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; width: 100%; max-width: 660px;">
-              <div class="hero-stat-card gs-fade">
-                <div class="hero-stat-num" id="statSkus" style="font-size: 2.4rem; color: var(--text-main);">15+</div>
-                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">SKUs Designed End-to-End</div>
-                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Spreads &middot; Bars &middot; Pouches &middot; Cartons</div>
-                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
-                  <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Zero-to-One Systems</span>
-                </div>
-              </div>
-
-              <div class="hero-stat-card gs-fade">
-                <div class="hero-stat-num" style="font-size: 2.4rem; color: var(--text-main);">4+ yrs</div>
-                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">Commercial Design</div>
-                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">FMCG &amp; D2C &middot; Print &amp; Digital</div>
-                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
-                  <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Concept to Production</span>
-                </div>
-              </div>
-
-              <div class="hero-stat-card gs-fade">
-                <div class="hero-stat-num" style="font-size: 2.4rem; color: var(--text-main);">3+ yrs</div>
-                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">In-House Brand Ownership</div>
-                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Jus’Amazin In-House Leadership</div>
-                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
-                  <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Zero Agency Dependency</span>
-                </div>
-              </div>
-
-              <div class="hero-stat-card gs-fade" style="border-color: rgba(212,96,10,0.3); background: rgba(212,96,10,0.04);">
-                <div class="hero-stat-num" id="statRevenue" style="font-size: 2.4rem; color: var(--accent);">176%</div>
-                <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">FY24–25 Revenue Growth</div>
-                <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Jus’Amazin Tenure &middot; Internal Data</div>
-                <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
-                  <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Cross-Functional Impact</span>
-                </div>
-              </div>
-            </div>
-            <div class="gs-fade" style="font-family:var(--f-mono); font-size:0.52rem; letter-spacing:0.06em; color:var(--text-muted); opacity:0.7; margin-top:1.2rem; max-width:560px; line-height:1.5;">
-              * Revenue figure based on internal company data. Design contributed alongside product, sales and operations; it should not be presented as a design-only attribution.
-            </div>
           </div>
 
           <!-- RIGHT: Disciplines + Meta + CTAs (Unboxed, natural flow) -->
@@ -3114,6 +3092,49 @@
 
           </div>
 
+        </div>
+
+        <!-- 4-COLUMN SIDE-BY-SIDE STATS ROW (Full Width, No Empty Space) -->
+        <div class="hero-stats-row" id="heroStats">
+          <div class="hero-stat-card gs-fade">
+            <div class="hero-stat-num" id="statSkus" style="font-size: 2.4rem; color: var(--text-main);">15+</div>
+            <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">SKUs Designed End-to-End</div>
+            <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Spreads &middot; Bars &middot; Pouches &middot; Cartons</div>
+            <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+              <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Zero-to-One Systems</span>
+            </div>
+          </div>
+
+          <div class="hero-stat-card gs-fade">
+            <div class="hero-stat-num" style="font-size: 2.4rem; color: var(--text-main);">4+ yrs</div>
+            <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">Commercial Design</div>
+            <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">FMCG &amp; D2C &middot; Print &amp; Digital</div>
+            <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+              <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Concept to Production</span>
+            </div>
+          </div>
+
+          <div class="hero-stat-card gs-fade">
+            <div class="hero-stat-num" style="font-size: 2.4rem; color: var(--text-main);">3+ yrs</div>
+            <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">In-House Brand Ownership</div>
+            <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Jus’Amazin In-House Leadership</div>
+            <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+              <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Zero Agency Dependency</span>
+            </div>
+          </div>
+
+          <div class="hero-stat-card gs-fade" style="border-color: rgba(212,96,10,0.3); background: rgba(212,96,10,0.04);">
+            <div class="hero-stat-num" id="statRevenue" style="font-size: 2.4rem; color: var(--accent);">176%</div>
+            <div class="hero-stat-label" style="text-align: left; margin-top: 0.35rem; font-weight: 600; color: #FFF;">FY24–25 Revenue Growth</div>
+            <div style="font-family:var(--f-mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--text-muted);opacity:0.75;margin-top:0.3rem;">Jus’Amazin Tenure &middot; Internal Data</div>
+            <div class="hero-stat-proof" style="text-align: left; margin-top: 0.35rem;">
+              <span style="font-size:0.52rem;color:var(--accent);font-family:var(--f-mono);letter-spacing:0.08em;font-weight:700;">✦ Cross-Functional Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gs-fade" style="font-family:var(--f-mono); font-size:0.52rem; letter-spacing:0.06em; color:var(--text-muted); opacity:0.7; margin-top:1.2rem; line-height:1.5;">
+          * Revenue figure based on internal company data. Design contributed alongside product, sales and operations; it should not be presented as a design-only attribution.
         </div>
       </div>
     </section>
