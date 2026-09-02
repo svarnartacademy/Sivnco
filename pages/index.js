@@ -3,8 +3,6 @@ import path from 'path'
 import Head from 'next/head'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import StartProjectButton from '@/components/demo'
 
 // Three.js uses browser-only APIs — must skip SSR
@@ -120,6 +118,7 @@ const MOBILE_CSS = `
     .vc-campaign-ext { grid-template-columns: repeat(2, 1fr) !important; gap: 1.2rem !important; }
     .vc-ext-card:last-child { grid-column: span 2 !important; }
     #principles .glass-card { padding: 2rem 1.6rem !important; }
+    .studio-3d-box { grid-template-columns: 1fr !important; gap: 1.5rem !important; padding: 1.5rem !important; }
   }
 
   /* Mobile */

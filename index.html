@@ -3103,6 +3103,39 @@
           </div>
         </div>
 
+        <!-- INTERACTIVE COMPARISON SLIDER -->
+        <div class="gs-fade" style="margin-top: 3.5rem; margin-bottom: 2.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; font-family: var(--f-mono); font-size: 0.65rem;">
+            <span style="color: var(--accent); text-transform: uppercase; font-weight: 700; letter-spacing: 0.12em;">✦ INTERACTIVE BRAND TRANSFORMATION SLIDER</span>
+            <span style="color: var(--text-muted);">Drag divider to compare 2023 vs 2025</span>
+          </div>
+
+          <div class="home-slider-container" id="homeBaSlider" style="position: relative; width: 100%; aspect-ratio: 21/9; min-height: 280px; border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-border); cursor: ew-resize; user-select: none; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+            <!-- Background: AFTER (2025 Unified System) -->
+            <img src="/images/jusamazin/bars/amazon_campaign.jpg" alt="After Rebrand" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" />
+            <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(6,78,59,0.85); border: 1px solid rgba(52,211,153,0.4); color: #34D399; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.35rem 0.8rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5;">
+              AFTER: UNIFIED 15+ SKU ARCHITECTURE (2025)
+            </div>
+
+            <!-- Foreground: BEFORE (2023 Legacy Label) -->
+            <div class="home-slider-clip" id="homeBaClip" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <img src="/images/before/before_jar.jpg" alt="Before Rebrand" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(0.9) brightness(0.9);" />
+              <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(127,29,29,0.85); border: 1px solid rgba(248,113,113,0.4); color: #F87171; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.35rem 0.8rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5;">
+                BEFORE: DISCONNECTED LEGACY LABELS (2023)
+              </div>
+            </div>
+
+            <!-- Divider Line & Handle -->
+            <div class="home-slider-bar" id="homeBaBar" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: linear-gradient(to bottom, var(--accent), #FFF, var(--accent)); box-shadow: 0 0 15px rgba(212,96,10,0.85); z-index: 10;">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #0A0907; border: 1px solid rgba(255,255,255,0.4); color: #FFF; border-radius: 20px; padding: 0.35rem 0.8rem; font-family: var(--f-mono); font-size: 0.6rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 10px 25px rgba(0,0,0,0.8);">
+                <span>◀</span>
+                <span style="color: var(--accent);">SLIDE</span>
+                <span>▶</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Before / After -->
         <div class="cs-before-after gs-fade">
           <div class="cs-ba-side before">
@@ -3229,6 +3262,104 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- INTERACTIVE 3D PACK STUDIO -->
+    <hr class="section-divider">
+    <section class="section" id="3d-pack-studio" style="padding: 6rem 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); background: rgba(10,9,6,0.6);">
+      <div class="container">
+        <!-- Header -->
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem;">
+          <div class="t-mono-label" style="color: var(--accent); display: flex; align-items: center; gap: 0.5rem; letter-spacing: 0.15em;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block;"></span>
+            INTERACTIVE 3D PACK STUDIO // REAL GLB SPATIAL RENDERS
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem;">
+            <h2 class="h-large" style="margin: 0; font-size: clamp(2rem, 4.5vw, 3.8rem); line-height: 1.05;">
+              Spatial Packaging Visualisation
+            </h2>
+            <p style="font-family: var(--f-mono); font-size: 0.75rem; color: var(--text-muted); max-width: 480px; line-height: 1.8;">
+              Interact with actual production GLB models created for marketing decks, Amazon A+ listings, and quick-commerce assets before print press rollouts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Main Studio Box -->
+        <div class="studio-3d-box" style="display: grid; grid-template-columns: 1fr 340px; gap: 2.5rem; background: #0C0B08; border: 1px solid var(--glass-border); border-radius: 24px; padding: 2.5rem; backdrop-blur: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.6);">
+          
+          <!-- Left: 3D Model Viewer Canvas -->
+          <div style="position: relative; aspect-ratio: 16/10; min-height: 420px; border-radius: 18px; overflow: hidden; background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.06), #000 80%); border: 1px solid rgba(240,237,230,0.08); display: flex; align-items: center; justify-content: center;">
+            <model-viewer
+              id="home3DStudioViewer"
+              src="/models/200g_jar_pistachio.glb"
+              alt="Interactive 3D Packaging Model"
+              auto-rotate
+              camera-controls
+              shadow-intensity="1"
+              environment-image="neutral"
+              style="width: 100%; height: 100%; min-height: 420px; background: transparent;"
+            ></model-viewer>
+
+            <!-- Interaction Pill -->
+            <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); padding: 0.4rem 0.9rem; border-radius: 30px; border: 1px solid rgba(255,255,255,0.12); font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--accent);"></span>
+              Drag to rotate 360° · Scroll to zoom
+            </div>
+          </div>
+
+          <!-- Right: Interactive Controls Sidebar -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem; font-family: var(--f-mono);">
+            <div>
+              <div style="font-size: 0.65rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;">
+                SELECT ACTIVE PRODUCTION SKU:
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;" id="studioSkuList">
+                <button class="studio-sku-btn active" data-src="/models/200g_jar_pistachio.glb" style="width: 100%; text-align: left; padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--accent); background: rgba(212,96,10,0.12); color: #FFF; font-family: var(--f-mono); font-size: 0.72rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                  <span>200g Jar Pistachio Butter</span>
+                  <span style="color: var(--accent);">✓</span>
+                </button>
+                <button class="studio-sku-btn" data-src="/models/pc_bar.glb" style="width: 100%; text-align: left; padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.72rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                  <span>Desi Protein Bar Wrapper</span>
+                  <span style="display: none; color: var(--accent);">✓</span>
+                </button>
+                <button class="studio-sku-btn" data-src="/models/pc_bar_2.glb" style="width: 100%; text-align: left; padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.72rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                  <span>Flow-Wrap Bar Variant 2</span>
+                  <span style="display: none; color: var(--accent);">✓</span>
+                </button>
+                <button class="studio-sku-btn" data-src="/models/product-3.glb" style="width: 100%; text-align: left; padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.72rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                  <span>Product Pack Model 3</span>
+                  <span style="display: none; color: var(--accent);">✓</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Lighting Environment -->
+            <div style="border-top: 1px solid var(--glass-border); padding-top: 1.2rem;">
+              <div style="font-size: 0.62rem; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.6rem;">
+                STUDIO ENVIRONMENT LIGHTING:
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;" id="studioLightList">
+                <button class="studio-light-btn active" data-light="neutral" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--accent); background: rgba(212,96,10,0.2); color: #FFF; font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
+                  Neutral
+                </button>
+                <button class="studio-light-btn" data-light="legacy" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
+                  Studio Sun
+                </button>
+                <button class="studio-light-btn" data-light="" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
+                  Ambient
+                </button>
+              </div>
+            </div>
+
+            <!-- Art Director Spec Note -->
+            <div style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 12px; border: 1px solid rgba(240,237,230,0.06); font-size: 0.68rem; line-height: 1.6; color: var(--text-muted);">
+              <strong style="color: var(--text-main); display: block; margin-bottom: 0.2rem;">Art Director's Rationale:</strong>
+              3D simulation allows marketing teams to deploy e-commerce imagery and test consumer resonance weeks before the first physical production cylinder is engraved.
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -4286,6 +4417,94 @@
     }
     updateHeroTopPad();
     window.addEventListener('resize', updateHeroTopPad);
+
+    // --- 3D STUDIO PACK INTERACTION SCRIPT ---
+    (function init3DStudio() {
+      var viewer = document.getElementById('home3DStudioViewer');
+      if (!viewer) return;
+
+      var skuButtons = document.querySelectorAll('.studio-sku-btn');
+      skuButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          skuButtons.forEach(function(b) {
+            b.classList.remove('active');
+            b.style.borderColor = 'var(--glass-border)';
+            b.style.background = 'rgba(255,255,255,0.02)';
+            b.style.color = 'var(--text-muted)';
+            var check = b.querySelector('span:last-child');
+            if (check) check.style.display = 'none';
+          });
+          btn.classList.add('active');
+          btn.style.borderColor = 'var(--accent)';
+          btn.style.background = 'rgba(212,96,10,0.12)';
+          btn.style.color = '#FFF';
+          var check = btn.querySelector('span:last-child');
+          if (check) check.style.display = 'inline';
+
+          var src = btn.getAttribute('data-src');
+          if (src) viewer.src = src;
+        });
+      });
+
+      var lightButtons = document.querySelectorAll('.studio-light-btn');
+      lightButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          lightButtons.forEach(function(b) {
+            b.classList.remove('active');
+            b.style.borderColor = 'var(--glass-border)';
+            b.style.background = 'rgba(255,255,255,0.02)';
+            b.style.color = 'var(--text-muted)';
+          });
+          btn.classList.add('active');
+          btn.style.borderColor = 'var(--accent)';
+          btn.style.background = 'rgba(212,96,10,0.2)';
+          btn.style.color = '#FFF';
+
+          var light = btn.getAttribute('data-light');
+          viewer.environmentImage = light;
+        });
+      });
+    })();
+
+    // --- BEFORE/AFTER SLIDER INTERACTION SCRIPT ---
+    (function initBaSlider() {
+      var container = document.getElementById('homeBaSlider');
+      var clip = document.getElementById('homeBaClip');
+      var bar = document.getElementById('homeBaBar');
+      if (!container || !clip || !bar) return;
+
+      var isDragging = false;
+
+      function update(clientX) {
+        var rect = container.getBoundingClientRect();
+        var x = clientX - rect.left;
+        var pct = Math.min(Math.max((x / rect.width) * 100, 4), 96);
+        clip.style.clipPath = 'polygon(0 0, ' + pct + '% 0, ' + pct + '% 100%, 0 100%)';
+        bar.style.left = pct + '%';
+      }
+
+      container.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        update(e.clientX);
+      });
+      window.addEventListener('mousemove', function(e) {
+        if (isDragging) update(e.clientX);
+      });
+      window.addEventListener('mouseup', function() {
+        isDragging = false;
+      });
+
+      container.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        if (e.touches && e.touches[0]) update(e.touches[0].clientX);
+      });
+      window.addEventListener('touchmove', function(e) {
+        if (isDragging && e.touches && e.touches[0]) update(e.touches[0].clientX);
+      });
+      window.addEventListener('touchend', function() {
+        isDragging = false;
+      });
+    })();
   </script>
 </body>
 

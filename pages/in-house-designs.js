@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import StartProjectButton from '@/components/demo'
+import Interactive3DStudio from '@/components/3d-pack-studio/Interactive3DStudio'
 
 
 
@@ -529,43 +530,17 @@ export default function InHouseDesigns() {
           </div>
 
           {/* Interactive 3D Mockup Showcase */}
-          <h3 className="s-label rv" style={{ marginTop: '4rem', marginBottom: '-2rem' }}>Interactive 3D Pack Renders</h3>
-          <div className="three-d-grid rv2">
-            <div className="three-d-card">
-              <div className="viewer-container">
-                <model-viewer 
-                  src="/models/pc_bar.glb" 
-                  alt="Vedic Treats Protein Bar Package 3D Model" 
-                  auto-rotate 
-                  camera-controls 
-                  shadow-intensity="1" 
-                  environment-image="neutral" 
-                  style={{ width: '100%', height: '100%', background: 'transparent' }}>
-                </model-viewer>
-              </div>
-              <div className="viewer-caption">
-                <h4 className="viewer-title">PC Bar Front Render</h4>
-                <p className="viewer-sub">Interactive 3D GLB Model · Auto-Rotate enabled</p>
-              </div>
-            </div>
-
-            <div className="three-d-card">
-              <div className="viewer-container">
-                <model-viewer 
-                  src="/models/pc_bar_2.glb" 
-                  alt="Vedic Treats Protein Bar Package Alternate 3D Model" 
-                  auto-rotate 
-                  camera-controls 
-                  shadow-intensity="1" 
-                  environment-image="neutral" 
-                  style={{ width: '100%', height: '100%', background: 'transparent' }}>
-                </model-viewer>
-              </div>
-              <div className="viewer-caption">
-                <h4 className="viewer-title">PC Bar Alternate Angle</h4>
-                <p className="viewer-sub">Interactive 3D GLB Model · Drag to rotate</p>
-              </div>
-            </div>
+          <div style={{ marginTop: '3rem', marginBottom: '2rem' }}>
+            <Interactive3DStudio
+              title="Vedic Treats 3D Pack Studio"
+              eyebrow="IN-HOUSE AYURVEDIC WELLNESS SPEC"
+              description="Interact with active Vedic Treats protein bar 3D models. Inspect wrapper geometry, lighting reflections, and typography alignment before committing to production rolls."
+              models={[
+                { name: 'PC Bar Front Wrapper', path: '/models/pc_bar.glb' },
+                { name: 'PC Bar Alternate Wrapper', path: '/models/pc_bar_2.glb' },
+                { name: 'Product Pack Model 3', path: '/models/product-3.glb' }
+              ]}
+            />
           </div>
 
           {/* 2D Assets Bento Grid */}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
+import Interactive3DStudio from '../../components/3d-pack-studio/Interactive3DStudio'
 
 const PRODUCTS = [
   {id:1,name:'200g Jars',cat:'Glass Jars',desc:'Compact glass jar format designed for premium spreads. Structural features include a wide mouth for easy access, custom neck thread heights for airtight metal lug caps, and optimized label wrapper dimensions.'},
@@ -158,6 +159,23 @@ export default function PackRender3D() {
           </div>
         </div>
       </section>
+
+      {/* FEATURED INTERACTIVE 3D PACK STUDIO */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto 4rem', padding: '0 2rem' }}>
+        <Interactive3DStudio
+          title="Interactive Packaging Studio"
+          eyebrow="SPATIAL VALIDATION ENGINE // REAL-TIME WEBGL"
+          description="Switch between active production SKUs, calibrate lighting environments, and inspect packaging geometry in full 360° rotation before plate engraving."
+          models={[
+            { name: '200g Glass Jar', path: '/models/product-1.glb' },
+            { name: '325g Volume Benchmark', path: '/models/product-2.glb' },
+            { name: '500g Large Family Jar', path: '/models/product-3.glb' },
+            { name: '1kg Molded HDPE Tub', path: '/models/product-4.glb' },
+            { name: '250g FFS Barrier Pouch', path: '/models/product-5.glb' },
+            { name: '1kg Gusset Standy Pouch', path: '/models/product-6.glb' }
+          ]}
+        />
+      </div>
 
       {/* PRODUCT GRID */}
       <div className="pr-grid">

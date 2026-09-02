@@ -1,7 +1,30 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import StartProjectButton from '@/components/demo'
+
+const UNIQUE_PAINTINGS = [
+  { id: 1, plate: '01', title: 'Wildlife Study', medium: 'Realism & Fur Texture · CAVA Mysore', img: '/images/paintings/painting_1.jpg' },
+  { id: 2, plate: '02', title: 'Mountain Lake Pier', medium: 'Perspective & Atmospheric Depth', img: '/images/paintings/painting_2.jpg' },
+  { id: 3, plate: '03', title: 'Elder Couple Portrait', medium: 'Observational Portraiture · Watercolors', img: '/images/paintings/painting_3.jpg' },
+  { id: 4, plate: '04', title: 'Studio Life Study', medium: 'Portraiture on Easel · Studio Lighting', img: '/images/paintings/painting_4.jpg' },
+  { id: 6, plate: '05', title: 'Classical Form & Sari', medium: 'Traditional Indian Form & Drapery Study', img: '/images/paintings/painting_6.jpg' },
+  { id: 7, plate: '06', title: 'Contemplation', medium: 'Charcoal & Wash · Expressive Tone', img: '/images/paintings/painting_7.jpg' },
+  { id: 8, plate: '07', title: 'Bengaluru Streetlife', medium: 'Plein Air Watercolor · City Sunlight', img: '/images/paintings/painting_8.jpg' },
+  { id: 9, plate: '08', title: 'Bust & Drapery', medium: 'Academic Still Life · Value & Chiaroscuro', img: '/images/paintings/painting_9.jpg' },
+  { id: 10, plate: '09', title: 'Foundational Geometry', medium: 'Planar Anatomy & Volume Construction', img: '/images/paintings/painting_10.jpg' },
+  { id: 11, plate: '10', title: 'Rail Transit', medium: 'Landscape & Industrial Heritage', img: '/images/paintings/painting_11.jpg' },
+  { id: 12, plate: '11', title: 'Urban Architecture', medium: 'Linear Ink Study · Vanishing Points', img: '/images/paintings/painting_12.jpg' },
+  { id: 13, plate: '12', title: 'Ascetic Portrait', medium: 'Figurative Light & Atmospheric Texture', img: '/images/paintings/painting_13.jpg' },
+  { id: 14, plate: '13', title: 'Child Expression', medium: 'Observational Watercolor · Facial Structure', img: '/images/paintings/painting_14.jpg' },
+  { id: 16, plate: '14', title: 'Sacred Diya & Vessel', medium: 'Traditional Brass Reflections & Still Life', img: '/images/paintings/painting_16.jpg' },
+  { id: 17, plate: '15', title: 'Glass Reflections', medium: 'Hermitage Bottle Study · Transparency & Color', img: '/images/paintings/painting_17.jpg' },
+  { id: 18, plate: '16', title: 'Teal Monochrome Portrait', medium: 'Expressive Watercolor Wash · Signed by Artist', img: '/images/paintings/painting_18.jpg' },
+  { id: 20, plate: '17', title: 'Cloud Formations', medium: 'Atmospheric Skies · Volume & Luminescence', img: '/images/paintings/painting_20.jpg' },
+  { id: 22, plate: '18', title: 'Studio Chair & Pot', medium: 'Wood Grain, Terracotta & Cast Shadow Study', img: '/images/paintings/painting_22.jpg' },
+  { id: 23, plate: '19', title: 'Anatomy of Feet', medium: 'Academic Life Study · Bone & Tendon Structure', img: '/images/paintings/painting_23.jpg' }
+];
 
 const METRICS = [
   { n: '200+', l: 'Mentored Students' },
@@ -9,20 +32,6 @@ const METRICS = [
   { n: '19', l: 'Original Paintings' },
   { n: '3', l: 'Years Teaching' },
 ]
-
-// IDs of unique paintings (duplicates 6, 16, 19, 21 removed)
-const UNIQUE_IDS = [1,2,3,4,5,7,8,9,10,11,12,13,14,15,17,18,20,22,23];
-const ARTWORKS = UNIQUE_IDS.map((id) => {
-  let size = 'standard';
-  if (id === 1 || id === 13) size = 'large';
-  else if ([2, 8, 14, 20].includes(id)) size = 'tall';
-  else if ([5, 10, 17, 22].includes(id)) size = 'wide';
-  return {
-    id,
-    img: `/images/paintings/painting_${id}.jpg`,
-    size
-  };
-});
 
 const TIMELINE = [
   { date: '2025 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
@@ -211,11 +220,170 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
 .ae-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(240,237,230,0.15);color:var(--ink);padding:.6rem 1.2rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s ease;background:var(--ae-glass);margin-top:2.5rem;position:relative;z-index:10}
 .ae-pill:hover{border-color:var(--ae-accent);color:var(--ae-accent);transform:translateY(-2px)}
+
+/* HORIZONTAL GSAP GALLERY STYLING */
+.gallery-h-sec {
+  background: var(--ae-bg);
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  border-bottom: 1px solid var(--ae-border);
+  padding: 0 !important;
+}
+.gallery-h-sticky {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 0 2rem;
+  box-sizing: border-box;
+}
+.gallery-card-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.gallery-card-item:hover {
+  transform: translateY(-6px);
+}
+.gallery-card-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0D0C09;
+  border: 1px solid rgba(240, 237, 230, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: clamp(380px, 56vh, 580px);
+  width: auto;
+  min-width: 360px;
+  max-width: 72vw;
+  box-sizing: border-box;
+}
+.gallery-card-img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.gallery-card-item:hover .gallery-card-img {
+  transform: scale(1.02);
+}
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 9, 6, 0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  pointer-events: none;
+}
+.gallery-card-item:hover .gallery-card-overlay {
+  opacity: 1;
+}
+.gallery-card-zoom-pill {
+  font-family: var(--M);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FFF;
+  background: rgba(10, 9, 6, 0.9);
+  border: 1px solid var(--ae-accent);
+  padding: 0.45rem 1rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+.gallery-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  font-family: var(--M);
+}
+.gallery-card-plate {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--ae-accent);
+  font-weight: 700;
+}
+.gallery-card-desc {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--ae-muted);
+}
+.gallery-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--ae-border);
+  background: var(--ae-glass);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--M);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+.gallery-nav-btn:hover {
+  border-color: var(--ae-accent);
+  color: var(--ae-accent);
+  background: rgba(212, 96, 10, 0.1);
+  transform: scale(1.05);
+}
+
+@media(max-width: 1024px) {
+  .gallery-card-frame {
+    height: clamp(340px, 52vh, 480px);
+    min-width: 320px;
+    max-width: 80vw;
+    padding: 0.85rem;
+  }
+}
+@media(max-width: 768px) {
+  .gallery-h-sec {
+    height: auto !important;
+    padding: 4rem 0 !important;
+  }
+  .gallery-h-sticky {
+    height: auto !important;
+    padding: 0 !important;
+  }
+  .gallery-card-frame {
+    height: clamp(320px, 48vh, 420px);
+    min-width: 270px;
+    max-width: 85vw;
+    padding: 0.75rem;
+    border-radius: 14px;
+  }
+  .gallery-card-desc {
+    display: none;
+  }
+}
 `
 
 import Navbar from '../components/Navbar';
+import ComparisonSlider from '../components/ui/ComparisonSlider';
 
 export default function ArtistEducator() {
+  const [selectedArt, setSelectedArt] = useState(null);
+
   return (
     <>
       <Head>
@@ -230,6 +398,8 @@ export default function ArtistEducator() {
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="beforeInteractive" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" strategy="beforeInteractive" />
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
 
       <div id="dot" />
@@ -291,19 +461,68 @@ export default function ArtistEducator() {
         </div>
       </section>
 
-      {/* BENTO GRID SHOWCASE */}
-      <section style={{ paddingTop: 0, borderBottom: '1px solid var(--ae-border)' }}>
-        <div className="c">
-          <div className="s-label rv">02 — Selected Artworks</div>
-          <h2 className="s-title rv">A gallery of<br /><i>original works.</i></h2>
+      {/* HORIZONTAL GSAP GALLERY SHOWCASE */}
+      <section className="gallery-h-sec" id="gallery-h-sec">
+        <div className="gallery-h-sticky">
           
-          <div className="bento rv2">
-            {ARTWORKS.map((art) => (
-              <div key={art.id} className={`b-card ${art.size}`}>
-                <img loading="lazy" src={art.img} alt={`Painting ${art.id}`} />
+          {/* Section Header */}
+          <div className="c gallery-h-header" style={{ width: '100%', marginBottom: '1rem', flexShrink: 0 }}>
+            <div className="s-label rv" style={{ marginBottom: '0.5rem' }}>02 — Selected Artworks</div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
+              <div>
+                <h2 className="s-title rv" style={{ margin: 0, fontSize: 'clamp(2.2rem, 4.5vw, 4.5rem)', lineHeight: 1.05 }}>
+                  A gallery of<br /><i>original works.</i>
+                </h2>
               </div>
-            ))}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.62rem', letterSpacing: '0.15em', color: 'var(--ae-muted)', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <span>19 ORIGINAL CAVA PLATES</span>
+                  <span style={{ color: 'var(--ae-accent)' }}>✦</span>
+                  <span style={{ color: 'var(--ae-accent)' }}>SCROLL HORIZONTALLY</span>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button id="galleryScrollLeft" aria-label="Scroll Left" className="gallery-nav-btn">
+                    ←
+                  </button>
+                  <button id="galleryScrollRight" aria-label="Scroll Right" className="gallery-nav-btn">
+                    →
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Horizontal Track Wrap */}
+          <div className="gallery-h-track-wrap" style={{ width: '100%', overflow: 'hidden', flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+            <div className="gallery-h-track" id="galleryHTrack" style={{ display: 'flex', gap: '2.5vw', paddingLeft: '5vw', paddingRight: '15vw', width: 'max-content', alignItems: 'center' }}>
+              {UNIQUE_PAINTINGS.map((art) => (
+                <div
+                  key={art.id}
+                  className="gallery-card-item"
+                  onClick={() => setSelectedArt(art.img)}
+                >
+                  <div className="gallery-card-frame">
+                    <img loading="lazy" src={art.img} alt={`Painting ${art.title}`} className="gallery-card-img" />
+                    <div className="gallery-card-overlay">
+                      <span className="gallery-card-zoom-pill">Click to Inspect ⤢</span>
+                    </div>
+                  </div>
+                  <div className="gallery-card-meta">
+                    <div className="gallery-card-plate">PLATE #{art.plate} · {art.title}</div>
+                    <div className="gallery-card-desc">{art.medium}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Interactive Progress Scrub Bar */}
+          <div className="c" style={{ width: '100%', marginTop: '1rem', flexShrink: 0 }}>
+            <div style={{ width: '100%', height: '3px', background: 'rgba(240,237,230,0.08)', borderRadius: '2px', overflow: 'hidden', position: 'relative' }}>
+              <div id="galleryProgressBar" style={{ height: '100%', width: '0%', background: 'var(--ae-accent)', transition: 'width 0.1s ease' }} />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -335,6 +554,15 @@ export default function ArtistEducator() {
             <p style={{ color: 'var(--ae-muted)' }}>
               Most kids come in drawing what they think things look like — a house is a box with a triangle on top, a face is two dots and a curved line. The real shift happens when they start drawing what they actually see. Below is a typical 8-month arc from one of our students.
             </p>
+          </div>
+          <div className="rv2" style={{ marginBottom: '3rem' }}>
+            <ComparisonSlider
+              beforeImage="/images/student_art_before.jpg"
+              afterImage="/images/student_art_after.jpg"
+              beforeLabel="EARLY PHASE: SYMBOLIC (MONTH 1)"
+              afterLabel="ADVANCED: SPATIAL & LIGHT (MONTH 8)"
+              aspectRatio="16/9"
+            />
           </div>
 
           <div className="progress-grid rv2">
@@ -469,17 +697,7 @@ export default function ArtistEducator() {
             pfObs.observe(pf);
           }
 
-          // 2. LENIS SMOOTH SCROLL
-          (function waitForLenis() {
-            if (typeof Lenis === 'undefined') { setTimeout(waitForLenis, 80); return; }
-            try {
-              var lenis = new Lenis({ duration: 1.2, smooth: true, smoothTouch: false, touchMultiplier: 1.5 });
-              function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-              requestAnimationFrame(raf);
-            } catch(e) {}
-          })();
-
-          // 3. DESKTOP CURSOR
+          // DESKTOP CURSOR
           if (window.innerWidth > 768) {
             var dot = document.getElementById('dot');
             if (dot) {
@@ -496,8 +714,180 @@ export default function ArtistEducator() {
               });
             }
           }
+
+          // 2. SYNCHRONIZED LENIS & GSAP SCROLLTRIGGER
+          (function initLenisAndGSAP() {
+            function boot() {
+              if (typeof Lenis === 'undefined' || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+                setTimeout(boot, 50);
+                return;
+              }
+
+              gsap.registerPlugin(ScrollTrigger);
+
+              var lenis = new Lenis({
+                duration: 1.2,
+                easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 1.5
+              });
+              window.lenis = lenis;
+
+              lenis.on('scroll', ScrollTrigger.update);
+
+              gsap.ticker.add(function(time) {
+                lenis.raf(time * 1000);
+              });
+              gsap.ticker.lagSmoothing(0, 0);
+
+              // Gallery Horizontal Scroll
+              var hSec = document.getElementById('gallery-h-sec');
+              var hTrack = document.getElementById('galleryHTrack');
+              var progressBar = document.getElementById('galleryProgressBar');
+
+              if (hSec && hTrack) {
+                if (window.innerWidth > 768) {
+                  function getScrollDistance() {
+                    return -(hTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.12));
+                  }
+
+                  gsap.to(hTrack, {
+                    x: getScrollDistance,
+                    ease: "none",
+                    scrollTrigger: {
+                      trigger: hSec,
+                      start: "top top",
+                      end: function() {
+                        return "+=" + (hTrack.scrollWidth - window.innerWidth + 200);
+                      },
+                      pin: true,
+                      scrub: 1,
+                      invalidateOnRefresh: true,
+                      anticipatePin: 1,
+                      onUpdate: function(self) {
+                        if (progressBar) {
+                          progressBar.style.width = (self.progress * 100) + '%';
+                        }
+                      }
+                    }
+                  });
+                } else {
+                  // Mobile Touch Carousel
+                  var wrap = document.querySelector('.gallery-h-track-wrap');
+                  if (wrap) {
+                    wrap.style.overflowX = 'auto';
+                    wrap.style.scrollSnapType = 'x mandatory';
+                    wrap.style.webkitOverflowScrolling = 'touch';
+                    wrap.addEventListener('scroll', function() {
+                      var maxScroll = wrap.scrollWidth - wrap.clientWidth;
+                      if (maxScroll > 0 && progressBar) {
+                        var p = (wrap.scrollLeft / maxScroll) * 100;
+                        progressBar.style.width = p + '%';
+                      }
+                    }, { passive: true });
+                  }
+                }
+
+                // Nav buttons
+                var btnLeft = document.getElementById('galleryScrollLeft');
+                var btnRight = document.getElementById('galleryScrollRight');
+
+                if (btnLeft && btnRight) {
+                  btnLeft.addEventListener('click', function() {
+                    if (window.innerWidth > 768) {
+                      var curX = gsap.getProperty(hTrack, "x") || 0;
+                      var newX = Math.min(0, curX + 450);
+                      gsap.to(hTrack, { x: newX, duration: 0.5, ease: "power2.out" });
+                    } else {
+                      var wrap = document.querySelector('.gallery-h-track-wrap');
+                      if (wrap) wrap.scrollBy({ left: -300, behavior: 'smooth' });
+                    }
+                  });
+
+                  btnRight.addEventListener('click', function() {
+                    if (window.innerWidth > 768) {
+                      var curX = gsap.getProperty(hTrack, "x") || 0;
+                      var minX = -(hTrack.scrollWidth - window.innerWidth + 100);
+                      var newX = Math.max(minX, curX - 450);
+                      gsap.to(hTrack, { x: newX, duration: 0.5, ease: "power2.out" });
+                    } else {
+                      var wrap = document.querySelector('.gallery-h-track-wrap');
+                      if (wrap) wrap.scrollBy({ left: 300, behavior: 'smooth' });
+                    }
+                  });
+                }
+              }
+            }
+
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', boot);
+            } else {
+              boot();
+            }
+          })();
         })();
       `}</Script>
+
+      {/* FULL-RES LIGHTBOX MODAL */}
+      {selectedArt && (
+        <div
+          onClick={() => setSelectedArt(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 999999,
+            background: 'rgba(5, 4, 3, 0.95)',
+            backdropFilter: 'blur(16px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            cursor: 'zoom-out'
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              maxWidth: '92vw',
+              maxHeight: '90vh',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              border: '1px solid rgba(255,255,255,0.15)',
+              boxShadow: '0 30px 80px rgba(0,0,0,0.9)'
+            }}
+          >
+            <img
+              src={selectedArt}
+              alt="Enlarged Artwork Plate"
+              style={{ width: '100%', height: '100%', maxHeight: '86vh', objectFit: 'contain', display: 'block' }}
+            />
+            <button
+              onClick={() => setSelectedArt(null)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'rgba(0,0,0,0.7)',
+                color: '#FFF',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '50%',
+                width: '36px',
+                height: '36px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'var(--M)',
+                fontSize: '1rem'
+              }}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }
