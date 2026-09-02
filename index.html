@@ -2608,6 +2608,14 @@
       }
     }
 
+    /* ABOUT RESPONSIVE GRID */
+    @media (max-width: 992px) {
+      .about-grid-wrap {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+      }
+    }
+
     /* ABOUT REFERENCES */
     .about-references { margin-top: 3rem; }
     .about-ref-label {
@@ -3615,59 +3623,93 @@
     </section>
 
     <hr class="section-divider">
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div style="max-width: 1000px;">
-          <div class="t-mono-label gs-fade">Art Director &middot; Brand &amp; Packaging &middot; Fine Artist</div>
-          <h2 class="h-large gs-reveal" style="margin-bottom: 2rem;">
-            <div class="reveal-wrap">
-              <div class="reveal-text">Design is how I think.</div>
+    <!-- ABOUT (Widescreen 2-Column Editorial Spread) -->
+    <section class="section" id="about" style="padding: 6rem 0;">
+      <div class="container-wide">
+        <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4.5rem; align-items: flex-start;" class="about-grid-wrap">
+          
+          <!-- LEFT COLUMN: Philosophy & Bio -->
+          <div>
+            <div class="t-mono-label gs-fade">Art Director &middot; Brand &amp; Packaging &middot; Fine Artist</div>
+            <h2 class="h-large gs-reveal" style="margin-bottom: 2rem; font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.06;">
+              <div class="reveal-wrap">
+                <div class="reveal-text">Design is how I think.</div>
+              </div>
+              <div class="reveal-wrap">
+                <div class="reveal-text t-serif" style="color:var(--accent);">Art is how I feel.</div>
+              </div>
+            </h2>
+            <p class="gs-fade" style="font-size: 1.1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.2rem;">
+              I’m a Bengaluru-based Art Director with a Fine Arts foundation and more than four years of commercial design experience. At Jus’Amazin, I lead the complete visual function across brand, packaging, print, retail, digital communication, campaigns and production.
+            </p>
+            <p class="gs-fade" style="font-size: 1.1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.2rem;">
+              My strength is connecting the idea to the execution. I can define the visual direction, build the system, prepare the artwork, work through production constraints and make sure the final result still carries the original intent.
+            </p>
+            <p class="gs-fade" style="font-size: 1.1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.2rem;">
+              My BFA in Applied Arts from CAVA, Mysuru — where I graduated as a Gold Medalist and university topper — continues to shape how I approach colour, typography, composition and visual emotion.
+            </p>
+            <p class="gs-fade" style="font-size: 1.1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.2rem;">
+              Alongside commercial design, I co-founded Svarnart Academy with my wife, teach visual thinking and maintain an active fine-art practice. Those disciplines keep my observation sharp and give the work a point of view beyond decoration.
+            </p>
+            <div class="role-chips gs-fade" style="margin-top: 2rem;">
+              <span class="chip">&#9670; Art Director</span>
+              <span class="chip">&loz; Packaging Systems</span>
+              <span class="chip">&hearts; Fine Artist</span>
+              <span class="chip">&dagger; Visual Educator</span>
+              <span class="chip">&sube; Studio Founder</span>
             </div>
-            <div class="reveal-wrap">
-              <div class="reveal-text t-serif" style="color:var(--accent)">Art is how I feel.</div>
+            <div class="gs-fade" style="margin-top: 2.2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+              <a href="/resume.pdf" download="HP_Shivaraj_ArtDirector_Resume_2026.pdf"
+                style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; border: 1px solid var(--glass-border); padding: 0.75rem 1.4rem; border-radius: 40px; color: var(--text-main); display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.35s cubic-bezier(0.19,1,0.22,1);"
+                onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';"
+                onmouseout="this.style.borderColor='var(--glass-border)';this.style.color='var(--text-main)';" aria-label="Download H P Shivaraj resume PDF">
+                &#8595;&nbsp;Download CV
+              </a>
+              <a href="#contact"
+                style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: var(--text-muted); transition: color 0.3s;"
+                onmouseover="this.style.color='var(--text-main)';"
+                onmouseout="this.style.color='var(--text-muted)';">Available for Art Direction &amp; Brand Roles &rarr;</a>
             </div>
-          </h2>
-          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 720px;">
-            I’m a Bengaluru-based Art Director with a Fine Arts foundation and more than four years of commercial design experience. At Jus’Amazin, I lead the complete visual function across brand, packaging, print, retail, digital communication, campaigns and production.
-          </p>
-          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 720px; margin-top: 1.2rem;">
-            My strength is connecting the idea to the execution. I can define the visual direction, build the system, prepare the artwork, work through production constraints and make sure the final result still carries the original intent.
-          </p>
-          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 720px; margin-top: 1.2rem;">
-            My BFA in Applied Arts from CAVA, Mysuru — where I graduated as a Gold Medalist and university topper — continues to shape how I approach colour, typography, composition and visual emotion.
-          </p>
-          <p class="gs-fade" style="font-size: 1.15rem; line-height: 1.9; color: var(--text-muted); max-width: 720px; margin-top: 1.2rem;">
-            Alongside commercial design, I co-founded Svarnart Academy with my wife, teach visual thinking and maintain an active fine-art practice. Those disciplines keep my observation sharp and give the work a point of view beyond decoration.
-          </p>
-          <div class="role-chips gs-fade" style="margin-top: 2rem;">
-            <span class="chip">&#9670; Art Director</span>
-            <span class="chip">&loz; Packaging Systems</span>
-            <span class="chip">&hearts; Fine Artist</span>
-            <span class="chip">&dagger; Visual Educator</span>
-            <span class="chip">&sube; Studio Founder</span>
-          </div>
-          <div class="gs-fade" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <a href="/resume.pdf" download="HP_Shivaraj_ArtDirector_Resume_2026.pdf"
-              style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; border: 1px solid var(--glass-border); padding: 0.75rem 1.4rem; border-radius: 40px; color: var(--text-main); display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.35s cubic-bezier(0.19,1,0.22,1);"
-              onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';"
-              onmouseout="this.style.borderColor='var(--glass-border)';this.style.color='var(--text-main)';" aria-label="Download H P Shivaraj resume PDF">
-              &#8595;&nbsp;Download CV
-            </a>
-            <a href="#contact"
-              style="font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.15em; color: var(--text-muted); transition: color 0.3s;"
-              onmouseover="this.style.color='var(--text-main)';"
-              onmouseout="this.style.color='var(--text-muted)';">Available for Art Direction &amp; Brand Roles &rarr;</a>
           </div>
 
-          <!-- WHAT I REFERENCE -->
-          <div class="about-references gs-fade">
-            <div class="about-ref-label">What I Reference</div>
-            <div class="about-ref-list">
-              <div class="about-ref-item"><span class="about-ref-name">Raja Ravi Varma</span><span>for colour weight, narrative density, and the proof that Indian visual language can be simultaneously classical and commercially powerful.</span></div>
-              <div class="about-ref-item"><span class="about-ref-name">Saul Bass</span><span>for structure that carries emotion — the reminder that simplicity is a decision, not an absence.</span></div>
-              <div class="about-ref-item"><span class="about-ref-name">Herb Lubalin</span><span>for type that becomes image — the understanding that typography is never neutral.</span></div>
-              <div class="about-ref-item"><span class="about-ref-name">Indian vernacular commercial art</span><span>for shelf-confidence, colour boldness, and the understanding that visual trust is built differently when the audience knows the culture from the inside.</span></div>
+          <!-- RIGHT COLUMN: Visual Heritage & Influences -->
+          <div class="gs-fade" style="padding-top: 0.5rem;">
+            <div style="background: rgba(240, 237, 230, 0.02); border: 1px solid rgba(240, 237, 230, 0.08); border-radius: 20px; padding: 2.4rem 2rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(240, 237, 230, 0.08);">
+                <span style="font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; font-weight: 700;">✦ Visual Heritage</span>
+                <span style="font-family: var(--f-mono); font-size: 0.55rem; color: var(--text-muted);">REFERENCES &amp; PROVENANCE</span>
+              </div>
+              
+              <div class="about-ref-list" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <div class="about-ref-item" style="border-bottom: 1px solid rgba(240,237,230,0.06); padding-bottom: 1.2rem;">
+                  <span class="about-ref-name" style="font-family: var(--f-serif); font-size: 1.05rem; color: #FFF; display: block; margin-bottom: 0.25rem;">Raja Ravi Varma</span>
+                  <span style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); display: block;">for colour weight, narrative density, and the proof that Indian visual language can be simultaneously classical and commercially powerful.</span>
+                </div>
+                <div class="about-ref-item" style="border-bottom: 1px solid rgba(240,237,230,0.06); padding-bottom: 1.2rem;">
+                  <span class="about-ref-name" style="font-family: var(--f-serif); font-size: 1.05rem; color: #FFF; display: block; margin-bottom: 0.25rem;">Saul Bass</span>
+                  <span style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); display: block;">for structure that carries emotion — the reminder that simplicity is a decision, not an absence.</span>
+                </div>
+                <div class="about-ref-item" style="border-bottom: 1px solid rgba(240,237,230,0.06); padding-bottom: 1.2rem;">
+                  <span class="about-ref-name" style="font-family: var(--f-serif); font-size: 1.05rem; color: #FFF; display: block; margin-bottom: 0.25rem;">Herb Lubalin</span>
+                  <span style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); display: block;">for type that becomes image — the understanding that typography is never neutral.</span>
+                </div>
+                <div class="about-ref-item" style="border-bottom: none; padding-bottom: 0;">
+                  <span class="about-ref-name" style="font-family: var(--f-serif); font-size: 1.05rem; color: #FFF; display: block; margin-bottom: 0.25rem;">Indian Vernacular Art</span>
+                  <span style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); display: block;">for shelf-confidence, colour boldness, and the understanding that visual trust is built differently when the audience knows the culture from the inside.</span>
+                </div>
+              </div>
+
+              <!-- Provenance Badge -->
+              <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(240,237,230,0.08); display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: rgba(212,96,10,0.12); border: 1px solid rgba(212,96,10,0.35); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1rem; flex-shrink: 0;">
+                  ✦
+                </div>
+                <div>
+                  <div style="font-family: var(--f-mono); font-size: 0.6rem; letter-spacing: 0.12em; color: var(--accent); font-weight: 700;">CAVA MYSURU GOLD MEDALIST &amp; TOPPER</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Bachelor of Visual Arts (B.V.A.) &middot; Applied Art Specialisation</div>
+                </div>
+              </div>
+
             </div>
           </div>
 
