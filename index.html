@@ -2790,71 +2790,22 @@
       }
     }
 
-    /* Motion Reel Cinema Showcase */
+    /* Widescreen Uncropped Motion Reel */
     .cinema-theater-frame {
       position: relative;
       width: 100%;
-      aspect-ratio: 16/9;
-      min-height: 440px;
-      border-radius: 28px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(240, 237, 230, 0.15);
+      border: 1px solid rgba(240, 237, 230, 0.1);
       background: #000;
-      box-shadow: 0 35px 90px rgba(0,0,0,0.85);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
       margin: 3.5rem 0 2.5rem;
     }
     .cinema-theater-video {
-      position: absolute;
-      inset: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .cinema-controls-dock {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      z-index: 5;
-    }
-    .cinema-pill-btn {
-      background: rgba(10, 9, 6, 0.75);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(240, 237, 230, 0.2);
-      color: #FFF;
-      font-family: var(--f-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      padding: 0.45rem 0.9rem;
-      border-radius: 30px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
-    }
-    .cinema-pill-btn:hover {
-      background: rgba(212, 96, 10, 0.8);
-      border-color: rgba(212, 96, 10, 1);
-    }
-    .cinema-overlap-banner {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      right: 1.5rem;
-      background: rgba(10, 9, 6, 0.82);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(240, 237, 230, 0.12);
-      border-radius: 18px;
-      padding: 1.2rem 1.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      z-index: 5;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
 
     /* Cascading Overlapping Strategy Cards (Challenge / Approach / Outcome) */
@@ -3352,23 +3303,9 @@
           </div>
         </div>
 
-        <!-- Widescreen Cinematic Motion Graphics Theater -->
+        <!-- Widescreen Uncropped Motion Graphics (Full-Width, End-to-End, No Overlays, No Buttons) -->
         <div class="cinema-theater-frame gs-fade" id="csMotionTheater">
-          <video id="theaterVideo" src="/images/motion_graphics.mp4" autoplay loop muted playsinline class="cinema-theater-video"></video>
-          <div class="cinema-controls-dock">
-            <button id="theaterPlayBtn" class="cinema-pill-btn" aria-label="Toggle Play Pause">⏸ Pause</button>
-            <button id="theaterMuteBtn" class="cinema-pill-btn" aria-label="Toggle Audio">🔇 Unmute</button>
-            <span class="cinema-pill-btn" style="pointer-events: none; border-color: rgba(212,96,10,0.5); color: var(--accent); font-weight: 700;">✦ MOTION SYSTEM</span>
-          </div>
-          <div class="cinema-overlap-banner">
-            <div>
-              <div style="font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.16em; color: var(--accent); text-transform: uppercase; font-weight: 700;">Motion Graphics &middot; Quick-Commerce Dynamics</div>
-              <div style="font-size: 0.88rem; color: rgba(240,237,230,0.9); margin-top: 0.3rem;">Brand video designed for quick-commerce product feeds — proving packaging architecture in kinetic motion.</div>
-            </div>
-            <div style="font-family: var(--f-mono); font-size: 0.58rem; color: var(--text-muted); letter-spacing: 0.12em;">
-              1:1 RATIO &middot; SOUND-OFF OPTIMISED
-            </div>
-          </div>
+          <video src="/images/motion_graphics.mp4" autoplay loop muted playsinline class="cinema-theater-video"></video>
         </div>
 
         <!-- Image Mosaic with 3D Pack Render and Hero Packaging -->
@@ -4818,38 +4755,6 @@
       window.addEventListener('touchend', function() {
         isDragging = false;
       });
-    })();
-
-    // --- CINEMA THEATER CONTROLS ---
-    (function initCinemaTheater() {
-      var video = document.getElementById('theaterVideo');
-      var playBtn = document.getElementById('theaterPlayBtn');
-      var muteBtn = document.getElementById('theaterMuteBtn');
-      if (!video) return;
-
-      if (playBtn) {
-        playBtn.addEventListener('click', function() {
-          if (video.paused) {
-            video.play();
-            playBtn.innerHTML = '⏸ Pause';
-          } else {
-            video.pause();
-            playBtn.innerHTML = '▶ Play';
-          }
-        });
-      }
-
-      if (muteBtn) {
-        muteBtn.addEventListener('click', function() {
-          if (video.muted) {
-            video.muted = false;
-            muteBtn.innerHTML = '🔊 Sound On';
-          } else {
-            video.muted = true;
-            muteBtn.innerHTML = '🔇 Mute';
-          }
-        });
-      }
     })();
   </script>
 </body>
