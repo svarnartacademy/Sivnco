@@ -2712,15 +2712,6 @@
       }
     }
 
-    /* KINETIC TYPOGRAPHY & RUBBERBAND ORIGIN */
-    #main-wrap {
-      transform-origin: 50% 50%;
-      will-change: transform;
-    }
-    .reveal-text, .h-large, .t-mono-label, .section p, .role-chips .chip {
-      transform-origin: left center;
-      will-change: transform, opacity, filter;
-    }
     .t-serif, em, i {
       transition: letter-spacing 0.35s cubic-bezier(0.19, 1, 0.22, 1), color 0.3s ease, text-shadow 0.3s ease;
       display: inline-block;
@@ -2823,16 +2814,18 @@
 
     /* 4-Column Side-by-Side Hero Stats Row */
     .hero-stats-row {
-      margin-top: 3.5rem;
+      margin-top: 5rem;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      gap: 1.8rem;
       width: 100%;
       box-sizing: border-box;
     }
     @media (max-width: 1024px) {
       .hero-stats-row {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin-top: 3.5rem;
       }
     }
     @media (max-width: 600px) {
@@ -2841,12 +2834,12 @@
       }
     }
 
-    /* Cascading Hero Stat Cards */
+    /* Hero Stat Cards */
     .hero-stat-card {
       background: rgba(240, 237, 230, 0.03);
       border: 1px solid rgba(240, 237, 230, 0.08);
-      border-radius: 16px;
-      padding: 1.3rem 1.6rem;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
       width: 100%;
       box-sizing: border-box;
       transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -2859,12 +2852,13 @@
       transform: translateY(-4px);
     }
 
-    /* Widescreen Editorial Work Grid */
+    /* Widescreen Editorial Work Grid with Cascading Stagger */
     .work-editorial-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 2.5rem;
-      margin-top: 4rem;
+      gap: 3.5rem;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
     }
 
     .editorial-project-card {
@@ -2898,21 +2892,26 @@
       transform: scale(1.05);
     }
 
-
-    /* Cascading Offset Utilities */
-    .cascade-offset-right {
-      margin-top: -3.5rem;
-    }
-    .cascade-offset-left {
-      margin-top: -2.5rem;
-    }
-    @media (max-width: 1024px) {
-      .cascade-offset-right, .cascade-offset-left {
-        margin-top: 0 !important;
+    /* Cascading staggered offsets for editorial cards */
+    @media (min-width: 1025px) {
+      .work-editorial-grid .editorial-project-card:nth-child(3) {
+        transform: translateY(3.5rem);
       }
+      .work-editorial-grid .editorial-project-card:nth-child(3):hover {
+        transform: translateY(3rem);
+      }
+      .work-editorial-grid .editorial-project-card:nth-child(4) {
+        transform: translateY(2rem);
+      }
+      .work-editorial-grid .editorial-project-card:nth-child(4):hover {
+        transform: translateY(1.5rem);
+      }
+    }
+
+    @media (max-width: 1024px) {
       .work-editorial-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
       }
       .editorial-project-card {
         grid-column: span 1 !important;
@@ -2921,7 +2920,7 @@
       }
     }
 
-    /* Edge-to-Edge Full-Bleed Motion Reel (Zero Borders, Screen-Width Stretch) */
+    /* Edge-to-Edge Full-Bleed Motion Reel */
     .cinema-theater-frame {
       position: relative;
       width: 100vw;
@@ -2929,8 +2928,8 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      margin-top: 4rem;
-      margin-bottom: 4rem;
+      margin-top: 6rem;
+      margin-bottom: 6rem;
       padding: 0;
       border: none !important;
       border-radius: 0 !important;
@@ -2953,22 +2952,41 @@
     .cs-cascade-deck {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin: 3rem 0;
+      gap: 2.8rem;
+      margin: 5rem 0 8rem;
     }
     .cs-deck-card {
       background: rgba(14, 13, 10, 0.75);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(240, 237, 230, 0.1);
       border-radius: 20px;
-      padding: 2.2rem;
+      padding: 2.6rem 2.4rem;
       position: relative;
       overflow: hidden;
       box-shadow: 0 20px 45px rgba(0,0,0,0.5);
       transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     }
+    @media (min-width: 901px) {
+      .cs-cascade-deck .cs-deck-card:nth-child(1) {
+        transform: translateY(0);
+      }
+      .cs-cascade-deck .cs-deck-card:nth-child(2) {
+        transform: translateY(3rem);
+      }
+      .cs-cascade-deck .cs-deck-card:nth-child(3) {
+        transform: translateY(6rem);
+      }
+      .cs-cascade-deck .cs-deck-card:nth-child(1):hover {
+        transform: translateY(-6px);
+      }
+      .cs-cascade-deck .cs-deck-card:nth-child(2):hover {
+        transform: translateY(2.4rem);
+      }
+      .cs-cascade-deck .cs-deck-card:nth-child(3):hover {
+        transform: translateY(5.4rem);
+      }
+    }
     .cs-deck-card:hover {
-      transform: translateY(-6px);
       border-color: rgba(212, 96, 10, 0.35);
       box-shadow: 0 30px 65px rgba(0,0,0,0.8), 0 0 30px rgba(212, 96, 10, 0.08);
     }
@@ -2988,6 +3006,8 @@
     @media (max-width: 900px) {
       .cs-cascade-deck {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3.5rem 0;
       }
     }
 
@@ -2995,8 +3015,8 @@
     .vc-rejection-cascade {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-      margin-top: 3.5rem;
+      gap: 2.5rem;
+      margin: 5rem 0 7rem;
       position: relative;
     }
     .vc-rejection-deck-card {
@@ -3004,20 +3024,92 @@
       backdrop-filter: blur(20px);
       border: 1px solid rgba(239, 68, 68, 0.2);
       border-radius: 20px;
-      padding: 2.4rem;
+      padding: 2.6rem 2.4rem;
       position: relative;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
       transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     }
+    @media (min-width: 901px) {
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(1) {
+        transform: translateY(0);
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(2) {
+        transform: translateY(2.5rem);
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(3) {
+        transform: translateY(5rem);
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(1):hover {
+        transform: translateY(-6px) scale(1.02);
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(2):hover {
+        transform: translateY(2rem) scale(1.02);
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(3):hover {
+        transform: translateY(4.4rem) scale(1.02);
+      }
+    }
     .vc-rejection-deck-card:hover {
-      transform: translateY(-8px) scale(1.02);
       border-color: rgba(239, 68, 68, 0.45);
       box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 30px rgba(239, 68, 68, 0.15);
     }
     @media (max-width: 900px) {
       .vc-rejection-cascade {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+    }
+
+    /* Working Principles Cascading Stagger */
+    .principles-cascade-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+    @media (min-width: 1025px) {
+      .principles-cascade-grid .glass-card:nth-child(1) {
+        transform: translateY(0);
+      }
+      .principles-cascade-grid .glass-card:nth-child(2) {
+        transform: translateY(2.4rem);
+      }
+      .principles-cascade-grid .glass-card:nth-child(3) {
+        transform: translateY(4.8rem);
+      }
+      .principles-cascade-grid .glass-card:nth-child(4) {
+        transform: translateY(7.2rem);
+      }
+    }
+    @media (max-width: 1024px) {
+      .principles-cascade-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 3.5rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .principles-cascade-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Testimonials Cascading Stagger */
+    @media (min-width: 1025px) {
+      .testimonials-grid .testi-card-1 {
+        transform: translateY(0);
+      }
+      .testimonials-grid .testi-card-2 {
+        transform: translateY(3rem);
+      }
+      .testimonials-grid .testi-card-3 {
+        transform: translateY(6rem);
+      }
+      .testimonials-grid {
+        margin-bottom: 6rem;
       }
     }
 
@@ -3230,7 +3322,7 @@
     </div>
 
     <!-- SHORT POSITIONING STATEMENT -->
-    <section class="section" style="padding: 4.5rem 0 3rem; border-bottom: 1px solid var(--glass-border); background: rgba(255,255,255,0.015);">
+    <section class="section" style="padding: clamp(7rem, 14vh, 11rem) 0; border-bottom: 1px solid var(--glass-border); background: rgba(255,255,255,0.015);">
       <div class="container">
         <div class="gs-fade" style="max-width: 860px; margin: 0 auto; text-align: center;">
           <div class="t-mono-label" style="color: var(--accent); margin-bottom: 1.2rem; letter-spacing: 0.2em;">Positioning &middot; Visual Leadership</div>
@@ -3245,8 +3337,7 @@
     </section>
 
     <!-- SELECTED GALLERY -->
-    <!-- SELECTED GALLERY -->
-    <section class="section" id="work" style="padding-top: 5rem;">
+    <section class="section" id="work" style="padding: clamp(8rem, 16vh, 14rem) 0;">
       <div class="container-wide">
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
           <div>
@@ -3408,9 +3499,7 @@
 
     <!-- FEATURED CASE STUDY — EMBEDDED INLINE -->
     <hr class="section-divider">
-    <!-- FEATURED CASE STUDY — EMBEDDED INLINE -->
-    <hr class="section-divider">
-    <section class="section" id="case-study" style="padding: 6rem 0;">
+    <section class="section" id="case-study" style="padding: clamp(8rem, 16vh, 14rem) 0;">
       <div class="container-wide">
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem;">
           <div>
@@ -3663,7 +3752,7 @@
 
     <!-- INTERACTIVE 3D PACK STUDIO -->
     <hr class="section-divider">
-    <section class="section" id="3d-pack-studio" style="padding: 6rem 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); background: rgba(10,9,6,0.6);">
+    <section class="section" id="3d-pack-studio" style="padding: clamp(8rem, 16vh, 13rem) 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); background: rgba(10,9,6,0.6);">
       <div class="container">
         <!-- Header -->
         <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem;">
@@ -3761,7 +3850,7 @@
 
     <hr class="section-divider">
     <!-- ABOUT (Widescreen 2-Column Editorial Spread) -->
-    <section class="section" id="about" style="padding: 6rem 0;">
+    <section class="section" id="about" style="padding: clamp(8rem, 16vh, 14rem) 0;">
       <div class="container-wide">
         <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4.5rem; align-items: flex-start;" class="about-grid-wrap">
           
@@ -3946,7 +4035,7 @@
     </section>
 
     <!-- WORKING PRINCIPLES -->
-    <section class="section" id="principles" style="border-top: 1px solid var(--glass-border); padding: 5rem 0 3rem;">
+    <section class="section" id="principles" style="border-top: 1px solid var(--glass-border); padding: clamp(8rem, 16vh, 13rem) 0;">
       <div class="container">
         <div class="t-mono-label gs-fade">Methodology &middot; Core Beliefs</div>
         <h2 class="h-large gs-reveal">
@@ -3957,29 +4046,29 @@
             <div class="reveal-text t-serif" style="color:var(--accent)">principles.</div>
           </div>
         </h2>
-        <div class="gs-fade" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
-          <div class="glass-card" style="padding: 2.2rem; border-top: 2px solid var(--accent);">
+        <div class="principles-cascade-grid gs-fade">
+          <div class="glass-card" style="padding: 2.6rem 2.2rem; border-top: 2px solid var(--accent);">
             <div class="t-mono-label" style="color: var(--accent); margin-bottom: 0.8rem;">01 / Scalability</div>
             <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin-bottom: 0.8rem; text-transform: uppercase;">Systems over one-off assets</h3>
             <p style="font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
               A strong visual system lets the brand stay coherent when the product range, channel or deadline changes.
             </p>
           </div>
-          <div class="glass-card" style="padding: 2.2rem; border-top: 2px solid var(--accent);">
+          <div class="glass-card" style="padding: 2.6rem 2.2rem; border-top: 2px solid var(--accent);">
             <div class="t-mono-label" style="color: var(--accent); margin-bottom: 0.8rem;">02 / Impact</div>
             <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin-bottom: 0.8rem; text-transform: uppercase;">Shelf presence with a reason</h3>
             <p style="font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
               Distinctive packaging should attract attention first, then make the product easier to understand and trust.
             </p>
           </div>
-          <div class="glass-card" style="padding: 2.2rem; border-top: 2px solid var(--accent);">
+          <div class="glass-card" style="padding: 2.6rem 2.2rem; border-top: 2px solid var(--accent);">
             <div class="t-mono-label" style="color: var(--accent); margin-bottom: 0.8rem;">03 / Rigor</div>
             <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin-bottom: 0.8rem; text-transform: uppercase;">Production is part of design</h3>
             <p style="font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
               A concept is only complete when it survives substrates, colour, dielines, printing, photography and the real retail environment.
             </p>
           </div>
-          <div class="glass-card" style="padding: 2.2rem; border-top: 2px solid var(--accent);">
+          <div class="glass-card" style="padding: 2.6rem 2.2rem; border-top: 2px solid var(--accent);">
             <div class="t-mono-label" style="color: var(--accent); margin-bottom: 0.8rem;">04 / Intuition</div>
             <h3 style="font-family: var(--f-display); font-size: 1.25rem; margin-bottom: 0.8rem; text-transform: uppercase;">Art brings the point of view</h3>
             <p style="font-family: var(--f-serif); font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
@@ -4167,7 +4256,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section">
+    <section class="section testi-section" style="padding: clamp(8rem, 16vh, 14rem) 0;">
       <div class="container">
         <div class="t-mono-label gs-fade">Impact</div>
         <h2 class="h-large gs-reveal">
@@ -4318,89 +4407,6 @@
     });
     gsap.ticker.lagSmoothing(0, 0);
 
-    // =============================================
-    // RUBBERBAND SCROLL & VELOCITY INERTIA ENGINE
-    // =============================================
-    (function initRubberbandEngine() {
-      const wrap = document.getElementById('main-wrap') || document.body;
-      let overscroll = 0;
-      let isSnapping = false;
-
-      // Elastic boundary rubberband on mouse wheel & trackpad
-      window.addEventListener('wheel', (e) => {
-        const atTop = (window.scrollY <= 1) && e.deltaY < 0;
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const atBottom = (window.scrollY >= maxScroll - 2) && e.deltaY > 0;
-
-        if (atTop || atBottom) {
-          const resistance = 0.38 / (1 + Math.abs(overscroll) * 0.015);
-          overscroll -= e.deltaY * resistance;
-          overscroll = Math.max(-110, Math.min(110, overscroll));
-
-          gsap.to(wrap, {
-            y: overscroll,
-            scaleY: 1 + Math.abs(overscroll) * 0.00035,
-            duration: 0.1,
-            ease: 'power1.out',
-            overwrite: 'auto'
-          });
-
-          clearTimeout(isSnapping);
-          isSnapping = setTimeout(() => {
-            overscroll = 0;
-            gsap.to(wrap, {
-              y: 0,
-              scaleY: 1,
-              duration: 0.85,
-              ease: 'elastic.out(1, 0.45)',
-              overwrite: 'auto'
-            });
-          }, 100);
-        }
-      }, { passive: true });
-
-      // Kinetic scroll velocity: stretch & skew text dynamics
-      let velocityTimeout;
-      lenis.on('scroll', (e) => {
-        ScrollTrigger.update();
-        const v = e.velocity || 0;
-        const clampedV = Math.max(-16, Math.min(16, v));
-
-        // Subtle elastic rubberband scale during mid-scroll
-        gsap.to(wrap, {
-          scaleY: 1 + Math.abs(clampedV) * 0.00035,
-          duration: 0.25,
-          ease: 'power2.out',
-          overwrite: 'auto'
-        });
-
-        // Kinetic text dynamics: tilt text dynamically in response to scroll speed
-        gsap.to('.reveal-text, .h-large, .t-mono-label, .cs-deck-card, .section p, .role-chips .chip', {
-          skewY: clampedV * 0.05,
-          y: clampedV * 0.1,
-          duration: 0.3,
-          ease: 'power1.out',
-          overwrite: 'auto'
-        });
-
-        clearTimeout(velocityTimeout);
-        velocityTimeout = setTimeout(() => {
-          gsap.to(wrap, {
-            scaleY: 1,
-            duration: 0.5,
-            ease: 'elastic.out(1, 0.5)',
-            overwrite: 'auto'
-          });
-          gsap.to('.reveal-text, .h-large, .t-mono-label, .cs-deck-card, .section p, .role-chips .chip', {
-            skewY: 0,
-            y: 0,
-            duration: 0.4,
-            ease: 'power2.out',
-            overwrite: 'auto'
-          });
-        }, 100);
-      });
-    })();
 
     // =============================================
     // DYNAMIC TEXT ENTRANCE ANIMATIONS

@@ -1088,29 +1088,6 @@ export default function Campaigns() {
               var l = new Lenis({ duration: 1.2, smooth: true, smoothTouch: false });
               function r(t) { l.raf(t); requestAnimationFrame(r); }
               requestAnimationFrame(r);
-
-              // Rubberband elastic bounce on scroll boundaries
-              var overscroll = 0;
-              var isSnapping = null;
-              var pageWrap = document.body;
-              window.addEventListener('wheel', function(e) {
-                var atTop = (window.scrollY <= 1) && e.deltaY < 0;
-                var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                var atBottom = (window.scrollY >= maxScroll - 2) && e.deltaY > 0;
-                if (atTop || atBottom) {
-                  var res = 0.35 / (1 + Math.abs(overscroll) * 0.015);
-                  overscroll -= e.deltaY * res;
-                  overscroll = Math.max(-100, Math.min(100, overscroll));
-                  pageWrap.style.transition = 'transform 0.08s ease-out';
-                  pageWrap.style.transform = 'translateY(' + overscroll + 'px) scaleY(' + (1 + Math.abs(overscroll) * 0.0003) + ')';
-                  clearTimeout(isSnapping);
-                  isSnapping = setTimeout(function() {
-                    overscroll = 0;
-                    pageWrap.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                    pageWrap.style.transform = 'translateY(0px) scaleY(1)';
-                  }, 100);
-                }
-              }, { passive: true });
             } catch(e) {}
           })();
         })();
