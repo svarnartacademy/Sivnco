@@ -1293,30 +1293,31 @@
     }
     .journey-viewport-stage {
       width: 100%;
-      min-height: 100vh;
+      height: 100vh;
+      max-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      padding: 4rem 0;
+      padding: 2.5vh 0;
       position: relative;
       overflow: hidden;
     }
     .journey-progress-bar {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
       align-items: center;
     }
     .journey-prog-pill {
       font-family: var(--f-mono);
-      font-size: 0.58rem;
+      font-size: 0.55rem;
       letter-spacing: 0.1em;
       color: var(--text-muted);
       border: 1px solid rgba(240, 237, 230, 0.12);
       background: rgba(240, 237, 230, 0.02);
-      padding: 0.4rem 0.8rem;
+      padding: 0.35rem 0.7rem;
       border-radius: 20px;
       transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
       cursor: pointer;
@@ -1333,9 +1334,8 @@
     .journey-deck-stage {
       position: relative;
       width: 100%;
-      min-height: 480px;
-      height: 58vh;
-      max-height: 540px;
+      height: clamp(330px, 52vh, 460px);
+      max-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1349,102 +1349,102 @@
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       border: 1px solid rgba(240, 237, 230, 0.12);
-      border-radius: 24px;
-      padding: 3.2rem 3.8rem;
+      border-radius: 20px;
+      padding: clamp(1.5rem, 3vh, 2.5rem) clamp(1.8rem, 3vw, 3rem);
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.06);
+      justify-content: space-between;
+      box-shadow: 0 25px 65px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .journey-step-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.6rem;
       border-bottom: 1px solid rgba(240, 237, 230, 0.08);
-      padding-bottom: 0.9rem;
+      padding-bottom: 0.6rem;
     }
     .journey-step-meta {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
     }
     .journey-step-num {
       font-family: var(--f-mono);
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       color: var(--accent);
       font-weight: 700;
     }
     .journey-step-tag {
       font-family: var(--f-mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.15em;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
       color: var(--accent);
       background: rgba(212, 96, 10, 0.08);
       border: 1px solid rgba(212, 96, 10, 0.25);
-      padding: 0.25rem 0.65rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 20px;
       font-weight: 600;
     }
     .journey-step-date {
       font-family: var(--f-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
       color: var(--accent);
       font-weight: 700;
     }
     .journey-step-title {
       font-family: var(--f-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      line-height: 1.12;
-      margin: 0 0 0.4rem;
+      font-size: clamp(1.35rem, 2.2vw, 2.1rem);
+      line-height: 1.15;
+      margin: 0 0 0.2rem;
       color: #FFF;
     }
     .journey-step-company {
       font-family: var(--f-mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
       letter-spacing: 0.06em;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
     }
     .journey-step-desc {
-      font-size: 1.05rem;
-      line-height: 1.85;
+      font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+      line-height: 1.68;
       color: rgba(240, 237, 230, 0.88);
-      margin: 0 0 1.5rem;
+      margin: 0 0 1rem;
       max-width: 960px;
     }
     .journey-step-chips {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
     }
     .journey-step-chips span {
       font-family: var(--f-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
+      font-size: 0.56rem;
+      letter-spacing: 0.1em;
       color: var(--text-muted);
       background: rgba(240, 237, 230, 0.03);
       border: 1px solid rgba(240, 237, 230, 0.1);
-      padding: 0.35rem 0.8rem;
+      padding: 0.25rem 0.65rem;
       border-radius: 20px;
     }
 
     @media (max-width: 900px) {
       .journey-card-step {
-        padding: 2rem 1.6rem;
+        padding: 1.6rem 1.3rem;
       }
       .journey-deck-stage {
         height: auto;
-        min-height: 480px;
+        min-height: 420px;
       }
       .journey-step-title {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
       }
       .journey-step-desc {
-        font-size: 0.95rem;
-        line-height: 1.7;
+        font-size: 0.88rem;
+        line-height: 1.6;
       }
       .journey-progress-bar {
         display: none;
@@ -3997,10 +3997,10 @@
         <div class="container-wide" style="width: 100%;">
           
           <!-- Header & Progress Track -->
-          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.2rem;">
             <div>
               <div class="t-mono-label gs-fade">Career Trajectory // Progressive Growth</div>
-              <h2 class="h-large gs-reveal" style="margin: 0; font-size: clamp(2rem, 3.8vw, 3.4rem);">
+              <h2 class="h-large gs-reveal" style="margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.4rem);">
                 <div class="reveal-wrap"><div class="reveal-text">The <i>journey</i></div></div>
                 <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">so far.</div></div>
               </h2>
@@ -4157,7 +4157,7 @@
           </div>
 
           <!-- Bottom hint -->
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; font-family: var(--f-mono); font-size: 0.6rem; color: var(--text-muted);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; font-family: var(--f-mono); font-size: 0.58rem; color: var(--text-muted);">
             <span>Scroll down to navigate progressive growth trajectory &darr;</span>
             <span id="journeyStepIndicator">MILESTONE 01 OF 06</span>
           </div>
