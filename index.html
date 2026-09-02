@@ -3474,29 +3474,33 @@
             <span style="color: var(--text-muted);">Drag divider to compare 2023 vs 2025</span>
           </div>
 
-          <div class="home-slider-container" id="homeBaSlider" style="position: relative; width: 100%; aspect-ratio: 21/9; min-height: 320px; border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); cursor: ew-resize; user-select: none; background: #000; box-shadow: 0 25px 65px rgba(0,0,0,0.7);">
+          <div class="home-slider-container" id="homeBaSlider" style="position: relative; width: 100%; aspect-ratio: 21/9; min-height: 320px; border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); cursor: ew-resize; user-select: none; background: #000; box-shadow: 0 25px 65px rgba(0,0,0,0.7); touch-action: none;">
             <!-- Background: AFTER (2025 Unified System) -->
-            <img src="/images/jusamazin/bars/amazon_campaign.jpg" alt="After Rebrand" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" />
-            <div style="position: absolute; top: 1.2rem; right: 1.2rem; background: rgba(6,78,59,0.85); border: 1px solid rgba(52,211,153,0.4); color: #34D399; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.4rem 0.9rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5;">
+            <img src="/images/jusamazin/bars/amazon_campaign.jpg" alt="After Rebrand" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none;" />
+            <div style="position: absolute; top: 1.2rem; right: 1.2rem; background: rgba(6,78,59,0.85); border: 1px solid rgba(52,211,153,0.4); color: #34D399; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.4rem 0.9rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5; pointer-events: none;">
               AFTER: UNIFIED 15+ SKU ARCHITECTURE (2025)
             </div>
 
             <!-- Foreground: BEFORE (2023 Legacy Label) -->
-            <div class="home-slider-clip" id="homeBaClip" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-              <img src="/images/before/before_jar.jpg" alt="Before Rebrand" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(0.9) brightness(0.9);" />
-              <div style="position: absolute; top: 1.2rem; left: 1.2rem; background: rgba(127,29,29,0.85); border: 1px solid rgba(248,113,113,0.4); color: #F87171; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.4rem 0.9rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5;">
+            <div class="home-slider-clip" id="homeBaClip" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; user-select: none; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <img src="/images/before/before_jar.jpg" alt="Before Rebrand" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(0.9) brightness(0.9); pointer-events: none; user-select: none;" />
+              <div style="position: absolute; top: 1.2rem; left: 1.2rem; background: rgba(127,29,29,0.85); border: 1px solid rgba(248,113,113,0.4); color: #F87171; font-family: var(--f-mono); font-size: 0.62rem; padding: 0.4rem 0.9rem; border-radius: 30px; backdrop-filter: blur(8px); z-index: 5; pointer-events: none;">
                 BEFORE: DISCONNECTED LEGACY LABELS (2023)
               </div>
             </div>
 
             <!-- Divider Line & Handle -->
-            <div class="home-slider-bar" id="homeBaBar" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: linear-gradient(to bottom, var(--accent), #FFF, var(--accent)); box-shadow: 0 0 15px rgba(212,96,10,0.85); z-index: 10;">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #0A0907; border: 1px solid rgba(255,255,255,0.4); color: #FFF; border-radius: 20px; padding: 0.35rem 0.8rem; font-family: var(--f-mono); font-size: 0.6rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 10px 25px rgba(0,0,0,0.8);">
+            <div class="home-slider-bar" id="homeBaBar" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: linear-gradient(to bottom, var(--accent), #FFF, var(--accent)); box-shadow: 0 0 15px rgba(212,96,10,0.85); z-index: 10; pointer-events: none;">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #0A0907; border: 1px solid rgba(255,255,255,0.4); color: #FFF; border-radius: 20px; padding: 0.35rem 0.8rem; font-family: var(--f-mono); font-size: 0.6rem; font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 10px 25px rgba(0,0,0,0.8); pointer-events: none;">
                 <span>◀</span>
                 <span style="color: var(--accent);">SLIDE</span>
                 <span>▶</span>
               </div>
             </div>
+
+            <!-- Range slider overlay for rock-solid cross-device interaction -->
+            <input type="range" min="0" max="100" value="50" step="0.1" id="homeBaRange" aria-label="Before and After Comparison Slider"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; padding: 0; cursor: ew-resize; z-index: 25; touch-action: none;" />
           </div>
         </div>
 
@@ -5198,38 +5202,57 @@
       var container = document.getElementById('homeBaSlider');
       var clip = document.getElementById('homeBaClip');
       var bar = document.getElementById('homeBaBar');
+      var range = document.getElementById('homeBaRange');
       if (!container || !clip || !bar) return;
 
-      var isDragging = false;
-
-      function update(clientX) {
-        var rect = container.getBoundingClientRect();
-        var x = clientX - rect.left;
-        var pct = Math.min(Math.max((x / rect.width) * 100, 4), 96);
+      function setPosition(pct) {
+        pct = Math.min(Math.max(pct, 2), 98);
         clip.style.clipPath = 'polygon(0 0, ' + pct + '% 0, ' + pct + '% 100%, 0 100%)';
+        clip.style.webkitClipPath = 'polygon(0 0, ' + pct + '% 0, ' + pct + '% 100%, 0 100%)';
         bar.style.left = pct + '%';
+        if (range && Math.abs(parseFloat(range.value) - pct) > 0.4) {
+          range.value = pct;
+        }
       }
 
-      container.addEventListener('mousedown', function(e) {
-        isDragging = true;
-        update(e.clientX);
-      });
-      window.addEventListener('mousemove', function(e) {
-        if (isDragging) update(e.clientX);
-      });
-      window.addEventListener('mouseup', function() {
-        isDragging = false;
+      // 1. Invisible range input for native, buttery smooth sliding
+      if (range) {
+        range.addEventListener('input', function(e) {
+          setPosition(parseFloat(e.target.value));
+        });
+      }
+
+      // 2. Pointer Events API with setPointerCapture (guarantees drag never drops)
+      var isPointerDown = false;
+
+      function onPointerMove(e) {
+        if (!isPointerDown) return;
+        var rect = container.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var pct = (x / rect.width) * 100;
+        setPosition(pct);
+      }
+
+      container.addEventListener('pointerdown', function(e) {
+        isPointerDown = true;
+        try { container.setPointerCapture(e.pointerId); } catch(err) {}
+        var rect = container.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var pct = (x / rect.width) * 100;
+        setPosition(pct);
+        e.preventDefault();
       });
 
-      container.addEventListener('touchstart', function(e) {
-        isDragging = true;
-        if (e.touches && e.touches[0]) update(e.touches[0].clientX);
+      container.addEventListener('pointermove', onPointerMove);
+
+      container.addEventListener('pointerup', function(e) {
+        isPointerDown = false;
+        try { container.releasePointerCapture(e.pointerId); } catch(err) {}
       });
-      window.addEventListener('touchmove', function(e) {
-        if (isDragging && e.touches && e.touches[0]) update(e.touches[0].clientX);
-      });
-      window.addEventListener('touchend', function() {
-        isDragging = false;
+
+      container.addEventListener('pointercancel', function(e) {
+        isPointerDown = false;
+        try { container.releasePointerCapture(e.pointerId); } catch(err) {}
       });
     })();
   </script>
