@@ -475,14 +475,16 @@ a{color:inherit;text-decoration:none}
 .cp-runway-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
 .cp-runway-header{font-family:var(--D);font-size:clamp(1.5rem,3vw,2.5rem);line-height:1;margin-bottom:.5rem;position:relative}
 .cp-runway-sub{font-family:var(--M);font-size:.52rem;letter-spacing:.2em;opacity:.35;margin-bottom:3rem;position:relative}
-.cp-runway-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative}
-.cp-runway-slot{border:1px solid var(--cp-border);padding:2rem;background:rgba(10,9,6,0.7)}
-.cp-runway-slot-id{font-family:var(--M);font-size:.42rem;letter-spacing:.15em;opacity:.25;margin-bottom:1.2rem}
-.cp-runway-slot-img{width:100%;aspect-ratio:4/3;background:rgba(240,237,230,0.03);border:1px solid var(--cp-border);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;border-radius:4px;flex-direction:column;gap:.8rem}
+.cp-runway-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;position:relative}
+.cp-runway-slot{border:1px solid rgba(240,237,230,0.12);border-radius:18px;overflow:hidden;background:rgba(14,13,10,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:0;transition:transform 0.4s cubic-bezier(0.19,1,0.22,1), border-color 0.4s ease, box-shadow 0.4s ease;box-shadow:0 15px 40px rgba(0,0,0,0.6)}
+.cp-runway-slot:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.4);box-shadow:0 25px 60px rgba(0,0,0,0.85)}
+.cp-runway-slot-img{width:100%;aspect-ratio:16/10;background:rgba(240,237,230,0.03);position:relative;overflow:hidden;margin-bottom:0;border:none;border-bottom:1px solid rgba(240,237,230,0.08);border-radius:0}
 .cp-runway-slot-img-icon{opacity:.12}
 .cp-runway-slot-img-label{font-family:var(--M);font-size:.42rem;letter-spacing:.15em;opacity:.2;text-align:center;max-width:160px;line-height:1.8}
-.cp-runway-slot-title{font-family:var(--S);font-size:.9rem;font-weight:600;margin-bottom:.6rem}
-.cp-runway-slot-body{font-size:.8rem;line-height:1.8;color:var(--cp-muted)}
+.cp-runway-slot-content{padding:1.8rem 1.6rem;background:rgba(10,9,6,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);flex-grow:1;display:flex;flex-direction:column}
+.cp-runway-slot-id{font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:var(--cp-accent);opacity:.85;margin-bottom:.6rem}
+.cp-runway-slot-title{font-family:var(--S);font-size:1.08rem;font-weight:600;margin-bottom:.7rem;color:#FFF;line-height:1.35}
+.cp-runway-slot-body{font-size:.85rem;line-height:1.8;color:rgba(240,237,230,0.82)}
 
 /* FOOTER CTA */
 .cp-footer{padding:10rem 0 4rem;text-align:center;border-top:1px solid var(--cp-border)}
@@ -641,7 +643,6 @@ function RunwaySlot({ id, title, body, iconType, img }) {
   }
   return (
     <div className="cp-runway-slot">
-      <div className="cp-runway-slot-id">{id}</div>
       <div className="cp-runway-slot-img" style={img ? { padding: 0, overflow: 'hidden', position: 'relative' } : {}}>
         {img ? (
           <img loading="lazy" src={img} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }} />
@@ -652,8 +653,11 @@ function RunwaySlot({ id, title, body, iconType, img }) {
           </>
         )}
       </div>
-      <div className="cp-runway-slot-title">{title}</div>
-      <div className="cp-runway-slot-body">{body}</div>
+      <div className="cp-runway-slot-content">
+        <div className="cp-runway-slot-id">{id}</div>
+        <div className="cp-runway-slot-title">{title}</div>
+        <div className="cp-runway-slot-body">{body}</div>
+      </div>
     </div>
   )
 }
@@ -1084,6 +1088,29 @@ export default function Campaigns() {
               var l = new Lenis({ duration: 1.2, smooth: true, smoothTouch: false });
               function r(t) { l.raf(t); requestAnimationFrame(r); }
               requestAnimationFrame(r);
+
+              // Rubberband elastic bounce on scroll boundaries
+              var overscroll = 0;
+              var isSnapping = null;
+              var pageWrap = document.body;
+              window.addEventListener('wheel', function(e) {
+                var atTop = (window.scrollY <= 1) && e.deltaY < 0;
+                var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                var atBottom = (window.scrollY >= maxScroll - 2) && e.deltaY > 0;
+                if (atTop || atBottom) {
+                  var res = 0.35 / (1 + Math.abs(overscroll) * 0.015);
+                  overscroll -= e.deltaY * res;
+                  overscroll = Math.max(-100, Math.min(100, overscroll));
+                  pageWrap.style.transition = 'transform 0.08s ease-out';
+                  pageWrap.style.transform = 'translateY(' + overscroll + 'px) scaleY(' + (1 + Math.abs(overscroll) * 0.0003) + ')';
+                  clearTimeout(isSnapping);
+                  isSnapping = setTimeout(function() {
+                    overscroll = 0;
+                    pageWrap.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    pageWrap.style.transform = 'translateY(0px) scaleY(1)';
+                  }, 100);
+                }
+              }, { passive: true });
             } catch(e) {}
           })();
         })();

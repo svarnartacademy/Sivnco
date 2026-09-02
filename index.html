@@ -2712,6 +2712,25 @@
       }
     }
 
+    /* KINETIC TYPOGRAPHY & RUBBERBAND ORIGIN */
+    #main-wrap {
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+    .reveal-text, .h-large, .t-mono-label, .section p, .role-chips .chip {
+      transform-origin: left center;
+      will-change: transform, opacity, filter;
+    }
+    .t-serif, em, i {
+      transition: letter-spacing 0.35s cubic-bezier(0.19, 1, 0.22, 1), color 0.3s ease, text-shadow 0.3s ease;
+      display: inline-block;
+    }
+    .t-serif:hover, em:hover, i:hover {
+      letter-spacing: 0.03em;
+      color: #FFF !important;
+      text-shadow: 0 0 16px rgba(212, 96, 10, 0.6);
+    }
+
     /* ABOUT RESPONSIVE GRID */
     @media (max-width: 992px) {
       .about-grid-wrap {
@@ -4284,6 +4303,116 @@
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0, 0);
+
+    // =============================================
+    // RUBBERBAND SCROLL & VELOCITY INERTIA ENGINE
+    // =============================================
+    (function initRubberbandEngine() {
+      const wrap = document.getElementById('main-wrap') || document.body;
+      let overscroll = 0;
+      let isSnapping = false;
+
+      // Elastic boundary rubberband on mouse wheel & trackpad
+      window.addEventListener('wheel', (e) => {
+        const atTop = (window.scrollY <= 1) && e.deltaY < 0;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const atBottom = (window.scrollY >= maxScroll - 2) && e.deltaY > 0;
+
+        if (atTop || atBottom) {
+          const resistance = 0.38 / (1 + Math.abs(overscroll) * 0.015);
+          overscroll -= e.deltaY * resistance;
+          overscroll = Math.max(-110, Math.min(110, overscroll));
+
+          gsap.to(wrap, {
+            y: overscroll,
+            scaleY: 1 + Math.abs(overscroll) * 0.00035,
+            duration: 0.1,
+            ease: 'power1.out',
+            overwrite: 'auto'
+          });
+
+          clearTimeout(isSnapping);
+          isSnapping = setTimeout(() => {
+            overscroll = 0;
+            gsap.to(wrap, {
+              y: 0,
+              scaleY: 1,
+              duration: 0.85,
+              ease: 'elastic.out(1, 0.45)',
+              overwrite: 'auto'
+            });
+          }, 100);
+        }
+      }, { passive: true });
+
+      // Kinetic scroll velocity: stretch & skew text dynamics
+      let velocityTimeout;
+      lenis.on('scroll', (e) => {
+        ScrollTrigger.update();
+        const v = e.velocity || 0;
+        const clampedV = Math.max(-16, Math.min(16, v));
+
+        // Subtle elastic rubberband scale during mid-scroll
+        gsap.to(wrap, {
+          scaleY: 1 + Math.abs(clampedV) * 0.00035,
+          duration: 0.25,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+
+        // Kinetic text dynamics: tilt text dynamically in response to scroll speed
+        gsap.to('.reveal-text, .h-large, .t-mono-label, .cs-deck-card, .section p, .role-chips .chip', {
+          skewY: clampedV * 0.05,
+          y: clampedV * 0.1,
+          duration: 0.3,
+          ease: 'power1.out',
+          overwrite: 'auto'
+        });
+
+        clearTimeout(velocityTimeout);
+        velocityTimeout = setTimeout(() => {
+          gsap.to(wrap, {
+            scaleY: 1,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.5)',
+            overwrite: 'auto'
+          });
+          gsap.to('.reveal-text, .h-large, .t-mono-label, .cs-deck-card, .section p, .role-chips .chip', {
+            skewY: 0,
+            y: 0,
+            duration: 0.4,
+            ease: 'power2.out',
+            overwrite: 'auto'
+          });
+        }, 100);
+      });
+    })();
+
+    // =============================================
+    // DYNAMIC TEXT ENTRANCE ANIMATIONS
+    // =============================================
+    (function initTextEntranceDynamics() {
+      // Animate narrative paragraphs, captions, list items, chips dynamically on scroll
+      const textTargets = document.querySelectorAll('.section p, .about-ref-item, .cs-deck-card, .ad-caption, .role-chips .chip');
+      textTargets.forEach((el) => {
+        if (el.closest('.hero-section')) return; // skip hero to preserve initial entrance
+        gsap.fromTo(el,
+          { opacity: 0, y: 24, filter: 'blur(6px)' },
+          {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.75,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 90%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+    })();
 
     // =============================================
     // SECTION AMBIENT GLOW — IntersectionObserver
