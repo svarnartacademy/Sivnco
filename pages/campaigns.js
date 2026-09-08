@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
+import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
+import { getAudioEngine } from '../components/ui/TactileAudioEngine'
 
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -335,8 +337,9 @@ a{color:inherit;text-decoration:none}
 .cp-hero-pov{margin-top:4rem;border-left:2px solid var(--cp-accent);padding-left:2rem;max-width:680px}
 .cp-hero-pov p{font-family:var(--S);font-size:1.15rem;line-height:1.9;color:var(--cp-muted);font-style:italic}
 .cp-hero-pov strong{color:var(--cp-white);font-style:normal}
-.cp-hero-scroll{display:flex;gap:3rem;margin-top:4rem;flex-wrap:wrap}
-.cp-hero-count{text-align:center}
+.cp-hero-scroll{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;margin-top:2.5rem}
+.cp-hero-count{text-align:center;background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.12);border-radius:9999px;padding:1.4rem 2.2rem;backdrop-filter:blur(24px);transition:transform .35s cubic-bezier(0.16,1,0.3,1), border-color .35s ease, box-shadow .35s ease}
+.cp-hero-count:hover{transform:translateY(-5px);border-color:rgba(212,96,10,0.45);box-shadow:0 15px 35px rgba(0,0,0,0.5)}
 .cp-hero-count-num{font-family:var(--D);font-size:clamp(2rem,4vw,3.5rem);color:var(--cp-accent);line-height:1}
 .cp-hero-count-label{font-family:var(--M);font-size:.55rem;letter-spacing:.2em;color:var(--cp-muted);margin-top:.4rem}
 
@@ -382,17 +385,16 @@ a{color:inherit;text-decoration:none}
 /* STRATEGY PILLARS */
 .cp-pillars-section{margin:6rem 0}
 .cp-pillars-header{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:3rem}
-.cp-pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--cp-border)}
-.cp-pillar-card{padding:2.5rem;border-bottom:1px solid var(--cp-border);border-right:1px solid var(--cp-border);position:relative;transition:background .3s}
-.cp-pillar-card:nth-child(even){border-right:none}
-.cp-pillar-card:hover{background:rgba(240,237,230,0.025)}
+.cp-pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem;border:none}
+.cp-pillar-card{padding:2.8rem;border:1px solid var(--cp-border);border-radius:32px;background:rgba(240,237,230,0.025);backdrop-filter:blur(20px);position:relative;transition:all .35s cubic-bezier(0.16,1,0.3,1)}
+.cp-pillar-card:hover{transform:translateY(-5px);border-color:rgba(212,96,10,0.4);box-shadow:0 20px 45px rgba(0,0,0,0.5)}
 .cp-pillar-num{font-family:var(--D);font-size:3rem;line-height:1;opacity:.06;position:absolute;top:1.5rem;right:1.5rem}
 .cp-pillar-tag{font-family:var(--M);font-size:.45rem;letter-spacing:.18em;opacity:.35;margin-bottom:.8rem}
 .cp-pillar-header{font-family:var(--S);font-size:1.1rem;font-weight:600;margin-bottom:1rem;line-height:1.3}
 .cp-pillar-body{font-size:.88rem;line-height:1.9;color:var(--cp-muted)}
 
 /* SOUL BLOCK */
-.cp-soul{background:#050505;padding:8rem 5vw;margin:0 -5vw;position:relative;overflow:hidden}
+.cp-soul{background:#050505;padding:8rem 5vw;margin:0 -5vw;position:relative;overflow:hidden;border-radius:36px}
 .cp-soul::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(var(--soul-color,212,96,10),0.06),transparent 60%)}
 .cp-soul-inner{max-width:900px;margin:0 auto;text-align:center}
 .cp-soul-label{font-family:var(--M);font-size:.52rem;letter-spacing:.3em;opacity:.35;margin-bottom:3rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
@@ -401,7 +403,7 @@ a{color:inherit;text-decoration:none}
 .cp-soul-quote::before{content:'"';font-family:var(--D);font-size:4rem;line-height:0;vertical-align:-.6em;opacity:.2;margin-right:.3rem}
 
 /* IMAGE PLACEHOLDER */
-.cp-img-placeholder{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.02);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:border-color .4s}
+.cp-img-placeholder{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.02);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:border-color .4s}
 .cp-img-placeholder:hover{border-color:rgba(var(--accent-rgb,212,96,10),0.3)}
 .cp-img-placeholder-icon{width:56px;height:56px;opacity:.15;display:flex;align-items:center;justify-content:center}
 .cp-img-placeholder-icon svg{width:100%;height:100%}
@@ -411,8 +413,8 @@ a{color:inherit;text-decoration:none}
 .cp-execs-label{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:3rem}
 .cp-exec-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--cp-border)}
 .cp-exec-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.cp-exec-media{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.03);aspect-ratio:16/9;transition:border-color .4s}
-.cp-exec-media:hover{border-color:rgba(212,96,10,0.3)}
+.cp-exec-media{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.03);aspect-ratio:16/9;transition:border-color .4s, transform .4s}
+.cp-exec-media:hover{border-color:rgba(212,96,10,0.3);transform:scale(1.02)}
 .cp-exec-media video,.cp-exec-media img{width:100%;height:100%;object-fit:cover;display:block}
 .cp-exec-info{display:flex;flex-direction:column;gap:1.5rem;padding-top:1rem}
 .cp-exec-num{font-family:var(--D);font-size:clamp(3rem,6vw,6rem);line-height:1;opacity:.07}
@@ -425,7 +427,7 @@ a{color:inherit;text-decoration:none}
 
 /* CAMPAIGN COMPARISON TABLE (Almond Milk) */
 .cp-compare-section{margin:6rem 0}
-.cp-compare-table{width:100%;border-collapse:collapse;font-family:var(--M);font-size:.65rem}
+.cp-compare-table{width:100%;border-collapse:collapse;font-family:var(--M);font-size:.65rem;border-radius:24px;overflow:hidden}
 .cp-compare-table th{font-size:.5rem;letter-spacing:.2em;opacity:.5;padding:1rem 1.5rem;text-align:left;border-bottom:2px solid var(--cp-border);white-space:nowrap}
 .cp-compare-table th:first-child{opacity:.3;font-size:.45rem}
 .cp-compare-table td{padding:1rem 1.5rem;border-bottom:1px solid var(--cp-border);color:var(--cp-muted);font-size:.65rem;line-height:1.7;vertical-align:top}
@@ -434,12 +436,11 @@ a{color:inherit;text-decoration:none}
 .cp-compare-table tbody tr:hover{background:rgba(240,237,230,0.02)}
 .cp-compare-table .metric-hi{color:var(--cp-white);font-weight:700}
 
-/* METRICS DASHBOARD */
+/* METRICS DASHBOARD CAPSULES */
 .cp-metrics-section{margin:6rem 0}
-.cp-metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--cp-border)}
-.cp-metric-card{padding:2.5rem 2rem;border-right:1px solid var(--cp-border);position:relative;transition:background .3s}
-.cp-metric-card:last-child{border-right:none}
-.cp-metric-card:hover{background:rgba(240,237,230,0.02)}
+.cp-metrics-grid{display:flex;flex-wrap:wrap;gap:1.4rem;border:none}
+.cp-metric-card{flex:1 1 220px;padding:2.2rem 2.4rem;border:1px solid var(--cp-border);border-radius:9999px;background:rgba(240,237,230,0.03);backdrop-filter:blur(24px);text-align:center;position:relative;transition:transform .35s cubic-bezier(0.16,1,0.3,1), border-color .35s ease, box-shadow .35s ease}
+.cp-metric-card:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.45);box-shadow:0 18px 40px rgba(0,0,0,0.5)}
 .cp-metric-tag{font-family:var(--M);font-size:.45rem;letter-spacing:.2em;opacity:.3;margin-bottom:1.2rem}
 .cp-metric-value{font-family:var(--D);font-size:clamp(2rem,4vw,3.5rem);line-height:1;margin-bottom:.8rem}
 .cp-metric-label{font-size:.82rem;line-height:1.75;color:var(--cp-muted)}
@@ -680,7 +681,10 @@ function TestimonialsBlock({ testimonials, accent }) {
             key={f.key}
             className={`cp-testi-filter${filter === f.key ? ' active' : ''}`}
             style={filter === f.key ? { borderColor: accent, color: accent } : {}}
-            onClick={() => setFilter(f.key)}
+            onClick={() => {
+              setFilter(f.key);
+              getAudioEngine()?.playTabShift();
+            }}
           >{f.label}</button>
         ))}
       </div>
@@ -803,6 +807,7 @@ export default function Campaigns() {
 
       {/* HERO */}
       <div className="cp-hero">
+        <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.18)" secondaryColor="rgba(0, 70, 255, 0.08)" />
         <div className="cp-hero-bg" />
         <div className="cp-hero-grid" />
         <div className="cp-hero-inner">

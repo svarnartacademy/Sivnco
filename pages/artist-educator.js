@@ -65,13 +65,13 @@ a{color:inherit;text-decoration:none}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ae-border)}
 .meta label{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;color:var(--ae-accent);display:block;margin-bottom:.4rem}
 .meta span{font-family:var(--S);font-size:1rem;color:var(--ink)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ae-border)}
-.metric{background:var(--ae-bg);padding:3.5rem 2rem;text-align:center;position:relative;overflow:hidden;transition:background .4s}
-.metric:hover{background:rgba(212,96,10,.06)}
-.metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
+.metrics{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;padding:4.5rem 0;background:transparent;border:none}
+.metric{flex:1 1 220px;max-width:280px;background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.12);border-radius:9999px;padding:2.2rem 2.4rem;text-align:center;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),border-color 0.4s ease,box-shadow 0.4s ease}
+.metric:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.5);box-shadow:0 20px 45px rgba(0,0,0,0.6),0 0 25px rgba(212,96,10,0.2)}
+.metric::before{content:'';position:absolute;inset:0;border-radius:9999px;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.15),transparent 70%);opacity:0;transition:.4s}
 .metric:hover::before{opacity:1}
-.m-n{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ae-accent);line-height:1}
-.m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ae-muted);margin-top:.8rem}
+.m-n{font-family:var(--D);font-weight:900;font-size:clamp(2.8rem,5vw,5rem);color:var(--ae-accent);line-height:1}
+.m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ae-muted);margin-top:.6rem}
 section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--ae-accent);margin-bottom:1.5rem}
 .s-title{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,8rem);line-height:1.05;margin-bottom:3rem}
@@ -220,6 +220,27 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
 .ae-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(240,237,230,0.15);color:var(--ink);padding:.6rem 1.2rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s ease;background:var(--ae-glass);margin-top:2.5rem;position:relative;z-index:10}
 .ae-pill:hover{border-color:var(--ae-accent);color:var(--ae-accent);transform:translateY(-2px)}
+
+/* PIGMENT STUDIO */
+.pigment-studio-box{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:center;background:rgba(18,17,14,0.7);border:1px solid rgba(240,237,230,0.14);border-radius:36px;padding:3.5rem;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);box-shadow:0 30px 70px rgba(0,0,0,0.7);margin-top:3rem}
+.pigment-wells{display:flex;flex-direction:column;gap:1rem}
+.pigment-well{display:flex;align-items:center;gap:1.2rem;padding:1rem 1.4rem;border-radius:20px;border:1px solid rgba(240,237,230,0.1);background:rgba(240,237,230,0.02);cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1)}
+.pigment-well:hover{transform:translateX(6px);border-color:rgba(212,96,10,0.4)}
+.pigment-well.active{background:rgba(212,96,10,0.12);border-color:#D4600A;box-shadow:0 0 20px rgba(212,96,10,0.25)}
+.pigment-droplet{width:22px;height:22px;border-radius:50%;flex-shrink:0}
+.pigment-info{display:flex;flex-direction:column;gap:2px}
+.pigment-name{font-family:var(--D);font-size:1.15rem;font-weight:900;color:#FFF}
+.pigment-hex{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ae-muted);text-transform:uppercase}
+
+.watercolor-wash-canvas{border-radius:28px;padding:3.5rem 3rem;border:1px solid;min-height:280px;display:flex;align-items:center;transition:all .6s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden}
+.wash-content{position:relative;z-index:2;max-width:460px}
+.wash-badge{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px;border:1px solid;display:inline-block;margin-bottom:1.5rem}
+.wash-title{font-family:var(--D);font-size:2rem;font-weight:900;color:#FFF;line-height:1.15;margin-bottom:.8rem}
+.wash-desc{font-family:var(--S);font-size:1rem;line-height:1.7;color:rgba(240,237,230,0.8)}
+
+@media(max-width:1024px){
+  .pigment-studio-box{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem}
+}
 
 /* HORIZONTAL GSAP GALLERY STYLING */
 .gallery-h-sec {
@@ -380,9 +401,12 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 
 import Navbar from '../components/Navbar';
 import ComparisonSlider from '../components/ui/ComparisonSlider';
+import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
+import { getAudioEngine } from '../components/ui/TactileAudioEngine';
 
 export default function ArtistEducator() {
   const [selectedArt, setSelectedArt] = useState(null);
+  const [activePigment, setActivePigment] = useState({ name: 'Raw Sienna', hex: '#C5832B', mix: '#A24E2B' });
 
   return (
     <>
@@ -408,6 +432,7 @@ export default function ArtistEducator() {
 
       {/* HERO */}
       <div className="hero">
+        <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(200, 155, 60, 0.1)" />
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, background: 'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.2) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.1) 0%, transparent 50%), var(--ae-bg)', animation: 'heroBgPulse 8s ease-in-out infinite' }} />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
           <div className="eyebrow rv">Personal Practice · Fine Art &amp; Pedagogy</div>
@@ -461,13 +486,68 @@ export default function ArtistEducator() {
         </div>
       </section>
 
+      {/* INTERACTIVE WATERCOLOR PIGMENT MIXER */}
+      <section>
+        <div className="c">
+          <div className="s-label rv">02 — INTERACTIVE COLOR STUDIO</div>
+          <h2 className="s-title rv">Classical Pigment<br /><i>Palette &amp; Wash.</i></h2>
+          <p className="body rv" style={{ marginBottom: '3rem' }}>
+            Select traditional South Indian and academic pigments to blend an organic watercolor wash in real-time. Notice how raw earth minerals create atmospheric depth compared to clinical digital primaries.
+          </p>
+
+          <div className="pigment-studio-box rv2">
+            <div className="pigment-wells">
+              {[
+                { name: 'Raw Sienna', hex: '#C5832B', mix: '#8E4E1C', note: 'Natural iron hydroxide earth pigment. Foundational in classical underpaintings and stone skin tones.' },
+                { name: 'Burnt Ochre', hex: '#A24E2B', mix: '#6E2816', note: 'Calcined natural red ochre with warm undertones. Carries human warmth and terracotta textures.' },
+                { name: 'Natural Umber', hex: '#583B25', mix: '#2C1B10', note: 'Raw manganese clay for chiaroscuro shadow values and atmospheric architectural studies.' },
+                { name: 'Deep Indigo', hex: '#1E2D4A', mix: '#0F1829', note: 'Traditional deep plant-extracted blue for nocturnal skies and emotional portraiture washes.' },
+                { name: 'Classical Gold', hex: '#C89B3C', mix: '#8F6715', note: 'Traditional mineral leaf glaze used across classical Indian icons, temple brass, and temple murals.' },
+              ].map(p => (
+                <div
+                  key={p.name}
+                  className={`pigment-well ${activePigment.name === p.name ? 'active' : ''}`}
+                  onClick={() => {
+                    setActivePigment(p);
+                    getAudioEngine()?.playHoverChime(528);
+                  }}
+                >
+                  <div className="pigment-droplet" style={{ background: p.hex, boxShadow: `0 0 20px ${p.hex}80` }} />
+                  <div className="pigment-info">
+                    <span className="pigment-name">{p.name}</span>
+                    <span className="pigment-hex">{p.hex}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="watercolor-wash-canvas"
+              style={{
+                background: `radial-gradient(circle at 40% 60%, ${activePigment.hex}40 0%, ${activePigment.mix}25 50%, transparent 85%), #0D0C09`,
+                borderColor: `${activePigment.hex}60`,
+                boxShadow: `0 20px 60px rgba(0,0,0,0.8), 0 0 40px ${activePigment.hex}25`
+              }}
+            >
+              <div className="wash-content">
+                <span className="wash-badge" style={{ color: activePigment.hex, borderColor: `${activePigment.hex}50` }}>
+                  Active Wash: {activePigment.name}
+                </span>
+                <h3 className="wash-title">{activePigment.name}</h3>
+                <p className="wash-desc">{activePigment.note}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* HORIZONTAL GSAP GALLERY SHOWCASE */}
       <section className="gallery-h-sec" id="gallery-h-sec">
         <div className="gallery-h-sticky">
           
           {/* Section Header */}
           <div className="c gallery-h-header" style={{ width: '100%', marginBottom: '1rem', flexShrink: 0 }}>
-            <div className="s-label rv" style={{ marginBottom: '0.5rem' }}>02 — Selected Artworks</div>
+            <div className="s-label rv" style={{ marginBottom: '0.5rem' }}>03 — Selected Artworks</div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
               <div>
                 <h2 className="s-title rv" style={{ margin: 0, fontSize: 'clamp(2.2rem, 4.5vw, 4.5rem)', lineHeight: 1.05 }}>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SoundToggle from './ui/SoundToggle';
 
 const NAV_STYLES = `
   .snav {
@@ -282,6 +283,7 @@ export default function Navbar({ backLink, backLabel }) {
           )}
 
           <div className="snav-actions">
+            <SoundToggle />
             <button className="snav-maya-btn" onClick={toggleChat} aria-label="Open Maya AI" aria-expanded={chatOpen}>
               <span className="snav-pulse" />
               chat here

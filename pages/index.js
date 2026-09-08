@@ -81,6 +81,66 @@ const MOBILE_CSS = `
   }
 
   /* ======================================================= */
+  /* FLUIDIC ORGANIC CARDS & METRIC CAPSULES (NO MORE BOXY)  */
+  /* ======================================================= */
+  .metrics-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.2rem !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .metric-card {
+    flex: 1 1 200px !important;
+    background: rgba(240, 237, 230, 0.03) !important;
+    border: 1px solid rgba(240, 237, 230, 0.1) !important;
+    border-radius: 9999px !important;
+    padding: 1.8rem 2.5rem !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    text-align: center !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: rgba(212, 96, 10, 0.45) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(212, 96, 10, 0.15) !important;
+  }
+
+  .glass-card {
+    border-radius: 32px !important;
+    backdrop-filter: blur(28px) !important;
+    -webkit-backdrop-filter: blur(28px) !important;
+    border: 1px solid rgba(240, 237, 230, 0.1) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .role-card {
+    border-radius: 36px !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(240, 237, 230, 0.1) !important;
+  }
+
+  .vc-card {
+    border-radius: 28px !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(240, 237, 230, 0.1) !important;
+  }
+
+  .vc-rejected-card, .vc-ext-card, .testi-card {
+    border-radius: 24px !important;
+  }
+
+  /* ======================================================= */
   /* SIVNCO MOBILE RESPONSIVE — injected by pages/index.js   */
   /* ======================================================= */
 

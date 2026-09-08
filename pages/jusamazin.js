@@ -64,21 +64,21 @@ a{color:inherit;text-decoration:none}
 .hero-meta{display:flex;flex-wrap:wrap;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--ja-border)}
 .meta label{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;color:var(--ja-accent);display:block;margin-bottom:.4rem}
 .meta span{font-family:var(--S);font-size:1rem;color:var(--ink)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ja-border)}
-.metric{background:var(--ja-bg);padding:3.5rem 2rem;text-align:center;position:relative;overflow:hidden;transition:background .4s}
-.metric:hover{background:rgba(212,96,10,.06)}
-.metric::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.12),transparent 70%);opacity:0;transition:.4s}
+.metrics{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;padding:4.5rem 0;background:transparent;border:none}
+.metric{flex:1 1 220px;max-width:280px;background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.12);border-radius:9999px;padding:2.2rem 2.4rem;text-align:center;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),border-color 0.4s ease,box-shadow 0.4s ease}
+.metric:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.5);box-shadow:0 20px 45px rgba(0,0,0,0.6),0 0 25px rgba(212,96,10,0.2)}
+.metric::before{content:'';position:absolute;inset:0;border-radius:9999px;background:radial-gradient(circle at 50% 0%,rgba(212,96,10,.15),transparent 70%);opacity:0;transition:.4s}
 .metric:hover::before{opacity:1}
-.m-n{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--ja-accent);line-height:1}
-.m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ja-muted);margin-top:.8rem}
-section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
+.m-n{font-family:var(--D);font-weight:900;font-size:clamp(2.8rem,5vw,5rem);color:var(--ja-accent);line-height:1}
+.m-l{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ja-muted);margin-top:.6rem}
+section{padding:8rem 0;border-bottom:1px solid var(--ja-border)}
 .s-label{font-family:var(--M);font-size:.58rem;letter-spacing:.22em;color:var(--ja-accent);margin-bottom:1.5rem}
-.s-title{font-family:var(--D);font-weight:900;font-size:clamp(3.5rem,7vw,8rem);line-height:1.05;margin-bottom:3rem}
+.s-title{font-family:var(--D);font-weight:900;font-size:clamp(3rem,6vw,7rem);line-height:1.05;margin-bottom:3rem}
 .s-title i{font-family:var(--S);color:var(--ja-muted);font-style:normal;font-weight:300}
 .body{font-family:var(--S);font-size:1.12rem;line-height:1.9;color:var(--ja-muted);max-width:660px}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
-.col{background:var(--ja-bg);padding:2.5rem;transition:background .3s}
-.col:hover{background:rgba(212,96,10,.04)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;background:transparent;border:none;margin-top:4rem}
+.col{background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.1);border-radius:32px;padding:3rem 2.5rem;backdrop-filter:blur(20px);transition:transform .35s cubic-bezier(0.16,1,0.3,1), border-color .35s ease, box-shadow .35s ease}
+.col:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.45);box-shadow:0 24px 50px rgba(0,0,0,0.5)}
 .col-h{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;color:var(--ja-accent);margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--ja-border)}
 .col-b{font-family:var(--S);font-size:1.05rem;line-height:1.85;color:var(--ja-muted)}
 .mosaic{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 220px 220px 220px;gap:1px;background:var(--ja-border);border:1px solid var(--ja-border);margin-top:4rem}
@@ -212,35 +212,61 @@ section{padding:9rem 0;border-bottom:1px solid var(--ja-border)}
 .video-element{width:100%;height:100%;object-fit:cover;display:block}
 
 /* WIP Section & Modal */
+/* SKU SHELF CAROUSEL */
+.sku-shelf-box{background:rgba(18,17,14,0.7);border:1px solid rgba(240,237,230,0.14);border-radius:36px;padding:3.5rem;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);box-shadow:0 30px 70px rgba(0,0,0,0.7);margin-top:3.5rem}
+.sku-pills{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.sku-pill{font-family:var(--M);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.55rem 1.4rem;border-radius:999px;border:1px solid rgba(240,237,230,0.15);background:rgba(255,255,255,0.03);color:var(--ink);cursor:pointer;transition:all .3s ease}
+.sku-pill.active{background:rgba(212,96,10,0.22);border-color:#D4600A;color:#FFF;box-shadow:0 0 16px rgba(212,96,10,0.35)}
+
+.sku-detail-card{background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.12);border-radius:28px;padding:3rem;display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+.sku-detail-header{display:flex;flex-direction:column;gap:.6rem}
+.sku-detail-tag{font-family:var(--M);font-size:.58rem;letter-spacing:.2em;color:var(--ja-accent);text-transform:uppercase}
+.sku-detail-title{font-family:var(--D);font-size:2.2rem;font-weight:900;color:#FFF;line-height:1.1}
+.sku-detail-desc{font-family:var(--S);font-size:1.05rem;line-height:1.8;color:var(--ja-muted);margin-top:.8rem}
+.sku-metric-cell{background:rgba(212,96,10,0.08);border:1px solid rgba(212,96,10,0.25);border-radius:24px;padding:2rem;text-align:center}
+.sku-metric-num{font-family:var(--D);font-size:3rem;font-weight:900;color:var(--ja-accent);line-height:1}
+.sku-metric-lbl{font-family:var(--M);font-size:.55rem;letter-spacing:.15em;color:var(--ink);margin-top:.4rem;text-transform:uppercase}
+
+/* WIP Section & Modal */
 .wip-filter-bar{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .wip-filter-btn{font-family:var(--M);font-size:.58rem;letter-spacing:.18em;padding:.55rem 1.4rem;border:1px solid var(--ja-border);border-radius:40px;background:transparent;color:var(--ja-muted);cursor:pointer;transition:all .3s}
 .wip-filter-btn:hover,.wip-filter-btn.active{border-color:var(--ja-accent);color:var(--ja-accent);background:rgba(212,96,10,.08)}
-.wip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ja-border);border:1px solid var(--ja-border)}
-.wip-card{background:var(--ja-bg);padding:1.2rem;cursor:pointer;position:relative;overflow:hidden;transition:background .4s}
-.wip-card:hover{background:rgba(212,96,10,.04)}
-.wip-img-wrap{aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1rem;position:relative}
+.wip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;background:transparent;border:none}
+.wip-card{background:rgba(240,237,230,0.03);border:1px solid rgba(240,237,230,0.1);border-radius:24px;padding:1.4rem;cursor:pointer;position:relative;overflow:hidden;backdrop-filter:blur(20px);transition:transform .4s cubic-bezier(0.16,1,0.3,1), border-color .4s ease, box-shadow .4s ease}
+.wip-card:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.45);box-shadow:0 20px 45px rgba(0,0,0,0.6)}
+.wip-img-wrap{aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1rem;position:relative}
 .wip-img-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(0.85);transition:transform .6s cubic-bezier(.16,1,.3,1),filter .4s}
 .wip-card:hover .wip-img-wrap img{transform:scale(1.06);filter:saturate(1.1)}
 .wip-tag{font-family:var(--M);font-size:.52rem;letter-spacing:.18em;color:var(--ja-accent);text-transform:uppercase;margin-bottom:.4rem}
 .wip-card-title{font-family:var(--D);font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.4rem}
 .wip-card-desc{font-family:var(--S);font-size:.88rem;color:var(--ja-muted);line-height:1.6}
 .wip-modal-overlay{position:fixed;inset:0;z-index:100000;background:rgba(10,9,6,.92);backdrop-filter:blur(15px);display:flex;align-items:center;justify-content:center;padding:2rem}
-.wip-modal-content{background:#12100C;border:1px solid var(--ja-border);border-radius:12px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.8)}
+.wip-modal-content{background:#12100C;border:1px solid var(--ja-border);border-radius:28px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:2.5rem;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.8)}
 .wip-modal-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:1px solid var(--ja-border);color:var(--ink);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--M);cursor:pointer;transition:.3s}
 .wip-modal-close:hover{border-color:var(--ja-accent);color:var(--ja-accent)}
-.wip-modal-img-wrap{width:100%;max-height:500px;border-radius:8px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1.8rem}
+.wip-modal-img-wrap{width:100%;max-height:500px;border-radius:20px;overflow:hidden;border:1px solid var(--ja-border);margin-bottom:1.8rem}
 .wip-modal-img-wrap img{width:100%;height:100%;object-fit:contain;background:#000;display:block}
 .wip-modal-title{font-family:var(--D);font-weight:900;font-size:1.8rem;color:var(--ink);margin-bottom:.6rem}
 .wip-modal-body{font-family:var(--S);font-size:1.05rem;color:var(--ja-muted);line-height:1.8}
-@media(max-width:1024px){.wip-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1024px){.wip-grid{grid-template-columns:repeat(2,1fr)}.sku-detail-card{grid-template-columns:1fr}}
 @media(max-width:540px){.wip-grid{grid-template-columns:1fr}}
 `
 
 import Navbar from '../components/Navbar';
+import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
+import { getAudioEngine } from '../components/ui/TactileAudioEngine';
+
+const SKUS = [
+  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '176% Growth', desc: 'Bold street typography and rich royal purple wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star' },
+  { id: 'almond-milk', name: '30-Sec Almond Milk', cat: 'Category Disruptor', num: '11K+ Orders', desc: '100% almond paste sachet exposing mass-market cartons with radical ingredient transparency.', tag: 'Category Rebrand' },
+  { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '5× Velocity', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print' },
+  { id: 'peanut-butter', name: 'Peanut Butter Jars', cat: 'Foundational Line', num: '15+ SKUs', desc: 'Master token layer governing clean typography and nutritional truth across 15+ jar variations.', tag: 'Brand Anchor' },
+];
 
 export default function JusAmazin() {
   const [wipFilter, setWipFilter] = useState('all')
   const [activeModalItem, setActiveModalItem] = useState(null)
+  const [selectedSku, setSelectedSku] = useState(SKUS[0])
 
   const filteredWip = wipFilter === 'all' 
     ? WIP_ITEMS 
@@ -267,6 +293,7 @@ export default function JusAmazin() {
 
       {/* HERO */}
       <div className="hero" style={{position:'relative', overflow:'hidden'}}>
+        <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.22)" secondaryColor="rgba(232, 133, 42, 0.1)" />
         {/* Animated gradient background replacing LiquidMetalBg */}
         <div style={{position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0, background:'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.25) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.15) 0%, transparent 50%), var(--ja-bg)', animation:'heroBgPulse 8s ease-in-out infinite'}} />
         <div className="c" style={{position:'relative', zIndex:2}}>
@@ -306,9 +333,45 @@ export default function JusAmazin() {
         </div>
       </div></section>
 
+      {/* INTERACTIVE SKU SHELF CAROUSEL */}
+      <section><div className="c">
+        <div className="s-label rv">02 — Retail SKU Architecture</div>
+        <h2 className="s-title rv">Interactive Shelf<br/><i>&amp; SKU Strategy.</i></h2>
+        <p className="body rv" style={{ marginBottom: '2.5rem' }}>
+          Select an active SKU below to explore its retail channel strategy, packaging dieline rationale, and commercial impact.
+        </p>
+        <div className="sku-shelf-box rv2">
+          <div className="sku-pills">
+            {SKUS.map((s) => (
+              <button
+                key={s.id}
+                className={`sku-pill ${selectedSku.id === s.id ? 'active' : ''}`}
+                onClick={() => {
+                  setSelectedSku(s);
+                  getAudioEngine()?.playTabShift();
+                }}
+              >
+                {s.name}
+              </button>
+            ))}
+          </div>
+          <div className="sku-detail-card">
+            <div className="sku-detail-header">
+              <span className="sku-detail-tag">{selectedSku.cat} · {selectedSku.tag}</span>
+              <h3 className="sku-detail-title">{selectedSku.name}</h3>
+              <p className="sku-detail-desc">{selectedSku.desc}</p>
+            </div>
+            <div className="sku-metric-cell">
+              <div className="sku-metric-num">{selectedSku.num}</div>
+              <div className="sku-metric-lbl">Commercial Contribution</div>
+            </div>
+          </div>
+        </div>
+      </div></section>
+
       {/* BRAND FILM */}
       <section><div className="c">
-        <div className="s-label rv">02 — Brand Film</div>
+        <div className="s-label rv">03 — Brand Film</div>
         <h2 className="s-title rv">Brand Story<br/><i>in Motion.</i></h2>
         <div className="rv2" style={{marginTop:'3rem'}}>
           <div className="video-wrap">
@@ -328,7 +391,7 @@ export default function JusAmazin() {
 
       {/* MOSAIC */}
       <section style={{paddingTop:0,borderBottom:'1px solid var(--ja-border)'}}><div className="c">
-        <div className="s-label rv">03 — Visual System</div>
+        <div className="s-label rv">04 — Visual System</div>
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
           <Link href="/jusamazin/core-packaging" className="slot tall" style={{cursor:'pointer'}}>
@@ -396,7 +459,7 @@ export default function JusAmazin() {
 
       {/* BEFORE / AFTER */}
       <section><div className="c">
-        <div className="s-label rv">04 — Transformation</div>
+        <div className="s-label rv">05 — Transformation</div>
         <h2 className="s-title rv">Before<br/><i>and after.</i></h2>
         <div className="ba rv2">
           <div className="ba-side">
@@ -420,7 +483,7 @@ export default function JusAmazin() {
 
       {/* DESIGN PROCESS & WIP SHOWCASE */}
       <section><div className="c">
-        <div className="s-label rv">05 — Behind The Scenes</div>
+        <div className="s-label rv">06 — Behind The Scenes</div>
         <h2 className="s-title rv">Design Process<br/><i>&amp; In-Progress Work.</i></h2>
         <p className="body rv" style={{marginBottom:'3rem'}}>
           An intimate look into the drawing board iterations, press proofing, substrate trials, and retail shelf pickups that brought the Jus Amazin brand system to life.
@@ -437,7 +500,10 @@ export default function JusAmazin() {
             <button
               key={f.id}
               className={`wip-filter-btn ${wipFilter === f.id ? 'active' : ''}`}
-              onClick={() => setWipFilter(f.id)}
+              onClick={() => {
+                setWipFilter(f.id);
+                getAudioEngine()?.playTabShift();
+              }}
             >
               {f.label}
             </button>
@@ -447,7 +513,14 @@ export default function JusAmazin() {
         {/* WIP Grid */}
         <div className="wip-grid rv2">
           {filteredWip.map(item => (
-            <div key={item.id} className="wip-card" onClick={() => setActiveModalItem(item)}>
+            <div 
+              key={item.id} 
+              className="wip-card" 
+              onClick={() => {
+                setActiveModalItem(item);
+                getAudioEngine()?.playHoverChime(750);
+              }}
+            >
               <div className="wip-img-wrap">
                 <img loading="lazy" src={item.src} alt={item.title} />
               </div>
@@ -461,7 +534,7 @@ export default function JusAmazin() {
 
       {/* DELIVERABLES */}
       <section><div className="c">
-        <div className="s-label rv">06 — Deliverables</div>
+        <div className="s-label rv">07 — Deliverables</div>
         <h2 className="s-title rv">Full<br/><i>system.</i></h2>
         <div className="dels rv2">
           {DELIVERABLES.map(d=>(
@@ -472,7 +545,7 @@ export default function JusAmazin() {
 
       {/* TEAM */}
       <section className="forest"><div className="c">
-        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>07 — The People</div>
+        <div className="s-label rv" style={{color:'rgba(212,96,10,.65)'}}>08 — The People</div>
         <h2 className="s-title rv">Who we<br/><i>worked with.</i></h2>
         <div className="rv2">
           <div className="team-g">Founders &amp; Leadership</div>
@@ -488,7 +561,7 @@ export default function JusAmazin() {
 
       {/* RESULTS */}
       <section><div className="c">
-        <div className="s-label rv">08 — Results</div>
+        <div className="s-label rv">09 — Results</div>
         <h2 className="s-title rv">What the<br/><i>numbers say.</i></h2>
         <ul className="rlist rv2">
           {RESULTS.map((r,i)=>(
@@ -499,9 +572,15 @@ export default function JusAmazin() {
 
       {/* LIGHTBOX MODAL */}
       {activeModalItem && (
-        <div className="wip-modal-overlay" onClick={() => setActiveModalItem(null)}>
+        <div className="wip-modal-overlay" onClick={() => {
+          setActiveModalItem(null);
+          getAudioEngine()?.playTick(300);
+        }}>
           <div className="wip-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="wip-modal-close" onClick={() => setActiveModalItem(null)}>✕</button>
+            <button className="wip-modal-close" onClick={() => {
+              setActiveModalItem(null);
+              getAudioEngine()?.playTick(300);
+            }}>✕</button>
             <div className="wip-modal-img-wrap">
               <img src={activeModalItem.src} alt={activeModalItem.title} />
             </div>

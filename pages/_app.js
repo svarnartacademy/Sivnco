@@ -1,7 +1,13 @@
 import '../styles/globals.css';
 import { useEffect } from 'react';
 import Router from 'next/router';
+import dynamic from 'next/dynamic';
 import SeedingBanner from '../components/SeedingBanner';
+
+const LiquidVelocityCursor = dynamic(
+  () => import('../components/ui/LiquidVelocityCursor'),
+  { ssr: false }
+);
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -58,6 +64,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <LiquidVelocityCursor />
       <SeedingBanner />
       <Component {...pageProps} />
     </>
