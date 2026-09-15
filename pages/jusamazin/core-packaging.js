@@ -57,7 +57,7 @@ html{scroll-behavior:smooth}body{background:var(--cp-bg);color:var(--cp-white);f
 .cp-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:rgba(240,237,230,0.25);padding-top:2rem;border-top:1px solid var(--cp-border)}
 .cpv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.cpv.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.cp-pillars{grid-template-columns:1fr}.cp-pill-left{position:relative;height:auto;padding:3rem 2rem}.cp-pill-card{padding:3rem 2rem;min-height:auto}.cp-ba{grid-template-columns:1fr}.cp-metrics{grid-template-columns:repeat(2,1fr)}.cp-gallery{grid-template-columns:1fr 1fr}.cp-fb-grid{grid-template-columns:1fr}.cp-footer-meta{flex-direction:column;gap:.8rem}}
-@media(max-width:540px){.cp-hero h1{font-size:clamp(3rem,14vw,7rem)}.cp-s{padding:5rem 0}.cp-soul{padding:6rem 0}.cp-gallery{grid-template-columns:1fr}}
+@media(max-width:540px){.cp-hero h1{font-size:clamp(2.2rem,11vw,4.2rem)}.cp-s{padding:4rem 0}.cp-soul{padding:5rem 0}.cp-gallery{grid-template-columns:1fr}}
 `
 import Navbar from '../../components/Navbar'
 

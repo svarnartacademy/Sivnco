@@ -136,9 +136,9 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:540px){
   .deb-gallery{grid-template-columns:1fr}
-  .deb-hero-text h1{font-size:clamp(3.5rem,16vw,8rem)}
-  .deb-section{padding:5rem 0}
-  .deb-soul{padding:6rem 0}
+  .deb-hero-text h1{font-size:clamp(2.2rem,11vw,4.5rem)}
+  .deb-section{padding:4rem 0}
+  .deb-soul{padding:5rem 0}
 }
 `
 

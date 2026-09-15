@@ -53,7 +53,7 @@ html{scroll-behavior:smooth}body{background:var(--sn-bg);color:var(--sn-white);f
 .sn-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:rgba(240,237,230,0.25);padding-top:2rem;border-top:1px solid var(--sn-border)}
 .snv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.snv.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.sn-pillars{grid-template-columns:1fr}.sn-pill-left{position:relative;height:auto;padding:3rem 2rem}.sn-pill-card{padding:3rem 2rem;min-height:auto}.sn-metrics{grid-template-columns:1fr}.sn-gallery{grid-template-columns:1fr 1fr}.sn-fb-grid{grid-template-columns:1fr}.sn-footer-meta{flex-direction:column;gap:.8rem}}
-@media(max-width:540px){.sn-hero h1{font-size:clamp(3.5rem,16vw,8rem)}.sn-s{padding:5rem 0}.sn-soul{padding:6rem 0}.sn-gallery{grid-template-columns:1fr}}
+@media(max-width:540px){.sn-hero h1{font-size:clamp(2.2rem,11vw,4.5rem)}.sn-s{padding:4rem 0}.sn-soul{padding:5rem 0}.sn-gallery{grid-template-columns:1fr}}
 `
 import Navbar from '../../components/Navbar'
 

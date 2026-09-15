@@ -43,15 +43,16 @@ export default function Interactive3DStudio({
             alt="Interactive 3D Packaging Model"
             auto-rotate
             camera-controls
+            touch-action="pan-y"
             shadow-intensity="1"
             environment-image={activeLighting}
-            style={{ width: '100%', height: '100%', minHeight: '380px', background: 'transparent' }}
+            style={{ width: '100%', height: '100%', minHeight: 'clamp(280px, 45vh, 420px)', background: 'transparent' }}
           />
 
           {/* Hint Overlay Pill */}
-          <div className="absolute top-4 left-4 bg-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/10 text-[11px] font-mono text-[#D4D0C5] flex items-center gap-2">
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black/85 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg border border-white/10 text-[9px] sm:text-[11px] font-mono text-[#D4D0C5] flex items-center gap-1.5 sm:gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#D4600A]" />
-            <span>Drag to rotate 360° · Scroll to zoom</span>
+            <span>Touch or drag to rotate 360°</span>
           </div>
         </div>
 

@@ -522,16 +522,23 @@ a{color:inherit;text-decoration:none}
   .cp-results-grid{grid-template-columns:1fr}
   .cp-cam-num{display:none}
   .cp-nav-links{display:none}
-  .cp-hero h1{font-size:clamp(3.5rem,14vw,8rem)}
+  .cp-hero h1{font-size:clamp(2.8rem,10vw,6.5rem)}
+  .cp-footer{padding:5rem 0 3rem}
+  .cp-footer-headline{font-size:clamp(2.5rem,7vw,5rem)}
   .cp-compare-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .cp-testi-grid{columns:1}
 }
 @media(max-width:540px){
-  .cp-campaign{padding:7rem 0 5rem}
-  .cp-cam-title{font-size:clamp(3rem,12vw,7rem)}
-  .cp-hero-pov p{font-size:1rem}
+  .cp-campaign{padding:5rem 0 4rem}
+  .cp-cam-title{font-size:clamp(2.2rem,9vw,4.5rem)}
+  .cp-hero h1{font-size:clamp(2.2rem,10vw,4.2rem)}
+  .cp-hero-pov p{font-size:0.95rem;line-height:1.75}
   .cp-metrics-grid{grid-template-columns:1fr}
   .cp-metric-card{border-right:none;border-bottom:1px solid var(--cp-border)}
+  .cp-hero-scroll{gap:0.8rem}
+  .cp-hero-count{padding:1rem 1.4rem}
+  .cp-footer{padding:3.5rem 0 2.5rem}
+  .cp-footer-headline{font-size:clamp(1.8rem,8vw,3.2rem)}
 }
 `
 

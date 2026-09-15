@@ -46,8 +46,8 @@ export default function ComparisonSlider({
   }, [isSliding]);
 
   return (
-    <div className={`relative w-full rounded-3xl overflow-hidden border border-white/[0.12] bg-black select-none cursor-ew-resize shadow-2xl ${className}`}
-         style={{ aspectRatio }}
+    <div className={`relative w-full rounded-3xl overflow-hidden border border-white/[0.12] bg-black select-none cursor-ew-resize shadow-2xl touch-none ${className}`}
+         style={{ aspectRatio, touchAction: 'none' }}
          ref={containerRef}
          onMouseDown={() => setIsSliding(true)}
          onTouchStart={() => setIsSliding(true)}>

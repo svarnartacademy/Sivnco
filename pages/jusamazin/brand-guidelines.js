@@ -53,7 +53,7 @@ html{scroll-behavior:smooth}body{background:var(--bg-bg);color:var(--bg-white);f
 .bg-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:rgba(240,237,230,0.25);padding-top:2rem;border-top:1px solid var(--bg-border)}
 .bgv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.bgv.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.bg-pillars{grid-template-columns:1fr}.bg-pill-left{position:relative;height:auto;padding:3rem 2rem}.bg-pill-card{padding:3rem 2rem;min-height:auto}.bg-tokens{grid-template-columns:repeat(2,1fr)}.bg-metrics{grid-template-columns:1fr}.bg-gallery{grid-template-columns:1fr 1fr}.bg-footer-meta{flex-direction:column;gap:.8rem}}
-@media(max-width:540px){.bg-hero h1{font-size:clamp(3rem,14vw,7rem)}.bg-s{padding:5rem 0}.bg-soul{padding:6rem 0}.bg-gallery{grid-template-columns:1fr}.bg-tokens{grid-template-columns:1fr}}
+@media(max-width:540px){.bg-hero h1{font-size:clamp(2.2rem,11vw,4.2rem)}.bg-s{padding:4rem 0}.bg-soul{padding:5rem 0}.bg-gallery{grid-template-columns:1fr}.bg-tokens{grid-template-columns:1fr}}
 `
 import Navbar from '../../components/Navbar'
 

@@ -147,14 +147,13 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
   .b-card.large{grid-column:span 2;grid-row:span 2}
 }
 @media(max-width:768px){
-
   .logo{font-size:1.1rem}
   .back{font-size:.55rem;padding:.5rem 1.2rem}
   .hero{padding-top:10rem;padding-bottom:4rem}
-  .hero-title{font-size:clamp(3rem,10vw,6.5rem)}
+  .hero-title{font-size:clamp(2.6rem,10vw,6rem)}
   .hero-meta{gap:1.5rem;margin-top:3rem}
-  .metrics{grid-template-columns:repeat(2,1fr)}
-  section{padding:6rem 0}
+  .metric{flex:1 1 calc(50% - 1.4rem);max-width:none;padding:1.6rem 1.4rem}
+  section{padding:5rem 0}
   .bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px;gap:1rem}
   .b-card.large{grid-column:span 2;grid-row:span 2}
   .progress-grid{grid-template-columns:1fr;gap:2rem}
@@ -162,8 +161,9 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
   .pfooter{flex-direction:column;gap:2rem;text-align:center}
 }
 @media(max-width:480px){
-  .hero-title{font-size:clamp(2.5rem,12vw,4.5rem)}
-  .metrics{grid-template-columns:1fr}
+  .hero-title{font-size:clamp(2.1rem,11vw,4.2rem)}
+  .s-title{font-size:clamp(1.8rem,8vw,3.2rem)}
+  .metric{flex:1 1 100%;max-width:none;padding:1.3rem 1.2rem;border-radius:24px}
   .bento{grid-template-columns:1fr;grid-auto-rows:220px}
   .b-card.large, .b-card.wide{grid-column:span 1;grid-row:span 1}
   .b-card.tall{grid-row:span 1}

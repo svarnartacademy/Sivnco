@@ -48,7 +48,7 @@ html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);f
 .br-footer-meta{display:flex;justify-content:space-between;font-family:var(--M);font-size:.5rem;letter-spacing:.15em;color:rgba(240,237,230,0.25);padding-top:2rem;border-top:1px solid var(--br-border)}
 .brv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.brv.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.br-pillars{grid-template-columns:1fr}.br-pill-left{position:relative;height:auto;padding:3rem 2rem}.br-pill-card{padding:3rem 2rem;min-height:auto}.br-dash{grid-template-columns:1fr;gap:2rem}.br-gallery{grid-template-columns:1fr 1fr}.br-fb-grid{grid-template-columns:1fr}.br-footer-meta{flex-direction:column;gap:.8rem}}
-@media(max-width:540px){.br-hero h1{font-size:clamp(3.5rem,16vw,8rem)}.br-s{padding:5rem 0}.br-soul{padding:6rem 0}.br-gallery{grid-template-columns:1fr}}
+@media(max-width:540px){.br-hero h1{font-size:clamp(2.2rem,11vw,4.5rem)}.br-s{padding:4rem 0}.br-soul{padding:5rem 0}.br-gallery{grid-template-columns:1fr}}
 `
 const NAV = [{l:'Core Packaging',h:'/jusamazin/core-packaging'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Brand Guidelines',h:'/jusamazin/brand-guidelines'},{l:'Jars',h:'/jusamazin/jars'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}]
 

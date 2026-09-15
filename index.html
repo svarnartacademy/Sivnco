@@ -385,7 +385,8 @@
     .container {
       max-width: 1600px;
       margin: 0 auto;
-      padding: 0 4vw;
+      padding-left: max(4vw, env(safe-area-inset-left, 0px));
+      padding-right: max(4vw, env(safe-area-inset-right, 0px));
     }
 
     .section {
@@ -573,7 +574,8 @@
       border-radius: 0 0 28px 28px;
     }
     .nav-chat-panel-body {
-      height: 520px;
+      height: min(520px, calc(100dvh - 5.5rem));
+      max-height: 520px;
       display: flex;
       flex-direction: column;
       border-top: 1px solid rgba(240,237,230,0.08);

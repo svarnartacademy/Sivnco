@@ -169,9 +169,10 @@ const NAV_STYLES = `
   }
   .snav-mobile-link:last-child { border-bottom: none; }
   .snav-mobile-link:hover { color: #D4600A; padding-left: 0.4rem; }
-  /* Chat panel */
+  /* Chat panel — dynamic viewport height to prevent off-screen controls on mobile */
   .snav-chat-body {
-    height: 520px;
+    height: min(520px, calc(100dvh - 5.5rem));
+    max-height: 520px;
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgba(240,237,230,0.08);
@@ -188,18 +189,22 @@ const NAV_STYLES = `
     display: block;
   }
   /* Responsive */
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .snav { top: 1.2rem; width: calc(100% - 2.5rem); }
+    .snav-links { gap: 1.25rem; }
+    .snav-links a { font-size: 0.6rem; letter-spacing: 0.12em; }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     .snav { top: 1rem; width: calc(100% - 2rem); }
     .snav-row { padding: 0.6rem 1.1rem; }
     .snav-links { display: none; }
     .snav-burger { display: flex; }
   }
   @media (max-width: 480px) {
-    .snav { top: 0.75rem; width: calc(100% - 1.5rem); }
-    .snav-row { padding: 0.55rem 0.9rem; }
+    .snav { top: max(0.65rem, env(safe-area-inset-top, 0px)); width: calc(100% - 1.2rem); }
+    .snav-row { padding: 0.5rem 0.85rem; gap: 0.35rem; }
+    .snav-logo { font-size: 1.15rem; }
+    .snav-maya-btn { font-size: 0.48rem; padding: 0.35rem 0.65rem; }
   }
 `;
 

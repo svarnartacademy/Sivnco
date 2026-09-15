@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SeedingBanner ù Glassmorphism popup that appears when any <img> on the page
  * fails to load (i.e. images not yet seeded).
  *
@@ -204,6 +204,13 @@ const BANNER_CSS = `
   }
   .sivb-dismiss-btn:hover {
     background: rgba(212,96,10,0.18);
+  }
+
+  @media (max-width: 480px) {
+    .sivb-overlay { padding: 1rem; }
+    .sivb-card { padding: 1.6rem 1.3rem 1.4rem; border-radius: 20px; }
+    .sivb-title { font-size: 1.5rem; }
+    .sivb-body { font-size: 0.88rem; line-height: 1.65; margin-bottom: 1.2rem; }
   }
 
   @keyframes sivbFadeIn {

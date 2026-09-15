@@ -99,10 +99,10 @@ a{color:inherit;text-decoration:none}
   .pr-footer-meta{flex-direction:column;gap:.8rem}
 }
 @media(max-width:540px){
-  .pr-hero h1{font-size:clamp(3rem,14vw,7rem)}
-  .pr-section{padding:5rem 0}
-  .pr-viewer{min-height:260px}
-  .pr-info{padding:2rem}
+  .pr-hero h1{font-size:clamp(2.2rem,11vw,4.2rem)}
+  .pr-section{padding:4rem 0}
+  .pr-viewer{min-height:240px}
+  .pr-info{padding:1.5rem 1.2rem}
   .pr-intro-stats{grid-template-columns:1fr}
 }
 `

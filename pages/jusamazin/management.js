@@ -51,7 +51,7 @@ html{scroll-behavior:smooth}body{background:var(--mg-bg);color:var(--mg-white);f
 .mg-gal-item{background:var(--mg-glass);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-family:var(--D);font-weight:900;font-size:.7rem;letter-spacing:.12em;color:rgba(240,237,230,0.08);transition:background .3s;position:relative;overflow:hidden}
 .mg-gal-item:hover{background:rgba(192,160,96,0.06)}
 @media(max-width:900px){.mg-pillars{grid-template-columns:1fr}.mg-pill-left{position:relative;height:auto;padding:3rem 2rem}.mg-pill-card{padding:3rem 2rem;min-height:auto}.mg-survey{grid-template-columns:1fr}.mg-gallery{grid-template-columns:1fr 1fr}.mg-footer-meta{flex-direction:column;gap:.8rem}}
-@media(max-width:540px){.mg-hero h1{font-size:clamp(3rem,14vw,7rem)}.mg-s{padding:5rem 0}.mg-soul{padding:6rem 0}.mg-gallery{grid-template-columns:1fr}}
+@media(max-width:540px){.mg-hero h1{font-size:clamp(2.2rem,11vw,4.2rem)}.mg-s{padding:4rem 0}.mg-soul{padding:5rem 0}.mg-gallery{grid-template-columns:1fr}}
 `
 import Navbar from '../../components/Navbar'
 

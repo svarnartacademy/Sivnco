@@ -41,11 +41,15 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.vis{opacity:1;transform:translateY(0)}
 .rv2{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.rv2.vis{opacity:1;transform:translateY(0)}
 @media(max-width:900px){
-
   .hero{padding-top:10rem}
   .comm-grid{grid-template-columns:1fr}
-  section{padding:6rem 0}
+  section{padding:5rem 0}
   .pfooter{flex-direction:column;gap:1.5rem;text-align:center}
+}
+@media(max-width:480px){
+  .hero-title{font-size:clamp(2.1rem,10vw,4rem)}
+  .s-title{font-size:clamp(1.8rem,8vw,3.2rem)}
+  .comm-card{padding:1.4rem 1.1rem;border-radius:20px}
 }
 `
 

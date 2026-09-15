@@ -180,10 +180,16 @@ section{padding:8rem 0;border-bottom:1px solid var(--ai-border);position:relativ
 }
 @media(max-width:768px){
   .hero{padding-top:10rem;padding-bottom:4rem}
-  .hero-title{font-size:clamp(3rem,10vw,6.5rem)}
+  .hero-title{font-size:clamp(2.5rem,10vw,6rem)}
   .pipeline-steps{grid-template-columns:1fr}
   .metrics-stream{gap:1rem}
   .pfooter{flex-direction:column;gap:2rem;text-align:center}
+}
+@media(max-width:480px){
+  .hero-title{font-size:clamp(2.1rem,11vw,4.2rem)}
+  .s-title{font-size:clamp(1.8rem,8vw,3.2rem)}
+  .metric-capsule{flex:1 1 100%;max-width:none;padding:1.3rem 1.2rem;border-radius:24px}
+  .pipeline-stage-detail{padding:1.5rem 1.2rem;border-radius:20px}
 }
 `
 

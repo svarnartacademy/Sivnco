@@ -1674,17 +1674,21 @@ section{padding:8rem 0;position:relative}
   .outcomes-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .hero{padding:9rem 5vw 4rem}
-  .hero-title{font-size:clamp(3.2rem,13vw,6.5rem)}
-  .card-body{padding:2rem 1.5rem}
-  .browser-bar{padding:.9rem 1.2rem}
+  .hero{padding:8rem 5vw 3.5rem}
+  .hero-title{font-size:clamp(2.4rem,11vw,5.5rem)}
+  .card-body{padding:1.8rem 1.3rem}
+  .browser-bar{padding:.8rem 1.1rem}
   .pfooter{flex-direction:column;gap:2rem;text-align:center}
   #dot{display:none}
   body{cursor:auto}
 }
 @media(max-width:480px){
+  .hero{padding:7rem 4vw 3rem}
+  .hero-title{font-size:clamp(2rem,10vw,3.6rem)}
   .metrics-island{grid-template-columns:1fr}
   .card-tabs{border-radius:18px}
-  .card-tab{width:100%;justify-content:center}
+  .card-tab{width:100%;justify-content:center;font-size:0.75rem}
+  .card-body{padding:1.4rem 1rem}
+  .browser-bar{padding:.65rem .9rem}
 }
 `

@@ -14,6 +14,24 @@ const FlowGradientHero = dynamic(
 // Mobile-responsive overrides injected directly from Next.js (always fresh, not from index.html)
 const MOBILE_CSS = `
   /* ======================================================= */
+  /* TEMP GREY TEST - HOMEPAGE OVERRIDE                      */
+  /* ======================================================= */
+  :root, html, body {
+    --bg-color: #4A4A4A !important;
+    background-color: #4A4A4A !important;
+    background: #4A4A4A !important;
+  }
+  .main-wrap {
+    background-color: #4A4A4A !important;
+  }
+  .footer-fixed {
+    background: #353535 !important;
+  }
+  .hero-blur-fade {
+    background: linear-gradient(to bottom, transparent 0%, rgba(74,74,74,0.3) 30%, rgba(74,74,74,0.75) 60%, #4A4A4A 100%) !important;
+  }
+
+  /* ======================================================= */
   /* HOVER GLOW EFFECTS — radial gradient on interactive cards */
   /* ======================================================= */
 
@@ -158,18 +176,18 @@ const MOBILE_CSS = `
 
   @media(max-width:1024px) {
     .hero-section { align-items: flex-start !important; }
-    .h-massive { font-size: clamp(3.5rem, 12vw, 10rem) !important; }
+    .h-massive { font-size: clamp(3.2rem, 10vw, 8rem) !important; line-height: 0.98 !important; }
     .hero-stats-bar { gap: 2rem; }
     .hero-split { grid-template-columns: 1fr !important; gap: 3rem !important; }
     .hero-right { border-left: none !important; border-top: 1px solid var(--glass-border) !important; padding-left: 0 !important; padding-top: 2.5rem !important; }
     .glass-card.project-card { grid-column: span 12 !important; min-height: 320px !important; height: auto !important; padding: 2.4rem 2rem !important; }
     #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
     .h-sticky { height: auto !important; display: block !important; }
-    .h-container { display: flex !important; flex-direction: column !important; width: 100% !important; padding: 0 5vw !important; gap: 2rem !important; }
+    .h-container { display: flex !important; flex-direction: column !important; width: 100% !important; padding: 0 4vw !important; gap: 2rem !important; }
     .h-container > div:first-child { width: 100% !important; }
-    .role-card { width: 100% !important; min-height: auto !important; padding: 3rem 2.2rem !important; flex-shrink: unset !important; }
+    .role-card { width: 100% !important; min-height: auto !important; padding: 2.5rem 2rem !important; flex-shrink: unset !important; }
     .role-card h3 { font-size: clamp(1.8rem, 5vw, 2.8rem) !important; }
-    .footer-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+    .footer-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
     .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .testi-card:last-child { grid-column: span 2 !important; }
     .vc-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -179,6 +197,26 @@ const MOBILE_CSS = `
     .vc-ext-card:last-child { grid-column: span 2 !important; }
     #principles .glass-card { padding: 2rem 1.6rem !important; }
     .studio-3d-box { grid-template-columns: 1fr !important; gap: 1.5rem !important; padding: 1.5rem !important; }
+
+    /* Unpin fixed curtain footer on tablets & mobile to prevent content cutoff */
+    .footer-fixed {
+      position: relative !important;
+      height: auto !important;
+      min-height: unset !important;
+      bottom: unset !important;
+      left: unset !important;
+      right: unset !important;
+      padding: 4rem 0 3rem !important;
+      overflow-y: visible !important;
+      display: block !important;
+    }
+    .main-wrap {
+      margin-bottom: 0 !important;
+    }
+    .nav-chat-panel-body {
+      height: min(520px, calc(100dvh - 5.5rem)) !important;
+      max-height: 520px !important;
+    }
   }
 
   /* Mobile */
@@ -195,9 +233,9 @@ const MOBILE_CSS = `
 
     /* Hero */
     .hero-section { height: auto !important; min-height: 100vh !important; padding-bottom: 3rem !important; }
-    .h-massive { font-size: clamp(3rem, 14vw, 8rem) !important; }
-    .h-large { font-size: clamp(2.2rem, 8vw, 5rem) !important; }
-    .hero-roles { gap: 1rem !important; font-size: 0.6rem !important; margin-top: 2rem !important; }
+    .h-massive { font-size: clamp(2.4rem, 11vw, 7rem) !important; line-height: 0.98 !important; word-break: break-word !important; }
+    .h-large { font-size: clamp(1.8rem, 8vw, 4.2rem) !important; }
+    .hero-roles { gap: 0.8rem !important; font-size: 0.6rem !important; margin-top: 1.8rem !important; flex-wrap: wrap !important; }
     .hero-stats-bar { gap: 1.5rem !important; margin-top: 2.5rem !important; flex-direction: column !important; align-items: flex-start !important; }
     .hero-stat-num { font-size: clamp(2rem, 8vw, 3.5rem) !important; }
     .hero-float-tag { display: none !important; }
@@ -205,46 +243,46 @@ const MOBILE_CSS = `
     .hero-pill { font-size: 0.6rem !important; padding: 0.3rem 0.8rem !important; margin-bottom: 1.5rem !important; }
 
     /* Section spacing */
-    .section { padding: 8vh 0 !important; }
-    .container { padding: 0 5vw !important; }
+    .section { padding: 7vh 0 !important; }
+    .container { padding: 0 4vw !important; }
 
     /* Project gallery — single column */
-    .glass-card.project-card { grid-column: span 12 !important; min-height: 280px !important; height: auto !important; width: 100% !important; padding: 2rem 1.6rem !important; }
+    .glass-card.project-card { grid-column: span 12 !important; min-height: 260px !important; height: auto !important; width: 100% !important; padding: 1.8rem 1.4rem !important; }
 
     /* Metrics */
     .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
 
     /* Mosaic Slots */
     .cs-img-mosaic { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; gap: 0.8rem !important; }
-    .cs-img-slot { min-height: 220px !important; }
+    .cs-img-slot { min-height: 200px !important; }
     .cs-img-slot.tall { grid-row: span 1 !important; }
-    .cs-img-slot#csImg_motion { grid-column: span 2 !important; min-height: 220px !important; }
+    .cs-img-slot#csImg_motion { grid-column: span 2 !important; min-height: 200px !important; }
 
     /* Visual Concepts on Mobile */
-    .vc-card { padding: 1.8rem 1.4rem !important; }
-    .vc-rejected-card { padding: 1.6rem 1.2rem !important; }
-    .vc-ext-card { padding: 1.6rem 1.2rem !important; }
-    .testi-card { padding: 2rem 1.5rem !important; }
-    #principles .glass-card { padding: 1.6rem 1.3rem !important; }
+    .vc-card { padding: 1.6rem 1.2rem !important; }
+    .vc-rejected-card { padding: 1.4rem 1rem !important; }
+    .vc-ext-card { padding: 1.4rem 1rem !important; }
+    .testi-card { padding: 1.8rem 1.3rem !important; }
+    #principles .glass-card { padding: 1.5rem 1.2rem !important; }
 
     /* -- FOUR ROLES HORIZONTAL SCROLL -> VERTICAL STACK -- */
-    #horizontal-sec { overflow: visible !important; padding: 6vh 0 !important; }
+    #horizontal-sec { overflow: visible !important; padding: 5vh 0 !important; }
     .h-sticky { height: auto !important; display: block !important; }
     .h-container {
       display: flex !important;
       flex-direction: column !important;
       width: 100% !important;
-      padding: 0 5vw !important;
-      gap: 2rem !important;
+      padding: 0 4vw !important;
+      gap: 1.6rem !important;
     }
     .h-container > div:first-child { width: 100% !important; }
     .role-card {
       width: 100% !important;
       min-height: auto !important;
-      padding: 2.2rem 1.6rem !important;
+      padding: 2rem 1.4rem !important;
       flex-shrink: unset !important;
     }
-    .role-card h3 { font-size: clamp(1.6rem, 6vw, 2.5rem) !important; }
+    .role-card h3 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
 
     /* -- SVARNART SECTION -- */
     .svarnart-grid {
@@ -272,42 +310,17 @@ const MOBILE_CSS = `
       gap: 2rem !important;
     }
 
-    /* -- FOOTER / CONTACT SECTION -- */
-    /* Stack the 2-col headline+form grid to single column */
-    .footer-grid {
-      grid-template-columns: 1fr !important;
-      gap: 2.5rem !important;
-    }
-    /* Unpin the fixed footer — becomes normal block flow on mobile */
-    .footer-fixed {
-      position: relative !important;
-      height: auto !important;
-      min-height: unset !important;
-      bottom: unset !important;
-      left: unset !important;
-      right: unset !important;
-      padding: 4rem 0 3rem !important;
-      overflow-y: visible !important;
-      display: block !important;
-    }
-    /* Remove the 100vh margin-bottom that reserved space for the fixed footer */
-    .main-wrap {
-      margin-bottom: 0 !important;
-    }
-    /* Make the contact form full width */
+    /* Make contact form full width */
     #contactForm {
       width: 100% !important;
     }
-    /* Stack the Name / Email side-by-side row to a single column */
     #contactForm > div:first-child {
       grid-template-columns: 1fr !important;
     }
-    /* Footer headline sizing */
     .footer-fixed h2 {
-      font-size: clamp(2.5rem, 10vw, 5rem) !important;
+      font-size: clamp(2.2rem, 9vw, 4.5rem) !important;
       line-height: 1 !important;
     }
-    /* Footer footnote row — wrap on mobile */
     .footer-fixed > div > div:last-child {
       flex-direction: column !important;
       gap: 0.8rem !important;
@@ -321,22 +334,23 @@ const MOBILE_CSS = `
     /* Before/After */
     .cs-before-after { grid-template-columns: 1fr !important; }
 
-    /* Cursor — no mouse on phones */
-    #cursor-dot { display: none !important; }
+    /* Cursor — native touch on mobile */
+    #cursor-dot, #dot { display: none !important; }
     body { cursor: auto !important; }
   }
 
   /* Small phones */
   @media(max-width:480px) {
-    .h-massive { font-size: clamp(2.5rem, 16vw, 6rem) !important; }
-    .h-large { font-size: clamp(1.8rem, 9vw, 4rem) !important; }
-    .hero-roles { flex-direction: column !important; gap: 0.6rem !important; align-items: center !important; }
+    .h-massive { font-size: clamp(2.1rem, 11vw, 4.5rem) !important; }
+    .h-large { font-size: clamp(1.6rem, 8vw, 3.2rem) !important; }
+    .hero-roles { flex-direction: column !important; gap: 0.5rem !important; align-items: flex-start !important; }
     .hero-roles span:not(:last-child)::after { display: none !important; }
-    .glass-card.project-card { height: 28vh !important; padding: 1.5rem !important; }
-    .testi-card { padding: 1.5rem !important; }
-    .price-card { padding: 2rem 1.5rem !important; }
-    .role-card { padding: 2rem 1.4rem !important; }
-    .footer-fixed .h2, .footer-fixed h2 { font-size: clamp(2.5rem, 10vw, 5rem) !important; }
+    .glass-card.project-card { min-height: 240px !important; height: auto !important; padding: 1.4rem 1.1rem !important; }
+    .metric-card { padding: 1.2rem 1.2rem !important; border-radius: 24px !important; }
+    .testi-card { padding: 1.4rem 1.1rem !important; }
+    .price-card { padding: 1.8rem 1.2rem !important; }
+    .role-card { padding: 1.6rem 1.2rem !important; }
+    .footer-fixed .h2, .footer-fixed h2 { font-size: clamp(2rem, 9vw, 3.8rem) !important; }
   }
 `
 
@@ -547,31 +561,28 @@ export async function getStaticProps() {
   // elements to their visible end-state so nothing stays blank.
   const mobileScrollFix = `
 (function() {
-  if (window.innerWidth > 1024) return;
+  function applyMobileFixes() {
+    if (window.innerWidth > 1024) return;
 
-  // Kill only the horizontal-scroll pin (identified by its trigger element)
-  if (typeof ScrollTrigger !== 'undefined') {
-    ScrollTrigger.getAll().forEach(function(st) {
-      var el = st.trigger;
-      if (el && (el.id === 'horizontal-sec' || el.classList.contains('h-container'))) {
-        st.kill();
-      }
+    // Kill only the horizontal-scroll pin on tablets/mobile
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.getAll().forEach(function(st) {
+        var el = st.trigger;
+        if (el && (el.id === 'horizontal-sec' || el.classList.contains('h-container'))) {
+          st.kill();
+        }
+      });
+    }
+
+    // Immediately reveal all scroll-animated elements so they are never blank
+    document.querySelectorAll('.gs-fade, .gs-reveal, .reveal-text, .metric-card, .testi-card, .price-card, .tl-item, .chip').forEach(function(el) {
+      el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
     });
   }
 
-  // Immediately reveal all scroll-animated elements so they are never blank
-  document.querySelectorAll('.gs-fade').forEach(function(el) {
-    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
-  });
-  document.querySelectorAll('.gs-reveal').forEach(function(el) {
-    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
-  });
-  document.querySelectorAll('.reveal-text').forEach(function(el) {
-    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
-  });
-  document.querySelectorAll('.metric-card, .testi-card, .price-card, .tl-item, .chip').forEach(function(el) {
-    el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
-  });
+  applyMobileFixes();
+  window.addEventListener('resize', applyMobileFixes, { passive: true });
+  window.addEventListener('orientationchange', applyMobileFixes, { passive: true });
 })();
 `
 

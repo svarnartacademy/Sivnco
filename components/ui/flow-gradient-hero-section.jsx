@@ -66,14 +66,14 @@ class GradientBackground {
       uTime: { value: 0 },
       uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
       uColor1: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
-      uColor2: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
+      uColor2: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
       uColor3: { value: new THREE.Vector3(0.910, 0.522, 0.165) },
-      uColor4: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
+      uColor4: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
       uColor5: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
       uColor6: { value: new THREE.Vector3(0.118, 0.227, 0.184) },
       uSpeed: { value: 0.8 }, uIntensity: { value: 1.4 },
       uTouchTexture: { value: null }, uGrainIntensity: { value: 0.06 },
-      uDarkNavy: { value: new THREE.Vector3(0.039, 0.035, 0.024) },
+      uDarkNavy: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
       uGradientSize: { value: 0.45 }, uGradientCount: { value: 12.0 },
       uColor1Weight: { value: 0.5 }, uColor2Weight: { value: 1.8 }
     };
@@ -186,11 +186,12 @@ class ThreeApp {
       hero.addEventListener("mousemove", (e) => {
         const rect = c.getBoundingClientRect();
         onMove(e.clientX - rect.left, e.clientY - rect.top);
-      });
+      }, { passive: true });
       hero.addEventListener("touchmove", (e) => {
+        if (!e.touches || !e.touches[0]) return;
         const rect = c.getBoundingClientRect();
         onMove(e.touches[0].clientX - rect.left, e.touches[0].clientY - rect.top);
-      });
+      }, { passive: true });
     }
     this._resizeHandler = () => {
       this.camera.aspect = c.clientWidth / c.clientHeight;

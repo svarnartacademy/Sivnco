@@ -106,7 +106,7 @@ html{scroll-behavior:smooth}body{background:var(--mk-bg);color:var(--mk-white);f
   .mk-v-section{padding:5rem 0}
   .mk-pillars{grid-template-columns:1fr}.mk-pill-left{position:relative;height:auto;padding:3rem 2rem}.mk-pill-card{padding:3rem 2rem;min-height:auto}.mk-tl-item{grid-template-columns:1fr;gap:.8rem}.mk-metrics{grid-template-columns:1fr}.mk-gallery{grid-template-columns:1fr 1fr}.mk-fb-grid{grid-template-columns:1fr}.mk-footer-meta{flex-direction:column;gap:.8rem}
 }
-@media(max-width:540px){.mk-hero h1{font-size:clamp(3rem,14vw,7rem)}.mk-s{padding:5rem 0}.mk-soul{padding:6rem 0}.mk-gallery{grid-template-columns:1fr}}
+@media(max-width:540px){.mk-hero h1{font-size:clamp(2.2rem,11vw,4.2rem)}.mk-s{padding:4rem 0}.mk-soul{padding:5rem 0}.mk-gallery{grid-template-columns:1fr}}
 `
 import Navbar from '../../components/Navbar'
 

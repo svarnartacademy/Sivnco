@@ -57,6 +57,10 @@ export default function SoundToggle({ className = '' }) {
           transition: all 0.25s ease;
           user-select: none;
         }
+        @media (max-width: 540px) {
+          .sound-label { display: none; }
+          .sound-toggle-btn { padding: 0.45rem 0.55rem; gap: 0; }
+        }
         .sound-toggle-btn:hover {
           background: rgba(212, 96, 10, 0.15);
           border-color: rgba(212, 96, 10, 0.4);
