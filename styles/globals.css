@@ -114,29 +114,35 @@
 }
 
 /* ============================================================
-   TEMP GREY TEST — remove this block to revert to obsidian
+   SIVNCO SIGNATURE PALETTE (RICH OBSIDIAN & WARM AMBER)
    ============================================================ */
 body {
-  background: #4A4A4A !important;
-  background-color: #4A4A4A !important;
+  background: #0A0906 !important;
+  background-color: #0A0906 !important;
+  color: #F0EDE6;
+  font-family: 'Urbanist', sans-serif;
 }
 :root, html {
-  --bg-color: #4A4A4A !important;
-  --ja-bg: #4A4A4A !important;
-  --sv-bg: #4A4A4A !important;
-  --cp-bg: #4A4A4A !important;
-  --ai-bg: #4A4A4A !important;
-  --ae-bg: #4A4A4A !important;
-  --wv-bg: #4A4A4A !important;
+  --bg-color: #0A0906 !important;
+  --ja-bg: #0A0906 !important;
+  --sv-bg: #0A0906 !important;
+  --cp-bg: #0A0906 !important;
+  --ai-bg: #0A0906 !important;
+  --ae-bg: #0A0906 !important;
+  --wv-bg: #0A0906 !important;
+  --f-display: 'Doto', sans-serif !important;
+  --f-serif: 'Urbanist', sans-serif !important;
+  --f-mono: 'Urbanist', sans-serif !important;
+  --f-sans: 'Urbanist', sans-serif !important;
 }
 .main-wrap {
-  background-color: #4A4A4A !important;
+  background-color: #0A0906 !important;
 }
 .footer-fixed {
-  background: #353535 !important;
+  background: #0A0906 !important;
 }
 .hero-blur-fade {
-  background: linear-gradient(to bottom, transparent 0%, rgba(74,74,74,0.3) 30%, rgba(74,74,74,0.75) 60%, #4A4A4A 100%) !important;
+  background: linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.3) 30%, rgba(10,9,6,0.75) 60%, #0A0906 100%) !important;
 }
 
 /* ============================================================

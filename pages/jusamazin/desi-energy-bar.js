@@ -33,7 +33,7 @@ const CSS = `
   --deb-bg:#0D0D0D;--deb-white:#FAFAFA;--deb-accent:#0066FF;--deb-ochre:#D4960A;
   --deb-muted:rgba(250,250,250,0.45);--deb-border:rgba(250,250,250,0.1);
   --deb-glass:rgba(250,250,250,0.04);--deb-charcoal:#161616;
-  --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif;
+  --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:hidden}

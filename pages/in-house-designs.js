@@ -89,7 +89,7 @@ const TIMELINE_VEDIC = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ih-bg:#0A0906;--ink:#F0EDE6;--ih-muted:rgba(240,237,230,0.45);--ih-accent:#D4600A;--ih-border:rgba(240,237,230,0.08);--ih-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ih-bg:#0A0906;--ink:#F0EDE6;--ih-muted:rgba(240,237,230,0.45);--ih-accent:#D4600A;--ih-border:rgba(240,237,230,0.08);--ih-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }

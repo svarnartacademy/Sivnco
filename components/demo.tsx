@@ -30,7 +30,7 @@ export default function StartProjectButton() {
           border: none;
           background: #D4600A;
           color: #0A0906;
-          font-family: 'Instrument Sans', sans-serif;
+          font-family: 'Urbanist', sans-serif;
           font-size: 0.6rem;
           letter-spacing: 0.12em;
           font-weight: 700;

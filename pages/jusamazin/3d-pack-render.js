@@ -21,7 +21,7 @@ const CSS = `
   --pr-bg:#0A0906;--pr-white:#F0EDE6;--pr-accent:#7B61FF;--pr-accent2:#D4600A;
   --pr-muted:rgba(240,237,230,0.45);--pr-border:rgba(240,237,230,0.08);
   --pr-glass:rgba(240,237,230,0.03);
-  --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif;
+  --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--pr-bg);color:var(--pr-white);font-family:var(--S);overflow-x:hidden}

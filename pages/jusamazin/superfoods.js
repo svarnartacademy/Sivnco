@@ -25,7 +25,7 @@ const NUTRITION = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--sf-bg:#0A0906;--sf-white:#F0EDE6;--sf-accent:#7F8C8D;--sf-red:#E74C3C;--sf-muted:rgba(240,237,230,0.45);--sf-border:rgba(240,237,230,0.08);--sf-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--sf-bg:#0A0906;--sf-white:#F0EDE6;--sf-accent:#7F8C8D;--sf-red:#E74C3C;--sf-muted:rgba(240,237,230,0.45);--sf-border:rgba(240,237,230,0.08);--sf-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--sf-bg);color:var(--sf-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .sf-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--sf-border)}

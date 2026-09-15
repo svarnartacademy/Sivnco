@@ -49,9 +49,9 @@ const SYSTEMS = [
     label: 'Brand System — Self Identity',
     title: 'Sivnco Studio',
     subtitle: 'Self-Brand System',
-    body: `The site you are on right now is a design system. Sivnco Studio's identity — the Doto logotype, the warm-dark colour palette, the Poppins + Space Mono type pairing, the accent orange — is a system I designed and maintain. Every page on sivnco.in is a component that draws from shared tokens.`,
+    body: `The site you are on right now is a design system. Sivnco Studio's identity — the Doto logotype, the warm-dark colour palette, the Doto + Urbanist typography system, the accent orange — is a system I designed and maintain. Every page on sivnco.in is a component that draws from shared tokens.`,
     layers: [
-      { title: 'Identity Tokens', items: ['Colour: --accent (#D4600A), --bg (#0A0906), --ink (#F0EDE6) — consistent across every page', 'Type: Doto (display), Poppins (body), Space Mono (mono labels) — a three-role type system', 'Motion: scroll reveal timings, hover transition durations — all defined and reused'] },
+      { title: 'Identity Tokens', items: ['Colour: --accent (#D4600A), --bg (#0A0906), --ink (#F0EDE6) — consistent across every page', 'Type: Doto (display), Urbanist (body & UI) — a unified two-role type system', 'Motion: scroll reveal timings, hover transition durations — all defined and reused'] },
       { title: 'Component System', items: ['Shared nav and footer components', 'Glass card system with hover glow state', 'Metric counter, timeline, and bento grid — reusable across case study pages', 'Custom cursor — consistent interaction signature across the entire site'] },
       { title: 'The Meta-Point', items: ['This portfolio is itself proof of design systems thinking', 'The system scales: each new case study page is a new component, not a new design', 'Maintainable by one person — which is exactly what a good system enables'] },
     ],
@@ -67,14 +67,14 @@ const PROCESS = [
 ]
 
 const PRESETS = [
-  { id: 'jusamazin', name: "Jus Amazin", accent: '#D4600A', radius: 18, borderOpacity: 0.15, font: 'Instrument Sans' },
+  { id: 'jusamazin', name: "Jus Amazin", accent: '#D4600A', radius: 18, borderOpacity: 0.15, font: 'Urbanist' },
   { id: 'svarnart', name: 'Svarnart Academy', accent: '#C89B3C', radius: 32, borderOpacity: 0.22, font: 'Urbanist' },
   { id: 'sivnco', name: 'Sivnco Studio', accent: '#E8852A', radius: 40, borderOpacity: 0.12, font: 'Doto' },
 ]
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ds-bg:#0A0906;--ds-ink:#F0EDE6;--ds-muted:rgba(240,237,230,0.45);--ds-accent:#D4600A;--ds-accent-light:rgba(212,96,10,0.7);--ds-border:rgba(240,237,230,0.08);--ds-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ds-bg:#0A0906;--ds-ink:#F0EDE6;--ds-muted:rgba(240,237,230,0.45);--ds-accent:#D4600A;--ds-accent-light:rgba(212,96,10,0.7);--ds-border:rgba(240,237,230,0.08);--ds-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}

@@ -97,7 +97,7 @@ const AI_PILLARS = [
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--ai-bg:#0A0906;--ink:#F0EDE6;--ai-muted:rgba(240,237,230,0.45);--ai-accent:#D4600A;--ai-border:rgba(240,237,230,0.08);--ai-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--ai-bg:#0A0906;--ink:#F0EDE6;--ai-muted:rgba(240,237,230,0.45);--ai-accent:#D4600A;--ai-border:rgba(240,237,230,0.08);--ai-glass:rgba(240,237,230,0.03);--forest:#142B22;--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }

@@ -56,7 +56,7 @@ const NAV_STYLES = `
     align-items: center;
   }
   .snav-links a {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.65rem;
     font-weight: 400;
     letter-spacing: 0.18em;
@@ -81,7 +81,7 @@ const NAV_STYLES = `
     display: flex;
     align-items: center;
     gap: 0.45rem;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.52rem;
     font-weight: 500;
     letter-spacing: 0.13em;
@@ -167,7 +167,7 @@ const NAV_STYLES = `
     padding: 0.75rem 1.4rem 1rem;
   }
   .snav-mobile-link {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.72rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;

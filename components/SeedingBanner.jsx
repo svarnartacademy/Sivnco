@@ -86,7 +86,7 @@ const BANNER_CSS = `
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.5rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -157,7 +157,7 @@ const BANNER_CSS = `
   .sivb-title span { color: #D4600A; }
 
   .sivb-body {
-    font-family: 'Instrument Sans', 'Urbanist', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.95rem;
     line-height: 1.85;
     color: rgba(240,237,230,0.55);
@@ -187,7 +187,7 @@ const BANNER_CSS = `
     z-index: 1;
   }
   .sivb-meta {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.48rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -195,7 +195,7 @@ const BANNER_CSS = `
     line-height: 1.6;
   }
   .sivb-dismiss-btn {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.52rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;

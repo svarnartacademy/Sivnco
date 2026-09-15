@@ -14,21 +14,27 @@ const FlowGradientHero = dynamic(
 // Mobile-responsive overrides injected directly from Next.js (always fresh, not from index.html)
 const MOBILE_CSS = `
   /* ======================================================= */
-  /* TEMP GREY TEST - HOMEPAGE OVERRIDE                      */
+  /* SIVNCO SIGNATURE PALETTE & 2-FONT HIERARCHY             */
   /* ======================================================= */
   :root, html, body {
-    --bg-color: #4A4A4A !important;
-    background-color: #4A4A4A !important;
-    background: #4A4A4A !important;
+    --bg-color: #0A0906 !important;
+    background-color: #0A0906 !important;
+    background: #0A0906 !important;
+    color: #F0EDE6 !important;
+    font-family: 'Urbanist', sans-serif !important;
+    --f-display: 'Doto', sans-serif !important;
+    --f-serif: 'Urbanist', sans-serif !important;
+    --f-mono: 'Urbanist', sans-serif !important;
+    --f-sans: 'Urbanist', sans-serif !important;
   }
   .main-wrap {
-    background-color: #4A4A4A !important;
+    background-color: #0A0906 !important;
   }
   .footer-fixed {
-    background: #353535 !important;
+    background: #0A0906 !important;
   }
   .hero-blur-fade {
-    background: linear-gradient(to bottom, transparent 0%, rgba(74,74,74,0.3) 30%, rgba(74,74,74,0.75) 60%, #4A4A4A 100%) !important;
+    background: linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.3) 30%, rgba(10,9,6,0.75) 60%, #0A0906 100%) !important;
   }
 
   /* ======================================================= */
@@ -248,8 +254,99 @@ const MOBILE_CSS = `
     border: 1px solid rgba(240, 237, 230, 0.1) !important;
   }
 
-  .vc-rejected-card, .vc-ext-card, .testi-card {
+  .vc-rejected-card, .vc-ext-card {
     border-radius: 24px !important;
+  }
+
+  /* ======================================================= */
+  /* TESTIMONIALS AESTHETIC & CARD HIERARCHY                 */
+  /* ======================================================= */
+  .section.testi-section {
+    position: relative !important;
+  }
+  .testi-card {
+    background: linear-gradient(145deg, rgba(26, 22, 16, 0.88) 0%, rgba(14, 12, 9, 0.96) 100%) !important;
+    border: 1px solid rgba(240, 237, 230, 0.08) !important;
+    border-radius: 24px !important;
+    padding: 2.2rem 2rem !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px -4px rgba(212, 96, 10, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  .testi-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(212, 96, 10, 0.35) !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 96, 10, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  }
+  .testi-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .testi-avatar {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.4) 0%, rgba(212,96,10,0.15) 100%) !important;
+    color: #FFF !important;
+    border: none !important;
+    box-shadow: 0 0 18px rgba(212,96,10,0.4), inset 0 1px 0 rgba(255,255,255,0.3) !important;
+    font-family: 'Urbanist', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .testi-name {
+    font-family: 'Urbanist', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #FFF !important;
+    letter-spacing: 0.02em !important;
+  }
+  .testi-title {
+    font-family: 'Urbanist', sans-serif !important;
+    font-size: 0.8rem !important;
+    color: rgba(240, 237, 230, 0.65) !important;
+    margin-top: 0.15rem !important;
+  }
+  .testi-company-link {
+    font-family: 'Urbanist', sans-serif !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: #D4600A !important;
+    background: rgba(212, 96, 10, 0.12) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 0.22rem 0.65rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin-top: 0.4rem !important;
+    box-shadow: 0 0 10px rgba(212,96,10,0.2) !important;
+    text-decoration: none !important;
+  }
+  .testi-quote {
+    color: #D4600A !important;
+    font-size: 2.2rem !important;
+    line-height: 1 !important;
+    margin: 0.6rem 0 0.3rem !important;
+    opacity: 0.75 !important;
+    font-family: 'Urbanist', sans-serif !important;
+  }
+  .testi-body {
+    font-family: 'Urbanist', sans-serif !important;
+    font-size: 0.96rem !important;
+    line-height: 1.8 !important;
+    color: #F0EDE6 !important;
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
   }
 
   /* ======================================================= */
@@ -421,11 +518,68 @@ const MOBILE_CSS = `
       text-align: center !important;
     }
 
-    /* Testimonials & pricing */
-    .testimonials-grid { grid-template-columns: 1fr !important; }
-    .pricing-grid { grid-template-columns: 1fr !important; }
+    /* Testimonials Mobile Overhaul */
+    .section.testi-section {
+      padding: clamp(3.5rem, 8vh, 5.5rem) 0 !important;
+    }
+    .testimonials-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.25rem !important;
+      margin-top: 2rem !important;
+      margin-bottom: 2rem !important;
+    }
+    .testimonials-grid .testi-card,
+    .testimonials-grid .testi-card-1,
+    .testimonials-grid .testi-card-2,
+    .testimonials-grid .testi-card-3 {
+      transform: none !important;
+      padding: 1.6rem 1.3rem !important;
+      border-radius: 20px !important;
+    }
+    .testi-body {
+      font-size: 0.92rem !important;
+      line-height: 1.75 !important;
+    }
 
-    /* Before/After */
+    /* 3D Pack Studio Mobile Overhaul */
+    .studio-3d-box {
+      grid-template-columns: 1fr !important;
+      gap: 1.8rem !important;
+      padding: 1.6rem 1.2rem !important;
+      border-radius: 22px !important;
+      background: #0C0B08 !important;
+    }
+    .studio-3d-box > div:first-child {
+      aspect-ratio: 1/1 !important;
+      min-height: 280px !important;
+      max-height: 380px !important;
+      border-radius: 16px !important;
+    }
+    #home3DStudioViewer {
+      min-height: 280px !important;
+      height: 340px !important;
+      width: 100% !important;
+      touch-action: pan-y !important;
+    }
+    #studioSkuList {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0.6rem !important;
+    }
+    .studio-sku-btn {
+      padding: 0.75rem 0.85rem !important;
+      font-size: 0.65rem !important;
+    }
+    #studioLightList {
+      gap: 0.4rem !important;
+    }
+    .studio-light-btn {
+      padding: 0.5rem 0.35rem !important;
+      font-size: 0.6rem !important;
+    }
+
+    /* Pricing & Before/After */
+    .pricing-grid { grid-template-columns: 1fr !important; }
     .cs-before-after { grid-template-columns: 1fr !important; }
 
     /* Cursor — native touch on mobile */
@@ -441,10 +595,26 @@ const MOBILE_CSS = `
     .hero-roles span:not(:last-child)::after { display: none !important; }
     .glass-card.project-card { min-height: 240px !important; height: auto !important; padding: 1.4rem 1.1rem !important; }
     .metric-card { padding: 1.2rem 1.2rem !important; border-radius: 24px !important; }
-    .testi-card { padding: 1.4rem 1.1rem !important; }
+    .testi-card, .testimonials-grid .testi-card { padding: 1.4rem 1.1rem !important; }
     .price-card { padding: 1.8rem 1.2rem !important; }
     .role-card { padding: 1.6rem 1.2rem !important; }
     .footer-fixed .h2, .footer-fixed h2 { font-size: clamp(2rem, 9vw, 3.8rem) !important; }
+    .studio-3d-box {
+      padding: 1.2rem 0.85rem !important;
+      gap: 1.2rem !important;
+    }
+    .studio-3d-box > div:first-child {
+      min-height: 260px !important;
+      max-height: 300px !important;
+    }
+    #home3DStudioViewer {
+      min-height: 260px !important;
+      height: 280px !important;
+    }
+    #studioSkuList {
+      grid-template-columns: 1fr !important;
+      gap: 0.5rem !important;
+    }
   }
 `
 
@@ -468,7 +638,7 @@ export default function Home({ bodyHTML, inlineScript }) {
         <meta name="twitter:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
         {/* Mobile CSS injected directly — guaranteed fresh on every deploy */}
         <style dangerouslySetInnerHTML={{ __html: MOBILE_CSS }} />
         {/* model-viewer loaded conditionally for 3D model renders */}

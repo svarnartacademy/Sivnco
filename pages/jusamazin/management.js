@@ -15,7 +15,7 @@ const SURVEY = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--mg-bg:#0A0906;--mg-white:#F0EDE6;--mg-accent:#334155;--mg-gold:#C0A060;--mg-muted:rgba(240,237,230,0.45);--mg-border:rgba(240,237,230,0.08);--mg-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--mg-bg:#0A0906;--mg-white:#F0EDE6;--mg-accent:#334155;--mg-gold:#C0A060;--mg-muted:rgba(240,237,230,0.45);--mg-border:rgba(240,237,230,0.08);--mg-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--mg-bg);color:var(--mg-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .mg-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--mg-border)}

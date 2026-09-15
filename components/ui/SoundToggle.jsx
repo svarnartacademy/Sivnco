@@ -50,7 +50,7 @@ export default function SoundToggle({ className = '' }) {
           padding: 0.4rem 0.85rem;
           border-radius: 999px;
           color: rgba(240, 237, 230, 0.75);
-          font-family: 'Instrument Sans', sans-serif;
+          font-family: 'Urbanist', sans-serif;
           font-size: 0.55rem;
           letter-spacing: 0.14em;
           text-transform: uppercase;

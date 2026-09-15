@@ -16,7 +16,7 @@ const TOKENS = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg-bg:#0A0906;--bg-white:#F0EDE6;--bg-accent:#0066FF;--bg-ochre:#D4960A;--bg-muted:rgba(240,237,230,0.45);--bg-border:rgba(240,237,230,0.08);--bg-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--bg-bg:#0A0906;--bg-white:#F0EDE6;--bg-accent:#0066FF;--bg-ochre:#D4960A;--bg-muted:rgba(240,237,230,0.45);--bg-border:rgba(240,237,230,0.08);--bg-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--bg-bg);color:var(--bg-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .bg-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--bg-border)}

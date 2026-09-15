@@ -14,7 +14,7 @@ const FEEDBACK = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--br-bg:#0A0906;--br-white:#F0EDE6;--br-accent:#FF3366;--br-muted:rgba(240,237,230,0.45);--br-border:rgba(240,237,230,0.08);--br-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--br-bg:#0A0906;--br-white:#F0EDE6;--br-accent:#FF3366;--br-muted:rgba(240,237,230,0.45);--br-border:rgba(240,237,230,0.08);--br-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--br-bg);color:var(--br-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .br-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--br-border)}

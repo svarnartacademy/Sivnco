@@ -1,5 +1,5 @@
-/**
- * ImagePlaceholder � Drop-in replacement for <img> tags.
+﻿/**
+ * ImagePlaceholder — Drop-in replacement for <img> tags.
  * Shows a "still cooking" glass card when src is missing or fails to load.
  *
  * Usage:
@@ -35,7 +35,7 @@ const PH_CSS = `
   }
   .siv-ph-icon { width: 34px; height: 34px; opacity: 0.22; }
   .siv-ph-label {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.55rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -43,7 +43,7 @@ const PH_CSS = `
     line-height: 1.6;
   }
   .siv-ph-sub {
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 0.5rem;
     letter-spacing: 0.1em;
     color: rgba(240,237,230,0.18);
@@ -97,3 +97,4 @@ export function ImagePlaceholder({ src, alt, className = '', style = {}, wrapper
 }
 
 export default ImagePlaceholder;
+

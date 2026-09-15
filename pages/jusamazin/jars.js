@@ -14,7 +14,7 @@ const FEEDBACK = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--jr-bg:#0A0906;--jr-white:#F0EDE6;--jr-accent:#C0A060;--jr-silver:#A0AEB8;--jr-muted:rgba(240,237,230,0.45);--jr-border:rgba(240,237,230,0.08);--jr-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--jr-bg:#0A0906;--jr-white:#F0EDE6;--jr-accent:#C0A060;--jr-silver:#A0AEB8;--jr-muted:rgba(240,237,230,0.45);--jr-border:rgba(240,237,230,0.08);--jr-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--jr-bg);color:var(--jr-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .jr-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--jr-border)}

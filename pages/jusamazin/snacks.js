@@ -15,7 +15,7 @@ const FEEDBACK = [
 ]
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--sn-bg:#0A0906;--sn-white:#F0EDE6;--sn-accent:#D4960A;--sn-blue:#0066FF;--sn-muted:rgba(240,237,230,0.45);--sn-border:rgba(240,237,230,0.08);--sn-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Instrument Sans',sans-serif}
+:root{--sn-bg:#0A0906;--sn-white:#F0EDE6;--sn-accent:#D4960A;--sn-blue:#0066FF;--sn-muted:rgba(240,237,230,0.45);--sn-border:rgba(240,237,230,0.08);--sn-glass:rgba(240,237,230,0.03);--D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif}
 html{scroll-behavior:smooth}body{background:var(--sn-bg);color:var(--sn-white);font-family:var(--S);overflow-x:hidden}a{color:inherit;text-decoration:none}
 
 .sn-hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--sn-border)}

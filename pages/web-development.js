@@ -781,7 +781,7 @@ const CSS = `
   --wd-glass:rgba(240,237,230,0.028);
   --D:'Doto',sans-serif;
   --S:'Urbanist',sans-serif;
-  --M:'Instrument Sans',sans-serif;
+  --M:'Urbanist',sans-serif;
 }
 
 html.lenis{height:auto}
