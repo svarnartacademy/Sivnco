@@ -99,8 +99,10 @@ a{color:inherit;text-decoration:none}
 
 /* FEEDBACK */
 .deb-filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.deb-pill{font-family:var(--M);font-size:.58rem;letter-spacing:.15em;padding:.5rem 1.2rem;border:1px solid var(--deb-border);border-radius:40px;cursor:pointer;transition:.3s;background:transparent;color:var(--deb-white)}
-.deb-pill:hover,.deb-pill.active{border-color:var(--deb-accent);color:var(--deb-accent);background:rgba(0,102,255,0.08)}
+.deb-pill{font-family:var(--M);font-size:.58rem;letter-spacing:.15em;padding:.5rem 1.25rem;border:none;border-radius:40px;cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1);background:rgba(255,255,255,0.04);box-shadow:0 2px 8px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06);color:var(--deb-white)}
+.deb-pill:hover{background:rgba(0,102,255,0.12);box-shadow:0 0 14px rgba(0,102,255,0.3);color:#FFF}
+.deb-pill.active{background:radial-gradient(circle at 50% 50%,rgba(0,102,255,0.4) 0%,rgba(0,102,255,0.15) 100%);border:none;color:#FFF;box-shadow:0 0 22px 3px rgba(0,102,255,0.55),inset 0 1px 0 rgba(255,255,255,0.3)}
+.deb-pill:active{transform:scale(0.96)}
 .deb-fb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--deb-border);border:1px solid var(--deb-border)}
 .deb-fb-card{background:var(--deb-bg);padding:2.5rem;display:flex;flex-direction:column;gap:1.2rem;transition:.3s}
 .deb-fb-card.hidden{display:none}

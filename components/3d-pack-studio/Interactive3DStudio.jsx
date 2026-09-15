@@ -80,10 +80,10 @@ export default function Interactive3DStudio({
                   <button
                     key={item.path}
                     onClick={() => setActiveModel(item.path)}
-                    className={`w-full text-left p-3.5 rounded-xl border transition flex items-center justify-between ${
+                    className={`w-full text-left p-3.5 rounded-xl border-0 transition-all duration-300 flex items-center justify-between active:scale-[0.98] ${
                       active
-                        ? 'bg-[#D4600A]/15 border-[#D4600A] text-white font-bold shadow-lg shadow-[#D4600A]/10'
-                        : 'bg-white/[0.02] border-white/[0.08] text-[#8A8070] hover:text-white hover:border-white/20'
+                        ? 'bg-gradient-to-r from-[#D4600A]/30 to-[#D4600A]/10 text-white font-bold shadow-[0_0_28px_2px_rgba(212,96,10,0.45),inset_0_1px_0_rgba(255,255,255,0.2)]'
+                        : 'bg-white/[0.035] text-[#8A8070] hover:text-white hover:bg-white/[0.06] hover:shadow-[0_0_18px_rgba(212,96,10,0.25)] shadow-[0_2px_8px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.06)]'
                     }`}
                   >
                     <span>{item.name}</span>
@@ -108,10 +108,10 @@ export default function Interactive3DStudio({
                 <button
                   key={lit.label}
                   onClick={() => setActiveLighting(lit.val)}
-                  className={`py-2 px-3 rounded-lg border text-center transition ${
+                  className={`py-2 px-3 rounded-lg border-0 text-center transition-all duration-300 active:scale-[0.96] ${
                     activeLighting === lit.val
-                      ? 'border-[#D4600A] bg-[#D4600A]/20 text-white font-bold'
-                      : 'border-white/[0.08] bg-white/[0.02] text-[#8A8070] hover:text-white'
+                      ? 'bg-gradient-to-br from-[#D4600A]/40 to-[#D4600A]/15 text-white font-bold shadow-[0_0_24px_2px_rgba(212,96,10,0.55),inset_0_1px_0_rgba(255,255,255,0.3)]'
+                      : 'bg-white/[0.035] text-[#8A8070] hover:text-white hover:bg-white/[0.06] hover:shadow-[0_0_14px_rgba(212,96,10,0.2)] shadow-[0_2px_6px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]'
                   }`}
                 >
                   {lit.label}

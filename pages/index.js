@@ -71,31 +71,125 @@ const MOBILE_CSS = `
     opacity: 1 !important;
   }
 
-  /* Nav CTA glow */
+  /* ======================================================= */
+  /* ZERO-STROKE HALO & GLOW BUTTON SYSTEM (TASTE & IMPECCABLE) */
+  /* Replaces hard stroke weights with atmospheric light blooms */
+  /* ======================================================= */
+
+  /* Global Button & CTA Base: Zero stroke weight, tactile spring */
+  button, .nav-cta, .studio-sku-btn, .studio-light-btn, .nav-chat-btn, .cv-download-btn, a[download] {
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.3s ease, color 0.3s ease !important;
+  }
+
+  /* Tactile Press Sensory Feedback (Impeccable Delight) */
+  button:active, .nav-cta:active, .studio-sku-btn:active, .studio-light-btn:active, .nav-chat-btn:active, .cv-download-btn:active, a[download]:active {
+    transform: scale(0.97) !important;
+  }
+
+  /* Accessible Focus Halo (No harsh blue browser outline) */
+  button:focus-visible, .nav-cta:focus-visible, .studio-sku-btn:focus-visible, .studio-light-btn:focus-visible, .nav-chat-btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(212, 96, 10, 0.6), 0 0 25px rgba(212, 96, 10, 0.5) !important;
+  }
+
+  /* Primary CTA Halo Capsule */
   .nav-cta {
     position: relative !important;
     overflow: hidden !important;
+    background: linear-gradient(135deg, rgba(212, 96, 10, 0.28) 0%, rgba(212, 96, 10, 0.1) 100%) !important;
+    color: #F0EDE6 !important;
+    box-shadow: 0 0 24px -2px rgba(212, 96, 10, 0.4), 0 4px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border-radius: 999px !important;
+    padding: 0.85rem 1.8rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
   }
-  .nav-cta::after {
-    content: '' !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.15), transparent 70%) !important;
-    opacity: 0 !important;
-    transition: opacity 0.3s ease !important;
-    pointer-events: none !important;
-    border-radius: 40px !important;
-  }
-  .nav-cta:hover::after {
-    opacity: 1 !important;
+  .nav-cta:hover {
+    background: linear-gradient(135deg, rgba(212, 96, 10, 0.45) 0%, rgba(212, 96, 10, 0.2) 100%) !important;
+    color: #FFF !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 0 38px 6px rgba(212, 96, 10, 0.65), 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
   }
 
-  /* Subtle border glow on hover for all cards */
+  /* 3D Studio SKU Selector Buttons — Borderless Floating Cards */
+  .studio-sku-btn {
+    border: none !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    color: var(--text-muted) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+    border-radius: 14px !important;
+  }
+  .studio-sku-btn:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #FFF !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0 20px -2px rgba(212, 96, 10, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+  .studio-sku-btn.active {
+    background: linear-gradient(135deg, rgba(212, 96, 10, 0.3) 0%, rgba(212, 96, 10, 0.1) 100%) !important;
+    color: #FFF !important;
+    box-shadow: 0 0 30px 3px rgba(212, 96, 10, 0.5), 0 0 12px rgba(212, 96, 10, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  }
+
+  /* 3D Studio Lighting Mode Buttons — Borderless Halo Pills */
+  .studio-light-btn {
+    border: none !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+    color: var(--text-muted) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+    border-radius: 10px !important;
+  }
+  .studio-light-btn:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #FFF !important;
+    box-shadow: 0 0 16px rgba(212, 96, 10, 0.3) !important;
+  }
+  .studio-light-btn.active {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 96, 10, 0.38) 0%, rgba(212, 96, 10, 0.15) 100%) !important;
+    color: #FFF !important;
+    box-shadow: 0 0 24px 3px rgba(212, 96, 10, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Download CV & Secondary Action Pills */
+  .cv-download-btn, a[download] {
+    border: none !important;
+    background: rgba(240, 237, 230, 0.06) !important;
+    color: #F0EDE6 !important;
+    box-shadow: 0 0 20px -2px rgba(212, 96, 10, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    border-radius: 999px !important;
+    text-decoration: none !important;
+  }
+  .cv-download-btn:hover, a[download]:hover {
+    background: linear-gradient(135deg, rgba(212, 96, 10, 0.32) 0%, rgba(212, 96, 10, 0.12) 100%) !important;
+    color: #FFF !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 0 32px 4px rgba(212, 96, 10, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* Interactive Chips & Badges */
+  .chip, .hero-pill {
+    border: none !important;
+    background: rgba(240, 237, 230, 0.05) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition: all 0.3s ease !important;
+  }
+  .chip:hover, .hero-pill:hover {
+    background: rgba(212, 96, 10, 0.18) !important;
+    box-shadow: 0 0 20px 2px rgba(212, 96, 10, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    color: #FFF !important;
+  }
+
+  /* Subtle card glow on hover */
   .glass-card:hover,
   .role-card:hover,
   .svarnart-chip:hover,
   .cs-img-slot:hover {
-    border-color: rgba(212,96,10,0.25) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(212,96,10,0.18) !important;
   }
 
   /* ======================================================= */
@@ -516,16 +610,18 @@ export default function Home({ bodyHTML, inlineScript }) {
       btn.onclick = function() {
         skuButtons.forEach(function(b) {
           b.classList.remove('active');
-          b.style.borderColor = 'var(--glass-border)';
-          b.style.background = 'rgba(255,255,255,0.02)';
+          b.style.border = 'none';
+          b.style.background = 'rgba(255,255,255,0.035)';
           b.style.color = 'var(--text-muted)';
+          b.style.boxShadow = '0 2px 10px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06)';
           var check = b.querySelector('span:last-child');
           if (check) check.style.display = 'none';
         });
         btn.classList.add('active');
-        btn.style.borderColor = 'var(--accent)';
-        btn.style.background = 'rgba(212,96,10,0.12)';
+        btn.style.border = 'none';
+        btn.style.background = 'linear-gradient(135deg, rgba(212,96,10,0.28) 0%, rgba(212,96,10,0.1) 100%)';
         btn.style.color = '#FFF';
+        btn.style.boxShadow = '0 0 28px 2px rgba(212,96,10,0.45), 0 0 10px rgba(212,96,10,0.2), inset 0 1px 0 rgba(255,255,255,0.2)';
         var check = btn.querySelector('span:last-child');
         if (check) check.style.display = 'inline';
 
@@ -541,14 +637,16 @@ export default function Home({ bodyHTML, inlineScript }) {
       btn.onclick = function() {
         lightButtons.forEach(function(b) {
           b.classList.remove('active');
-          b.style.borderColor = 'var(--glass-border)';
-          b.style.background = 'rgba(255,255,255,0.02)';
+          b.style.border = 'none';
+          b.style.background = 'rgba(255,255,255,0.035)';
           b.style.color = 'var(--text-muted)';
+          b.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)';
         });
         btn.classList.add('active');
-        btn.style.borderColor = 'var(--accent)';
-        btn.style.background = 'rgba(212,96,10,0.2)';
+        btn.style.border = 'none';
+        btn.style.background = 'radial-gradient(circle at 50% 50%, rgba(212,96,10,0.38) 0%, rgba(212,96,10,0.15) 100%)';
         btn.style.color = '#FFF';
+        btn.style.boxShadow = '0 0 22px 2px rgba(212,96,10,0.5), inset 0 1px 0 rgba(255,255,255,0.25)';
 
         var mode = btn.getAttribute('data-light');
         if (mode === 'neutral') {

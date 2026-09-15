@@ -67,8 +67,10 @@ section{padding:8rem 0;border-bottom:1px solid var(--ba-border);position:relativ
 /* INTERACTIVE STUDIO CONTROLS */
 .studio-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem;margin-bottom:3rem}
 .studio-toggles{display:flex;gap:.8rem;flex-wrap:wrap}
-.mode-pill{font-family:var(--M);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.6rem 1.4rem;border-radius:999px;border:1px solid rgba(240,237,230,0.15);background:rgba(255,255,255,0.03);color:var(--ink);cursor:pointer;transition:all .3s ease}
-.mode-pill.active{background:rgba(212,96,10,0.2);border-color:#D4600A;color:#FFF;box-shadow:0 0 16px rgba(212,96,10,0.3)}
+.mode-pill{font-family:var(--M);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.6rem 1.4rem;border-radius:999px;border:none;background:rgba(255,255,255,0.04);box-shadow:0 2px 8px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06);color:var(--ink);cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1)}
+.mode-pill:hover{background:rgba(255,255,255,0.08);color:#FFF;box-shadow:0 0 14px rgba(212,96,10,0.25)}
+.mode-pill.active{background:radial-gradient(circle at 50% 50%,rgba(212,96,10,0.38) 0%,rgba(212,96,10,0.15) 100%);border:none;color:#FFF;box-shadow:0 0 24px 3px rgba(212,96,10,0.5),inset 0 1px 0 rgba(255,255,255,0.3)}
+.mode-pill:active{transform:scale(0.96)}
 
 /* ORGANIC BENTO GRID */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:360px;gap:2rem;margin-top:2rem}

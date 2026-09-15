@@ -218,15 +218,17 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 /* Footer slide */
 .pfooter{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .pfooter.vis{opacity:1;transform:translateY(0)}
-.ae-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(240,237,230,0.15);color:var(--ink);padding:.6rem 1.2rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s ease;background:var(--ae-glass);margin-top:2.5rem;position:relative;z-index:10}
-.ae-pill:hover{border-color:var(--ae-accent);color:var(--ae-accent);transform:translateY(-2px)}
+.ae-pill{display:inline-flex;align-items:center;gap:.5rem;border:none;box-shadow:0 0 16px -2px rgba(212,96,10,0.3),inset 0 1px 0 rgba(255,255,255,0.15);color:var(--ink);padding:.65rem 1.3rem;border-radius:40px;font-family:var(--M);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s cubic-bezier(0.16,1,0.3,1);background:rgba(212,96,10,0.12);margin-top:2.5rem;position:relative;z-index:10}
+.ae-pill:hover{color:#FFF;background:rgba(212,96,10,0.25);transform:translateY(-2px) scale(1.02);box-shadow:0 0 28px 4px rgba(212,96,10,0.55),inset 0 1px 0 rgba(255,255,255,0.3)}
+.ae-pill:active{transform:scale(0.96)}
 
 /* PIGMENT STUDIO */
 .pigment-studio-box{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:center;background:rgba(18,17,14,0.7);border:1px solid rgba(240,237,230,0.14);border-radius:36px;padding:3.5rem;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);box-shadow:0 30px 70px rgba(0,0,0,0.7);margin-top:3rem}
 .pigment-wells{display:flex;flex-direction:column;gap:1rem}
-.pigment-well{display:flex;align-items:center;gap:1.2rem;padding:1rem 1.4rem;border-radius:20px;border:1px solid rgba(240,237,230,0.1);background:rgba(240,237,230,0.02);cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1)}
-.pigment-well:hover{transform:translateX(6px);border-color:rgba(212,96,10,0.4)}
-.pigment-well.active{background:rgba(212,96,10,0.12);border-color:#D4600A;box-shadow:0 0 20px rgba(212,96,10,0.25)}
+.pigment-well{display:flex;align-items:center;gap:1.2rem;padding:1rem 1.4rem;border-radius:20px;border:none;box-shadow:0 2px 8px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06);background:rgba(240,237,230,0.025);cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1)}
+.pigment-well:hover{transform:translateX(6px);background:rgba(212,96,10,0.08);box-shadow:0 0 16px rgba(212,96,10,0.25),inset 0 1px 0 rgba(255,255,255,0.1)}
+.pigment-well.active{background:radial-gradient(circle at 50% 50%,rgba(212,96,10,0.25) 0%,rgba(212,96,10,0.08) 100%);border:none;box-shadow:0 0 24px 3px rgba(212,96,10,0.45),inset 0 1px 0 rgba(255,255,255,0.2)}
+.pigment-well:active{transform:scale(0.98)}
 .pigment-droplet{width:22px;height:22px;border-radius:50%;flex-shrink:0}
 .pigment-info{display:flex;flex-direction:column;gap:2px}
 .pigment-name{font-family:var(--D);font-size:1.15rem;font-weight:900;color:#FFF}
@@ -323,11 +325,11 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #FFF;
-  background: rgba(10, 9, 6, 0.9);
-  border: 1px solid var(--ae-accent);
-  padding: 0.45rem 1rem;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 96, 10, 0.5) 0%, rgba(212, 96, 10, 0.2) 100%);
+  border: none;
+  padding: 0.5rem 1.15rem;
   border-radius: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+  box-shadow: 0 0 24px 3px rgba(212, 96, 10, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 .gallery-card-meta {
   display: flex;
@@ -348,11 +350,12 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
   color: var(--ae-muted);
 }
 .gallery-nav-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  border: 1px solid var(--ae-border);
-  background: var(--ae-glass);
+  border: none;
+  background: rgba(240, 237, 230, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   color: var(--ink);
   display: flex;
   align-items: center;
@@ -360,13 +363,16 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
   cursor: pointer;
   font-family: var(--M);
   font-size: 0.85rem;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .gallery-nav-btn:hover {
-  border-color: var(--ae-accent);
-  color: var(--ae-accent);
-  background: rgba(212, 96, 10, 0.1);
-  transform: scale(1.05);
+  color: #FFF;
+  background: rgba(212, 96, 10, 0.22);
+  box-shadow: 0 0 18px 2px rgba(212, 96, 10, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}
+.gallery-nav-btn:active {
+  transform: scale(0.92);
 }
 
 @media(max-width: 1024px) {
@@ -949,18 +955,20 @@ export default function ArtistEducator() {
                 position: 'absolute',
                 top: '1rem',
                 right: '1rem',
-                background: 'rgba(0,0,0,0.7)',
+                background: 'rgba(212,96,10,0.25)',
                 color: '#FFF',
-                border: '1px solid rgba(255,255,255,0.2)',
+                border: 'none',
+                boxShadow: '0 0 20px 2px rgba(212,96,10,0.5), inset 0 1px 0 rgba(255,255,255,0.3)',
                 borderRadius: '50%',
-                width: '36px',
-                height: '36px',
+                width: '38px',
+                height: '38px',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontFamily: 'var(--M)',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                transition: 'all 0.25s cubic-bezier(0.16,1,0.3,1)'
               }}
             >
               ✕

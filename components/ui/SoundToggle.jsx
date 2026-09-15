@@ -45,8 +45,9 @@ export default function SoundToggle({ className = '' }) {
           align-items: center;
           gap: 0.45rem;
           background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.14);
-          padding: 0.35rem 0.75rem;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+          padding: 0.4rem 0.85rem;
           border-radius: 999px;
           color: rgba(240, 237, 230, 0.75);
           font-family: 'Instrument Sans', sans-serif;
@@ -54,23 +55,26 @@ export default function SoundToggle({ className = '' }) {
           letter-spacing: 0.14em;
           text-transform: uppercase;
           cursor: pointer;
-          transition: all 0.25s ease;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
           user-select: none;
+        }
+        .sound-toggle-btn:active {
+          transform: scale(0.96);
         }
         @media (max-width: 540px) {
           .sound-label { display: none; }
           .sound-toggle-btn { padding: 0.45rem 0.55rem; gap: 0; }
         }
         .sound-toggle-btn:hover {
-          background: rgba(212, 96, 10, 0.15);
-          border-color: rgba(212, 96, 10, 0.4);
+          background: rgba(212, 96, 10, 0.16);
+          box-shadow: 0 0 16px rgba(212, 96, 10, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
           color: #f0ede6;
         }
         .sound-toggle-btn.is-active {
-          background: rgba(212, 96, 10, 0.18);
-          border-color: #d4600a;
+          background: radial-gradient(circle at 50% 50%, rgba(212, 96, 10, 0.35) 0%, rgba(212, 96, 10, 0.15) 100%);
+          border: none;
           color: #f0ede6;
-          box-shadow: 0 0 12px rgba(212, 96, 10, 0.25);
+          box-shadow: 0 0 20px 2px rgba(212, 96, 10, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
         }
         .sound-bars {
           display: flex;

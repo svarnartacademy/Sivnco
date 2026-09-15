@@ -80,25 +80,30 @@ const NAV_STYLES = `
   .snav-maya-btn {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
     font-family: 'Space Mono', monospace;
     font-size: 0.52rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: #F0EDE6;
-    background: rgba(212,96,10,0.12);
-    border: 1px solid rgba(212,96,10,0.32);
-    padding: 0.4rem 0.85rem;
+    background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.3) 0%, rgba(212,96,10,0.12) 100%);
+    border: none;
+    box-shadow: 0 0 18px -2px rgba(212,96,10,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+    padding: 0.45rem 0.95rem;
     border-radius: 999px;
     cursor: pointer;
-    transition: background 0.25s ease, border-color 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     white-space: nowrap;
     line-height: 1;
   }
   .snav-maya-btn:hover {
-    background: rgba(212,96,10,0.22);
-    border-color: rgba(212,96,10,0.6);
+    background: radial-gradient(circle at 50% 50%, rgba(212,96,10,0.45) 0%, rgba(212,96,10,0.2) 100%);
+    box-shadow: 0 0 30px 4px rgba(212,96,10,0.65), 0 0 12px rgba(212,96,10,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    transform: translateY(-1px) scale(1.02);
+  }
+  .snav-maya-btn:active {
+    transform: scale(0.97);
   }
   .snav-pulse {
     width: 6px;
@@ -116,18 +121,24 @@ const NAV_STYLES = `
     display: none;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    background: rgba(240,237,230,0.07);
-    border: 1px solid rgba(240,237,230,0.15);
+    background: rgba(240,237,230,0.08);
+    border: none;
+    box-shadow: 0 0 14px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
     color: #F0EDE6;
     cursor: pointer;
     padding: 0;
-    transition: background 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .snav-burger:hover {
-    background: rgba(240,237,230,0.15);
+    background: rgba(212,96,10,0.2);
+    box-shadow: 0 0 20px 2px rgba(212,96,10,0.45);
+    transform: scale(1.05);
+  }
+  .snav-burger:active {
+    transform: scale(0.95);
   }
   /* Expandable panels — grid trick */
   .snav-panel {
