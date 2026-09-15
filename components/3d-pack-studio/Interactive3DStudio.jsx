@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Box, CheckCircle2 } from 'lucide-react';
 
+const LIGHTING_CONFIG = {
+  neutral: { env: 'neutral', exposure: '1.0', shadowIntensity: '1.0', shadowSoftness: '0.5' },
+  sun: { env: 'neutral', exposure: '1.6', shadowIntensity: '1.8', shadowSoftness: '0.2' },
+  ambient: { env: undefined, exposure: '0.9', shadowIntensity: '0.3', shadowSoftness: '1.0' }
+};
+
 export default function Interactive3DStudio({
   title = "Spatial Packaging Visualisation",
   eyebrow = "INTERACTIVE 3D PACK STUDIO // REAL GLB SPATIAL RENDERS",
@@ -14,6 +20,8 @@ export default function Interactive3DStudio({
 }) {
   const [activeModel, setActiveModel] = useState(models[0]?.path || '/models/200g_jar_pistachio.glb');
   const [activeLighting, setActiveLighting] = useState('neutral');
+
+  const currentLighting = LIGHTING_CONFIG[activeLighting] || LIGHTING_CONFIG.neutral;
 
   return (
     <section className="section py-20 px-4 sm:px-8 max-w-7xl mx-auto" style={{ width: '100%' }}>
@@ -44,8 +52,10 @@ export default function Interactive3DStudio({
             auto-rotate
             camera-controls
             touch-action="pan-y"
-            shadow-intensity="1"
-            environment-image={activeLighting}
+            shadow-intensity={currentLighting.shadowIntensity}
+            shadow-softness={currentLighting.shadowSoftness}
+            exposure={currentLighting.exposure}
+            environment-image={currentLighting.env}
             style={{ width: '100%', height: '100%', minHeight: 'clamp(280px, 45vh, 420px)', background: 'transparent' }}
           />
 
@@ -92,8 +102,8 @@ export default function Interactive3DStudio({
             <div className="grid grid-cols-3 gap-2">
               {[
                 { label: 'Neutral', val: 'neutral' },
-                { label: 'Studio Sun', val: 'legacy' },
-                { label: 'Ambient', val: '' }
+                { label: 'Studio Sun', val: 'sun' },
+                { label: 'Ambient', val: 'ambient' }
               ].map((lit) => (
                 <button
                   key={lit.label}

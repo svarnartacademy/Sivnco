@@ -499,6 +499,88 @@ export default function Home({ bodyHTML, inlineScript }) {
 })();
         ` }}
       />
+
+      {/* 3D Pack Studio Interaction Script — immediate afterInteractive execution */}
+      <Script
+        id="studio-3d-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: `
+(function() {
+  function init3DStudio() {
+    var viewer = document.getElementById('home3DStudioViewer');
+    var skuButtons = document.querySelectorAll('.studio-sku-btn');
+    var lightButtons = document.querySelectorAll('.studio-light-btn');
+    if (!viewer || !skuButtons.length) return;
+
+    skuButtons.forEach(function(btn) {
+      btn.onclick = function() {
+        skuButtons.forEach(function(b) {
+          b.classList.remove('active');
+          b.style.borderColor = 'var(--glass-border)';
+          b.style.background = 'rgba(255,255,255,0.02)';
+          b.style.color = 'var(--text-muted)';
+          var check = b.querySelector('span:last-child');
+          if (check) check.style.display = 'none';
+        });
+        btn.classList.add('active');
+        btn.style.borderColor = 'var(--accent)';
+        btn.style.background = 'rgba(212,96,10,0.12)';
+        btn.style.color = '#FFF';
+        var check = btn.querySelector('span:last-child');
+        if (check) check.style.display = 'inline';
+
+        var src = btn.getAttribute('data-src');
+        if (src) {
+          viewer.src = src;
+          viewer.setAttribute('src', src);
+        }
+      };
+    });
+
+    lightButtons.forEach(function(btn) {
+      btn.onclick = function() {
+        lightButtons.forEach(function(b) {
+          b.classList.remove('active');
+          b.style.borderColor = 'var(--glass-border)';
+          b.style.background = 'rgba(255,255,255,0.02)';
+          b.style.color = 'var(--text-muted)';
+        });
+        btn.classList.add('active');
+        btn.style.borderColor = 'var(--accent)';
+        btn.style.background = 'rgba(212,96,10,0.2)';
+        btn.style.color = '#FFF';
+
+        var mode = btn.getAttribute('data-light');
+        if (mode === 'neutral') {
+          viewer.setAttribute('environment-image', 'neutral');
+          viewer.setAttribute('exposure', '1.0');
+          viewer.setAttribute('shadow-intensity', '1.0');
+          viewer.setAttribute('shadow-softness', '0.5');
+        } else if (mode === 'sun' || mode === 'legacy') {
+          viewer.setAttribute('environment-image', 'neutral');
+          viewer.setAttribute('exposure', '1.6');
+          viewer.setAttribute('shadow-intensity', '1.8');
+          viewer.setAttribute('shadow-softness', '0.2');
+        } else {
+          viewer.removeAttribute('environment-image');
+          viewer.setAttribute('exposure', '0.9');
+          viewer.setAttribute('shadow-intensity', '0.3');
+          viewer.setAttribute('shadow-softness', '1.0');
+        }
+      };
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init3DStudio);
+  } else {
+    init3DStudio();
+  }
+  setTimeout(init3DStudio, 150);
+  setTimeout(init3DStudio, 600);
+})();
+        ` }}
+      />
     </>
   )
 }

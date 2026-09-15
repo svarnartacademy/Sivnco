@@ -3830,10 +3830,10 @@
                 <button class="studio-light-btn active" data-light="neutral" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--accent); background: rgba(212,96,10,0.2); color: #FFF; font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
                   Neutral
                 </button>
-                <button class="studio-light-btn" data-light="legacy" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
+                <button class="studio-light-btn" data-light="sun" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
                   Studio Sun
                 </button>
-                <button class="studio-light-btn" data-light="" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
+                <button class="studio-light-btn" data-light="ambient" style="padding: 0.5rem 0.3rem; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-muted); font-family: var(--f-mono); font-size: 0.65rem; cursor: pointer; text-align: center; transition: all 0.2s ease;">
                   Ambient
                 </button>
               </div>
@@ -5027,45 +5027,51 @@
     const form = document.getElementById('contactForm');
     const statusDiv = document.getElementById('formStatus');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
 
-      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
-      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
+        const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
+        const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
 
-      try {
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          });
 
-        await fetch(`${SB_URL}/rest/v1/sivnco_enquiries`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SB_KEY,
-            'Authorization': `Bearer ${SB_KEY}`
-          },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email,
-            service: data.service,
-            message: data.message
-          })
-        });
+          await fetch(`${SB_URL}/rest/v1/sivnco_enquiries`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SB_KEY,
+              'Authorization': `Bearer ${SB_KEY}`
+            },
+            body: JSON.stringify({
+              name: data.name,
+              email: data.email,
+              service: data.service,
+              message: data.message
+            })
+          });
 
-        statusDiv.style.display = 'block';
-        form.reset();
-        setTimeout(() => statusDiv.style.display = 'none', 5000);
-      } catch (err) {
-        statusDiv.innerText = "Error sending message. Please try email.";
-        statusDiv.style.color = "red";
-        statusDiv.style.display = 'block';
-      }
-    });
+          if (statusDiv) {
+            statusDiv.style.display = 'block';
+            setTimeout(() => statusDiv.style.display = 'none', 5000);
+          }
+          form.reset();
+        } catch (err) {
+          if (statusDiv) {
+            statusDiv.innerText = "Error sending message. Please try email.";
+            statusDiv.style.color = "red";
+            statusDiv.style.display = 'block';
+          }
+        }
+      });
+    }
 
     // --- SUPABASE GALLERY IMAGE LOADER ---
     (async function loadSivncoImages() {
@@ -5194,7 +5200,10 @@
           if (check) check.style.display = 'inline';
 
           var src = btn.getAttribute('data-src');
-          if (src) viewer.src = src;
+          if (src) {
+            viewer.src = src;
+            viewer.setAttribute('src', src);
+          }
         });
       });
 
@@ -5212,8 +5221,23 @@
           btn.style.background = 'rgba(212,96,10,0.2)';
           btn.style.color = '#FFF';
 
-          var light = btn.getAttribute('data-light');
-          viewer.environmentImage = light;
+          var mode = btn.getAttribute('data-light');
+          if (mode === 'neutral') {
+            viewer.setAttribute('environment-image', 'neutral');
+            viewer.setAttribute('exposure', '1.0');
+            viewer.setAttribute('shadow-intensity', '1.0');
+            viewer.setAttribute('shadow-softness', '0.5');
+          } else if (mode === 'sun' || mode === 'legacy') {
+            viewer.setAttribute('environment-image', 'neutral');
+            viewer.setAttribute('exposure', '1.6');
+            viewer.setAttribute('shadow-intensity', '1.8');
+            viewer.setAttribute('shadow-softness', '0.2');
+          } else {
+            viewer.removeAttribute('environment-image');
+            viewer.setAttribute('exposure', '0.9');
+            viewer.setAttribute('shadow-intensity', '0.3');
+            viewer.setAttribute('shadow-softness', '1.0');
+          }
         });
       });
     })();
