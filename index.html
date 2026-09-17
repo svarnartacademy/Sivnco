@@ -2903,16 +2903,10 @@
     /* Cascading staggered offsets for editorial cards */
     @media (min-width: 1025px) {
       .work-editorial-grid .editorial-project-card:nth-child(3) {
-        transform: translateY(3.5rem);
-      }
-      .work-editorial-grid .editorial-project-card:nth-child(3):hover {
-        transform: translateY(3rem);
+        margin-top: 3.5rem;
       }
       .work-editorial-grid .editorial-project-card:nth-child(4) {
-        transform: translateY(2rem);
-      }
-      .work-editorial-grid .editorial-project-card:nth-child(4):hover {
-        transform: translateY(1.5rem);
+        margin-top: 2rem;
       }
     }
 
@@ -2925,6 +2919,7 @@
         grid-column: span 1 !important;
         height: 50vh !important;
         min-height: 400px !important;
+        margin-top: 0 !important;
       }
     }
 
@@ -2976,25 +2971,17 @@
     }
     @media (min-width: 901px) {
       .cs-cascade-deck .cs-deck-card:nth-child(1) {
-        transform: translateY(0);
+        margin-top: 0;
       }
       .cs-cascade-deck .cs-deck-card:nth-child(2) {
-        transform: translateY(3rem);
+        margin-top: 3rem;
       }
       .cs-cascade-deck .cs-deck-card:nth-child(3) {
-        transform: translateY(6rem);
-      }
-      .cs-cascade-deck .cs-deck-card:nth-child(1):hover {
-        transform: translateY(-6px);
-      }
-      .cs-cascade-deck .cs-deck-card:nth-child(2):hover {
-        transform: translateY(2.4rem);
-      }
-      .cs-cascade-deck .cs-deck-card:nth-child(3):hover {
-        transform: translateY(5.4rem);
+        margin-top: 6rem;
       }
     }
     .cs-deck-card:hover {
+      transform: translateY(-6px);
       border-color: rgba(212, 96, 10, 0.35);
       box-shadow: 0 30px 65px rgba(0,0,0,0.8), 0 0 30px rgba(212, 96, 10, 0.08);
     }
@@ -3016,6 +3003,9 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         margin: 3.5rem 0;
+      }
+      .cs-cascade-deck .cs-deck-card {
+        margin-top: 0 !important;
       }
     }
 
@@ -3040,25 +3030,17 @@
     }
     @media (min-width: 901px) {
       .vc-rejection-cascade .vc-rejection-deck-card:nth-child(1) {
-        transform: translateY(0);
+        margin-top: 0;
       }
       .vc-rejection-cascade .vc-rejection-deck-card:nth-child(2) {
-        transform: translateY(2.5rem);
+        margin-top: 2.5rem;
       }
       .vc-rejection-cascade .vc-rejection-deck-card:nth-child(3) {
-        transform: translateY(5rem);
-      }
-      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(1):hover {
-        transform: translateY(-6px) scale(1.02);
-      }
-      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(2):hover {
-        transform: translateY(2rem) scale(1.02);
-      }
-      .vc-rejection-cascade .vc-rejection-deck-card:nth-child(3):hover {
-        transform: translateY(4.4rem) scale(1.02);
+        margin-top: 5rem;
       }
     }
     .vc-rejection-deck-card:hover {
+      transform: translateY(-6px) scale(1.02);
       border-color: rgba(239, 68, 68, 0.45);
       box-shadow: 0 30px 70px rgba(0,0,0,0.8), 0 0 30px rgba(239, 68, 68, 0.15);
     }
@@ -3067,6 +3049,9 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         margin: 3rem 0;
+      }
+      .vc-rejection-cascade .vc-rejection-deck-card {
+        margin-top: 0 !important;
       }
     }
 
@@ -3080,16 +3065,16 @@
     }
     @media (min-width: 1025px) {
       .principles-cascade-grid .glass-card:nth-child(1) {
-        transform: translateY(0);
+        margin-top: 0;
       }
       .principles-cascade-grid .glass-card:nth-child(2) {
-        transform: translateY(2.4rem);
+        margin-top: 2.4rem;
       }
       .principles-cascade-grid .glass-card:nth-child(3) {
-        transform: translateY(4.8rem);
+        margin-top: 4.8rem;
       }
       .principles-cascade-grid .glass-card:nth-child(4) {
-        transform: translateY(7.2rem);
+        margin-top: 7.2rem;
       }
     }
     @media (max-width: 1024px) {
@@ -3098,26 +3083,37 @@
         gap: 1.5rem;
         margin-top: 3.5rem;
       }
+      .principles-cascade-grid .glass-card {
+        margin-top: 0 !important;
+      }
     }
     @media (max-width: 600px) {
       .principles-cascade-grid {
         grid-template-columns: 1fr;
+      }
+      .principles-cascade-grid .glass-card {
+        margin-top: 0 !important;
       }
     }
 
     /* Testimonials Cascading Stagger */
     @media (min-width: 1025px) {
       .testimonials-grid .testi-card-1 {
-        transform: translateY(0);
+        margin-top: 0;
       }
       .testimonials-grid .testi-card-2 {
-        transform: translateY(3rem);
+        margin-top: 3rem;
       }
       .testimonials-grid .testi-card-3 {
-        transform: translateY(6rem);
+        margin-top: 6rem;
       }
       .testimonials-grid {
         margin-bottom: 6rem;
+      }
+    }
+    @media (max-width: 1024px) {
+      .testimonials-grid .testi-card {
+        margin-top: 0 !important;
       }
     }
 
@@ -4421,7 +4417,7 @@
     // DYNAMIC TEXT ENTRANCE ANIMATIONS
     // =============================================
     (function initTextEntranceDynamics() {
-      const textTargets = document.querySelectorAll('.section p, .about-ref-item, .cs-deck-card, .ad-caption, .role-chips .chip');
+      const textTargets = document.querySelectorAll('.section p, .about-ref-item, .ad-caption, .role-chips .chip');
       textTargets.forEach((el) => {
         if (el.closest('.hero-section')) return;
         // Only animate elements that start below the fold — don't hide things already visible
@@ -4436,6 +4432,7 @@
             duration: 0.75,
             ease: 'power2.out',
             immediateRender: false,
+            clearProps: 'filter,transform',
             scrollTrigger: {
               trigger: el,
               start: 'top 92%',
@@ -4443,6 +4440,69 @@
             }
           }
         );
+      });
+    })();
+
+    // =============================================
+    // NAVIGATION & MAYA CHAT CONTROLLER
+    // =============================================
+    (function initNav() {
+      const nav       = document.getElementById('mainNav');
+      const mayaBtn   = document.getElementById('mayaToggleBtn');
+      const burgerBtn = document.getElementById('menuToggleBtn');
+      const iframe    = document.getElementById('mayaFrame');
+      if (!nav) return;
+
+      function closeAll() {
+        nav.classList.remove('chat-open', 'menu-open');
+        if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'false');
+        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('pointerdown', outsideClose);
+      }
+
+      function openMaya() {
+        nav.classList.remove('menu-open');
+        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
+        nav.classList.add('chat-open');
+        if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'true');
+        if (iframe && iframe.dataset.src && !iframe.src) {
+          iframe.src = iframe.dataset.src;
+        }
+        setTimeout(() => {
+          document.addEventListener('pointerdown', outsideClose);
+        }, 10);
+      }
+
+      function openMenu() {
+        nav.classList.remove('chat-open');
+        if (mayaBtn) mayaBtn.setAttribute('aria-expanded', 'false');
+        nav.classList.add('menu-open');
+        if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'true');
+        setTimeout(() => {
+          document.addEventListener('pointerdown', outsideClose);
+        }, 10);
+      }
+
+      function outsideClose(e) {
+        if (!nav.contains(e.target)) closeAll();
+      }
+
+      if (mayaBtn) {
+        mayaBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nav.classList.contains('chat-open') ? closeAll() : openMaya();
+        });
+      }
+
+      if (burgerBtn) {
+        burgerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nav.classList.contains('menu-open') ? closeAll() : openMenu();
+        });
+      }
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeAll);
       });
     })();
 
@@ -4484,26 +4544,33 @@
     document.addEventListener('mousemove', e => {
       mx = e.clientX;
       my = e.clientY;
-      orb.style.setProperty('--mouse-x', `${mx}px`);
-      orb.style.setProperty('--mouse-y', `${my}px`);
+      if (orb) {
+        orb.style.setProperty('--mouse-x', `${mx}px`);
+        orb.style.setProperty('--mouse-y', `${my}px`);
+      }
     });
 
-    // --- SAFFRON CURSOR DOT ---
+    // --- SAFFRON CURSOR DOT (Guarded against LiquidVelocityCursor) ---
     const cursorDot = document.getElementById('cursor-dot');
-    let dotX = mx, dotY = my;
-    function animateDot() {
-      dotX += (mx - dotX) * 0.18;
-      dotY += (my - dotY) * 0.18;
-      cursorDot.style.left = dotX + 'px';
-      cursorDot.style.top  = dotY + 'px';
+    if (cursorDot) {
+      let dotX = mx, dotY = my;
+      function animateDot() {
+        if (window.getComputedStyle(cursorDot).display === 'none') {
+          return; // Suppress redundant loop when custom velocity cursor is active
+        }
+        dotX += (mx - dotX) * 0.18;
+        dotY += (my - dotY) * 0.18;
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top  = dotY + 'px';
+        requestAnimationFrame(animateDot);
+      }
       requestAnimationFrame(animateDot);
+      // Expand on interactive elements
+      document.querySelectorAll('a, button, .glass-card, .testi-card, .price-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursorDot.classList.add('expanded'));
+        el.addEventListener('mouseleave', () => cursorDot.classList.remove('expanded'));
+      });
     }
-    animateDot();
-    // Expand on interactive elements
-    document.querySelectorAll('a, button, .glass-card, .testi-card, .price-card').forEach(el => {
-      el.addEventListener('mouseenter', () => cursorDot.classList.add('expanded'));
-      el.addEventListener('mouseleave', () => cursorDot.classList.remove('expanded'));
-    });
 
     // =============================================
     // HERO ENTRANCE TIMELINE (cinematic stagger)
@@ -4639,6 +4706,7 @@
           opacity: 1,
           duration: 0.9,    // subtle, considered
           ease: "power3.out",
+          clearProps: "transform",
           scrollTrigger: {
             trigger: el,
             start: "top 86%",
@@ -4779,6 +4847,7 @@
         duration: 0.55,    // snappy
         stagger: 0.1,      // tight energy
         ease: "power3.out",
+        clearProps: "transform",
         scrollTrigger: {
           trigger: '.testimonials-grid',
           start: "top 80%"

@@ -930,7 +930,7 @@ export async function getStaticProps() {
     }
 
     // Immediately reveal all scroll-animated elements so they are never blank
-    document.querySelectorAll('.gs-fade, .gs-reveal, .reveal-text, .metric-card, .testi-card, .price-card, .tl-item, .chip').forEach(function(el) {
+    document.querySelectorAll('.gs-fade, .gs-reveal, .reveal-text, .metric-card, .testi-card, .price-card, .tl-item, .chip, .cs-deck-card, .editorial-project-card, .vc-rejection-deck-card, .glass-card').forEach(function(el) {
       el.style.cssText += ';opacity:1!important;transform:none!important;filter:none!important;';
     });
   }
