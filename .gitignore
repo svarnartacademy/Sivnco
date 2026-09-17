@@ -9,6 +9,7 @@ out/
 *.backup
 *.bak
 temp_build/
+scripts/screenshots/
 
 # OS files
 .DS_Store

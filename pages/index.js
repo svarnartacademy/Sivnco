@@ -379,8 +379,8 @@ const MOBILE_CSS = `
     .role-card { width: 100% !important; min-height: auto !important; padding: 2.5rem 2rem !important; flex-shrink: unset !important; }
     .role-card h3 { font-size: clamp(1.8rem, 5vw, 2.8rem) !important; }
     .footer-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-    .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .testi-card:last-child { grid-column: span 2 !important; }
+    .testimonials-grid { display: flex !important; flex-direction: column !important; gap: 1.5rem !important; width: 100% !important; }
+    .testi-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; transform: none !important; }
     .vc-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
     .vc-rejected-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.2rem !important; }
     .vc-rejected-card:last-child { grid-column: span 2 !important; }
@@ -423,7 +423,7 @@ const MOBILE_CSS = `
     }
 
     /* Hero */
-    .hero-section { height: auto !important; min-height: 100vh !important; padding-bottom: 3rem !important; }
+    .hero-section { height: auto !important; min-height: 100vh !important; padding-top: calc(5.5rem + var(--sat, 0px)) !important; padding-bottom: 3rem !important; }
     .h-massive { font-size: clamp(2.4rem, 11vw, 7rem) !important; line-height: 0.98 !important; word-break: break-word !important; }
     .h-large { font-size: clamp(1.8rem, 8vw, 4.2rem) !important; }
     .hero-roles { gap: 0.8rem !important; font-size: 0.6rem !important; margin-top: 1.8rem !important; flex-wrap: wrap !important; }
@@ -523,8 +523,10 @@ const MOBILE_CSS = `
       padding: clamp(3.5rem, 8vh, 5.5rem) 0 !important;
     }
     .testimonials-grid {
-      grid-template-columns: 1fr !important;
+      display: flex !important;
+      flex-direction: column !important;
       gap: 1.25rem !important;
+      width: 100% !important;
       margin-top: 2rem !important;
       margin-bottom: 2rem !important;
     }
@@ -532,6 +534,9 @@ const MOBILE_CSS = `
     .testimonials-grid .testi-card-1,
     .testimonials-grid .testi-card-2,
     .testimonials-grid .testi-card-3 {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
       transform: none !important;
       padding: 1.6rem 1.3rem !important;
       border-radius: 20px !important;

@@ -1190,7 +1190,7 @@
       margin-top: 3rem;
       font-size: 0.7rem;
       letter-spacing: 0.18em;
-      color: var(--text-muted);
+      color: rgba(240, 237, 230, 0.88);
     }
 
     .hero-roles span {
@@ -1201,7 +1201,7 @@
       content: '·';
       position: absolute;
       right: -1.2rem;
-      opacity: 0.3;
+      opacity: 0.5;
     }
 
     /* MARQUEE */
@@ -1462,21 +1462,31 @@
 
     @media(max-width:1024px) {
       .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
       }
-      .testi-card:last-child {
-        grid-column: span 2;
+      .testi-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        transform: none !important;
       }
     }
     @media(max-width:768px) {
       .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-      .testi-card:last-child {
-        grid-column: span 1;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
       }
       .testi-card {
-        padding: 2rem 1.5rem;
+        padding: 1.6rem 1.3rem !important;
+        border-radius: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
     }
 
@@ -2440,7 +2450,7 @@
       font-family: var(--f-serif);
       font-size: clamp(0.85rem, 1.3vw, 1.05rem);
       line-height: 1.8;
-      color: var(--text-muted);
+      color: rgba(240, 237, 230, 0.88);
       max-width: 480px;
     }
     .hero-tagline em {
@@ -2452,8 +2462,8 @@
       font-size: 0.52rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      opacity: 0.5;
+      color: rgba(240, 237, 230, 0.7);
+      opacity: 0.85;
     }
     .hero-meta-row {
       display: flex;
@@ -2467,9 +2477,9 @@
       font-family: var(--f-mono);
       font-size: 0.68rem;
       letter-spacing: 0.1em;
-      color: var(--text-muted);
+      color: rgba(240, 237, 230, 0.82);
       padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(240,237,230,0.05);
+      border-bottom: 1px solid rgba(240,237,230,0.08);
     }
     .hero-meta-item:last-child { border-bottom: none; }
     .hero-meta-dot {
@@ -2480,7 +2490,7 @@
       flex-shrink: 0;
     }
     .hero-meta-val {
-      color: var(--text-main);
+      color: #FFFFFF;
       font-weight: 700;
       margin-right: 0.3rem;
     }
@@ -2495,7 +2505,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: rgba(240, 237, 230, 0.78);
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -3193,7 +3203,7 @@
               </div>
             </div>
 
-            <div class="hero-tagline gs-fade" style="font-size: 1.08rem; line-height: 1.85; max-width: 640px; color: var(--text-muted); margin-top: 1.4rem;">
+            <div class="hero-tagline gs-fade" style="font-size: 1.08rem; line-height: 1.85; max-width: 640px; color: rgba(240, 237, 230, 0.88); margin-top: 1.4rem;">
               I’m H P Shivaraj — an Art Director &amp; packaging designer specialising in FMCG and D2C brands. I lead the complete visual function from concept to production: brand identity, packaging systems, print, retail, digital campaigns, 3D visualisation and visual communication.
             </div>
           </div>

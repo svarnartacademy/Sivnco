@@ -195,3 +195,45 @@ img, video, canvas, svg {
   -webkit-tap-highlight-color: rgba(212, 96, 10, 0.15);
 }
 
+/* ============================================================
+   DYNAMIC INTERACTIVE AMBIENT HALO ON CARDS & WIDGETS
+   ============================================================ */
+.glass-card,
+.testi-card,
+.role-card,
+.studio-3d-box,
+.metric-card,
+.price-card,
+.svarnart-chip {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  position: relative !important;
+}
+
+.glass-card::before,
+.testi-card::before,
+.role-card::before,
+.studio-3d-box::before,
+.metric-card::before,
+.price-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 96, 10, 0.15), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover::before,
+.testi-card:hover::before,
+.role-card:hover::before,
+.studio-3d-box:hover::before,
+.metric-card:hover::before,
+.price-card:hover::before {
+  opacity: 1;
+}
+
+

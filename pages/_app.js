@@ -57,8 +57,23 @@ export default function App({ Component, pageProps }) {
     };
 
     Router.events.on('routeChangeStart', handleRouteChange);
+
+    // Dynamic cursor-following light coordinates for interactive cards
+    const handlePointerMove = (e) => {
+      const card = e.target.closest('.glass-card, .testi-card, .role-card, .studio-3d-box, .metric-card, .price-card');
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        const x = Math.round(((e.clientX - rect.left) / rect.width) * 100);
+        const y = Math.round(((e.clientY - rect.top) / rect.height) * 100);
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
+      }
+    };
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+
     return () => {
       Router.events.off('routeChangeStart', handleRouteChange);
+      window.removeEventListener('pointermove', handlePointerMove);
     };
   }, []);
 

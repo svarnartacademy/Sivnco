@@ -65,17 +65,20 @@ class GradientBackground {
     this.uniforms = {
       uTime: { value: 0 },
       uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-      uColor1: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
-      uColor2: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
-      uColor3: { value: new THREE.Vector3(0.910, 0.522, 0.165) },
-      uColor4: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
-      uColor5: { value: new THREE.Vector3(0.831, 0.376, 0.039) },
-      uColor6: { value: new THREE.Vector3(0.118, 0.227, 0.184) },
-      uSpeed: { value: 0.8 }, uIntensity: { value: 1.4 },
-      uTouchTexture: { value: null }, uGrainIntensity: { value: 0.06 },
-      uDarkNavy: { value: new THREE.Vector3(0.29, 0.29, 0.29) },
-      uGradientSize: { value: 0.45 }, uGradientCount: { value: 12.0 },
-      uColor1Weight: { value: 0.5 }, uColor2Weight: { value: 1.8 }
+      uColor1: { value: new THREE.Vector3(0.831, 0.376, 0.039) }, // Sivnco Amber #D4600A
+      uColor2: { value: new THREE.Vector3(0.09, 0.06, 0.04) },    // Deep obsidian amber
+      uColor3: { value: new THREE.Vector3(0.910, 0.522, 0.165) }, // Honey amber
+      uColor4: { value: new THREE.Vector3(0.55, 0.20, 0.03) },    // Burnt terracotta
+      uColor5: { value: new THREE.Vector3(0.80, 0.42, 0.08) },    // Warm ochre
+      uColor6: { value: new THREE.Vector3(0.06, 0.09, 0.07) },    // Forest obsidian undertone
+      uSpeed: { value: 0.5 },
+      uIntensity: { value: 0.85 },
+      uTouchTexture: { value: null },
+      uGrainIntensity: { value: 0.035 },
+      uDarkNavy: { value: new THREE.Vector3(0.039, 0.035, 0.024) }, // Sivnco Obsidian #0A0906
+      uGradientSize: { value: 0.55 },
+      uColor1Weight: { value: 0.6 },
+      uColor2Weight: { value: 0.4 }
     };
   }
   init() {
@@ -85,59 +88,59 @@ class GradientBackground {
       uniforms: this.uniforms,
       vertexShader: `varying vec2 vUv; void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); vUv = uv; }`,
       fragmentShader: `
-        uniform float uTime, uSpeed, uIntensity, uGrainIntensity, uGradientSize, uGradientCount, uColor1Weight, uColor2Weight;
+        uniform float uTime, uSpeed, uIntensity, uGrainIntensity, uGradientSize;
         uniform vec2 uResolution;
         uniform vec3 uColor1, uColor2, uColor3, uColor4, uColor5, uColor6, uDarkNavy;
         uniform sampler2D uTouchTexture;
         varying vec2 vUv;
         
-        float grain(vec2 uv, float t) { return fract(sin(dot(uv * uResolution * 0.5 + t, vec2(12.9898, 78.233))) * 43758.5453) * 2.0 - 1.0; }
+        float grain(vec2 uv, float t) {
+          return fract(sin(dot(uv * uResolution * 0.5 + t, vec2(12.9898, 78.233))) * 43758.5453) * 2.0 - 1.0;
+        }
         
         vec3 getGradientColor(vec2 uv, float time) {
-          vec2 c1 = vec2(0.5 + sin(time * uSpeed * 0.4) * 0.4, 0.5 + cos(time * uSpeed * 0.5) * 0.4);
-          vec2 c2 = vec2(0.5 + cos(time * uSpeed * 0.6) * 0.5, 0.5 + sin(time * uSpeed * 0.45) * 0.5);
-          vec2 c3 = vec2(0.5 + sin(time * uSpeed * 0.35) * 0.45, 0.5 + cos(time * uSpeed * 0.55) * 0.45);
-          vec2 c4 = vec2(0.5 + cos(time * uSpeed * 0.5) * 0.4, 0.5 + sin(time * uSpeed * 0.4) * 0.4);
-          vec2 c5 = vec2(0.5 + sin(time * uSpeed * 0.7) * 0.35, 0.5 + cos(time * uSpeed * 0.6) * 0.35);
-          vec2 c6 = vec2(0.5 + cos(time * uSpeed * 0.45) * 0.5, 0.5 + sin(time * uSpeed * 0.65) * 0.5);
+          vec2 c1 = vec2(0.35 + sin(time * uSpeed * 0.3) * 0.28, 0.5 + cos(time * uSpeed * 0.38) * 0.32);
+          vec2 c2 = vec2(0.72 + cos(time * uSpeed * 0.42) * 0.24, 0.42 + sin(time * uSpeed * 0.32) * 0.28);
+          vec2 c3 = vec2(0.5 + sin(time * uSpeed * 0.22) * 0.32, 0.65 + cos(time * uSpeed * 0.36) * 0.26);
+          vec2 c4 = vec2(0.22 + cos(time * uSpeed * 0.32) * 0.26, 0.3 + sin(time * uSpeed * 0.28) * 0.24);
           
-          float i1 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c1));
-          float i2 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c2));
-          float i3 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c3));
-          float i4 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c4));
-          float i5 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c5));
-          float i6 = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c6));
+          float i1 = 1.0 - smoothstep(0.0, uGradientSize * 1.5, length(uv - c1));
+          float i2 = 1.0 - smoothstep(0.0, uGradientSize * 1.35, length(uv - c2));
+          float i3 = 1.0 - smoothstep(0.0, uGradientSize * 1.55, length(uv - c3));
+          float i4 = 1.0 - smoothstep(0.0, uGradientSize * 1.25, length(uv - c4));
           
-          vec3 color = vec3(0.0);
-          color += uColor1 * i1 * (0.55 + 0.45 * sin(time * uSpeed)) * uColor1Weight;
-          color += uColor2 * i2 * (0.55 + 0.45 * cos(time * uSpeed * 1.2)) * uColor2Weight;
-          color += uColor3 * i3 * (0.55 + 0.45 * sin(time * uSpeed * 0.8)) * uColor1Weight;
-          color += uColor4 * i4 * (0.55 + 0.45 * cos(time * uSpeed * 1.3)) * uColor2Weight;
-          color += uColor5 * i5 * (0.55 + 0.45 * sin(time * uSpeed * 1.1)) * uColor1Weight;
-          color += uColor6 * i6 * (0.55 + 0.45 * cos(time * uSpeed * 0.9)) * uColor2Weight;
+          vec3 bg = uDarkNavy; // #0A0906
+          vec3 glow = vec3(0.0);
+          glow += uColor1 * i1 * (0.6 + 0.3 * sin(time * uSpeed * 0.9));
+          glow += uColor3 * i2 * (0.5 + 0.3 * cos(time * uSpeed * 1.1));
+          glow += uColor5 * i3 * 0.45;
+          glow += uColor4 * i4 * 0.35;
           
-          color = clamp(color, vec3(0.0), vec3(1.0)) * uIntensity;
-          float lum = dot(color, vec3(0.299, 0.587, 0.114));
-          color = mix(vec3(lum), color, 1.35);
-          color = pow(color, vec3(0.92));
-          float brightness = length(color);
-          color = mix(uDarkNavy, color, max(brightness * 1.2, 0.15));
-          return color;
+          // Filmic soft tonemapping — prevents harsh white blown-out clipping
+          glow = glow / (glow + vec3(1.0));
+          vec3 color = mix(bg, glow * 2.2, uIntensity);
+          
+          // Edge vignette to ensure high text contrast and deep atmospheric depth
+          float edgeDist = length(uv - vec2(0.5));
+          float vignette = smoothstep(0.9, 0.15, edgeDist);
+          color = mix(bg, color, vignette);
+          
+          return clamp(color, vec3(0.0), vec3(1.0));
         }
         
         void main() {
           vec2 uv = vUv;
           vec4 touchTex = texture2D(uTouchTexture, uv);
-          uv.x -= (touchTex.r * 2.0 - 1.0) * 0.8 * touchTex.b;
-          uv.y -= (touchTex.g * 2.0 - 1.0) * 0.8 * touchTex.b;
+          uv.x -= (touchTex.r * 2.0 - 1.0) * 0.4 * touchTex.b;
+          uv.y -= (touchTex.g * 2.0 - 1.0) * 0.4 * touchTex.b;
           vec2 center = vec2(0.5);
           float dist = length(uv - center);
-          float ripple = sin(dist * 20.0 - uTime * 3.0) * 0.04 * touchTex.b;
+          float ripple = sin(dist * 18.0 - uTime * 2.5) * 0.02 * touchTex.b;
           uv += vec2(ripple);
+          
           vec3 color = getGradientColor(uv, uTime);
           color += grain(uv, uTime) * uGrainIntensity;
-          color = clamp(color, vec3(0.0), vec3(1.0));
-          gl_FragColor = vec4(color, 1.0);
+          gl_FragColor = vec4(clamp(color, vec3(0.0), vec3(1.0)), 1.0);
         }
       `
     });
@@ -149,6 +152,69 @@ class GradientBackground {
     const viewSize = this.sceneManager.getViewSize();
     if (this.mesh) { this.mesh.geometry.dispose(); this.mesh.geometry = new THREE.PlaneGeometry(viewSize.width, viewSize.height, 1, 1); }
     this.uniforms.uResolution.value.set(w, h);
+  }
+}
+
+class ParticleDust {
+  constructor(scene) {
+    this.count = 40;
+    const positions = new Float32Array(this.count * 3);
+    this.velocities = [];
+
+    for (let i = 0; i < this.count; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 60;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 40;
+      positions[i * 3 + 2] = Math.random() * 25 + 5;
+      this.velocities.push({
+        x: (Math.random() - 0.5) * 0.04,
+        y: Math.random() * 0.04 + 0.015,
+        sway: Math.random() * Math.PI * 2
+      });
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    // Circular luminous particle sprite
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grad.addColorStop(0, 'rgba(255, 235, 200, 0.95)');
+    grad.addColorStop(0.3, 'rgba(212, 96, 10, 0.65)');
+    grad.addColorStop(0.8, 'rgba(212, 96, 10, 0.15)');
+    grad.addColorStop(1, 'rgba(212, 96, 10, 0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 32, 32);
+    const texture = new THREE.CanvasTexture(canvas);
+
+    const material = new THREE.PointsMaterial({
+      size: 1.2,
+      map: texture,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      opacity: 0.55
+    });
+
+    this.points = new THREE.Points(geometry, material);
+    scene.add(this.points);
+  }
+
+  update(delta, time) {
+    const pos = this.points.geometry.attributes.position.array;
+    for (let i = 0; i < this.count; i++) {
+      pos[i * 3 + 1] += this.velocities[i].y * delta * 40;
+      pos[i * 3] += Math.sin(time * 0.4 + this.velocities[i].sway) * 0.02;
+
+      // Wrap around gracefully
+      if (pos[i * 3 + 1] > 22) {
+        pos[i * 3 + 1] = -22;
+        pos[i * 3] = (Math.random() - 0.5) * 60;
+      }
+    }
+    this.points.geometry.attributes.position.needsUpdate = true;
   }
 }
 
@@ -169,6 +235,7 @@ class ThreeApp {
     this.touchTexture = new TouchTexture();
     this.gradientBackground = new GradientBackground(this);
     this.gradientBackground.uniforms.uTouchTexture.value = this.touchTexture.texture;
+    this.particleDust = new ParticleDust(this.scene);
     this.init();
   }
   getViewSize() {
@@ -206,6 +273,7 @@ class ThreeApp {
     const delta = Math.min(this.clock.getDelta(), 0.1);
     this.touchTexture.update();
     this.gradientBackground.update(delta);
+    if (this.particleDust) this.particleDust.update(delta, this.clock.getElapsedTime());
     this.renderer.render(this.scene, this.camera);
     this.animationId = requestAnimationFrame(() => this.tick());
   }

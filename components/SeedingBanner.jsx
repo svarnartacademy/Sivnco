@@ -243,29 +243,42 @@ export default function SeedingBanner({ forceShow = false }) {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
-  const dismiss = useCallback(() => setDismissed(true), []);
+  const dismiss = useCallback(() => {
+    setDismissed(true);
+    try {
+      sessionStorage.setItem('sivb_dismissed', '1');
+    } catch (_) {}
+  }, []);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem('sivb_dismissed') === '1') {
+        setDismissed(true);
+        return;
+      }
+    } catch (_) {}
+
     if (forceShow) { setVisible(true); return; }
 
-    // Wait for images to attempt loading, then check for broken ones
-    const timer = setTimeout(() => {
-      const imgs = Array.from(document.querySelectorAll('img'));
-      const broken = imgs.some(img => !img.complete || img.naturalWidth === 0);
-      if (broken) setVisible(true);
-    }, 1800);
-
-    // Also listen for any error event on images
+    // Only trigger on genuine image load failure events, never on lazy-loaded un-scrolled images
     function onImgError(e) {
-      if (e.target.tagName === 'IMG') setVisible(true);
+      if (e.target && e.target.tagName === 'IMG') {
+        e.target.dataset.failed = 'true';
+        setVisible(true);
+      }
     }
     document.addEventListener('error', onImgError, true);
 
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener('error', onImgError, true);
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') dismiss();
     };
-  }, [forceShow]);
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.removeEventListener('error', onImgError, true);
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [forceShow, dismiss]);
 
   if (!visible || dismissed) return null;
 

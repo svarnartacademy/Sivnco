@@ -306,6 +306,321 @@ const CAMPAIGNS = [
       { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'I used to walk right past these packs because they looked like old health supplements from a chemist\'s shop. The new scenic layouts look incredibly premium and make it clear that this is real, clean food for a healthy lifestyle.' }
     ],
     reflection: 'This project taught me that the most powerful design decisions are often invisible — the ones that make something feel right without the viewer knowing why. The universal pouch system wasn\'t just a financial workaround; it was a strategic advantage that competitors couldn\'t easily replicate. I\'d take this further by applying the same typographic precision to front-of-pack, making the typographic confidence visible and deliberate on the retail shelf itself.'
+  },
+  {
+    id: 'gifting-suite',
+    num: '04',
+    label: 'Packaging Architecture · Luxury Gifting · Structural 3D',
+    title: 'Festive Gifting',
+    fullTitle: 'Luxury Festive & Corporate Gifting Suite',
+    subtitle: 'Structural Unboxing & Artisanal Gold',
+    accent: '#E0AA3E',
+    accentAlt: '#8E2800',
+    techTag: 'CASE_STUDY_05 // CATEGORY: STRUCTURAL_PACKAGING_SYSTEMS',
+    tldr: {
+      brief: 'Elevate clean nutrition into luxury festive and corporate giftware.',
+      idea: 'Engineered rigid drawer boxes, gold-foiled mandalas, and dual aesthetics (Ethnic vs. Contemporary) commanding premium corporate price points.'
+    },
+    myRole: ['Creative Direction', 'Structural Box Engineering', 'Laser Foil Dieline Specs', 'Surface Illustration & Mandalas', '3D Photorealistic Pre-viz', 'Vendor Print Production'],
+    brand: 'Jus\'Amazin — Festive & Corporate Luxury Gifting Lineup',
+    brief: 'Develop a comprehensive corporate and festive gift packaging suite ranging from 2-jar compact slipcases to 4-jar sliding drawer rigid trays. The packaging needed to compete against traditional mithai boxes while preserving modern clean nutrition integrity.',
+    insight: 'Festive gifting in corporate India is traditionally dominated by high-sugar sweets with opulent packaging. Health hampers often failed commercially because their packaging felt like brown-box logistics rather than an artisanal gift of respect. To command corporate budgets, the packaging had to deliver an unboxing ritual that rivals luxury confectionery before the consumer even reads an ingredient.',
+    concept: 'The Dual Architectural System. Rather than one generic festive design, we engineered two distinct visual languages: Royal Crimson with gold-foiled mandalas for traditional Diwali/wedding heritage, and Deep Regal Amethyst/Contemporary Geometric gold foils for modern corporate executive gifting. Supported by rigid pull-out drawer boxes, laser-scored windowed pouch hampers, and funky saffron celebration boxes.',
+    pillars: [
+      {
+        num: '01',
+        header: 'The Unboxing Choreography',
+        tag: 'STRUCTURAL_ERGONOMICS',
+        body: 'Engineered sliding drawer trays with friction-fit tolerances and satin pull-ribbons. Designed interior die-cut cavities that hold heavy 125g glass jars firmly in place during courier transit without requiring unsightly bubble wrap.'
+      },
+      {
+        num: '02',
+        header: 'Dual Aesthetic Architecture',
+        tag: 'CHROMATIC_SEGMENTATION',
+        body: 'Built two distinct design tracks: Royal Crimson with sacred mandala geometry for traditional festive occasions, and Deep Amethyst Purple with minimalist Art Deco lines for corporate C-suite hampers.'
+      },
+      {
+        num: '03',
+        header: 'Sub-Millimeter Foil Craft',
+        tag: 'METALLIC_PRECISION',
+        body: 'Hot-stamped metallic gold foils applied over soft-touch matte laminated rigid boards. Tolerances calibrated to 0.25pt vector strokes to prevent foil fill-in during mass automated print production runs.'
+      },
+      {
+        num: '04',
+        header: 'Universal Hamper Scalability',
+        tag: 'MODULAR_RETAIL',
+        body: 'Standardized outer rigid footprints while engineering interchangeable inner card trays to host varying configurations — 2-jar sampler packs, 4-jar gourmet suites, or mixed pouch-and-jar gift assortments.'
+      }
+    ],
+    soulQuote: 'Luxury in structural packaging is not about adding more decorations — it is about the physics of anticipation. The tension of a sliding tray, the crispness of a foil-embossed line under warm Diwali light, the tactile weight of rigid board. When a corporate recipient opens this box, they must feel honored before they taste a single spoon of nut butter. That transformation turns a pantry staple into a memorable gifting heirloom.',
+    executions: [
+      {
+        num: '01',
+        channel: 'Corporate Executive Suite',
+        title: 'Contemporary Sliding Tray Box',
+        src: '/images/jusamazin/gifting/purple_contemporary_tray.png',
+        isVideo: false,
+        campaignType: 'Rigid Drawer Architecture',
+        duration: 'Annual Festive & Corporate Gifting Season',
+        topFunnel: 'High B2B Corporate Outreach',
+        midFunnel: 'Direct Executive Inquiries',
+        bottomFunnel: '100% Client Hamper Reorder Rate',
+        reaction: 'Premium executive delight & unboxing intrigue',
+        adNote: 'Deep purple matte board paired with geometric precision gold foil. Slide-out tray mechanism with custom internal die-cut locking cavities for four clean nut butter jars.',
+        channels: 'B2B Gifting Catalogs · Corporate Gifting Portals · Executive Direct Outreach'
+      },
+      {
+        num: '02',
+        channel: 'Festive & Cultural Suite',
+        title: 'Royal Ethnic Mandala Tray',
+        src: '/images/jusamazin/gifting/red_ethnic_tray.png',
+        isVideo: false,
+        campaignType: 'Heritage Laser Foil Hot-Stamp',
+        duration: 'Diwali, New Year & Wedding Gifting',
+        topFunnel: 'Festive Retail & Institutional Display',
+        midFunnel: 'Walk-in & Bulk Gifting Inquiries',
+        bottomFunnel: 'Sold Out Festive Production Runs',
+        reaction: 'Artisanal festive warmth with zero sugar baggage',
+        adNote: 'Deep crimson festive tray engineered with complex vector sacred mandala artwork, hot-stamped in rich gold foil on rigid board.',
+        channels: 'Modern Trade Gifting Aisles · D2C Festive Storefront · Corporate Bulk Orders'
+      },
+      {
+        num: '03',
+        channel: 'Full Gifting Portfolio',
+        title: 'Complete 5-Format Gifting Suite',
+        src: '/images/jusamazin/gifting/final_all_gifting.png',
+        isVideo: false,
+        campaignType: 'Comprehensive Packaging Architecture',
+        duration: 'Multi-Season Deployment',
+        topFunnel: 'Omni-channel brand elevation',
+        midFunnel: 'Category expansion across B2B & Modern Trade',
+        bottomFunnel: 'High-margin seasonal revenue driver',
+        reaction: 'Instant perception upgrade from pantry to luxury gift',
+        adNote: 'Complete studio view showing sliding rigid trays, compact 2-jar slipcases, vibrant funky celebration hampers, and windowed craft pouch boxes.',
+        channels: 'Brand Storefront · Amazon Luxury Pantry · Gourmet Retailers'
+      }
+    ],
+    metrics: [
+      { value: '100%', label: 'Corporate client reorder rate achieved across festive gifting seasons.', tag: 'CLIENT RETENTION' },
+      { value: '5 Formats', label: 'Bespoke structural packaging formats designed and engineered to mass production.', tag: 'STRUCTURAL SKUS' },
+      { value: '0 Transit Loss', label: 'Zero recorded glass jar breakages due to precision friction-lock internal trays.', tag: 'TRANSIT SECURITY' }
+    ],
+    testimonials: [
+      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'The festive gifting collection opened corporate B2B gifting accounts that previously never considered health food as a premium gift.' },
+      { name: 'Production Vendor', role: 'Rigid Box Manufacturer', category: 'team', quote: 'Shivaraj\'s dielines and foil stamp registration tolerances were millimeter-accurate, making zero-waste mass production seamless.' },
+      { name: 'Executive Client', role: 'Enterprise Gifting Lead', category: 'consumer', quote: 'The purple sliding box looked stunning on our leadership desks. The unboxing felt every bit like luxury imported confection.' }
+    ],
+    reflection: 'The success of the sliding tray proved that people buy the container first during the festive season. If I were doing it again, I would integrate a magnetic snap enclosure on the outer sleeve for an even richer acoustic click upon closure.'
+  },
+  {
+    id: 'lilstars-nutrition',
+    num: '05',
+    label: 'Sub-Brand Architecture · Kids Nutrition · AI Motion Direction',
+    title: 'Lil\'Stars Launch',
+    fullTitle: 'Lil\'Stars Clean Kids Nutrition',
+    subtitle: 'Playful Nutrition & Scripted Motion',
+    accent: '#FF6B6B',
+    accentAlt: '#4D96FF',
+    techTag: 'CASE_STUDY_06 // CATEGORY: SUB_BRAND_&_GENERATIVE_MOTION',
+    tldr: {
+      brief: 'Create a clean-label kids sub-brand that wins kids\' imagination without alienating clean-conscious parents.',
+      idea: 'Dual-target packaging design with illustrated animal characters, paired with prompt-engineered Veo motion animation.'
+    },
+    myRole: ['Brand Identity & Sub-Brand Architecture', 'Character & Mascot Illustration', 'Packaging Suite (Pancakes & Spreads)', 'Veo AI Prompt Engineering', 'Motion Scene Scripting', 'Storyboarding'],
+    brand: 'Jus\'Amazin — Lil\'Stars Sub-Brand Lineup (Millet Pancakes & Clean Nut Butters)',
+    brief: 'Launch Lil\'Stars, a sub-brand dedicated to 100% clean, additive-free kids nutrition. Create packaging for 3 Millet Pancake Mixes and 4 Kids Nut Butters, accompanied by animated video creative for parent-targeted social channels.',
+    insight: 'Parents want zero refined sugar, zero preservatives, and clean whole grains; children want fun, flavor, and characters they can connect with. Most kids food brands either look like childish junk food (which parents reject) or sterile organic health food (which kids refuse to eat). The visual strategy needed to communicate joy to the child and clinical nutrition to the parent at the same glance.',
+    concept: 'Dual-Vector Packaging + Veo Generative Motion. For packaging: vibrant character-led illustrations (playful squirrels, bears, and fruit dynamos) with bold, clean typography highlighting "100% Millets" and "No Maida". For marketing: authored detailed scene-by-scene cinematic prompts for Google Veo AI, directing animated characters whisking clean batter, flipping golden pancakes, and pouring nut butter.',
+    pillars: [
+      {
+        num: '01',
+        header: 'Dual-Audience Communication',
+        tag: 'TWO_TIER_SEMANTICS',
+        body: 'Eye-level illustrated animal characters capture the child\'s imagination, while prominent front-panel certified claims (100% Millets, No Maida, No Refined Sugar) deliver instant clinical reassurance to parents.'
+      },
+      {
+        num: '02',
+        header: 'Flavor Chromatic Coding',
+        tag: 'VISUAL_FLAVOR_MAP',
+        body: 'Vibrant, high-contrast color zoning across pancake boxes — Warm Cocoa for Choco Delight, Radiant Berry Magenta for Berry Blast, and Sunshine Gold for Natural Vanilla.'
+      },
+      {
+        num: '03',
+        header: 'Generative AI Motion Direction',
+        tag: 'VEO_PROMPT_ARCHITECTURE',
+        body: 'Developed scene-by-scene cinematic prompts for Google Veo AI specifying lighting, camera trajectory, character weight, and tactile fluid dynamics for pancake batter pouring and butter drizzling.'
+      },
+      {
+        num: '04',
+        header: 'Sub-Brand Portfolio Cohesion',
+        tag: 'CROSS_FORMAT_SCALING',
+        body: 'Harmonized visual branding between dry pancake box cartons and wet 200g glass jar nut spreads (Hazelnut Milk, Dark Chocolate PB, Jaggery Almond Butter) under one unmistakable identity.'
+      }
+    ],
+    soulQuote: 'Designing for children requires the deepest empathy, because you are speaking to two decision makers with opposing criteria in the same aisle. The parent reads labels; the child reads characters and energy. With Lil\'Stars, we proved that clean nutrition doesn\'t have to look like medicine or punishment. And by scripting generative AI motion directly from the packaging dielines, we turned static shelf characters into living storytellers.',
+    executions: [
+      {
+        num: '01',
+        channel: 'Retail Modern Trade',
+        title: 'Millet Pancake Mix 3-SKU Suite',
+        src: '/images/jusamazin/lilstars/pancake_choco_delight.png',
+        isVideo: false,
+        campaignType: 'Carton Packaging System',
+        duration: 'Ongoing Commercial Product Line',
+        topFunnel: 'High Shelf Stop-Rate in Supermarket Cereal Aisles',
+        midFunnel: 'Direct On-Pack Ingredient Engagement',
+        bottomFunnel: 'Multi-Flavor Basket Building',
+        reaction: 'Kids ask for it by name; parents approve the ingredients',
+        adNote: 'Clean typography declaring 100% Millets & zero refined sugar balanced with whimsical animal mascot interactions.',
+        channels: 'Nature\'s Basket · Foodhall · Blinkit · Zepto · D2C Store'
+      },
+      {
+        num: '02',
+        channel: 'Pantry Spread Lineup',
+        title: 'Kids High-Protein Nut Butters',
+        src: '/images/jusamazin/lilstars/pb_dark_chocolate_jar.png',
+        isVideo: false,
+        campaignType: 'Glass Jar Label System',
+        duration: 'Year-Round Clean Breakfast Range',
+        topFunnel: 'Cross-merchandised next to Pancake Mixes',
+        midFunnel: 'High Repeat Subscription Rate',
+        bottomFunnel: 'Anchor Sub-Brand Revenue Driver',
+        reaction: 'Guilt-free chocolate and hazelnut spreads for daily breakfasts',
+        adNote: '200g glass jar labels featuring organic jaggery, hazelnut milk, and dark chocolate clean spreads with child-friendly color palettes.',
+        channels: 'Amazon Pantry · Instamart · Organic Specialty Stores'
+      },
+      {
+        num: '03',
+        channel: 'Generative Social Motion',
+        title: 'Veo Scripted AI Campaign',
+        src: '/images/jusamazin/lilstars/pancake_berry_blast.png',
+        isVideo: false,
+        campaignType: 'AI Motion Prompt Architecture',
+        duration: 'Digital & Social Video Rollout',
+        topFunnel: 'Viral Parent Community Engagement',
+        midFunnel: 'High Video Completion Rates',
+        bottomFunnel: 'Direct Add-to-Cart Video Conversions',
+        reaction: 'Cinematic animated warmth that brings breakfast to life',
+        adNote: 'Scene-by-scene scripted cinematic prompt architecture for Google Veo AI, choreographing pancake flipping, batter whisking, and character motion.',
+        channels: 'Instagram Reels · YouTube Shorts · Meta Ads'
+      }
+    ],
+    metrics: [
+      { value: '3 SKUs', label: 'Millet pancake mixes formulated, designed, and launched in national retail.', tag: 'LAUNCH SKUS' },
+      { value: '4 Flavors', label: 'Kids clean nut spreads integrated into unified sub-brand portfolio.', tag: 'SPREADS EXPANSION' },
+      { value: '100%', label: 'Clean millets & zero refined sugar highlighted front-of-pack without clinical dryness.', tag: 'CLEAN CLAIM' }
+    ],
+    testimonials: [
+      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'Lil\'Stars required a delicate touch — friendly, charming, but uncompromising on our clean nutrition philosophy. Shivaraj nailed that sweet spot.' },
+      { name: 'Arun', role: 'Parent & Customer', category: 'consumer', quote: 'My kids ask for the bear pancake box by name on Sunday mornings, and I know they are eating ragi and foxtail millets instead of refined flour.' },
+      { name: 'Juhi Singh', role: 'Visual Designer', category: 'team', quote: 'The character expressions and vibrant color blocks brought a fresh, high-energy pop to the entire brand portfolio.' }
+    ],
+    reflection: 'The characters resonated so immediately that retail feedback showed kids were pulling the boxes from shelves themselves. In future iterations, I would print hidden mini-games and coloring activities directly inside the inner flaps of the pancake cartons.'
+  },
+  {
+    id: 'retail-spatial',
+    num: '06',
+    label: 'Spatial Architecture · Retail Merchandising · POS & Trade',
+    title: 'Spatial Retail',
+    fullTitle: 'Spatial Retail & Exhibition Architecture',
+    subtitle: 'From 5ft FSUs to Dubai World Trade Centre',
+    accent: '#06D6A0',
+    accentAlt: '#118AB2',
+    techTag: 'CASE_STUDY_07 // CATEGORY: SPATIAL_&_RETAIL_ENVIRONMENT',
+    tldr: {
+      brief: 'Dominate physical retail floors and international trade expos with structural merchandising assets.',
+      idea: 'Engineered 5-foot wooden/acrylic Free Standing Display Units (FSUs), parasite checkout strips, and high-impact international exhibition pavilions.'
+    },
+    myRole: ['Spatial Design Direction', '3D CAD & Structural Rendering', 'FSU Production Engineering', 'Retail Planogram Architecture', 'Exhibition Pavilion Layouts', 'Vendor Fabrication Oversight'],
+    brand: 'Jus\'Amazin — Retail Merchandising & Global Exhibition Infrastructure',
+    brief: 'Design physical retail display systems that break out of crowded supermarket shelves into high-traffic aisle ends, while creating international exhibition pavilions (AAHAR, Dubai World Trade Centre, Bangalore Habba) that represent clean Indian nutrition on global stages.',
+    insight: 'In modern trade supermarkets, shelf space is paid by the centimeter, and new brands are relegated to bottom shelves where eye tracking drops by 80%. To drive impulse pickup, you have to own standalone real estate on the retail floor. The physical stand must withstand customer handling, load up to 60kg of heavy glass jars without sagging, and maintain brand hierarchy from 20 feet away.',
+    concept: 'Modular Gravity-Fed Spatial Systems. Designed 5-foot branded wooden Free-Standing Display Units (FSUs) with laser-cut acrylic header signage, angled reinforced shelving for optimal label visibility, and branded parasite hanging strips for checkout aisles. For international expos, designed open-format experiential booths with tasting bars, 3D back-lit product towers, and structured conversation zones.',
+    pillars: [
+      {
+        num: '01',
+        header: 'Structural Load Balancing',
+        tag: 'CAD_ENGINEERING',
+        body: 'MDF and engineered composite construction calculated to support 50+ glass jars per tier without shelf deflection, with weighted base plates preventing tipping in high-footfall aisles.'
+      },
+      {
+        num: '02',
+        header: '20-Foot Eyeline Visibility',
+        tag: 'SPATIAL_SIGHTLINES',
+        body: 'Branded top canopy header angles calculated for supermarket aisle sightlines, ensuring the clean food proposition is recognized across a 20-foot radius.'
+      },
+      {
+        num: '03',
+        header: 'Impulse Hanging Parasite Strips',
+        tag: 'CHECKOUT_CONVERSION',
+        body: 'Vertical hanging clip-strips engineered for high-density checkout placement, driving spontaneous trials of single-serve sachets and snack cans.'
+      },
+      {
+        num: '04',
+        header: 'International Pavilion Architecture',
+        tag: 'GLOBAL_EXHIBITIONS',
+        body: 'Modular exhibition stall architecture deployable at AAHAR Pragati Maidan and Dubai World Trade Centre, combining wet tasting bars, backlit product showcases, and private B2B negotiation lounges.'
+      }
+    ],
+    soulQuote: 'Packaging does not live in an empty vacuum or a flat Figma artboard; it lives in the brutal physical physics of crowded retail floors and chaotic exhibition halls. When you design a 5-foot wooden FSU, you are engineering consumer footfall, structural weight tolerances, and line-of-sight lighting. Translating brand identity into physical spatial architecture is where design proves its real-world durability.',
+    executions: [
+      {
+        num: '01',
+        channel: 'Modern Trade Floor Display',
+        title: '5ft Engineered Wooden & Acrylic FSU',
+        src: '/images/jusamazin/pos/fsu_retail_display.png',
+        isVideo: false,
+        campaignType: 'Modular Floor Merchandiser',
+        duration: 'Permanent Supermarket Deployment',
+        topFunnel: 'High Footfall Capture at Aisle Ends',
+        midFunnel: 'Multi-Category Product Browsing',
+        bottomFunnel: 'High Impulse Basket Addition',
+        reaction: 'Authoritative brand presence that commands store aisles',
+        adNote: 'Multi-tier reinforced wooden shelving holding up to 60kg of glass jars, topped with high-contrast acrylic brand canopy.',
+        channels: 'Nature\'s Basket · Foodhall · Spar Hypermarket · Modern Trade Supermarkets'
+      },
+      {
+        num: '02',
+        channel: 'International Trade Stage',
+        title: 'Dubai & AAHAR Exhibition Pavilions',
+        src: '/images/jusamazin/pos/trade_event_photo_01.jpg',
+        isVideo: false,
+        campaignType: 'Global Trade Show Pavilion',
+        duration: 'Multi-Day Global Expos',
+        topFunnel: '10,000+ Trade Visitors Reached',
+        midFunnel: 'High-Volume Sampling & Distributor Meetings',
+        bottomFunnel: 'Direct B2B Export & Institutional Deals',
+        reaction: 'World-class organic presentation competing on global stages',
+        adNote: 'Full spatial build with live product tasting counters, back-lit product display walls, and dedicated distributor consultation tables.',
+        channels: 'Dubai World Trade Centre · AAHAR Pragati Maidan · Bangalore Habba'
+      },
+      {
+        num: '03',
+        channel: 'On-Ground Consumer Pop-Up',
+        title: 'Condo Carnival Activation Booth',
+        src: '/images/jusamazin/pos/condo_carnival_booth.png',
+        isVideo: false,
+        campaignType: 'Experiential Sampling Station',
+        duration: 'Weekend Community Activations',
+        topFunnel: 'Direct Community Footfall & Trial',
+        midFunnel: 'Instant Sensory Tasting Feedback',
+        bottomFunnel: 'High On-Spot Conversion Rates',
+        reaction: 'Warm, approachable neighborhood engagement that builds word of mouth',
+        adNote: 'Compact pop-up stall architecture optimized for rapid field assembly, heavy product sampling, and instant conversion.',
+        channels: 'Premium Gated Communities · Farmer\'s Markets · Wellness Festivals'
+      }
+    ],
+    metrics: [
+      { value: '5 Feet', label: 'Custom freestanding display unit height engineered for optimal eye-level retail merchandising.', tag: 'SPATIAL SPEC' },
+      { value: '3+ Expos', label: 'Major international & national trade exhibitions designed and executed (Dubai WTC, AAHAR).', tag: 'TRADE PAVILIONS' },
+      { value: '60kg+', label: 'Structural shelf load capacity engineered for multi-tier glass jar displays.', tag: 'LOAD TOLERANCE' }
+    ],
+    testimonials: [
+      { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'The freestanding display units secured prime end-cap placements in Nature\'s Basket and Foodhall that ordinary shelf placement could never match.' },
+      { name: 'Trade Exhibition Visitor', role: 'Global Food Distributor', category: 'consumer', quote: 'The Jus\'Amazin booth stood out at AAHAR with clean wooden textures and modern lighting — it looked like an international organic brand.' },
+      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'The modular FSU assembly was fast to transport and build on site, saving us days during retail rollouts.' }
+    ],
+    reflection: 'Physical retail is uncompromising. A display that is hard to assemble or wobbles under weight fails immediately. If I could add one element to future retail units, it would be integrated NFC tags or QR digital dispensers right on the shelf edge so customers could instantly view farm-sourcing stories.'
   }
 ]
 
@@ -784,6 +1099,21 @@ const RUNWAYS = {
     { id: 'FILE_ID: SF_CLINICAL_BASELINE', title: 'The Clinical Baseline', body: 'High-resolution comparisons of the original medical-style labels versus early scenic sketch variants — showing the stark contrast between the pharmaceutical aesthetic and the consumer-first redesign.', iconType: 'baseline', img: '/images/before/before_pouch_1.jpg' },
     { id: 'FILE_ID: SF_STICKER_BLUEPRINT', title: 'Universal Master Pouch System', body: 'Stand-up pouch architecture demonstrating the universal illustrated scenic base with variant-specific sticker overlays, engineered for multi-SKU scalability and 4× factory throughput.', iconType: 'blueprint', img: '/images/jusamazin/superfoods/pouch_front_500g.jpg' },
     { id: 'FILE_ID: SF_TYPOGRAPHY_SYSTEM', title: 'The Typography Overhaul', body: 'Close-up crops mapping critical back-of-pack corrections — the transition to lowercase formatting ("Flax seed", "dietary fiber", "omega-3") and the application of solid black body font for flawless legal legibility.', iconType: 'typography', img: '/images/jusamazin/superfoods/typography_macro.jpg' }
+  ],
+  'gifting-suite': [
+    { id: 'FILE_ID: GIFT_CONTEMPORARY_TRAY', title: 'Sliding Rigid Drawer Architecture', body: '3D structural study of the premium sliding sleeve tray box with gold foil stamped geometric line work and high-density interior insert compartments.', iconType: 'blueprint', img: '/images/jusamazin/gifting/purple_contemporary_tray.png' },
+    { id: 'FILE_ID: GIFT_ETHNIC_MANDALA', title: 'Laser Foil Stamped Heritage Mandala', body: 'Precision vector hot-stamping dielines for the festive scarlet red tray, balancing intricate Indian heritage art with modern luxury restraint.', iconType: 'blueprint', img: '/images/jusamazin/gifting/red_ethnic_tray.png' },
+    { id: 'FILE_ID: GIFT_WINDOW_BOX', title: 'Corrugated Windowed Hamper System', body: 'Rigid eco-friendly windowed presentation sleeve engineered to securely anchor multi-format jars and pouch assortments.', iconType: 'field', img: '/images/jusamazin/gifting/windowed_pouch_box.png' }
+  ],
+  'lilstars-nutrition': [
+    { id: 'FILE_ID: LS_PANCAKE_TRIO', title: 'Millet Pancake Mix 3-SKU Lineup', body: 'Playful character design, custom typography, and vibrant chromatic coding engineered to attract kids while reassuring health-conscious parents.', iconType: 'color', img: '/images/jusamazin/lilstars/pancake_choco_delight.png' },
+    { id: 'FILE_ID: LS_NUT_SPREADS', title: 'Kids Clean Nut Butter System', body: 'Jar label architecture for 200g high-protein spreads featuring organic jaggery, dark chocolate, and playful animal mascots.', iconType: 'color', img: '/images/jusamazin/lilstars/pb_dark_chocolate_jar.png' },
+    { id: 'FILE_ID: LS_VEO_STORYBOARD', title: 'Generative AI Motion Storyboarding', body: 'Authoring scene-by-scene cinematic prompts for Google Veo AI, choreographing pancake flipping, batter whisking, and character motion.', iconType: 'blueprint', img: '/images/jusamazin/lilstars/pancake_berry_blast.png' }
+  ],
+  'retail-spatial': [
+    { id: 'FILE_ID: POS_FSU_3D_RENDER', title: '5ft Modular Retail FSU Architecture', body: 'Detailed 3D CAD modeling and rendering of the freestanding wooden retail display unit, optimizing sightlines and structural load balancing.', iconType: 'retail', img: '/images/jusamazin/pos/fsu_retail_display.png' },
+    { id: 'FILE_ID: POS_CARNIVAL_BOOTH', title: 'Condo Carnival Pop-Up Booth', body: 'Experiential on-ground consumer activation booth designed for high-velocity tasting sessions and direct-to-consumer engagement.', iconType: 'field', img: '/images/jusamazin/pos/condo_carnival_booth.png' },
+    { id: 'FILE_ID: POS_TRADE_EXPO', title: 'International Trade Pavilion Architecture', body: 'Exhibition booth layouts for AAHAR and Dubai World Trade Centre, combining product demonstration bars with B2B meeting zones.', iconType: 'retail', img: '/images/jusamazin/pos/trade_event_photo_01.jpg' }
   ]
 }
 
@@ -796,10 +1126,10 @@ export default function Campaigns() {
         <link rel="canonical" href="https://sivnco.in/campaigns" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Campaigns — Advertising Concepts · H P Shivaraj · Art Director</title>
-        <meta name="description" content="Art direction for advertising campaigns — Almond Milk motion campaign, Desi Energy Bar retail launch, Superfoods typography system. H P Shivaraj, Art Director, Bengaluru." />
-        <meta property="og:title" content="Campaigns — H P Shivaraj · Art Director" />
-        <meta property="og:description" content="Advertising campaigns: 30 SAM Almond Milk, Desi Energy Bar, Superfoods. Insight to execution across digital, retail, and social." />
+        <title>Campaigns — Advertising Concepts & Packaging Systems · H P Shivaraj</title>
+        <meta name="description" content="Art direction for advertising campaigns & packaging architectures — Almond Milk motion, Desi Energy Bar, Superfoods, Festive Gifting, Lil'Stars Kids, and Spatial POS. H P Shivaraj, Head of Design & Art Director, Bengaluru." />
+        <meta property="og:title" content="Campaigns — H P Shivaraj · Head of Design & Art Direction" />
+        <meta property="og:description" content="Advertising campaigns & structural design: 30 SAM Almond Milk, Desi Energy Bar, Superfoods, Festive Gifting Suite, Lil'Stars Kids Nutrition, and Spatial Retail FSUs." />
         <meta property="og:url" content="https://sivnco.in/campaigns" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -824,7 +1154,7 @@ export default function Campaigns() {
             Campaigns
             <em>
               Every brief is a question. Every campaign is a point of view.
-              Three advertising campaigns — across motion, retail, and packaging —
+              Six comprehensive advertising &amp; packaging campaigns — across motion, festive luxury structural engineering, sub-brand launches, retail POS, and packaging systems —
               built on consumer insight, not aesthetic preference.
             </em>
           </h1>
@@ -837,7 +1167,7 @@ export default function Campaigns() {
           </div>
           <div className="cp-hero-scroll cpv">
             <div className="cp-hero-count">
-              <div className="cp-hero-count-num">3</div>
+              <div className="cp-hero-count-num">6</div>
               <div className="cp-hero-count-label">Campaigns</div>
             </div>
             <div className="cp-hero-count">
