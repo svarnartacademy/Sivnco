@@ -797,9 +797,14 @@ a{color:inherit;text-decoration:none}
 .cp-runway-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
 .cp-runway-header{font-family:var(--D);font-size:clamp(1.5rem,3vw,2.5rem);line-height:1;margin-bottom:.5rem;position:relative}
 .cp-runway-sub{font-family:var(--M);font-size:.52rem;letter-spacing:.2em;opacity:.35;margin-bottom:3rem;position:relative}
-.cp-runway-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;position:relative}
+.cp-runway-slots{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:1.8rem;position:relative}
+@media(min-width:1101px){
+  .cp-runway-slot:nth-child(1){border-color:rgba(212,96,10,0.35);box-shadow:0 20px 50px rgba(0,0,0,0.75)}
+  .cp-runway-slot:nth-child(2){transform:translateY(1.2rem)}
+  .cp-runway-slot:nth-child(3){transform:translateY(-0.8rem)}
+}
 .cp-runway-slot{border:1px solid rgba(240,237,230,0.12);border-radius:18px;overflow:hidden;background:rgba(14,13,10,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;flex-direction:column;padding:0;transition:transform 0.4s cubic-bezier(0.19,1,0.22,1), border-color 0.4s ease, box-shadow 0.4s ease;box-shadow:0 15px 40px rgba(0,0,0,0.6)}
-.cp-runway-slot:hover{transform:translateY(-6px);border-color:rgba(212,96,10,0.4);box-shadow:0 25px 60px rgba(0,0,0,0.85)}
+.cp-runway-slot:hover{transform:translateY(-6px) !important;border-color:rgba(212,96,10,0.4);box-shadow:0 25px 60px rgba(0,0,0,0.85)}
 .cp-runway-slot-img{width:100%;aspect-ratio:16/10;background:rgba(240,237,230,0.03);position:relative;overflow:hidden;margin-bottom:0;border:none;border-bottom:1px solid rgba(240,237,230,0.08);border-radius:0}
 .cp-runway-slot-img-icon{opacity:.12}
 .cp-runway-slot-img-label{font-family:var(--M);font-size:.42rem;letter-spacing:.15em;opacity:.2;text-align:center;max-width:160px;line-height:1.8}
@@ -922,7 +927,7 @@ function ImagePlaceholder({ label, icon = 'image', accentColor }) {
   )
 }
 
-function RunwaySlot({ id, title, body, iconType, img }) {
+function RunwaySlot({ id, title, body, iconType, img, isVideo, videoSrc }) {
   const icons = {
     baseline: (
       <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -973,8 +978,10 @@ function RunwaySlot({ id, title, body, iconType, img }) {
   }
   return (
     <div className="cp-runway-slot">
-      <div className="cp-runway-slot-img" style={img ? { padding: 0, overflow: 'hidden', position: 'relative' } : {}}>
-        {img ? (
+      <div className="cp-runway-slot-img" style={(img || (isVideo && videoSrc)) ? { padding: 0, overflow: 'hidden', position: 'relative' } : {}}>
+        {isVideo && videoSrc ? (
+          <video src={videoSrc} autoPlay loop muted playsInline preload="auto" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        ) : img ? (
           <img loading="lazy" src={img} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }} />
         ) : (
           <>
@@ -990,6 +997,71 @@ function RunwaySlot({ id, title, body, iconType, img }) {
       </div>
     </div>
   )
+}
+
+function CampaignVideoPlayer({ src, poster, aspectClass }) {
+  const [isMuted, setIsMuted] = useState(true);
+
+  return (
+    <div className={`cp-exec-media ${aspectClass}`} style={{ position: 'relative' }}>
+      <video
+        src={src}
+        poster={poster}
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        preload="auto"
+        ref={el => {
+          if (el && !el.dataset.observed && typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+            el.dataset.observed = 'true';
+            const obs = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  el.play().catch(() => {});
+                } else {
+                  el.pause();
+                }
+              });
+            }, { threshold: 0.1 });
+            obs.observe(el);
+          }
+        }}
+        onClick={e => {
+          const v = e.currentTarget;
+          if (v.paused) v.play();
+          else v.pause();
+        }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', cursor: 'pointer' }}
+      />
+      <div style={{ position: 'absolute', bottom: '0.85rem', right: '0.85rem', zIndex: 4 }}>
+        <button
+          type="button"
+          onClick={e => {
+            e.stopPropagation();
+            setIsMuted(!isMuted);
+          }}
+          style={{
+            background: 'rgba(10, 9, 6, 0.85)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(240, 237, 230, 0.2)',
+            color: '#F0EDE6',
+            borderRadius: '20px',
+            padding: '0.35rem 0.75rem',
+            fontFamily: 'var(--M)',
+            fontSize: '0.52rem',
+            letterSpacing: '0.12em',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.35rem'
+          }}
+        >
+          {isMuted ? '🔇 SOUND OFF' : '🔊 SOUND ON'}
+        </button>
+      </div>
+    </div>
+  );
 }
 
 function TestimonialsBlock({ testimonials, accent }) {
@@ -1092,7 +1164,7 @@ function CampaignCompareTable({ executions, accent }) {
 
 const RUNWAYS = {
   'almond-milk': [
-    { id: 'FILE_ID: 30SAM_TRIAL_01', title: 'Retail Shelf & Display Trial', body: 'Field testing the 30-Second Almond Drink countertop display box and single-serve sachet placement across retail pop-up stalls alongside the core nutrition lineup.', iconType: 'field', img: '/images/jusamazin/process/retail_trial_02.jpg' },
+    { id: 'FILE_ID: 30SAM_FACTORY_WIP', title: 'Industrial Prepress & Press Run', body: 'Live factory floor footage showing high-speed rotogravure dieline proofing, ink viscosity calibration, and sachet seal inspection under production tension.', iconType: 'field', isVideo: true, videoSrc: '/images/jusamazin/process/wip_process_video.mp4', img: '/images/jusamazin/process/retail_trial_02.jpg' },
     { id: 'FILE_ID: 30SAM_INSIGHT_MAP', title: 'Consumer Interaction & Feedback', body: 'Live consumer tasting sessions at pop-up kiosks — gathering real-time feedback on dissolvability, taste profile, and single-serve sachet usability.', iconType: 'field', img: '/images/jusamazin/process/draft_packaging_03.jpg' },
     { id: 'FILE_ID: 30SAM_FINAL_RENDER', title: '30-Sec Almond Drink 3D Render', body: 'High-fidelity 3D studio render and liquid simulation of the final 30-Second Almond Drink bottle, highlighting clean nutrition claims and ingredient transparency.', iconType: 'color', img: '/images/jusamazin/management/almond_milk.jpg' }
   ],
@@ -1307,15 +1379,17 @@ export default function Campaigns() {
                   <div key={ex.num} className="cp-exec-item cpv">
                     {ei % 2 === 0 ? (
                       <>
-                        <div className={`cp-exec-media ${aspectClass}`}>
-                          {ex.isVideo ? (
-                            <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                          ) : ex.src ? (
-                            <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                          ) : (
-                            <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
-                          )}
-                        </div>
+                        {ex.isVideo ? (
+                          <CampaignVideoPlayer src={ex.src} aspectClass={aspectClass} />
+                        ) : (
+                          <div className={`cp-exec-media ${aspectClass}`}>
+                            {ex.src ? (
+                              <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                            ) : (
+                              <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
+                            )}
+                          </div>
+                        )}
                         <div className="cp-exec-info">
                           <div className="cp-exec-num">{ex.num}</div>
                           <div>
@@ -1349,15 +1423,17 @@ export default function Campaigns() {
                             <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
                           </div>
                         </div>
-                        <div className={`cp-exec-media ${aspectClass}`}>
-                          {ex.isVideo ? (
-                            <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                          ) : ex.src ? (
-                            <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                          ) : (
-                            <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
-                          )}
-                        </div>
+                        {ex.isVideo ? (
+                          <CampaignVideoPlayer src={ex.src} aspectClass={aspectClass} />
+                        ) : (
+                          <div className={`cp-exec-media ${aspectClass}`}>
+                            {ex.src ? (
+                              <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                            ) : (
+                              <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
+                            )}
+                          </div>
+                        )}
                       </>
                     )}
                   </div>

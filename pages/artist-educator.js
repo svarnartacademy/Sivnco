@@ -102,10 +102,14 @@ section{padding:9rem 0;border-bottom:1px solid var(--ae-border)}
 .b-quote{font-family:var(--S);font-size:1.1rem;line-height:1.7;color:#F0EDE6;font-style:italic;position:relative;z-index:2}
 .b-author{font-family:var(--M);font-size:.55rem;letter-spacing:.18em;color:var(--ae-accent);margin-top:1.2rem;position:relative;z-index:2;display:block}
 
-/* Student progress showcase */
-.progress-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:4rem}
-.prog-card{background:var(--ae-glass);border:1px solid var(--ae-border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+/* Student progress showcase — Asymmetrical Progression */
+.progress-grid{display:grid;grid-template-columns:0.92fr 1.28fr;gap:2.5rem;margin-top:4rem;align-items:stretch}
+@media(max-width:900px){.progress-grid{grid-template-columns:1fr;gap:2rem}}
+.prog-card{background:var(--ae-glass);border:1px solid var(--ae-border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.4s cubic-bezier(0.19,1,0.22,1),border-color 0.4s ease,box-shadow 0.4s ease}
+.prog-card:hover{transform:translateY(-5px);border-color:rgba(212,96,10,0.4);box-shadow:0 24px 50px rgba(0,0,0,0.6)}
+.prog-card.prog-advanced{border-color:rgba(212,96,10,0.3);background:rgba(212,96,10,0.03);box-shadow:0 15px 35px rgba(0,0,0,0.5),0 0 30px rgba(212,96,10,0.08)}
 .prog-img-slot{height:380px;position:relative;overflow:hidden;background:#13120E;border-bottom:1px solid var(--ae-border)}
+.prog-card.prog-advanced .prog-img-slot{height:420px}
 .prog-img-slot img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.19,1,0.22,1)}
 .prog-card:hover .prog-img-slot img{transform:scale(1.03)}
 .prog-tag{position:absolute;top:1.5rem;left:1.5rem;z-index:2;font-family:var(--M);font-size:.55rem;letter-spacing:.2em;padding:.4rem 1rem;background:rgba(10,9,6,0.85);backdrop-filter:blur(10px);border:1px solid var(--ae-border);border-radius:20px}
@@ -667,7 +671,7 @@ export default function ArtistEducator() {
             </div>
 
             {/* After Card */}
-            <div className="prog-card">
+            <div className="prog-card prog-advanced">
               <div className="prog-img-slot">
                 <span className="prog-tag after">Advanced Phase — Month 8</span>
                 <img loading="lazy" src="/images/student_art_after.jpg" alt="Advanced student painting" />

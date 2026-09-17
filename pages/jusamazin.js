@@ -26,6 +26,7 @@ const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-Founder & CEO'},{i:'SH',n:'Shilpa
 const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amarjit Singh',r:'Sales Head'},{i:'SG',n:'Siddharth G',r:'Production Executive'},{i:'BH',n:'Bhoomika',r:'Quality Analyst'}]
 
 const WIP_ITEMS = [
+  { id: 'wip-0', title: 'Industrial Prepress & Press Run', cat: 'proof', src: '/images/jusamazin/process/wip_process_video.mp4', isVideo: true, desc: 'Live footage of high-speed rotogravure dieline proofing, ink viscosity checks, and substrate tension on the factory floor.', tag: 'Press Video' },
   { id: 'wip-1', title: 'Rotogravure Wrapper Proof', cat: 'proof', src: '/images/jusamazin/process/proof_print_06.jpg', desc: 'Flat packaging wrap layout for Desi Energy Bar, checking nutritional grid, barcode, and seam margins.', tag: 'Wrap Dieline' },
   { id: 'wip-2', title: 'Pop-Up Retail Tiered Rack', cat: 'proof', src: '/images/jusamazin/process/proof_print_04.jpg', desc: 'Field trial of countertop display dispenser holding Mom Bar and Desi Energy Bar packs at market stall.', tag: 'Display Rack' },
   { id: 'wip-3', title: 'Full Exhibition Brand Setup', cat: 'proof', src: '/images/jusamazin/process/proof_print_05.jpg', desc: 'Complete brand canopy and exhibition table showcasing the full Jus\'Amazin clean nutrition product range.', tag: 'Brand Canopy' },
@@ -294,6 +295,8 @@ export default function JusAmazin() {
   const [wipFilter, setWipFilter] = useState('all')
   const [activeModalItem, setActiveModalItem] = useState(null)
   const [selectedSku, setSelectedSku] = useState(SKUS[0])
+  const [almondVideoMode, setAlmondVideoMode] = useState('compare')
+  const [brandVideoMuted, setBrandVideoMuted] = useState(true)
 
   const filteredWip = wipFilter === 'all' 
     ? WIP_ITEMS 
@@ -409,63 +412,195 @@ export default function JusAmazin() {
         </div>
       </div></section>
 
-      {/* BRAND FILM */}
+      {/* BRAND FILM — CINEMA THEATER & PRODUCTION METADATA */}
       <section><div className="c">
         <div className="s-label rv">03 — Brand Film</div>
         <h2 className="s-title rv">Brand Story<br/><i>in Motion.</i></h2>
-        <div className="rv2" style={{marginTop:'3rem'}}>
-          <div className="video-wrap">
+        
+        <div className="rv2" style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr', gap: '3rem', alignItems: 'center', marginTop: '3rem' }}>
+          <div className="video-wrap" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(240,237,230,0.12)', boxShadow: '0 25px 60px rgba(0,0,0,0.8)' }}>
             <video 
               src="/videos/jusamazin/jus-amazin-brand-video-1.mp4" 
               className="video-element"
-              controls 
+              autoPlay
+              loop
+              muted={brandVideoMuted}
               playsInline
               preload="metadata"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
+            <button
+              type="button"
+              onClick={() => setBrandVideoMuted(!brandVideoMuted)}
+              style={{
+                position: 'absolute',
+                bottom: '1.2rem',
+                right: '1.2rem',
+                background: 'rgba(10,9,6,0.85)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(240,237,230,0.2)',
+                color: '#FFF',
+                padding: '0.35rem 0.8rem',
+                borderRadius: '20px',
+                fontFamily: 'var(--M)',
+                fontSize: '0.55rem',
+                letterSpacing: '0.12em',
+                cursor: 'pointer',
+                zIndex: 5
+              }}
+            >
+              {brandVideoMuted ? '🔇 SOUND OFF' : '🔊 SOUND ON'}
+            </button>
           </div>
-          <p className="body" style={{marginTop:'2rem'}}>
-            A cinematic expression of Jus Amazin's brand identity. This brand film captures the essence of clean-label nutrition, illustrating the craftsmanship, quality, and organic vibrancy behind the products. Translating print brand guidelines into fluid motion design, it serves as the master visual anchor for digital campaigns.
-          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ borderLeft: '2px solid var(--ja-accent)', paddingLeft: '1.5rem' }}>
+              <div style={{ fontFamily: 'var(--M)', fontSize: '0.55rem', letterSpacing: '0.2em', color: 'var(--ja-accent)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+                DIRECTOR&apos;S CUT // MOTION ANCHOR
+              </div>
+              <h3 style={{ fontFamily: 'var(--D)', fontSize: '1.8rem', color: '#FFF', margin: 0, lineHeight: 1.1 }}>
+                Translating Identity Into Kinetic Form
+              </h3>
+            </div>
+            <p className="body" style={{ margin: 0, fontSize: '1rem', lineHeight: '1.8' }}>
+              A cinematic expression of Jus Amazin&apos;s brand identity. This brand film captures the essence of clean-label nutrition, illustrating the craftsmanship, quality, and organic vibrancy behind the products. Translating print brand guidelines into fluid motion design, it serves as the master visual anchor for digital campaigns.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', background: 'rgba(240,237,230,0.03)', border: '1px solid rgba(240,237,230,0.08)', borderRadius: '16px', padding: '1.2rem 1.4rem' }}>
+              <div>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.5rem', color: 'var(--ja-accent)', letterSpacing: '0.12em' }}>ART DIRECTION</div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.85rem', color: '#FFF', marginTop: '0.2rem' }}>H P Shivaraj</div>
+              </div>
+              <div>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.5rem', color: 'var(--ja-accent)', letterSpacing: '0.12em' }}>COLOR GRADING</div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.85rem', color: '#FFF', marginTop: '0.2rem' }}>Warm Ochre / Earth</div>
+              </div>
+              <div>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.5rem', color: 'var(--ja-accent)', letterSpacing: '0.12em' }}>MOTION SYSTEM</div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.85rem', color: '#FFF', marginTop: '0.2rem' }}>Kinetic Type &amp; Macro</div>
+              </div>
+              <div>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.5rem', color: 'var(--ja-accent)', letterSpacing: '0.12em' }}>CAMPAIGN REACH</div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.85rem', color: '#FFF', marginTop: '0.2rem' }}>11K+ Orders</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div></section>
-      {/* 30-SEC ALMOND DRINK VISUAL STRIP */}
-      <section style={{borderBottom:'1px solid var(--ja-border)'}}>
+
+      {/* 30-SEC ALMOND DRINK: ASYMMETRICAL MOTION & 3D RENDER STUDIO */}
+      <section style={{ borderBottom: '1px solid var(--ja-border)' }}>
         <div className="c">
           <div className="s-label rv">03B — 30-Sec Almond Drink</div>
           <h2 className="s-title rv">Campaign &amp;<br/><i>Product Renders.</i></h2>
-          <p className="body rv" style={{marginBottom:'2.5rem'}}>
+          <p className="body rv" style={{ marginBottom: '2.5rem' }}>
             A category-disrupting instant almond drink — 100% pure almond paste in a sachet. Photographed, 3D rendered and campaigned across D2C and quick-commerce with 11K+ orders driven by packaging that transparently challenges mass-market impostors.
           </p>
-          <div className="rv2" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'1rem',marginTop:'2rem'}}>
-            {[
-              {src:'/images/jusamazin/30sad/30sad-all-set.png', cap:'Full Lineup'},
-              {src:'/images/jusamazin/30sad/b-Camera.png', cap:'Bottle Front'},
-              {src:'/images/jusamazin/30sad/d1-Camera.png', cap:'Detail View'},
-              {src:'/images/jusamazin/30sad/box-2-front.png', cap:'Gift Box'},
-            ].map(({src,cap}) => (
-              <div key={src} style={{borderRadius:'16px',overflow:'hidden',border:'1px solid rgba(240,237,230,0.1)',background:'rgba(0,0,0,0.3)',aspectRatio:'3/4',position:'relative',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <img
-                  loading="lazy"
-                  src={src}
-                  alt={cap}
-                  style={{width:'100%',height:'100%',objectFit:'contain',padding:'0.5rem',display:'block'}}
+
+          <div className="rv2 almond-asymmetric-studio" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1.1fr', gap: '2.5rem', alignItems: 'stretch' }}>
+            
+            {/* Left: Autoplaying Video Player Stage */}
+            <div style={{ background: 'rgba(14,12,10,0.85)', border: '1px solid rgba(240,237,230,0.1)', borderRadius: '24px', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 20px 50px rgba(0,0,0,0.7)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.4rem', borderBottom: '1px solid rgba(240,237,230,0.08)', background: 'rgba(255,255,255,0.02)' }}>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setAlmondVideoMode('compare')}
+                    style={{
+                      background: almondVideoMode === 'compare' ? 'var(--ja-accent)' : 'rgba(240,237,230,0.05)',
+                      color: almondVideoMode === 'compare' ? '#FFF' : 'var(--ja-muted)',
+                      border: 'none',
+                      borderRadius: '20px',
+                      padding: '0.35rem 0.8rem',
+                      fontFamily: 'var(--M)',
+                      fontSize: '0.52rem',
+                      letterSpacing: '0.12em',
+                      cursor: 'pointer',
+                      fontWeight: 700
+                    }}
+                  >
+                    1:1 PDP FILM
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAlmondVideoMode('typewriter')}
+                    style={{
+                      background: almondVideoMode === 'typewriter' ? 'var(--ja-accent)' : 'rgba(240,237,230,0.05)',
+                      color: almondVideoMode === 'typewriter' ? '#FFF' : 'var(--ja-muted)',
+                      border: 'none',
+                      borderRadius: '20px',
+                      padding: '0.35rem 0.8rem',
+                      fontFamily: 'var(--M)',
+                      fontSize: '0.52rem',
+                      letterSpacing: '0.12em',
+                      cursor: 'pointer',
+                      fontWeight: 700
+                    }}
+                  >
+                    9:16 KINETIC REEL
+                  </button>
+                </div>
+                <span style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: 'var(--ja-accent)' }}>
+                  ● AUTOPLAYING LIVE
+                </span>
+              </div>
+
+              <div style={{ flex: 1, position: 'relative', minHeight: '360px', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <video
+                  key={almondVideoMode}
+                  src={almondVideoMode === 'compare' ? '/videos/jusamazin/30-sec-almond-milk-compare.mp4' : '/videos/jusamazin/30sad-typewriter-final.mp4'}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', maxHeight: '480px' }}
                 />
-                <span style={{position:'absolute',bottom:'0.75rem',left:'0.9rem',fontFamily:'var(--M)',fontSize:'0.52rem',letterSpacing:'0.18em',color:'rgba(240,237,230,0.5)',textTransform:'uppercase'}}>{cap}</span>
               </div>
-            ))}
-          </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:'0.6rem',marginTop:'0.8rem'}}>
-            {[
-              '/images/jusamazin/30sad/a-Camera.png',
-              '/images/jusamazin/30sad/c-Camera.png',
-              '/images/jusamazin/30sad/e-Camera.png',
-              '/images/jusamazin/30sad/f-Camera.png',
-              '/images/jusamazin/30sad/almond-drink-bottle-without-cap.png',
-            ].map((src,i) => (
-              <div key={i} style={{borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(240,237,230,0.07)',background:'rgba(0,0,0,0.3)',aspectRatio:'1/1',display:'flex',alignItems:'center',justifyContent:'center'}}>
-                <img loading="lazy" src={src} alt={`30SAD angle ${i+1}`} style={{width:'100%',height:'100%',objectFit:'contain',padding:'0.3rem',display:'block'}} />
+
+              <div style={{ padding: '1.4rem 1.6rem', borderTop: '1px solid rgba(240,237,230,0.08)' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.52rem', letterSpacing: '0.15em', color: 'var(--ja-accent)', marginBottom: '0.4rem' }}>
+                  {almondVideoMode === 'compare' ? 'CONVERSION ASSET // BLINKIT & ZEPTO PDP' : 'TOP-FUNNEL ASSET // META & REELS'}
+                </div>
+                <div style={{ fontFamily: 'var(--D)', fontSize: '1.2rem', color: '#FFF', marginBottom: '0.4rem' }}>
+                  {almondVideoMode === 'compare' ? 'The 30-Second Dissolution Comparison' : 'Kinetic Typewriter Nostalgic Disruption'}
+                </div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.88rem', color: 'var(--ja-muted)', lineHeight: '1.6' }}>
+                  {almondVideoMode === 'compare' 
+                    ? 'Proving paste purity vs. mass-market carton filler in 30 seconds without voiceover. 11,000+ orders generated.'
+                    : 'Vintage sound-off kinetic typewriter typography delivering ingredient transparency in the first 3 seconds.'}
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right: Asymmetrical Staggered 3D Render Cluster */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', alignContent: 'start' }}>
+              
+              {/* Large Bottle Front Hero */}
+              <div style={{ gridColumn: 'span 2', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(240,237,230,0.1)', background: 'rgba(0,0,0,0.4)', padding: '1.5rem', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '260px', boxShadow: '0 15px 40px rgba(0,0,0,0.5)' }}>
+                <img loading="lazy" src="/images/jusamazin/30sad/30sad-all-set.png" alt="Full Lineup" style={{ width: '100%', height: '100%', objectFit: 'contain', maxHeight: '230px', display: 'block' }} />
+                <span style={{ position: 'absolute', bottom: '0.9rem', left: '1.2rem', fontFamily: 'var(--M)', fontSize: '0.55rem', letterSpacing: '0.18em', color: 'var(--ja-accent)', fontWeight: 700 }}>
+                  3D RENDER // COMPLETE RANGE ARCHITECTURE
+                </span>
+              </div>
+
+              {/* Angle 1: Bottle Front */}
+              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(240,237,230,0.08)', background: 'rgba(0,0,0,0.3)', padding: '1rem', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '170px' }}>
+                <img loading="lazy" src="/images/jusamazin/30sad/b-Camera.png" alt="Bottle Front" style={{ width: '100%', height: '100%', objectFit: 'contain', maxHeight: '150px', display: 'block' }} />
+                <span style={{ position: 'absolute', bottom: '0.75rem', left: '0.9rem', fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: 'rgba(240,237,230,0.5)' }}>
+                  FRONT FACING
+                </span>
+              </div>
+
+              {/* Angle 2: Gift Box Spec */}
+              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(240,237,230,0.08)', background: 'rgba(0,0,0,0.3)', padding: '1rem', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '170px' }}>
+                <img loading="lazy" src="/images/jusamazin/30sad/box-2-front.png" alt="Gift Box" style={{ width: '100%', height: '100%', objectFit: 'contain', maxHeight: '150px', display: 'block' }} />
+                <span style={{ position: 'absolute', bottom: '0.75rem', left: '0.9rem', fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: 'rgba(240,237,230,0.5)' }}>
+                  GIFT BOX SPEC
+                </span>
+              </div>
+
+            </div>
+
           </div>
         </div>
       </section>
@@ -603,7 +738,11 @@ export default function JusAmazin() {
               }}
             >
               <div className="wip-img-wrap">
-                <img loading="lazy" src={item.src} alt={item.title} />
+                {item.isVideo ? (
+                  <video src={item.src} autoPlay loop muted playsInline preload="auto" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                  <img loading="lazy" src={item.src} alt={item.title} />
+                )}
               </div>
               <div className="wip-tag">{item.tag}</div>
               <div className="wip-card-title">{item.title}</div>
@@ -663,7 +802,11 @@ export default function JusAmazin() {
               getAudioEngine()?.playTick(300);
             }}>✕</button>
             <div className="wip-modal-img-wrap">
-              <img src={activeModalItem.src} alt={activeModalItem.title} />
+              {activeModalItem.isVideo ? (
+                <video src={activeModalItem.src} controls autoPlay playsInline style={{ width: '100%', maxHeight: '65vh', display: 'block', borderRadius: '8px' }} />
+              ) : (
+                <img src={activeModalItem.src} alt={activeModalItem.title} />
+              )}
             </div>
             <div className="wip-tag">{activeModalItem.tag}</div>
             <div className="wip-modal-title">{activeModalItem.title}</div>
