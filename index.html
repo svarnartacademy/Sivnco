@@ -2951,6 +2951,75 @@
       cursor: pointer;
     }
 
+    /* Visual & Motion Proof Theater — Edge-to-Edge Responsive Formats */
+    .visual-proof-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.05fr 1.05fr;
+      gap: 2.4rem;
+      align-items: stretch;
+      margin-top: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (max-width: 1024px) {
+      .visual-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+    .visual-proof-card {
+      background: rgba(14, 12, 10, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(240, 237, 230, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .visual-proof-card:hover {
+      border-color: rgba(212, 96, 10, 0.45);
+      transform: translateY(-6px);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.85), 0 0 35px rgba(212, 96, 10, 0.15);
+    }
+    .visual-proof-media {
+      position: relative;
+      width: 100%;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .visual-proof-media.vertical-reel {
+      aspect-ratio: 9/16;
+      max-height: 560px;
+    }
+    .visual-proof-media.square-film {
+      aspect-ratio: 1/1;
+      max-height: 560px;
+    }
+    .visual-proof-media.widescreen-proof {
+      aspect-ratio: 16/9;
+      max-height: 560px;
+    }
+    .visual-proof-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+    .visual-proof-info {
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      border-top: 1px solid rgba(240, 237, 230, 0.08);
+    }
+
     /* Cascading Overlapping Strategy Cards (Challenge / Approach / Outcome) */
     .cs-cascade-deck {
       display: grid;
@@ -3727,27 +3796,86 @@
           </div>
         </div>
 
-        <!-- FROM PACKAGING TO CAMPAIGN -->
+        <!-- FROM PACKAGING TO CAMPAIGN (Live Visual & Motion Proof Theater) -->
         <div class="vc-section gs-fade">
-          <div class="t-mono-label">From Packaging to Campaign</div>
-          <h3 style="font-family:var(--f-display);font-size:clamp(2.2rem,4.5vw,4.2rem);margin-bottom:1rem;line-height:1.05;">How the Visual System Travels</h3>
-          <p style="font-size:1.08rem;line-height:1.9;color:var(--text-muted);max-width:760px;margin-bottom:3rem;">A packaging system that only works on pack is a design system. A packaging system that works in advertising is a campaign. The Jus Amazin visual language was built to travel — here is how the same logic extends across three advertising touchpoints.</p>
-          <div class="vc-campaign-ext">
-            <div class="vc-ext-card">
-              <div class="vc-ext-channel">01 — Social / Instagram</div>
-              <div class="vc-ext-idea"><strong style="color: #FFF;">Earth tone palette + kinetic typography</strong> — The same warm substrate colors become social backgrounds. Clean-label claims delivered as bold type statements. The pack becomes the hero visual in every frame.</div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div>
+              <div class="t-mono-label">Visual Proof &middot; Motion &middot; Touchpoints</div>
+              <h3 style="font-family:var(--f-display);font-size:clamp(2.2rem,4.5vw,4.2rem);margin:0;line-height:1.05;">
+                From Packaging <span class="t-serif" style="color:var(--accent);">to Motion.</span>
+              </h3>
             </div>
-            <div class="vc-ext-card">
-              <div class="vc-ext-channel">02 — Q-Commerce / Blinkit</div>
-              <div class="vc-ext-idea"><strong style="color: #FFF;">Split-screen product demonstration</strong> — The packaging system's visual confidence carries into video. The 30-second almond milk comparison film uses the same earth tones and typography rhythm — brand recognition before brand name.</div>
-            </div>
-            <div class="vc-ext-card">
-              <div class="vc-ext-channel">03 — OOH / Outdoor</div>
-              <div class="vc-ext-idea"><strong style="color: #FFF;">Single visual, single truth</strong> — The packaging color logic reduced to one bold frame at billboard scale. Earth tone product on warm background. Zero copy except the brand name. The visual concept is strong enough to work without words.</div>
+            <div style="font-family: var(--f-mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; font-weight: 700;">
+              ✦ LIVE RUNNING ASSETS // NO ABSTRACT CLAIMS
             </div>
           </div>
-          <div style="margin-top:2.5rem;">
-            <a href="/campaigns" class="nav-cta" style="font-size:0.75rem;">View Full Campaign Work &rarr;</a>
+          <p style="font-size:1.1rem;line-height:1.9;color:var(--text-muted);max-width:820px;margin-bottom:2.5rem;">
+            A packaging system that only lives on pack is just a specification. A system that scales into advertising becomes an unstoppable commercial weapon. Here is the unedited visual proof — from 9:16 vertical kinetic typography reels to 1:1 quick-commerce PDP split-screen demonstrations and industrial production dielines.
+          </p>
+
+          <div class="visual-proof-grid">
+
+            <!-- Card 1: 9:16 Vertical Kinetic Reel -->
+            <div class="visual-proof-card">
+              <div class="visual-proof-media vertical-reel">
+                <video src="/videos/jusamazin/30sad-typewriter-final.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto"></video>
+                <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(10,9,6,0.85); border: 1px solid rgba(212,96,10,0.4); color: var(--accent); font-family: var(--f-mono); font-size: 0.55rem; padding: 0.35rem 0.75rem; border-radius: 20px; backdrop-filter: blur(8px); z-index: 5; pointer-events: none;">
+                  9:16 VERTICAL REEL
+                </div>
+              </div>
+              <div class="visual-proof-info">
+                <div>
+                  <div style="font-family: var(--f-mono); font-size: 0.55rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase;">01 — Social &middot; Instagram Reel</div>
+                  <h4 style="font-family: var(--f-display); font-size: 1.35rem; margin-bottom: 0.6rem; color: #FFF;">30-Sec Kinetic Typography</h4>
+                  <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); margin: 0;">
+                    Engineered for sound-off vertical scrolling. Vintage click-clack typography delivers proof points in the first 3 seconds — turning words into arresting visuals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: 1:1 Quick-Commerce Split Screen Film -->
+            <div class="visual-proof-card">
+              <div class="visual-proof-media square-film">
+                <video src="/videos/jusamazin/30-sec-almond-milk-compare.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto"></video>
+                <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(10,9,6,0.85); border: 1px solid rgba(52,211,153,0.4); color: #34D399; font-family: var(--f-mono); font-size: 0.55rem; padding: 0.35rem 0.75rem; border-radius: 20px; backdrop-filter: blur(8px); z-index: 5; pointer-events: none;">
+                  1:1 PDP SPLIT-SCREEN
+                </div>
+              </div>
+              <div class="visual-proof-info">
+                <div>
+                  <div style="font-family: var(--f-mono); font-size: 0.55rem; letter-spacing: 0.2em; color: #34D399; margin-bottom: 0.5rem; text-transform: uppercase;">02 — Q-Commerce &middot; Blinkit / Zepto</div>
+                  <h4 style="font-family: var(--f-display); font-size: 1.35rem; margin-bottom: 0.6rem; color: #FFF;">The 30-Second Dissolution Test</h4>
+                  <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); margin: 0;">
+                    Weaponizing transparency on PDP listings. Real-time split screen proves paste dissolution against competitor carton in 30 seconds with 0 voiceover.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: 16:9 Production & WIP Factory Proof -->
+            <div class="visual-proof-card">
+              <div class="visual-proof-media widescreen-proof">
+                <video src="/images/jusamazin/process/wip_process_video.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto"></video>
+                <div style="position: absolute; top: 1rem; left: 1rem; background: rgba(10,9,6,0.85); border: 1px solid rgba(240,237,230,0.3); color: #FFF; font-family: var(--f-mono); font-size: 0.55rem; padding: 0.35rem 0.75rem; border-radius: 20px; backdrop-filter: blur(8px); z-index: 5; pointer-events: none;">
+                  FACTORY &middot; WIP PROCESS
+                </div>
+              </div>
+              <div class="visual-proof-info">
+                <div>
+                  <div style="font-family: var(--f-mono); font-size: 0.55rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase;">03 — Industrial Prepress &middot; Press Runs</div>
+                  <h4 style="font-family: var(--f-display); font-size: 1.35rem; margin-bottom: 0.6rem; color: #FFF;">Production Rigor in Motion</h4>
+                  <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted); margin: 0;">
+                    Design that survives industrial production runs exceeding 200,000+ units. Colour calibration, substrate testing, and dieline engineering.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top:2.5rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <a href="/campaigns" class="nav-cta" style="font-size:0.75rem;">Explore All Campaigns with Full Media &rarr;</a>
           </div>
         </div>
 
@@ -5381,53 +5509,55 @@
       });
     })();
 
-    // --- GUARANTEED CONTINUOUS VIDEO PLAYBACK ---
+    // --- GUARANTEED CONTINUOUS VIDEO PLAYBACK (ALL CINEMA & PROOF VIDEOS) ---
     (function initCinemaPlayback() {
-      var video = document.getElementById('theaterVideo');
-      if (!video) return;
+      var allVideos = document.querySelectorAll('video');
+      if (!allVideos.length) return;
 
-      video.muted = true;
-      video.defaultMuted = true;
-      video.setAttribute('muted', '');
-      video.setAttribute('playsinline', '');
-      video.setAttribute('webkit-playsinline', '');
+      allVideos.forEach(function(video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
 
-      function playVideo() {
-        var p = video.play();
-        if (p && typeof p.catch === 'function') {
-          p.catch(function() {
-            function onInteraction() {
-              video.play();
-              window.removeEventListener('click', onInteraction);
-              window.removeEventListener('touchstart', onInteraction);
-              window.removeEventListener('scroll', onInteraction);
-            }
-            window.addEventListener('click', onInteraction, { once: true });
-            window.addEventListener('touchstart', onInteraction, { once: true });
-            window.addEventListener('scroll', onInteraction, { once: true });
-          });
+        function playVideo() {
+          var p = video.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function() {
+              function onInteraction() {
+                video.play();
+                window.removeEventListener('click', onInteraction);
+                window.removeEventListener('touchstart', onInteraction);
+                window.removeEventListener('scroll', onInteraction);
+              }
+              window.addEventListener('click', onInteraction, { once: true });
+              window.addEventListener('touchstart', onInteraction, { once: true });
+              window.addEventListener('scroll', onInteraction, { once: true });
+            });
+          }
         }
-      }
 
-      playVideo();
+        playVideo();
 
-      if ('IntersectionObserver' in window) {
-        var videoObs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              playVideo();
-            }
-          });
-        }, { threshold: 0.05 });
-        videoObs.observe(video);
-      }
-
-      video.addEventListener('click', function() {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
+        if ('IntersectionObserver' in window) {
+          var videoObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                playVideo();
+              }
+            });
+          }, { threshold: 0.05 });
+          videoObs.observe(video);
         }
+
+        video.addEventListener('click', function() {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
       });
     })();
   </script>

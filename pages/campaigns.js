@@ -74,6 +74,7 @@ const CAMPAIGNS = [
         title: '30-Sec Comparison Film',
         src: '/videos/jusamazin/30-sec-almond-milk-compare.mp4',
         isVideo: true,
+        aspect: '1/1',
         campaignType: 'Visual Breakdown Tactic',
         duration: '7 Days — High-intensity cross-platform run',
         topFunnel: '15K–20K Impressions',
@@ -89,6 +90,7 @@ const CAMPAIGNS = [
         title: '30-Sec Kinetic Typography',
         src: '/videos/jusamazin/30sad-typewriter-final.mp4',
         isVideo: true,
+        aspect: '9/16',
         campaignType: 'Silent Attack Tactic',
         duration: '7 Days — Targeted minimal niche positioning',
         topFunnel: '15K–20K+ Audience Reach',
@@ -104,6 +106,7 @@ const CAMPAIGNS = [
         title: 'Full Campaign Launch Film',
         src: '/videos/jusamazin/full-sam-final.mp4',
         isVideo: true,
+        aspect: '16/9',
         campaignType: 'Long-Form Brand Film',
         duration: 'Ongoing — Brand & storefront placement',
         topFunnel: 'Full-funnel brand building',
@@ -728,8 +731,11 @@ a{color:inherit;text-decoration:none}
 .cp-execs-label{font-family:var(--M);font-size:.58rem;letter-spacing:.25em;margin-bottom:3rem}
 .cp-exec-item{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid var(--cp-border)}
 .cp-exec-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.cp-exec-media{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(240,237,230,0.03);aspect-ratio:16/9;transition:border-color .4s, transform .4s}
-.cp-exec-media:hover{border-color:rgba(212,96,10,0.3);transform:scale(1.02)}
+.cp-exec-media{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--cp-border);background:rgba(14,12,10,0.95);box-shadow:0 20px 50px rgba(0,0,0,0.6);transition:border-color .4s, transform .4s, box-shadow .4s}
+.cp-exec-media.aspect-wide{aspect-ratio:16/9;width:100%}
+.cp-exec-media.aspect-vertical{aspect-ratio:9/16;max-width:380px;width:100%;margin:0 auto}
+.cp-exec-media.aspect-square{aspect-ratio:1/1;max-width:540px;width:100%;margin:0 auto}
+.cp-exec-media:hover{border-color:rgba(212,96,10,0.45);transform:translateY(-4px);box-shadow:0 30px 70px rgba(0,0,0,0.8),0 0 30px rgba(212,96,10,0.15)}
 .cp-exec-media video,.cp-exec-media img{width:100%;height:100%;object-fit:cover;display:block}
 .cp-exec-info{display:flex;flex-direction:column;gap:1.5rem;padding-top:1rem}
 .cp-exec-num{font-family:var(--D);font-size:clamp(3rem,6vw,6rem);line-height:1;opacity:.07}
@@ -1295,65 +1301,68 @@ export default function Campaigns() {
             {/* ── Executions ── */}
             <div className="cpv" style={{ marginTop: '6rem' }}>
               <div className="cp-execs-label" style={{ color: cam.accent }}>Execution — Across Touchpoints</div>
-              {cam.executions.map((ex, ei) => (
-                <div key={ex.num} className="cp-exec-item cpv">
-                  {ei % 2 === 0 ? (
-                    <>
-                      <div className="cp-exec-media">
-                        {ex.isVideo ? (
-                          <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                        ) : ex.src ? (
-                          <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                        ) : (
-                          <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
-                        )}
-                      </div>
-                      <div className="cp-exec-info">
-                        <div className="cp-exec-num">{ex.num}</div>
-                        <div>
-                          <div className="cp-exec-channel" style={{ color: cam.accent }}>{ex.channel}</div>
-                          <div className="cp-exec-title">{ex.title}</div>
+              {cam.executions.map((ex, ei) => {
+                const aspectClass = ex.aspect === '9/16' ? 'aspect-vertical' : ex.aspect === '1/1' ? 'aspect-square' : 'aspect-wide';
+                return (
+                  <div key={ex.num} className="cp-exec-item cpv">
+                    {ei % 2 === 0 ? (
+                      <>
+                        <div className={`cp-exec-media ${aspectClass}`}>
+                          {ex.isVideo ? (
+                            <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          ) : ex.src ? (
+                            <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          ) : (
+                            <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
+                          )}
                         </div>
-                        <div>
-                          <div className="cp-exec-adnote-label">Art Direction Note</div>
-                          <div className="cp-exec-adnote">{ex.adNote}</div>
+                        <div className="cp-exec-info">
+                          <div className="cp-exec-num">{ex.num}</div>
+                          <div>
+                            <div className="cp-exec-channel" style={{ color: cam.accent }}>{ex.channel}</div>
+                            <div className="cp-exec-title">{ex.title}</div>
+                          </div>
+                          <div>
+                            <div className="cp-exec-adnote-label">Art Direction Note</div>
+                            <div className="cp-exec-adnote">{ex.adNote}</div>
+                          </div>
+                          <div>
+                            <div className="cp-exec-channels-label">Channels</div>
+                            <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className="cp-exec-channels-label">Channels</div>
-                          <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="cp-exec-info">
+                          <div className="cp-exec-num">{ex.num}</div>
+                          <div>
+                            <div className="cp-exec-channel" style={{ color: cam.accent }}>{ex.channel}</div>
+                            <div className="cp-exec-title">{ex.title}</div>
+                          </div>
+                          <div>
+                            <div className="cp-exec-adnote-label">Art Direction Note</div>
+                            <div className="cp-exec-adnote">{ex.adNote}</div>
+                          </div>
+                          <div>
+                            <div className="cp-exec-channels-label">Channels</div>
+                            <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
+                          </div>
                         </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="cp-exec-info">
-                        <div className="cp-exec-num">{ex.num}</div>
-                        <div>
-                          <div className="cp-exec-channel" style={{ color: cam.accent }}>{ex.channel}</div>
-                          <div className="cp-exec-title">{ex.title}</div>
+                        <div className={`cp-exec-media ${aspectClass}`}>
+                          {ex.isVideo ? (
+                            <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          ) : ex.src ? (
+                            <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                          ) : (
+                            <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
+                          )}
                         </div>
-                        <div>
-                          <div className="cp-exec-adnote-label">Art Direction Note</div>
-                          <div className="cp-exec-adnote">{ex.adNote}</div>
-                        </div>
-                        <div>
-                          <div className="cp-exec-channels-label">Channels</div>
-                          <div className="cp-exec-channels" style={{ color: cam.accent }}>{ex.channels}</div>
-                        </div>
-                      </div>
-                      <div className="cp-exec-media">
-                        {ex.isVideo ? (
-                          <video src={ex.src} controls playsInline preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                        ) : ex.src ? (
-                          <img loading="lazy" src={ex.src} alt={ex.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                        ) : (
-                          <ImagePlaceholder label={ex.title} icon="image" accentColor="212,96,10" />
-                        )}
-                      </div>
-                    </>
-                  )}
-                </div>
-              ))}
+                      </>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* ── Campaign Compare Table (Almond Milk only) ── */}
