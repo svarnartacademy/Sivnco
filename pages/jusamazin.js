@@ -12,8 +12,8 @@ const METRICS = [
 ]
 const DELIVERABLES = [
   'Packaging Design (15+ SKUs)','3D Product Renders','Brand Guidelines Document',
-  'Social Media Templates','Retail POS Materials','Energy Bar Range',
-  'Superfoods Packaging','Snack Pack Range','Design Process System',
+  'Festive Luxury Gifting','Lil\'Stars Kids Nutrition','Mom2B Maternal Care',
+  'Retail POS & Spatial FSU','Canisters & Impulse Snacking','30-Sec Almond Milk Campaign',
 ]
 const RESULTS = [
   '176% revenue growth in FY 2024–25 — directly from improved brand visibility and packaging coherence at retail.',
@@ -280,10 +280,14 @@ import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
 import { getAudioEngine } from '../components/ui/TactileAudioEngine';
 
 const SKUS = [
-  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '176% Growth', desc: 'Bold street typography and rich royal purple wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star' },
-  { id: 'almond-milk', name: '30-Sec Almond Milk', cat: 'Category Disruptor', num: '11K+ Orders', desc: '100% almond paste sachet exposing mass-market cartons with radical ingredient transparency.', tag: 'Category Rebrand' },
-  { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '5× Velocity', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print' },
-  { id: 'peanut-butter', name: 'Peanut Butter Jars', cat: 'Foundational Line', num: '15+ SKUs', desc: 'Master token layer governing clean typography and nutritional truth across 15+ jar variations.', tag: 'Brand Anchor' },
+  { id: 'gifting', name: 'Festive Luxury Gifting', cat: 'Celebratory Architecture', num: '100% Bespoke', desc: 'Sliding contemporary trays in Royal Purple, crimson heritage boxes with gold mandalas, and windowed snack display units.', tag: 'Festive Suite', img: '/images/jusamazin/gifting/Final-ALL-Camera.png' },
+  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '176% Growth', desc: 'Bold street typography and electric blue wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star', img: '/images/jusamazin/desi_bar/runway_final.jpg' },
+  { id: 'lilstars', name: 'Lil\'Stars Kids Nutrition', cat: 'Clean-Label Sub-Brand', num: '3 SKUs', desc: 'Millet & quinoa pancake mixes and kids nut butters engineered with zero maida, zero refined sugar, and Veo AI motion direction.', tag: 'Sub-Brand Launch', img: '/images/jusamazin/jars/pancake_berry_blast.png' },
+  { id: 'mom2b', name: 'Mom2B Maternal Care', cat: 'Functional Care', num: '5+ SKUs', desc: 'Targeted galactagogue functional spreads, savory Peanut & Flax Chutney, and the on-the-go Mom Bar.', tag: 'Obstetric Trust', img: '/images/jusamazin/mom2b/mom_bar_front.png' },
+  { id: 'retail-pos', name: 'Retail POS & 5ft FSU', cat: 'Spatial Engineering', num: '6+ Expos', desc: 'Standalone 5ft retail display units, cross-category parasite clip strips, and international pavilions across Dubai and AAHAR.', tag: 'Physical Merchandising', img: '/images/jusamazin/events/condo-carnival-booth.png' },
+  { id: 'almond-milk', name: '30-Sec Almond Milk', cat: 'Category Disruptor', num: '11K+ Orders', desc: '100% almond paste sachet exposing mass-market cartons with radical ingredient transparency.', tag: 'Category Rebrand', img: '/images/jusamazin/30sad/30sad-all-set.png' },
+  { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '5× Velocity', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print', img: '/images/jusamazin/web/snack-tile.png' },
+  { id: 'peanut-butter', name: 'Peanut Butter Jars & Tubs', cat: 'Foundational Line', num: '15+ SKUs', desc: 'Master token layer governing clean typography, PET/Glass material splitting, and 1KG fitness tubs.', tag: 'Brand Anchor', img: '/images/jusamazin/jars/pb_jaggery_jar.png' },
 ];
 
 export default function JusAmazin() {
@@ -383,10 +387,23 @@ export default function JusAmazin() {
               <span className="sku-detail-tag">{selectedSku.cat} · {selectedSku.tag}</span>
               <h3 className="sku-detail-title">{selectedSku.name}</h3>
               <p className="sku-detail-desc">{selectedSku.desc}</p>
+              <div className="sku-metric-cell" style={{marginTop:'1.5rem',textAlign:'left',padding:'1.2rem 1.8rem',display:'inline-flex',gap:'1.5rem',alignItems:'center',borderRadius:'16px'}}>
+                <div>
+                  <div className="sku-metric-num">{selectedSku.num}</div>
+                  <div className="sku-metric-lbl">Commercial Contribution</div>
+                </div>
+              </div>
             </div>
-            <div className="sku-metric-cell">
-              <div className="sku-metric-num">{selectedSku.num}</div>
-              <div className="sku-metric-lbl">Commercial Contribution</div>
+            <div style={{position:'relative',borderRadius:'20px',overflow:'hidden',border:'1px solid rgba(240,237,230,0.1)',background:'rgba(0,0,0,0.3)',aspectRatio:'3/4',display:'flex',alignItems:'center',justifyContent:'center',minHeight:'260px'}}>
+              {selectedSku.img && (
+                <img
+                  key={selectedSku.id}
+                  src={selectedSku.img}
+                  alt={selectedSku.name}
+                  style={{width:'100%',height:'100%',objectFit:'contain',padding:'1rem',transition:'opacity 0.4s ease',display:'block'}}
+                  loading="lazy"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -411,71 +428,112 @@ export default function JusAmazin() {
           </p>
         </div>
       </div></section>
+      {/* 30-SEC ALMOND DRINK VISUAL STRIP */}
+      <section style={{borderBottom:'1px solid var(--ja-border)'}}>
+        <div className="c">
+          <div className="s-label rv">03B — 30-Sec Almond Drink</div>
+          <h2 className="s-title rv">Campaign &amp;<br/><i>Product Renders.</i></h2>
+          <p className="body rv" style={{marginBottom:'2.5rem'}}>
+            A category-disrupting instant almond drink — 100% pure almond paste in a sachet. Photographed, 3D rendered and campaigned across D2C and quick-commerce with 11K+ orders driven by packaging that transparently challenges mass-market impostors.
+          </p>
+          <div className="rv2" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'1rem',marginTop:'2rem'}}>
+            {[
+              {src:'/images/jusamazin/30sad/30sad-all-set.png', cap:'Full Lineup'},
+              {src:'/images/jusamazin/30sad/b-Camera.png', cap:'Bottle Front'},
+              {src:'/images/jusamazin/30sad/d1-Camera.png', cap:'Detail View'},
+              {src:'/images/jusamazin/30sad/box-2-front.png', cap:'Gift Box'},
+            ].map(({src,cap}) => (
+              <div key={src} style={{borderRadius:'16px',overflow:'hidden',border:'1px solid rgba(240,237,230,0.1)',background:'rgba(0,0,0,0.3)',aspectRatio:'3/4',position:'relative',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <img
+                  loading="lazy"
+                  src={src}
+                  alt={cap}
+                  style={{width:'100%',height:'100%',objectFit:'contain',padding:'0.5rem',display:'block'}}
+                />
+                <span style={{position:'absolute',bottom:'0.75rem',left:'0.9rem',fontFamily:'var(--M)',fontSize:'0.52rem',letterSpacing:'0.18em',color:'rgba(240,237,230,0.5)',textTransform:'uppercase'}}>{cap}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:'0.6rem',marginTop:'0.8rem'}}>
+            {[
+              '/images/jusamazin/30sad/a-Camera.png',
+              '/images/jusamazin/30sad/c-Camera.png',
+              '/images/jusamazin/30sad/e-Camera.png',
+              '/images/jusamazin/30sad/f-Camera.png',
+              '/images/jusamazin/30sad/almond-drink-bottle-without-cap.png',
+            ].map((src,i) => (
+              <div key={i} style={{borderRadius:'12px',overflow:'hidden',border:'1px solid rgba(240,237,230,0.07)',background:'rgba(0,0,0,0.3)',aspectRatio:'1/1',display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <img loading="lazy" src={src} alt={`30SAD angle ${i+1}`} style={{width:'100%',height:'100%',objectFit:'contain',padding:'0.3rem',display:'block'}} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* MOSAIC */}
       <section style={{paddingTop:0,borderBottom:'1px solid var(--ja-border)'}}><div className="c">
         <div className="s-label rv">04 — Visual System</div>
         <h2 className="s-title rv">Packaging<br/><i>at scale.</i></h2>
         <div className="mosaic rv2">
-          <Link href="/jusamazin/core-packaging" className="slot tall" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/core/portfolio.jpg" className="slot-img" alt="Core Packaging Range" />
+          <Link href="/jusamazin/gifting" className="slot tall" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/gifting/Final-ALL-Camera.png" className="slot-img" alt="Festive Luxury Gifting" />
             <div className="slot-bg-overlay" />
-            <div className="slot-ghost">HERO PRODUCT SHOT</div>
-            <span className="slot-cap">Core Packaging Range</span>
+            <div className="slot-ghost">FESTIVE LUXURY GIFTING</div>
+            <span className="slot-cap">Festive Luxury Gifting</span>
           </Link>
-          <Link href="/jusamazin/3d-pack-render" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/desi_bar/studio_render_a.jpg" className="slot-img zoom-fill" alt="3D Pack Render" />
+          <Link href="/jusamazin/lilstars" className="slot" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/jars/pancake_berry_blast.png" className="slot-img zoom-fill" alt="Lil'Stars Kids Nutrition" />
             <div className="slot-bg-overlay" />
-            <div className="slot-ghost">3D RENDER</div>
-            <span className="slot-cap">3D Pack Render</span>
+            <div className="slot-ghost">LIL'STARS KIDS</div>
+            <span className="slot-cap">Lil&apos;Stars Kids Nutrition</span>
+          </Link>
+          <Link href="/jusamazin/mom2b" className="slot" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/mom2b/mom_bar_front.png" className="slot-img zoom-fill" alt="Mom2B Maternal Care" />
+            <div className="slot-bg-overlay" />
+            <div className="slot-ghost">MOM2B CARE</div>
+            <span className="slot-cap">Mom2B Maternal Care</span>
+          </Link>
+          <Link href="/jusamazin/retail-pos" className="slot wide" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/events/condo-carnival-booth.png" className="slot-img" alt="Retail POS & 5ft FSU" />
+            <div className="slot-bg-overlay" />
+            <div className="slot-ghost">RETAIL POS &amp; SPATIAL FSU</div>
+            <span className="slot-cap">Retail POS &amp; Spatial FSU</span>
           </Link>
           <Link href="/jusamazin/superfoods" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/superfoods/shelf_lineup.jpg" className="slot-img" alt="Superfoods Range" />
+            <img loading="lazy" src="/images/jusamazin/web/snack-tile.png" className="slot-img" alt="Superfoods Range" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">SUPERFOODS</div>
             <span className="slot-cap">Superfoods Range</span>
           </Link>
-          <Link href="/jusamazin/brand-guidelines" className="slot wide" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/guidelines/brand_book_cover.jpg" className="slot-img" alt="Brand Guidelines Document" />
-            <div className="slot-bg-overlay" />
-            <div className="slot-ghost">BRAND GUIDELINES</div>
-            <span className="slot-cap">Brand Guidelines Document</span>
-          </Link>
-          <Link href="/jusamazin/bars" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/bars/variant_lineup.jpg" className="slot-img zoom-fill" alt="Bars" />
-            <div className="slot-bg-overlay" />
-            <div className="slot-ghost">BARS</div>
-            <span className="slot-cap">Bars</span>
-          </Link>
-          <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/jars/glass_lifestyle.jpg" className="slot-img zoom-fill" alt="Jars" />
-            <div className="slot-bg-overlay" />
-            <div className="slot-ghost">JARS</div>
-            <span className="slot-cap">Jars</span>
-          </Link>
           <Link href="/jusamazin/desi-energy-bar" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/desi_bar/runway_sketch_a.jpg" className="slot-img zoom-fill" alt="Desi Energy Bar" />
+            <img loading="lazy" src="/images/jusamazin/desi_bar/runway_final.jpg" className="slot-img zoom-fill" alt="Desi Energy Bar" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">DESI ENERGY BAR</div>
             <span className="slot-cap">Desi Energy Bar</span>
           </Link>
           <Link href="/jusamazin/snacks" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/snacks/pancake_mix.jpg" className="slot-img" alt="Snacks" />
+            <img loading="lazy" src="/images/jusamazin/cans/multiseed_cracker_can.png" className="slot-img zoom-fill" alt="Snacks & Canisters" />
             <div className="slot-bg-overlay" />
-            <div className="slot-ghost">SNACKS</div>
-            <span className="slot-cap">Snacks</span>
+            <div className="slot-ghost">SNACKS &amp; CANISTERS</div>
+            <span className="slot-cap">Snacks &amp; Canisters</span>
           </Link>
-          <Link href="/jusamazin/marketing" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/marketing/blinkit_banner.jpg" className="slot-img" alt="Marketing" />
+          <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/jars/pb_jaggery_jar.png" className="slot-img zoom-fill" alt="Jars & Tubs" />
             <div className="slot-bg-overlay" />
-            <div className="slot-ghost">MARKETING</div>
-            <span className="slot-cap">Marketing</span>
+            <div className="slot-ghost">JARS &amp; TUBS</div>
+            <span className="slot-cap">Jars &amp; Tubs</span>
           </Link>
-          <Link href="/jusamazin/management" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/management/almond_milk.jpg" className="slot-img" alt="Management" />
+          <Link href="/jusamazin/brand-guidelines" className="slot" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/guidelines/brand_book_cover.jpg" className="slot-img" alt="Brand Guidelines Document" />
             <div className="slot-bg-overlay" />
-            <div className="slot-ghost">MANAGEMENT</div>
-            <span className="slot-cap">Management</span>
+            <div className="slot-ghost">BRAND GUIDELINES</div>
+            <span className="slot-cap">Brand Guidelines Document</span>
+          </Link>
+          <Link href="/jusamazin/core-packaging" className="slot" style={{cursor:'pointer'}}>
+            <img loading="lazy" src="/images/jusamazin/30sad/30sad-all-set.png" className="slot-img" alt="30-Sec Almond Drink" />
+            <div className="slot-bg-overlay" />
+            <div className="slot-ghost">30-SEC ALMOND DRINK</div>
+            <span className="slot-cap">30-Sec Almond Drink</span>
           </Link>
         </div>
       </div></section>
