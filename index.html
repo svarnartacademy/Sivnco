@@ -132,7 +132,7 @@
       transition: opacity 1s ease;
     }
 
-    /* HERO VISUAL ELEMENTS */
+    /* HERO VISUAL ELEMENTS — CALM ATELIER CANVAS */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -141,7 +141,8 @@
       justify-content: center;
       text-align: center;
       padding: var(--hero-top-pad, 3.5rem) 0 4rem;
-      overflow: visible;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(212, 96, 10, 0.08) 0%, rgba(14, 12, 9, 0.8) 50%, #0A0906 100%);
     }
 
     .reveal-wrap {
@@ -149,93 +150,109 @@
       display: block;
     }
 
-    /* Clip only the WebGL canvas background, not the text */
-    .hero-section > [aria-hidden="true"]:first-child {
-      overflow: hidden;
-      border-radius: 0;
-    }
-
-    .hero-section .container {
+    .hero-section .container-wide {
       position: relative;
       z-index: 2;
     }
 
-    .hero-blur-fade {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 30vh;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(to bottom, transparent 0%, rgba(10,9,6,0.3) 30%, rgba(10,9,6,0.75) 60%, #0A0906 100%);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
-      will-change: opacity, filter;
-    }
-
-    .hero-grid-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 100%);
-      animation: grid-pulse 8s ease-in-out infinite;
-    }
-
-    @keyframes grid-pulse {
-
-      0%,
-      100% {
-        opacity: 0.4;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-    .hero-glow {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
+    /* Soft ambient warmth in top corner — subtle atelier track light */
     .hero-glow-1 {
-      top: 10%;
-      left: 15%;
-      background: var(--accent);
-      animation: glow-drift-1 12s ease-in-out infinite;
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 96, 10, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      filter: blur(80px);
     }
 
-    .hero-glow-2 {
-      bottom: 10%;
-      right: 10%;
-      background: #6366f1;
-      animation: glow-drift-2 15s ease-in-out infinite;
+    /* Hero Portfolio Quick-Reel Preview Strip */
+    .hero-portfolio-preview {
+      margin-top: 1.2rem;
+      margin-bottom: 2rem;
     }
-
-    @keyframes glow-drift-1 {
-
-      0%,
-      100% {
-        transform: translate(0, 0);
+    .hero-portfolio-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+    }
+    .hero-work-thumb {
+      position: relative;
+      aspect-ratio: 16/10;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(240, 237, 230, 0.12);
+      background: #080808;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.65rem 0.75rem;
+      transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .hero-work-thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .hero-work-thumb::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.3) 60%, transparent 100%);
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+    .hero-work-thumb:hover {
+      border-color: rgba(212, 96, 10, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.7), 0 0 20px rgba(212,96,10,0.2);
+    }
+    .hero-work-thumb:hover img {
+      transform: scale(1.08);
+    }
+    .hero-thumb-label {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      text-align: left;
+    }
+    .hero-thumb-tag {
+      font-family: var(--f-mono);
+      font-size: 0.48rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero-thumb-title {
+      font-family: var(--f-display);
+      font-size: 0.72rem;
+      color: #FFF;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 600px) {
+      .hero-portfolio-strip {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
       }
-
-      50% {
-        transform: translate(60px, -40px);
+      .hero-work-thumb {
+        padding: 0.45rem 0.5rem;
+        border-radius: 10px;
+      }
+      .hero-thumb-tag {
+        font-size: 0.42rem;
+      }
+      .hero-thumb-title {
+        font-size: 0.6rem;
       }
     }
 
@@ -3244,20 +3261,17 @@
 
   <!-- MAIN CONTENT WRAPPER -->
   <div class="main-wrap">
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION — CALM ATELIER CANVAS -->
     <section class="hero-section section" id="hero">
-      <!-- Animated grid background -->
-      <div class="hero-grid-bg"></div>
-      <!-- Floating glow orbs -->
+      <!-- Soft ambient architectural downlight -->
       <div class="hero-glow hero-glow-1"></div>
-      <div class="hero-glow hero-glow-2"></div>
 
       <div class="container-wide">
         <div class="hero-split">
 
           <!-- LEFT: Name + Tagline -->
           <div class="hero-left">
-            <div class="hero-eyebrow gs-fade" id="hTag1">ART DIRECTOR &middot; BRAND &middot; PACKAGING &middot; VISUAL COMMUNICATIONS</div>
+            <div class="hero-eyebrow gs-fade" id="hTag1">ART DIRECTOR &middot; BRAND LEAD &middot; PACKAGING SYSTEMS // SELECTED PORTFOLIO</div>
 
             <div class="hero-name-block gs-reveal" id="heroName">
               <div class="reveal-wrap">
@@ -3273,11 +3287,42 @@
             </div>
           </div>
 
-          <!-- RIGHT: Disciplines + Meta + CTAs (Unboxed, natural flow) -->
+          <!-- RIGHT: Disciplines + Curated Portfolio Strip + Meta + CTAs -->
           <div class="hero-right">
 
+            <!-- CURATED PORTFOLIO QUICK-REEL -->
+            <div class="hero-portfolio-preview gs-fade">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <span style="font-family: var(--f-mono); font-size: 0.58rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 700;">✦ CURATED PORTFOLIO</span>
+                <span style="font-family: var(--f-mono); font-size: 0.52rem; color: var(--text-muted); letter-spacing: 0.1em;">EXPLORE WORK &darr;</span>
+              </div>
+              <div class="hero-portfolio-strip">
+                <a href="/campaigns" class="hero-work-thumb" title="Campaigns — 176% Revenue Growth Impact">
+                  <img src="/images/jusamazin/bars/amazon_campaign.jpg" alt="Campaigns" loading="eager" />
+                  <div class="hero-thumb-label">
+                    <span class="hero-thumb-tag">01 · CAMPAIGNS</span>
+                    <span class="hero-thumb-title">176% Growth</span>
+                  </div>
+                </a>
+                <a href="/jusamazin" class="hero-work-thumb" title="Packaging Architecture — 15+ SKUs System">
+                  <img src="/images/hero_packaging.jpg" alt="Packaging Architecture" loading="eager" />
+                  <div class="hero-thumb-label">
+                    <span class="hero-thumb-tag">02 · PACKAGING</span>
+                    <span class="hero-thumb-title">15+ SKUs</span>
+                  </div>
+                </a>
+                <a href="/artist-educator" class="hero-work-thumb" title="Fine Art Practice — Mysore Gold Medalist">
+                  <img src="/images/paintings/painting_6.jpg" alt="Fine Art Practice" loading="eager" />
+                  <div class="hero-thumb-label">
+                    <span class="hero-thumb-tag">03 · FINE ART</span>
+                    <span class="hero-thumb-title">Gold Medalist</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
             <div class="gs-fade">
-              <div class="hero-right-label" style="margin-bottom: 1rem;">Core Disciplines</div>
+              <div class="hero-right-label" style="margin-bottom: 0.8rem;">Core Disciplines</div>
               <div class="hero-roles" id="heroRoles" style="justify-content: flex-start;">
                 <span>Brand Identity</span>
                 <span>Packaging Architecture</span>
@@ -3285,7 +3330,6 @@
                 <span>Print Production</span>
                 <span>Retail &amp; POS</span>
                 <span>3D Visualisation</span>
-                <span>Brand Guidelines</span>
               </div>
             </div>
 
@@ -4755,29 +4799,19 @@
     );
 
     // Hero scroll-out: parallax the content up and fade
-    gsap.to('.hero-section .container', {
-      y: -100,
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-
-    // Fade out the bottom blur overlay on scroll for a dynamic reveal effect
-    gsap.to('.hero-blur-fade', {
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: "top top",
-        end: "30% top",
-        scrub: true
-      }
-    });
+    if (document.querySelector('.hero-section .container-wide')) {
+      gsap.to('.hero-section .container-wide', {
+        y: -100,
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    }
 
     // =============================================
     // GSAP SCROLL ANIMATIONS

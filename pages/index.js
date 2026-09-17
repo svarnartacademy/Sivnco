@@ -5,11 +5,7 @@ import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import StartProjectButton from '@/components/demo'
 
-// Three.js uses browser-only APIs — must skip SSR
-const FlowGradientHero = dynamic(
-  () => import('../components/ui/flow-gradient-hero-section'),
-  { ssr: false }
-)
+
 
 // Mobile-responsive overrides injected directly from Next.js (always fresh, not from index.html)
 const MOBILE_CSS = `
@@ -656,8 +652,7 @@ export default function Home({ bodyHTML, inlineScript }) {
       <Script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" strategy="afterInteractive" />
       {/* model-viewer loaded globally via pages/_document.js as proper type="module" */}
 
-      {/* Animated hero background */}
-      <FlowGradientHero />
+
 
       {/* Full site body */}
       <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
