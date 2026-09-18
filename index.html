@@ -3111,216 +3111,29 @@
     }
 
     /* ======================================================= */
-    /* 20-SEC EXECUTIVE RECRUITER REEL THEATER                */
+    /* EXECUTIVE SHOWCASE VIDEO (PURE VIDEO PRESENTATION)     */
     /* ======================================================= */
-    .recruiter-theater-section {
-      position: relative;
-    }
-    .recruiter-theater-card {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: rgba(14, 12, 10, 0.9);
-      border: 1px solid rgba(240, 237, 230, 0.14);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(212, 96, 10, 0.12);
-      transition: border-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    .recruiter-theater-card:hover {
-      border-color: rgba(212, 96, 10, 0.4);
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95), 0 0 70px rgba(212, 96, 10, 0.2);
-    }
-    .recruiter-video-wrapper {
-      position: relative;
+    .recruiter-video-frame {
       width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
       aspect-ratio: 16 / 9;
       background: #000;
-      overflow: hidden;
+      border: 1px solid rgba(240, 237, 230, 0.12);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 96, 10, 0.08);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
     }
-    .recruiter-cinema-video {
+    .recruiter-video-frame:hover {
+      border-color: rgba(212, 96, 10, 0.35);
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.9), 0 0 60px rgba(212, 96, 10, 0.15);
+    }
+    .recruiter-pure-video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      cursor: pointer;
-    }
-    .cinema-top-bar {
-      position: absolute;
-      top: 20px;
-      left: 24px;
-      right: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 5;
-      pointer-events: none;
-    }
-    .cinema-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: rgba(10, 9, 6, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 100px;
-      font-family: var(--f-mono);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #F0EDE6;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .cinema-badge .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-    }
-    .cinema-specs {
-      font-family: var(--f-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: rgba(240, 237, 230, 0.75);
-      background: rgba(10, 9, 6, 0.65);
-      padding: 6px 14px;
-      border-radius: 100px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .cinema-specs .sep {
-      margin: 0 4px;
-      color: var(--accent);
-    }
-    .cinema-controls-bar {
-      position: absolute;
-      bottom: 20px;
-      left: 24px;
-      right: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 5;
-    }
-    .cinema-left-controls, .cinema-right-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .cinema-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 18px;
-      border-radius: 100px;
-      font-family: var(--f-mono);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.18) !important;
-    }
-    .cinema-btn.primary-btn {
-      background: linear-gradient(135deg, rgba(212, 96, 10, 0.9), rgba(180, 70, 0, 0.95)) !important;
-      color: #FFF !important;
-      border: 1px solid rgba(255, 255, 255, 0.25) !important;
-      box-shadow: 0 4px 18px rgba(212, 96, 10, 0.4);
-    }
-    .cinema-btn.primary-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(212, 96, 10, 0.6);
-    }
-    .cinema-btn.audio-btn, .cinema-btn.icon-only-btn {
-      background: rgba(14, 12, 10, 0.8) !important;
-      color: #F0EDE6 !important;
-    }
-    .cinema-btn.audio-btn:hover, .cinema-btn.icon-only-btn:hover {
-      background: rgba(255, 255, 255, 0.12) !important;
-      border-color: rgba(212, 96, 10, 0.5) !important;
-      color: #FFF !important;
-    }
-    .theater-proof-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 2rem;
-      background: rgba(10, 9, 6, 0.95);
-      border-top: 1px solid rgba(240, 237, 230, 0.08);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .proof-bar-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .proof-bar-num {
-      font-family: var(--f-display);
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .proof-bar-label {
-      font-family: var(--f-mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .proof-bar-divider {
-      width: 1px;
-      height: 28px;
-      background: rgba(240, 237, 230, 0.1);
-    }
-    .proof-bar-action .proof-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 18px;
-      background: rgba(240, 237, 230, 0.06);
-      border: 1px solid rgba(240, 237, 230, 0.15);
-      border-radius: 100px;
-      font-family: var(--f-mono);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--text-main);
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-    .proof-bar-action .proof-btn:hover {
-      background: var(--accent);
-      color: #FFF;
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(212, 96, 10, 0.35);
-    }
-    @media (max-width: 768px) {
-      .cinema-specs { display: none; }
-      .cinema-top-bar { top: 12px; left: 14px; right: 14px; }
-      .cinema-controls-bar { bottom: 12px; left: 14px; right: 14px; }
-      .cinema-btn { padding: 7px 12px; font-size: 0.6rem; }
-      .proof-bar-divider { display: none; }
-      .theater-proof-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
-        padding: 1.2rem;
-      }
-      .proof-bar-action {
-        grid-column: span 2;
-        text-align: center;
-      }
-      .proof-bar-action .proof-btn {
-        width: 100%;
-        justify-content: center;
-      }
     }
 
     /* Cascading Overlapping Strategy Cards (Challenge / Approach / Outcome) */
@@ -3639,10 +3452,6 @@
             </div>
 
             <div class="hero-cta-row gs-fade">
-              <a href="#executive-reel" class="nav-cta" style="font-size:0.68rem;background:linear-gradient(135deg, rgba(212, 96, 10, 0.45) 0%, rgba(212, 96, 10, 0.18) 100%);border:1px solid rgba(212,96,10,0.5)!important;" aria-label="Watch 20-second executive reel">
-                <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;margin-right:6px;"></span>
-                ▶ Watch 20s Reel
-              </a>
               <a href="#work" class="nav-cta" style="font-size: 0.68rem;">View selected work &rarr;</a>
               <a href="/resume.pdf" download="HP_Shivaraj_Resume_2026.pdf" class="nav-cta" style="font-size:0.68rem;background:var(--glass-bg);" aria-label="Download H P Shivaraj resume PDF">&darr;&nbsp;Download r&eacute;sum&eacute;</a>
               <a href="https://www.linkedin.com/in/shivaraj-designer/" target="_blank" rel="noopener noreferrer" class="hero-scroll-cta" aria-label="View LinkedIn profile">
@@ -3743,104 +3552,22 @@
       </div>
     </section>
 
-    <!-- 20-SEC EXECUTIVE RECRUITER REEL THEATER -->
-    <section class="section recruiter-theater-section" id="executive-reel" style="padding: clamp(5rem, 10vh, 8rem) 0 clamp(4rem, 8vh, 6rem); position: relative; overflow: hidden; background: radial-gradient(circle at 50% 15%, rgba(212, 96, 10, 0.08) 0%, rgba(10, 9, 6, 0.96) 65%); border-bottom: 1px solid var(--glass-border);">
+    <!-- EXECUTIVE SHOWCASE VIDEO -->
+    <section class="section" id="executive-reel" style="padding: clamp(2rem, 5vh, 4rem) 0 clamp(3rem, 6vh, 5rem);">
       <div class="container-wide">
-        <!-- Section Header -->
-        <div class="recruiter-theater-header gs-fade" style="text-align: center; max-width: 840px; margin: 0 auto 3rem;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(212, 96, 10, 0.12); border: 1px solid rgba(212, 96, 10, 0.35); border-radius: 999px; font-family: var(--f-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem;">
-            <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></span>
-            Executive Showcase &middot; 20 Seconds
-          </div>
-          <h2 style="font-family: var(--f-display); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.1; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.02em;">
-            Proof Over Claims.
-          </h2>
-          <p style="font-family: var(--f-serif); font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); margin: 0 auto;">
-            Tangible commercial scale, 15+ SKUs clean-label packaging architecture, live industrial press run proofs, and fine art mastery — synthesized for design leaders and recruiters.
-          </p>
-        </div>
-
-        <!-- Cinema Theater Card -->
-        <div class="recruiter-theater-card gs-fade">
-          <div class="recruiter-video-wrapper">
-            <video
-              id="recruiterReelVideo"
-              class="recruiter-cinema-video"
-              playsinline
-              loop
-              muted
-              poster="/images/recruiter_reel_poster.jpg"
-              preload="metadata"
-            >
-              <source src="/videos/recruiter_reel.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
-
-            <!-- Top Overlay Badge -->
-            <div class="cinema-top-bar">
-              <div class="cinema-badge">
-                <span class="live-dot"></span>
-                <span>H P SHIVARAJ // ART DIRECTOR &middot; BRAND LEAD</span>
-              </div>
-              <div class="cinema-specs">
-                <span>1080P MASTER</span>
-                <span class="sep">&middot;</span>
-                <span>20 SECONDS</span>
-                <span class="sep">&middot;</span>
-                <span>STEREO BGM</span>
-              </div>
-            </div>
-
-            <!-- Sleek Interactive Controller Bar (Bottom) -->
-            <div class="cinema-controls-bar">
-              <div class="cinema-left-controls">
-                <button type="button" id="reelPlayToggle" class="cinema-btn primary-btn" aria-label="Play or pause video with sound">
-                  <svg id="reelPlayIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  <svg id="reelPauseIcon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                  <span id="reelPlayText">PLAY WITH SOUND</span>
-                </button>
-
-                <button type="button" id="reelAudioToggle" class="cinema-btn audio-btn" aria-label="Toggle Sound">
-                  <svg id="reelMuteIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                  <svg id="reelUnmuteIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                  <span id="reelAudioText">Muted</span>
-                </button>
-              </div>
-
-              <div class="cinema-right-controls">
-                <button type="button" id="reelFullscreenBtn" class="cinema-btn icon-only-btn" aria-label="Toggle Fullscreen">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Metric Proof Badges Strip -->
-          <div class="theater-proof-bar">
-            <div class="proof-bar-item">
-              <span class="proof-bar-num">+176%</span>
-              <span class="proof-bar-label">D2C Revenue Impact</span>
-            </div>
-            <div class="proof-bar-divider"></div>
-            <div class="proof-bar-item">
-              <span class="proof-bar-num">15+ SKUs</span>
-              <span class="proof-bar-label">Packaging Architecture</span>
-            </div>
-            <div class="proof-bar-divider"></div>
-            <div class="proof-bar-item">
-              <span class="proof-bar-num">CAVA BFA</span>
-              <span class="proof-bar-label">Gold Medalist &middot; Topper</span>
-            </div>
-            <div class="proof-bar-divider"></div>
-            <div class="proof-bar-item">
-              <span class="proof-bar-num">End-to-End</span>
-              <span class="proof-bar-label">Press Audits &amp; Motion</span>
-            </div>
-            <div class="proof-bar-divider"></div>
-            <div class="proof-bar-action">
-              <a href="/resume.pdf" download="HP_Shivaraj_Resume_2026.pdf" class="proof-btn">&darr;&nbsp;Download R&eacute;sum&eacute;</a>
-            </div>
-          </div>
+        <div class="recruiter-video-frame gs-fade">
+          <video
+            class="recruiter-pure-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            webkit-playsinline
+            preload="auto"
+            poster="/images/recruiter_reel_poster.jpg"
+          >
+            <source src="/videos/recruiter_reel.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -6010,109 +5737,6 @@
           }
         });
       });
-    })();
-
-    // Recruiter Cinema Reel Interactive Controller
-    (function() {
-      var video = document.getElementById('recruiterReelVideo');
-      var playBtn = document.getElementById('reelPlayToggle');
-      var playIcon = document.getElementById('reelPlayIcon');
-      var pauseIcon = document.getElementById('reelPauseIcon');
-      var playText = document.getElementById('reelPlayText');
-      var audioBtn = document.getElementById('reelAudioToggle');
-      var muteIcon = document.getElementById('reelMuteIcon');
-      var unmuteIcon = document.getElementById('reelUnmuteIcon');
-      var audioText = document.getElementById('reelAudioText');
-      var fsBtn = document.getElementById('reelFullscreenBtn');
-
-      if (!video) return;
-
-      function updatePlayState() {
-        if (video.paused) {
-          if (playIcon) playIcon.style.display = 'block';
-          if (pauseIcon) pauseIcon.style.display = 'none';
-          if (playText) playText.textContent = video.muted ? 'PLAY WITH SOUND' : 'RESUME';
-        } else {
-          if (playIcon) playIcon.style.display = 'none';
-          if (pauseIcon) pauseIcon.style.display = 'block';
-          if (playText) playText.textContent = video.muted ? 'UNMUTE SOUND' : 'PAUSE';
-        }
-      }
-
-      function updateAudioState() {
-        if (video.muted) {
-          if (muteIcon) muteIcon.style.display = 'block';
-          if (unmuteIcon) unmuteIcon.style.display = 'none';
-          if (audioText) audioText.textContent = 'Muted';
-        } else {
-          if (muteIcon) muteIcon.style.display = 'none';
-          if (unmuteIcon) unmuteIcon.style.display = 'block';
-          if (audioText) audioText.textContent = 'Sound ON';
-        }
-      }
-
-      if (playBtn) {
-        playBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          if (video.paused) {
-            video.muted = false;
-            updateAudioState();
-            video.play().catch(function() {});
-          } else if (video.muted) {
-            video.muted = false;
-            updateAudioState();
-          } else {
-            video.pause();
-          }
-          updatePlayState();
-        });
-      }
-
-      if (audioBtn) {
-        audioBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          video.muted = !video.muted;
-          updateAudioState();
-          updatePlayState();
-        });
-      }
-
-      if (fsBtn) {
-        fsBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          if (video.requestFullscreen) {
-            video.requestFullscreen();
-          } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-          }
-        });
-      }
-
-      video.addEventListener('click', function() {
-        if (video.paused) {
-          video.play().catch(function() {});
-        } else {
-          video.pause();
-        }
-        updatePlayState();
-      });
-
-      video.addEventListener('play', updatePlayState);
-      video.addEventListener('pause', updatePlayState);
-
-      // Autoplay preview on scroll
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              video.play().catch(function() {});
-            } else {
-              video.pause();
-            }
-          });
-        }, { threshold: 0.25 });
-        obs.observe(video);
-      }
     })();
   </script>
 </body>
