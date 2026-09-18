@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
-    <title>H P Shivaraj — Art Director & Brand Lead</title>
+    <title>H P Shivaraj — Art Director & Visual Practitioner</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
       * {
@@ -16,8 +16,8 @@
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background-color: #0a0a0a;
-        color: #f4f4f5;
+        background-color: #0a0906;
+        color: #f0ede6;
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         -webkit-font-smoothing: antialiased;
       }
@@ -26,21 +26,21 @@
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: radial-gradient(circle at 50% 30%, #17171c 0%, #0a0a0a 70%);
+        background: radial-gradient(ellipse 70% 60% at 50% 25%, #181510 0%, #0a0906 75%);
       }
 
-      /* Subtle persistent ambient grid */
+      /* Subtle atelier noise / ambient grid */
       .ambient-grid {
         position: absolute;
         inset: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 80px 80px;
-        opacity: 0.4;
+        background-image: linear-gradient(rgba(240, 237, 230, 0.025) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(240, 237, 230, 0.025) 1px, transparent 1px);
+        background-size: 96px 96px;
+        opacity: 0.5;
         pointer-events: none;
       }
 
-      /* Top persistent brand bar */
+      /* Persistent minimalist brand header */
       .top-nav {
         position: absolute;
         top: 48px;
@@ -56,35 +56,29 @@
         align-items: center;
         gap: 12px;
         font-weight: 700;
-        font-size: 20px;
-        letter-spacing: -0.02em;
-        color: #f4f4f5;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+        color: #f0ede6;
       }
       .brand-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #ff4d30;
-      }
-      .recruiter-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 18px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 100px;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #e4e4e7;
-      }
-      .recruiter-pulse {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: #22c55e;
+        background-color: #d4600a;
+      }
+      .discipline-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(240, 237, 230, 0.05);
+        border: 1px solid rgba(240, 237, 230, 0.12);
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #d4d4d8;
       }
 
       /* Scene Containers */
@@ -101,53 +95,81 @@
         z-index: 10;
       }
 
-      /* Scene 1: The Hook */
+      /* Shared Typographic Foundations */
+      .scene-kicker {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: #eab308;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .scene-headline {
+        font-size: 58px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+        line-height: 1.05;
+      }
+      .scene-sub {
+        font-size: 20px;
+        font-weight: 400;
+        color: #d4d4d8;
+        line-height: 1.6;
+        margin-top: 10px;
+      }
+
+      /* SCENE 1: Identity & Academic Pedigree */
       #scene-1 {
         text-align: center;
       }
-      .s1-eyebrow {
+      .s1-kicker {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 8px 20px;
-        background: rgba(234, 179, 8, 0.12);
-        border: 1px solid rgba(234, 179, 8, 0.35);
+        gap: 8px;
+        padding: 6px 18px;
+        background: rgba(234, 179, 8, 0.1);
+        border: 1px solid rgba(234, 179, 8, 0.3);
         border-radius: 100px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
-        letter-spacing: 0.08em;
-        color: #fbbf24;
+        letter-spacing: 0.12em;
+        color: #eab308;
         text-transform: uppercase;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
       }
-      .s1-title {
-        font-size: 110px;
+      .s1-name {
+        font-size: 96px;
         font-weight: 800;
-        line-height: 0.95;
+        line-height: 0.96;
         letter-spacing: -0.04em;
         color: #ffffff;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
       }
-      .s1-subtitle {
-        font-size: 38px;
+      .s1-roles {
+        font-size: 32px;
         font-weight: 500;
-        letter-spacing: -0.02em;
-        color: #e4e4e7;
-        margin-bottom: 48px;
+        letter-spacing: -0.01em;
+        color: #f0ede6;
+        margin-bottom: 40px;
       }
-      .s1-badge-cluster {
+      .s1-roles span {
+        color: #d4600a;
+        margin: 0 10px;
+      }
+      .s1-badge-card {
         display: flex;
         align-items: center;
-        gap: 24px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        gap: 20px;
+        background: rgba(240, 237, 230, 0.04);
+        border: 1px solid rgba(240, 237, 230, 0.12);
         border-radius: 16px;
         padding: 16px 28px;
         backdrop-filter: blur(12px);
       }
-      .s1-plate-preview {
-        width: 64px;
-        height: 64px;
+      .s1-avatar-preview {
+        width: 60px;
+        height: 60px;
         border-radius: 10px;
         object-fit: cover;
         border: 1px solid rgba(234, 179, 8, 0.4);
@@ -155,296 +177,258 @@
       .s1-badge-text {
         text-align: left;
       }
-      .s1-badge-title {
-        font-size: 18px;
+      .s1-honor-title {
+        font-size: 17px;
         font-weight: 700;
-        color: #fbbf24;
+        color: #eab308;
         letter-spacing: 0.02em;
       }
-      .s1-badge-desc {
-        font-size: 15px;
-        font-weight: 400;
+      .s1-honor-desc {
+        font-size: 14px;
         color: #d4d4d8;
+        margin-top: 2px;
       }
 
-      /* Scene 2: Commercial Packaging Architecture */
+      /* SCENE 2: Fine Art Foundation & Svarnart Academy */
       #scene-2 {
         align-items: flex-start;
       }
-      .s2-header-block {
-        margin-bottom: 32px;
-      }
-      .s2-kicker {
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        color: #ff6b52;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-      }
-      .s2-headline {
-        font-size: 64px;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        color: #ffffff;
-      }
-      .s2-content-grid {
+      .s2-grid {
         display: grid;
-        grid-template-columns: 1080px 1fr;
+        grid-template-columns: 880px 840px;
         gap: 40px;
         width: 100%;
         height: 520px;
+        margin-top: 28px;
       }
-      .s2-hero-card {
+      .s2-plate-card {
         position: relative;
         border-radius: 20px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        background: #121216;
-        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(240, 237, 230, 0.12);
+        background: #11100d;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
       }
-      .s2-hero-img {
+      .s2-plate-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-      .s2-card-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 24px 32px;
-        background: linear-gradient(to top, rgba(10, 10, 10, 0.95), transparent);
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-      }
-      .s2-card-label {
-        font-size: 22px;
-        font-weight: 700;
-        color: #ffffff;
-      }
-      .s2-card-sub {
-        font-size: 15px;
-        color: #d4d4d8;
-      }
-      .s2-stats-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 20px;
-      }
-      .s2-stat-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 16px;
-        padding: 26px 32px;
-        backdrop-filter: blur(10px);
-      }
-      .s2-stat-number {
-        font-size: 56px;
-        font-weight: 800;
-        color: #fbbf24;
-        line-height: 1;
-        margin-bottom: 8px;
-        letter-spacing: -0.02em;
-      }
-      .s2-stat-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 4px;
-      }
-      .s2-stat-detail {
-        font-size: 14px;
-        color: #d4d4d8;
-      }
-      .s2-stat-card.featured {
-        background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(255, 77, 48, 0.08));
-        border-color: rgba(234, 179, 8, 0.4);
-      }
-
-      /* Scene 3: Production & Motion Direction */
-      #scene-3 {
-        align-items: flex-start;
-        opacity: 0;
-      }
-      .s3-headline-wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
-        margin-bottom: 32px;
-      }
-      .s3-video-deck {
-        display: grid;
-        grid-template-columns: 860px 860px;
-        gap: 40px;
-        width: 100%;
-        height: 520px;
-      }
-      .s3-video-card {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        background: #111114;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-      }
-      .s3-video-el {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .s3-video-badge {
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        background: rgba(0, 0, 0, 0.75);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        color: #f4f4f5;
-        text-transform: uppercase;
-        backdrop-filter: blur(8px);
-      }
-      .s3-video-caption {
+      .s2-plate-overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         padding: 24px 28px;
-        background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+        background: linear-gradient(to top, rgba(10, 9, 6, 0.95), transparent);
+      }
+      .s2-plate-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .s2-plate-meta {
+        font-size: 14px;
+        color: #d4d4d8;
+        margin-top: 4px;
+      }
+      .s2-sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .s2-text-card {
+        background: rgba(240, 237, 230, 0.04);
+        border: 1px solid rgba(240, 237, 230, 0.1);
+        border-radius: 18px;
+        padding: 32px 36px;
+        backdrop-filter: blur(10px);
+      }
+      .s2-pill-tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: #eab308;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .s2-card-head {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 10px;
+        line-height: 1.25;
+      }
+      .s2-card-body {
+        font-size: 16px;
+        line-height: 1.65;
+        color: #d4d4d8;
+      }
+
+      /* SCENE 3: Packaging Architecture & Production */
+      #scene-3 {
+        align-items: flex-start;
+      }
+      .s3-grid {
+        display: grid;
+        grid-template-columns: 1040px 680px;
+        gap: 40px;
+        width: 100%;
+        height: 520px;
+        margin-top: 28px;
+      }
+      .s3-shelf-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(240, 237, 230, 0.12);
+        background: #11100d;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      }
+      .s3-shelf-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .s3-details-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .s3-proof-card {
+        position: relative;
+        height: 240px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(240, 237, 230, 0.12);
+        background: #11100d;
+      }
+      .s3-proof-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .s3-spec-card {
+        background: rgba(240, 237, 230, 0.04);
+        border: 1px solid rgba(240, 237, 230, 0.1);
+        border-radius: 18px;
+        padding: 28px 32px;
+      }
+      .s3-spec-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+      .s3-spec-desc {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #d4d4d8;
+      }
+
+      /* SCENE 4: Motion Direction & Campaigns */
+      #scene-4 {
+        align-items: flex-start;
+        opacity: 0;
+      }
+      .s4-deck {
+        display: grid;
+        grid-template-columns: 860px 860px;
+        gap: 40px;
+        width: 100%;
+        height: 520px;
+        margin-top: 28px;
+      }
+      .s4-video-box {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(240, 237, 230, 0.12);
+        background: #11100d;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      }
+      .s4-video-tag {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background: rgba(10, 9, 6, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #f0ede6;
+        text-transform: uppercase;
+        backdrop-filter: blur(8px);
+      }
+      .s4-video-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 24px 28px;
+        background: linear-gradient(to top, rgba(10, 9, 6, 0.92), transparent);
         font-size: 18px;
         font-weight: 600;
         color: #ffffff;
       }
-      .s3-proof-stamp {
-        padding: 10px 24px;
-        background: #ff4d30;
-        border-radius: 100px;
-        color: #ffffff;
-        font-weight: 800;
-        font-size: 15px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
 
-      /* Scene 4: Bento Capabilities */
-      #scene-4 {
-        align-items: center;
-        text-align: center;
-      }
-      .s4-bento-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 540px);
-        gap: 30px;
-        width: 100%;
-        margin-top: 48px;
-      }
-      .s4-bento-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 20px;
-        padding: 40px 36px;
-        text-align: left;
-        backdrop-filter: blur(12px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 380px;
-      }
-      .s4-num {
-        font-size: 20px;
-        font-weight: 800;
-        color: #fbbf24;
-        margin-bottom: 20px;
-        letter-spacing: 0.05em;
-      }
-      .s4-card-title {
-        font-size: 28px;
-        font-weight: 700;
-        color: #ffffff;
-        line-height: 1.2;
-        margin-bottom: 16px;
-      }
-      .s4-card-desc {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #d4d4d8;
-      }
-      .s4-card-tag {
-        display: inline-block;
-        margin-top: 24px;
-        font-size: 13px;
-        font-weight: 600;
-        color: #a1a1aa;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      /* Scene 5: Recruiter CTA */
+      /* SCENE 5: The Integrated Practice */
       #scene-5 {
         text-align: center;
       }
-      .s5-avail-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 24px;
-        background: rgba(34, 197, 94, 0.12);
-        border: 1px solid rgba(34, 197, 94, 0.35);
-        border-radius: 100px;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        color: #4ade80;
-        text-transform: uppercase;
-        margin-bottom: 28px;
-      }
-      .s5-headline {
+      .s5-title {
         font-size: 80px;
         font-weight: 800;
         line-height: 1.05;
         letter-spacing: -0.03em;
         color: #ffffff;
-        max-width: 1400px;
-        margin-bottom: 40px;
+        margin-bottom: 24px;
       }
-      .s5-url-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 20px;
-        padding: 32px 64px;
+      .s5-disciplines-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 44px;
+      }
+      .s5-disc-item {
+        font-size: 20px;
+        font-weight: 600;
+        color: #f0ede6;
+        letter-spacing: 0.02em;
+      }
+      .s5-disc-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #d4600a;
+      }
+      .s5-domain-card {
         display: inline-flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
+        background: rgba(240, 237, 230, 0.04);
+        border: 1px solid rgba(240, 237, 230, 0.14);
+        border-radius: 20px;
+        padding: 28px 60px;
         backdrop-filter: blur(16px);
-        margin-bottom: 32px;
       }
       .s5-domain {
-        font-size: 52px;
+        font-size: 48px;
         font-weight: 800;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.02em;
         color: #ffffff;
       }
-      .s5-meta {
-        font-size: 18px;
+      .s5-location {
+        font-size: 16px;
+        color: #eab308;
         font-weight: 500;
-        color: #fbbf24;
-        letter-spacing: 0.02em;
-      }
-      .s5-contact {
-        font-size: 20px;
-        font-weight: 500;
-        color: #e4e4e7;
-      }
-      .s5-contact strong {
-        color: #ffffff;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
       }
     </style>
   </head>
@@ -457,192 +441,165 @@
       data-width="1920"
       data-height="1080"
     >
-      <!-- Persistent Elements -->
       <div id="ambient-grid" class="ambient-grid"></div>
       <header id="top-nav" class="top-nav">
         <div class="brand-mark">
           <div class="brand-dot"></div>
           <span>H P SHIVARAJ</span>
         </div>
-        <div class="recruiter-tag">
-          <span class="recruiter-pulse"></span>
-          <span>EXECUTIVE RECRUITER REEL · 2026</span>
+        <div class="discipline-pill">
+          <span>Art Director &middot; Brand &middot; Packaging &middot; Fine Art</span>
         </div>
       </header>
 
-      <!-- Audio Elements -->
-      <audio id="bgm" data-start="0" data-duration="20" data-volume="0.85" src="assets/music/bgm.mp3"></audio>
-      <audio id="sfx-click-1" data-start="0.8" data-duration="0.09" data-volume="0.4" src="assets/sfx/click.ogg"></audio>
-      <audio id="sfx-click-2" data-start="8.74" data-duration="0.09" data-volume="0.5" src="assets/sfx/click.ogg"></audio>
-      <audio id="sfx-swoosh-1" data-start="13.11" data-duration="0.37" data-volume="0.4" src="assets/sfx/swoosh.ogg"></audio>
-      <audio id="sfx-click-3" data-start="18.56" data-duration="0.09" data-volume="0.5" src="assets/sfx/click.ogg"></audio>
+      <!-- Gentle ambient audio track -->
+      <audio id="bgm" data-start="0" data-duration="20" data-volume="0.65" src="assets/music/bgm.mp3"></audio>
 
-      <!-- SCENE 1: The Hook (0.0s – 4.5s) -->
-      <section id="scene-1" class="scene clip" data-start="0" data-duration="4.5">
-        <div id="s1-pill" class="s1-eyebrow">Art Direction & Brand Architecture</div>
-        <h1 id="s1-name" class="s1-title">H P SHIVARAJ</h1>
-        <p id="s1-role" class="s1-subtitle">Brand Lead · Packaging Architect · Visualizer</p>
-        <div id="s1-badge" class="s1-badge-cluster">
-          <img id="s1-img" src="assets/media/painting_18.jpg" alt="Fine Art Preview" class="s1-plate-preview" />
+      <!-- SCENE 1: Identity & Academic Pedigree (0.0s – 4.2s) -->
+      <section id="scene-1" class="scene clip" data-start="0" data-duration="4.2">
+        <div id="s1-kicker" class="s1-kicker">Visual Direction &middot; Brand Architecture</div>
+        <h1 id="s1-name" class="s1-name">H P SHIVARAJ</h1>
+        <p id="s1-roles" class="s1-roles">Art Director<span>&middot;</span>Brand Lead<span>&middot;</span>Visual Practitioner</p>
+        <div id="s1-badge" class="s1-badge-card">
+          <img id="s1-avatar" src="assets/media/painting_18.jpg" alt="Art Study" class="s1-avatar-preview" />
           <div class="s1-badge-text">
-            <div class="s1-badge-title">CAVA Mysore Gold Medalist & Topper</div>
-            <div class="s1-badge-desc">Fine Art Pedigree Meets Commercial Brand Strategy</div>
+            <div class="s1-honor-title">CAVA Mysore &middot; BFA Applied Arts Gold Medalist &amp; Topper</div>
+            <div class="s1-honor-desc">Classical Fine Art Pedigree &middot; Modern Commercial Practice</div>
           </div>
         </div>
       </section>
 
-      <!-- SCENE 2: Commercial Scale (4.5s – 9.5s) -->
-      <section id="scene-2" class="scene clip" data-start="4.5" data-duration="5.0">
-        <div id="s2-header-block" class="s2-header-block">
-          <div class="s2-kicker">Case Study // Commercial Scale</div>
-          <h2 class="s2-headline">15+ SKUs Clean-Label Packaging System</h2>
+      <!-- SCENE 2: Fine Art Foundation & Atelier Mentorship (4.2s – 8.2s) -->
+      <section id="scene-2" class="scene clip" data-start="4.2" data-duration="4.0">
+        <div class="scene-kicker">Foundation &amp; Atelier</div>
+        <h2 class="scene-headline">Fine Art Practice &amp; Academic Rigor</h2>
+        <div class="s2-grid">
+          <div id="s2-card-1" class="s2-plate-card">
+            <img id="s2-img-1" src="assets/media/painting_6.jpg" alt="Classical Form Study" class="s2-plate-img" />
+            <div class="s2-plate-overlay">
+              <div class="s2-plate-title">Classical Form &amp; Drapery Study</div>
+              <div class="s2-plate-meta">Traditional Indian Form &amp; Academic Drawing &middot; CAVA Mysore</div>
+            </div>
+          </div>
+          <div class="s2-sidebar">
+            <div id="s2-text-1" class="s2-text-card">
+              <span class="s2-pill-tag">Pedagogy</span>
+              <div class="s2-card-head">Bridging Heritage &amp; Contemporary Design</div>
+              <p class="s2-card-body">Classical academic drawing, anatomy, chiaroscuro, and watercolor plein-air studies informing modern visual hierarchy.</p>
+            </div>
+            <div id="s2-text-2" class="s2-text-card">
+              <span class="s2-pill-tag">Mentorship</span>
+              <div class="s2-card-head">Svarnart Academy Bengaluru</div>
+              <p class="s2-card-body">Co-founded with a structured fine art curriculum, mentoring emerging artists in foundational values and design thinking.</p>
+            </div>
+          </div>
         </div>
-        <div class="s2-content-grid">
-          <div id="s2-hero-card" class="s2-hero-card">
-            <img id="s2-hero-img" src="assets/media/hero_packaging.jpg" alt="Jus'Amazin Shelf System" class="s2-hero-img" />
-            <div class="s2-card-overlay">
-              <div>
-                <div class="s2-card-label">Jus'Amazin FMCG Brand Portfolio</div>
-                <div class="s2-card-sub">Nut Butters, Bars & Beverages — Shelf Hierarchy Architecture</div>
+      </section>
+
+      <!-- SCENE 3: Packaging Architecture & Print Production (8.2s – 12.2s) -->
+      <section id="scene-3" class="scene clip" data-start="8.2" data-duration="4.0">
+        <div class="scene-kicker">Commercial Practice</div>
+        <h2 class="scene-headline">Packaging Systems &amp; Print Engineering</h2>
+        <div class="s3-grid">
+          <div id="s3-shelf-card" class="s3-shelf-card">
+            <img id="s3-shelf-img" src="assets/media/hero_packaging.jpg" alt="Packaging Architecture" class="s3-shelf-img" />
+            <div class="s2-plate-overlay">
+              <div class="s2-plate-title">Jus'Amazin Multi-Category Packaging Architecture</div>
+              <div class="s2-plate-meta">15+ SKUs &middot; Clean-Label Spreads, Energy Bars, Beverages &amp; Gifting</div>
+            </div>
+          </div>
+          <div class="s3-details-col">
+            <div id="s3-proof-card" class="s3-proof-card">
+              <img id="s3-proof-img" src="assets/media/proof_print_01.jpg" alt="Press Run Proof" class="s3-proof-img" />
+              <div class="s2-plate-overlay" style="padding: 16px 20px;">
+                <div style="font-size:16px;font-weight:700;color:#FFF;">Factory Press Run Proofs</div>
+                <div style="font-size:13px;color:#d4d4d8;">Structural Dielines &amp; Pantone Audits</div>
               </div>
             </div>
-          </div>
-          <div class="s2-stats-column">
-            <div id="s2-stat-1" class="s2-stat-card featured">
-              <div class="s2-stat-number">+176%</div>
-              <div class="s2-stat-title">D2C Revenue Growth</div>
-              <div class="s2-stat-detail">Amazon PDP optimization & retail shelf transformation</div>
-            </div>
-            <div id="s2-stat-2" class="s2-stat-card">
-              <div class="s2-stat-number">15+ SKUs</div>
-              <div class="s2-stat-title">Concept to Commercial Press</div>
-              <div class="s2-stat-detail">Full dieline engineering and Pantone print audits</div>
-            </div>
-            <div id="s2-stat-3" class="s2-stat-card">
-              <div class="s2-stat-number">100%</div>
-              <div class="s2-stat-title">Clean-Label Integrity</div>
-              <div class="s2-stat-detail">Zero-filler transparent visual ingredient claims</div>
+            <div id="s3-spec-card" class="s3-spec-card">
+              <div class="s3-spec-title">Concept to Production</div>
+              <p class="s3-spec-desc">Food compliance regulations, transparent ingredient hierarchy, substrate selection, and on-press supervision.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SCENE 3: Production Rigor & Motion (Visual Container driven by GSAP, videos are direct timed children) -->
-      <section id="scene-3" class="scene">
-        <div class="s3-headline-wrap">
-          <div>
-            <div class="s2-kicker">Multi-Disciplinary Execution</div>
-            <h2 class="s2-headline">From Industrial Press to Screen</h2>
-          </div>
-          <div id="s3-proof-stamp" class="s3-proof-stamp">Proof Over Claims</div>
+      <!-- SCENE 4: Motion Direction & Campaigns (12.2s – 16.2s) -->
+      <section id="scene-4" class="scene">
+        <div style="width: 100%;">
+          <div class="scene-kicker">Visual Communication</div>
+          <h2 class="scene-headline">Campaigns, Motion &amp; 3D Direction</h2>
         </div>
-        <div class="s3-video-deck">
-          <div id="s3-card-left" class="s3-video-card">
-            <video id="vid-typewriter" class="s3-video-el" data-start="9.5" data-duration="5.0" data-media-start="0" data-volume="0" src="assets/media/typewriter.mp4" muted playsinline></video>
-            <div class="s3-video-badge">Motion Direction</div>
-            <div class="s3-video-caption">30-Second Kinetic Typewriter Film & Copy Direction</div>
+        <div class="s4-deck">
+          <div id="s4-box-left" class="s4-video-box">
+            <video id="vid-typewriter" style="width:100%;height:100%;object-fit:cover;display:block;" data-start="12.2" data-duration="4.0" data-media-start="0" data-volume="0" src="assets/media/typewriter.mp4" muted playsinline></video>
+            <div class="s4-video-tag">Motion Direction</div>
+            <div class="s4-video-caption">30-Sec Kinetic Film Direction &amp; Copy Architecture</div>
           </div>
-          <div id="s3-card-right" class="s3-video-card">
-            <video id="vid-press" class="s3-video-el" data-start="9.5" data-duration="5.0" data-media-start="0" data-volume="0" src="assets/media/press_wip.mp4" muted playsinline></video>
-            <div class="s3-video-badge">Print Engineering</div>
-            <div class="s3-video-caption">Live Factory Press Run Proofs & Registration Audits</div>
+          <div id="s4-box-right" class="s4-video-box">
+            <video id="vid-press" style="width:100%;height:100%;object-fit:cover;display:block;" data-start="12.2" data-duration="4.0" data-media-start="0" data-volume="0" src="assets/media/press_wip.mp4" muted playsinline></video>
+            <div class="s4-video-tag">Industrial Verification</div>
+            <div class="s4-video-caption">Live Factory Color Registration &amp; Print Press Audits</div>
           </div>
         </div>
       </section>
 
-      <!-- SCENE 4: Bento Capabilities (14.5s – 17.5s) -->
-      <section id="scene-4" class="scene clip" data-start="14.5" data-duration="3.0">
-        <div class="s2-kicker">Capabilities Overview</div>
-        <h2 class="s2-headline">Full-Stack Creative Leadership</h2>
-        <div class="s4-bento-grid">
-          <div id="s4-card-1" class="s4-bento-card">
-            <div>
-              <div class="s4-num">01</div>
-              <div class="s4-card-title">Packaging & Retail Systems</div>
-              <div class="s4-card-desc">Comprehensive dielines, food packaging compliance, shelf hierarchy, and multi-SKU retail expansion.</div>
-            </div>
-            <div class="s4-card-tag">FMCG · Clean-Label · D2C</div>
-          </div>
-          <div id="s4-card-2" class="s4-bento-card">
-            <div>
-              <div class="s4-num">02</div>
-              <div class="s4-card-title">Campaign & Motion Direction</div>
-              <div class="s4-card-desc">Kinetic brand films, 3D visualization, Amazon PDP conversion engines, and creative narrative.</div>
-            </div>
-            <div class="s4-card-tag">3D · Motion · Direction</div>
-          </div>
-          <div id="s4-card-3" class="s4-bento-card">
-            <div>
-              <div class="s4-num">03</div>
-              <div class="s4-card-title">Atelier Foundation & Code</div>
-              <div class="s4-card-desc">Gold Medal fine art oil painting mastery fused with modern digital web systems and Svarnart EdTech.</div>
-            </div>
-            <div class="s4-card-tag">Fine Art · Design Systems</div>
-          </div>
+      <!-- SCENE 5: The Integrated Practice (16.2s – 20.0s) -->
+      <section id="scene-5" class="scene clip" data-start="16.2" data-duration="3.8">
+        <div class="scene-kicker" style="margin-bottom: 20px;">The Complete Practice</div>
+        <h2 id="s5-title" class="s5-title">Art Direction Grounded in Fine Art Pedigree.</h2>
+        <div id="s5-disciplines" class="s5-disciplines-row">
+          <div class="s5-disc-item">Brand Systems</div>
+          <div class="s5-disc-dot"></div>
+          <div class="s5-disc-item">Packaging Architecture</div>
+          <div class="s5-disc-dot"></div>
+          <div class="s5-disc-item">Atelier Fine Art</div>
+          <div class="s5-disc-dot"></div>
+          <div class="s5-disc-item">Motion &amp; 3D</div>
         </div>
-      </section>
-
-      <!-- SCENE 5: Recruiter CTA (17.5s – 20.0s) -->
-      <section id="scene-5" class="scene clip" data-start="17.5" data-duration="2.5">
-        <div id="s5-pill" class="s5-avail-pill">
-          <span class="recruiter-pulse"></span>
-          <span>Available for Hire Worldwide</span>
-        </div>
-        <h2 id="s5-head" class="s5-headline">Open for Art Direction & Head of Design Roles</h2>
-        <div id="s5-card" class="s5-url-card">
+        <div id="s5-card" class="s5-domain-card">
           <div class="s5-domain">sivnco.in</div>
-          <div class="s5-meta">Complete Interactive Portfolio & Deep-Dive Case Studies</div>
-        </div>
-        <div class="s5-contact">
-          Inquiries: <strong>sivncodot@gmail.com</strong>
+          <div class="s5-location">Bengaluru &middot; Available for Art Direction &amp; Brand Leadership</div>
         </div>
       </section>
     </div>
 
-    <!-- GSAP Master Animation Controller -->
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // Scene 1 Timeline (0.0s – 4.5s)
-      tl.fromTo("#s1-pill", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.2);
-      tl.fromTo("#s1-name", { opacity: 0, scale: 0.94, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.5);
-      tl.fromTo("#s1-role", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.9);
-      tl.fromTo("#s1-badge", { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power2.out" }, 1.4);
-      tl.to("#scene-1", { opacity: 0, x: -50, duration: 0.45, ease: "power2.in" }, 4.05);
+      // Scene 1 Timeline (0.0s – 4.2s)
+      tl.fromTo("#s1-kicker", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.2);
+      tl.fromTo("#s1-name", { opacity: 0, scale: 0.96, y: 25 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.5);
+      tl.fromTo("#s1-roles", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.9);
+      tl.fromTo("#s1-badge", { opacity: 0, y: 20, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power2.out" }, 1.3);
+      tl.to("#scene-1", { opacity: 0, x: -40, duration: 0.45, ease: "power2.in" }, 3.75);
 
-      // Scene 2 Timeline (4.5s – 9.5s)
-      tl.fromTo("#scene-2", { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 4.5);
-      tl.fromTo("#s2-hero-card", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, 4.7);
-      tl.fromTo("#s2-stat-2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 5.4);
-      tl.fromTo("#s2-stat-3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 6.5);
-      // Beat-locked at 8.74s: Revenue Growth Stat pop!
-      tl.fromTo("#s2-stat-1", { opacity: 0, scale: 0.85, y: 20 }, { opacity: 1, scale: 1.05, y: 0, duration: 0.35, ease: "back.out(1.7)" }, 8.35);
-      tl.to("#s2-stat-1", { scale: 1.0, duration: 0.25, overwrite: "auto" }, 8.75);
-      tl.to("#scene-2", { opacity: 0, scale: 0.97, duration: 0.45, ease: "power2.in" }, 9.05);
+      // Scene 2 Timeline (4.2s – 8.2s)
+      tl.fromTo("#scene-2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 4.2);
+      tl.fromTo("#s2-card-1", { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, 4.4);
+      tl.fromTo("#s2-text-1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 4.8);
+      tl.fromTo("#s2-text-2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 5.4);
+      tl.to("#scene-2", { opacity: 0, scale: 0.98, duration: 0.45, ease: "power2.in" }, 7.75);
 
-      // Scene 3 Timeline (9.5s – 14.5s)
-      tl.fromTo("#scene-3", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 9.5);
-      tl.fromTo("#s3-card-left", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 9.8);
-      tl.fromTo("#s3-card-right", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 10.2);
-      // Beat-locked at 13.11s: Proof Stamp Pulse
-      tl.fromTo("#s3-proof-stamp", { scale: 0.8, opacity: 0 }, { scale: 1.15, opacity: 1, duration: 0.3, ease: "power3.out" }, 12.8);
-      tl.to("#s3-proof-stamp", { scale: 1.0, duration: 0.25, overwrite: "auto" }, 13.15);
-      tl.to("#scene-3", { opacity: 0, y: -30, duration: 0.45, ease: "power2.in" }, 14.05);
+      // Scene 3 Timeline (8.2s – 12.2s)
+      tl.fromTo("#scene-3", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 8.2);
+      tl.fromTo("#s3-shelf-card", { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" }, 8.4);
+      tl.fromTo("#s3-proof-card", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 8.9);
+      tl.fromTo("#s3-spec-card", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 9.5);
+      tl.to("#scene-3", { opacity: 0, scale: 0.98, duration: 0.45, ease: "power2.in" }, 11.75);
 
-      // Scene 4 Timeline (14.5s – 17.5s)
-      tl.fromTo("#scene-4", { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }, 14.5);
-      tl.fromTo("#s4-card-1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 14.7);
-      tl.fromTo("#s4-card-2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 15.1);
-      tl.fromTo("#s4-card-3", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 15.5);
-      tl.to("#scene-4", { opacity: 0, duration: 0.35, ease: "power2.in" }, 17.15);
+      // Scene 4 Timeline (12.2s – 16.2s)
+      tl.fromTo("#scene-4", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 12.2);
+      tl.fromTo("#s4-box-left", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 12.4);
+      tl.fromTo("#s4-box-right", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 12.7);
+      tl.to("#scene-4", { opacity: 0, y: -25, duration: 0.45, ease: "power2.in" }, 15.75);
 
-      // Scene 5 Timeline (17.5s – 20.0s)
-      tl.fromTo("#scene-5", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 17.5);
-      tl.fromTo("#s5-head", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 17.7);
-      // Beat-locked at 18.56s: CTA URL Pop
-      tl.fromTo("#s5-card", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1.04, duration: 0.35, ease: "back.out(1.5)" }, 18.35);
-      tl.to("#s5-card", { scale: 1.0, duration: 0.2, overwrite: "auto" }, 18.75);
+      // Scene 5 Timeline (16.2s – 20.0s)
+      tl.fromTo("#scene-5", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 16.2);
+      tl.fromTo("#s5-title", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 16.5);
+      tl.fromTo("#s5-disciplines", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 16.9);
+      tl.fromTo("#s5-card", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 17.3);
 
       window.__timelines["main"] = tl;
     </script>
