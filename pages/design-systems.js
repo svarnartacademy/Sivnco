@@ -9,23 +9,23 @@ import { getAudioEngine } from '../components/ui/TactileAudioEngine'
 
 const METRICS = [
   { n: '3', l: 'Design Systems Built' },
-  { n: '15+', l: 'SKU Variations Governed' },
+  { n: '85+', l: 'Commercial SKUs Governed' },
   { n: '100%', l: 'Token Coverage' },
-  { n: '3', l: 'Brand Systems' },
+  { n: '7', l: 'Product Families' },
 ]
 
 const SYSTEMS = [
   {
     id: 'jus-amazin',
     number: '01',
-    label: 'Brand System — Commercial Client',
-    title: 'Jus Amazin',
-    subtitle: 'Complete Brand System',
-    body: `A design system is the decision you make once so you never have to make it again under deadline pressure. For Jus Amazin — a D2C peanut butter brand scaling from 3 to 15+ SKUs — I built the full system from scratch: token layer, component layer, and governance rules.`,
+    label: 'Packaging & Brand Architecture — FMCG Scope',
+    title: 'Jus Amazin Multi-SKU System',
+    subtitle: 'Industrial Packaging & Token Architecture',
+    body: `A design system is the decision you make once so you never have to make it again under deadline pressure. For Jus Amazin, I built the full packaging architecture from scratch across 7 product families and 85+ commercial SKUs: token layers, dieline anatomy, variant matrices, and press handoff governance.`,
     layers: [
-      { title: 'Token Layer', items: ['Colour system: 6 primary + 12 semantic tokens mapped to retail and digital surfaces', 'Typography scale: 3-level hierarchy (display, body, label) with defined size ramps', 'Spacing grid: 8px base unit across all layout decisions'] },
-      { title: 'Component Layer', items: ['Label template system: 15+ SKU variants from one master source', 'Social post templates: feed, story, and ad formats from a single component set', 'Email header system: 4 modular blocks that recompose across campaigns', 'POS display: shelf talker and standee components using shared tokens'] },
-      { title: 'Governance', items: ['Visual consistency maintained across 15+ SKU variations without breaking the system', 'Handoff-ready: marketing team could apply system without design oversight', '176% revenue contribution attributable in part to consistent shelf-to-screen identity'] },
+      { title: 'Packaging Dieline & Label Anatomy', items: ['Calibrated 3mm bleed margins, 4mm safe cut zones, and dedicated non-print cylinder gutters', 'Mandatory FSSAI legal text block templates (minimum 1.5mm x-height compliance)', 'Barcode quiet zones and contrast requirements for 100% scanner read rate on store floors'] },
+      { title: 'Variant Matrices & Spot Colors', items: ['Pantone Matching System (PMS 3105C–3145C) for electric blue bar wraps and metallic substrates', 'Nut butter color codes: Emerald Green (Pistachio), Roasted Sienna (Almond), Warm Ochre (Peanut)', 'Substrate splitting: Transparent high-gloss BOPP labels for PET fitness tubs vs matte soft-touch for rigid gifting'] },
+      { title: 'Governance & Factory Handoff', items: ['Authored 40+ page master brand guidelines eliminating agency dependencies', 'Prepress pre-flight checks: spot plates, ink density (total area coverage < 300%), and overprint black', 'Reduced cross-team asset turnaround by ~40% (internal estimate)'] },
     ],
     accent: '#D4600A',
   },
@@ -197,6 +197,7 @@ export default function DesignSystems() {
   const [accent, setAccent] = useState('#D4600A')
   const [radius, setRadius] = useState(28)
   const [activePreset, setActivePreset] = useState('jusamazin')
+  const [specModalOpen, setSpecModalOpen] = useState(false)
 
   const applyPreset = (preset) => {
     setActivePreset(preset.id)
@@ -213,8 +214,8 @@ export default function DesignSystems() {
   return (
     <>
       <Head>
-        <title>Design Systems — H P Shivaraj | Sivnco</title>
-        <meta name="description" content="Design systems built and maintained by H P Shivaraj — token layers, component governance, FMCG packaging scale." />
+        <title>Design Systems &amp; Packaging Architecture — H P Shivaraj | Sivnco</title>
+        <meta name="description" content="Design systems, dieline anatomy, variant matrices, and packaging token architecture by H P Shivaraj." />
       </Head>
 
       <Navbar />
@@ -224,12 +225,12 @@ export default function DesignSystems() {
       <div className="hero">
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(200, 155, 60, 0.1)" />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">CASE STUDY — 02 // DISCIPLINE: DESIGN SYSTEMS</div>
+          <div className="eyebrow">CASE STUDY — 02 // DISCIPLINE: DESIGN SYSTEMS &amp; PRODUCTION OPS</div>
           <h1 className="hero-title">
             DESIGN<i>SYSTEMS</i>
           </h1>
           <p className="hero-sub">
-            The decision made once so it never has to be debated under deadline pressure. How I built, scaled, and governed design systems across commercial FMCG, education, and studio identity.
+            The decision made once so it never has to be debated under deadline pressure. How I built, scaled, and governed design systems across commercial FMCG packaging, education, and studio identity.
           </p>
           <div className="hero-meta">
             <div className="meta">
@@ -238,7 +239,7 @@ export default function DesignSystems() {
             </div>
             <div className="meta">
               <label>GOVERNANCE</label>
-              <span>15+ SKU Variations</span>
+              <span>85+ Commercial SKUs</span>
             </div>
             <div className="meta">
               <label>ROLE</label>
@@ -246,7 +247,7 @@ export default function DesignSystems() {
             </div>
             <div className="meta">
               <label>COVERAGE</label>
-              <span>Tokens to Packaging</span>
+              <span>Tokens to Press Dielines</span>
             </div>
           </div>
         </div>
@@ -358,7 +359,10 @@ export default function DesignSystems() {
                     color: '#FFF',
                     boxShadow: `0 8px 20px ${accent}45`
                   }}
-                  onClick={() => getAudioEngine()?.playTick(900)}
+                  onClick={() => {
+                    getAudioEngine()?.playTick(900);
+                    setSpecModalOpen(true);
+                  }}
                 >
                   Inspect Component Spec
                 </button>
@@ -380,7 +384,7 @@ export default function DesignSystems() {
             <p className="definition-attr">— H P Shivaraj, Design & Communications Manager · Jus Amazin</p>
           </div>
           <p className="body-text rv2" style={{ marginTop: '2rem' }}>
-            Most designers maintain visual consistency through taste and habit. A design system makes consistency mechanical — so that anyone who picks it up maintains quality, even under deadline pressure, even across 15 SKU variations, even when you&apos;re not in the room.
+            Most designers maintain visual consistency through taste and habit. A design system makes consistency mechanical — so that anyone who picks it up maintains quality, even under deadline pressure, even across 85+ commercial SKU variations, even when you&apos;re not in the room.
           </p>
         </div>
       </section>
@@ -482,6 +486,104 @@ export default function DesignSystems() {
           document.querySelectorAll('.m-n').forEach(function(el){numObs.observe(el)});
         })();
       `}</Script>
+
+      {/* COMPONENT SPECIFICATION MODAL */}
+      {specModalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            background: 'rgba(0,0,0,0.85)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem'
+          }}
+          onClick={() => setSpecModalOpen(false)}
+        >
+          <div
+            style={{
+              background: '#0E0D0A',
+              border: '1px solid rgba(240,237,230,0.18)',
+              borderRadius: '24px',
+              maxWidth: '680px',
+              width: '100%',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+              padding: '2.5rem',
+              position: 'relative',
+              boxShadow: '0 25px 70px rgba(0,0,0,0.8)'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSpecModalOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '1.5rem',
+                right: '1.5rem',
+                background: 'rgba(255,255,255,0.08)',
+                border: 'none',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                color: '#FFF',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'var(--M)'
+              }}
+            >
+              ✕
+            </button>
+
+            <div style={{ fontFamily: 'var(--M)', fontSize: '0.52rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: accent, marginBottom: '0.5rem' }}>
+              Design Token &amp; Production Spec
+            </div>
+            <h3 style={{ fontFamily: 'var(--D)', fontSize: '1.8rem', color: '#FFF', marginBottom: '1.5rem' }}>
+              Live Component Specification
+            </h3>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.2rem', marginBottom: '2rem' }}>
+              <div style={{ padding: '1rem', borderRadius: '14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: accent, textTransform: 'uppercase', marginBottom: '0.3rem' }}>Chromatic Token</div>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#FFF', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ width: 14, height: 14, borderRadius: '4px', background: accent, display: 'inline-block' }} />
+                  {accent}
+                </div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--ds-muted)', marginTop: '0.2rem' }}>CSS: var(--ds-accent)</div>
+              </div>
+
+              <div style={{ padding: '1rem', borderRadius: '14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: accent, textTransform: 'uppercase', marginBottom: '0.3rem' }}>Radius Curvature</div>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#FFF' }}>{radius}px</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--ds-muted)', marginTop: '0.2rem' }}>CSS: var(--radius-card)</div>
+              </div>
+
+              <div style={{ padding: '1rem', borderRadius: '14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: accent, textTransform: 'uppercase', marginBottom: '0.3rem' }}>Dieline Bleed Margins</div>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#FFF' }}>3.0 mm (0.118 in)</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--ds-muted)', marginTop: '0.2rem' }}>Cut tolerance: ±0.5mm</div>
+              </div>
+
+              <div style={{ padding: '1rem', borderRadius: '14px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', color: accent, textTransform: 'uppercase', marginBottom: '0.3rem' }}>FSSAI Typography Compliance</div>
+                <div style={{ fontFamily: 'monospace', fontSize: '0.95rem', color: '#FFF' }}>x-height &ge; 1.5mm</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--ds-muted)', marginTop: '0.2rem' }}>Mandatory allergen &amp; net wt</div>
+              </div>
+            </div>
+
+            <div style={{ borderTop: '1px solid rgba(240,237,230,0.1)', paddingTop: '1.2rem', fontSize: '0.85rem', color: 'var(--ds-muted)', lineHeight: '1.7' }}>
+              <strong style={{ color: '#FFF' }}>Prepress Handoff Rules: </strong>
+              All master Illustrator dielines are locked to spot separation channels. Black body text is set to 100% K overprint to prevent misregistration halos on factory rotogravure presses.
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

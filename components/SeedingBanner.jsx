@@ -16,38 +16,37 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const BANNER_CSS = `
-  /* Overlay backdrop */
+  /* Overlay backdrop — nonblocking toast container */
   .sivb-overlay {
     position: fixed;
-    inset: 0;
-    z-index: 999999;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9000;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0;
+    pointer-events: none;
     animation: sivbFadeIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
   }
   .sivb-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(10,9,6,0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    display: none;
   }
 
   /* Card */
   .sivb-card {
     position: relative;
     z-index: 1;
-    max-width: 480px;
+    max-width: 380px;
     width: 100%;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 24px;
-    padding: 2.4rem 2.4rem 2rem;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.18);
+    pointer-events: auto;
+    background: rgba(14, 13, 10, 0.94);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border: 1px solid rgba(240, 237, 230, 0.15);
+    border-radius: 20px;
+    padding: 1.4rem 1.4rem 1.2rem;
+    box-shadow: 0 16px 45px rgba(0,0,0,0.65), 0 0 25px rgba(212,96,10,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
     animation: sivbSlideUp 0.45s cubic-bezier(0.16,1,0.3,1) both;
     overflow: hidden;
   }

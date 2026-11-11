@@ -1,29 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import StartProjectButton from '@/components/demo'
 
 const UNIQUE_PAINTINGS = [
-  { id: 1, plate: '01', title: 'Wildlife Study', medium: 'Realism & Fur Texture · CAVA Mysore', img: '/images/paintings/painting_1.jpg' },
-  { id: 2, plate: '02', title: 'Mountain Lake Pier', medium: 'Perspective & Atmospheric Depth', img: '/images/paintings/painting_2.jpg' },
-  { id: 3, plate: '03', title: 'Elder Couple Portrait', medium: 'Observational Portraiture · Watercolors', img: '/images/paintings/painting_3.jpg' },
-  { id: 4, plate: '04', title: 'Studio Life Study', medium: 'Portraiture on Easel · Studio Lighting', img: '/images/paintings/painting_4.jpg' },
-  { id: 6, plate: '05', title: 'Classical Form & Sari', medium: 'Traditional Indian Form & Drapery Study', img: '/images/paintings/painting_6.jpg' },
-  { id: 7, plate: '06', title: 'Contemplation', medium: 'Charcoal & Wash · Expressive Tone', img: '/images/paintings/painting_7.jpg' },
-  { id: 8, plate: '07', title: 'Bengaluru Streetlife', medium: 'Plein Air Watercolor · City Sunlight', img: '/images/paintings/painting_8.jpg' },
-  { id: 9, plate: '08', title: 'Bust & Drapery', medium: 'Academic Still Life · Value & Chiaroscuro', img: '/images/paintings/painting_9.jpg' },
-  { id: 10, plate: '09', title: 'Foundational Geometry', medium: 'Planar Anatomy & Volume Construction', img: '/images/paintings/painting_10.jpg' },
-  { id: 11, plate: '10', title: 'Rail Transit', medium: 'Landscape & Industrial Heritage', img: '/images/paintings/painting_11.jpg' },
-  { id: 12, plate: '11', title: 'Urban Architecture', medium: 'Linear Ink Study · Vanishing Points', img: '/images/paintings/painting_12.jpg' },
-  { id: 13, plate: '12', title: 'Ascetic Portrait', medium: 'Figurative Light & Atmospheric Texture', img: '/images/paintings/painting_13.jpg' },
-  { id: 14, plate: '13', title: 'Child Expression', medium: 'Observational Watercolor · Facial Structure', img: '/images/paintings/painting_14.jpg' },
-  { id: 16, plate: '14', title: 'Sacred Diya & Vessel', medium: 'Traditional Brass Reflections & Still Life', img: '/images/paintings/painting_16.jpg' },
-  { id: 17, plate: '15', title: 'Glass Reflections', medium: 'Hermitage Bottle Study · Transparency & Color', img: '/images/paintings/painting_17.jpg' },
-  { id: 18, plate: '16', title: 'Teal Monochrome Portrait', medium: 'Expressive Watercolor Wash · Signed by Artist', img: '/images/paintings/painting_18.jpg' },
-  { id: 20, plate: '17', title: 'Cloud Formations', medium: 'Atmospheric Skies · Volume & Luminescence', img: '/images/paintings/painting_20.jpg' },
-  { id: 22, plate: '18', title: 'Studio Chair & Pot', medium: 'Wood Grain, Terracotta & Cast Shadow Study', img: '/images/paintings/painting_22.jpg' },
-  { id: 23, plate: '19', title: 'Anatomy of Feet', medium: 'Academic Life Study · Bone & Tendon Structure', img: '/images/paintings/painting_23.jpg' }
+  { id: 1, plate: '01', title: 'Wildlife Study', medium: 'Realism & Fur Texture · CAVA Mysore', year: '2021', dims: '30 × 42 cm · Watercolor on Archival Paper', img: '/images/paintings/painting_1.jpg' },
+  { id: 2, plate: '02', title: 'Mountain Lake Pier', medium: 'Perspective & Atmospheric Depth', year: '2022', dims: '38 × 56 cm · Watercolor on Imperial Sheet', img: '/images/paintings/painting_2.jpg' },
+  { id: 3, plate: '03', title: 'Elder Couple Portrait', medium: 'Observational Portraiture · Watercolors', year: '2022', dims: '35 × 50 cm · Watercolor Wash', img: '/images/paintings/painting_3.jpg' },
+  { id: 4, plate: '04', title: 'Studio Life Study', medium: 'Portraiture on Easel · Studio Lighting', year: '2021', dims: '40 × 60 cm · Mixed Media', img: '/images/paintings/painting_4.jpg' },
+  { id: 6, plate: '05', title: 'Classical Form & Sari', medium: 'Traditional Indian Form & Drapery Study', year: '2022', dims: '45 × 60 cm · Watercolor & Gouache', img: '/images/paintings/painting_6.jpg' },
+  { id: 7, plate: '06', title: 'Contemplation', medium: 'Charcoal & Wash · Expressive Tone', year: '2020', dims: '30 × 45 cm · Charcoal on Paper', img: '/images/paintings/painting_7.jpg' },
+  { id: 8, plate: '07', title: 'Bengaluru Streetlife', medium: 'Plein Air Watercolor · City Sunlight', year: '2023', dims: '38 × 52 cm · Plein Air Watercolor', img: '/images/paintings/painting_8.jpg' },
+  { id: 9, plate: '08', title: 'Bust & Drapery', medium: 'Academic Still Life · Value & Chiaroscuro', year: '2020', dims: '45 × 60 cm · Academic Charcoal', img: '/images/paintings/painting_9.jpg' },
+  { id: 10, plate: '09', title: 'Foundational Geometry', medium: 'Planar Anatomy & Volume Construction', year: '2019', dims: '35 × 50 cm · Graphite on Cartridge', img: '/images/paintings/painting_10.jpg' },
+  { id: 11, plate: '10', title: 'Rail Transit', medium: 'Landscape & Industrial Heritage', year: '2022', dims: '40 × 55 cm · Ink & Watercolor Wash', img: '/images/paintings/painting_11.jpg' },
+  { id: 12, plate: '11', title: 'Urban Architecture', medium: 'Linear Ink Study · Vanishing Points', year: '2021', dims: '30 × 42 cm · Architectural Ink', img: '/images/paintings/painting_12.jpg' },
+  { id: 13, plate: '12', title: 'Ascetic Portrait', medium: 'Figurative Light & Atmospheric Texture', year: '2022', dims: '42 × 58 cm · Watercolor on Archival Paper', img: '/images/paintings/painting_13.jpg' },
+  { id: 14, plate: '13', title: 'Child Expression', medium: 'Observational Watercolor · Facial Structure', year: '2022', dims: '30 × 40 cm · Watercolor on Paper', img: '/images/paintings/painting_14.jpg' },
+  { id: 16, plate: '14', title: 'Sacred Diya & Vessel', medium: 'Traditional Brass Reflections & Still Life', year: '2021', dims: '35 × 48 cm · Academic Still Life', img: '/images/paintings/painting_16.jpg' },
+  { id: 17, plate: '15', title: 'Glass Reflections', medium: 'Hermitage Bottle Study · Transparency & Color', year: '2021', dims: '30 × 45 cm · Watercolor on Paper', img: '/images/paintings/painting_17.jpg' },
+  { id: 18, plate: '16', title: 'Teal Monochrome Portrait', medium: 'Expressive Watercolor Wash · Signed by Artist', year: '2023', dims: '40 × 55 cm · Monochromatic Watercolor', img: '/images/paintings/painting_18.jpg' },
+  { id: 20, plate: '17', title: 'Cloud Formations', medium: 'Atmospheric Skies · Volume & Luminescence', year: '2022', dims: '38 × 56 cm · Wet-on-wet Watercolor', img: '/images/paintings/painting_20.jpg' },
+  { id: 22, plate: '18', title: 'Studio Chair & Pot', medium: 'Wood Grain, Terracotta & Cast Shadow Study', year: '2020', dims: '35 × 50 cm · Academic Charcoal & Wash', img: '/images/paintings/painting_22.jpg' },
+  { id: 23, plate: '19', title: 'Anatomy of Feet', medium: 'Academic Life Study · Bone & Tendon Structure', year: '2020', dims: '42 × 60 cm · Anatomical Study on Cartridge', img: '/images/paintings/painting_23.jpg' }
 ];
 
 const METRICS = [
@@ -49,10 +49,9 @@ html.lenis { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
-body{background:var(--ae-bg);color:var(--ink);font-family:var(--S);overflow-x:hidden;cursor:none}
+body{background:var(--ae-bg);color:var(--ink);font-family:var(--S);overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:9999}
-#dot{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--ae-accent);pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,opacity .25s}
-#dot.lg{width:36px;height:36px;background:transparent;border:1.5px solid var(--ae-accent);opacity:.7}
+#dot{display:none}
 a{color:inherit;text-decoration:none}
 .c{max-width:1200px;margin:0 auto;padding:0 5vw}
 
@@ -415,8 +414,19 @@ import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
 import { getAudioEngine } from '../components/ui/TactileAudioEngine';
 
 export default function ArtistEducator() {
-  const [selectedArt, setSelectedArt] = useState(null);
+  const [selectedArtIndex, setSelectedArtIndex] = useState(null);
   const [activePigment, setActivePigment] = useState({ name: 'Raw Sienna', hex: '#C5832B', mix: '#A24E2B' });
+
+  useEffect(() => {
+    if (selectedArtIndex === null) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setSelectedArtIndex(null);
+      if (e.key === 'ArrowLeft') setSelectedArtIndex((prev) => (prev > 0 ? prev - 1 : UNIQUE_PAINTINGS.length - 1));
+      if (e.key === 'ArrowRight') setSelectedArtIndex((prev) => (prev < UNIQUE_PAINTINGS.length - 1 ? prev + 1 : 0));
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedArtIndex]);
 
   return (
     <>
@@ -478,6 +488,23 @@ export default function ArtistEducator() {
             <div className="m-l">{m.l}</div>
           </div>
         ))}
+      </div>
+
+      {/* VISUAL DIARY ARCHIVE BANNER */}
+      <div className="c" style={{ marginTop: '1rem', marginBottom: '2rem' }}>
+        <div style={{ background: 'rgba(212, 96, 10, 0.05)', border: '1px solid rgba(212, 96, 10, 0.25)', borderRadius: '24px', padding: '1.6rem 2.2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.2rem', backdropFilter: 'blur(16px)' }}>
+          <div>
+            <div style={{ fontFamily: 'var(--M)', fontSize: '.65rem', letterSpacing: '.18em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>
+              CONTINUOUS CREATIVE CHRONICLE
+            </div>
+            <div style={{ fontFamily: 'var(--S)', fontSize: '1.1rem', color: '#F0EDE6', marginTop: '.3rem', fontWeight: 600 }}>
+              Sketches, early CAVA academic studies, and pedagogical field notes are preserved in the Visual Diary.
+            </div>
+          </div>
+          <Link href="/visual-diary?discipline=Fine%20Art%20&%20Plates" style={{ display: 'inline-flex', alignItems: 'center', gap: '.6rem', fontFamily: 'var(--M)', fontSize: '.75rem', letterSpacing: '.12em', color: '#0A0906', background: 'var(--ae-accent)', padding: '.75rem 1.6rem', borderRadius: '999px', fontWeight: 800, textTransform: 'uppercase' }}>
+            Open Visual Diary &rarr;
+          </Link>
+        </div>
       </div>
 
       {/* ABOUT ME SECTION */}
@@ -585,11 +612,11 @@ export default function ArtistEducator() {
           {/* Horizontal Track Wrap */}
           <div className="gallery-h-track-wrap" style={{ width: '100%', overflow: 'hidden', flexGrow: 1, display: 'flex', alignItems: 'center' }}>
             <div className="gallery-h-track" id="galleryHTrack" style={{ display: 'flex', gap: '2.5vw', paddingLeft: '5vw', paddingRight: '15vw', width: 'max-content', alignItems: 'center' }}>
-              {UNIQUE_PAINTINGS.map((art) => (
+              {UNIQUE_PAINTINGS.map((art, idx) => (
                 <div
                   key={art.id}
                   className="gallery-card-item"
-                  onClick={() => setSelectedArt(art.img)}
+                  onClick={() => setSelectedArtIndex(idx)}
                 >
                   <div className="gallery-card-frame">
                     <img loading="lazy" src={art.img} alt={`Painting ${art.title}`} className="gallery-card-img" />
@@ -599,7 +626,7 @@ export default function ArtistEducator() {
                   </div>
                   <div className="gallery-card-meta">
                     <div className="gallery-card-plate">PLATE #{art.plate} · {art.title}</div>
-                    <div className="gallery-card-desc">{art.medium}</div>
+                    <div className="gallery-card-desc">{art.medium} · {art.year}</div>
                   </div>
                 </div>
               ))}
@@ -683,6 +710,11 @@ export default function ArtistEducator() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(240,237,230,0.08)', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <span style={{ fontFamily: 'var(--M)', fontSize: '.62rem', letterSpacing: '.15em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>STUDENT PRIVACY NOTICE</span>
+            <span style={{ fontFamily: 'var(--S)', fontSize: '.95rem', color: 'var(--ae-muted)' }}>Student names, faces, and personal academy records are kept strictly confidential under studio policy. All progress studies are reproduced with guardian consent.</span>
           </div>
         </div>
       </section>
@@ -919,67 +951,119 @@ export default function ArtistEducator() {
         })();
       `}</Script>
 
-      {/* FULL-RES LIGHTBOX MODAL */}
-      {selectedArt && (
-        <div
-          onClick={() => setSelectedArt(null)}
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 999999,
-            background: 'rgba(5, 4, 3, 0.95)',
-            backdropFilter: 'blur(16px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '2rem',
-            cursor: 'zoom-out'
-          }}
-        >
+      {/* FULL-RES LIGHTBOX MODAL WITH ACCESSIBLE CONTROLS */}
+      {selectedArtIndex !== null && (() => {
+        const art = UNIQUE_PAINTINGS[selectedArtIndex];
+        return (
           <div
-            onClick={(e) => e.stopPropagation()}
+            onClick={() => setSelectedArtIndex(null)}
             style={{
-              position: 'relative',
-              maxWidth: '92vw',
-              maxHeight: '90vh',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              border: '1px solid rgba(255,255,255,0.15)',
-              boxShadow: '0 30px 80px rgba(0,0,0,0.9)'
+              position: 'fixed',
+              inset: 0,
+              zIndex: 999999,
+              background: 'rgba(5, 4, 3, 0.95)',
+              backdropFilter: 'blur(20px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1rem',
+              cursor: 'zoom-out'
             }}
           >
-            <img
-              src={selectedArt}
-              alt="Enlarged Artwork Plate"
-              style={{ width: '100%', height: '100%', maxHeight: '86vh', objectFit: 'contain', display: 'block' }}
-            />
-            <button
-              onClick={() => setSelectedArt(null)}
+            <div
+              onClick={(e) => e.stopPropagation()}
               style={{
-                position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                background: 'rgba(212,96,10,0.25)',
-                color: '#FFF',
-                border: 'none',
-                boxShadow: '0 0 20px 2px rgba(212,96,10,0.5), inset 0 1px 0 rgba(255,255,255,0.3)',
-                borderRadius: '50%',
-                width: '38px',
-                height: '38px',
-                cursor: 'pointer',
+                position: 'relative',
+                maxWidth: '94vw',
+                maxHeight: '94vh',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                border: '1px solid rgba(240,237,230,0.15)',
+                background: '#0D0C09',
+                boxShadow: '0 30px 80px rgba(0,0,0,0.95)',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontFamily: 'var(--M)',
-                fontSize: '1rem',
-                transition: 'all 0.25s cubic-bezier(0.16,1,0.3,1)'
+                flexDirection: 'column',
+                cursor: 'default'
               }}
             >
-              ✕
-            </button>
+              {/* Modal Header */}
+              <div style={{ padding: '1rem 1.5rem', borderBottom: '1px solid rgba(240,237,230,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#12110E', flexWrap: 'wrap', gap: '.8rem' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--M)', fontSize: '.65rem', letterSpacing: '.18em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>
+                    PLATE #{art.plate} · {art.year} · CAVA MYSORE
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--D)', fontSize: '1.4rem', fontWeight: 900, color: '#F0EDE6', margin: '2px 0 0' }}>
+                    {art.title}
+                  </h3>
+                  <div style={{ fontFamily: 'var(--S)', fontSize: '.85rem', color: 'var(--ae-muted)' }}>
+                    {art.medium} · {art.dims}
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                  <button
+                    onClick={() => setSelectedArtIndex((prev) => (prev > 0 ? prev - 1 : UNIQUE_PAINTINGS.length - 1))}
+                    aria-label="Previous artwork"
+                    style={{ background: 'rgba(240,237,230,0.06)', border: '1px solid rgba(240,237,230,0.15)', color: '#FFF', borderRadius: '50%', width: '38px', height: '38px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}
+                  >
+                    ←
+                  </button>
+                  <span style={{ fontFamily: 'var(--M)', fontSize: '.7rem', color: 'var(--ae-muted)', minWidth: '45px', textAlign: 'center' }}>
+                    {selectedArtIndex + 1} / {UNIQUE_PAINTINGS.length}
+                  </span>
+                  <button
+                    onClick={() => setSelectedArtIndex((prev) => (prev < UNIQUE_PAINTINGS.length - 1 ? prev + 1 : 0))}
+                    aria-label="Next artwork"
+                    style={{ background: 'rgba(240,237,230,0.06)', border: '1px solid rgba(240,237,230,0.15)', color: '#FFF', borderRadius: '50%', width: '38px', height: '38px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem' }}
+                  >
+                    →
+                  </button>
+                  <button
+                    onClick={() => setSelectedArtIndex(null)}
+                    aria-label="Close modal"
+                    style={{
+                      background: 'rgba(212,96,10,0.25)',
+                      color: '#FFF',
+                      border: '1px solid rgba(212,96,10,0.4)',
+                      borderRadius: '50%',
+                      width: '38px',
+                      height: '38px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontFamily: 'var(--M)',
+                      fontSize: '1rem',
+                      marginLeft: '.4rem'
+                    }}
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              {/* Artwork Clean View */}
+              <div style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.2rem', background: '#080705', overflow: 'hidden' }}>
+                <img
+                  src={art.img}
+                  alt={`Artwork plate ${art.title}`}
+                  style={{ maxWidth: '100%', maxHeight: '68vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 15px 40px rgba(0,0,0,0.6)' }}
+                />
+              </div>
+
+              {/* Keyboard navigation helper */}
+              <div style={{ padding: '.6rem 1.5rem', background: '#0D0C09', borderTop: '1px solid rgba(240,237,230,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '.5rem' }}>
+                <span style={{ fontFamily: 'var(--M)', fontSize: '.6rem', letterSpacing: '.12em', color: 'var(--ae-muted)' }}>
+                  Use ← and → arrow keys to navigate · Esc to close
+                </span>
+                <Link href="/visual-diary?discipline=Fine%20Art%20&%20Plates" style={{ fontFamily: 'var(--M)', fontSize: '.65rem', letterSpacing: '.12em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>
+                  View in Visual Diary &rarr;
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </>
   )
 }

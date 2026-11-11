@@ -1125,39 +1125,197 @@ function MetricsDashboard({ metrics, accent }) {
 }
 
 function CampaignCompareTable({ executions, accent }) {
-  const rows = [
-    { label: 'Campaign Asset Type', vals: executions.map(e => e.campaignType) },
-    { label: 'Active Run Duration', vals: executions.map(e => e.duration) },
-    { label: 'Top-Funnel Reach', vals: executions.map(e => e.topFunnel) },
-    { label: 'Mid-Funnel Conversions', vals: executions.map(e => e.midFunnel) },
-    { label: 'Bottom-Funnel Orders', vals: executions.map(e => e.bottomFunnel) },
-    { label: 'Primary Consumer Reaction', vals: executions.map(e => e.reaction) }
-  ]
+  const [showDetailedTable, setShowDetailedTable] = useState(false);
+
+  // Distinct empirical metrics vs strategic objectives definitions
+  const executionProfiles = [
+    {
+      num: '01',
+      title: '30-Sec Comparison Film',
+      assetType: 'Visual Breakdown / Split-Screen',
+      window: '7-Day High-Intensity Platform Burst (Post-Launch 45-Day Attribution)',
+      impressions: '15,000 – 20,000 Total Impressions',
+      reach: '~14,000 Unique Accounts Reached',
+      activeConversions: '6,000+ High-Intent Actions (Full Video Completion & Add-to-Cart Intent)',
+      reachOuts: '1,200+ Inbound PDP Inquiries',
+      orders: '11,000+ Cumulative Sachet Units Ordered across Blinkit, Zepto, and D2C',
+      reaction: 'Immediate visual shock & brand switching from carton milk',
+      attribution: 'Tracked via Meta Ads Manager, Shopify First-Party Analytics, and Quick-Commerce Sales Dispatch Reports.'
+    },
+    {
+      num: '02',
+      title: '30-Sec Kinetic Typography',
+      assetType: 'Sound-Off Typewriter Disruption',
+      window: '7-Day Targeted Minimal Niche Window',
+      impressions: '18,000+ Total Impressions',
+      reach: '15,000 – 20,000+ Targeted Audience Reach',
+      activeConversions: '3,000 – 4,000+ Engagement Conversions',
+      reachOuts: '850+ Direct Inbound Message Inquiries',
+      orders: '2,000 – 3,000+ Attributed Product Orders',
+      reaction: 'Curiosity driven by typography & steady clean-ingredient onboarding',
+      attribution: 'Instagram Reels & Stories Paid Meta Acquisition Analytics.'
+    },
+    {
+      num: '03',
+      title: 'Full Campaign Launch Film',
+      assetType: 'Long-Form Brand Film (YouTube & Storefront)',
+      window: 'Ongoing Multi-Month Brand Placement',
+      impressions: 'Ongoing Brand Impressions',
+      reach: 'Broad Health-Conscious Demographic Reach',
+      activeConversions: 'Trust & Category Retention Driver',
+      reachOuts: 'Corporate & Distribution Inquiries',
+      orders: 'Sustained Category Repeat Orders (Retention Loop)',
+      reaction: 'Deep trust-building for health-conscious families',
+      attribution: 'Brand Storefront, Amazon A+ Video Module & YouTube Pre-roll.'
+    }
+  ];
+
   return (
     <div className="cp-compare-section cpv">
-      <div className="cp-execs-label" style={{ color: accent }}>Campaign Funnel Comparison Matrix</div>
-      <div style={{ overflowX: 'auto' }}>
-        <table className="cp-compare-table">
-          <thead>
-            <tr>
-              <th>Funnel Vector</th>
-              {executions.map(e => <th key={e.num}>{e.title}</th>)}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i}>
-                <td>{r.label}</td>
-                {r.vals.map((v, j) => (
-                  <td key={j} className={i >= 2 && i <= 4 ? 'metric-hi' : ''}>{v}</td>
-                ))}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+        <div>
+          <div className="cp-execs-label" style={{ color: accent, marginBottom: '0.4rem' }}>
+            Campaign Results &amp; Funnel Attribution Matrix
+          </div>
+          <p style={{ fontFamily: 'var(--S)', fontSize: '0.92rem', color: 'var(--cp-muted)', maxWidth: '680px', margin: 0 }}>
+            Distinguishing total impressions from unique reach, defining conversion actions, and reporting verified outcomes over a 45-day measurement window.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => setShowDetailedTable(prev => !prev)}
+          style={{
+            fontFamily: 'var(--M)',
+            fontSize: '0.55rem',
+            letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            padding: '0.6rem 1.2rem',
+            borderRadius: '999px',
+            background: 'rgba(240,237,230,0.06)',
+            border: '1px solid rgba(240,237,230,0.15)',
+            color: '#FFF',
+            cursor: 'pointer'
+          }}
+        >
+          {showDetailedTable ? 'Hide Detailed Table ↑' : 'Show Detailed Comparison Table ↓'}
+        </button>
+      </div>
+
+      {/* Result Cards for Mobile & Responsive Viewing */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.4rem', marginBottom: '2.5rem' }}>
+        {executionProfiles.map(p => (
+          <div
+            key={p.num}
+            style={{
+              background: 'rgba(240,237,230,0.025)',
+              border: '1px solid var(--cp-border)',
+              borderRadius: '24px',
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}
+          >
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
+                <span style={{ fontFamily: 'var(--M)', fontSize: '0.52rem', letterSpacing: '0.2em', color: accent, textTransform: 'uppercase' }}>
+                  Execution {p.num}
+                </span>
+                <span style={{ fontFamily: 'var(--M)', fontSize: '0.45rem', padding: '0.2rem 0.5rem', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', color: 'rgba(240,237,230,0.6)' }}>
+                  {p.assetType}
+                </span>
+              </div>
+              <h4 style={{ fontFamily: 'var(--D)', fontSize: '1.3rem', color: '#FFF', marginBottom: '1rem' }}>
+                {p.title}
+              </h4>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '0.85rem', color: 'var(--cp-muted)' }}>
+                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
+                    Top Funnel: Impressions vs. Reach
+                  </div>
+                  <div style={{ color: '#FFF', fontWeight: 600 }}>{p.impressions}</div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)' }}>{p.reach}</div>
+                </div>
+
+                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
+                    Mid Funnel: Active Conversions
+                  </div>
+                  <div style={{ color: '#FFF', fontWeight: 600 }}>{p.activeConversions}</div>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)' }}>{p.reachOuts}</div>
+                </div>
+
+                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(212,96,10,0.08)', border: '1px solid rgba(212,96,10,0.2)' }}>
+                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
+                    Bottom Funnel: Attributed Orders
+                  </div>
+                  <div style={{ color: '#FFF', fontWeight: 700, fontSize: '0.98rem' }}>{p.orders}</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '1.2rem', paddingTop: '1rem', borderTop: '1px solid rgba(240,237,230,0.08)', fontSize: '0.75rem', color: 'rgba(240,237,230,0.5)', fontStyle: 'italic' }}>
+              <strong>Attribution Source: </strong>{p.attribution}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Accessible Detailed Comparison Table */}
+      {showDetailedTable && (
+        <div style={{ overflowX: 'auto', marginTop: '1.5rem', background: 'rgba(10,9,6,0.95)', border: '1px solid var(--cp-border)', borderRadius: '24px', padding: '1.5rem' }}>
+          <table className="cp-compare-table">
+            <thead>
+              <tr>
+                <th>Funnel Vector</th>
+                {executionProfiles.map(p => <th key={p.num}>{p.title}</th>)}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Asset Type</td>
+                {executionProfiles.map(p => <td key={p.num}>{p.assetType}</td>)}
+              </tr>
+              <tr>
+                <td>Measurement Window</td>
+                {executionProfiles.map(p => <td key={p.num}>{p.window}</td>)}
+              </tr>
+              <tr>
+                <td>Total Impressions</td>
+                {executionProfiles.map(p => <td key={p.num} className="metric-hi">{p.impressions}</td>)}
+              </tr>
+              <tr>
+                <td>Unique Audience Reach</td>
+                {executionProfiles.map(p => <td key={p.num}>{p.reach}</td>)}
+              </tr>
+              <tr>
+                <td>Active Conversions</td>
+                {executionProfiles.map(p => <td key={p.num} className="metric-hi">{p.activeConversions}</td>)}
+              </tr>
+              <tr>
+                <td>Attributed Orders</td>
+                {executionProfiles.map(p => <td key={p.num} className="metric-hi" style={{ color: accent }}>{p.orders}</td>)}
+              </tr>
+              <tr>
+                <td>Attribution Basis</td>
+                {executionProfiles.map(p => <td key={p.num} style={{ fontSize: '0.68rem' }}>{p.attribution}</td>)}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* Glossary Note */}
+      <div style={{ marginTop: '1.5rem', padding: '1.2rem 1.6rem', borderRadius: '16px', background: 'rgba(240,237,230,0.02)', border: '1px solid rgba(240,237,230,0.08)', fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)', lineHeight: '1.7' }}>
+        <strong style={{ color: '#FFF' }}>Metric Definitions &amp; Methodology: </strong>
+        <em>Total Impressions</em> measure gross media impressions across platform feeds. 
+        <em>Unique Reach</em> tracks distinct individual user accounts. 
+        <em>Active Conversions</em> denote verified high-intent engagement actions (complete 30-sec video view through and PDP cart additions). 
+        <em>Attributed Orders</em> represent physical product shipments over the verified 45-day campaign cycle, separating measured empirical outcomes from strategic positioning objectives.
       </div>
     </div>
-  )
+  );
 }
 
 // ─── RUNWAY CONFIGS ───────────────────────────────────────────────────────────
@@ -1264,16 +1422,52 @@ export default function Campaigns() {
         </div>
       </div>
 
-      {/* CAMPAIGN ANCHOR NAV */}
-      <div className="cp-campaign-nav">
-        <div className="cp-campaign-nav-inner">
+      {/* CONCISE 6-PROJECT DIRECTORY */}
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 5vw 4rem', borderBottom: '1px solid var(--cp-border)' }}>
+        <div style={{ fontFamily: 'var(--M)', fontSize: '0.55rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--cp-accent)', marginBottom: '1.4rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--cp-accent)' }}></span>
+          <span>Concise 6-Project Directory · Jump Directly to Case</span>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
           {CAMPAIGNS.map(c => (
-            <a key={c.id} href={`#${c.id}`} className="cp-cam-link">
-              {c.num} — {c.title}: {c.subtitle}
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                padding: '1.2rem 1.4rem',
+                borderRadius: '16px',
+                background: 'rgba(240,237,230,0.03)',
+                border: '1px solid rgba(240,237,230,0.1)',
+                textDecoration: 'none',
+                transition: 'all 0.25s ease'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent; e.currentTarget.style.background = 'rgba(240,237,230,0.07)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(240,237,230,0.1)'; e.currentTarget.style.background = 'rgba(240,237,230,0.03)'; e.currentTarget.style.transform = 'none'; }}
+            >
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                  <span style={{ fontFamily: 'var(--M)', fontSize: '0.5rem', letterSpacing: '0.15em', color: c.accent, textTransform: 'uppercase' }}>
+                    {c.num} // {c.title}
+                  </span>
+                  <span style={{ color: c.accent, fontSize: '0.85rem' }}>↘</span>
+                </div>
+                <div style={{ fontFamily: 'var(--D)', fontSize: '1.15rem', fontWeight: 900, color: '#FFF', marginBottom: '0.2rem' }}>
+                  {c.fullTitle || c.title}
+                </div>
+                <div style={{ fontFamily: 'var(--S)', fontSize: '0.82rem', color: 'var(--cp-muted)', lineHeight: '1.5' }}>
+                  {c.subtitle}
+                </div>
+              </div>
+              <div style={{ marginTop: '0.8rem', paddingTop: '0.6rem', borderTop: '1px solid rgba(240,237,230,0.06)', fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.12em', color: c.accent, textTransform: 'uppercase' }}>
+                Explore Case Study →
+              </div>
             </a>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* CAMPAIGNS */}
       {CAMPAIGNS.map((cam) => (

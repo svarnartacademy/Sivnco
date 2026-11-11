@@ -166,16 +166,174 @@ export default function DesiEnergyBar() {
       {/* NAV */}
       <Navbar backLink="/jusamazin" backLabel="← Case Study" />
 
-      {/* S1: HERO */}
-      <div className="deb-hero">
+      {/* S1: HERO — LEADING WITH FINAL PACKAGING & CONTRIBUTION */}
+      <div className="deb-hero" style={{minHeight:'auto', padding:'8rem 5vw 4rem'}}>
         <div className="deb-hero-bg"/>
-        <div className="deb-hero-inner">
-          <div className="deb-hero-tag">Overview of</div>
-          <div className="deb-hero-text">
-            <h1>Desi<br/><span>Energy</span><br/>Bar<em>Structured Chaos — A Design Manifesto</em></h1>
+        <div style={{position:'relative', zIndex:2, maxWidth:'1240px', margin:'0 auto', width:'100%'}}>
+          
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(320px, 1fr))', gap:'4rem', alignItems:'center'}}>
+            {/* Left: Metadata & Contribution */}
+            <div>
+              <div className="deb-hero-tag" style={{writingMode:'horizontal-tb', borderLeft:'none', borderBottom:'2px solid var(--deb-accent)', paddingLeft:0, paddingBottom:'0.4rem', marginBottom:'1.2rem', display:'inline-block'}}>
+                FLAGSHIP PACKAGING // JUS'AMAZIN (2024)
+              </div>
+              <h1 style={{fontFamily:'var(--D)', fontWeight:900, fontSize:'clamp(3rem, 6.5vw, 6.5rem)', lineHeight:1.05, marginBottom:'1rem'}}>
+                Desi<br/><span style={{color:'var(--deb-accent)'}}>Energy</span><br/>Bar
+              </h1>
+              <p style={{fontFamily:'var(--S)', fontSize:'1.2rem', color:'var(--deb-ochre)', fontWeight:400, marginBottom:'2rem'}}>
+                Structured Chaos — A Cultural Packaging Architecture
+              </p>
+
+              <div style={{display:'flex', flexDirection:'column', gap:'1.2rem', fontSize:'0.92rem', color:'var(--deb-muted)', lineHeight:'1.75', marginBottom:'2rem'}}>
+                <div>
+                  <strong style={{color:'#FFF'}}>My Role &amp; Contribution: </strong>
+                  Sole design ownership: conducted field audits across 25 retail stores in Bengaluru, illustrated custom nostalgic characters (Gully Cricket, Lagori, Atlas Bicycle), calibrated the electric cyan wrapper substrate for long-range shelf stop, and supervised industrial rotogravure print proofing.
+                </div>
+                <div>
+                  <strong style={{color:'#FFF'}}>The Commercial Context: </strong>
+                  Repositioned traditional Indian chikki against saturated Western clinical gym bars. Status: High-velocity commercial star in modern trade and quick commerce.
+                </div>
+                <div style={{padding:'0.9rem 1.2rem', borderRadius:'14px', background:'rgba(0,102,255,0.1)', border:'1px solid rgba(0,102,255,0.3)', color:'#FFF'}}>
+                  <strong style={{color:'var(--deb-accent)'}}>Supported Outcome: </strong>
+                  Documented +70% sales increase in the snacking category post-launch; monthly volume scaled from 250 to 8,000 units per month.
+                </div>
+              </div>
+
+              <div style={{display:'flex', gap:'1rem', flexWrap:'wrap'}}>
+                <a href="#progression" style={{fontFamily:'var(--M)', fontSize:'0.6rem', letterSpacing:'0.15em', textTransform:'uppercase', padding:'0.75rem 1.6rem', borderRadius:'999px', background:'var(--deb-accent)', color:'#FFF', fontWeight:700}}>
+                  Inspect 4-Step Progression ↘
+                </a>
+                <Link href="/visual-diary?discipline=rejected" style={{fontFamily:'var(--M)', fontSize:'0.6rem', letterSpacing:'0.15em', textTransform:'uppercase', padding:'0.75rem 1.6rem', borderRadius:'999px', background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.15)', color:'#FFF'}}>
+                  Rejected Directions in Diary ↗
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Final Output Early (Physical Pack Hero) */}
+            <div style={{position:'relative'}}>
+              <div style={{borderRadius:'28px', overflow:'hidden', border:'1px solid rgba(0,102,255,0.4)', boxShadow:'0 25px 60px rgba(0,0,0,0.8), 0 0 35px rgba(0,102,255,0.2)', background:'#000'}}>
+                <img
+                  src="/images/jusamazin/desi_bar/runway_final.jpg"
+                  alt="Desi Energy Bar Final Physical Packaging"
+                  style={{width:'100%', height:'auto', display:'block', objectFit:'cover'}}
+                />
+              </div>
+              <div style={{marginTop:'0.8rem', display:'flex', justifyContent:'space-between', fontFamily:'var(--M)', fontSize:'0.52rem', letterSpacing:'0.15em', color:'rgba(250,250,250,0.5)', textTransform:'uppercase'}}>
+                <span>FINAL PRODUCTION PACK</span>
+                <span style={{color:'var(--deb-accent)'}}>ELECTRIC CYAN ON BOPP FOIL</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
+
+      {/* S1B: THE 4-STEP PRODUCTION PROGRESSION */}
+      <section id="progression" className="deb-section" style={{background:'rgba(250,250,250,0.015)'}}>
+        <div className="deb-c">
+          <div className="deb-label drv">End-to-End Progression</div>
+          <div className="deb-title drv">From Sketch to<br/><em>Physical Shelf.</em></div>
+          <p className="deb-body drv" style={{marginBottom:'3.5rem'}}>
+            A transparent four-stage breakdown showing how cultural intuition was translated into industrial manufacturing reality.
+          </p>
+
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'1.8rem'}}>
+            
+            {/* Step 1: Initial Sketch */}
+            <div style={{background:'rgba(250,250,250,0.03)', border:'1px solid var(--deb-border)', borderRadius:'24px', overflow:'hidden', display:'flex', flexDirection:'column'}}>
+              <div style={{aspectRatio:'4/3', overflow:'hidden', background:'#000', borderBottom:'1px solid var(--deb-border)'}}>
+                <img src="/images/jusamazin/desi_bar/runway_handdrawn.jpg" alt="Initial Sketch of Desi Energy Bar" style={{width:'100%', height:'100%', objectFit:'cover'}}/>
+              </div>
+              <div style={{padding:'1.6rem', flex:1, display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                <div>
+                  <div style={{fontFamily:'var(--M)', fontSize:'0.52rem', letterSpacing:'0.2em', color:'var(--deb-accent)', textTransform:'uppercase', marginBottom:'0.4rem'}}>
+                    Step 01 // Cultural Memory
+                  </div>
+                  <h3 style={{fontFamily:'var(--D)', fontSize:'1.25rem', color:'#FFF', marginBottom:'0.6rem'}}>
+                    Hand-Drawn Sketches
+                  </h3>
+                  <p style={{fontSize:'0.88rem', color:'var(--deb-muted)', lineHeight:'1.7'}}>
+                    Pencil exploration of local nostalgia: neighborhood games of Lagori, chaotic gully cricket matchups, and the vintage Atlas bicycle.
+                  </p>
+                </div>
+                <div style={{marginTop:'1rem', fontFamily:'var(--M)', fontSize:'0.48rem', color:'rgba(250,250,250,0.4)', textTransform:'uppercase'}}>
+                  Medium: Graphite &amp; Ink on Paper
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2: Vector Artwork */}
+            <div style={{background:'rgba(250,250,250,0.03)', border:'1px solid var(--deb-border)', borderRadius:'24px', overflow:'hidden', display:'flex', flexDirection:'column'}}>
+              <div style={{aspectRatio:'4/3', overflow:'hidden', background:'#000', borderBottom:'1px solid var(--deb-border)'}}>
+                <img src="/images/jusamazin/desi_bar/runway_vector.jpg" alt="Vector Artwork and Typography" style={{width:'100%', height:'100%', objectFit:'cover'}}/>
+              </div>
+              <div style={{padding:'1.6rem', flex:1, display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                <div>
+                  <div style={{fontFamily:'var(--M)', fontSize:'0.52rem', letterSpacing:'0.2em', color:'var(--deb-accent)', textTransform:'uppercase', marginBottom:'0.4rem'}}>
+                    Step 02 // Typographic Rigor
+                  </div>
+                  <h3 style={{fontFamily:'var(--D)', fontSize:'1.25rem', color:'#FFF', marginBottom:'0.6rem'}}>
+                    Vector Architecture
+                  </h3>
+                  <p style={{fontSize:'0.88rem', color:'var(--deb-muted)', lineHeight:'1.7'}}>
+                    Balancing the loose, human character drawings with rigorous FSSAI legal tables, barcode margins, and spot color separation layers.
+                  </p>
+                </div>
+                <div style={{marginTop:'1rem', fontFamily:'var(--M)', fontSize:'0.48rem', color:'rgba(250,250,250,0.4)', textTransform:'uppercase'}}>
+                  Tool: Adobe Illustrator Vectors
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3: Print Proof */}
+            <div style={{background:'rgba(250,250,250,0.03)', border:'1px solid var(--deb-border)', borderRadius:'24px', overflow:'hidden', display:'flex', flexDirection:'column'}}>
+              <div style={{aspectRatio:'4/3', overflow:'hidden', background:'#000', borderBottom:'1px solid var(--deb-border)'}}>
+                <img src="/images/jusamazin/desi_bar/pantone_proofing.jpg" alt="Pantone and Press Proofing" style={{width:'100%', height:'100%', objectFit:'cover'}}/>
+              </div>
+              <div style={{padding:'1.6rem', flex:1, display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                <div>
+                  <div style={{fontFamily:'var(--M)', fontSize:'0.52rem', letterSpacing:'0.2em', color:'var(--deb-accent)', textTransform:'uppercase', marginBottom:'0.4rem'}}>
+                    Step 03 // Prepress Rigor
+                  </div>
+                  <h3 style={{fontFamily:'var(--D)', fontSize:'1.25rem', color:'#FFF', marginBottom:'0.6rem'}}>
+                    Industrial Press Proof
+                  </h3>
+                  <p style={{fontSize:'0.88rem', color:'var(--deb-muted)', lineHeight:'1.7'}}>
+                    Calibrating ink opacity and spot cyan density on factory floor cylinders to prevent dulling on metallic BOPP foil substrates.
+                  </p>
+                </div>
+                <div style={{marginTop:'1rem', fontFamily:'var(--M)', fontSize:'0.48rem', color:'rgba(250,250,250,0.4)', textTransform:'uppercase'}}>
+                  Output: Pantone Press Calibration
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4: Physical Pack */}
+            <div style={{background:'rgba(250,250,250,0.03)', border:'1px solid var(--deb-border)', borderRadius:'24px', overflow:'hidden', display:'flex', flexDirection:'column'}}>
+              <div style={{aspectRatio:'4/3', overflow:'hidden', background:'#000', borderBottom:'1px solid var(--deb-border)'}}>
+                <img src="/images/jusamazin/desi_bar/pack_array.jpg" alt="Final Physical Sealed Pack Array" style={{width:'100%', height:'100%', objectFit:'cover'}}/>
+              </div>
+              <div style={{padding:'1.6rem', flex:1, display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
+                <div>
+                  <div style={{fontFamily:'var(--M)', fontSize:'0.52rem', letterSpacing:'0.2em', color:'var(--deb-accent)', textTransform:'uppercase', marginBottom:'0.4rem'}}>
+                    Step 04 // Retail Reality
+                  </div>
+                  <h3 style={{fontFamily:'var(--D)', fontSize:'1.25rem', color:'#FFF', marginBottom:'0.6rem'}}>
+                    Physical Retail Shelf
+                  </h3>
+                  <p style={{fontSize:'0.88rem', color:'var(--deb-muted)', lineHeight:'1.7'}}>
+                    Sealed foil flow-wrap packs stopping modern trade shoppers from 10 feet away. Instant visual recognition and repeat purchase velocity.
+                  </p>
+                </div>
+                <div style={{marginTop:'1rem', fontFamily:'var(--M)', fontSize:'0.48rem', color:'rgba(250,250,250,0.4)', textTransform:'uppercase'}}>
+                  Deployment: 8,000 Units/Month
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* S2: STRATEGY PILLARS */}
       <section className="deb-section" style={{padding:0,borderBottom:'none'}}>

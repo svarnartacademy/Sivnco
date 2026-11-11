@@ -5,22 +5,22 @@ import { useState } from 'react'
 import StartProjectButton from '@/components/demo'
 
 const METRICS = [
-  {n:'176%', l:'Revenue Growth FY24–25'},
-  {n:'40%', l:'Production Efficiency'},
-  {n:'15+', l:'SKUs Designed'},
-  {n:'3D', l:'Render-based Presence'},
+  {n:'176%', l:'Company Revenue Growth FY24–25'},
+  {n:'85+', l:'Commercial SKUs Governed'},
+  {n:'7', l:'Core Product Families'},
+  {n:'40%', l:'Internal Turnaround Efficiency'},
 ]
 const DELIVERABLES = [
-  'Packaging Design (15+ SKUs)','3D Product Renders','Brand Guidelines Document',
-  'Festive Luxury Gifting','Lil\'Stars Kids Nutrition','Mom2B Maternal Care',
-  'Retail POS & Spatial FSU','Canisters & Impulse Snacking','30-Sec Almond Milk Campaign',
+  'Packaging Architecture (7 Families · 85+ SKUs)','3D Product Renders & Spatial GLB','Master Brand Guidelines Document',
+  'Festive Luxury Gifting Suite','Lil\'Stars Kids Clean Nutrition','Mom2B Maternal Functional Care',
+  'Retail POS & 5ft Standalone FSU','Canisters & Impulse Snacking Lines','30-Sec Almond Milk Campaign & Film',
 ]
 const RESULTS = [
-  '176% revenue growth in FY 2024–25 — directly from improved brand visibility and packaging coherence at retail.',
-  'Production efficiency up 40% — even as 80% remains manual, the design pipeline is significantly leaner.',
+  'Contributed alongside sales, product, and operations to a high-growth FY24–25 period (+176% reported company revenue) by establishing packaging coherence and retail shelf presence across 85+ SKUs.',
+  'Authored master brand guidelines that reduced cross-team asset turnaround by ~40% (internal estimate) without external agency dependency.',
   'Visual presence elevated as product presentation shifted from photo-based to 3D render-based.',
   'Streamlined process: drawing board → iterations → final design → proofing → print & production.',
-  'Product portfolio structured across all SKUs with a master brand document guiding future extensions.',
+  'Product portfolio structured across 7 product families and 85+ individual commercial SKUs.',
 ]
 const TEAM_A = [{i:'JM',n:'Jitin Munjal',r:'Co-Founder & CEO'},{i:'SH',n:'Shilpa Moglishetty',r:'Co-Founder'}]
 const TEAM_B = [{i:'RK',n:'Roshan Kulranjan',r:'Vice President'},{i:'AS',n:'Amarjit Singh',r:'Sales Head'},{i:'SG',n:'Siddharth G',r:'Production Executive'},{i:'BH',n:'Bhoomika',r:'Quality Analyst'}]
@@ -282,13 +282,13 @@ import { getAudioEngine } from '../components/ui/TactileAudioEngine';
 
 const SKUS = [
   { id: 'gifting', name: 'Festive Luxury Gifting', cat: 'Celebratory Architecture', num: '100% Bespoke', desc: 'Sliding contemporary trays in Royal Purple, crimson heritage boxes with gold mandalas, and windowed snack display units.', tag: 'Festive Suite', img: '/images/jusamazin/gifting/Final-ALL-Camera.png' },
-  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '176% Growth', desc: 'Bold street typography and electric blue wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star', img: '/images/jusamazin/desi_bar/runway_final.jpg' },
-  { id: 'lilstars', name: 'Lil\'Stars Kids Nutrition', cat: 'Clean-Label Sub-Brand', num: '3 SKUs', desc: 'Millet & quinoa pancake mixes and kids nut butters engineered with zero maida, zero refined sugar, and Veo AI motion direction.', tag: 'Sub-Brand Launch', img: '/images/jusamazin/jars/pancake_berry_blast.png' },
-  { id: 'mom2b', name: 'Mom2B Maternal Care', cat: 'Functional Care', num: '5+ SKUs', desc: 'Targeted galactagogue functional spreads, savory Peanut & Flax Chutney, and the on-the-go Mom Bar.', tag: 'Obstetric Trust', img: '/images/jusamazin/mom2b/mom_bar_front.png' },
+  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '+70% Snacking Uplift', desc: 'Bold street typography and electric blue wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star', img: '/images/jusamazin/desi_bar/runway_final.jpg' },
+  { id: 'lilstars', name: 'Lil\'Stars Kids Nutrition', cat: 'Clean-Label Sub-Brand', num: '12 SKUs', desc: 'Millet & quinoa pancake mixes and kids nut butters engineered with zero maida, zero refined sugar, and Veo AI motion direction.', tag: 'Sub-Brand Launch', img: '/images/jusamazin/lilstars/pancake_berry_blast.png' },
+  { id: 'mom2b', name: 'Mom2B Maternal Care', cat: 'Functional Care', num: '8 SKUs', desc: 'Targeted galactagogue functional spreads, savory Peanut & Flax Chutney, and the on-the-go Mom Bar.', tag: 'Obstetric Trust', img: '/images/jusamazin/mom2b/mom_bar_front.png' },
   { id: 'retail-pos', name: 'Retail POS & 5ft FSU', cat: 'Spatial Engineering', num: '6+ Expos', desc: 'Standalone 5ft retail display units, cross-category parasite clip strips, and international pavilions across Dubai and AAHAR.', tag: 'Physical Merchandising', img: '/images/jusamazin/events/condo-carnival-booth.png' },
   { id: 'almond-milk', name: '30-Sec Almond Milk', cat: 'Category Disruptor', num: '11K+ Orders', desc: '100% almond paste sachet exposing mass-market cartons with radical ingredient transparency.', tag: 'Category Rebrand', img: '/images/jusamazin/30sad/30sad-all-set.png' },
-  { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '5× Velocity', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print', img: '/images/jusamazin/web/snack-tile.png' },
-  { id: 'peanut-butter', name: 'Peanut Butter Jars & Tubs', cat: 'Foundational Line', num: '15+ SKUs', desc: 'Master token layer governing clean typography, PET/Glass material splitting, and 1KG fitness tubs.', tag: 'Brand Anchor', img: '/images/jusamazin/jars/pb_jaggery_jar.png' },
+  { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '11 SKUs', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print', img: '/images/jusamazin/web/snack-tile.png' },
+  { id: 'peanut-butter', name: 'Peanut Butter Jars & Tubs', cat: 'Foundational Line', num: '24 SKUs', desc: 'Master token layer governing clean typography, PET/Glass material splitting, and 1KG fitness tubs.', tag: 'Brand Anchor', img: '/images/jusamazin/jars/glass_front.jpg' },
 ];
 
 export default function JusAmazin() {
@@ -357,8 +357,38 @@ export default function JusAmazin() {
         <div className="s-label rv">01 — The Brief</div>
         <h2 className="s-title rv">Strong product.<br/><i>No identity.</i></h2>
         <div className="three rv2">
-          {[['01 — Challenge','Strong product quality, zero coherent visual identity. Every SKU looked different. Retail shelf pickup was weak. No consistent brand story.'],['02 — Approach','Built a complete visual system from scratch — packaging logic, variant colour codes, photo→3D migration, social templates, POS, and a brand guidelines doc.'],['03 — Outcome','176% revenue growth in FY 2024–25. Streamlined pipeline from drawing board to production. Cohesive portfolio across all SKUs and retail touchpoints.']].map(([h,b])=>(
+          {[['01 — Challenge','Strong product quality, zero coherent visual identity. Every SKU looked different. Retail shelf pickup was weak. No consistent brand story.'],['02 — Approach','Built a complete visual system from scratch — packaging logic, variant colour codes, photo→3D migration, social templates, POS, and a brand guidelines doc.'],['03 — Outcome','Contributed alongside sales, product, and operations to a high-growth FY24–25 period (+176% reported company revenue) through packaging coherence across 85+ SKUs.']].map(([h,b])=>(
             <div key={h} className="col"><div className="col-h">{h}</div><div className="col-b">{b}</div></div>
+          ))}
+        </div>
+      </div></section>
+
+      {/* 7 PRODUCT FAMILIES OVERVIEW */}
+      <section style={{borderBottom:'1px solid var(--ja-border)', padding:'5.5rem 0'}}><div className="c">
+        <div className="s-label rv">01B — Portfolio Range Architecture</div>
+        <h2 className="s-title rv">7 Product Families.<br/><i>85+ Commercial SKUs.</i></h2>
+        <p className="body rv" style={{marginBottom:'3rem'}}>
+          Distinguishing total commercial SKU count from product family architecture. As Design & Communications Manager, I oversee the complete visual hierarchy across physical modern trade, quick commerce, and D2C.
+        </p>
+        <div className="rv2" style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'1.2rem'}}>
+          {[
+            { num: '01', family: 'Nut & Seed Butters', scope: '24 SKUs', formats: 'Glass jars (200g), PET fitness tubs (1kg), multi-packs', desc: 'Foundational range establishing clean typography, tamper-evident seals, and macro ingredient honesty.' },
+            { num: '02', family: 'Energy & Nutrition Bars', scope: '14 SKUs', formats: 'Flow-wrap foil wrappers, 6-pack counter caddies', desc: 'Desi Energy Bar, Hazelnut Crunch, and high-protein snacking lines engineered for 3-sec shelf pull.' },
+            { num: '03', family: 'Plant-Based Dairy (30 SAM)', scope: '8 SKUs', formats: 'Single-serve sachets, instant shaker counter units', desc: 'Category-disrupting 100% paste sachets exposing mass-market carton dilution.' },
+            { num: '04', family: 'Lil’Stars Kids Nutrition', scope: '12 SKUs', formats: 'Carton boxes, fruit spreads, pancake mixes', desc: 'Dual-target packaging balancing whimsical characters for kids with clean facts for parents.' },
+            { num: '05', family: 'Mom2B Maternal Care', scope: '8 SKUs', formats: 'Specialty jars, savory chutney pouches, Mom Bar wraps', desc: 'Galactagogue maternal nutrition trusted by obstetricians and expectant mothers.' },
+            { num: '06', family: 'Impulse Snacking & Trail Mix', scope: '11 SKUs', formats: 'Stand-up pouches, transparent windowed foil bags', desc: 'Universal pouch base system with modular SKU overlays saving upfront tooling capital.' },
+            { num: '07', family: 'Organic Sugar & Sweeteners', scope: '8 SKUs', formats: 'Stand-up craft pouches, pantry jars', desc: 'Clean pantry staples including coconut sugar and jaggery powder.' }
+          ].map(f => (
+            <div key={f.num} style={{background:'rgba(240,237,230,0.03)', border:'1px solid rgba(240,237,230,0.1)', borderRadius:'20px', padding:'1.8rem'}}>
+              <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'0.8rem'}}>
+                <span style={{fontFamily:'var(--D)', fontWeight:900, color:'var(--ja-accent)', fontSize:'1.4rem'}}>{f.num}</span>
+                <span style={{fontFamily:'var(--M)', fontSize:'0.55rem', letterSpacing:'0.15em', background:'rgba(212,96,10,0.12)', color:'var(--ja-accent)', padding:'0.2rem 0.6rem', borderRadius:'999px', textTransform:'uppercase'}}>{f.scope}</span>
+              </div>
+              <h3 style={{fontFamily:'var(--D)', fontSize:'1.15rem', color:'#FFF', marginBottom:'0.4rem'}}>{f.family}</h3>
+              <div style={{fontFamily:'var(--M)', fontSize:'0.52rem', color:'rgba(240,237,230,0.5)', letterSpacing:'0.1em', marginBottom:'0.8rem'}}>{f.formats}</div>
+              <p style={{fontFamily:'var(--S)', fontSize:'0.88rem', color:'var(--ja-muted)', lineHeight:'1.7'}}>{f.desc}</p>
+            </div>
           ))}
         </div>
       </div></section>
@@ -617,7 +647,7 @@ export default function JusAmazin() {
             <span className="slot-cap">Festive Luxury Gifting</span>
           </Link>
           <Link href="/jusamazin/lilstars" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/jars/pancake_berry_blast.png" className="slot-img zoom-fill" alt="Lil'Stars Kids Nutrition" />
+            <img loading="lazy" src="/images/jusamazin/lilstars/pancake_berry_blast.png" className="slot-img zoom-fill" alt="Lil'Stars Kids Nutrition" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">LIL'STARS KIDS</div>
             <span className="slot-cap">Lil&apos;Stars Kids Nutrition</span>
@@ -653,7 +683,7 @@ export default function JusAmazin() {
             <span className="slot-cap">Snacks &amp; Canisters</span>
           </Link>
           <Link href="/jusamazin/jars" className="slot" style={{cursor:'pointer'}}>
-            <img loading="lazy" src="/images/jusamazin/jars/pb_jaggery_jar.png" className="slot-img zoom-fill" alt="Jars & Tubs" />
+            <img loading="lazy" src="/images/jusamazin/lilstars/pb_jaggery_jar.png" className="slot-img zoom-fill" alt="Jars & Tubs" />
             <div className="slot-bg-overlay" />
             <div className="slot-ghost">JARS &amp; TUBS</div>
             <span className="slot-cap">Jars &amp; Tubs</span>

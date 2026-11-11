@@ -617,6 +617,19 @@ const MOBILE_CSS = `
       gap: 0.5rem !important;
     }
   }
+
+  /* SINGLE HIGH-CONTRAST LIGHT EDITORIAL SPREAD (BREAKS MONOTONE SCROLL) */
+  #statement.editorial-paper-spread {
+    background-color: #F4F1EA !important;
+    color: #0A0906 !important;
+  }
+  #statement.editorial-paper-spread h2,
+  #statement.editorial-paper-spread h4 {
+    color: #0A0906 !important;
+  }
+  #statement.editorial-paper-spread p {
+    color: #322E26 !important;
+  }
 `
 
 export default function Home({ bodyHTML, inlineScript }) {
