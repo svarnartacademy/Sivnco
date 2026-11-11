@@ -3623,7 +3623,7 @@
       padding: 14px 0;
       position: relative;
       z-index: 4;
-    }
+     max-width: 100vw !important; overflow: hidden !important; }
 
     .br-ticker-track {
       display: flex;
@@ -4199,6 +4199,24 @@
       color: #10100e !important;
     }
 
+  
+    /* SAFE VISIBILITY GUARANTEE: Never let elements stay opacity 0 */
+    .cs-img-slot,
+    .cs-ba-side,
+    .cinema-theater-frame,
+    .editorial-project-card,
+    .visual-proof-card,
+    .br-block-card,
+    .journey-card-step,
+    .testi-card {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .main-wrap, body, html {
+      max-width: 100vw !important;
+      overflow-x: clip !important;
+    }
+
   </style>
 </head>
 
@@ -4216,9 +4234,10 @@
     <div class="nav-row">
       <div class="nav-logo">SIVNCO<span style="color:var(--accent)">.</span></div>
       <div class="nav-links">
-        <a href="/campaigns">Campaigns</a>
-        <a href="/artist-educator">Art</a>
+        <a href="/work">Work</a>
+        <a href="/visual-diary">Visual Diary</a>
         <a href="#about">About</a>
+        <a href="/resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
@@ -4236,9 +4255,10 @@
     <!-- Expandable Mobile Menu Panel -->
     <div class="nav-menu-panel" id="navMenuPanel" aria-hidden="true">
       <div class="nav-menu-inner">
-        <a href="/campaigns" class="mobile-nav-link">Campaigns</a>
-        <a href="/artist-educator" class="mobile-nav-link">Art</a>
+        <a href="/work" class="mobile-nav-link">Work</a>
+        <a href="/visual-diary" class="mobile-nav-link">Visual Diary</a>
         <a href="#about" class="mobile-nav-link">About</a>
+        <a href="/resume" class="mobile-nav-link">Resume</a>
         <a href="#contact" class="mobile-nav-link">Contact</a>
       </div>
     </div>
@@ -4560,16 +4580,6 @@
             Commercial packaging architecture, multi-format design systems, and shelf differentiation engineered across 15+ product families.
           </p>
         </div>
-              <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">speaks</div></div>
-              <div class="reveal-wrap"><div class="reveal-text"><i>first.</i></div></div>
-            </h2>
-          </div>
-          <div class="gs-fade" style="font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--text-muted); display: flex; align-items: center; gap: 0.6rem;">
-            <span>5 FLAGSHIP PORTFOLIOS</span>
-            <span style="color: var(--accent);">✦</span>
-            <span>CASCADING EDITORIAL</span>
-          </div>
-        </div>
 
         <div class="work-editorial-grid">
 
@@ -4750,16 +4760,6 @@
           <p>
             From fragmented labels to an end-to-end multi-format packaging architecture across 15+ SKUs, industrial dielines, and retail POS.
           </p>
-        </div>
-              <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">Amazin</div></div>
-              <div class="reveal-wrap"><div class="reveal-text">Brand <i>System</i></div></div>
-            </h2>
-          </div>
-          <div class="gs-fade" style="font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.15em; color: var(--text-muted); display: flex; align-items: center; gap: 0.6rem;">
-            <span>AUG 2023 &mdash; PRESENT</span>
-            <span style="color: var(--accent);">✦</span>
-            <span>END-TO-END VISUAL FUNCTION</span>
-          </div>
         </div>
 
         <!-- Cascading Deck: Challenge / Approach / Outcome -->
@@ -5340,51 +5340,6 @@
         </div>
       </div>
     </section>
-    <!-- HORIZONTAL SCROLL ROLES -->
-    <section class="section" id="horizontal-sec" style="overflow: hidden; padding: 0;">
-      <div class="h-sticky" style="height: 100vh; display: flex; align-items: center;">
-        <div class="h-container"
-          style="display: flex; gap: 5vw; padding-left: 10vw; width: max-content; padding-right: 10vw;">
-
-          <div style="width: 30vw; flex-shrink: 0;">
-            <h2 class="h-large">
-              <div class="t-serif" style="color:var(--text-muted)">Two domains.</div>One person.
-            </h2>
-            <p style="margin-top: 2rem; font-size: 1.2rem; color: var(--text-muted); font-family: var(--f-serif);">Scroll to explore my different practices.</p>
-          </div>
-
-          <div class="glass-card role-card role-card-1"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
-            <div class="t-mono-label">01 / Design</div>
-            <h3 class="h-large" style="font-size: 3rem;">Art Director &amp; Brand Lead</h3>
-            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">
-              Directing visual and print packaging architecture in-house at <strong>Jus’Amazin</strong>. Concurrently running <strong>Sivnco Studio</strong> (founded 2025), executing identity systems and packaging for brands that value visual craft.
-            </p>
-            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">JUS AMAZIN</span>
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">SIVNCO STUDIO</span>
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">PACKAGING SYSTEMS</span>
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--accent);">176% REVENUE IMPACT</span>
-            </div>
-          </div>
-
-          <div class="glass-card role-card role-card-2"
-            style="width: 50vw; flex-shrink: 0; padding: 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--accent);">
-            <div class="t-mono-label">02 / Art</div>
-            <h3 class="h-large" style="font-size: 3rem;">Art Education &amp; Fine Art</h3>
-            <p style="color:var(--text-muted); margin-top: 1.5rem; font-size: 1.1rem; max-width: 500px; font-family: var(--f-serif);">
-              Teaching fine art, drawing, and visual thinking at <strong>Svarnart Academy</strong>. Integrating classical Indian roots with contemporary practice, building on a history of academic excellence at <strong>Openhouse</strong>.
-            </p>
-            <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.6rem;">
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">SVARNART ACADEMY</span>
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">OPENHOUSE ACHIEVEMENTS</span>
-              <span style="font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.15em;border:1px solid var(--glass-border);padding:0.3rem 0.8rem;border-radius:20px;color:var(--text-muted);">FINE ART PRACTICE</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <!-- SVARNART SECTION -->
     <section class="section svarnart-section" id="svarnart">
@@ -5497,9 +5452,6 @@
                 From academic mastery at CAVA Mysore to commercial FMCG packaging leadership and creative direction.
               </p>
             </div>
-                <div class="reveal-wrap"><div class="reveal-text t-serif" style="color:var(--accent)">so far.</div></div>
-              </h2>
-            </div>
 
             <!-- Milestone Progress Pills (Increasing Order) -->
             <div class="journey-progress-bar" id="journeyProgBar">
@@ -5510,7 +5462,6 @@
               <span class="journey-prog-pill" data-step="4">05 Packaging</span>
               <span class="journey-prog-pill" data-step="5">06 Art Director</span>
             </div>
-          </div>
 
           <!-- Stack Stage Frame -->
           <div class="journey-deck-stage" id="journeyDeckStage">

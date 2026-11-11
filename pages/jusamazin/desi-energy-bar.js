@@ -35,8 +35,8 @@ const CSS = `
   --deb-glass:rgba(250,250,250,0.04);--deb-charcoal:#161616;
   --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif;
 }
-html{scroll-behavior:smooth}
-body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:hidden}
+html{scroll-behavior:smooth; overflow-x: clip !important; max-width: 100vw !important;}
+body{background:var(--deb-bg);color:var(--deb-white);font-family:var(--S);overflow-x:clip !important; max-width: 100vw !important;}
 a{color:inherit;text-decoration:none}
 
 

@@ -2,22 +2,14 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function StartProjectButton() {
   return (
-    <a
-      href="#contact"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        textDecoration: 'none',
-        cursor: 'pointer',
-      }}
-      className="nav-cta-wrap"
-    >
-      <style>{`
+    <>
+      <style jsx>{`
         .nav-cta-wrap {
           display: inline-flex;
           align-items: center;
           gap: 0.4rem;
+          text-decoration: none;
+          cursor: pointer;
           transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-cta-wrap:active {
@@ -64,10 +56,12 @@ export default function StartProjectButton() {
           transform: rotate(45deg);
         }
       `}</style>
-      <span className="nav-cta-label">START A PROJECT</span>
-      <span className="nav-cta-icon">
-        <ArrowUpRight size={14} strokeWidth={2.5} />
-      </span>
-    </a>
-  )
+      <a href="#contact" className="nav-cta-wrap">
+        <span className="nav-cta-label">START A PROJECT</span>
+        <span className="nav-cta-icon">
+          <ArrowUpRight size={14} strokeWidth={2.5} />
+        </span>
+      </a>
+    </>
+  );
 }

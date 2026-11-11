@@ -62,7 +62,7 @@ const CONCRETE_EXAMPLE = {
       phase: 'Client Brief & Input Constraints',
       desc: 'The brief called for Lil\'Stars kids nut-butter pouches: playful energy, clear allergen callouts, zero refined sugar, and high shelf pop in modern retail aisles. Key constraint: Must comply with FSSAI front-of-pack labeling standards and fit standard rotogravure cylinder repeats.',
       tags: ['Retail Brief', 'FSSAI Standards', 'Allergen Cues'],
-      visual: '/images/jusamazin/lilstars/standee_art.jpg',
+      visual: '/images/jusamazin/web/Lilstars.webp',
       visualCaption: 'Initial conceptual moodboard and product positioning constraints.'
     },
     {
@@ -70,7 +70,7 @@ const CONCRETE_EXAMPLE = {
       phase: 'Raw Generative Synthesis (AI Draft)',
       desc: 'Prompted generative image and video models (Midjourney, Google Veo) to explore dynamic splash physics, playful character dynamics, and fruit-nut collision textures. While visually striking, raw AI output produced anatomically warped characters, illegible nutrition panels, and non-printable fantasy colors.',
       tags: ['Midjourney', 'Google Veo', 'Exploratory Drafts'],
-      visual: '/images/jusamazin/lilstars/bars_all.jpg',
+      visual: '/images/jusamazin/lilstars/pancake_berry_blast.png',
       visualCaption: 'Raw generative explorations for dynamic splash physics and energy.'
     },
     {
@@ -78,7 +78,7 @@ const CONCRETE_EXAMPLE = {
       phase: 'Human Judgment & Prepress Corrections',
       desc: 'What I personally audited and corrected: 1) Redrew character mascot vectors by hand to fix anatomy and posture; 2) Stripped hallucinated nutrition text and typeset genuine FSSAI-compliant tables with >= 1.5mm font sizes; 3) Replaced unprintable RGB gradients with calibrated CMYK + spot Pantone inks; 4) Aligned bleed margins (3mm) and barcode quiet zones for cylinder engraving.',
       tags: ['Vector Redraw', 'Spot Pantone Calibration', 'FSSAI Compliance', '3mm Bleed'],
-      visual: '/images/jusamazin/lilstars/lil_stars_spread.jpg',
+      visual: '/images/jusamazin/lilstars/pancake_choco_delight.png',
       visualCaption: 'Technical corrections: vector linework, spot ink separations, and dieline alignment.'
     },
     {
@@ -265,10 +265,10 @@ export default function AIWorkflow() {
       <Head>
         <title>AI Workflow &amp; Studio Tooling — H P Shivaraj | Sivnco</title>
         <meta name="description" content="AI tools integrated into commercial packaging pipelines, generative briefs, and autonomous studio agents with strict human prepress governance." />
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
       <Navbar />
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       {/* HERO WITH FLUID CANVAS */}
       <div className="hero">

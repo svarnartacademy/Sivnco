@@ -156,10 +156,10 @@ export default function BrandAssets() {
       <Head>
         <title>Brand Assets &amp; Illustrations — H P Shivaraj | Sivnco</title>
         <meta name="description" content="Vector character systems, asset pipelines, and illustrations built for digital surfaces and physical packaging." />
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
       <Navbar />
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       {/* HERO WITH FLUID CANVAS */}
       <div className="hero">

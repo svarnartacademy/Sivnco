@@ -239,10 +239,10 @@ export default function InHouseDesigns() {
         <script type="module" src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" />
         <title>In-House Projects — H P Shivaraj | Sivnco</title>
         <meta name="description" content="Explore Svar'n'Art Academy EdTech Platform, OG Mithai packaging, and Vedic Treats 3D GLB interactive models." />
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
       <Navbar />
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       {/* HERO WITH FLUID CANVAS */}
       <div className="hero">

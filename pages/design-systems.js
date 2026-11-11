@@ -216,10 +216,10 @@ export default function DesignSystems() {
       <Head>
         <title>Design Systems &amp; Packaging Architecture — H P Shivaraj | Sivnco</title>
         <meta name="description" content="Design systems, dieline anatomy, variant matrices, and packaging token architecture by H P Shivaraj." />
+        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
       <Navbar />
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       {/* HERO WITH FLUID CANVAS */}
       <div className="hero">
