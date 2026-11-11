@@ -9,7 +9,7 @@ import { getAudioEngine } from '../components/ui/TactileAudioEngine'
 
 const METRICS = [
   { n: '3', l: 'Design Systems Built' },
-  { n: '15+', l: 'SKU Variations Governed' },
+  { n: '85+', l: 'SKU Variations Governed' },
   { n: '100%', l: 'Token Coverage' },
   { n: '3', l: 'Brand Systems' },
 ]
@@ -21,11 +21,11 @@ const SYSTEMS = [
     label: 'Brand System — Commercial Client',
     title: 'Jus Amazin',
     subtitle: 'Complete Brand System',
-    body: `A design system is the decision you make once so you never have to make it again under deadline pressure. For Jus Amazin — a D2C peanut butter brand scaling from 3 to 15+ SKUs — I built the full system from scratch: token layer, component layer, and governance rules.`,
+    body: `A design system is the decision you make once so you never have to make it again under deadline pressure. For Jus Amazin — a D2C peanut butter brand with an 85+ SKU company portfolio — I built the full system from scratch: token layer, component layer, and governance rules.`,
     layers: [
       { title: 'Token Layer', items: ['Colour system: 6 primary + 12 semantic tokens mapped to retail and digital surfaces', 'Typography scale: 3-level hierarchy (display, body, label) with defined size ramps', 'Spacing grid: 8px base unit across all layout decisions'] },
-      { title: 'Component Layer', items: ['Label template system: 15+ SKU variants from one master source', 'Social post templates: feed, story, and ad formats from a single component set', 'Email header system: 4 modular blocks that recompose across campaigns', 'POS display: shelf talker and standee components using shared tokens'] },
-      { title: 'Governance', items: ['Visual consistency maintained across 15+ SKU variations without breaking the system', 'Handoff-ready: marketing team could apply system without design oversight', '176% revenue contribution attributable in part to consistent shelf-to-screen identity'] },
+      { title: 'Component Layer', items: ['Label template system: 85+ SKU variants from one master source', 'Social post templates: feed, story, and ad formats from a single component set', 'Email header system: 4 modular blocks that recompose across campaigns', 'POS display: shelf talker and standee components using shared tokens'] },
+      { title: 'Governance', items: ['Visual consistency maintained across 85+ SKU variations without breaking the system', 'Handoff-ready: marketing team could apply system without design oversight', 'Design contributed alongside product, sales and operations during 176% company revenue growth in FY2024–25'] },
     ],
     accent: '#D4600A',
   },
@@ -238,7 +238,7 @@ export default function DesignSystems() {
             </div>
             <div className="meta">
               <label>GOVERNANCE</label>
-              <span>15+ SKU Variations</span>
+              <span>85+ SKU Variations</span>
             </div>
             <div className="meta">
               <label>ROLE</label>
@@ -380,7 +380,7 @@ export default function DesignSystems() {
             <p className="definition-attr">— H P Shivaraj, Design & Communications Manager · Jus Amazin</p>
           </div>
           <p className="body-text rv2" style={{ marginTop: '2rem' }}>
-            Most designers maintain visual consistency through taste and habit. A design system makes consistency mechanical — so that anyone who picks it up maintains quality, even under deadline pressure, even across 15 SKU variations, even when you&apos;re not in the room.
+            Most designers maintain visual consistency through taste and habit. A design system makes consistency mechanical — so that anyone who picks it up maintains quality, even under deadline pressure, even across 85+ SKU variations, even when you&apos;re not in the room.
           </p>
         </div>
       </section>

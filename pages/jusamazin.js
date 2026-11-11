@@ -6,18 +6,18 @@ import StartProjectButton from '@/components/demo'
 
 const METRICS = [
   {n:'176%', l:'Revenue Growth FY24–25'},
-  {n:'40%', l:'Production Efficiency'},
-  {n:'15+', l:'SKUs Designed'},
+  {n:'160K', l:'Desi Energy Bar Pouch Order'},
+  {n:'85+', l:'Company Portfolio SKUs'},
   {n:'3D', l:'Render-based Presence'},
 ]
 const DELIVERABLES = [
-  'Packaging Design (15+ SKUs)','3D Product Renders','Brand Guidelines Document',
+  'Packaging Design (85+ SKUs)','3D Product Renders','Brand Guidelines Document',
   'Festive Luxury Gifting','Lil\'Stars Kids Nutrition','Mom2B Maternal Care',
   'Retail POS & Spatial FSU','Canisters & Impulse Snacking','30-Sec Almond Milk Campaign',
 ]
 const RESULTS = [
-  '176% revenue growth in FY 2024–25 — directly from improved brand visibility and packaging coherence at retail.',
-  'Production efficiency up 40% — even as 80% remains manual, the design pipeline is significantly leaner.',
+  '176% company revenue growth in FY 2024–25 (internal data); design contributed alongside product, sales and operations.',
+  'Production ownership includes a 160,000-pouch Desi Energy Bar order and an 80,000-pouch rollout across eight snack variants.',
   'Visual presence elevated as product presentation shifted from photo-based to 3D render-based.',
   'Streamlined process: drawing board → iterations → final design → proofing → print & production.',
   'Product portfolio structured across all SKUs with a master brand document guiding future extensions.',
@@ -282,13 +282,13 @@ import { getAudioEngine } from '../components/ui/TactileAudioEngine';
 
 const SKUS = [
   { id: 'gifting', name: 'Festive Luxury Gifting', cat: 'Celebratory Architecture', num: '100% Bespoke', desc: 'Sliding contemporary trays in Royal Purple, crimson heritage boxes with gold mandalas, and windowed snack display units.', tag: 'Festive Suite', img: '/images/jusamazin/gifting/Final-ALL-Camera.png' },
-  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '176% Growth', desc: 'Bold street typography and electric blue wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star', img: '/images/jusamazin/desi_bar/runway_final.jpg' },
+  { id: 'desi-bar', name: 'Desi Energy Bar', cat: 'Impulse Snacking', num: '160K Pouch Order', desc: 'Bold street typography and electric blue wrap designed for high-velocity 3-second quick-commerce conversions.', tag: 'Retail Shelf Star', img: '/images/jusamazin/desi_bar/runway_final.jpg' },
   { id: 'lilstars', name: 'Lil\'Stars Kids Nutrition', cat: 'Clean-Label Sub-Brand', num: '3 SKUs', desc: 'Millet & quinoa pancake mixes and kids nut butters engineered with zero maida, zero refined sugar, and Veo AI motion direction.', tag: 'Sub-Brand Launch', img: '/images/jusamazin/jars/pancake_berry_blast.png' },
   { id: 'mom2b', name: 'Mom2B Maternal Care', cat: 'Functional Care', num: '5+ SKUs', desc: 'Targeted galactagogue functional spreads, savory Peanut & Flax Chutney, and the on-the-go Mom Bar.', tag: 'Obstetric Trust', img: '/images/jusamazin/mom2b/mom_bar_front.png' },
   { id: 'retail-pos', name: 'Retail POS & 5ft FSU', cat: 'Spatial Engineering', num: '6+ Expos', desc: 'Standalone 5ft retail display units, cross-category parasite clip strips, and international pavilions across Dubai and AAHAR.', tag: 'Physical Merchandising', img: '/images/jusamazin/events/condo-carnival-booth.png' },
   { id: 'almond-milk', name: '30-Sec Almond Milk', cat: 'Category Disruptor', num: '11K+ Orders', desc: '100% almond paste sachet exposing mass-market cartons with radical ingredient transparency.', tag: 'Category Rebrand', img: '/images/jusamazin/30sad/30sad-all-set.png' },
   { id: 'superfoods', name: 'Superfoods Range', cat: 'Universal Pouch', num: '5× Velocity', desc: 'A universal master pouch system with modular SKU sticker overlays saving capital while 5×-ing factory output.', tag: 'Modular Print', img: '/images/jusamazin/web/snack-tile.png' },
-  { id: 'peanut-butter', name: 'Peanut Butter Jars & Tubs', cat: 'Foundational Line', num: '15+ SKUs', desc: 'Master token layer governing clean typography, PET/Glass material splitting, and 1KG fitness tubs.', tag: 'Brand Anchor', img: '/images/jusamazin/jars/pb_jaggery_jar.png' },
+  { id: 'peanut-butter', name: 'Peanut Butter Jars & Tubs', cat: 'Foundational Line', num: 'Multi-Format', desc: 'Master token layer governing clean typography, PET/Glass material splitting, and 1KG fitness tubs.', tag: 'Brand Anchor', img: '/images/jusamazin/jars/pb_jaggery_jar.png' },
 ];
 
 export default function JusAmazin() {
@@ -332,7 +332,7 @@ export default function JusAmazin() {
             Jus<br/><i>Amazin</i>
           </h1>
           <p className="hero-sub rv" style={{transitionDelay:'.25s'}}>
-            End-to-end brand system for a D2C peanut butter brand — packaging across 15+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
+            End-to-end brand system for a D2C peanut butter brand — packaging across 85+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
           </p>
           <div className="hero-meta rv" style={{transitionDelay:'.4s'}}>
             {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2023 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
@@ -693,7 +693,7 @@ export default function JusAmazin() {
             </div>
             <p className="ba-b">Generic label printing. No system. Each SKU looked like a different brand — clashing colours, inconsistent typography, no shelf-ready files, no brand rationale document.</p>
           </div>
-          <div className="ba-side a"><div className="ba-tag">After — 2023 onwards</div><p className="ba-b">Unified visual language. 15+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
+          <div className="ba-side a"><div className="ba-tag">After — 2023 onwards</div><p className="ba-b">Unified visual language. 85+ SKUs with coherent colour logic, typography, and 3D-render direction. A brand guidelines document the entire team uses daily. Design is now proactive and scalable.</p></div>
         </div>
       </div></section>
 

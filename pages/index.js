@@ -627,11 +627,11 @@ export default function Home({ bodyHTML, inlineScript }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco</title>
-        <meta name="description" content="H P Shivaraj — Brand &amp; Packaging Design Lead. Packaging systems, brand identity, FMCG shelf presence, fine art practice. 176% revenue growth. Bengaluru." />
+        <meta name="description" content="H P Shivaraj — Brand &amp; Packaging Design Lead. Packaging systems, brand identity, FMCG shelf presence, fine art practice. 85+ SKU company portfolio. Bengaluru." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sivnco.in/" />
         <meta property="og:title" content="H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco" />
-        <meta property="og:description" content="Brand &amp; Packaging Design Lead, Fine Artist. Packaging systems, FMCG shelf presence, 176% revenue growth. Bengaluru." />
+        <meta property="og:description" content="Brand &amp; Packaging Design Lead, Fine Artist. Packaging systems, FMCG shelf presence, 85+ SKU company portfolio. Bengaluru." />
         <meta property="og:image" content="https://sivnco.in/images/thumbnail.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="H P Shivaraj — Brand &amp; Packaging Design Lead | Sivnco" />
@@ -898,11 +898,16 @@ export async function getStaticProps() {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(data).toString()
-    }).then(function() {
+    }).then(function(response) {
+      if (!response.ok) throw new Error('Message could not be sent. Please try again.');
       var status = document.getElementById('formStatus');
-      if (status) { status.style.display = 'block'; }
+      if (status) { status.textContent = 'Thank you. Your message has been sent.'; status.setAttribute('role', 'status'); status.style.display = 'block'; }
       form.reset();
-    }).catch(function(err) { console.error('Form error:', err); });
+    }).catch(function(err) {
+      var status = document.getElementById('formStatus');
+      if (status) { status.textContent = 'Message could not be sent. Please try again or email sivnco.in@gmail.com.'; status.setAttribute('role', 'alert'); status.style.display = 'block'; }
+      console.error('Form error:', err);
+    });
   });
 })();
 `

@@ -291,8 +291,8 @@ export default function Navbar({ backLink, backLabel }) {
             </div>
           ) : (
             <div className="snav-links">
-              <Link href="/campaigns"      className={router.pathname === '/campaigns'       ? 'snav-active' : ''}>Campaigns</Link>
-              <Link href="/artist-educator" className={router.pathname === '/artist-educator' ? 'snav-active' : ''}>Art</Link>
+              <Link href="/work" className={router.pathname === '/work' ? 'snav-active' : ''}>Work</Link>
+              <Link href="/resume" className={router.pathname === '/resume' ? 'snav-active' : ''}>Resume</Link>
               <Link href="/#about">About</Link>
               <Link href="/#contact" onClick={handleContact}>Contact</Link>
             </div>
@@ -326,8 +326,8 @@ export default function Navbar({ backLink, backLabel }) {
                 <Link href={backLink} className="snav-mobile-link" onClick={() => setMenuOpen(false)}>{backLabel || '← Back'}</Link>
               ) : (
                 <>
-                  <Link href="/campaigns"       className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Campaigns</Link>
-                  <Link href="/artist-educator"  className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Art</Link>
+                  <Link href="/work" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Work</Link>
+                  <Link href="/resume" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Resume</Link>
                   <Link href="/#about"           className="snav-mobile-link" onClick={() => setMenuOpen(false)}>About</Link>
                   <Link href="/#contact"         className="snav-mobile-link" onClick={handleContact}>Contact</Link>
                 </>
