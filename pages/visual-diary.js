@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { createPortal } from 'react-dom';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -538,9 +539,9 @@ export default function VisualDiary() {
         </div>
 
         {/* Detailed Modal Viewer */}
-        {activeModalItem && (
+        {activeModalItem && createPortal((
           <div
-            className="fixed inset-0 z-[1000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[10000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setActiveModalItem(null)}
           >
             <div
@@ -641,7 +642,7 @@ export default function VisualDiary() {
               </div>
             </div>
           </div>
-        )}
+        ), document.body)}
       </main>
       <Footer />
     </>
