@@ -18,11 +18,11 @@ const DIARY_ITEMS = [
     badge: 'CONCEPT',
     badgeColor: '#D4600A',
     year: '2024',
-    title: 'Desi Energy Bar — Hand-Drawn Gully Cricket & Nostalgia Ideation',
-    medium: 'Graphite Pencil on Paper & Digital Inking',
-    dimensions: 'A4 Sketchbook',
+    title: 'Desi Energy Bar — Packaging Visual',
+    medium: 'Packaging artwork',
+    dimensions: 'Digital image',
     img: '/images/jusamazin/desi_bar/runway_handdrawn.jpg',
-    summary: 'Initial spontaneous ideation capturing post-school street play in Indian neighborhoods: raw games of Lagori, Gully Cricket, and the iconic vintage Atlas bicycle silhouette.',
+    summary: 'A retained packaging visual from the Desi Energy Bar project. This image shows packaging artwork rather than an original pencil sketch.',
     reflection: 'Western energy bars rely on sterile gym vectors. To create genuine emotional pull, the packaging needed to evoke the scent of evening chikki and neighborhood street cricket before the consumer reads a single calorie statistic.',
     caseLink: '/jusamazin/desi-energy-bar',
     caseTitle: 'Desi Energy Bar Case Study'
@@ -408,7 +408,7 @@ export default function VisualDiary() {
           <p style={{ maxWidth: '520px', color: 'rgba(240,237,230,0.7)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             This visual diary documents the full creative progression of H P Shivaraj. Here live the raw pencil sketches, 
             rejected directions that shaped breakthroughs, classical CAVA academic studies, procedural 3D tests, and teaching reflections. 
-            Nothing of the creative journey is hidden.
+            The collection preserves earlier work and experiments. Some dates, medium labels and reflections come from earlier portfolio notes and remain to be verified against the originals.
           </p>
 
           <div className="w-full flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-[#F0EDE6]/08 text-xs font-mono text-[#F0EDE6]/50 uppercase tracking-widest">
@@ -416,7 +416,7 @@ export default function VisualDiary() {
             <span>✦</span>
             <span>Filterable by Discipline &amp; Year</span>
             <span>✦</span>
-            <span>Click any item for full provenance</span>
+            <span>Open an item for context</span>
           </div>
         </header>
 
@@ -530,7 +530,7 @@ export default function VisualDiary() {
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-white/08 flex items-center justify-between text-xs font-mono text-[#D8FC71]">
-                  <span>Inspect Provenance</span>
+                  <span>Inspect Entry</span>
                   <span className="group-hover:translate-x-1 transition-transform">↗</span>
                 </div>
               </div>
@@ -541,7 +541,7 @@ export default function VisualDiary() {
         {/* Detailed Modal Viewer */}
         {activeModalItem && createPortal((
           <div
-            className="fixed inset-0 z-[10000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[200000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setActiveModalItem(null)}
           >
             <div

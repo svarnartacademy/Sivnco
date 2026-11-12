@@ -1,8 +1,10 @@
 import '../styles/globals.css';
+import '../styles/portfolio.css';
 import { useEffect } from 'react';
 import Router from 'next/router';
+import PortfolioArchiveNotice from '../components/PortfolioArchiveNotice';
 import dynamic from 'next/dynamic';
-import SeedingBanner from '../components/SeedingBanner';
+
 
 const LiquidVelocityCursor = dynamic(
   () => import('../components/ui/LiquidVelocityCursor'),
@@ -80,7 +82,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <LiquidVelocityCursor />
-      <SeedingBanner />
+
+      <PortfolioArchiveNotice />
       <Component {...pageProps} />
     </>
   );
