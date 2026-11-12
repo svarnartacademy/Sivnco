@@ -404,12 +404,12 @@ export default function DesiEnergyBar() {
             </div>
             <div style={{display:'flex',flexDirection:'column',gap:'1.5rem'}}>
               <div className="deb-metric-card drv">
-                <div className="deb-metric-num">34%</div>
-                <div className="deb-metric-label">Was the overall contribution of this product in revenue in the year 2024-25</div>
+                <div className="deb-metric-num">160K</div>
+                <div className="deb-metric-label">Pouches ordered in January 2026 rotogravure run, scaling up from the initial 6,000 digital trial</div>
               </div>
               <div className="deb-metric-card drv">
-                <div className="deb-metric-num">58%</div>
-                <div className="deb-metric-label">Of the retail brand recognition was increased by this product in Q3 & Q4 of year 2024-25</div>
+                <div className="deb-metric-num">25</div>
+                <div className="deb-metric-label">Stores audited across Bengaluru retail study to map consumer hesitation and shelf visibility</div>
               </div>
             </div>
           </div>

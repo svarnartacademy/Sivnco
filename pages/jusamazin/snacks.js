@@ -34,7 +34,7 @@ const PILLARS = [
 const METRICS = [
   { n: "₹10", l: "Entry Price Point for Crushed Peanut Chikki" },
   { n: "4 Formats", l: "Canisters, Stand-Up Pouches, Sachets & Chikki Wraps" },
-  { n: "10+ SKUs", l: "Snacking & Roasted Grain System" },
+  { n: "8 Variants", l: "80,000-Pouch Rollout across 8 Variants (July 2026)" },
   { n: "100%", l: "Clean-Label FMCG Snacking Architecture" }
 ]
 

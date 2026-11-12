@@ -136,7 +136,7 @@ export default function Commissions() {
           <h2 className="s-title rv">Subject to availability<br /><i>based on schedule.</i></h2>
           <div className="body rv" style={{ margin: '0 auto 2rem', float: 'none' }}>
             <p>
-              Due to my active full-time commitments as an Art Director, new projects are scheduled quarterly. If you have a concept that aligns with a traditional-contemporary fine art perspective, let&apos;s talk.
+              Due to my active full-time commitments leading brand and packaging design, new projects are scheduled quarterly. If you have a concept that aligns with a traditional-contemporary fine art perspective, let&apos;s talk.
             </p>
           </div>
           <a href="/#contact" className="cta-btn rv2">Enquire for Project</a>

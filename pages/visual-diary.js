@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -16,11 +17,11 @@ const DIARY_ITEMS = [
     badge: 'CONCEPT',
     badgeColor: '#D4600A',
     year: '2024',
-    title: 'Desi Energy Bar — Hand-Drawn Gully Cricket & Nostalgia Ideation',
-    medium: 'Graphite Pencil on Paper & Digital Inking',
-    dimensions: 'A4 Sketchbook',
+    title: 'Desi Energy Bar — Vector Illustration & Character Artwork',
+    medium: 'Digital Vector Illustration & Packaging Layout',
+    dimensions: 'Vector Artboard Keyline',
     img: '/images/jusamazin/desi_bar/runway_handdrawn.jpg',
-    summary: 'Initial spontaneous ideation capturing post-school street play in Indian neighborhoods: raw games of Lagori, Gully Cricket, and the iconic vintage Atlas bicycle silhouette.',
+    summary: 'Digitally illustrated character compositions capturing nostalgic street play in Indian neighborhoods: raw games of Lagori, Gully Cricket, and the vintage Atlas bicycle motif on the finished wrapper layout.',
     reflection: 'Western energy bars rely on sterile gym vectors. To create genuine emotional pull, the packaging needed to evoke the scent of evening chikki and neighborhood street cricket before the consumer reads a single calorie statistic.',
     caseLink: '/jusamazin/desi-energy-bar',
     caseTitle: 'Desi Energy Bar Case Study'
@@ -308,9 +309,47 @@ const DISCIPLINES = [
 const YEARS = ['all', '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019'];
 
 export default function VisualDiary() {
+  const router = useRouter();
   const [activeDiscipline, setActiveDiscipline] = useState('all');
   const [activeYear, setActiveYear] = useState('all');
   const [activeModalItem, setActiveModalItem] = useState(null);
+
+  // Sync state from URL query parameters (e.g. ?discipline=rejected or ?filter=rejected)
+  useEffect(() => {
+    if (!router.isReady) return;
+    const filterQuery = router.query.discipline || router.query.filter;
+    if (filterQuery && DISCIPLINES.some(d => d.id === filterQuery)) {
+      setActiveDiscipline(filterQuery);
+    }
+    const yearQuery = router.query.year;
+    if (yearQuery && (yearQuery === 'all' || YEARS.includes(yearQuery))) {
+      setActiveYear(yearQuery);
+    }
+  }, [router.isReady, router.query]);
+
+  const handleDisciplineChange = (id) => {
+    setActiveDiscipline(id);
+    const query = { ...router.query };
+    if (id === 'all') {
+      delete query.discipline;
+      delete query.filter;
+    } else {
+      query.discipline = id;
+      delete query.filter;
+    }
+    router.push({ pathname: router.pathname, query }, undefined, { shallow: true });
+  };
+
+  const handleYearChange = (yr) => {
+    setActiveYear(yr);
+    const query = { ...router.query };
+    if (yr === 'all') {
+      delete query.year;
+    } else {
+      query.year = yr;
+    }
+    router.push({ pathname: router.pathname, query }, undefined, { shallow: true });
+  };
 
   // Filter items
   const filteredItems = useMemo(() => {
@@ -395,7 +434,7 @@ export default function VisualDiary() {
               {DISCIPLINES.map(d => (
                 <button
                   key={d.id}
-                  onClick={() => setActiveDiscipline(d.id)}
+                  onClick={() => handleDisciplineChange(d.id)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${
                     activeDiscipline === d.id
                       ? 'bg-[#D4600A] text-[#0A0906] font-bold shadow-[0_0_16px_rgba(212,96,10,0.5)]'
@@ -417,7 +456,7 @@ export default function VisualDiary() {
               {YEARS.map(y => (
                 <button
                   key={y}
-                  onClick={() => setActiveYear(y)}
+                  onClick={() => handleYearChange(y)}
                   className={`px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${
                     activeYear === y
                       ? 'bg-[#D8FC71] text-[#0A0906] font-bold shadow-[0_0_14px_rgba(216,252,113,0.4)]'
@@ -496,7 +535,7 @@ export default function VisualDiary() {
         {/* Detailed Modal Viewer */}
         {activeModalItem && (
           <div
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[100000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setActiveModalItem(null)}
           >
             <div

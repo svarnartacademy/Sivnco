@@ -209,7 +209,7 @@ const CAMPAIGNS = [
       { value: '70%', label: 'Increase in snacking range sales following the visual overhaul and nostalgic rebrand.', tag: 'SALES GROWTH' },
       { value: '34%', label: 'Overall contribution of this product to the brand\'s total revenue in FY 2024–25.', tag: 'REVENUE SHARE' },
       { value: '8,000', label: 'Units per month. Scaled from 250 units in the first month to current high-velocity production.', tag: 'MONTHLY VOLUME' },
-      { value: '58%', label: 'Increase in retail brand recognition achieved in Q3 & Q4 of FY 2024–25.', tag: 'BRAND RECOGNITION' }
+      { value: '160,000', label: 'Rotogravure pouch order scaled in January 2026, progressing from initial 6,000-pouch digital trial.', tag: 'PRODUCTION SCALE' }
     ],
     testimonials: [
       { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },

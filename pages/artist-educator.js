@@ -27,18 +27,18 @@ const UNIQUE_PAINTINGS = [
 ];
 
 const METRICS = [
-  { n: '200+', l: 'Mentored Students' },
-  { n: '12', l: 'Portfolio Selections' },
+  { n: '120+', l: 'Showcase Artworks' },
+  { n: '20+', l: 'Weekly Learners' },
   { n: '19', l: 'Original Paintings' },
   { n: '3', l: 'Years Teaching' },
 ]
 
 const TIMELINE = [
-  { date: '2025 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
+  { date: 'January 2026 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
   { date: '2023 — Present', title: 'Portfolio Development Mentor', org: 'Independent Practice', desc: 'Guiding high-schoolers through composition, design thinking, and technical drawing to build portfolios for NID, NIFT, and Srishti.' },
-  { date: 'Apr 2025 — Apr 2026', title: 'Art & Design Teacher', org: 'Openhouse · Bengaluru', desc: 'Teaching drawing, values, and color theory to students across age groups. Keeping curriculum active, hands-on, and focused on creative thinking.' },
-  { date: '2025 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with my wife. Developed a structured fine art pedagogy that bridges traditional roots (Carnatic music, classical forms) with modern visual design.' },
-  { date: '2025 — Present', title: 'Active Painting Practice', org: 'Sivnco Studio', desc: 'Exhibiting personal work, focusing on semi-abstract acrylic landscapes and mixed-media representations of Indian classical art and heritage.' }
+  { date: '1 April 2025 — 30 April 2026', title: 'Art Teacher Partner', org: 'Openhouse · Bengaluru', desc: 'Taught drawing, watercolor/acrylic painting, color theory, and visual thinking to 20+ weekly learners, adapting classical fine art disciplines into hands-on exercises.' },
+  { date: 'January 2026 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with Harshada. Lead visual-arts curriculum architecture, studio branding, and operational workflows; Harshada leads Carnatic music.' },
+  { date: 'January 2025 — Present', title: 'Active Painting Practice', org: 'Sivnco Studio', desc: 'Exhibiting personal work, focusing on semi-abstract acrylic landscapes and mixed-media representations of Indian classical art and heritage.' }
 ]
 
 const CSS = `

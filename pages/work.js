@@ -22,7 +22,7 @@ export const WORK_PROJECTS = [
     client: "Jus’Amazin Foods & Beverages",
     timeframe: 'Aug 2023 — Present',
     status: 'Live Nationwide / Modern Trade & Quick Commerce',
-    role: 'Design & Communications Manager (Art Direction)',
+    role: 'Manager - Communication Design',
     categories: ['packaging', 'production'],
     categoryLabels: ['Brand & Packaging', 'Production & Design Ops'],
     accentColor: '#D4600A',
@@ -150,7 +150,7 @@ export const WORK_PROJECTS = [
     accentColor: '#D4600A',
     heroImage: '/images/paintings/painting_1.jpg',
     brief: 'Maintain an active fine art and teaching practice that grounds commercial packaging in authentic anatomical observation, chiaroscuro lighting, and pedagogical clarity.',
-    contribution: 'Graduated as Gold Medalist & University Topper from CAVA (BVA Applied Arts, 2019–2023). Mentored 200+ students across age groups at Openhouse and Svarnart Academy. Authored fine art curriculum linking Carnatic music and visual geometry.',
+    contribution: 'Graduated as Gold Medalist & University Topper from CAVA (BVA Applied Art, 2019–2023, recognition recorded in 2024). Taught 20+ weekly learners at Openhouse (1 April 2025 – 30 April 2026) and co-founded Svarnart Academy. Authored fine art curriculum linking Carnatic music and visual geometry.',
     supportedOutcome: 'University Gold Medalist & Topper; 19 master CAVA academic plates preserved; annual student showcases exhibiting 120+ artworks in Bengaluru.',
     measurementPeriod: '2019–Present Academic & Teaching Record',
     visuals: [

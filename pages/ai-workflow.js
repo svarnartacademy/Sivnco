@@ -84,8 +84,8 @@ const CONCRETE_EXAMPLE = {
     {
       num: '04',
       phase: 'Final Production Asset on Shelf',
-      desc: 'Final press-ready artwork files delivered to converters for rotogravure cylinder engraving. Produced 10,000+ commercial units shipped to retail shelves across India, achieving zero printing defects and complete regulatory clearance.',
-      tags: ['Rotogravure Print', 'Retail Distribution', 'Zero Defects'],
+      desc: 'Final press-ready artwork files delivered to converters for rotogravure cylinder engraving. Commercial units shipped to retail shelves across India with verified prepress proof approvals and full regulatory compliance.',
+      tags: ['Rotogravure Print', 'Retail Distribution', 'Prepress Approved'],
       visual: '/images/jusamazin/lilstars/pb_jaggery_jar.png',
       visualCaption: 'Approved final packaging asset manufactured and live on retail shelves.'
     }

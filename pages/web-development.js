@@ -70,7 +70,7 @@ const PROJECTS = [
       }
     ],
     outcomes: [
-      'Cinematic digital portfolio with sub-1.8s load times and 95+ Lighthouse performance',
+      'Cinematic digital portfolio with responsive layout architecture and accessible semantic structure',
       'Native WebGL 3D jar viewer allowing direct orbital inspection of packaging substrates',
       'Complete ATS-readable resume and verified case study architecture',
       'Dual-purpose platform preserving both commercial work and complete visual diary',
@@ -80,45 +80,45 @@ const PROJECTS = [
     id: 'svarnart',
     tag: '02 — Cultural Academy PWA & LMS',
     name: 'svarnart.com',
-    tagline: 'Offline-First Progressive Web App & Indian Payment Engine',
-    stack: ['Vite + React', 'Firebase Auth', 'Firestore Database', 'Razorpay UPI Intent', 'Service Worker / PWA', 'Cloud Storage'],
+    tagline: 'Progressive Web App Architecture & Digital Learning Workflows',
+    stack: ['Vite + React', 'Firebase Auth', 'Firestore Database', 'Razorpay UPI Intent (Test)', 'Service Worker / PWA', 'Cloud Storage'],
     href: 'https://svarnart.com',
-    status: 'TESTED & PWA DEPLOYED',
+    status: 'PROTOTYPED & IN DEVELOPMENT',
     statusColor: '#D4600A',
-    screenshot: '/images/jusamazin/web/about-us-in-website.webp',
-    screenshotCaption: 'Svarnart Academy digital portal: pedagogical curriculum, offline lesson storage, and Indian payment integration.',
-    userTask: 'Students and parents in Bengaluru enrolling in classical arts/music classes, paying tuition securely, and accessing offline curriculum.',
-    decisions: 'Bypassed high-cost SaaS LMS platforms (Teachable, Kajabi) to build a zero-recurring-cost PWA with direct Razorpay UPI intent and offline caching.',
-    iterations: 'Initial builds required active internet for video lessons. Added custom service worker caching with CacheStorage API so students with weak home Wi-Fi can review lesson materials offline.',
-    role: 'Co-Founder & Full-Stack Architect — Identity, Curriculum UX, React PWA Engineering, Payment Webhook Security.',
+    screenshot: '/images/student_art_after.jpg',
+    screenshotCaption: 'Svarnart Academy visual arts curriculum & student showcase: foundational drawing, form observation, and digital workflows (contextual academy artwork).',
+    userTask: 'Students and parents in Bengaluru enrolling in classical arts/music classes, accessing curriculum resources, and reviewing progress.',
+    decisions: 'Architected custom workflows using AI-assisted Vite + React and Firebase to structure attendance, student showcases, and curriculum access without third-party platform lock-in.',
+    iterations: 'Early designs focused on desktop dashboards. Iterated to lightweight mobile-responsive components to support parents checking schedules on mobile browsers.',
+    role: 'Co-Founder & Curriculum Lead — Identity, Visual Arts Pedagogy, AI-Assisted Front-End Prototyping.',
     features: [
       {
-        title: 'Dual-Channel Indian Payment Flow',
-        desc: 'Native Razorpay checkout + HMAC-SHA256 encrypted webhook verification for automated fee receipts.',
-        status: 'LIVE IN PRODUCTION',
-        statusColor: '#10B981',
+        title: 'Dual-Channel Indian Payment Flow (Test)',
+        desc: 'Prototyped Razorpay checkout integration with webhook signature verification for tuition receipts.',
+        status: 'TESTED & PROTOTYPED',
+        statusColor: '#0EA5E9',
         icon: 'pay'
       },
       {
-        title: 'Offline-First Service Worker (PWA)',
-        desc: 'Custom service worker caching lesson videos and notes for offline study on iOS & Android devices.',
+        title: 'Offline-Capable Service Worker (PWA)',
+        desc: 'Service worker prototype caching lesson materials and visual notes for offline review.',
         status: 'TESTED & VALIDATED',
         statusColor: '#0EA5E9',
         icon: 'pwa'
       },
       {
         title: 'Granular Firestore Security Rules',
-        desc: 'Role-based Firestore security rules ensuring complete child data privacy, isolation, and sanitized logs.',
+        desc: 'Role-based security rules ensuring student data privacy, sanitized logs, and zero public PII.',
         status: 'TESTED & VALIDATED',
         statusColor: '#0EA5E9',
         icon: 'security'
       }
     ],
     outcomes: [
-      'Zero recurring SaaS overhead: eliminated $150+/month LMS software subscription fees',
-      'Instant fee settlement via UPI and net banking with cryptographic webhook audit trails',
-      'Full offline lesson accessibility across low-bandwidth mobile environments in India',
-      'Sanitized privacy-preserving student records with zero public PII exposure',
+      'Tailored pedagogical workflow designed specifically for Indian classical arts and visual pedagogy',
+      'Sanitized privacy-preserving student showcase architecture with zero public PII exposure',
+      'Prototyped lightweight PWA footprint accessible across mobile environments',
+      'Unified brand identity spanning physical studio materials, certificates, and web portal',
     ],
   },
   {
@@ -135,7 +135,7 @@ const PROJECTS = [
     userTask: 'Health-conscious consumers purchasing clean-label nut butters, impulse energy bars, and 30-Sec Almond Drink sachets.',
     decisions: 'Replaced text-heavy ingredient paragraphs with visual macro-badges and split-screen product demonstration carousels.',
     iterations: 'Early storefront suffered from high bounce on mobile quick-commerce carousels. Re-architected PDPs to show the primary front-of-pack visual and key nutritional callouts in the first screen viewport.',
-    role: 'Design & Communications Manager — UI Direction, Catalog Visual Architecture, 3D Asset Integration.',
+    role: 'Manager - Communication Design — UI Direction, Catalog Visual Architecture, 3D Asset Integration.',
     features: [
       {
         title: 'Visual Nutrition Transparency PDPs',

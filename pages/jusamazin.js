@@ -8,7 +8,7 @@ const METRICS = [
   {n:'176%', l:'Company Revenue Growth FY24–25'},
   {n:'85+', l:'Commercial SKUs Governed'},
   {n:'7', l:'Core Product Families'},
-  {n:'40%', l:'Internal Turnaround Efficiency'},
+  {n:'~40%', l:'Internal Turnaround Efficiency (Est.)'},
 ]
 const DELIVERABLES = [
   'Packaging Architecture (7 Families · 85+ SKUs)','3D Product Renders & Spatial GLB','Master Brand Guidelines Document',
@@ -307,7 +307,7 @@ export default function JusAmazin() {
       <Head>
         <link rel="canonical" href="https://sivnco.in/jusamazin" />
         <meta charSet="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Jus Amazin — Art Direction &amp; Brand System · H P Shivaraj · Art Director</title>
+        <title>Jus Amazin — Brand &amp; Packaging Architecture · H P Shivaraj</title>
         <meta name="description" content="End-to-end brand system for Jus Amazin. 176% revenue growth." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -335,7 +335,7 @@ export default function JusAmazin() {
             End-to-end brand system for a high-growth clean nutrition brand — packaging across 7 product families and 85+ commercial SKUs, 3D renders, retail POS, and guidelines that scaled with the company.
           </p>
           <div className="hero-meta rv" style={{transitionDelay:'.4s'}}>
-            {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2023 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
+            {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Manager - Communication Design'],['Year','2023 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
               <div key={l} className="meta"><label>{l}</label><span>{v}</span></div>
             ))}
           </div>
@@ -368,7 +368,7 @@ export default function JusAmazin() {
         <div className="s-label rv">01B — Portfolio Range Architecture</div>
         <h2 className="s-title rv">7 Product Families.<br/><i>85+ Commercial SKUs.</i></h2>
         <p className="body rv" style={{marginBottom:'3rem'}}>
-          Distinguishing total commercial SKU count from product family architecture. As Design & Communications Manager, I oversee the complete visual hierarchy across physical modern trade, quick commerce, and D2C.
+          Distinguishing total commercial SKU count from product family architecture. As Manager - Communication Design, I oversee the complete visual hierarchy across physical modern trade, quick commerce, and D2C.
         </p>
         <div className="rv2" style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'1.2rem'}}>
           {[

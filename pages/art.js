@@ -139,7 +139,7 @@ export default function ArtPage() {
 
           <div className="flex flex-wrap gap-3 mt-6 text-xs font-mono text-[#F0EDE6]/60">
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">CAVA University of Mysore</span>
-            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">18 Classical Plates</span>
+            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">19 Classical Plates</span>
             <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full">Local Studio Diary</span>
             <Link href="/artist-educator/commissions" className="text-[#D4600A] hover:underline px-3 py-1">
               Private Art Commissions →
@@ -169,7 +169,7 @@ export default function ArtPage() {
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-white/5">
           <div className="flex flex-wrap gap-2 text-xs font-mono">
             {[
-              { id: 'all', label: 'All 18 Works' },
+              { id: 'all', label: 'All 19 Works' },
               { id: 'academic', label: 'Academic & CAVA Rigor' },
               { id: 'watercolor', label: 'Watercolor & Washes' },
               { id: 'portrait', label: 'Portraiture & Form' }
