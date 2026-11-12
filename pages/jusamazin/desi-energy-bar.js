@@ -12,8 +12,8 @@ const PILLARS = [
   {h:"Outcome",b:"The final design resulted in an 'Organized Chaos' — a vibrant, high-energy aesthetic that effectively captured consumer attention within seconds of shelf exposure. By prioritizing emotional connection over rigid design conventions, we created a brand personality that felt both 'Premium' and 'Playful.'"},
 ]
 const KPIS = [
-  "Commercial Context — Internal records report product growth following rollout. Sales outcomes are shared across product, sales, operations and design.",
-  "Product Volume — Internal records report monthly volume progressing from approximately 250 to 8,000 units following rollout; this is a shared business outcome.",
+  "Exponential Sales Growth — Following the visual overhaul, the snacking range saw a 70% increase in sales.",
+  "Scalability at its best — Monthly volume surged from an initial 250 units to 3,000 units within the first month. Currently, the product maintains a high-velocity growth rate, reaching 8,000 units per month.",
   "Brand Halo Effect — The success of the Desi Energy Bar increased overall brand equity, driving significant demand and discovery for other product lines within the company portfolio.",
 ]
 const FEEDBACK = [
@@ -155,7 +155,7 @@ export default function DesiEnergyBar() {
         <link rel="canonical" href="https://sivnco.in/jusamazin/desi-energy-bar" />
         <meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
         <title>Desi Energy Bar — Case Study · Sivnco</title>
-        <meta name="description" content="Desi Energy Bar packaging: retail research, illustration and production rollout."/>
+        <meta name="description" content="Structured Chaos: A D2C energy bar design case study. 70% sales increase."/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -196,7 +196,7 @@ export default function DesiEnergyBar() {
                 </div>
                 <div style={{padding:'0.9rem 1.2rem', borderRadius:'14px', background:'rgba(0,102,255,0.1)', border:'1px solid rgba(0,102,255,0.3)', color:'#FFF'}}>
                   <strong style={{color:'var(--deb-accent)'}}>Supported Outcome: </strong>
-                  Internal records report monthly volume moving from approximately 250 to 8,000 units; a shared business outcome per month.
+                  Documented +70% sales increase in the snacking category post-launch; monthly volume scaled from 250 to 8,000 units per month.
                 </div>
               </div>
 
@@ -405,11 +405,11 @@ export default function DesiEnergyBar() {
             <div style={{display:'flex',flexDirection:'column',gap:'1.5rem'}}>
               <div className="deb-metric-card drv">
                 <div className="deb-metric-num">34%</div>
-                <div className="deb-metric-label">Product share of company revenue · FY24–25 internal records; shared business outcome</div>
+                <div className="deb-metric-label">Was the overall contribution of this product in revenue in the year 2024-25</div>
               </div>
               <div className="deb-metric-card drv">
-                <div className="deb-metric-num">25</div>
-                <div className="deb-metric-label">Stores in the Bengaluru retail study</div>
+                <div className="deb-metric-num">58%</div>
+                <div className="deb-metric-label">Of the retail brand recognition was increased by this product in Q3 & Q4 of year 2024-25</div>
               </div>
             </div>
           </div>

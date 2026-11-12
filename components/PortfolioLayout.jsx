@@ -1,6 +1,0 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Navbar from './Navbar';
-import Footer from './Footer';
-export default function PortfolioLayout({title,description,children}) { return <><Head><title>{title} | SIVNCO</title><meta name="description" content={description}/></Head><a className="pf-skip" href="#portfolio-content">Skip to content</a><Navbar/><main id="portfolio-content" className="pf-page">{children}</main><Footer/></>; }
-export function ProjectCard({project}) { return <article className="pf-card"><Link href={project.href} className="pf-card-media">{project.image ? <img src={project.image} alt={project.alt} loading="lazy" width="960" height="720"/> : <div className="pf-digital"><span>SVARNART × SIVNCO</span><strong>Designing the experience.<br/>Building the workflow.</strong><small>Digital products & experiences</small></div>}</Link><div className="pf-card-copy"><p className="pf-eyebrow">{project.category}</p><h2><Link href={project.href}>{project.title}</Link></h2><p>{project.summary}</p><p className="pf-role">{project.role}</p><Link className="pf-text-link" href={project.href}>Explore the work <span aria-hidden="true">↗</span></Link></div></article>; }

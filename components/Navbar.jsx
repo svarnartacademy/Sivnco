@@ -474,9 +474,9 @@ export default function Navbar({ backLink, backLabel }) {
 
   const workChapters = [
     { href: '/jusamazin', label: '1. Brand & Packaging', tag: '85+ SKUs' },
-    { href: '/campaigns', label: '2. Campaigns & Storytelling', tag: 'Selected Collections' },
-    { href: '/design-systems', label: '3. Production & Design Ops', tag: 'Artwork & Suppliers' },
-    { href: '/web-development', label: '4. Digital Products & Experiences', tag: 'Interfaces & Workflows' },
+    { href: '/campaigns', label: '2. Campaigns & Storytelling', tag: '6 Cases' },
+    { href: '/design-systems', label: '3. Production & Design Ops', tag: 'Prepress & Tokens' },
+    { href: '/web-development', label: '4. Digital Products & Experiences', tag: 'Next.js · PWA' },
     { href: '/artist-educator', label: '5. Art & Education', tag: 'Pedagogy & Plates' },
   ];
 

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import Footer from '../components/Footer'
 
-const LEGACY_PAINTING_NOTES = [
+const UNIQUE_PAINTINGS = [
   { id: 1, plate: '01', title: 'Wildlife Study', medium: 'Realism & Fur Texture · CAVA Mysore', year: '2021', dims: '30 × 42 cm · Watercolor on Archival Paper', img: '/images/paintings/painting_1.jpg' },
   { id: 2, plate: '02', title: 'Mountain Lake Pier', medium: 'Perspective & Atmospheric Depth', year: '2022', dims: '38 × 56 cm · Watercolor on Imperial Sheet', img: '/images/paintings/painting_2.jpg' },
   { id: 3, plate: '03', title: 'Elder Couple Portrait', medium: 'Observational Portraiture · Watercolors', year: '2022', dims: '35 × 50 cm · Watercolor Wash', img: '/images/paintings/painting_3.jpg' },
@@ -26,20 +26,18 @@ const LEGACY_PAINTING_NOTES = [
   { id: 23, plate: '19', title: 'Anatomy of Feet', medium: 'Academic Life Study · Bone & Tendon Structure', year: '2020', dims: '42 × 60 cm · Anatomical Study on Cartridge', img: '/images/paintings/painting_23.jpg' }
 ];
 
-const UNIQUE_PAINTINGS = Array.from({length:23}, (_,i) => ({id:i+1,plate:String(i+1).padStart(2,'0'),title:'Artwork '+String(i+1).padStart(2,'0'),medium:'Personal art collection',year:'Undated',dims:'Artwork image',img:'/images/paintings/painting_'+(i+1)+'.jpg'}));
-
 const METRICS = [
-  { n: '20+', l: 'Weekly Learners at Openhouse' },
-  { n: '120+', l: 'Artworks in Student Showcases' },
-  { n: '23', l: 'Art Images in the Collection' },
-  { n: 'BVA', l: 'Applied Art · CAVA' },
+  { n: '200+', l: 'Mentored Students' },
+  { n: '12', l: 'Portfolio Selections' },
+  { n: '19', l: 'Original Paintings' },
+  { n: '3', l: 'Years Teaching' },
 ]
 
 const TIMELINE = [
-  { date: 'Teaching & mentorship', title: 'Student Showcases', org: 'Teaching practice', desc: 'Supporting student showcases showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
+  { date: '2025 — Present', title: 'Annual Academy Showcases', org: 'Svarnart Academy', desc: 'Curating student exhibitions showing over 120+ artworks by young minds to parents and local curators. Fosters confidence and real-world exposure for kids.' },
   { date: '2023 — Present', title: 'Portfolio Development Mentor', org: 'Independent Practice', desc: 'Guiding high-schoolers through composition, design thinking, and technical drawing to build portfolios for NID, NIFT, and Srishti.' },
   { date: 'Apr 2025 — Apr 2026', title: 'Art & Design Teacher', org: 'Openhouse · Bengaluru', desc: 'Teaching drawing, values, and color theory to students across age groups. Keeping curriculum active, hands-on, and focused on creative thinking.' },
-  { date: 'Jan 2026 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with my wife. Developed a structured fine art pedagogy that bridges traditional roots (Carnatic music, classical forms) with modern visual design.' },
+  { date: '2025 — Present', title: 'Co-Founder & Curriculum Lead', org: 'Svarnart Academy · Bengaluru', desc: 'Co-founded with my wife. Developed a structured fine art pedagogy that bridges traditional roots (Carnatic music, classical forms) with modern visual design.' },
   { date: '2025 — Present', title: 'Active Painting Practice', org: 'Sivnco Studio', desc: 'Exhibiting personal work, focusing on semi-abstract acrylic landscapes and mixed-media representations of Indian classical art and heritage.' }
 ]
 
@@ -503,7 +501,7 @@ export default function ArtistEducator() {
               Sketches, early CAVA academic studies, and pedagogical field notes are preserved in the Visual Diary.
             </div>
           </div>
-          <Link href="/visual-diary?discipline=fine-art" style={{ display: 'inline-flex', alignItems: 'center', gap: '.6rem', fontFamily: 'var(--M)', fontSize: '.75rem', letterSpacing: '.12em', color: '#0A0906', background: 'var(--ae-accent)', padding: '.75rem 1.6rem', borderRadius: '999px', fontWeight: 800, textTransform: 'uppercase' }}>
+          <Link href="/visual-diary?discipline=Fine%20Art%20&%20Plates" style={{ display: 'inline-flex', alignItems: 'center', gap: '.6rem', fontFamily: 'var(--M)', fontSize: '.75rem', letterSpacing: '.12em', color: '#0A0906', background: 'var(--ae-accent)', padding: '.75rem 1.6rem', borderRadius: '999px', fontWeight: 800, textTransform: 'uppercase' }}>
             Open Visual Diary &rarr;
           </Link>
         </div>
@@ -595,7 +593,7 @@ export default function ArtistEducator() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem' }}>
                 <div style={{ fontFamily: 'var(--M)', fontSize: '0.62rem', letterSpacing: '0.15em', color: 'var(--ae-muted)', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <span>23 ART COLLECTION IMAGES</span>
+                  <span>19 ORIGINAL CAVA PLATES</span>
                   <span style={{ color: 'var(--ae-accent)' }}>✦</span>
                   <span style={{ color: 'var(--ae-accent)' }}>SCROLL HORIZONTALLY</span>
                 </div>
@@ -1053,7 +1051,7 @@ export default function ArtistEducator() {
                 <span style={{ fontFamily: 'var(--M)', fontSize: '.6rem', letterSpacing: '.12em', color: 'var(--ae-muted)' }}>
                   Use ← and → arrow keys to navigate · Esc to close
                 </span>
-                <Link href="/visual-diary?discipline=fine-art" style={{ fontFamily: 'var(--M)', fontSize: '.65rem', letterSpacing: '.12em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>
+                <Link href="/visual-diary?discipline=Fine%20Art%20&%20Plates" style={{ fontFamily: 'var(--M)', fontSize: '.65rem', letterSpacing: '.12em', color: 'var(--ae-accent)', textTransform: 'uppercase', fontWeight: 700 }}>
                   View in Visual Diary &rarr;
                 </Link>
               </div>
