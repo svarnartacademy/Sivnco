@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -195,7 +196,7 @@ export default function Jars() {
       <div className="jr-hero">
         <div className="jr-hero-bg" />
         <div className="jr-hero-inner">
-          <div className="jr-hero-tag">Nut Butter Systems · Dual-Material Pipelines · 55g to 1KG</div>
+          <div className="br-label acid mb-3">■ 01 // NUT BUTTER PACKAGING SYSTEMS · 55G TO 1KG JARS</div>
           <h1>
             Almond &amp;<br />Seed Butter <span>Jars</span>
             <em>
@@ -336,10 +337,10 @@ export default function Jars() {
         </div>
       </section>
 
-      <div className="jr-c">
-        <div className="jr-footer">
+      <div className="jr-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="jr-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="jr-label">Category Directories {'>>>'}</div>
-          <div className="jr-footer-links">
+          <div className="jr-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="jr-footer-link">
                 {n.l}
@@ -348,6 +349,8 @@ export default function Jars() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="jr-init" strategy="lazyOnload">{`
         (function(){

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 
 const METRICS = [
   {n:'176%', l:'Company Revenue Growth FY24–25'},
@@ -327,12 +327,12 @@ export default function JusAmazin() {
         {/* Animated gradient background replacing LiquidMetalBg */}
         <div style={{position:'absolute', inset:0, width:'100%', height:'100%', zIndex:0, background:'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.25) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.15) 0%, transparent 50%), var(--ja-bg)', animation:'heroBgPulse 8s ease-in-out infinite'}} />
         <div className="c" style={{position:'relative', zIndex:2}}>
-          <div className="eyebrow rv">Case Study · Brand Identity · 2023 — Present</div>
+          <div className="br-label acid mb-3 rv">■ 01 // FMCG BRAND &amp; PACKAGING ARCHITECTURE · JUS&apos;AMAZIN</div>
           <h1 className="hero-title rv" style={{transitionDelay:'.1s'}}>
             Jus<br/><i>Amazin</i>
           </h1>
           <p className="hero-sub rv" style={{transitionDelay:'.25s'}}>
-            End-to-end brand system for a D2C peanut butter brand — packaging across 15+ SKUs, social media systems, retail POS, and guidelines that scaled with the company.
+            End-to-end brand system for a high-growth clean nutrition brand — packaging across 7 product families and 85+ commercial SKUs, 3D renders, retail POS, and guidelines that scaled with the company.
           </p>
           <div className="hero-meta rv" style={{transitionDelay:'.4s'}}>
             {[['Client','Jus Amazin Pvt. Ltd.'],['Role','Design & Comms Manager'],['Year','2023 — Present'],['Type','Brand · Packaging · Social']].map(([l,v])=>(
@@ -846,12 +846,7 @@ export default function JusAmazin() {
       )}
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{color:'var(--ja-accent)'}}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="page-init" strategy="afterInteractive">{`
         (function(){

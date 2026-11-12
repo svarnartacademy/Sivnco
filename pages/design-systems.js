@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
 import { getAudioEngine } from '../components/ui/TactileAudioEngine'
@@ -225,9 +225,9 @@ export default function DesignSystems() {
       <div className="hero">
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(200, 155, 60, 0.1)" />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">CASE STUDY — 02 // DISCIPLINE: DESIGN SYSTEMS &amp; PRODUCTION OPS</div>
+          <div className="br-label acid mb-3">■ 03 // PRODUCTION &amp; DESIGN OPERATIONS · DESIGN SYSTEMS</div>
           <h1 className="hero-title">
-            DESIGN<i>SYSTEMS</i>
+            DESIGN<span className="accent">SYSTEMS.</span>
           </h1>
           <p className="hero-sub">
             The decision made once so it never has to be debated under deadline pressure. How I built, scaled, and governed design systems across commercial FMCG packaging, education, and studio identity.
@@ -436,12 +436,7 @@ export default function DesignSystems() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ds-accent)' }}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="ds-init" strategy="afterInteractive">{`
         (function(){

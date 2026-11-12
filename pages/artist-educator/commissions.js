@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import Footer from '../../components/Footer'
 
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -81,9 +82,9 @@ export default function Commissions() {
       <div className="hero">
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, background: 'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.08) 0%, transparent 50%), var(--ae-bg)' }} />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow rv">On-Demand Fine Art &amp; Design</div>
+          <div className="br-label acid mb-3 rv">■ 05 // FINE ART COMMISSIONS &amp; STUDIO INQUIRIES</div>
           <h1 className="hero-title rv" style={{ transitionDelay: '.1s' }}>
-            For Art &amp;<br /><i>Design.</i>
+            For Art &amp;<br /><span className="accent">Design.</span>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
             Handcrafted paintings, visual sketches, and editorial illustrations executed outside commercial constraints. Available select periods of the year, subject to schedule and alignment of intent.
@@ -143,12 +144,7 @@ export default function Commissions() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ae-accent)' }}>.</span></div></div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--ae-muted)' }}>© {new Date().getFullYear()} My Journey @ Jus&apos;Amazin</div>
-        </div>
-      </div>
+      <Footer />
 
       <Script id="commissions-init" strategy="afterInteractive">{`
         (function(){

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
+import Footer from '../../components/Footer'
 import Interactive3DStudio from '../../components/3d-pack-studio/Interactive3DStudio'
 
 const PRODUCTS = [
@@ -136,7 +137,7 @@ export default function PackRender3D() {
       <div className="pr-hero">
         <div className="pr-hero-bg"/>
         <div className="pr-hero-inner">
-          <div className="pr-hero-tag">Interactive 3D Showcase</div>
+          <div className="br-label acid mb-3">■ 01 // 3D PACKAGING RENDER &amp; SPATIAL ASSETS</div>
           <h1>3D Pack<br/><span>Render</span><em>10 product SKUs rendered in real-time WebGL. Rotate, zoom, and inspect every detail of the packaging system — from label typography to cap threading.</em></h1>
         </div>
       </div>
@@ -230,20 +231,18 @@ export default function PackRender3D() {
       </div>
 
       {/* FOOTER */}
-      <div className="pr-c">
-        <div className="pr-footer">
+      <div className="pr-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="pr-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="pr-label">Projects {'>>>'}</div>
-          <div className="pr-footer-links">
+          <div className="pr-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {[{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'},{l:'Superfoods',h:'/jusamazin/superfoods'},{l:'Snacks',h:'/jusamazin/snacks'},{l:'Marketing',h:'/jusamazin/marketing'},{l:'Management',h:'/jusamazin/management'}].map(n=>(
               <Link key={n.l} href={n.h} className="pr-footer-link">{n.l}</Link>
             ))}
           </div>
-          <div className="pr-footer-meta">
-            <span>© 2023–2026</span>
-            <span>My Journey @ Jus&apos;Amazin</span>
-          </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="pr-init" strategy="lazyOnload">{`
         (function(){

@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
 import { ART_PLATES, JOURNAL_RECORDS } from '../lib/site-data';
 
@@ -356,24 +357,25 @@ export default function VisualDiary() {
       <main className="min-h-screen bg-[#0A0906] text-[#F0EDE6] pt-32 pb-24 px-4 sm:px-8 max-w-7xl mx-auto font-sans relative z-10">
         
         {/* Editorial Header */}
-        <header className="border-b border-[#F0EDE6]/10 pb-10 mb-10">
-          <div className="flex items-center gap-3 text-[#D8FC71] text-xs font-mono tracking-widest uppercase mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#D8FC71] inline-block animate-pulse" />
-            <span>PRIMARY ARCHIVE // THE COMPLETE VISUAL DIARY</span>
+        <header className="br-section-head border-b border-[#F0EDE6]/10 pb-10 mb-10">
+          <div>
+            <div className="br-label acid mb-3">
+              ■ 02 // PRIMARY ARCHIVE &middot; THE COMPLETE VISUAL DIARY
+            </div>
+
+            <h1 style={{ fontFamily: 'var(--f-display, "Doto", sans-serif)', fontWeight: 900, fontSize: 'clamp(38px, 6.4vw, 88px)', lineHeight: 0.96, letterSpacing: '-0.05em', color: '#FFFFFF', margin: '12px 0 0' }}>
+              Order in the system.<br />
+              <span className="accent">Chaos in the sketchbook.</span>
+            </h1>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4" style={{ fontFamily: 'var(--f-display, "Doto", sans-serif)' }}>
-            Order in the system.<br />
-            <em className="text-[#D4600A] not-italic">Chaos in the sketchbook.</em>
-          </h1>
-
-          <p className="text-base sm:text-lg text-[#F0EDE6]/70 max-w-3xl leading-relaxed">
+          <p style={{ maxWidth: '520px', color: 'rgba(240,237,230,0.7)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             This visual diary documents the full creative progression of H P Shivaraj. Here live the raw pencil sketches, 
             rejected directions that shaped breakthroughs, classical CAVA academic studies, procedural 3D tests, and teaching reflections. 
             Nothing of the creative journey is hidden.
           </p>
 
-          <div className="flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-[#F0EDE6]/08 text-xs font-mono text-[#F0EDE6]/50 uppercase tracking-widest">
+          <div className="w-full flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-[#F0EDE6]/08 text-xs font-mono text-[#F0EDE6]/50 uppercase tracking-widest">
             <span>{DIARY_ITEMS.length} Recorded Artifacts</span>
             <span>✦</span>
             <span>Filterable by Discipline &amp; Year</span>
@@ -593,6 +595,7 @@ export default function VisualDiary() {
           </div>
         )}
       </main>
+      <Footer />
     </>
   );
 }

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {h:"A 'Why'?",b:"The concept was born from a simple question: Why should health bars feel foreign? This project explores the intersection of Western wellness trends and traditional Indian snacking. The 'Why' behind this design was to bridge that gap — creating a visual and conceptual fusion that honors 'Desi' roots while meeting modern standards of performance nutrition. It's not just an energy bar; it's a fresh, localized take on a global category."},
@@ -30,9 +32,9 @@ const NAV_LINKS = [{l:'Bars',h:'/jusamazin/bars'},{l:'Jars',h:'/jusamazin/jars'}
 const CSS = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --deb-bg:#0D0D0D;--deb-white:#FAFAFA;--deb-accent:#0066FF;--deb-ochre:#D4960A;
-  --deb-muted:rgba(250,250,250,0.45);--deb-border:rgba(250,250,250,0.1);
-  --deb-glass:rgba(250,250,250,0.04);--deb-charcoal:#161616;
+  --deb-bg:#0A0906;--deb-white:#F0EDE6;--deb-accent:#0066FF;--deb-ochre:#D4960A;
+  --deb-muted:rgba(240,237,230,0.65);--deb-border:rgba(240,237,230,0.1);
+  --deb-glass:rgba(240,237,230,0.04);--deb-charcoal:#12100C;
   --D:'Doto',sans-serif;--S:'Urbanist',sans-serif;--M:'Urbanist',sans-serif;
 }
 html{scroll-behavior:smooth; overflow-x: clip !important; max-width: 100vw !important;}
@@ -144,7 +146,6 @@ a{color:inherit;text-decoration:none}
 }
 `
 
-import Navbar from '../../components/Navbar';
 
 export default function DesiEnergyBar() {
   const [filter, setFilter] = useState('all')
@@ -174,8 +175,8 @@ export default function DesiEnergyBar() {
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(320px, 1fr))', gap:'4rem', alignItems:'center'}}>
             {/* Left: Metadata & Contribution */}
             <div>
-              <div className="deb-hero-tag" style={{writingMode:'horizontal-tb', borderLeft:'none', borderBottom:'2px solid var(--deb-accent)', paddingLeft:0, paddingBottom:'0.4rem', marginBottom:'1.2rem', display:'inline-block'}}>
-                FLAGSHIP PACKAGING // JUS'AMAZIN (2024)
+              <div className="br-label acid mb-3">
+                ■ 01 // FLAGSHIP PACKAGING ARCHITECTURE · JUS'AMAZIN (2024)
               </div>
               <h1 style={{fontFamily:'var(--D)', fontWeight:900, fontSize:'clamp(3rem, 6.5vw, 6.5rem)', lineHeight:1.05, marginBottom:'1rem'}}>
                 Desi<br/><span style={{color:'var(--deb-accent)'}}>Energy</span><br/>Bar
@@ -457,21 +458,19 @@ export default function DesiEnergyBar() {
         </div>
       </section>
 
-      {/* S8: FOOTER */}
-      <div className="deb-c">
-        <div className="deb-footer">
-          <div className="deb-label">Projects {'>>>'}</div>
-          <div className="deb-footer-links">
+      {/* S8: PROJECTS NAVIGATION */}
+      <div className="deb-c" style={{marginTop:'4rem', marginBottom:'4rem'}}>
+        <div className="deb-footer" style={{borderTop:'none', padding:'0'}}>
+          <div className="deb-label" style={{color:'var(--deb-ochre)', letterSpacing:'0.2em'}}>Related Packaging Case Studies {'>>>'}</div>
+          <div className="deb-footer-links" style={{marginTop:'1.2rem', marginBottom:'0'}}>
             {NAV_LINKS.map(n=>(
               <Link key={n.l} href={n.h} className="deb-footer-link">{n.l}</Link>
             ))}
           </div>
-          <div className="deb-footer-meta">
-            <span>© 2023–2026</span>
-            <span>My Journey @ Jus&apos;Amazin</span>
-          </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="deb-init" strategy="lazyOnload">{`
         (function(){

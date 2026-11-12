@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -204,7 +205,7 @@ export default function Snacks() {
       <div className="sn-hero">
         <div className="sn-hero-bg" />
         <div className="sn-hero-inner">
-          <div className="sn-hero-tag">Snack Architecture · Composite Cans · Impulse Packaging</div>
+          <div className="br-label acid mb-3">■ 01 // SNACKS &amp; COMPOSITE CANISTERS · IMPULSE PACKAGING</div>
           <h1>
             Snacks &amp; <span>Canisters</span><br />Category
             <em>
@@ -316,10 +317,10 @@ export default function Snacks() {
         </div>
       </section>
 
-      <div className="sn-c">
-        <div className="sn-footer">
+      <div className="sn-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="sn-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="sn-label">Category Directories {'>>>'}</div>
-          <div className="sn-footer-links">
+          <div className="sn-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="sn-footer-link">
                 {n.l}
@@ -328,6 +329,8 @@ export default function Snacks() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="sn-init" strategy="lazyOnload">{`
         (function(){

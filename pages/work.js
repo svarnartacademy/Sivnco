@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
 
 export const WORK_CATEGORIES = [
@@ -185,23 +186,24 @@ export default function WorkPage() {
       <main className="min-h-screen bg-[#0A0906] text-[#F0EDE6] pt-32 pb-24 px-4 sm:px-8 max-w-7xl mx-auto font-sans relative z-10">
         
         {/* Header */}
-        <header className="border-b border-white/10 pb-10 mb-10">
-          <div className="flex items-center gap-3 text-[#D8FC71] text-xs font-mono tracking-widest uppercase mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#D8FC71] inline-block animate-pulse" />
-            <span>PORTFOLIO DIRECTORY // THE 5 WORK CATEGORIES</span>
+        <header className="br-section-head border-b border-white/10 pb-10 mb-10">
+          <div>
+            <div className="br-label acid mb-3">
+              ■ 01 // PORTFOLIO DIRECTORY &middot; THE 5 WORK CATEGORIES
+            </div>
+
+            <h1 style={{ fontFamily: 'var(--f-display, "Doto", sans-serif)', fontWeight: 900, fontSize: 'clamp(38px, 6.4vw, 88px)', lineHeight: 0.96, letterSpacing: '-0.05em', color: '#FFFFFF', margin: '12px 0 0' }}>
+              Work that speaks.<br />
+              <span className="accent">Proof on the shelf.</span>
+            </h1>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4" style={{ fontFamily: 'var(--f-display, "Doto", sans-serif)' }}>
-            Work that speaks.<br />
-            <em className="text-[#D4600A] not-italic">Proof on the shelf.</em>
-          </h1>
-
-          <p className="text-base sm:text-lg text-[#F0EDE6]/70 max-w-3xl leading-relaxed">
+          <p style={{ maxWidth: '520px', color: 'rgba(240,237,230,0.7)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             Every project presented here reflects actual ownership: briefs unpacked, prototypes cut, press proofs calibrated, 
             code committed, and verified commercial or pedagogical outcomes. Use the 5 category filters below to explore specific disciplines.
           </p>
 
-          <div className="flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-white/08 text-xs font-mono text-[#F0EDE6]/50 uppercase tracking-widest">
+          <div className="w-full flex flex-wrap items-center gap-6 mt-6 pt-6 border-t border-white/08 text-xs font-mono text-[#F0EDE6]/50 uppercase tracking-widest">
             <span>5 Core Disciplines</span>
             <span>✦</span>
             <span>85+ Commercial SKUs</span>
@@ -367,6 +369,7 @@ export default function WorkPage() {
           ))}
         </div>
       </main>
+      <Footer />
     </>
   );
 }

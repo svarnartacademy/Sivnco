@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 import Interactive3DStudio from '@/components/3d-pack-studio/Interactive3DStudio'
 import Navbar from '../components/Navbar'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
@@ -248,9 +248,9 @@ export default function InHouseDesigns() {
       <div className="hero">
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(0, 229, 255, 0.08)" />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">IN-HOUSE LAB · VENTURES, SYSTEMS &amp; 3D RENDERS</div>
+          <div className="br-label acid mb-3">■ 04 // IN-HOUSE VENTURES &amp; PRODUCT DESIGN</div>
           <h1 className="hero-title">
-            In-House<br /><i>Projects</i>
+            In-House<br /><span className="accent">Projects.</span>
           </h1>
           <p className="hero-sub">
             Where I test ideas and build proprietary systems. From the full-stack Svar&apos;n&apos;Art Academy operating system to packaging concepts, typographic experiments, and interactive 3D simulations.
@@ -488,12 +488,7 @@ export default function InHouseDesigns() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ih-accent)' }}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="ih-init" strategy="afterInteractive">{`
         (function(){

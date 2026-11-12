@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
 import { getAudioEngine } from '../components/ui/TactileAudioEngine'
@@ -165,9 +165,9 @@ export default function BrandAssets() {
       <div className="hero">
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.18)" secondaryColor="rgba(180, 100, 30, 0.08)" />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">CASE STUDY — 03 // DISCIPLINE: BRAND ASSETS</div>
+          <div className="br-label acid mb-3">■ 01 // BRAND ASSETS · CHARACTER RIGS &amp; VECTOR SYSTEMS</div>
           <h1 className="hero-title">
-            BRAND<i>ASSETS</i>
+            BRAND<span className="accent">ASSETS.</span>
           </h1>
           <p className="hero-sub">
             Modular character systems and vector illustrations engineered for high-velocity FMCG packaging, digital commerce, and motion rigging.
@@ -280,12 +280,7 @@ export default function BrandAssets() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ba-accent)' }}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="ba-init" strategy="afterInteractive">{`
         (function(){

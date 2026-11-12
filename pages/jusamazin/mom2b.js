@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -199,7 +200,7 @@ export default function Mom2BPage() {
       <div className="mb-hero">
         <div className="mb-hero-bg" />
         <div className="mb-hero-inner">
-          <div className="mb-hero-tag">Maternal &amp; Prenatal Wellness · Functional Packaging</div>
+          <div className="br-label acid mb-3">■ 01 // MOM2B · MATERNAL &amp; PRENATAL NUTRITION</div>
           <h1>
             Mom2B <span>Care</span><br />Systems
             <em>
@@ -312,10 +313,10 @@ export default function Mom2BPage() {
         </div>
       </section>
 
-      <div className="mb-c">
-        <div className="mb-footer">
+      <div className="mb-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="mb-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="mb-label">Category Directories {'>>>'}</div>
-          <div className="mb-footer-links">
+          <div className="mb-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="mb-footer-link">
                 {n.l}
@@ -324,6 +325,8 @@ export default function Mom2BPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="mb-init" strategy="lazyOnload">{`
         (function(){

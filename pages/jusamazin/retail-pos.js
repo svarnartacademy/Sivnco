@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -199,7 +200,7 @@ export default function RetailPOSPage() {
       <div className="pos-hero">
         <div className="pos-hero-bg" />
         <div className="pos-hero-inner">
-          <div className="pos-hero-tag">Spatial Branding · 3D Retail POS Engineering · Exhibition Architecture</div>
+          <div className="br-label acid mb-3">■ 01 // RETAIL POS &amp; SPATIAL ARCHITECTURE</div>
           <h1>
             Retail <span>POS</span><br />&amp; Spaces
             <em>
@@ -311,10 +312,10 @@ export default function RetailPOSPage() {
         </div>
       </section>
 
-      <div className="pos-c">
-        <div className="pos-footer">
+      <div className="pos-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="pos-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="pos-label">Category Directories {'>>>'}</div>
-          <div className="pos-footer-links">
+          <div className="pos-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="pos-footer-link">
                 {n.l}
@@ -323,6 +324,8 @@ export default function RetailPOSPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="pos-init" strategy="lazyOnload">{`
         (function(){

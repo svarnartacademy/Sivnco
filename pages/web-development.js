@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState, useEffect, useRef } from 'react'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { 
   Globe, 
@@ -362,9 +362,8 @@ export default function WebDevelopment() {
 
         <div className="c hero-content-wrap">
           {/* Eyebrow Pill */}
-          <div className="eyebrow-pill hero-anim" style={{ animationDelay: '0.1s' }}>
-            <span className="beacon-dot" />
-            <span>FULL-STACK ENGINEERING // PRODUCTION CASE STUDY</span>
+          <div className="br-label acid mb-3 hero-anim" style={{ animationDelay: '0.1s' }}>
+            ■ 04 // DIGITAL PRODUCTS &amp; FULL-STACK EXPERIENCES
           </div>
 
           {/* Fluid Typography Headline */}
@@ -724,17 +723,7 @@ export default function WebDevelopment() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div>
-            <div className="pf-brand">
-              SIVNCO<span style={{ color: 'var(--wd-accent)' }}>.</span>
-            </div>
-            <p className="pf-sub">Full-Stack Digital Architecture & Creative Engineering</p>
-          </div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="page-init" strategy="afterInteractive">{`
         (function(){

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { useState } from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
 import { getAudioEngine } from '../components/ui/TactileAudioEngine'
 
@@ -1385,9 +1386,9 @@ export default function Campaigns() {
         <div className="cp-hero-bg" />
         <div className="cp-hero-grid" />
         <div className="cp-hero-inner">
-          <div className="cp-hero-tag cpv">Art Direction · Campaign Thinking</div>
+          <div className="br-label acid mb-3 cpv">■ 02 // CAMPAIGNS &amp; VISUAL STORYTELLING · 6 FLAGSHIP CASES</div>
           <h1 className="cpv">
-            Campaigns
+            Campaigns <span className="accent">Architecture</span>
             <em>
               Every brief is a question. Every campaign is a point of view.
               Six comprehensive advertising &amp; packaging campaigns — across motion, festive luxury structural engineering, sub-brand launches, retail POS, and packaging systems —
@@ -1656,23 +1657,8 @@ export default function Campaigns() {
         </section>
       ))}
 
-      {/* FOOTER CTA */}
-      <div className="cp-footer">
-        <div className="cp-c">
-          <div className="cp-footer-tag cpv">Available for Art Direction</div>
-          <div className="cp-footer-headline cpv">Let&apos;s build<br /><span style={{ color: 'var(--cp-accent)' }}>something<br />real.</span></div>
-          <div className="cp-footer-cta cpv">
-            <a href="mailto:sivnco.in@gmail.com" className="cp-cta-btn primary">sivnco.in@gmail.com</a>
-            <Link href="/jusamazin" className="cp-cta-btn">View Full Case Study</Link>
-            <Link href="/in-house-designs" className="cp-cta-btn">In-House Designs (Svarnart)</Link>
-            <Link href="/" className="cp-cta-btn">Back to Portfolio</Link>
-          </div>
-          <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--cp-border)', fontFamily: 'var(--M)', fontSize: '.55rem', letterSpacing: '.15em', color: 'rgba(240,237,230,0.3)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-            <span>SIVNCO<span style={{ color: 'var(--cp-accent)' }}>.</span></span>
-            <span>© 2023–2026 · My Journey @ Jus&apos;Amazin</span>
-          </div>
-        </div>
-      </div>
+      {/* FOOTER */}
+      <Footer />
 
       <Script id="cp-init" strategy="lazyOnload">{`
         (function() {

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -215,7 +216,7 @@ export default function LilStarsPage() {
       <div className="ls-hero">
         <div className="ls-hero-bg" />
         <div className="ls-hero-inner">
-          <div className="ls-hero-tag">Sub-Brand Identity · Packaging Architecture · Motion Direction</div>
+          <div className="br-label acid mb-3">■ 01 // LIL&apos;STARS · KIDS CLEAN NUTRITION PACKAGING &amp; MOTION</div>
           <h1>
             Lil&apos;<span>Stars</span><br />Nutrition
             <em>
@@ -356,10 +357,10 @@ export default function LilStarsPage() {
         </div>
       </section>
 
-      <div className="ls-c">
-        <div className="ls-footer">
+      <div className="ls-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="ls-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="ls-label">Category Directories {'>>>'}</div>
-          <div className="ls-footer-links">
+          <div className="ls-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="ls-footer-link">
                 {n.l}
@@ -368,6 +369,8 @@ export default function LilStarsPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="ls-init" strategy="lazyOnload">{`
         (function(){

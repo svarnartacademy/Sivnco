@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
 import { getAudioEngine } from '../components/ui/TactileAudioEngine'
@@ -274,9 +274,9 @@ export default function AIWorkflow() {
       <div className="hero">
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(140, 80, 220, 0.08)" />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow">CASE STUDY — 05 // DISCIPLINE: PRODUCTION &amp; AI WORKFLOW</div>
+          <div className="br-label acid mb-3">■ 05 // AI WORKFLOW &amp; PRODUCTION PREPRESS</div>
           <h1 className="hero-title">
-            AI<i>WORKFLOW</i>
+            AI<span className="accent">WORKFLOW.</span>
           </h1>
           <p className="hero-sub">
             Moving beyond novelty prompts into disciplined studio workflows. How I use custom AI agents, automated moodboarding, and strict human prepress verification to test more ideas without compromising print production integrity.
@@ -455,12 +455,7 @@ export default function AIWorkflow() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ai-accent)' }}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="ai-init" strategy="afterInteractive">{`
         (function(){

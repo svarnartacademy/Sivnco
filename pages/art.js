@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas';
 import { ART_PLATES, PRACTITIONER } from '../lib/site-data';
 
@@ -126,9 +127,8 @@ export default function ArtPage() {
         
         {/* Header Block */}
         <header className="border-b border-white/10 pb-10 mb-14">
-          <div className="flex items-center gap-3 text-[#D4600A] text-xs font-mono tracking-widest uppercase mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#D4600A] inline-block animate-pulse" />
-            <span>PORTAL 03 // WANDER — ART, OBSERVATIONS & PERSONAL DIARY</span>
+          <div className="br-label acid mb-3">
+            ■ 05 // FINE ART ARCHIVE · CAVA GOLD MEDALIST STUDIES
           </div>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6" style={{ fontFamily: 'var(--f-display, "Doto", sans-serif)' }}>
             Chaos in the <span className="text-[#D4600A]">sketchbook.</span>
@@ -418,6 +418,8 @@ export default function ArtPage() {
         </nav>
 
       </main>
+
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import StartProjectButton from '@/components/demo'
+import Footer from '../components/Footer'
 
 const UNIQUE_PAINTINGS = [
   { id: 1, plate: '01', title: 'Wildlife Study', medium: 'Realism & Fur Texture · CAVA Mysore', year: '2021', dims: '30 × 42 cm · Watercolor on Archival Paper', img: '/images/paintings/painting_1.jpg' },
@@ -455,9 +455,9 @@ export default function ArtistEducator() {
         <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.2)" secondaryColor="rgba(200, 155, 60, 0.1)" />
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0, background: 'radial-gradient(ellipse at 30% 70%, rgba(212,96,10,0.2) 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, rgba(232,133,42,0.1) 0%, transparent 50%), var(--ae-bg)', animation: 'heroBgPulse 8s ease-in-out infinite' }} />
         <div className="c" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow rv">Personal Practice · Fine Art &amp; Pedagogy</div>
+          <div className="br-label acid mb-3 rv">■ 05 // FINE ART &amp; PEDAGOGY · ARTIST &amp; EDUCATOR</div>
           <h1 className="hero-title rv" style={{ transitionDelay: '.1s' }}>
-            Artist &amp;<br /><i>Art Educator</i>
+            Artist &amp;<br /><span className="accent">Art Educator</span>
           </h1>
           <p className="hero-sub rv" style={{ transitionDelay: '.25s' }}>
             I paint. I teach. Both inform each other. My fine art practice keeps the observation sharp — and that sharpness is what I pass on to my art students at Svarnart Academy, carrying forward my teaching foundation from Openhouse.
@@ -720,12 +720,7 @@ export default function ArtistEducator() {
       </section>
 
       {/* FOOTER */}
-      <div className="c">
-        <div className="pfooter rv">
-          <div><div className="pf-brand">SIVNCO<span style={{ color: 'var(--ae-accent)' }}>.</span></div></div>
-          <StartProjectButton />
-        </div>
-      </div>
+      <Footer />
 
       <Script id="page-init" strategy="afterInteractive">{`
         (function(){

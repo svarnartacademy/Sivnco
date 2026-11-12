@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 
 const PILLARS = [
   {
@@ -199,7 +200,7 @@ export default function GiftingPage() {
       <div className="gf-hero">
         <div className="gf-hero-bg" />
         <div className="gf-hero-inner">
-          <div className="gf-hero-tag">Festive &amp; Corporate Gifting Architecture · 2023–2025</div>
+          <div className="br-label acid mb-3">■ 01 // FESTIVE &amp; CORPORATE GIFTING ARCHITECTURE</div>
           <h1>
             The <span>Gifting</span><br />Suite
             <em>
@@ -312,10 +313,10 @@ export default function GiftingPage() {
         </div>
       </section>
 
-      <div className="gf-c">
-        <div className="gf-footer">
+      <div className="gf-c" style={{marginTop:'3rem', marginBottom:'3rem'}}>
+        <div className="gf-footer" style={{borderTop:'none', padding:'0'}}>
           <div className="gf-label">Category Directories {'>>>'}</div>
-          <div className="gf-footer-links">
+          <div className="gf-footer-links" style={{marginTop:'1rem', marginBottom:'0'}}>
             {NAV.map((n) => (
               <Link key={n.l} href={n.h} className="gf-footer-link">
                 {n.l}
@@ -324,6 +325,8 @@ export default function GiftingPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
 
       <Script id="gf-init" strategy="lazyOnload">{`
         (function(){

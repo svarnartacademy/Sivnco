@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import FluidAmbientCanvas from '../components/ui/FluidAmbientCanvas'
 
 export default function ResumePage() {
@@ -21,13 +22,13 @@ export default function ResumePage() {
       <main className="min-h-screen bg-[#0A0906] text-[#F0EDE6] pt-32 pb-24 px-4 sm:px-8 max-w-5xl mx-auto font-sans relative z-10">
         
         {/* TOP CONTROLS & DOWNLOAD BAR */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-5 mb-10 rounded-2xl bg-[#12110E] border border-white/10 shadow-2xl">
+        <div className="flex flex-wrap items-center justify-between gap-4 p-6 mb-10 rounded-3xl bg-[#12110E] border border-white/12 shadow-2xl backdrop-blur-xl">
           <div>
-            <span className="text-xs font-mono tracking-widest text-[#D4600A] uppercase font-bold block mb-1">
-              OFFICIAL CURRICULUM VITAE // ATS-COMPLIANT
-            </span>
-            <p className="text-sm text-[#F0EDE6]/70">
-              Verified record of professional roles, commercial packaging scope, and academic honors.
+            <div className="br-label acid mb-2">
+              ■ 03 // OFFICIAL CURRICULUM VITAE &middot; VERIFIED RECORD
+            </div>
+            <p className="text-sm text-[#F0EDE6]/70 max-w-xl">
+              Verified record of professional roles, commercial packaging scope (85+ SKUs), academic honors, and design operations leadership.
             </p>
           </div>
 
@@ -333,6 +334,7 @@ export default function ResumePage() {
 
         </article>
       </main>
+      <Footer />
     </>
   )
 }
