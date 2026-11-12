@@ -9,21 +9,21 @@ import { ART_PLATES, PRACTITIONER } from '../lib/site-data';
 const DEFAULT_NOTES = [
   {
     id: 'note-1',
-    date: '2026-03-12',
+    date: 'Studio note',
     category: 'Color Chemistry',
     title: 'Earth Pigment Absorption & Packaging Substrates',
-    content: 'Studying how raw umber and burnt sienna dry on unbleached kraft board compared to coated SBS boards. The porosity softens the tonal values by nearly 15%—something modern digital mockups fail to predict.'
+    content: 'Studying how raw umber and burnt sienna dry on unbleached kraft board compared to coated SBS boards. Physical samples help evaluate colour differences that digital mockups may not show.'
   },
   {
     id: 'note-2',
-    date: '2025-11-04',
+    date: 'Studio note',
     category: 'Anatomy & Form',
     title: 'Observations from CAVA Plaster Cast Sessions',
     content: 'The weight of a line at the clavicle dictates the posture of the entire torso. In packaging dielines, the visual weight of the primary product descriptor plays an identical structural role.'
   },
   {
     id: 'note-3',
-    date: '2025-08-20',
+    date: 'Studio note',
     category: 'Pedagogy',
     title: 'Teaching Visual Thinking to Young Artists at Openhouse',
     content: 'Students immediately understand negative space when asked to draw the space inside a cup handle rather than the handle itself. Visual thinking is about shifting reference frames.'

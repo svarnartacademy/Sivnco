@@ -148,7 +148,7 @@ export default function Footer() {
               </a>
               <a
                 href="/resume.pdf"
-                download="HP_Shivaraj_Resume_2026.pdf"
+                download="H_P_Shivaraj_Comprehensive_CV.pdf"
                 style={{
                   fontFamily: "'Urbanist', sans-serif",
                   fontSize: '0.62rem',
@@ -333,7 +333,7 @@ export default function Footer() {
           </div>
 
           <a
-            href="#top"
+            href="#"
             onClick={scrollToTop}
             style={{
               color: 'rgba(240, 237, 230, 0.65)',
