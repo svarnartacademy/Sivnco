@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
@@ -308,9 +309,43 @@ const DISCIPLINES = [
 const YEARS = ['all', '2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019'];
 
 export default function VisualDiary() {
+  const router = useRouter();
+  const dialogRef = useRef(null);
   const [activeDiscipline, setActiveDiscipline] = useState('all');
   const [activeYear, setActiveYear] = useState('all');
   const [activeModalItem, setActiveModalItem] = useState(null);
+
+  // Honour links from project cases and browser back/forward navigation.
+  useEffect(() => {
+    if (!router.isReady) return;
+    const discipline = Array.isArray(router.query.discipline) ? router.query.discipline[0] : router.query.discipline;
+    const year = Array.isArray(router.query.year) ? router.query.year[0] : router.query.year;
+    setActiveDiscipline(DISCIPLINES.some(d => d.id === discipline) ? discipline : 'all');
+    setActiveYear(YEARS.includes(year) ? year : 'all');
+  }, [router.isReady, router.query.discipline, router.query.year]);
+
+  useEffect(() => {
+    if (!activeModalItem) return;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const dialog = dialogRef.current;
+    dialog?.querySelector('button')?.focus();
+    const trapFocus = (event) => {
+      if (event.key !== 'Tab' || !dialog) return;
+      const controls = [...dialog.querySelectorAll('button, a[href], [tabindex="0"]')].filter(el => !el.disabled);
+      const first = controls[0], last = controls[controls.length - 1];
+      if (!first) { event.preventDefault(); return; }
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', trapFocus);
+      previousFocus?.focus?.();
+    };
+  }, [Boolean(activeModalItem)]);
 
   // Filter items
   const filteredItems = useMemo(() => {
@@ -442,6 +477,15 @@ export default function VisualDiary() {
             <article
               key={item.id}
               onClick={() => setActiveModalItem(item)}
+              role="button"
+              tabIndex={0}
+              aria-label={`Inspect ${item.title}`}
+              onKeyDown={event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  setActiveModalItem(item);
+                }
+              }}
               className="group cursor-pointer rounded-2xl border border-white/10 bg-[#0F0E0B]/80 hover:bg-[#14120D] transition-all duration-300 hover:border-[#D4600A]/50 hover:shadow-[0_16px_40px_rgba(0,0,0,0.7)] flex flex-col overflow-hidden"
             >
               {/* Media Container */}
@@ -496,10 +540,14 @@ export default function VisualDiary() {
         {/* Detailed Modal Viewer */}
         {activeModalItem && (
           <div
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[1000] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setActiveModalItem(null)}
           >
             <div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="diary-entry-title"
               className="bg-[#0F0E0B] border border-white/20 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative"
               onClick={e => e.stopPropagation()}
             >
@@ -534,7 +582,7 @@ export default function VisualDiary() {
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-bold mb-3 text-white">
+              <h2 id="diary-entry-title" className="text-2xl sm:text-4xl font-bold mb-3 text-white">
                 {activeModalItem.title}
               </h2>
 
