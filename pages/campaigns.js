@@ -25,7 +25,7 @@ const CAMPAIGNS = [
       idea: 'Weaponize transparency — make the 30-second paste replace an 8-hour ritual on screen.'
     },
     myRole: ['Creative Direction', 'Motion Concept', 'Script & Storyboard', 'Video Editing', 'Typography System', 'Packaging Redesign'],
-    brand: 'Jus\'Amazin — 100% Almond Milk Paste (Sachet Format)',
+    brand: 'Jus’Amazin — 30-Second Almond Drink (Packaging & Moving Image)',
     brief: 'Break into the dairy-free milk alternative category on quick-commerce platforms where decisions happen in under 3 seconds. Expose the 1–4% almond content hidden inside mass-market carton brands and position Jus\'Amazin\'s pure paste sachet as the radical, transparent alternative.',
     insight: 'Most people buying almond milk from a carton don\'t know what\'s actually inside. They trust it because the packaging says "almond." The reality is that most mass-market cartons contain 1–4% actual almond — the rest is emulsifiers, thickeners, and stabilizers. That gap between what people believe and what they\'re actually buying is where the whole campaign lived.',
     concept: 'Don\'t hide it, show it. Instead of building prettier packaging, the idea was to make the ingredient comparison unavoidable. Two films, two angles: one that puts our paste against a competitor\'s carton side by side for 30 seconds — no voiceover, just the visual doing the work. And a second, quieter film that lets typewriter click-clacks and plain text do the talking. The kind of quiet confidence that premium consumers respond to.',
@@ -1076,7 +1076,7 @@ function TestimonialsBlock({ testimonials, accent }) {
   const catLabels = { leadership: 'Leadership', team: 'Internal Team', consumer: 'Consumer' }
   return (
     <div className="cp-testimonials-section cpv">
-      <div className="cp-execs-label" style={{ color: accent }}>Feedback Matrix — Segmented Personas</div>
+      <div className="cp-execs-label" style={{ color: accent }}>Design & Execution Criteria — Field Observations</div>
       <div className="cp-testi-filters">
         {filters.map(f => (
           <button
