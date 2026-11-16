@@ -10,6 +10,7 @@ out/
 *.bak
 temp_build/
 scripts/screenshots/
+preview-artifacts/
 
 # OS files
 .DS_Store

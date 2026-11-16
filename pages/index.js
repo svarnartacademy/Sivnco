@@ -911,11 +911,24 @@ export async function getStaticProps() {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(data).toString()
-    }).then(function() {
+    }).then(function(response) {
+      if (!response.ok) throw new Error("Message could not be sent");
       var status = document.getElementById('formStatus');
-      if (status) { status.style.display = 'block'; }
+      if (status) {
+        status.textContent = "Thank you! Your message has been sent.";
+        status.style.color = "var(--acid, #D8FC71)";
+        status.style.display = 'block';
+      }
       form.reset();
-    }).catch(function(err) { var status = document.getElementById('formStatus'); if(status) { status.textContent = 'Message could not be sent. Please email sivnco.in@gmail.com'; status.style.display = 'block'; } console.error('Form error:', err); });
+    }).catch(function(err) {
+      var status = document.getElementById('formStatus');
+      if (status) {
+        status.textContent = 'Message could not be sent. Please email sivnco.in@gmail.com';
+        status.style.color = '#ef4444';
+        status.style.display = 'block';
+      }
+      console.error('Form error:', err);
+    });
   });
 })();
 `

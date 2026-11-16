@@ -569,7 +569,7 @@ export default function Navbar({ backLink, backLabel }) {
               </Link>
 
               {/* Contact */}
-              <Link href="/#contact" className="snav-link-item" onClick={handleContact}>
+              <Link href="/contact" className="snav-link-item" onClick={() => { setChatOpen(false); setMenuOpen(false); }}>
                 Contact
               </Link>
             </div>
@@ -621,7 +621,7 @@ export default function Navbar({ backLink, backLabel }) {
                   <Link href="/visual-diary" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Visual Diary — Complete Creative Record</Link>
                   <Link href="/#about" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>About H P Shivaraj</Link>
                   <Link href="/resume" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Resume &amp; CV (ATS-Friendly + PDF)</Link>
-                  <Link href="/#contact" className="snav-mobile-link" onClick={handleContact}>Contact &amp; Inquiries</Link>
+                  <Link href="/contact" className="snav-mobile-link" onClick={() => { setChatOpen(false); setMenuOpen(false); }}>Contact &amp; Inquiries</Link>
 
                   <span className="snav-mobile-group" style={{ marginTop: '0.6rem' }}>5 Work Categories</span>
                   {workChapters.map(item => (

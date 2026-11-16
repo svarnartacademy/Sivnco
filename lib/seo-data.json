@@ -32,8 +32,8 @@
     "description": "Explore Svar'n'Art Academy EdTech Platform, OG Mithai packaging, and Vedic Treats 3D GLB interactive models."
   },
   "/": {
-    "title": "H P Shivaraj Acharya | Brand & Packaging Designer, Bengaluru",
-    "description": "Explore brand and packaging design, art direction and visual storytelling by H P Shivaraj Acharya. Selected FMCG projects, campaigns, 3D work and resume."
+    "title": "H P Shivaraj Acharya | Brand & Packaging Designer | SIVNCO",
+    "description": "Bengaluru-based brand and packaging designer working across art direction, visual systems and print production. Explore selected work and contact H P Shivaraj Acharya."
   },
   "/journal": {
     "title": "Process & Design Journal (UNPACK) — H P Shivaraj | SIVNCO",
@@ -97,7 +97,7 @@
   },
   "/jusamazin": {
     "title": "Jus Amazin — Brand & Packaging Architecture · H P Shivaraj",
-    "description": "End-to-end brand system for Jus Amazin. 176% revenue growth."
+    "description": "End-to-end brand system for Jus Amazin across 15+ product families and 85+ commercial SKUs."
   },
   "/resume": {
     "title": "H P Shivaraj Acharya — Brand, Packaging & Art Direction Resume",
@@ -114,5 +114,9 @@
   "/work": {
     "title": "Selected Work & Case Studies (5 Categories) — H P Shivaraj | SIVNCO",
     "description": "Visual worlds for brands: packaging systems, campaigns, production design ops, digital platforms, and fine art by H P Shivaraj."
+  },
+  "/contact": {
+    "title": "Contact H P Shivaraj Acharya | Design Opportunities",
+    "description": "Contact Bengaluru brand and packaging designer H P Shivaraj Acharya for art direction, senior visual design and packaging opportunities."
   }
 }
