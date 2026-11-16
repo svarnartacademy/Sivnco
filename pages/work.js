@@ -200,7 +200,7 @@ export const WORK_PROJECTS = [
       "Brand & Packaging"
     ],
     "accentColor": "#FF6F59",
-    "heroImage": "/images/jusamazin/lilstars/pancake_mix.png",
+    "heroImage": "/images/jusamazin/lilstars/pancake_choco_delight.png",
     "brief": "Develop a distinct visual identity for a clean-label kids line spanning spreads and millet pancake mixes, maintaining clear relationships between individual packs.",
     "contribution": "Designed packaging across four spreads and three pancake-mix variants. Balanced playful front-of-pack appeal with clean parental reassurance on ingredient standards. Explored promotional motion workflows to visualize product texture and movement.",
     "supportedOutcome": "Established a coherent sub-brand family that balances child-friendly personality with parental nutritional clarity.",

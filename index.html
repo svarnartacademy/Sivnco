@@ -6450,17 +6450,8 @@
       animateHeroCounter(el);
     });
 
-    // --- SUPABASE GALLERY IMAGE LOADER ---
-    (async function loadSivncoImages() {
-      const SB_URL = 'https://aojlzglzeezxljxqwaep.supabase.co';
-      const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvamx6Z2x6ZWV6eGxqeHF3YWVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1Mzk2MDEsImV4cCI6MjA5MTExNTYwMX0.37YZnw01XFg25883yjF0D96buhot5J_9A9UmlfOpzQM';
-
-      const SLOT_MAP = {
-        'gallery_featured_ja': 'gImg_featured',
-        'gallery_web_dev': 'gImg_web_dev',
-        'gallery_systems': 'gImg_systems',
-      };
-
+    // --- GALLERY HOVER ZOOM LOGIC ---
+    (function initGalleryHover() {
       // Add hover zoom for local images (Jus Amazin, Artist-Educator, AI-Workflow, Illustrations, In-House, and Case Study Hero)
       try {
         const localIDs = ['gImg_featured', 'gImg_systems', 'gImg_artist_educator', 'gImg_web_dev', 'gImg_in_house'];
@@ -6486,33 +6477,6 @@
               el.addEventListener('mouseleave', () => media.style.transform = 'scale(1)');
             }
           }
-        });
-      } catch (e) { }
-
-      try {
-        const r = await fetch(`${SB_URL}/rest/v1/sivnco_gallery?select=*`, {
-          headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` }
-        });
-        if (!r.ok) return;
-        const rows = await r.json();
-
-        rows.forEach(row => {
-          if (!row.url || !SLOT_MAP[row.id]) return;
-          const el = document.getElementById(SLOT_MAP[row.id]);
-          if (!el) return;
-
-          el.innerHTML = '';
-
-          const img = document.createElement('img');
-          img.src = row.url;
-          img.alt = row.alt || '';
-          img.style.cssText = 'width:100%; height:100%; object-fit:cover; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);';
-
-          // Image zoom on hover via parent class
-          el.parentElement.addEventListener('mouseenter', () => img.style.transform = 'scale(1.05)');
-          el.parentElement.addEventListener('mouseleave', () => img.style.transform = 'scale(1)');
-
-          el.appendChild(img);
         });
       } catch (e) { }
     })();

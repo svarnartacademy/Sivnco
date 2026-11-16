@@ -11,6 +11,7 @@ out/
 temp_build/
 scripts/screenshots/
 preview-artifacts/
+audit-results/
 
 # OS files
 .DS_Store

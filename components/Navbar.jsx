@@ -307,7 +307,8 @@ const NAV_STYLES = `
     display: block;
   }
   .snav-mobile-link:last-child { border-bottom: none; }
-  .snav-mobile-link:hover { color: #D4600A; padding-left: 0.4rem; }
+  .snav-mobile-link:hover,
+  .snav-mobile-link.snav-active { color: #D4600A; padding-left: 0.4rem; }
 
   /* Maya chat container */
   .snav-chat-body {
@@ -569,7 +570,11 @@ export default function Navbar({ backLink, backLabel }) {
               </Link>
 
               {/* Contact */}
-              <Link href="/contact" className="snav-link-item" onClick={() => { setChatOpen(false); setMenuOpen(false); }}>
+              <Link
+                href="/contact"
+                className={`snav-link-item${router.pathname === '/contact' ? ' snav-active' : ''}`}
+                onClick={() => { setChatOpen(false); setMenuOpen(false); }}
+              >
                 Contact
               </Link>
             </div>
@@ -617,11 +622,11 @@ export default function Navbar({ backLink, backLabel }) {
               ) : (
                 <>
                   <span className="snav-mobile-group">Primary Navigation</span>
-                  <Link href="/work" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Work — 5 Categories</Link>
-                  <Link href="/visual-diary" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Visual Diary — Complete Creative Record</Link>
+                  <Link href="/work" className={`snav-mobile-link${router.pathname.startsWith('/work') ? ' snav-active' : ''}`} onClick={() => setMenuOpen(false)}>Work — 5 Categories</Link>
+                  <Link href="/visual-diary" className={`snav-mobile-link${router.pathname === '/visual-diary' ? ' snav-active' : ''}`} onClick={() => setMenuOpen(false)}>Visual Diary — Complete Creative Record</Link>
                   <Link href="/#about" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>About H P Shivaraj</Link>
-                  <Link href="/resume" className="snav-mobile-link" onClick={() => setMenuOpen(false)}>Resume &amp; CV (ATS-Friendly + PDF)</Link>
-                  <Link href="/contact" className="snav-mobile-link" onClick={() => { setChatOpen(false); setMenuOpen(false); }}>Contact &amp; Inquiries</Link>
+                  <Link href="/resume" className={`snav-mobile-link${router.pathname === '/resume' ? ' snav-active' : ''}`} onClick={() => setMenuOpen(false)}>Resume &amp; CV (ATS-Friendly + PDF)</Link>
+                  <Link href="/contact" className={`snav-mobile-link${router.pathname === '/contact' ? ' snav-active' : ''}`} onClick={() => { setChatOpen(false); setMenuOpen(false); }}>Contact &amp; Inquiries</Link>
 
                   <span className="snav-mobile-group" style={{ marginTop: '0.6rem' }}>5 Work Categories</span>
                   {workChapters.map(item => (
