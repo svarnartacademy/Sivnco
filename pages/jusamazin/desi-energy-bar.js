@@ -182,11 +182,11 @@ export default function DesiEnergyBar() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://sivnco.in/jusamazin/desi-energy-bar" />
+        
         <meta charSet="UTF-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>Desi Energy Bar — Structured Chaos | SIVNCO</title>
-        <meta name="description" content="A character-led identity for a traditional snack, developed across illustration, wrapper design and retail packaging by H P Shivaraj."/>
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -207,7 +207,8 @@ export default function DesiEnergyBar() {
         </div>
       </div>
 
-      {/* S1: PILLARS */}
+      <section className="deb-c hiring-case-summary" aria-label="Project overview"><img src="/images/jusamazin/desi_bar/studio_render_a.jpg" alt="Desi Energy Bar packaging visualisation" width="1200" height="800"/><p><strong>My role:</strong> Visual concept, character illustration, wrapper and dispenser artwork, prepress and vendor coordination.</p><p><strong>Context:</strong> Design work began in 2023–24 and continued through production revisions. Product, commercial approvals, distribution and sales belonged to the wider team.</p><p><Link href="/resume">View resume ↗</Link></p></section>
+{/* S1: PILLARS */}
       <section className="deb-section" style={{padding:0,borderBottom:'none'}}>
         <div className="deb-pillars">
           <div className="deb-pill-left">
@@ -235,10 +236,10 @@ export default function DesiEnergyBar() {
         </div>
         <div className="deb-runway-scroll">
           {[
-            {id:'step1',text:'1. Bengaluru Retail Study (25 Stores)',src:'/images/jusamazin/desi_bar/runway_handdrawn.jpg'},
-            {id:'step2',text:'2. Street Game Sketches (Gully Cricket)',src:'/images/jusamazin/desi_bar/runway_vector.jpg'},
-            {id:'step3',text:'3. Structured Chaos Vector Geometry',src:'/images/jusamazin/desi_bar/pantone_proofing.jpg'},
-            {id:'step4',text:'4. Press Calibration & Proofing',src:'/images/jusamazin/desi_bar/pack_array.jpg'},
+            {id:'step1',text:'1. Character-led Packaging Artwork',src:'/images/jusamazin/desi_bar/runway_handdrawn.jpg'},
+            {id:'step2',text:'2. Wrapper Artwork & Dieline',src:'/images/jusamazin/desi_bar/runway_vector.jpg'},
+            {id:'step3',text:'3. Physical Colour Proof',src:'/images/jusamazin/desi_bar/pantone_proofing.jpg'},
+            {id:'step4',text:'4. Packaging Range Visualisation',src:'/images/jusamazin/desi_bar/pack_array.jpg'},
             {id:'step5',text:'5. Finished Commercial Wrapper Pack',src:'/images/jusamazin/desi_bar/runway_final.jpg'},
           ].map((item)=>(
             <div key={item.id} className="deb-runway-card" style={{position:'relative',overflow:'hidden'}}>

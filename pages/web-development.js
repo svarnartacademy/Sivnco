@@ -330,14 +330,11 @@ export default function WebDevelopment() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://sivnco.in/web-development" />
+        
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Full-Stack Web Development — H.P. Shivaraj · Sivnco</title>
-        <meta
-          name="description"
-          content="Full-stack web engineering for sivnco.in (Next.js portfolio) and svarnart.com (Vite + Firebase + Razorpay PWA). Built in-house from design tokens to production deployment."
-        />
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

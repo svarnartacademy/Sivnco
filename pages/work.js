@@ -530,9 +530,9 @@ export default function WorkPage() {
   return (
     <>
       <Head>
-        <title>Selected Work &amp; Case Studies (5 Categories) — H P Shivaraj | SIVNCO</title>
-        <meta name="description" content="Visual worlds for brands: packaging systems, campaigns, production design ops, digital platforms, and fine art by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/work" />
+        
+        
+        
       </Head>
 
       <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.18)" secondaryColor="rgba(216, 252, 113, 0.08)" />

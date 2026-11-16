@@ -208,9 +208,9 @@ export default function LilstarsPage() {
   return (
     <>
       <Head>
-        <title>Lil’Stars — A Distinct World for Kids | SIVNCO</title>
-        <meta name="description" content="A children’s product identity developed across spreads, pancake mixes and motion exploration by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/lilstars" />
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

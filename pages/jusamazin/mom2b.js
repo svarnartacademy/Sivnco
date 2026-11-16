@@ -193,9 +193,9 @@ export default function Mom2BPage() {
   return (
     <>
       <Head>
-        <title>Mom2B — A Dedicated Product Identity | SIVNCO</title>
-        <meta name="description" content="Packaging and product communication for a maternal-nutrition sub-brand by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/mom2b" />
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

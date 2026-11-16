@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
-import SeedingBanner from '../components/SeedingBanner';
+import Seo from '../components/Seo';
 
 const LiquidVelocityCursor = dynamic(
   () => import('../components/ui/LiquidVelocityCursor'),
@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <LiquidVelocityCursor />
-      <SeedingBanner />
+      <Seo />
       <Component {...pageProps} />
     </>
   );

@@ -9,8 +9,8 @@ export default function JournalPage() {
   return (
     <>
       <Head>
-        <title>Process & Design Journal (UNPACK) — H P Shivaraj | SIVNCO</title>
-        <meta name="description" content="Detailed process records, prepress engineering, dielines, and strategic design documentation by H P Shivaraj." />
+        
+        
       </Head>
 
       <FluidAmbientCanvas />

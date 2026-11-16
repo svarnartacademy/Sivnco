@@ -214,8 +214,8 @@ export default function DesignSystems() {
   return (
     <>
       <Head>
-        <title>Design Systems &amp; Packaging Architecture — H P Shivaraj | Sivnco</title>
-        <meta name="description" content="Design systems, dieline anatomy, variant matrices, and packaging token architecture by H P Shivaraj." />
+        
+        
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

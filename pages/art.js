@@ -116,8 +116,8 @@ export default function ArtPage() {
   return (
     <>
       <Head>
-        <title>Art Journal & Digital Sketchbook (WANDER) — H P Shivaraj | SIVNCO</title>
-        <meta name="description" content="Classical fine art archive, CAVA academic studies, plein air watercolors, and personal studio diary of H P Shivaraj." />
+        
+        
       </Head>
 
       <FluidAmbientCanvas />

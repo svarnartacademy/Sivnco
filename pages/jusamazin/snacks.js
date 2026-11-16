@@ -193,9 +193,9 @@ export default function SnacksPage() {
   return (
     <>
       <Head>
-        <title>Savoury Snacks — A Family Built to Scale | SIVNCO</title>
-        <meta name="description" content="A coordinated packaging family across savoury snacks and chikki, developed through artwork and production proofing by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/snacks" />
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

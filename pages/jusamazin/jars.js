@@ -182,9 +182,9 @@ export default function Jars() {
   return (
     <>
       <Head>
-        <title>Nut Butter Jars &amp; Sub-Brand Spreads — Sivnco</title>
-        <meta name="description" content="Dual-material asset pipelines: Glass Jars for gourmet retail, PET Plastic Jars for D2C shipping, and demographic sub-brands by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/jars" />
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

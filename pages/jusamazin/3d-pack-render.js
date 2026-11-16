@@ -116,10 +116,10 @@ export default function PackRender3D() {
     <>
       <Head>
         <script type="module" src="https://unpkg.com/@google/model-viewer@3.3.0/dist/model-viewer.min.js" />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/3d-pack-render" />
+        
         <meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>3D Pack Render — Case Study · Sivnco</title>
-        <meta name="description" content="Interactive 3D product renders for Jus Amazin. 10 SKUs visualized in real-time WebGL."/>
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

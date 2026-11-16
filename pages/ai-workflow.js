@@ -263,8 +263,8 @@ export default function AIWorkflow() {
   return (
     <>
       <Head>
-        <title>AI Workflow &amp; Studio Tooling — H P Shivaraj | Sivnco</title>
-        <meta name="description" content="AI tools integrated into commercial packaging pipelines, generative briefs, and autonomous studio agents with strict human prepress governance." />
+        
+        
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 

@@ -320,3 +320,8 @@ img, video, canvas, svg {
 
 
 
+
+/* Hiring pathways retain the SIVNCO palette and typographic identity. */
+.hiring-featured{max-width:1400px;margin:auto;padding:70px 5vw;scroll-margin-top:120px}.hiring-featured h2{font-family:Doto,Arial,sans-serif;font-size:clamp(2rem,5vw,4rem);margin:16px 0}.hiring-featured p{line-height:1.7;margin:14px 0}.hiring-featured a:focus-visible{outline:3px solid #efa660;outline-offset:5px}.hiring-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:28px 0}.hiring-grid>a{border:1px solid #50463a;border-radius:18px;overflow:hidden;background:#14110d;display:block;text-decoration:none}.hiring-grid img{width:100%;height:240px;object-fit:cover;display:block}.hiring-grid span{display:block;padding:20px 20px 8px;color:#efa660;font-size:12px}.hiring-grid h3{padding:0 20px 24px;font-size:24px;line-height:1.2}.hiring-case-summary{padding-top:36px;padding-bottom:36px}.hiring-case-summary img{width:100%;height:auto;max-height:600px;object-fit:contain;display:block}.hiring-case-summary p{line-height:1.7;margin-top:18px}.hiring-case-summary a{text-decoration:underline}
+@media(max-width:760px){.hiring-grid{grid-template-columns:1fr}.hiring-grid img{height:auto;aspect-ratio:3/2}.hiring-featured{padding:45px 6vw}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.gs-fade,.drv,.cpv{opacity:1!important;transform:none!important}}

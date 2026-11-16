@@ -190,9 +190,9 @@ export default function GiftingPage() {
   return (
     <>
       <Head>
-        <title>Festive Gifting — A Family of Celebrations | SIVNCO</title>
-        <meta name="description" content="Coordinated gifting directions spanning pattern, colour, packaging formats and product presentation by H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/jusamazin/gifting" />
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

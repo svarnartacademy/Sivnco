@@ -431,11 +431,11 @@ export default function ArtistEducator() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://sivnco.in/artist-educator" />
+        
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Fine Art &amp; Education — H P Shivaraj · Art Director | Sivnco</title>
-        <meta name="description" content="Synthesizing fine art practice and visual pedagogy. Artworks, journey, and student progress by H.P. Shivaraj." />
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />

@@ -385,9 +385,9 @@ export default function VisualDiary() {
   return (
     <>
       <Head>
-        <title>Visual Diary &amp; Creative Record — H P Shivaraj | SIVNCO</title>
-        <meta name="description" content="Sketches, rejected directions, fine art studies, 3D experiments, pedagogy, and reflections documenting the creative progression of H P Shivaraj." />
-        <link rel="canonical" href="https://sivnco.in/visual-diary" />
+        
+        
+        
       </Head>
 
       <FluidAmbientCanvas accentColor="rgba(212, 96, 10, 0.18)" secondaryColor="rgba(216, 252, 113, 0.08)" />

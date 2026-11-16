@@ -46,19 +46,19 @@ const CAMPAIGNS = [
         num: '03',
         header: 'High-Velocity Conversion',
         tag: 'THE_7_DAY_BLAST',
-        body: 'The 30-second film was built for quick commerce. At that scroll speed, you have maybe 3 seconds before someone keeps moving. We put the comparison right at the top — carton ingredients vs. what\'s in our sachet — and let the contrast do the selling. No spokesperson. No music. Just the visual argument, straight. The first 3-day run was enough to show it was working.'
+        body: 'The 30-second film was built for quick commerce. At that scroll speed, you have maybe 3 seconds before someone keeps moving. We put the comparison right at the top — carton ingredients vs. what\'s in our sachet — and let the contrast do the selling. No spokesperson. No music. Just the visual argument, straight. The format was designed to communicate the comparison quickly.'
       },
       {
         num: '04',
         header: 'The Silent Attack',
         tag: 'NOSTALGIC_DISRUPTIONS',
-        body: 'The second film was for a different kind of person. Someone who finds the loud D2C energy exhausting and trusts brands that don\'t shout at them. It\'s all type — vintage typewriter style, clicking through the ingredient facts one by one. No voiceover, just the sound of keys and the text appearing. The kind of ad that feels more like a document than an advertisement. Which is exactly why it worked for the audience it was targeting.'
+        body: 'The second film was for a different kind of person. Someone who finds the loud D2C energy exhausting and trusts brands that don\'t shout at them. It\'s all type — vintage typewriter style, clicking through the ingredient facts one by one. No voiceover, just the sound of keys and the text appearing. The kind of ad that feels more like a document than an advertisement. The creative intent was a quieter, information-led alternative.'
       },
       {
         num: '05',
         header: 'The Royal Pivot',
         tag: 'CHROMATIC_RETAINING',
-        body: 'Once the campaign proved the concept, the package needed to match it. The original sachet design was fine — but "fine" loses on shelf. We went through a few rounds of testing before landing on the Royal Purple. It sounds like an odd call for a health product, but that\'s exactly what made it work. It stopped people. Purple doesn\'t exist in that category. Once they tried it and liked it, the color became the recall cue. That\'s how you build retention — not through messaging, but through recognition.'
+        body: 'The packaging and campaign needed a consistent visual direction. The original sachet design was fine — but "fine" loses on shelf. We went through a few rounds of testing before landing on the Royal Purple. It sounds like an odd call for a health product, but that\'s exactly what made it work. It stopped people. Purple doesn\'t exist in that category. Once they tried it and liked it, the color became the recall cue. That\'s how you build retention — not through messaging, but through recognition.'
       },
       {
         num: '06',
@@ -78,10 +78,10 @@ const CAMPAIGNS = [
         aspect: '1/1',
         campaignType: 'Visual Breakdown Tactic',
         duration: '7 Days — High-intensity cross-platform run',
-        topFunnel: '15K–20K Impressions',
-        midFunnel: '6,000+ Active Conversions',
-        bottomFunnel: '11,000+ Orders (30–45 Day Window)',
-        reaction: 'Immediate visual shock & brand switching',
+        topFunnel: 'Campaign objective; measured outcome not presented',
+        midFunnel: 'Campaign objective; measured outcome not presented',
+        bottomFunnel: 'Campaign objective; measured outcome not presented',
+        reaction: 'Intended audience response',
         adNote: 'Split-screen tension at 1:1 aspect ratio — the left side compresses 8 hours of traditional overnight process into 10 seconds, the right shows the paste dissolving in real time. No voiceover needed. The visual does the persuasion.',
         channels: 'Blinkit PDP · Zepto Product Carousel · Amazon A+ Content'
       },
@@ -94,10 +94,10 @@ const CAMPAIGNS = [
         aspect: '9/16',
         campaignType: 'Silent Attack Tactic',
         duration: '7 Days — Targeted minimal niche positioning',
-        topFunnel: '15K–20K+ Audience Reach',
-        midFunnel: '3,000–4,000+ Targeted Reach Outs',
-        bottomFunnel: '2,000–3,000+ Settled Product Orders',
-        reaction: 'Sophisticated curiosity & steady onboarding',
+        topFunnel: 'Campaign objective; measured outcome not presented',
+        midFunnel: 'Campaign objective; measured outcome not presented',
+        bottomFunnel: 'Campaign objective; measured outcome not presented',
+        reaction: 'Intended audience response',
         adNote: 'Built for sound-off vertical scrolling. Kinetic typewriter animation — vintage click-clack audio disruption delivering proof points: "100% Almonds", "No Emulsifiers" — in the first 3 seconds. Type is the visual idea here, not decoration.',
         channels: 'Instagram Stories · Reels · Meta Paid Acquisition'
       },
@@ -110,24 +110,16 @@ const CAMPAIGNS = [
         aspect: '16/9',
         campaignType: 'Long-Form Brand Film',
         duration: 'Ongoing — Brand & storefront placement',
-        topFunnel: 'Full-funnel brand building',
-        midFunnel: 'Trust layer for retention',
-        bottomFunnel: 'Category entry for new audiences',
-        reaction: 'Trust-building for health-conscious families',
+        topFunnel: 'Campaign objective; measured outcome not presented',
+        midFunnel: 'Campaign objective; measured outcome not presented',
+        bottomFunnel: 'Campaign objective; measured outcome not presented',
+        reaction: 'Intended audience response',
         adNote: 'Long-form brand film combining macro ingredient photography with lifestyle integration. Positions "30-Second Almond Milk" as a clean, sustainable dietary upgrade — not a convenience hack.',
         channels: 'YouTube Pre-Roll · Brand Website · Amazon Storefront'
       }
     ],
-    metrics: [
-      { value: '20K', label: 'Max impressions captured during the initial 3-day high-velocity platform burst.', tag: 'TOP FUNNEL' },
-      { value: '6,000+', label: 'Verified user conversions driven by the transparency visualization asset.', tag: 'MID FUNNEL' },
-      { value: '11,000+', label: 'Cumulative sachet orders scaled over a 45-day attribution cycle.', tag: 'BOTTOM FUNNEL' },
-      { value: 'LOYALTY↑', label: 'Long-term retention index established via post-visual rehaul brand standard.', tag: 'RETENTION LOOP' }
-    ],
-    testimonials: [
-      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'This comparison format completely simplified our category education. It has elevated our overall content standards, significantly boosted our brand image, and funneled entirely new customer segments straight into our 32nd almond milk category.' },
-      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'The transparency visualization worked beautifully. It gave our consumers a clear, unmistakable reason to look for our house-made sachet over common cartons, and the conversion numbers speak directly to how well that narrative connected.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'If I were to extend this, I\'d develop an OOH version — a single visual of the paste jar next to a clock showing "8 Hours vs. 30 Seconds." The idea is strong enough to work on a billboard at 60kmph. The comparison campaign proved the concept; the next step is scaling the transparency argument beyond digital into physical retail presence.'
   },
   {
@@ -205,23 +197,8 @@ const CAMPAIGNS = [
         channels: 'Physical retail · Modern trade · Checkout POS counter'
       }
     ],
-    metrics: [
-      { value: '70%', label: 'Increase in snacking range sales following the visual overhaul and nostalgic rebrand.', tag: 'SALES GROWTH' },
-      { value: '34%', label: 'Overall contribution of this product to the brand\'s total revenue in FY 2024–25.', tag: 'REVENUE SHARE' },
-      { value: '8,000', label: 'Units per month. Scaled from 250 units in the first month to current high-velocity production.', tag: 'MONTHLY VOLUME' },
-      { value: '160,000', label: 'Rotogravure pouch order scaled in January 2026, progressing from initial 6,000-pouch digital trial.', tag: 'PRODUCTION SCALE' }
-    ],
-    testimonials: [
-      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'I\'ve loved the design as it was our dream to have this product in our portfolio as a charmer and this design has held true for all the ideology we wanted for the product.' },
-      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'Well it is a series of nostalgia that we looked for out of which this design styling worked the best for us as it was the most relevant and connecting to all of us.' },
-      { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'I wasn\'t sure about the color blue with nostalgia, but surprisingly it works as blue grasps attention and the nostalgia keeps the attention span long enough for them to make the purchase.' },
-      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'It\'s so fun and out of the blue. I don\'t find it typical, but it works great as it sells in the market.' },
-      { name: 'Juhi Singh', role: 'Colleague & Visual Designer', category: 'team', quote: 'He has a good understanding of emotions so that grasp of gully cricket was expected, but the fusion of electric blue is what works as a punch.' },
-      { name: 'Arun', role: 'Customer / Parent', category: 'consumer', quote: 'It\'s hard to see kids not choosing healthy stuff due to their plain packaging, and when kids are attracted to healthy stuff like this, it\'s good.' },
-      { name: 'Dwani Trivedi', role: 'Customer', category: 'consumer', quote: 'It\'s a weird story — I wanted to eat something as I was feeling dizzy due to low sugar at a mall. This captured my eyes even on the brink of collapse, but then the cartoons made me smile. It\'s a fun packaging that really grabs attention.' },
-      { name: 'Samuel', role: 'Customer', category: 'consumer', quote: 'Crazy colors and abstract visual appearance, so it\'s an easy eye-grabber for sure.' },
-      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'Well, it\'s too overloaded, but that\'s what is out of the box from the market.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'The design solved shelf presence brilliantly. What I\'d extend: a 15-second social video where the cartoon character "comes alive" — reinforcing the nostalgia claim in motion. The packaging created the idea; the next campaign is animating it. The chromatic breakthrough — the Lightning Blue — is strong enough to become the brand\'s permanent visual signature across the entire snacking category.'
   },
   {
@@ -299,16 +276,8 @@ const CAMPAIGNS = [
         channels: 'Print production · FSSAI compliance · Factory floor deployment'
       }
     ],
-    metrics: [
-      { value: '5×', label: 'Increase in factory floor packaging and labeling throughput efficiency.', tag: 'FLOOR VELOCITY' },
-      { value: '200K', label: 'Maximum units scaled in full-fledged commercial printed production runs.', tag: 'PRINT SCALE' },
-      { value: '400–500', label: 'Pouches per hour achieved post alignment guideline integration. Up from 100/hr.', tag: 'UNITS / HOUR' }
-    ],
-    testimonials: [
-      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'The back-of-pack overhaul cleaned up our technical parameters perfectly. Moving to solid black body text and standardizing our layout casing immediately elevated our regulatory presentation.' },
-      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'Before the alignment guidelines were built onto the labels, our team was losing endless hours trying to center stickers manually on the pouches. The new system instantly boosted our hourly output from 100 to over 400 units.' },
-      { name: 'Gagan', role: 'Customer', category: 'consumer', quote: 'I used to walk right past these packs because they looked like old health supplements from a chemist\'s shop. The new scenic layouts look incredibly premium and make it clear that this is real, clean food for a healthy lifestyle.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'This project taught me that the most powerful design decisions are often invisible — the ones that make something feel right without the viewer knowing why. The universal pouch system wasn\'t just a financial workaround; it was a strategic advantage that competitors couldn\'t easily replicate. I\'d take this further by applying the same typographic precision to front-of-pack, making the typographic confidence visible and deliberate on the retail shelf itself.'
   },
   {
@@ -404,16 +373,8 @@ const CAMPAIGNS = [
         channels: 'Brand Storefront · Amazon Luxury Pantry · Gourmet Retailers'
       }
     ],
-    metrics: [
-      { value: '100%', label: 'Corporate client reorder rate achieved across festive gifting seasons.', tag: 'CLIENT RETENTION' },
-      { value: '5 Formats', label: 'Bespoke structural packaging formats designed and engineered to mass production.', tag: 'STRUCTURAL SKUS' },
-      { value: '0 Transit Loss', label: 'Zero recorded glass jar breakages due to precision friction-lock internal trays.', tag: 'TRANSIT SECURITY' }
-    ],
-    testimonials: [
-      { name: 'Jitin Munjal', role: 'Co-Founder & CEO, Jus\'Amazin', category: 'leadership', quote: 'The festive gifting collection opened corporate B2B gifting accounts that previously never considered health food as a premium gift.' },
-      { name: 'Production Vendor', role: 'Rigid Box Manufacturer', category: 'team', quote: 'Shivaraj\'s dielines and foil stamp registration tolerances were millimeter-accurate, making zero-waste mass production seamless.' },
-      { name: 'Executive Client', role: 'Enterprise Gifting Lead', category: 'consumer', quote: 'The purple sliding box looked stunning on our leadership desks. The unboxing felt every bit like luxury imported confection.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'The success of the sliding tray proved that people buy the container first during the festive season. If I were doing it again, I would integrate a magnetic snap enclosure on the outer sleeve for an even richer acoustic click upon closure.'
   },
   {
@@ -509,16 +470,8 @@ const CAMPAIGNS = [
         channels: 'Instagram Reels · YouTube Shorts · Meta Ads'
       }
     ],
-    metrics: [
-      { value: '3 SKUs', label: 'Millet pancake mixes formulated, designed, and launched in national retail.', tag: 'LAUNCH SKUS' },
-      { value: '4 Flavors', label: 'Kids clean nut spreads integrated into unified sub-brand portfolio.', tag: 'SPREADS EXPANSION' },
-      { value: '100%', label: 'Clean millets & zero refined sugar highlighted front-of-pack without clinical dryness.', tag: 'CLEAN CLAIM' }
-    ],
-    testimonials: [
-      { name: 'Shilpa Moglishetty', role: 'Co-Founder, Jus\'Amazin', category: 'leadership', quote: 'Lil\'Stars required a delicate touch — friendly, charming, but uncompromising on our clean nutrition philosophy. Shivaraj nailed that sweet spot.' },
-      { name: 'Arun', role: 'Parent & Customer', category: 'consumer', quote: 'My kids ask for the bear pancake box by name on Sunday mornings, and I know they are eating ragi and foxtail millets instead of refined flour.' },
-      { name: 'Juhi Singh', role: 'Visual Designer', category: 'team', quote: 'The character expressions and vibrant color blocks brought a fresh, high-energy pop to the entire brand portfolio.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'The characters resonated so immediately that retail feedback showed kids were pulling the boxes from shelves themselves. In future iterations, I would print hidden mini-games and coloring activities directly inside the inner flaps of the pancake cartons.'
   },
   {
@@ -614,16 +567,8 @@ const CAMPAIGNS = [
         channels: 'Premium Gated Communities · Farmer\'s Markets · Wellness Festivals'
       }
     ],
-    metrics: [
-      { value: '5 Feet', label: 'Custom freestanding display unit height engineered for optimal eye-level retail merchandising.', tag: 'SPATIAL SPEC' },
-      { value: '3+ Expos', label: 'Major international & national trade exhibitions designed and executed (Dubai WTC, AAHAR).', tag: 'TRADE PAVILIONS' },
-      { value: '60kg+', label: 'Structural shelf load capacity engineered for multi-tier glass jar displays.', tag: 'LOAD TOLERANCE' }
-    ],
-    testimonials: [
-      { name: 'Roshan Kulranjan', role: 'Business Operations Head', category: 'team', quote: 'The freestanding display units secured prime end-cap placements in Nature\'s Basket and Foodhall that ordinary shelf placement could never match.' },
-      { name: 'Trade Exhibition Visitor', role: 'Global Food Distributor', category: 'consumer', quote: 'The Jus\'Amazin booth stood out at AAHAR with clean wooden textures and modern lighting — it looked like an international organic brand.' },
-      { name: 'Manoj', role: 'Production Head', category: 'team', quote: 'The modular FSU assembly was fast to transport and build on site, saving us days during retail rollouts.' }
-    ],
+    metrics: [],
+    testimonials: [],
     reflection: 'Physical retail is uncompromising. A display that is hard to assemble or wobbles under weight fails immediately. If I could add one element to future retail units, it would be integrated NFC tags or QR digital dispensers right on the shelf edge so customers could instantly view farm-sourcing stories.'
   }
 ]
@@ -1066,6 +1011,7 @@ function CampaignVideoPlayer({ src, poster, aspectClass }) {
 }
 
 function TestimonialsBlock({ testimonials, accent }) {
+  if (!testimonials.length) return null;
   const [filter, setFilter] = useState('all')
   const filters = [
     { key: 'all', label: 'Show All' },
@@ -1109,6 +1055,7 @@ function TestimonialsBlock({ testimonials, accent }) {
 }
 
 function MetricsDashboard({ metrics, accent }) {
+  if (!metrics.length) return null;
   return (
     <div className="cp-metrics-section cpv">
       <div className="cp-execs-label" style={{ color: accent }}>Performance Dashboard</div>
@@ -1126,200 +1073,8 @@ function MetricsDashboard({ metrics, accent }) {
 }
 
 function CampaignCompareTable({ executions, accent }) {
-  const [showDetailedTable, setShowDetailedTable] = useState(false);
-
-  // Distinct empirical metrics vs strategic objectives definitions
-  const executionProfiles = [
-    {
-      num: '01',
-      title: '30-Sec Comparison Film',
-      assetType: 'Visual Breakdown / Split-Screen',
-      window: '7-Day High-Intensity Platform Burst (Post-Launch 45-Day Attribution)',
-      impressions: '15,000 – 20,000 Total Impressions',
-      reach: '~14,000 Unique Accounts Reached',
-      activeConversions: '6,000+ High-Intent Actions (Full Video Completion & Add-to-Cart Intent)',
-      reachOuts: '1,200+ Inbound PDP Inquiries',
-      orders: '11,000+ Cumulative Sachet Units Ordered across Blinkit, Zepto, and D2C',
-      reaction: 'Immediate visual shock & brand switching from carton milk',
-      attribution: 'Tracked via Meta Ads Manager, Shopify First-Party Analytics, and Quick-Commerce Sales Dispatch Reports.'
-    },
-    {
-      num: '02',
-      title: '30-Sec Kinetic Typography',
-      assetType: 'Sound-Off Typewriter Disruption',
-      window: '7-Day Targeted Minimal Niche Window',
-      impressions: '18,000+ Total Impressions',
-      reach: '15,000 – 20,000+ Targeted Audience Reach',
-      activeConversions: '3,000 – 4,000+ Engagement Conversions',
-      reachOuts: '850+ Direct Inbound Message Inquiries',
-      orders: '2,000 – 3,000+ Attributed Product Orders',
-      reaction: 'Curiosity driven by typography & steady clean-ingredient onboarding',
-      attribution: 'Instagram Reels & Stories Paid Meta Acquisition Analytics.'
-    },
-    {
-      num: '03',
-      title: 'Full Campaign Launch Film',
-      assetType: 'Long-Form Brand Film (YouTube & Storefront)',
-      window: 'Ongoing Multi-Month Brand Placement',
-      impressions: 'Ongoing Brand Impressions',
-      reach: 'Broad Health-Conscious Demographic Reach',
-      activeConversions: 'Trust & Category Retention Driver',
-      reachOuts: 'Corporate & Distribution Inquiries',
-      orders: 'Sustained Category Repeat Orders (Retention Loop)',
-      reaction: 'Deep trust-building for health-conscious families',
-      attribution: 'Brand Storefront, Amazon A+ Video Module & YouTube Pre-roll.'
-    }
-  ];
-
-  return (
-    <div className="cp-compare-section cpv">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
-        <div>
-          <div className="cp-execs-label" style={{ color: accent, marginBottom: '0.4rem' }}>
-            Campaign Results &amp; Funnel Attribution Matrix
-          </div>
-          <p style={{ fontFamily: 'var(--S)', fontSize: '0.92rem', color: 'var(--cp-muted)', maxWidth: '680px', margin: 0 }}>
-            Distinguishing total impressions from unique reach, defining conversion actions, and reporting verified outcomes over a 45-day measurement window.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => setShowDetailedTable(prev => !prev)}
-          style={{
-            fontFamily: 'var(--M)',
-            fontSize: '0.55rem',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            padding: '0.6rem 1.2rem',
-            borderRadius: '999px',
-            background: 'rgba(240,237,230,0.06)',
-            border: '1px solid rgba(240,237,230,0.15)',
-            color: '#FFF',
-            cursor: 'pointer'
-          }}
-        >
-          {showDetailedTable ? 'Hide Detailed Table ↑' : 'Show Detailed Comparison Table ↓'}
-        </button>
-      </div>
-
-      {/* Result Cards for Mobile & Responsive Viewing */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.4rem', marginBottom: '2.5rem' }}>
-        {executionProfiles.map(p => (
-          <div
-            key={p.num}
-            style={{
-              background: 'rgba(240,237,230,0.025)',
-              border: '1px solid var(--cp-border)',
-              borderRadius: '24px',
-              padding: '2rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
-                <span style={{ fontFamily: 'var(--M)', fontSize: '0.52rem', letterSpacing: '0.2em', color: accent, textTransform: 'uppercase' }}>
-                  Execution {p.num}
-                </span>
-                <span style={{ fontFamily: 'var(--M)', fontSize: '0.45rem', padding: '0.2rem 0.5rem', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', color: 'rgba(240,237,230,0.6)' }}>
-                  {p.assetType}
-                </span>
-              </div>
-              <h4 style={{ fontFamily: 'var(--D)', fontSize: '1.3rem', color: '#FFF', marginBottom: '1rem' }}>
-                {p.title}
-              </h4>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '0.85rem', color: 'var(--cp-muted)' }}>
-                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
-                    Top Funnel: Impressions vs. Reach
-                  </div>
-                  <div style={{ color: '#FFF', fontWeight: 600 }}>{p.impressions}</div>
-                  <div style={{ fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)' }}>{p.reach}</div>
-                </div>
-
-                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
-                    Mid Funnel: Active Conversions
-                  </div>
-                  <div style={{ color: '#FFF', fontWeight: 600 }}>{p.activeConversions}</div>
-                  <div style={{ fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)' }}>{p.reachOuts}</div>
-                </div>
-
-                <div style={{ padding: '0.8rem', borderRadius: '12px', background: 'rgba(212,96,10,0.08)', border: '1px solid rgba(212,96,10,0.2)' }}>
-                  <div style={{ fontFamily: 'var(--M)', fontSize: '0.48rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: accent, marginBottom: '0.2rem' }}>
-                    Bottom Funnel: Attributed Orders
-                  </div>
-                  <div style={{ color: '#FFF', fontWeight: 700, fontSize: '0.98rem' }}>{p.orders}</div>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ marginTop: '1.2rem', paddingTop: '1rem', borderTop: '1px solid rgba(240,237,230,0.08)', fontSize: '0.75rem', color: 'rgba(240,237,230,0.5)', fontStyle: 'italic' }}>
-              <strong>Attribution Source: </strong>{p.attribution}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Accessible Detailed Comparison Table */}
-      {showDetailedTable && (
-        <div style={{ overflowX: 'auto', marginTop: '1.5rem', background: 'rgba(10,9,6,0.95)', border: '1px solid var(--cp-border)', borderRadius: '24px', padding: '1.5rem' }}>
-          <table className="cp-compare-table">
-            <thead>
-              <tr>
-                <th>Funnel Vector</th>
-                {executionProfiles.map(p => <th key={p.num}>{p.title}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Asset Type</td>
-                {executionProfiles.map(p => <td key={p.num}>{p.assetType}</td>)}
-              </tr>
-              <tr>
-                <td>Measurement Window</td>
-                {executionProfiles.map(p => <td key={p.num}>{p.window}</td>)}
-              </tr>
-              <tr>
-                <td>Total Impressions</td>
-                {executionProfiles.map(p => <td key={p.num} className="metric-hi">{p.impressions}</td>)}
-              </tr>
-              <tr>
-                <td>Unique Audience Reach</td>
-                {executionProfiles.map(p => <td key={p.num}>{p.reach}</td>)}
-              </tr>
-              <tr>
-                <td>Active Conversions</td>
-                {executionProfiles.map(p => <td key={p.num} className="metric-hi">{p.activeConversions}</td>)}
-              </tr>
-              <tr>
-                <td>Attributed Orders</td>
-                {executionProfiles.map(p => <td key={p.num} className="metric-hi" style={{ color: accent }}>{p.orders}</td>)}
-              </tr>
-              <tr>
-                <td>Attribution Basis</td>
-                {executionProfiles.map(p => <td key={p.num} style={{ fontSize: '0.68rem' }}>{p.attribution}</td>)}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      {/* Glossary Note */}
-      <div style={{ marginTop: '1.5rem', padding: '1.2rem 1.6rem', borderRadius: '16px', background: 'rgba(240,237,230,0.02)', border: '1px solid rgba(240,237,230,0.08)', fontSize: '0.78rem', color: 'rgba(240,237,230,0.6)', lineHeight: '1.7' }}>
-        <strong style={{ color: '#FFF' }}>Metric Definitions &amp; Methodology: </strong>
-        <em>Total Impressions</em> measure gross media impressions across platform feeds. 
-        <em>Unique Reach</em> tracks distinct individual user accounts. 
-        <em>Active Conversions</em> denote verified high-intent engagement actions (complete 30-sec video view through and PDP cart additions). 
-        <em>Attributed Orders</em> represent physical product shipments over the verified 45-day campaign cycle, separating measured empirical outcomes from strategic positioning objectives.
-      </div>
-    </div>
-  );
+ return <div className="cp-metrics-section"><h3 style={{color:accent}}>Execution formats</h3><p>Concept, design and delivered assets are shown here. Commercial rollout and sales outcomes involve the wider team.</p><div className="hiring-grid">{executions.map(e=><div key={e.num}><h4>{e.title}</h4><p>{e.adNote}</p></div>)}</div></div>;
 }
-
-// ─── RUNWAY CONFIGS ───────────────────────────────────────────────────────────
 
 const RUNWAYS = {
   'almond-milk': [
@@ -1354,21 +1109,20 @@ const RUNWAYS = {
   ]
 }
 
-// ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
 export default function Campaigns() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://sivnco.in/campaigns" />
+        
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Campaigns — Advertising Concepts & Packaging Systems · H P Shivaraj</title>
-        <meta name="description" content="Art direction for advertising campaigns & packaging architectures — Almond Milk motion, Desi Energy Bar, Superfoods, Festive Gifting, Lil'Stars Kids, and Spatial POS. H P Shivaraj, Head of Design & Art Director, Bengaluru." />
-        <meta property="og:title" content="Campaigns — H P Shivaraj · Head of Design & Art Direction" />
-        <meta property="og:description" content="Advertising campaigns & structural design: 30 SAM Almond Milk, Desi Energy Bar, Superfoods, Festive Gifting Suite, Lil'Stars Kids Nutrition, and Spatial Retail FSUs." />
-        <meta property="og:url" content="https://sivnco.in/campaigns" />
-        <meta name="twitter:card" content="summary_large_image" />
+        
+        
+        
+        
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
